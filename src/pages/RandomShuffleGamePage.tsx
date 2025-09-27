@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Button, Center, Container, Group, Stack, Title, Text } from "@mantine/core";
+import { Button, Container, Group, Stack, Title, Text } from "@mantine/core";
 import Flashcard from "../components/Flashcard.tsx";
 import { availableWordBags, type JapaneseWord } from "../japanese";
 import { LessonContext, POLISH } from "../LessonContext.ts";
