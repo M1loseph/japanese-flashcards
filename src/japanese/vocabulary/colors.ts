@@ -1,5 +1,5 @@
-import type {JapaneseWord} from "../types.ts";
+import type { JapaneseWord } from "../types.ts";
 
 const colors: JapaneseWord[] = []
 
-export {colors}
+export { colors }

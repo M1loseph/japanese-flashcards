@@ -1,8 +1,9 @@
-import {useContext, useEffect, useState} from "react";
-import {Button, Center, Container, Group, Stack, Title, Text} from "@mantine/core";
+import { useContext, useEffect, useState } from "react";
+import { Button, Center, Container, Group, Stack, Title, Text } from "@mantine/core";
 import Flashcard from "../components/Flashcard.tsx";
-import {availableWordBags, type JapaneseWord} from "../japanese";
-import {LessonContext, POLISH} from "../LessonContext.ts";
+import { availableWordBags, type JapaneseWord } from "../japanese";
+import { LessonContext, POLISH } from "../LessonContext.ts";
+import { useNavigate } from "react-router";
 
 
 interface FlashcardSession {
@@ -11,18 +12,28 @@ interface FlashcardSession {
     correct: boolean;
 }
 
+function shuffleArray<T>(array: T[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+}
+
 export default function RandomShuffleGamePage() {
     const [currentFlashcard, setCurrentFlashcard] = useState(0)
     const [flashCards, setFlashcards] = useState<FlashcardSession[]>([])
-    const {selectedLanguage, selectedWordBags} = useContext(LessonContext);
+    const { selectedLanguage, selectedWordBags } = useContext(LessonContext);
     const [secondsElapsed, setSecondsElapsed] = useState(0)
 
     const findBagById = (id: string) => availableWordBags.find(bag => bag.id === id)?.words || [];
+    const navigate = useNavigate();
 
     useEffect(() => {
         const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId));
-        const shuffledSet = allWords.sort(() => Math.random() - 0.5);
-        const questions = shuffledSet.map(japaneseVocabulary => {
+        shuffleArray(allWords);
+        const questions = allWords.map(japaneseVocabulary => {
             return {
                 word: japaneseVocabulary,
                 answered: false,
@@ -39,20 +50,27 @@ export default function RandomShuffleGamePage() {
         return () => clearInterval(interval);
     }, []);
 
+    const mistakes = flashCards.filter(card => !card.correct);
+
     const prepareSetForRepeat = () => {
-        const mistakes = flashCards.filter(card => !card.correct);
-        setFlashcards(mistakes.map(card => ({...card, answered: false})));
+        setFlashcards(mistakes.map(card => ({ ...card, answered: false })));
         setCurrentFlashcard(0);
     }
 
     if (flashCards.length == currentFlashcard) {
         return <>
-            <Container>
+            <Container pt="xl">
                 <Stack align="center">
                     <Title
                         order={2}
                     >Congratulations, you finished!</Title>
-                    <Button onClick={prepareSetForRepeat} size="md">Repeat mistakes</Button>
+                    <Group>
+
+                        {
+                            mistakes.length != 0 ? <Button color="green" onClick={prepareSetForRepeat} size="md">Repeat mistakes ({mistakes.length})</Button> : <></>
+                        }
+                        <Button onClick={() => navigate("/")} size="md">Go home</Button>
+                    </Group>
                 </Stack>
             </Container>
         </>
@@ -81,35 +99,33 @@ export default function RandomShuffleGamePage() {
 
     return (
         <Container pt="xl">
-            <Center>
-                <Stack>
-                    <Group justify="space-between" align="center" style={{width: "30rem"}}>
-                        <Text fw={700} size="xl">
-                            {currentFlashcard + 1}/{flashCards.length}
-                        </Text>
-                        <Text c="green" fw={700} size="xl">
-                            {correctAnswers}
-                        </Text>
-                        <Text c="red" fw={700} size="xl">
-                            {wrongAnswers}
-                        </Text>
-                        <Text size="xl" fw={700}>
-                            {String(hours).padStart(2, '0')}:
-                            {String(minutes).padStart(2, '0')}:
-                            {String(seconds).padStart(2, '0')}
-                        </Text>
-                    </Group>
-                    <Flashcard
-                        key={card.word.jp}
-                        question={question}
-                        answer={card.word.jp}
-                        pronouncitaion={card.word.jp_pronounciation}
-                        description={card.word.jp_description}
-                        handlerCorrect={handlerCorrect}
-                        handlerMistake={handlerMistake}
-                    />
-                </Stack>
-            </Center>
+            <Stack align="center">
+                <Group style={{ width: "100%" }} justify="space-between" align="center">
+                    <Text fw={700} size="xl">
+                        {currentFlashcard + 1}/{flashCards.length}
+                    </Text>
+                    <Text c="green" fw={700} size="xl">
+                        {correctAnswers}
+                    </Text>
+                    <Text c="red" fw={700} size="xl">
+                        {wrongAnswers}
+                    </Text>
+                    <Text size="xl" fw={700}>
+                        {String(hours).padStart(2, '0')}:
+                        {String(minutes).padStart(2, '0')}:
+                        {String(seconds).padStart(2, '0')}
+                    </Text>
+                </Group>
+                <Flashcard
+                    key={card.word.jp}
+                    question={question}
+                    answer={card.word.jp}
+                    pronouncitaion={card.word.jp_pronounciation}
+                    description={card.word.jp_description}
+                    handlerCorrect={handlerCorrect}
+                    handlerMistake={handlerMistake}
+                />
+            </Stack>
         </Container>
     );
 }
