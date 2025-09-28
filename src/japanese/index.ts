@@ -2,41 +2,53 @@ import { numbers } from "./vocabulary/numbers.ts";
 import { type WordBag } from "./types.ts";
 import { colors } from "./vocabulary/colors.ts"
 import { family } from "./vocabulary/family.ts";
-import { duolingo_1 } from "./vocabulary/duolingo_1.ts";
+import { duolingo_1 } from "./vocabulary/duolingo/duolingo_1.ts";
+import { duolingo_2 } from "./vocabulary/duolingo/duolingo_2.ts";
 import { countriesEurope } from "./vocabulary/countries/countriesEurope.ts";
-import { genki_0 } from "./vocabulary/genki_0.ts";
+import { genki_0 } from "./vocabulary/genki/genki_0.ts";
+import { genki_1 } from "./vocabulary/genki/genki_1.ts";
 
 export type { JapaneseWord, WordBag } from "./types.ts";
 
 export const availableWordBags: WordBag[] = [
     {
-        "id": "1",
+        "id": "83be35f1-ba1d-4a71-86df-1a52fc4b51ce",
         "name": "Family",
         "words": family,
     },
     {
-        "id": "2",
+        "id": "05253d28-8ebf-4793-bcb2-11b117a36f86",
         "name": "Numbers",
         "words": numbers,
     },
     {
-        "id": "3",
+        "id": "a6d25f35-b38e-4598-9c52-c27f8827f5d5",
         "name": "Colors",
         "words": colors,
     },
     {
-        "id": "4",
+        "id": "72d4f2a1-6963-497e-85a6-b6c2458da116",
         "name": "Duolingo #1",
         "words": duolingo_1,
     },
     {
-        "id": "5",
+        "id": "38e00aa9-dc82-4a80-ba40-eb14ddea1a86",
+        "name": "Duolingo #2",
+        "words": duolingo_2,
+    },
+    {
+        "id": "efcf6fe8-9b79-436f-8c4d-0987393fb4c6",
         "name": "Countries EU",
         "words": countriesEurope,
     },
     {
-        "id": "6",
+        "id": "56d838c8-4a95-4eb0-b903-14528a8dc6d6",
         "name": "Genki #0",
         "words": genki_0,
+    },
+    {
+        "id": "9ce8f1cc-8504-4639-867c-59458ab6e39f",
+        "name": "Genki #1",
+        "words": genki_1,
     }
 ]

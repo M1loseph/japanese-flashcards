@@ -43,7 +43,7 @@ export default function MainPage() {
                     </Button>
                 </Group>
                 <Title order={3}>2. Select word bags to use</Title>
-                <Group>
+                <Group justify="center">
                     {
                         availableWordBags.map(bag => (
                                 <Button
