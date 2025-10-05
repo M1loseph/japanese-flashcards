@@ -70,7 +70,7 @@ const RandomShuffleGamePage: React.FC = () => {
     const correctAnswers = useMemo(() => flashCards.filter(card => card.correct).length, [flashCards]);
     const wrongAnswers = useMemo(() => flashCards.filter(card => card.answered && !card.correct).length, [flashCards]);
 
-    const gameFinished = currentFlashcard == flashCards.length;
+    const gameFinished = currentFlashcard === flashCards.length;
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
     if (gameFinished) {
