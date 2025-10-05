@@ -1,9 +1,9 @@
-import {createContext} from "react";
+import { createContext } from "react";
 
-export const POLISH = "pl"
-export const ENGLISH = "en"
-const languages = [POLISH, ENGLISH] as const
-export type TranslationLanguage = typeof languages[number]
+export const TranslationLanguages = {
+    POLISH: "pl", ENGLISH: "en",
+} as const
+export type TranslationLanguage = typeof TranslationLanguages[keyof typeof TranslationLanguages]
 
 export interface LessonContextType {
     selectedLanguage: TranslationLanguage;
@@ -14,7 +14,7 @@ export interface LessonContextType {
 
 export const LessonContext = createContext<LessonContextType>(
     {
-        selectedLanguage: ENGLISH,
+        selectedLanguage: TranslationLanguages.ENGLISH,
         setSelectedLanguage: () => {
         },
         selectedWordBags: new Set(),

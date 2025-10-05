@@ -1,13 +1,13 @@
 import '@mantine/core/styles.css';
 import { AppShell, Group, MantineProvider, Title } from "@mantine/core";
 import { theme } from "./theme.ts";
-import { ENGLISH, LessonContext, type TranslationLanguage } from "./LessonContext.ts"
+import { LessonContext, TranslationLanguages, type TranslationLanguage } from "./LessonContext.ts"
 import { useState } from "react";
 import { Outlet } from 'react-router-dom';
 
 const Layout: React.FC = () => {
-    const [selectedLanguage, setSelectedLanguage] = useState<TranslationLanguage>(ENGLISH)
-    const [selectedWordBags, setSelectedWordBags] = useState<Set<string>>(new Set())
+    const [selectedLanguage, setSelectedLanguage] = useState<TranslationLanguage>(TranslationLanguages.ENGLISH);
+    const [selectedWordBags, setSelectedWordBags] = useState<Set<string>>(new Set());
 
     return (
         <MantineProvider theme={theme}>
