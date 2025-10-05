@@ -1,8 +1,8 @@
-import {Container, Title, Button, Stack, Group} from "@mantine/core";
-import {useNavigate} from "react-router";
-import {ENGLISH, LessonContext, POLISH} from "../LessonContext.ts";
-import {useContext} from "react";
-import {availableWordBags} from "../japanese";
+import { Container, Title, Button, Stack, Group } from "@mantine/core";
+import { useNavigate } from "react-router";
+import { ENGLISH, LessonContext, POLISH } from "../LessonContext.ts";
+import { useContext } from "react";
+import { availableWordBags } from "../japanese";
 
 const SELECTED_VARIANT = "filled";
 const UNSELECTED_VARIANT = "outline";
@@ -11,7 +11,7 @@ const variant = (selected: boolean) => selected ? SELECTED_VARIANT : UNSELECTED_
 
 export default function MainPage() {
     const navigate = useNavigate();
-    const {selectedLanguage, setSelectedLanguage, selectedWordBags, setSelectedWordBags} = useContext(LessonContext);
+    const { selectedLanguage, setSelectedLanguage, selectedWordBags, setSelectedWordBags } = useContext(LessonContext);
     const usePolish = () => {
         setSelectedLanguage(POLISH);
     }
@@ -46,19 +46,23 @@ export default function MainPage() {
                 <Group justify="center">
                     {
                         availableWordBags.map(bag => (
-                                <Button
-                                    key={bag.id}
-                                    onClick={() => toggleWordBag(bag.id)}
-                                    variant={variant(selectedWordBags.has(bag.id))}
-                                >
-                                    {bag.name}
-                                </Button>
-                            )
+                            <Button
+                                key={bag.id}
+                                onClick={() => toggleWordBag(bag.id)}
+                                variant={variant(selectedWordBags.has(bag.id))}
+                            >
+                                {bag.name}
+                            </Button>
+                        )
                         )
                     }
                 </Group>
                 <Title order={3}>3. And select game mode</Title>
-                <Button size="md" onClick={() => navigate("/game/shuffle")}>All random</Button>
+                <Button
+                    size="md"
+                    onClick={() => navigate("/game/shuffle")}
+                    disabled={selectedWordBags.size === 0}
+                >All random</Button>
             </Stack>
         </Container>
     );
