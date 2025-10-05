@@ -36,7 +36,7 @@ const RandomShuffleGamePage: React.FC = () => {
         if (selectedWordBags.size === 0) {
             navigate("/");
         }
-    }, [selectedWordBags, navigate])
+    }, [selectedWordBags])
 
     useEffect(() => {
         const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId));
