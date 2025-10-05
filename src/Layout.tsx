@@ -1,25 +1,14 @@
 import '@mantine/core/styles.css';
 import { AppShell, Group, MantineProvider, Title } from "@mantine/core";
 import { theme } from "./theme.ts";
-import MainPage from "./pages/MainPage.tsx";
-import RandomShuffleGamePage from "./pages/RandomShuffleGamePage.tsx";
 import { ENGLISH, LessonContext, type TranslationLanguage } from "./LessonContext.ts"
 import { useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { Outlet } from 'react-router-dom';
 
-function App() {
+const Layout: React.FC = () => {
     const [selectedLanguage, setSelectedLanguage] = useState<TranslationLanguage>(ENGLISH)
     const [selectedWordBags, setSelectedWordBags] = useState<Set<string>>(new Set())
 
-    const router = createBrowserRouter([
-        {
-            path: "/",
-            element: <MainPage />
-        }, {
-            path: "/game/shuffle",
-            element: <RandomShuffleGamePage />
-        }
-    ]);
     return (
         <MantineProvider theme={theme}>
             <LessonContext.Provider value={{ selectedLanguage, setSelectedLanguage, selectedWordBags, setSelectedWordBags }}>
@@ -34,7 +23,7 @@ function App() {
                         </Group>
                     </AppShell.Header>
                     <AppShell.Main>
-                        <RouterProvider router={router} />
+                        <Outlet />
                     </AppShell.Main>
                 </AppShell>
             </LessonContext.Provider>
@@ -42,4 +31,4 @@ function App() {
     );
 }
 
-export default App;
+export default Layout;

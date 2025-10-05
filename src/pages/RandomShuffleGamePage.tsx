@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { Button, Container, Group, Stack, Title, Text, Modal } from "@mantine/core";
 import Flashcard from "../components/Flashcard.tsx";
 import { availableWordBags, type JapaneseWord } from "../japanese";
@@ -22,7 +22,7 @@ function shuffleArray<T>(array: T[]) {
     }
 }
 
-export default function RandomShuffleGamePage() {
+const RandomShuffleGamePage: React.FC = () => {
     const [currentFlashcard, setCurrentFlashcard] = useState(0)
     const [flashCards, setFlashcards] = useState<FlashcardSession[]>([])
     const { selectedLanguage, selectedWordBags } = useContext(LessonContext);
@@ -65,6 +65,9 @@ export default function RandomShuffleGamePage() {
         setCurrentFlashcard(0);
     }
 
+    const correctAnswers = useMemo(() => flashCards.filter(card => card.correct).length, [flashCards]);
+    const wrongAnswers = useMemo(() => flashCards.filter(card => card.answered && !card.correct).length, [flashCards]);
+
     const gameFinished = currentFlashcard == flashCards.length;
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
@@ -101,8 +104,6 @@ export default function RandomShuffleGamePage() {
     }
 
     const question = selectedLanguage === POLISH ? card.word.pl : card.word.en;
-    const correctAnswers = flashCards.filter(card => card.correct).length;
-    const wrongAnswers = flashCards.filter(card => card.answered && !card.correct).length;
 
     const hours = Math.floor(secondsElapsed / 3600);
     const minutes = Math.floor(secondsElapsed / 60);
@@ -149,3 +150,5 @@ export default function RandomShuffleGamePage() {
         </Container>
     </>;
 }
+
+export default RandomShuffleGamePage;

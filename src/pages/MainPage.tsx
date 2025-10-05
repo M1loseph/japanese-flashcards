@@ -9,7 +9,7 @@ const UNSELECTED_VARIANT = "outline";
 
 const variant = (selected: boolean) => selected ? SELECTED_VARIANT : UNSELECTED_VARIANT;
 
-export default function MainPage() {
+const MainPage: React.FC = () => {
     const navigate = useNavigate();
     const { selectedLanguage, setSelectedLanguage, selectedWordBags, setSelectedWordBags } = useContext(LessonContext);
     const usePolish = () => {
@@ -67,3 +67,5 @@ export default function MainPage() {
         </Container>
     );
 }
+
+export default MainPage;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useBlocker } from 'react-router';
 
+const beforeUnloadEvent = 'beforeunload';
 // Hook that blocks in-app route transitions (React Router) and browser unload (tab close/refresh)
 // while `enabled` is true. It exposes UI state so the page can render a confirmation modal.
 export function usePreventAccidentalLeave(enabled: boolean) {
@@ -8,9 +9,9 @@ export function usePreventAccidentalLeave(enabled: boolean) {
     const [showPrompt, setShowPrompt] = useState(false);
 
     useEffect(() => {
-        if (blocker.state === 'blocked') {
+        if (blocker.state === "blocked") {
             setShowPrompt(true);
-        } else if (blocker.state === 'unblocked') {
+        } else if (blocker.state === "unblocked") {
             setShowPrompt(false);
         }
     }, [blocker.state]);
@@ -20,22 +21,23 @@ export function usePreventAccidentalLeave(enabled: boolean) {
         const beforeUnload = (e: BeforeUnloadEvent) => {
             e.preventDefault();
         };
-        window.addEventListener('beforeunload', beforeUnload);
-        return () => window.removeEventListener('beforeunload', beforeUnload);
+        window.addEventListener(beforeUnloadEvent, beforeUnload);
+        return () => window.removeEventListener(beforeUnloadEvent, beforeUnload);
     }, [enabled]);
 
     const confirmLeave = () => {
         setShowPrompt(false);
-        if (typeof (blocker as any).proceed === 'function') {
-            (blocker as any).proceed();
+        const proceed = blocker.proceed;
+        if (proceed !== undefined) {
+            proceed();
         }
     };
 
     const cancelLeave = () => {
         setShowPrompt(false);
-        // keep user on the page
-        if (typeof (blocker as any).reset === 'function') {
-            (blocker as any).reset();
+        const reset = blocker.reset;
+        if (reset !== undefined) {
+            reset();
         }
     };
 
