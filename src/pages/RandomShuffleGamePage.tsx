@@ -2,7 +2,7 @@ import { useContext, useEffect, useMemo, useState } from "react";
 import { Button, Container, Group, Stack, Title, Text, Modal } from "@mantine/core";
 import Flashcard from "../components/Flashcard.tsx";
 import { availableWordBags, type JapaneseWord } from "../japanese";
-import { LessonContext, POLISH } from "../LessonContext.ts";
+import { LessonContext, TranslationLanguages } from "../LessonContext.ts";
 import { useNavigate } from "react-router";
 import usePreventAccidentalLeave from "../hooks/usePreventAccidentalLeave.ts";
 
@@ -105,7 +105,7 @@ const RandomShuffleGamePage: React.FC = () => {
         setCurrentFlashcard(currentFlashcard + 1)
     }
 
-    const question = selectedLanguage === POLISH ? card.word.pl : card.word.en;
+    const question = selectedLanguage === TranslationLanguages.POLISH ? card.word.pl : card.word.en;
 
     const hours = Math.floor(secondsElapsed / 3600);
     const minutes = Math.floor(secondsElapsed / 60);

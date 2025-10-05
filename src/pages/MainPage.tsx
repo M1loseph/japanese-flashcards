@@ -1,6 +1,6 @@
 import { Container, Title, Button, Stack, Group } from "@mantine/core";
 import { useNavigate } from "react-router";
-import { ENGLISH, LessonContext, POLISH } from "../LessonContext.ts";
+import { LessonContext, TranslationLanguages } from "../LessonContext.ts";
 import { useContext } from "react";
 import { availableWordBags } from "../japanese";
 
@@ -13,10 +13,10 @@ const MainPage: React.FC = () => {
     const navigate = useNavigate();
     const { selectedLanguage, setSelectedLanguage, selectedWordBags, setSelectedWordBags } = useContext(LessonContext);
     const usePolish = () => {
-        setSelectedLanguage(POLISH);
+        setSelectedLanguage(TranslationLanguages.POLISH);
     }
     const useEnglish = () => {
-        setSelectedLanguage(ENGLISH);
+        setSelectedLanguage(TranslationLanguages.ENGLISH);
     }
     const toggleWordBag = (bag: string) => {
         if (selectedWordBags.has(bag)) {
@@ -35,10 +35,10 @@ const MainPage: React.FC = () => {
             <Stack justify="center" align="center" w="100%">
                 <Title order={3}>1. Select translation language</Title>
                 <Group>
-                    <Button variant={variant(selectedLanguage === POLISH)} onClick={usePolish}>
+                    <Button variant={variant(selectedLanguage === TranslationLanguages.POLISH)} onClick={usePolish}>
                         🇵🇱
                     </Button>
-                    <Button variant={variant(selectedLanguage === ENGLISH)} onClick={useEnglish}>
+                    <Button variant={variant(selectedLanguage === TranslationLanguages.ENGLISH)} onClick={useEnglish}>
                         🇬🇧
                     </Button>
                 </Group>
