@@ -138,7 +138,7 @@ const sakura_1: JapaneseWord[] = [
         jp: "わかりました",
     },
     {
-        en: " I don't understand",
+        en: "I don't understand",
         pl: "Nie rozumiem",
         jp: "わかりません",
     },
