@@ -58,7 +58,7 @@ const RandomShuffleGamePage: React.FC = () => {
             setSecondsElapsed(elapsed);
         }, 1000);
         return () => clearInterval(interval);
-    }, [gameBeginTime]);
+    }, []);
 
     const mistakes = flashCards.filter(card => !card.correct);
 
