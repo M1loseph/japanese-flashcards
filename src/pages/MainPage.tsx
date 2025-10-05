@@ -35,10 +35,10 @@ const MainPage: React.FC = () => {
             <Stack justify="center" align="center" w="100%">
                 <Title order={3}>1. Select translation language</Title>
                 <Group>
-                    <Button variant={variant(selectedLanguage == POLISH)} onClick={usePolish}>
+                    <Button variant={variant(selectedLanguage === POLISH)} onClick={usePolish}>
                         🇵🇱
                     </Button>
-                    <Button variant={variant(selectedLanguage == ENGLISH)} onClick={useEnglish}>
+                    <Button variant={variant(selectedLanguage === ENGLISH)} onClick={useEnglish}>
                         🇬🇧
                     </Button>
                 </Group>

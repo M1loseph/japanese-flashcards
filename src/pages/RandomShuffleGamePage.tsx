@@ -33,7 +33,7 @@ const RandomShuffleGamePage: React.FC = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (selectedWordBags.size == 0) {
+        if (selectedWordBags.size === 0) {
             navigate("/");
         }
     }, [selectedWordBags])
