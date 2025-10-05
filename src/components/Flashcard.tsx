@@ -11,8 +11,7 @@ interface FlashcardProps {
     handlerMistake: () => void;
 }
 
-export default function JapaneseFlashcard(props: FlashcardProps) {
-    const { question, answer, pronouncitaion, description, handlerCorrect, handlerMistake } = props;
+const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronouncitaion, description, handlerCorrect, handlerMistake }) => {
     const [showAnswer, setShowAnswer] = useState(false);
     const text = showAnswer ? answer : question;
 
@@ -46,3 +45,5 @@ export default function JapaneseFlashcard(props: FlashcardProps) {
         </Card>
     );
 }
+
+export default JapaneseFlashcard;

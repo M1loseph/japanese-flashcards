@@ -1,9 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { Button, Container, Group, Stack, Title, Text } from "@mantine/core";
+import { useContext, useEffect, useMemo, useState } from "react";
+import { Button, Container, Group, Stack, Title, Text, Modal } from "@mantine/core";
 import Flashcard from "../components/Flashcard.tsx";
 import { availableWordBags, type JapaneseWord } from "../japanese";
 import { LessonContext, POLISH } from "../LessonContext.ts";
 import { useNavigate } from "react-router";
+import usePreventAccidentalLeave from "../hooks/usePreventAccidentalLeave.ts";
 
 
 interface FlashcardSession {
@@ -21,14 +22,21 @@ function shuffleArray<T>(array: T[]) {
     }
 }
 
-export default function RandomShuffleGamePage() {
+const RandomShuffleGamePage: React.FC = () => {
     const [currentFlashcard, setCurrentFlashcard] = useState(0)
     const [flashCards, setFlashcards] = useState<FlashcardSession[]>([])
     const { selectedLanguage, selectedWordBags } = useContext(LessonContext);
+    const [gameBeginTime] = useState(Date.now());
     const [secondsElapsed, setSecondsElapsed] = useState(0)
 
     const findBagById = (id: string) => availableWordBags.find(bag => bag.id === id)?.words || [];
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (selectedWordBags.size === 0) {
+            navigate("/");
+        }
+    }, [selectedWordBags])
 
     useEffect(() => {
         const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId));
@@ -45,7 +53,9 @@ export default function RandomShuffleGamePage() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setSecondsElapsed(prev => prev + 1);
+            const now = Date.now();
+            const elapsed = Math.floor((now - gameBeginTime) / 1000);
+            setSecondsElapsed(elapsed);
         }, 1000);
         return () => clearInterval(interval);
     }, []);
@@ -57,7 +67,13 @@ export default function RandomShuffleGamePage() {
         setCurrentFlashcard(0);
     }
 
-    if (flashCards.length == currentFlashcard) {
+    const correctAnswers = useMemo(() => flashCards.filter(card => card.correct).length, [flashCards]);
+    const wrongAnswers = useMemo(() => flashCards.filter(card => card.answered && !card.correct).length, [flashCards]);
+
+    const gameFinished = currentFlashcard === flashCards.length;
+    const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
+
+    if (gameFinished) {
         return <>
             <Container pt="xl">
                 <Stack align="center">
@@ -90,14 +106,21 @@ export default function RandomShuffleGamePage() {
     }
 
     const question = selectedLanguage === POLISH ? card.word.pl : card.word.en;
-    const correctAnswers = flashCards.filter(card => card.correct).length;
-    const wrongAnswers = flashCards.filter(card => card.answered && !card.correct).length;
 
     const hours = Math.floor(secondsElapsed / 3600);
     const minutes = Math.floor(secondsElapsed / 60);
     const seconds = secondsElapsed % 60;
 
-    return (
+    return <>
+        <Modal opened={showPrompt} onClose={cancelLeave} title="Leave game?">
+            <Stack>
+                <Text>Are you sure you want to leave? Your current progress in this round will be lost.</Text>
+                <Group justify="flex-end">
+                    <Button variant="default" onClick={cancelLeave}>Stay</Button>
+                    <Button color="red" onClick={confirmLeave}>Leave</Button>
+                </Group>
+            </Stack>
+        </Modal>
         <Container pt="xl">
             <Stack align="center">
                 <Group style={{ width: "100%" }} justify="space-between" align="center">
@@ -127,5 +150,7 @@ export default function RandomShuffleGamePage() {
                 />
             </Stack>
         </Container>
-    );
+    </>;
 }
+
+export default RandomShuffleGamePage;

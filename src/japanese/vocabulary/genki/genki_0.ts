@@ -23,14 +23,15 @@ const genki_0: JapaneseWord[] = [
         pl: "Dobry wieczór",
     },
     {
-        en: "Goodbye",
+        en: "Goodbye (long time)",
         jp: "さようなら",
-        pl: "Do widzenia",
+        pl: "Do widzenia (na dłuższy czas)",
     },
     {
         en: "Good night",
-        jp: "おやすみなさい",
+        jp: "おやすみ(なさい)",
         pl: "Dobranoc",
+        jp_description: "なさい is a polite ending, can be omitted in casual speech",
     },
     {
         en: "Thank you (polite)",
@@ -48,9 +49,9 @@ const genki_0: JapaneseWord[] = [
         pl: "Przepraszam",
     },
     {
-        en: "No ; not at all",
+        en: "No; not at all",
         jp: "いいえ",
-        pl: "Nie ; nie szkodzi",
+        pl: "Nie; nie szkodzi",
     },
     {
         en: "I'll go and come back",
@@ -71,7 +72,7 @@ const genki_0: JapaneseWord[] = [
     },
     {
         en: "Welcome home",
-        jp: "おかえりなさい",
+        jp: "おかえり(なさい)",
         pl: "Witaj w domu",
         jp_description: "Used to welcome someone home",
     },
@@ -87,15 +88,14 @@ const genki_0: JapaneseWord[] = [
         pl: "Dziękuję za posiłek",
     },
     {
-        en: "Nice to meet you",
+        en: "Nice to meet you (at the beginning of introduction)",
         jp: "はじめまして",
-        pl: "Miło mi cię poznać",
-        jp_description: "Used when meeting someone for the first time",
+        pl: "Miło cię poznać (na początku przedstawiania się)",
     },
     {
         en: "Nice to meet you (said after introduction)",
         jp: "よろしくおねがいします",
-        pl: "Proszę o przychylność",
+        pl: "Miło cię poznać (po przedstawieniu się)",
         jp_description: "Used after introduction. Literally: Please treat me well.",
     }
 ]

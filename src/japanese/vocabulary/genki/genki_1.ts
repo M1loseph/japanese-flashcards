@@ -44,11 +44,6 @@ const genki_1: JapaneseWord[] = [
         jp: "いちねんせい",
     },
     {
-        en: "Major",
-        pl: "Kierunek (studiów)",
-        jp: "せんこう",
-    },
-    {
         en: "I",
         pl: "Ja",
         jp: "私",
@@ -156,7 +151,7 @@ const genki_1: JapaneseWord[] = [
     },
     {
         en: "Major (university subject)",
-        pl: "Kierunek (studia)",
+        pl: "Kierunek (studiów)",
         jp: "せんこう",
     },
     {
