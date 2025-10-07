@@ -60,8 +60,8 @@ const RandomShuffleGamePage: React.FC = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const correctAnswers = useMemo(() => flashCards.filter(card => card.correct), [flashCards, currentFlashcard]);
-    const wrongAnswers = useMemo(() => flashCards.filter(card => card.answered && !card.correct), [flashCards, currentFlashcard]);
+    const correctAnswers = useMemo(() => flashCards.filter(card => card.correct), [flashCards]);
+    const wrongAnswers = useMemo(() => flashCards.filter(card => card.answered && !card.correct), [flashCards]);
 
     const prepareSetForRepeat = () => {
         setFlashcards(wrongAnswers.map(card => ({ ...card, answered: false })));
@@ -91,14 +91,33 @@ const RandomShuffleGamePage: React.FC = () => {
 
     const card = flashCards[currentFlashcard]
 
+    const replaceCard = (newCard: FlashcardSession): FlashcardSession[] => {
+        const flashCardsCopy = [...flashCards];
+        flashCardsCopy[currentFlashcard] = newCard;
+        return flashCardsCopy;
+    }
+
     const handlerCorrect = () => {
-        card.answered = true;
-        card.correct = true;
+        const answeredCard = {
+            ...card,
+            answered: true,
+            correct: true,
+        }
+        const updatedCards = replaceCard(answeredCard);
+
+        setFlashcards(updatedCards);
         setCurrentFlashcard(currentFlashcard + 1)
     }
 
     const handlerMistake = () => {
-        card.answered = true;
+        const answeredCard = {
+            ...card,
+            answered: true,
+            correct: false,
+        }
+        const updatedCards = replaceCard(answeredCard);
+
+        setFlashcards(updatedCards);
         setCurrentFlashcard(currentFlashcard + 1)
     }
 
