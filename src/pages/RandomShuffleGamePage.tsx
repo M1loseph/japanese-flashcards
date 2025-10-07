@@ -60,15 +60,13 @@ const RandomShuffleGamePage: React.FC = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const mistakes = flashCards.filter(card => !card.correct);
+    const correctAnswers = useMemo(() => flashCards.filter(card => card.correct), [flashCards, currentFlashcard]);
+    const wrongAnswers = useMemo(() => flashCards.filter(card => card.answered && !card.correct), [flashCards, currentFlashcard]);
 
     const prepareSetForRepeat = () => {
-        setFlashcards(mistakes.map(card => ({ ...card, answered: false })));
+        setFlashcards(wrongAnswers.map(card => ({ ...card, answered: false })));
         setCurrentFlashcard(0);
     }
-
-    const correctAnswers = useMemo(() => flashCards.filter(card => card.correct).length, [flashCards]);
-    const wrongAnswers = useMemo(() => flashCards.filter(card => card.answered && !card.correct).length, [flashCards]);
 
     const gameFinished = currentFlashcard === flashCards.length;
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
@@ -81,9 +79,8 @@ const RandomShuffleGamePage: React.FC = () => {
                         order={2}
                     >Congratulations, you finished!</Title>
                     <Group>
-
                         {
-                            mistakes.length != 0 ? <Button color="green" onClick={prepareSetForRepeat} size="md">Repeat mistakes ({mistakes.length})</Button> : <></>
+                            wrongAnswers.length != 0 ? <Button color="green" onClick={prepareSetForRepeat} size="md">Repeat mistakes ({wrongAnswers.length})</Button> : <></>
                         }
                         <Button onClick={() => navigate("/")} size="md">Go home</Button>
                     </Group>
@@ -108,7 +105,7 @@ const RandomShuffleGamePage: React.FC = () => {
     const question = selectedLanguage === TranslationLanguages.POLISH ? card.word.pl : card.word.en;
 
     const hours = Math.floor(secondsElapsed / 3600);
-    const minutes = Math.floor(secondsElapsed / 60);
+    const minutes = Math.floor((secondsElapsed % 3600) / 60);
     const seconds = secondsElapsed % 60;
 
     return <>
@@ -128,10 +125,10 @@ const RandomShuffleGamePage: React.FC = () => {
                         {currentFlashcard + 1}/{flashCards.length}
                     </Text>
                     <Text c="green" fw={700} size="xl">
-                        {correctAnswers}
+                        {correctAnswers.length}
                     </Text>
                     <Text c="red" fw={700} size="xl">
-                        {wrongAnswers}
+                        {wrongAnswers.length}
                     </Text>
                     <Text size="xl" fw={700}>
                         {String(hours).padStart(2, '0')}:
