@@ -105,8 +105,8 @@ const RandomShuffleGamePage: React.FC = () => {
         }
         const updatedCards = replaceCard(answeredCard);
 
-        setCurrentFlashcard(currentFlashcard + 1)
         setFlashcards(updatedCards);
+        setCurrentFlashcard(currentFlashcard + 1)
     }
 
     const handlerMistake = () => {
@@ -117,8 +117,8 @@ const RandomShuffleGamePage: React.FC = () => {
         }
         const updatedCards = replaceCard(answeredCard);
 
-        setCurrentFlashcard(currentFlashcard + 1)
         setFlashcards(updatedCards);
+        setCurrentFlashcard(currentFlashcard + 1)
     }
 
     const question = selectedLanguage === TranslationLanguages.POLISH ? card.word.pl : card.word.en;
