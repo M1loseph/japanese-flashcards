@@ -5,6 +5,7 @@ import { availableWordBags, type JapaneseWord } from "../japanese";
 import { LessonContext, TranslationLanguages } from "../LessonContext.ts";
 import { useNavigate } from "react-router";
 import usePreventAccidentalLeave from "../hooks/usePreventAccidentalLeave.ts";
+import { NOT_AVAILABLE } from "../japanese/types.ts";
 
 
 interface FlashcardSession {
@@ -127,6 +128,13 @@ const RandomShuffleGamePage: React.FC = () => {
     const minutes = Math.floor((secondsElapsed % 3600) / 60);
     const seconds = secondsElapsed % 60;
 
+    const selectAnswerText = () => {
+        if (card.word.jp === NOT_AVAILABLE && card.word.jp_description) {
+            return card.word.jp_description;
+        }
+        return card.word.jp;
+    }
+
     return <>
         <Modal opened={showPrompt} onClose={cancelLeave} title="Leave game?">
             <Stack>
@@ -158,7 +166,7 @@ const RandomShuffleGamePage: React.FC = () => {
                 <Flashcard
                     key={card.word.jp}
                     question={question}
-                    answer={card.word.jp}
+                    answer={selectAnswerText()}
                     pronouncitaion={card.word.jp_pronounciation}
                     description={card.word.jp_description}
                     handlerCorrect={handlerCorrect}

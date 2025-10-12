@@ -4,6 +4,7 @@ import { colors } from "./vocabulary/colors.ts"
 import { family } from "./vocabulary/family.ts";
 import { duolingo_1 } from "./vocabulary/duolingo/duolingo_1.ts";
 import { duolingo_2 } from "./vocabulary/duolingo/duolingo_2.ts";
+import { duolingo_3 } from "./vocabulary/duolingo/duolingo_3.ts";
 import { countriesEurope } from "./vocabulary/countries/countriesEurope.ts";
 import { genki_0 } from "./vocabulary/genki/genki_0.ts";
 import { genki_1 } from "./vocabulary/genki/genki_1.ts";
@@ -37,6 +38,11 @@ export const availableWordBags: WordBag[] = [
         "id": "38e00aa9-dc82-4a80-ba40-eb14ddea1a86",
         "name": "Duolingo #2",
         "words": duolingo_2,
+    },
+    {
+        "id": "1cb3b262-0fb8-4f4c-b222-352c3d082736",
+        "name": "Duolingo #3",
+        "words": duolingo_3,
     },
     {
         "id": "efcf6fe8-9b79-436f-8c4d-0987393fb4c6",
