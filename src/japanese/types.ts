@@ -1,7 +1,9 @@
+export const NOT_AVAILABLE = "N/A";
+
 export interface JapaneseWord {
     en: string;
     pl: string;
-    jp: string | "N/A";
+    jp: string;
     jp_pronounciation?: string;
     jp_description?: string;
 }
