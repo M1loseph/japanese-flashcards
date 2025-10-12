@@ -1,7 +1,7 @@
 export interface JapaneseWord {
     en: string;
     pl: string;
-    jp: string;
+    jp: string | "N/A";
     jp_pronounciation?: string;
     jp_description?: string;
 }

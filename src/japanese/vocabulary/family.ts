@@ -40,7 +40,8 @@ const family: JapaneseWord[] = [
     {
         en: "Younger sister (direct)",
         pl: "Młodsza siostra (forma bezpośrednia)",
-        jp: "Use her name 😊",
+        jp: "N/A",
+        jp_description: "Use her name 😊",
     },
     {
         en: "Younger brother (honorific)",
@@ -57,7 +58,8 @@ const family: JapaneseWord[] = [
     {
         en: "Younger brother (direct)",
         pl: "Młodszy brat (forma bezpośrednia)",
-        jp: "Use his name 😊",
+        jp: "N/A",
+        jp_description: "Use his name 😊",
     },
     {
         en: "Older sister (honorific)",

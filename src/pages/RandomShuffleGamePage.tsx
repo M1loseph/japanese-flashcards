@@ -126,6 +126,7 @@ const RandomShuffleGamePage: React.FC = () => {
     const hours = Math.floor(secondsElapsed / 3600);
     const minutes = Math.floor((secondsElapsed % 3600) / 60);
     const seconds = secondsElapsed % 60;
+    const answer = card.word.jp === "N/A" ? card.word.jp_description!! : card.word.jp;
 
     return <>
         <Modal opened={showPrompt} onClose={cancelLeave} title="Leave game?">
@@ -158,7 +159,7 @@ const RandomShuffleGamePage: React.FC = () => {
                 <Flashcard
                     key={card.word.jp}
                     question={question}
-                    answer={card.word.jp}
+                    answer={answer}
                     pronouncitaion={card.word.jp_pronounciation}
                     description={card.word.jp_description}
                     handlerCorrect={handlerCorrect}
