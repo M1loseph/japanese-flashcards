@@ -150,6 +150,30 @@ const family: JapaneseWord[] = [
         pl: "Żona (forma skromna)",
         jp: "妻",
         jp_pronounciation: "つま",
+    },
+    {
+        en: "Son (humble)",
+        pl: "Syn (forma skromna)",
+        jp: "息子",
+        jp_pronounciation: "むすこ",
+    },
+    {
+        en: "Son (honorific)",
+        pl: "Syn (forma honoryfikatywna)",
+        jp: "息子さん",
+        jp_pronounciation: "むすこさん",
+    },
+    {
+        en: "Daughter (humble)",
+        pl: "Córka (forma skromna)",
+        jp: "娘",
+        jp_pronounciation: "むすめ",
+    },
+    {
+        en: "Daughter (honorific)",
+        pl: "Córka (forma honoryfikatywna)",
+        jp: "娘さん",
+        jp_pronounciation: "むすめさん",
     }
 ]
 
