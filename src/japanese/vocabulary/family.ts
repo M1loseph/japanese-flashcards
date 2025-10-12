@@ -1,4 +1,4 @@
-import type {JapaneseWord} from "../types.ts";
+import {NOT_AVAILABLE, type JapaneseWord} from "../types.ts";
 
 const family: JapaneseWord[] = [
     {
@@ -40,7 +40,7 @@ const family: JapaneseWord[] = [
     {
         en: "Younger sister (direct)",
         pl: "Młodsza siostra (forma bezpośrednia)",
-        jp: "N/A",
+        jp: NOT_AVAILABLE,
         jp_description: "Use her name 😊",
     },
     {
@@ -58,7 +58,7 @@ const family: JapaneseWord[] = [
     {
         en: "Younger brother (direct)",
         pl: "Młodszy brat (forma bezpośrednia)",
-        jp: "N/A",
+        jp: NOT_AVAILABLE,
         jp_description: "Use his name 😊",
     },
     {
