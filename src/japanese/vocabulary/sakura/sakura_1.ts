@@ -68,11 +68,6 @@ const sakura_1: JapaneseWord[] = [
         jp: "います",
     },
     {
-        en: "Teacher",
-        pl: "Nauczyciel",
-        jp: "せんせい",
-    },
-    {
         en: "Yes",
         pl: "Tak",
         jp: "はい",
@@ -208,6 +203,11 @@ const sakura_1: JapaneseWord[] = [
         jp: "しつもんはありません",
     },
     {
+        en: "Student (general)",
+        pl: "Uczeń (ogólnie)",
+        jp: "がくせい",
+    },
+    {
         en: "Student (6-12 years old)",
         pl: "Uczeń (6-12 lat)",
         jp: "しょうがくせい",
@@ -243,10 +243,35 @@ const sakura_1: JapaneseWord[] = [
         jp: "だよ",
     },
     {
-        en: "Teacher (profession)",
-        pl: "Nauczyciel (zawód)",
+        en: "Teacher (humble)",
+        pl: "Nauczyciel (skromnie)",
         jp: "きょうし",
-    }
+    },
+    {
+        en: "Teacher (polite)",
+        pl: "Nauczyciel (grzecznie)",
+        jp: "せんせい",
+    },
+    {
+        en: "Company employee",
+        pl: "Pracownik firmy",
+        jp: "かいしゃいん",
+    },
+    {
+        en: "Housewife / Househusband",
+        pl: "Gospodyni domowa / Gospodarz domowy",
+        jp: "しゅふ",
+    },
+    {
+        en: "Government worker",
+        pl: "Urzędnik państwowy",
+        jp: "こうむいん",
+    },
+    {
+        en: "Engineer",
+        pl: "Inżynier",
+        jp: "エンジニア",
+    },
 ]
 
 export { sakura_1 }
