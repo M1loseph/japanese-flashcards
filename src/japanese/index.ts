@@ -10,6 +10,7 @@ import { genki_0 } from "./vocabulary/genki/genki_0.ts";
 import { genki_1 } from "./vocabulary/genki/genki_1.ts";
 import { sakura_1 } from "./vocabulary/sakura/sakura_1.ts";
 import { sakura_2 } from "./vocabulary/sakura/sakura_2.ts";
+import { sakura_3 } from "./vocabulary/sakura/sakura_3.ts";
 
 export type { JapaneseWord, WordBag } from "./types.ts";
 
@@ -69,5 +70,12 @@ export const availableWordBags: WordBag[] = [
         "id": "e4755c96-cd28-40d5-8962-a8d00d23967b",
         "name": "Sakura #2",
         "words": sakura_2,
+    },
+    {
+        "id": "169b93bd-599a-4976-8ab2-d280e2af4f63",
+        "name": "Sakura #3",
+        "words": sakura_3,
     }
 ]
+
+export const findBagById = (id: string): WordBag | undefined => availableWordBags.find(bag => bag.id === id);
