@@ -17,7 +17,7 @@ const countriesEurope: JapaneseWord[] = [
         pl: "Francja"
     },
     {
-        "en": "Ireland",
+        en: "Ireland",
         jp: "アイルランド",
         pl: "Irlandia"
     },

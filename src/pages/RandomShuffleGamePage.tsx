@@ -1,7 +1,7 @@
 import { useContext, useEffect, useMemo, useState } from "react";
 import { Button, Container, Group, Stack, Title, Text, Modal } from "@mantine/core";
 import Flashcard from "../components/Flashcard.tsx";
-import { availableWordBags, type JapaneseWord } from "../japanese";
+import { findBagById, type JapaneseWord } from "../japanese";
 import { LessonContext, TranslationLanguages } from "../LessonContext.ts";
 import { useNavigate } from "react-router";
 import usePreventAccidentalLeave from "../hooks/usePreventAccidentalLeave.ts";
@@ -30,7 +30,6 @@ const RandomShuffleGamePage: React.FC = () => {
     const [gameBeginTime] = useState(Date.now());
     const [secondsElapsed, setSecondsElapsed] = useState(0)
 
-    const findBagById = (id: string) => availableWordBags.find(bag => bag.id === id)?.words || [];
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -40,7 +39,7 @@ const RandomShuffleGamePage: React.FC = () => {
     }, [selectedWordBags])
 
     useEffect(() => {
-        const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId));
+        const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId)?.words || []);
         shuffleArray(allWords);
         const questions = allWords.map(japaneseVocabulary => {
             return {
