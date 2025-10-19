@@ -1,7 +1,7 @@
 import { Container, Title, Button, Stack, Group, Collapse } from "@mantine/core";
 import { useNavigate } from "react-router";
 import { LessonContext, TranslationLanguages } from "../LessonContext.ts";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { availableWordBags, findBagById } from "../japanese";
 
 const SELECTED_VARIANT = "filled";
@@ -29,6 +29,11 @@ const MainPage: React.FC = () => {
             setSelectedWordBags(newBags);
         }
     }
+    const selectedWordsCount = useMemo(() => {
+        return Array.from(selectedWordBags)
+            .map(bag => findBagById(bag)?.words.length ?? 0)
+            .reduce((a, b) => a + b, 0);
+    }, [selectedWordBags]);
 
     return (
         <Container pt="xl">
@@ -58,7 +63,7 @@ const MainPage: React.FC = () => {
                 </Group>
                 <Collapse in={selectedWordBags.size !== 0}>
                     {
-                        <div>Selected {Array.from(selectedWordBags).map(bag => findBagById(bag)?.words.length ?? 0).reduce((a, b) => a + b, 0)} word(s)</div>
+                        <div>Selected {selectedWordsCount} word(s)</div>
                     }
                 </Collapse>
                 <Title order={3}>3. And select game mode</Title>
