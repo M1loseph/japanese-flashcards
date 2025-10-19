@@ -5,5 +5,5 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "dependabot_"
+      prefix: "dependabot:"
     open-pull-requests-limit: 5
