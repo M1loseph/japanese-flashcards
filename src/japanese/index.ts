@@ -78,4 +78,4 @@ export const availableWordBags: WordBag[] = [
     }
 ]
 
-export const findBagById = (id: string): WordBag | null => availableWordBags.find(bag => bag.id === id) || null;
+export const findBagById = (id: string): WordBag | undefined => availableWordBags.find(bag => bag.id === id);
