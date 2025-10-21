@@ -3,192 +3,197 @@ import type { JapaneseWord } from '../../types.ts'
 const duolingo_2: JapaneseWord[] = [
     {
         en: "Here",
-        jp: "ここ",
-        pl: "Tutaj"
+        pl: "Tutaj",
+        jp: "ここ"
     },
     {
         en: "Where",
-        jp: "どこ",
-        pl: "Gdzie"
+        pl: "Gdzie",
+        jp: "どこ"
     },
     {
         en: "Hotel",
-        jp: "ホテル",
-        pl: "Hotel"
+        pl: "Hotel",
+        jp: "ホテル"
     },
     {
         en: "Convenience store",
-        jp: "コンビニ",
-        pl: "Sklep spożywczy (mały)"
+        pl: "Sklep spożywczy (mały)",
+        jp: "コンビニ"
     },
     {
         en: "Department store",
-        jp: "デパート",
-        pl: "Dom towarowy"
+        pl: "Dom towarowy",
+        jp: "デパート"
     },
     {
         en: "Bus stop",
-        jp: "バスてい",
-        pl: "Przystanek autobusowy"
+        pl: "Przystanek autobusowy",
+        jp: "バスてい"
     },
     {
         en: "There",
-        jp: "そこ",
-        pl: "Tam"
+        pl: "Tam",
+        jp: "そこ"
     },
     {
         en: "Train station",
-        jp: "えき",
-        pl: "Dworzec kolejowy"
+        pl: "Dworzec kolejowy",
+        jp: "えき"
     },
     {
         en: "University",
-        jp: "だいがく",
-        pl: "Uniwersytet"
+        pl: "Uniwersytet",
+        jp: "だいがく"
     },
     {
         en: "I",
-        jp: "私",
         pl: "Ja",
+        jp: "私",
         jp_pronounciation: "わたし"
     },
     {
         en: "Hat",
-        jp: "ぼうし",
-        pl: "Kapelusz / Czapka"
+        pl: "Kapelusz / Czapka",
+        jp: "ぼうし"
     },
     {
         en: "Umbrella",
-        jp: "かさ",
-        pl: "Parasol"
+        pl: "Parasol",
+        jp: "かさ"
     },
     {
         en: "Shoe",
-        jp: "くつ",
-        pl: "But"
+        pl: "But",
+        jp: "くつ"
     },
     {
         en: "Coat",
-        jp: "コート",
-        pl: "Płaszcz"
+        pl: "Płaszcz",
+        jp: "コート"
     },
     {
         en: "Red",
-        jp: "あかい",
-        pl: "Czerwony"
+        pl: "Czerwony",
+        jp: "あかい"
     },
     {
         en: "White",
-        jp: "しろい",
-        pl: "Biały"
+        pl: "Biały",
+        jp: "しろい"
     },
     {
         en: "Cheerful",
-        jp: "あかるい",
-        pl: "Radosny"
+        pl: "Radosny",
+        jp: "あかるい"
     },
     {
         en: "Funny",
-        jp: "おもしろい",
-        pl: "Zabawny"
+        pl: "Zabawny",
+        jp: "おもしろい"
     },
     {
         en: "Apple",
-        jp: "りんご",
-        pl: "Jabłko"
+        pl: "Jabłko",
+        jp: "りんご"
     },
     {
         en: "Cute",
-        jp: "かわいい",
-        pl: "Słodki / Uroczy"
+        pl: "Słodki / Uroczy",
+        jp: "かわいい"
     },
     {
         en: "Thank you",
-        jp: "ありがとう",
-        pl: "Dziękuję"
+        pl: "Dziękuję",
+        jp: "ありがとう"
     },
     {
         en: "Thanks",
-        jp: "どうも",
-        pl: "Dzięki"
+        pl: "Dzięki",
+        jp: "どうも"
     },
     {
         en: "Thank you very much",
-        jp: "ありがとうございます",
-        pl: "Bardzo dziękuję"
+        pl: "Bardzo dziękuję",
+        jp: "ありがとうございます"
     },
     {
         en: "Map",
-        jp: "ちず",
-        pl: "Mapa"
+        pl: "Mapa",
+        jp: "ちず"
     },
     {
         en: "Ticket",
-        jp: "きっぷ",
-        pl: "Bilet"
+        pl: "Bilet",
+        jp: "きっぷ"
     },
     {
         en: "Subway",
-        jp: "ちかてつ",
-        pl: "Metro"
+        pl: "Metro",
+        jp: "ちかてつ"
     },
     {
         en: "Airport",
-        jp: "くうこう",
-        pl: "Lotnisko"
+        pl: "Lotnisko",
+        jp: "くうこう"
     },
     {
         en: "Isn't",
-        jp: "じゃないです",
-        pl: "Nie jest"
+        pl: "Nie jest",
+        jp: "じゃないです"
     },
     {
         en: "Is",
-        jp: "です",
-        pl: "Jest"
+        pl: "Jest",
+        jp: "です"
     },
 
     {
         en: "Passport",
-        jp: "パスポート",
-        pl: "Paszport"
+        pl: "Paszport",
+        jp: "パスポート"
     },
     {
         en: "Smartphone",
-        jp: "スマホ",
-        pl: "Smartfon"
+        pl: "Smartfon",
+        jp: "スマホ"
     },
     {
         en: "Bag",
-        jp: "かばん",
-        pl: "Torba"
+        pl: "Torba",
+        jp: "かばん"
     },
     {
         en: "Welcome",
-        jp: "ようこそ",
-        pl: "Witam"
+        pl: "Witam",
+        jp: "ようこそ"
     },
     {
         en: "Comes from ...",
-        jp: "...しゅっしん",
-        pl: "Pochodzi z ..."
+        pl: "Pochodzi z ...",
+        jp: "...しゅっしん"
+    },
+    {
+        en: "What is your origin?",
+        pl: "Skąd pochodzisz?",
+        jp: "しゅっしんはどこですか？"
     },
     {
         en: "Also",
-        jp: "も",
-        pl: "Też"
+        pl: "Też",
+        jp: "も"
     },
     {
         en: "Tokyo",
+        pl: "Tokio",
         jp: "東京",
-        jp_pronounciation: "とうきょう",
-        pl: "Tokio"
+        jp_pronounciation: "とうきょう"
     },
     {
         en: "Kyoto",
+        pl: "Kioto",
         jp: "京都",
-        jp_pronounciation: "きょうと",
-        pl: "Kioto"
+        jp_pronounciation: "きょうと"
     }
 ]
 
