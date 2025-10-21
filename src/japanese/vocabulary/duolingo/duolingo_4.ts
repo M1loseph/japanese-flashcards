@@ -58,11 +58,6 @@ const duolingo_4: JapaneseWord[] = [
         jp: "ときどき"
     },
     {
-        en: "Sometimes",
-        pl: "Czasami",
-        jp: "ときどき"
-    },
-    {
         en: "Music",
         pl: "Muzyka",
         jp: "おんがく"
