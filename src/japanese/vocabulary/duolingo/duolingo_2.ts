@@ -174,9 +174,14 @@ const duolingo_2: JapaneseWord[] = [
         pl: "Pochodzi z ..."
     },
     {
+        en: "What is your origin?",
+        pl: "Skąd pochodzisz?",
+        jp: "しゅっしんはどこですか？"
+    },
+    {
         en: "Also",
-        jp: "も",
-        pl: "Też"
+        pl: "Też",
+        jp: "も"
     },
     {
         en: "Tokyo",
