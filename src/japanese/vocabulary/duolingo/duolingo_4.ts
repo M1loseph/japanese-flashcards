@@ -5,7 +5,7 @@ const duolingo_4: JapaneseWord[] = [
         en: "To watch",
         pl: "Oglądać",
         jp: "見ます",
-        jp_pronounciation: "みます"
+        jp_pronunciation: "みます"
     },
     {
         en: "Soccer",
@@ -71,13 +71,13 @@ const duolingo_4: JapaneseWord[] = [
         en: "Book",
         pl: "Książka",
         jp: "本",
-        jp_pronounciation: "ほん"
+        jp_pronunciation: "ほん"
     },
     {
         en: "To read",
         pl: "Czytać",
         jp: "読みます",
-        jp_pronounciation: "よみます"
+        jp_pronunciation: "よみます"
     },
     {
         en: "News",
@@ -103,7 +103,7 @@ const duolingo_4: JapaneseWord[] = [
         en: "Eat",
         pl: "Jeść",
         jp: "食べます",
-        jp_pronounciation: "たべます"
+        jp_pronunciation: "たべます"
     },
     {
         en: "Every morning",
@@ -119,7 +119,7 @@ const duolingo_4: JapaneseWord[] = [
         en: "Hour",
         pl: "Godzina",
         jp: "時",
-        jp_pronounciation: "じ"
+        jp_pronunciation: "じ"
     },
     {
         en: "Dinner",
@@ -130,7 +130,7 @@ const duolingo_4: JapaneseWord[] = [
         en: "What",
         pl: "Co",
         jp: "何",
-        jp_pronounciation: "なに"
+        jp_pronunciation: "なに"
     },
     {
         en: "Bread",

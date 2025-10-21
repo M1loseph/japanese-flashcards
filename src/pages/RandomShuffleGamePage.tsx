@@ -166,7 +166,7 @@ const RandomShuffleGamePage: React.FC = () => {
                     key={card.word.jp}
                     question={question}
                     answer={selectAnswerText()}
-                    pronouncitaion={card.word.jp_pronounciation}
+                    pronouncitaion={card.word.jp_pronunciation}
                     description={card.word.jp_description}
                     handlerCorrect={handlerCorrect}
                     handlerMistake={handlerMistake}

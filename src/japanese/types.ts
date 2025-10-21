@@ -4,7 +4,7 @@ export interface JapaneseWord {
     en: string;
     pl: string;
     jp: string;
-    jp_pronounciation?: string;
+    jp_pronunciation?: string;
     jp_description?: string;
 }
 
