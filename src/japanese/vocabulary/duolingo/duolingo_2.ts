@@ -50,7 +50,7 @@ const duolingo_2: JapaneseWord[] = [
         en: "I",
         pl: "Ja",
         jp: "私",
-        jp_pronounciation: "わたし"
+        jp_pronunciation: "わたし"
     },
     {
         en: "Hat",
@@ -187,13 +187,13 @@ const duolingo_2: JapaneseWord[] = [
         en: "Tokyo",
         pl: "Tokio",
         jp: "東京",
-        jp_pronounciation: "とうきょう"
+        jp_pronunciation: "とうきょう"
     },
     {
         en: "Kyoto",
         pl: "Kioto",
         jp: "京都",
-        jp_pronounciation: "きょうと"
+        jp_pronunciation: "きょうと"
     }
 ]
 

@@ -71,7 +71,7 @@ const sakura_3: JapaneseWord[] = [
         en: "Book",
         pl: "Książka",
         jp: "本",
-        jp_pronounciation: "ほん"
+        jp_pronunciation: "ほん"
     },
     {
         en: "Newspaper",

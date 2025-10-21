@@ -47,7 +47,7 @@ const genki_1: JapaneseWord[] = [
         en: "I",
         pl: "Ja",
         jp: "私",
-        jp_pronounciation: "わたし",
+        jp_pronunciation: "わたし",
     },
     {
         en: "Friend",
