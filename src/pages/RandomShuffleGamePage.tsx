@@ -27,7 +27,6 @@ const RandomShuffleGamePage: React.FC = () => {
     const [currentFlashcard, setCurrentFlashcard] = useState(0)
     const [flashCards, setFlashcards] = useState<FlashcardSession[]>([])
     const { selectedLanguage, selectedWordBags } = useContext(LessonContext);
-    const [gameBeginTime] = useState(Date.now());
     const [secondsElapsed, setSecondsElapsed] = useState(0)
 
     const navigate = useNavigate();
@@ -36,7 +35,7 @@ const RandomShuffleGamePage: React.FC = () => {
         if (selectedWordBags.size === 0) {
             navigate("/");
         }
-    }, [selectedWordBags])
+    }, [selectedWordBags, navigate])
 
     useEffect(() => {
         const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId)?.words || []);
@@ -52,6 +51,7 @@ const RandomShuffleGamePage: React.FC = () => {
     }, [selectedWordBags])
 
     useEffect(() => {
+        const gameBeginTime = Date.now();
         const interval = setInterval(() => {
             const now = Date.now();
             const elapsed = Math.floor((now - gameBeginTime) / 1000);
