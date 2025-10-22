@@ -209,7 +209,7 @@ const duolingo_5: JapaneseWord[] = [
         jp: "アイスクリーム"
     },
     {
-        en: "Ice coffee",
+        en: "Iced coffee",
         pl: "Kawa mrożona",
         jp: "アイスコーヒー"
     },
