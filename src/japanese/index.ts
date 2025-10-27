@@ -7,6 +7,7 @@ import { duolingo_2 } from "./vocabulary/duolingo/duolingo_2.ts";
 import { duolingo_3 } from "./vocabulary/duolingo/duolingo_3.ts";
 import { duolingo_4 } from "./vocabulary/duolingo/duolingo_4.ts";
 import { duolingo_5 } from "./vocabulary/duolingo/duolingo_5.ts";
+import { duolingo_6 } from "./vocabulary/duolingo/duolingo_6.ts";
 import { countriesEurope } from "./vocabulary/countries/countriesEurope.ts";
 import { genki_0 } from "./vocabulary/genki/genki_0.ts";
 import { genki_1 } from "./vocabulary/genki/genki_1.ts";
@@ -58,6 +59,11 @@ export const availableWordBags: WordBag[] = [
         "id": "89a8a523-b1f2-48c7-849d-d27f0bed07a0",
         "name": "Duolingo #5",
         "words": duolingo_5,
+    },
+    {
+        "id": "7202e479-2fd1-4df3-9d73-47704f77919d",
+        "name": "Duolingo #6",
+        "words": duolingo_6,
     },
     {
         "id": "efcf6fe8-9b79-436f-8c4d-0987393fb4c6",
