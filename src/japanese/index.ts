@@ -1,6 +1,6 @@
 import { numbers } from "./vocabulary/numbers.ts";
 import { type WordBag } from "./types.ts";
-import { colors } from "./vocabulary/colors.ts"
+import { daysOfWeek } from "./vocabulary/daysOfWeek.ts"
 import { family } from "./vocabulary/family.ts";
 import { duolingo_1 } from "./vocabulary/duolingo/duolingo_1.ts";
 import { duolingo_2 } from "./vocabulary/duolingo/duolingo_2.ts";
@@ -32,8 +32,8 @@ export const availableWordBags: WordBag[] = [
     },
     {
         "id": "a6d25f35-b38e-4598-9c52-c27f8827f5d5",
-        "name": "Colors",
-        "words": colors,
+        "name": "Days of the Week",
+        "words": daysOfWeek,
     },
     {
         "id": "72d4f2a1-6963-497e-85a6-b6c2458da116",
