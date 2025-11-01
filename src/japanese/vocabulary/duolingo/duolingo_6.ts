@@ -29,7 +29,8 @@ const duolingo_6: JapaneseWord[] = [
     {
         en: "I play baseball on Saturdays.",
         pl: "Gram w baseball w soboty.",
-        jp: "土曜日にやきゅうをします。"
+        jp: "土曜日にやきゅうをします。",
+        jp_pronunciation: "どようびにやきゅうをします。"
     },
     {
         en: "To buy",
