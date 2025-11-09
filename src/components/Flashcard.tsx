@@ -18,6 +18,34 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
     const toggleAnswer = () => {
         setShowAnswer(!showAnswer);
     }
+
+    const buttonGroups = () => {
+        if (showAnswer) {
+            return (
+                <>
+                    <Button style={{ flex: 1 }} onClick={handlerCorrect} color="green" radius="md">
+                        Correct
+                        <Space w="xs" />
+                        <IconCheck />
+                    </Button>
+                    <Button style={{ flex: 1 }} onClick={toggleAnswer} color="blue" radius="md">
+                        Hide
+                    </Button>
+                    <Button style={{ flex: 1 }} onClick={handlerMistake} color="red" radius="md">
+                        Wrong
+                        <Space w="xs" />
+                        <IconCancel />
+                    </Button>
+                </>);
+        } else {
+            return (
+                <Button style={{ flex: 1 }} onClick={toggleAnswer} color="blue" radius="md">
+                    Show
+                </Button>
+            );
+        }
+    }
+
     return (
         <Card w="100%" shadow="sm" radius="md" withBorder>
             <Stack mih={"15rem"} justify="center" align="center">
@@ -28,19 +56,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
                 <Text size="sm" m="sm"> {showAnswer ? description : ""} </Text>
             </Stack>
             <Group justify="space-around" mt="md" mb="xs">
-                <Button style={{ flex: 1 }} onClick={handlerCorrect} color="green" radius="md">
-                    Correct
-                    <Space w="xs" />
-                    <IconCheck />
-                </Button>
-                <Button style={{ flex: 1 }} onClick={toggleAnswer} color="blue" radius="md">
-                    Show
-                </Button>
-                <Button style={{ flex: 1 }} onClick={handlerMistake} color="red" radius="md">
-                    Wrong
-                    <Space w="xs" />
-                    <IconCancel />
-                </Button>
+                {buttonGroups()}
             </Group>
         </Card>
     );
