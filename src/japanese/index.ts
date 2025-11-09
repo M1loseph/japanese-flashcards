@@ -9,6 +9,7 @@ import { duolingo_4 } from "./vocabulary/duolingo/duolingo_4.ts";
 import { duolingo_5 } from "./vocabulary/duolingo/duolingo_5.ts";
 import { duolingo_6 } from "./vocabulary/duolingo/duolingo_6.ts";
 import { countriesEurope } from "./vocabulary/countries/countriesEurope.ts";
+import { time } from "./vocabulary/time.ts";
 import { genki_0 } from "./vocabulary/genki/genki_0.ts";
 import { genki_1 } from "./vocabulary/genki/genki_1.ts";
 import { sakura_1 } from "./vocabulary/sakura/sakura_1.ts";
@@ -35,6 +36,11 @@ export const availableWordBags: WordBag[] = [
         "id": "a6d25f35-b38e-4598-9c52-c27f8827f5d5",
         "name": "Days of the Week",
         "words": daysOfWeek,
+    },
+    {
+        "id": "c67e0046-1cca-4ec6-87c9-be345d790236",
+        "name": "Time",
+        "words": time,
     },
     {
         "id": "72d4f2a1-6963-497e-85a6-b6c2458da116",
