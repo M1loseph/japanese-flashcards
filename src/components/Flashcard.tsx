@@ -1,6 +1,6 @@
 import { Card, Text, Button, Group, Title, Space, Stack } from '@mantine/core';
 import { IconCancel, IconCheck } from "@tabler/icons-react";
-import { useState } from "react";
+import { useState, type JSX } from "react";
 
 interface FlashcardProps {
     question: string;
@@ -19,7 +19,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
         setShowAnswer(!showAnswer);
     }
 
-    const buttonGroups = () => {
+    const ButtonGroups: () => JSX.Element = () => {
         if (showAnswer) {
             return (
                 <>
@@ -56,7 +56,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
                 <Text size="sm" m="sm"> {showAnswer ? description : ""} </Text>
             </Stack>
             <Group justify="space-around" mt="md" mb="xs">
-                {buttonGroups()}
+                {ButtonGroups()}
             </Group>
         </Card>
     );
