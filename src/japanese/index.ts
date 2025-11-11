@@ -12,6 +12,7 @@ import { countriesEurope } from "./vocabulary/countries/countriesEurope.ts";
 import { time } from "./vocabulary/time.ts";
 import { genki_0 } from "./vocabulary/genki/genki_0.ts";
 import { genki_1 } from "./vocabulary/genki/genki_1.ts";
+import { genki_2 } from "./vocabulary/genki/genki_2.ts";
 import { sakura_1 } from "./vocabulary/sakura/sakura_1.ts";
 import { sakura_2 } from "./vocabulary/sakura/sakura_2.ts";
 import { sakura_3 } from "./vocabulary/sakura/sakura_3.ts";
@@ -86,6 +87,11 @@ export const availableWordBags: WordBag[] = [
         "id": "9ce8f1cc-8504-4639-867c-59458ab6e39f",
         "name": "Genki #1",
         "words": genki_1,
+    },
+    {
+        "id": "e13d547f-23a5-40c2-8742-b9c935471e6f",
+        "name": "Genki #2",
+        "words": genki_2,
     },
     {
         "id": "63ac3538-65e8-46a3-a248-a2a7560cc046",
