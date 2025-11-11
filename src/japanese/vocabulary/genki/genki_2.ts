@@ -2,9 +2,14 @@ import type { JapaneseWord } from "../../types";
 
 const genki_2: JapaneseWord[] = [
     {
-        en: "Which one (of two)",
-        pl: "Który (z dwóch)",
+        en: "Which one (of three or more)",
+        pl: "Który (z trzech lub więcej)",
         jp: "どれ"
+    },
+    {
+        en: "Which (of two)",
+        pl: "Który (z dwóch)",
+        jp: "どちら"
     },
     {
         en: "Who",
