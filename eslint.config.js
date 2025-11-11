@@ -19,6 +19,5 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
-  // TODO: Enable 'recommended-latest' after fixing all issues
-  // reactHooks.configs.flat['recommended-latest'],
+  reactHooks.configs.flat['recommended-latest'],
 ])
