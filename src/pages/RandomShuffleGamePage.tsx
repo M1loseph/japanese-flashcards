@@ -25,9 +25,22 @@ function shuffleArray<T>(array: T[]) {
 
 const RandomShuffleGamePage: React.FC = () => {
     const [currentFlashcard, setCurrentFlashcard] = useState(0)
-    const [flashCards, setFlashcards] = useState<FlashcardSession[]>([])
     const { selectedLanguage, selectedWordBags } = useContext(LessonContext);
     const [secondsElapsed, setSecondsElapsed] = useState(0)
+
+    const initialFlashcards = useMemo(() => {
+        const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId)?.words || []);
+        shuffleArray(allWords);
+        return allWords.map(japaneseVocabulary => {
+            return {
+                word: japaneseVocabulary,
+                answered: false,
+                correct: false
+            }
+        });
+    }, [selectedWordBags]);
+
+    const [flashCards, setFlashcards] = useState<FlashcardSession[]>(initialFlashcards)
 
     const navigate = useNavigate();
 
@@ -36,19 +49,6 @@ const RandomShuffleGamePage: React.FC = () => {
             navigate("/");
         }
     }, [selectedWordBags, navigate])
-
-    useEffect(() => {
-        const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId)?.words || []);
-        shuffleArray(allWords);
-        const questions = allWords.map(japaneseVocabulary => {
-            return {
-                word: japaneseVocabulary,
-                answered: false,
-                correct: false
-            }
-        });
-        setFlashcards(questions)
-    }, [selectedWordBags])
 
     useEffect(() => {
         const gameBeginTime = Date.now();

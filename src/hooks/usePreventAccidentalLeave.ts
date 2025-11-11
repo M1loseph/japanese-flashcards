@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useBlocker } from 'react-router';
 
 const beforeUnloadEvent = 'beforeunload';
@@ -6,15 +6,7 @@ const beforeUnloadEvent = 'beforeunload';
 // while `enabled` is true. It exposes UI state so the page can render a confirmation modal.
 export function usePreventAccidentalLeave(enabled: boolean) {
     const blocker = useBlocker(enabled);
-    const [showPrompt, setShowPrompt] = useState(false);
-
-    useEffect(() => {
-        if (blocker.state === "blocked") {
-            setShowPrompt(true);
-        } else if (blocker.state === "unblocked") {
-            setShowPrompt(false);
-        }
-    }, [blocker.state]);
+    const showPrompt = blocker.state === 'blocked';
 
     useEffect(() => {
         if (!enabled) return;
@@ -26,7 +18,6 @@ export function usePreventAccidentalLeave(enabled: boolean) {
     }, [enabled]);
 
     const confirmLeave = () => {
-        setShowPrompt(false);
         const proceed = blocker.proceed;
         if (proceed !== undefined) {
             proceed();
@@ -34,7 +25,6 @@ export function usePreventAccidentalLeave(enabled: boolean) {
     };
 
     const cancelLeave = () => {
-        setShowPrompt(false);
         const reset = blocker.reset;
         if (reset !== undefined) {
             reset();
