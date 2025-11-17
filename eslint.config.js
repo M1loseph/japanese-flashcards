@@ -20,7 +20,7 @@ export default defineConfig([
     },
     rules: {
       "comma-dangle": ["error", "always-multiline"]
-    }
+    },
   },
   reactHooks.configs.flat['recommended-latest'],
 ])
