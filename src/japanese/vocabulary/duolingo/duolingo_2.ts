@@ -4,197 +4,197 @@ const duolingo_2: JapaneseWord[] = [
     {
         en: "Here",
         pl: "Tutaj",
-        jp: "ここ"
+        jp: "ここ",
     },
     {
         en: "Where",
         pl: "Gdzie",
-        jp: "どこ"
+        jp: "どこ",
     },
     {
         en: "Hotel",
         pl: "Hotel",
-        jp: "ホテル"
+        jp: "ホテル",
     },
     {
         en: "Convenience store",
         pl: "Sklep spożywczy (mały)",
-        jp: "コンビニ"
+        jp: "コンビニ",
     },
     {
         en: "Department store",
         pl: "Dom towarowy",
-        jp: "デパート"
+        jp: "デパート",
     },
     {
         en: "Bus stop",
         pl: "Przystanek autobusowy",
-        jp: "バスてい"
+        jp: "バスてい",
     },
     {
         en: "There",
         pl: "Tam",
-        jp: "そこ"
+        jp: "そこ",
     },
     {
         en: "Train station",
         pl: "Dworzec kolejowy",
-        jp: "えき"
+        jp: "えき",
     },
     {
         en: "University",
         pl: "Uniwersytet",
-        jp: "だいがく"
+        jp: "だいがく",
     },
     {
         en: "I",
         pl: "Ja",
         jp: "私",
-        jp_pronunciation: "わたし"
+        jp_pronunciation: "わたし",
     },
     {
         en: "Hat",
         pl: "Kapelusz / Czapka",
-        jp: "ぼうし"
+        jp: "ぼうし",
     },
     {
         en: "Umbrella",
         pl: "Parasol",
-        jp: "かさ"
+        jp: "かさ",
     },
     {
         en: "Shoe",
         pl: "But",
-        jp: "くつ"
+        jp: "くつ",
     },
     {
         en: "Coat",
         pl: "Płaszcz",
-        jp: "コート"
+        jp: "コート",
     },
     {
         en: "Red",
         pl: "Czerwony",
-        jp: "あかい"
+        jp: "あかい",
     },
     {
         en: "White",
         pl: "Biały",
-        jp: "しろい"
+        jp: "しろい",
     },
     {
         en: "Cheerful",
         pl: "Radosny",
-        jp: "あかるい"
+        jp: "あかるい",
     },
     {
         en: "Funny",
         pl: "Zabawny",
-        jp: "おもしろい"
+        jp: "おもしろい",
     },
     {
         en: "Apple",
         pl: "Jabłko",
-        jp: "りんご"
+        jp: "りんご",
     },
     {
         en: "Cute",
         pl: "Słodki / Uroczy",
-        jp: "かわいい"
+        jp: "かわいい",
     },
     {
         en: "Thank you",
         pl: "Dziękuję",
-        jp: "ありがとう"
+        jp: "ありがとう",
     },
     {
         en: "Thanks",
         pl: "Dzięki",
-        jp: "どうも"
+        jp: "どうも",
     },
     {
         en: "Thank you very much",
         pl: "Bardzo dziękuję",
-        jp: "ありがとうございます"
+        jp: "ありがとうございます",
     },
     {
         en: "Map",
         pl: "Mapa",
-        jp: "ちず"
+        jp: "ちず",
     },
     {
         en: "Ticket",
         pl: "Bilet",
-        jp: "きっぷ"
+        jp: "きっぷ",
     },
     {
         en: "Subway",
         pl: "Metro",
-        jp: "ちかてつ"
+        jp: "ちかてつ",
     },
     {
         en: "Airport",
         pl: "Lotnisko",
-        jp: "くうこう"
+        jp: "くうこう",
     },
     {
         en: "Isn't",
         pl: "Nie jest",
-        jp: "じゃないです"
+        jp: "じゃないです",
     },
     {
         en: "Is",
         pl: "Jest",
-        jp: "です"
+        jp: "です",
     },
 
     {
         en: "Passport",
         pl: "Paszport",
-        jp: "パスポート"
+        jp: "パスポート",
     },
     {
         en: "Smartphone",
         pl: "Smartfon",
-        jp: "スマホ"
+        jp: "スマホ",
     },
     {
         en: "Bag",
         pl: "Torba",
-        jp: "かばん"
+        jp: "かばん",
     },
     {
         en: "Welcome",
         pl: "Witam",
-        jp: "ようこそ"
+        jp: "ようこそ",
     },
     {
         en: "Comes from ...",
         pl: "Pochodzi z ...",
-        jp: "...しゅっしん"
+        jp: "...しゅっしん",
     },
     {
         en: "What is your origin?",
         pl: "Skąd pochodzisz?",
-        jp: "しゅっしんはどこですか？"
+        jp: "しゅっしんはどこですか？",
     },
     {
         en: "Also",
         pl: "Też",
-        jp: "も"
+        jp: "も",
     },
     {
         en: "Tokyo",
         pl: "Tokio",
         jp: "東京",
-        jp_pronunciation: "とうきょう"
+        jp_pronunciation: "とうきょう",
     },
     {
         en: "Kyoto",
         pl: "Kioto",
         jp: "京都",
-        jp_pronunciation: "きょうと"
-    }
+        jp_pronunciation: "きょうと",
+    },
 ]
 
 export { duolingo_2 }

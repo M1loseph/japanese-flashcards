@@ -5,145 +5,145 @@ const sakura_3: JapaneseWord[] = [
     {
         en: "Meat",
         pl: "Mięso",
-        jp: "にく"
+        jp: "にく",
     },
     {
         en: "Fish",
         pl: "Ryba",
-        jp: "さかな"
+        jp: "さかな",
     },
     {
         en: "Dog",
         pl: "Pies",
-        jp: "いぬ"
+        jp: "いぬ",
     },
     {
         en: "Cat",
         pl: "Kot",
-        jp: "ねこ"
+        jp: "ねこ",
     },
     {
         en: "Chopsticks",
         pl: "Pałeczki",
-        jp: "はし"
+        jp: "はし",
     },
     {
         en: "Ship",
         pl: "Statek",
-        jp: "ふね"
+        jp: "ふね",
     },
     {
         en: "Person",
         pl: "Osoba",
-        jp: "ひと"
+        jp: "ひと",
     },
     {
         en: "Flower",
         pl: "Kwiat",
-        jp: "はな"
+        jp: "はな",
     },
     {
         en: "And",
         pl: "I / Oraz",
-        jp: "と"
+        jp: "と",
     },
     {
         en: "Also",
         pl: "Też / Również",
-        jp: "も"
+        jp: "も",
     },
     {
         en: "Profession / Job",
         pl: "Zawód",
-        jp: "しごと"
+        jp: "しごと",
     },
     {
         en: "What's your job?",
         pl: "Jaki jest twój zawód?",
-        jp: "おしごとは"
+        jp: "おしごとは",
     },
     {
         en: "Notebook",
         pl: "Notatnik",
-        jp: "ノート"
+        jp: "ノート",
     },
     {
         en: "Book",
         pl: "Książka",
         jp: "本",
-        jp_pronunciation: "ほん"
+        jp_pronunciation: "ほん",
     },
     {
         en: "Newspaper",
         pl: "Gazeta",
-        jp: "しんぶん"
+        jp: "しんぶん",
     },
     {
         en: "Clock",
         pl: "Zegar",
-        jp: "とけい"
+        jp: "とけい",
     },
     {
         en: "Bag",
         pl: "Torba",
-        jp: "かばん"
+        jp: "かばん",
     },
     {
         en: "Table",
         pl: "Stół",
-        jp: "つくえ"
+        jp: "つくえ",
     },
     {
         en: "Chair",
         pl: "Krzesło",
-        jp: "いす"
+        jp: "いす",
     },
     {
         en: "Key",
         pl: "Klucz",
-        jp: "かぎ"
+        jp: "かぎ",
     },
     {
         en: "Car",
         pl: "Samochód",
-        jp: "くるま"
+        jp: "くるま",
     },
     {
         en: "What is this?",
         pl: "Co to jest?",
-        jp: "これはなんですか"
+        jp: "これはなんですか",
     },
     {
         en: "Pen",
         pl: "Długopis",
-        jp: "ペン"
+        jp: "ペン",
     },
     {
         en: "This (close to me)",
         pl: "To (blisko mnie)",
-        jp: "これ"
+        jp: "これ",
     },
     {
         en: "That (close to you)",
         pl: "Tamto (blisko ciebie)",
-        jp: "それ"
+        jp: "それ",
     },
     {
         en: "That (far from us)",
         pl: "Tamto (daleko od nas)",
-        jp: "あれ"
+        jp: "あれ",
     },
     {
         en: "Headphones",
         pl: "Słuchawki",
-        jp: "ヘッドホン"
+        jp: "ヘッドホン",
     },
     {
         en: "I know Japanese. I also know English.",
         pl: "Znam japoński. Znam też angielski.",
         jp: "わたしはにほんごができます。わたしはえいごもできます。",
-        jp_description: "Pay attention that 'mo' is used after 'eigo', not after 'watashi'."
-    }
+        jp_description: "Pay attention that 'mo' is used after 'eigo', not after 'watashi'.",
+    },
 ];
 
 export { sakura_3 }

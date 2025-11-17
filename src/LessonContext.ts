@@ -19,6 +19,6 @@ export const LessonContext = createContext<LessonContextType>(
         },
         selectedWordBags: new Set(),
         setSelectedWordBags: () => {
-        }
-    }
+        },
+    },
 )

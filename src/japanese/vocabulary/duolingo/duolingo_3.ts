@@ -4,133 +4,133 @@ const duolingo_3: JapaneseWord[] = [
     {
         en: "Live / Reside",
         pl: "Żyć / Mieszkać",
-        jp: "すんでいます"
+        jp: "すんでいます",
     },
     {
         en: "(to live) in",
         pl: "(mieszkać) w",
-        jp: "に"
+        jp: "に",
     },
     {
         en: "What's your name?",
         pl: "Jak masz na imię?",
-        jp: "おなまえは？"
+        jp: "おなまえは？",
     },
     {
         en: "City",
         pl: "Miasto",
-        jp: "とし"
+        jp: "とし",
     },
     {
         en: "Lively / Energetic / Busy",
         pl: "Żywy / Energiczny / Ruchliwy",
-        jp: "にぎやか"
+        jp: "にぎやか",
     },
     {
         en: "Quiet / Peaceful",
         pl: "Cichy / Spokojny",
-        jp: "しずか"
+        jp: "しずか",
     },
     {
         en: "Clean",
         pl: "Czysty",
-        jp: "きれい"
+        jp: "きれい",
     },
     {
         en: "Town",
         pl: "Miasteczko",
-        jp: "まち"
+        jp: "まち",
     },
     {
         en: "Very",
         pl: "Bardzo",
-        jp: "とても"
+        jp: "とても",
     },
     {
         en: "Loud",
         pl: "Głośny",
-        jp: "うるさい"
+        jp: "うるさい",
     },
     {
         en: "How is...",
         pl: "Jakie jest...",
-        jp: "どうですか"
+        jp: "どうですか",
     },
     {
         en: "... years old",
         pl: "... lat",
-        jp: "さい"
+        jp: "さい",
     },
     {
         en: "Famous",
         pl: "Sławny",
-        jp: "ゆうめい"
+        jp: "ゆうめい",
     },
     {
         en: "Wife",
         pl: "Żona",
-        jp: "つま"
+        jp: "つま",
     },
     {
         en: "Husband",
         pl: "Mąż",
-        jp: "おっと"
+        jp: "おっと",
     },
     {
         en: "Family",
         pl: "Rodzina",
-        jp: "かぞく"
+        jp: "かぞく",
     },
     {
         en: "Busy",
         pl: "Zajęty",
-        jp: "いそがしい"
+        jp: "いそがしい",
     },
     {
         en: "Engineer",
         pl: "Inżynier",
-        jp: "エンジニア"
+        jp: "エンジニア",
     },
     {
         en: "Funny",
         pl: "Zabawny",
-        jp: "おもしろい"
+        jp: "おもしろい",
     },
     {
         en: "Company employee",
         pl: "Pracownik firmy",
-        jp: "かいしゃいん"
+        jp: "かいしゃいん",
     },
     {
         en: "Nurse",
         pl: "Pielęgniarka",
-        jp: "かんごし"
+        jp: "かんごし",
     },
     {
         en: "Student (university)",
         pl: "Student (uniwersytet)",
-        jp: "だいがくせい"
+        jp: "だいがくせい",
     },
     {
         en: "Fashionable / Trendy",
         pl: "Modny / Trendy",
-        jp: "おしゃれ"
+        jp: "おしゃれ",
     },
     {
         en: "Smart",
         pl: "Mądry",
-        jp: "あたまがいい"
+        jp: "あたまがいい",
     },
     {
         en: "Welcome",
         pl: "Witamy",
-        jp: "ようこそ"
+        jp: "ようこそ",
     },
     {
         en: "Anime",
         pl: "Anime",
-        jp: "アニメ"
-    }
+        jp: "アニメ",
+    },
 ]
 
 export { duolingo_3 };

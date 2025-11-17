@@ -4,193 +4,193 @@ const genki_2: JapaneseWord[] = [
     {
         en: "Which one (of three or more)",
         pl: "Który (z trzech lub więcej)",
-        jp: "どれ"
+        jp: "どれ",
     },
     {
         en: "Which (of two)",
         pl: "Który (z dwóch)",
-        jp: "どちら"
+        jp: "どちら",
     },
     {
         en: "Who",
         pl: "Kto",
-        jp: "だれ"
+        jp: "だれ",
     },
     {
         en: "Delicious",
         pl: "Pyszny",
-        jp: "おいしい"
+        jp: "おいしい",
     },
     {
         en: "Fish",
         pl: "Ryba",
-        jp: "さかな"
+        jp: "さかな",
     },
     {
         en: "Pork cutlet",
         pl: "Kotlet schabowy",
-        jp: "とんかつ"
+        jp: "とんかつ",
     },
     {
         en: "Meat",
         pl: "Mięso",
-        jp: "にく"
+        jp: "にく",
     },
     {
         en: "Menu",
         pl: "Menu",
-        jp: "メニュー"
+        jp: "メニュー",
     },
     {
         en: "Vegetables",
         pl: "Warzywa",
-        jp: "やさい"
+        jp: "やさい",
     },
     {
         en: "Umbrella",
         pl: "Parasol",
-        jp: "かさ"
+        jp: "かさ",
     },
     {
         en: "Bag",
         pl: "Torba",
-        jp: "かばん"
+        jp: "かばん",
     },
     {
         en: "Shoe",
         pl: "But",
-        jp: "くつ"
+        jp: "くつ",
     },
     {
         en: "Wallet",
         pl: "Portfel",
-        jp: "さいふ"
+        jp: "さいふ",
     },
     {
         en: "Jeans",
         pl: "Dżinsy",
-        jp: "ジーンズ"
+        jp: "ジーンズ",
     },
     {
         en: "Bicycle",
         pl: "Rower",
-        jp: "じてんしゃ"
+        jp: "じてんしゃ",
     },
     {
         en: "Newspaper",
         pl: "Gazeta",
-        jp: "しんぶん"
+        jp: "しんぶん",
     },
     {
         en: "Smartphone",
         pl: "Smartfon",
-        jp: "スマホ"
+        jp: "スマホ",
     },
     {
         en: "T-shirt",
         pl: "Koszulka",
-        jp: "Tシャツ"
+        jp: "Tシャツ",
     },
     {
         en: "Watch / Clock",
         pl: "Zegarek / Zegar",
-        jp: "とけい"
+        jp: "とけい",
     },
     {
         en: "Notebook",
         pl: "Notatnik",
-        jp: "ノート"
+        jp: "ノート",
     },
     {
         en: "Pen",
         pl: "Długopis",
-        jp: "ペン"
+        jp: "ペン",
     },
     {
         en: "Hat / Cap",
         pl: "Kapelusz / Czapka",
-        jp: "ぼうし"
+        jp: "ぼうし",
     },
     {
         en: "Book",
         pl: "Książka",
-        jp: "ほん"
+        jp: "ほん",
     },
     {
         en: "Bank",
         pl: "Bank",
-        jp: "ぎんこう"
+        jp: "ぎんこう",
     },
     {
         en: "Convenience store",
         pl: "Sklep całodobowy",
-        jp: "コンビニ"
+        jp: "コンビニ",
     },
     {
         en: "Toilet",
         pl: "Toaleta",
-        jp: "トイレ"
+        jp: "トイレ",
     },
     {
         en: "Library",
         pl: "Biblioteka",
-        jp: "としょかん"
+        jp: "としょかん",
     },
     {
         en: "Post office",
         pl: "Poczta",
-        jp: "ゆうびんきょく"
+        jp: "ゆうびんきょく",
     },
     {
         en: "Britain",
         pl: "Wielka Brytania",
-        jp: "イギリス"
+        jp: "イギリス",
     },
     {
         en: "Korea",
         pl: "Korea",
-        jp: "かんこく"
+        jp: "かんこく",
     },
     {
         en: "China",
         pl: "Chiny",
-        jp: "ちゅうごく"
+        jp: "ちゅうごく",
     },
     {
         en: "English",
         pl: "Język angielski",
-        jp: "えいご"
+        jp: "えいご",
     },
     {
         en: "Economics",
         pl: "Ekonomia",
-        jp: "けいざい"
+        jp: "けいざい",
     },
     {
         en: "How much",
         pl: "Ile (kosztuje)?",
-        jp: "いくら"
+        jp: "いくら",
     },
     {
         en: "Yen",
         pl: "Jen",
-        jp: "えん"
+        jp: "えん",
     },
     {
         en: "Welcome (said to customers)",
         pl: "Witamy (mówione do klientów)",
-        jp: "いらっしゃいませ"
+        jp: "いらっしゃいませ",
     },
     {
         en: "Please / Here you are (when giving something)",
         pl: "Proszę / Proszę bardzo (gdy coś dajemy)",
-        jp: "どうぞ"
+        jp: "どうぞ",
     },
     {
         en: "Thanks (casual)",
         pl: "Dziękuję (pot.)",
-        jp: "どうも"
-    }
+        jp: "どうも",
+    },
 ]
 
 export { genki_2 }

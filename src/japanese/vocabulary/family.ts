@@ -176,7 +176,7 @@ const family: JapaneseWord[] = [
         pl: "Córka (forma honoryfikatywna)",
         jp: "娘さん",
         jp_pronunciation: "むすめさん",
-    }
+    },
 ]
 
 export { family }

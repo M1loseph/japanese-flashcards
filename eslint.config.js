@@ -18,6 +18,9 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      "comma-dangle": ["error", "always-multiline"]
+    }
   },
   reactHooks.configs.flat['recommended-latest'],
 ])

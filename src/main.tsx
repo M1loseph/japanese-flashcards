@@ -13,13 +13,13 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <MainPage />
+                element: <MainPage />,
             },
             {
                 path: "/game/shuffle",
-                element: <RandomShuffleGamePage />
-            }
-        ]
+                element: <RandomShuffleGamePage />,
+            },
+        ],
     },
 ]);
 
