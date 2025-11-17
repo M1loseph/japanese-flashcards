@@ -5,123 +5,123 @@ const sakura_4: JapaneseWord[] = [
     {
         en: "Living room",
         pl: "Salon",
-        jp: "いま"
+        jp: "いま",
     },
     {
         en: "Bugs / Insects",
         pl: "Owady",
-        jp: "むし"
+        jp: "むし",
     },
     {
         en: "Sea",
         pl: "Morze",
-        jp: "うみ"
+        jp: "うみ",
     },
     {
         en: "Paper",
         pl: "Papier",
-        jp: "かみ"
+        jp: "かみ",
     },
     {
         en: "Snow",
         pl: "Śnieg",
-        jp: "ゆき"
+        jp: "ゆき",
     },
     {
         en: "Mountain",
         pl: "Góra",
-        jp: "やま"
+        jp: "やま",
     },
     {
         en: "Eye",
         pl: "Oko",
-        jp: "め"
+        jp: "め",
     },
     {
         en: "Shopping",
         pl: "Zakupy",
-        jp: "かいもの"
+        jp: "かいもの",
     },
     {
         en: "Winter",
         pl: "Zima",
-        jp: "ふゆ"
+        jp: "ふゆ",
     },
     {
         en: "Shoes",
         pl: "Buty",
-        jp: "くつ"
+        jp: "くつ",
     },
     {
         en: "Hat / Cap",
         pl: "Kapelusz / Czapka",
-        jp: "ぼうし"
+        jp: "ぼうし",
     },
     {
         en: "Bike",
         pl: "Rower",
-        jp: "じてんしゃ"
+        jp: "じてんしゃ",
     },
     {
         en: "T-shirt",
         pl: "Koszulka",
-        jp: "Tシャツ"
+        jp: "Tシャツ",
     },
     {
         en: "Employee (of a specific company)",
         pl: "Pracownik (konkretnej firmy)",
-        jp: "...のしゃいん"
+        jp: "...のしゃいん",
     },
     {
         en: "TOYOTA employee",
         pl: "Pracownik TOYOTY",
-        jp: "トヨタのしゃいん"
+        jp: "トヨタのしゃいん",
     },
     {
         en: "Question",
         pl: "Pytanie",
-        jp: "しつもん"
+        jp: "しつもん",
     },
     {
         en: "Answer",
         pl: "Odpowiedź",
-        jp: "こたえ"
+        jp: "こたえ",
     },
     {
         en: "Number",
         pl: "Liczba",
-        jp: "すうじ"
+        jp: "すうじ",
     },
     {
         en: "Plus",
         pl: "Dodać",
-        jp: "たす"
+        jp: "たす",
     },
     {
         en: "Minus",
         pl: "Odjąć",
-        jp: "ひく"
+        jp: "ひく",
     },
     {
         en: "Two plus two equals four.",
         pl: "Dwa dodać dwa równa się cztery.",
-        jp: "にたすにはよん"
+        jp: "にたすにはよん",
     },
     {
         en: "Professor",
         pl: "Profesor",
-        jp: "きょうじゅ"
+        jp: "きょうじゅ",
     },
     {
         en: "C.E.O.",
         pl: "Prezes (firma)",
-        jp: "しゃちょう"
+        jp: "しゃちょう",
     },
     {
         en: "Designer",
         pl: "Projektant",
-        jp: "デザイナー"
-    }
+        jp: "デザイナー",
+    },
 ];
 
 export { sakura_4 }

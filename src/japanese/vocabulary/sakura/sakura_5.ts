@@ -5,213 +5,213 @@ const sakura_5: JapaneseWord[] = [
     {
         en: "Whose",
         pl: "Czyj",
-        jp: "だれの"
+        jp: "だれの",
     },
     {
         en: "Whose bike is this?",
         pl: "Czyj to rower?",
-        jp: "これは だれの じてんしゃですか。"
+        jp: "これは だれの じてんしゃですか。",
     },
     {
         en: "Cherry / Cherry blossom",
         pl: "Wiśnia / Kwiat wiśni",
-        jp: "さくら"
+        jp: "さくら",
     },
     {
         en: "Medicine / Drug",
         pl: "Lekarstwo / Lek",
-        jp: "くすり"
+        jp: "くすり",
     },
     {
         en: "Car",
         pl: "Samochód",
-        jp: "くるま"
+        jp: "くるま",
     },
     {
         en: "History",
         pl: "Historia",
-        jp: "れきし"
+        jp: "れきし",
     },
     {
         en: "White",
         pl: "Biały",
-        jp: "しろい"
+        jp: "しろい",
     },
     {
         en: "Black",
         pl: "Czarny",
-        jp: "くろい"
+        jp: "くろい",
     },
     {
         en: "River",
         pl: "Rzeka",
-        jp: "かわ"
+        jp: "かわ",
     },
     {
         en: "Mandarin",
         pl: "Mandarynka",
-        jp: "みかん"
+        jp: "みかん",
     },
     {
         en: "How old are you? (normal)",
         pl: "Ile masz lat? (normalnie)",
-        jp: "なんさいですか。"
+        jp: "なんさいですか。",
     },
     {
         en: "How old are you? (polite)",
         pl: "Ile masz lat? (grzecznie)",
-        jp: "おいくつですか。"
+        jp: "おいくつですか。",
     },
     {
         en: "I don't have an older sister.",
         pl: "Nie mam starszej siostry.",
-        jp: "あねはいません。"
+        jp: "あねはいません。",
     },
     {
         en: "Phone number",
         pl: "Numer telefonu",
-        jp: "でんわばんごう"
+        jp: "でんわばんごう",
     },
     {
         en: "One year old",
         pl: "Jeden rok (wiek)",
-        jp: "いっさい"
+        jp: "いっさい",
     },
     {
         en: "Two years old",
         pl: "Dwa lata (wiek)",
-        jp: "にさい"
+        jp: "にさい",
     },
     {
         en: "Three years old",
         pl: "Trzy lata (wiek)",
-        jp: "さんさい"
+        jp: "さんさい",
     },
     {
         en: "Four years old",
         pl: "Cztery lata (wiek)",
-        jp: "よんさい"
+        jp: "よんさい",
     },
     {
         en: "Five years old",
         pl: "Pięć lat (wiek)",
-        jp: "ごさい"
+        jp: "ごさい",
     },
     {
         en: "Six years old",
         pl: "Sześć lat (wiek)",
-        jp: "ろくさい"
+        jp: "ろくさい",
     },
     {
         en: "Seven years old",
         pl: "Siedem lat (wiek)",
-        jp: "ななさい"
+        jp: "ななさい",
     },
     {
         en: "Eight years old",
         pl: "Osiem lat (wiek)",
-        jp: "はっさい"
+        jp: "はっさい",
     },
     {
         en: "Nine years old",
         pl: "Dziewięć lat (wiek)",
-        jp: "きゅうさい"
+        jp: "きゅうさい",
     },
     {
         en: "Ten years old",
         pl: "Dziesięć lat (wiek)",
-        jp: "じゅっさい"
+        jp: "じゅっさい",
     },
     {
         en: "Eleven years old",
         pl: "Jedenaście lat (wiek)",
-        jp: "じゅういっさい"
+        jp: "じゅういっさい",
     },
     {
         en: "Seventeen years old",
         pl: "Siedemnaście lat (wiek)",
-        jp: "じゅうななさい"
+        jp: "じゅうななさい",
     },
     {
         en: "Nineteen years old",
         pl: "Dziewiętnaście lat (wiek)",
-        jp: "じゅうきゅうさい"
+        jp: "じゅうきゅうさい",
     },
     {
         en: "Twenty years old",
         pl: "Dwadzieścia lat (wiek)",
-        jp: "はたち"
+        jp: "はたち",
     },
     {
         en: "Twenty eight years old",
         pl: "Dwadzieścia osiem lat (wiek)",
-        jp: "にじゅうはっさい"
+        jp: "にじゅうはっさい",
     },
     {
         en: "Thirty years old",
         pl: "Trzydzieści lat (wiek)",
-        jp: "さんじゅっさい"
+        jp: "さんじゅっさい",
     },
     {
         en: "One person",
         pl: "Jedna osoba",
-        jp: "ひとり"
+        jp: "ひとり",
     },
     {
         en: "Two people",
         pl: "Dwie osoby",
-        jp: "ふたり"
+        jp: "ふたり",
     },
     {
         en: "Three people",
         pl: "Trzy osoby",
-        jp: "さんにん"
+        jp: "さんにん",
     },
     {
         en: "Four people",
         pl: "Cztery osoby",
-        jp: "よにん"
+        jp: "よにん",
     },
     {
         en: "Five people",
         pl: "Pięć osób",
-        jp: "ごにん"
+        jp: "ごにん",
     },
     {
         en: "Six people",
         pl: "Sześć osób",
-        jp: "ろくにん"
+        jp: "ろくにん",
     },
     {
         en: "Seven people",
         pl: "Siedem osób",
-        jp: "ななにん"
+        jp: "ななにん",
     },
     {
         en: "Eight people",
         pl: "Osiem osób",
-        jp: "はちにん"
+        jp: "はちにん",
     },
     {
         en: "Nine people",
         pl: "Dziewięć osób",
-        jp: "きゅうにん"
+        jp: "きゅうにん",
     },
     {
         en: "Ten people",
         pl: "Dziesięć osób",
-        jp: "じゅうにん"
+        jp: "じゅうにん",
     },
     {
         en: "Eleven people",
         pl: "Jedenaście osób",
-        jp: "じゅういちにん"
+        jp: "じゅういちにん",
     },
     {
         en: "Twelve people",
         pl: "Dwanaście osób",
-        jp: "じゅうににん"
-    }
+        jp: "じゅうににん",
+    },
 ];
 
 export { sakura_5 }

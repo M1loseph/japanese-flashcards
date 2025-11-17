@@ -243,7 +243,7 @@ const genki_1: JapaneseWord[] = [
         en: "Lawyer",
         pl: "Prawnik",
         jp: "べんごし",
-    }
+    },
 ]
 
 export { genki_1 }

@@ -5,259 +5,259 @@ const duolingo_5: JapaneseWord[] = [
         en: "I don't really like...",
         pl: "Nie bardzo lubię...",
         jp: "はちょっと…",
-        jp_description: "Used as a subtle way to say you don't like something."
+        jp_description: "Used as a subtle way to say you don't like something.",
     },
     {
         en: "New",
         pl: "Nowy",
         jp: "新しい",
-        jp_pronunciation: "あたらしい"
+        jp_pronunciation: "あたらしい",
     },
     {
         en: "Skirt",
         pl: "Spódnica",
-        jp: "スカート"
+        jp: "スカート",
     },
     {
         en: "Want",
         pl: "Chcieć",
-        jp: "ほしい"
+        jp: "ほしい",
     },
     {
         en: "I want a new skirt.",
         pl: "Chcę nową spódnicę.",
-        jp: "あたらしいスカートがほしいです。"
+        jp: "あたらしいスカートがほしいです。",
     },
     {
         en: "Jacket",
         pl: "Kurtka",
-        jp: "ジャケット"
+        jp: "ジャケット",
     },
     {
         en: "Don't want",
         pl: "Nie chcieć",
-        jp: "ほしくない"
+        jp: "ほしくない",
     },
     {
         en: "I don't want an old jacket.",
         pl: "Nie chcę starej kurtki.",
         jp: "古いジャケットはほしくないです",
-        jp_pronunciation: "ふるいジャケットはほしくないです"
+        jp_pronunciation: "ふるいジャケットはほしくないです",
     },
     {
         en: "T-shirt",
         pl: "Koszulka",
-        jp: "Tシャツ"
+        jp: "Tシャツ",
     },
     {
         en: "Dress",
         pl: "Sukienka",
-        jp: "ドレス"
+        jp: "ドレス",
     },
     {
         en: "Lovely",
         pl: "Śliczny",
-        jp: "すてき"
+        jp: "すてき",
     },
     {
         en: "Good",
         pl: "Dobry",
-        jp: "いい"
+        jp: "いい",
     },
     {
         en: "Necktie",
         pl: "Krawat",
-        jp: "ネクタイ"
+        jp: "ネクタイ",
     },
     {
         en: "Cheap",
         pl: "Tani",
-        jp: "やすい"
+        jp: "やすい",
     },
     {
         en: "How much is this?",
         pl: "Ile to kosztuje?",
-        jp: "これはいくらですか？"
+        jp: "これはいくらですか？",
     },
     {
         en: "Yen",
         pl: "Jen",
-        jp: "えん"
+        jp: "えん",
     },
     {
         en: "This umbrella costs 500 yen.",
         pl: "Ten parasol kosztuje 500 jenów.",
-        jp: "このかさは五百えんです。"
+        jp: "このかさは五百えんです。",
     },
     {
         en: "Black",
         pl: "Czarny",
-        jp: "くろい"
+        jp: "くろい",
     },
     {
         en: "Shop",
         pl: "Sklep",
-        jp: "みせ"
+        jp: "みせ",
     },
     {
         en: "Expensive",
         pl: "Drogi",
-        jp: "たかい"
+        jp: "たかい",
     },
     {
         en: "..., isn't it?",
         pl: "..., prawda?",
-        jp: "ね"
+        jp: "ね",
     },
     {
         en: "Udon",
         pl: "Udon",
-        jp: "うどん"
+        jp: "うどん",
     },
     {
         en: "Single",
         pl: "Pojedynczy",
-        jp: "ひとつ"
+        jp: "ひとつ",
     },
     {
         en: "Double",
         pl: "Podwójny",
-        jp: "ふたつ"
+        jp: "ふたつ",
     },
     {
         en: "Triplet",
         pl: "Potrójny",
-        jp: "みっつ"
+        jp: "みっつ",
     },
     {
         en: "Quartet",
         pl: "Czwórka",
-        jp: "よっつ"
+        jp: "よっつ",
     },
     {
         en: "Miso soup",
         pl: "Zupa miso",
-        jp: "みそしる"
+        jp: "みそしる",
     },
     {
         en: "Restaurant",
         pl: "Restauracja",
-        jp: "レストラン"
+        jp: "レストラン",
     },
     {
         en: "Tempura",
         pl: "Tempura",
-        jp: "てんぷら"
+        jp: "てんぷら",
     },
     {
         en: "Black tea please.",
         pl: "Poproszę czarną herbatę.",
-        jp: "こうちゃをください。"
+        jp: "こうちゃをください。",
     },
     {
         en: "Water",
         pl: "Woda",
         jp: "水",
-        jp_pronunciation: "みず"
+        jp_pronunciation: "みず",
     },
     {
         en: "Well then...",
         pl: "Cóż, w takim razie ...",
-        jp: "じゃあ…"
+        jp: "じゃあ…",
     },
     {
         en: "Onigiri",
         pl: "Onigiri",
-        jp: "おにぎり"
+        jp: "おにぎり",
     },
     {
         en: "Big",
         pl: "Duży",
         jp: "大きい",
-        jp_pronunciation: "おおきい"
+        jp_pronunciation: "おおきい",
     },
     {
         en: "Salad",
         pl: "Sałatka",
-        jp: "サラダ"
+        jp: "サラダ",
     },
     {
         en: "Soba",
         pl: "Soba",
         jp: "そば",
-        jp_description: "Buckwheat noodles"
+        jp_description: "Buckwheat noodles",
     },
     {
         en: "How's the miso soup?",
         pl: "Jak jest zupa miso?",
-        jp: "みそしるはどうですか？"
+        jp: "みそしるはどうですか？",
     },
     {
         en: "Small",
         pl: "Mały",
         jp: "小さい",
-        jp_pronunciation: "ちいさい"
+        jp_pronunciation: "ちいさい",
     },
     {
         en: "Black tea",
         pl: "Czarna herbata",
-        jp: "こうちゃ"
+        jp: "こうちゃ",
     },
     {
         en: "Ice cream",
         pl: "Lody",
-        jp: "アイスクリーム"
+        jp: "アイスクリーム",
     },
     {
         en: "Iced coffee",
         pl: "Kawa mrożona",
-        jp: "アイスコーヒー"
+        jp: "アイスコーヒー",
     },
     {
         en: "A little",
         pl: "Trochę",
-        jp: "すこし"
+        jp: "すこし",
     },
     {
         en: "Swim",
         pl: "Pływać",
-        jp: "およぎます"
+        jp: "およぎます",
     },
     {
         en: "Yoga",
         pl: "Joga",
-        jp: "ヨガ"
+        jp: "ヨガ",
     },
     {
         en: "I do yoga every day.",
         pl: "Codziennie uprawiam jogę.",
-        jp: "まいにちヨガをします。"
+        jp: "まいにちヨガをします。",
     },
     {
         en: "With mr Ken",
         pl: "Z panem Kenem",
-        jp: "けんさんと"
+        jp: "けんさんと",
     },
     {
         en: "By myself",
         pl: "Samemu",
-        jp: "ひとりで"
+        jp: "ひとりで",
     },
     {
         en: "Weekend",
         pl: "Weekend",
-        jp: "しゅうまつ"
+        jp: "しゅうまつ",
     },
     {
         en: "TV drama",
         pl: "Serial telewizyjny",
-        jp: "ドラマ"
+        jp: "ドラマ",
     },
     {
         en: "Hang out",
         pl: "Spędzać czas",
-        jp: "あそびます"
-    }
+        jp: "あそびます",
+    },
 ]
 
 export { duolingo_5 };

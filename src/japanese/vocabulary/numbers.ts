@@ -144,7 +144,7 @@ const numbers: JapaneseWord[] = [
         pl: "Dziesięć tysięcy",
         jp: "万",
         jp_pronunciation: "まん",
-    }
+    },
 ];
 
 export { numbers };

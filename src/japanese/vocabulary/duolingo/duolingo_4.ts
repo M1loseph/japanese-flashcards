@@ -5,210 +5,210 @@ const duolingo_4: JapaneseWord[] = [
         en: "To watch",
         pl: "Oglądać",
         jp: "見ます",
-        jp_pronunciation: "みます"
+        jp_pronunciation: "みます",
     },
     {
         en: "Soccer",
         pl: "Piłka nożna",
-        jp: "サッカー"
+        jp: "サッカー",
     },
     {
         en: "Do",
         pl: "Robić",
-        jp: "します"
+        jp: "します",
     },
     {
         en: "Basketball",
         pl: "Koszykówka",
-        jp: "バスケットボール"
+        jp: "バスケットボール",
     },
     {
         en: "Often",
         pl: "Często",
-        jp: "よく"
+        jp: "よく",
     },
     {
         en: "JPop",
         pl: "Japoński pop",
-        jp: "Jポップ"
+        jp: "Jポップ",
     },
     {
         en: "To listen / To hear",
         pl: "Słuchać / Słyszeć",
-        jp: "ききます"
+        jp: "ききます",
     },
     {
         en: "Rock music",
         pl: "Muzyka rockowa",
-        jp: "ロック"
+        jp: "ロック",
     },
     {
         en: "TV",
         pl: "Telewizja",
-        jp: "テレビ"
+        jp: "テレビ",
     },
     {
         en: "Movie",
         pl: "Film",
-        jp: "えいが"
+        jp: "えいが",
     },
     {
         en: "Sometimes",
         pl: "Czasami",
-        jp: "ときどき"
+        jp: "ときどき",
     },
     {
         en: "Music",
         pl: "Muzyka",
-        jp: "おんがく"
+        jp: "おんがく",
     },
     {
         en: "Jazz",
         pl: "Jazz",
-        jp: "ジャズ"
+        jp: "ジャズ",
     },
     {
         en: "Book",
         pl: "Książka",
         jp: "本",
-        jp_pronunciation: "ほん"
+        jp_pronunciation: "ほん",
     },
     {
         en: "To read",
         pl: "Czytać",
         jp: "読みます",
-        jp_pronunciation: "よみます"
+        jp_pronunciation: "よみます",
     },
     {
         en: "News",
         pl: "Wiadomości",
-        jp: "ニュース"
+        jp: "ニュース",
     },
     {
         en: "Magazine",
         pl: "Czasopismo",
-        jp: "ざっし"
+        jp: "ざっし",
     },
     {
         en: "Manga",
         pl: "Manga",
-        jp: "まんが"
+        jp: "まんが",
     },
     {
         en: "Baseball",
         pl: "Baseball",
-        jp: "やきゅう"
+        jp: "やきゅう",
     },
     {
         en: "Eat",
         pl: "Jeść",
         jp: "食べます",
-        jp_pronunciation: "たべます"
+        jp_pronunciation: "たべます",
     },
     {
         en: "Every morning",
         pl: "Każdego poranka",
-        jp: "まいあさ"
+        jp: "まいあさ",
     },
     {
         en: "Drink",
         pl: "Pić",
-        jp: "のみます"
+        jp: "のみます",
     },
     {
         en: "Hour",
         pl: "Godzina",
         jp: "時",
-        jp_pronunciation: "じ"
+        jp_pronunciation: "じ",
     },
     {
         en: "Dinner",
         pl: "Kolacja",
-        jp: "ばんごはん"
+        jp: "ばんごはん",
     },
     {
         en: "What",
         pl: "Co",
         jp: "何",
-        jp_pronunciation: "なに"
+        jp_pronunciation: "なに",
     },
     {
         en: "Bread",
         pl: "Chleb",
-        jp: "パン"
+        jp: "パン",
     },
     {
         en: "Tasty",
         pl: "Smaczny",
-        jp: "おいしい"
+        jp: "おいしい",
     },
     {
         en: "Sandwich",
         pl: "Kanapka",
-        jp: "サンドイッチ"
+        jp: "サンドイッチ",
     },
     {
         en: "Every day",
         pl: "Codziennie",
-        jp: "まいにち"
+        jp: "まいにち",
     },
     {
         en: "Juice",
         pl: "Sok",
-        jp: "ジュース"
+        jp: "ジュース",
     },
     {
         en: "Coffee",
         pl: "Kawa",
-        jp: "コーヒー"
+        jp: "コーヒー",
     },
     {
         en: "Breakfast",
         pl: "Śniadanie",
-        jp: "あさごはん"
+        jp: "あさごはん",
     },
     {
         en: "Boxed lunch",
         pl: "Pudełkowy lunch",
-        jp: "べんとう"
+        jp: "べんとう",
     },
     {
         en: "Every night",
         pl: "Każdej nocy",
-        jp: "まいばん"
+        jp: "まいばん",
     },
     {
         en: "Old (thing)",
         pl: "Stary (rzecz)",
         jp: "古い",
-        jp_description: "ふるい"
+        jp_description: "ふるい",
     },
     {
         en: "New (thing)",
         pl: "Nowy (rzecz)",
         jp: "新しい",
-        jp_description: "あたらしい"
+        jp_description: "あたらしい",
     },
     {
         en: "Clothes",
         pl: "Ubrania",
-        jp: "ふく"
+        jp: "ふく",
     },
     {
         en: "Wallet",
         pl: "Portfel",
-        jp: "さいふ"
+        jp: "さいふ",
     },
     {
         en: "Unfashionable / Not trendy",
         pl: "Niemodny / Nietrendy",
-        jp: "ダサい"
+        jp: "ダサい",
     },
     {
         en: "Skirt",
         pl: "Spódnica",
-        jp: "スカート"
-    }
+        jp: "スカート",
+    },
 ]
 
 export { duolingo_4 };

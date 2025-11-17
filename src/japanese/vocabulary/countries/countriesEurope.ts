@@ -4,228 +4,228 @@ const countriesEurope: JapaneseWord[] = [
     {
         en: "Spain",
         pl: "Hiszpania",
-        jp: "スペイン"
+        jp: "スペイン",
     },
     {
         en: "Portugal",
         pl: "Portugalia",
-        jp: "ポルトガル"
+        jp: "ポルトガル",
     },
     {
         en: "France",
         pl: "Francja",
-        jp: "フランス"
+        jp: "フランス",
     },
     {
         en: "Ireland",
         pl: "Irlandia",
-        jp: "アイルランド"
+        jp: "アイルランド",
     },
     {
         en: "Great Britain",
         pl: "Wielka Brytania",
-        jp: "イギリス"
+        jp: "イギリス",
     },
     {
         en: "Iceland",
         pl: "Islandia",
-        jp: "アイスランド"
+        jp: "アイスランド",
     },
     {
         en: "Belgium",
         pl: "Belgia",
-        jp: "ベルギー"
+        jp: "ベルギー",
     },
     {
         en: "Netherlands",
         pl: "Holandia",
-        jp: "オランダ"
+        jp: "オランダ",
     },
     {
         en: "Luxembourg",
         pl: "Luksemburg",
-        jp: "ルクセンブルク"
+        jp: "ルクセンブルク",
     },
     {
         en: "Switzerland",
         pl: "Szwajcaria",
-        jp: "スイス"
+        jp: "スイス",
     },
     {
         en: "Denmark",
         pl: "Dania",
-        jp: "デンマーク"
+        jp: "デンマーク",
     },
     {
         en: "Germany",
         pl: "Niemcy",
-        jp: "ドイツ"
+        jp: "ドイツ",
     },
     {
         en: "Austria",
         pl: "Austria",
-        jp: "オーストリア"
+        jp: "オーストリア",
     },
     {
         en: "Italy",
         pl: "Włochy",
-        jp: "イタリア"
+        jp: "イタリア",
     },
     {
         en: "Slovenia",
         pl: "Słowenia",
-        jp: "スロベニア"
+        jp: "スロベニア",
     },
     {
         en: "Norway",
         pl: "Norwegia",
-        jp: "ノルウェー"
+        jp: "ノルウェー",
     },
     {
         en: "Sweden",
         pl: "Szwecja",
-        jp: "スウェーデン"
+        jp: "スウェーデン",
     },
     {
         en: "Finland",
         pl: "Finlandia",
-        jp: "フィンランド"
+        jp: "フィンランド",
     },
     {
         en: "Estonia",
         pl: "Estonia",
-        jp: "エストニア"
+        jp: "エストニア",
     },
     {
         en: "Latvia",
         pl: "Łotwa",
-        jp: "ラトビア"
+        jp: "ラトビア",
     },
     {
         en: "Lithuania",
         pl: "Litwa",
-        jp: "リトアニア"
+        jp: "リトアニア",
     },
     {
         en: "Russia",
         pl: "Rosja",
-        jp: "ロシア"
+        jp: "ロシア",
     },
     {
         en: "Belarus",
         pl: "Białoruś",
-        jp: "ベラルーシ"
+        jp: "ベラルーシ",
     },
     {
         en: "Ukraine",
         pl: "Ukraina",
-        jp: "ウクライナ"
+        jp: "ウクライナ",
     },
     {
         en: "Poland",
         pl: "Polska",
-        jp: "ポーランド"
+        jp: "ポーランド",
     },
     {
         en: "Czechia",
         pl: "Czechy",
-        jp: "チェコ"
+        jp: "チェコ",
     },
     {
         en: "Slovakia",
         pl: "Słowacja",
-        jp: "スロバキア"
+        jp: "スロバキア",
     },
     {
         en: "Hungary",
         pl: "Węgry",
-        jp: "ハンガリー"
+        jp: "ハンガリー",
     },
     {
         en: "Romania",
         pl: "Rumunia",
-        jp: "ルーマニア"
+        jp: "ルーマニア",
     },
     {
         en: "Moldova",
         pl: "Mołdawia",
-        jp: "モルドバ"
+        jp: "モルドバ",
     },
     {
         en: "Serbia",
         pl: "Serbia",
-        jp: "セルビア"
+        jp: "セルビア",
     },
     {
         en: "Bulgaria",
         pl: "Bułgaria",
-        jp: "ブルガリア"
+        jp: "ブルガリア",
     },
     {
         en: "Croatia",
         pl: "Chorwacja",
-        jp: "クロアチア"
+        jp: "クロアチア",
     },
     {
         en: "Bosnia and Herzegovina",
         pl: "Bośnia i Hercegowina",
-        jp: "ボスニア・ヘルツェゴビナ"
+        jp: "ボスニア・ヘルツェゴビナ",
     },
     {
         en: "Montenegro",
         pl: "Czarnogóra",
-        jp: "モンテネグロ"
+        jp: "モンテネグロ",
     },
     {
         en: "Albania",
         pl: "Albania",
-        jp: "アルバニア"
+        jp: "アルバニア",
     },
     {
         en: "Kosovo",
         pl: "Kosowo",
-        jp: "コソボ"
+        jp: "コソボ",
     },
     {
         en: "North Macedonia",
         pl: "Północna Macedonia",
-        jp: "北マケドニア"
+        jp: "北マケドニア",
     },
     {
         en: "Greece",
         pl: "Grecja",
-        jp: "ギリシャ"
+        jp: "ギリシャ",
     },
     {
         en: "Andorra",
         pl: "Andora",
-        jp: "アンドラ"
+        jp: "アンドラ",
     },
     {
         en: "Liechtenstein",
         pl: "Liechtenstein",
-        jp: "リヒテンシュタイン"
+        jp: "リヒテンシュタイン",
     },
     {
         en: "Monaco",
         pl: "Monako",
-        jp: "モナコ"
+        jp: "モナコ",
     },
     {
         en: "San Marino",
         pl: "San Marino",
-        jp: "サンマリノ"
+        jp: "サンマリノ",
     },
     {
         en: "Turkey",
         pl: "Turcja",
-        jp: "トルコ"
+        jp: "トルコ",
     },
     {
         en: "Vatican City",
         pl: "Watykan",
-        jp: "バチカン"
-    }
+        jp: "バチカン",
+    },
 ]
 
 export { countriesEurope }

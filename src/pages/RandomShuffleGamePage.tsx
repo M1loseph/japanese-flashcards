@@ -35,7 +35,7 @@ const RandomShuffleGamePage: React.FC = () => {
             return {
                 word: japaneseVocabulary,
                 answered: false,
-                correct: false
+                correct: false,
             }
         });
     }, [selectedWordBags]);

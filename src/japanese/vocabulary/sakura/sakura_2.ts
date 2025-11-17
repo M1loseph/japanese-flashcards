@@ -5,257 +5,257 @@ const sakura_2: JapaneseWord[] = [
     {
         en: "Red",
         pl: "Czerwony",
-        jp: "あかい"
+        jp: "あかい",
     },
     {
         en: "Train station",
         pl: "Dworzec kolejowy",
-        jp: "えき"
+        jp: "えき",
     },
     {
         en: "Up / Above",
         pl: "Nad / Na górze",
-        jp: "うえ"
+        jp: "うえ",
     },
     {
         en: "Blue",
         pl: "Niebieski",
-        jp: "あおい"
+        jp: "あおい",
     },
     {
         en: "Here",
         pl: "Tutaj",
-        jp: "ここ"
+        jp: "ここ",
     },
     {
         en: "Umbrella",
         pl: "Parasol",
-        jp: "かさ"
+        jp: "かさ",
     },
     {
         en: "Sweets / Candy",
         pl: "Słodycze / Cukierki",
-        jp: "おかし"
+        jp: "おかし",
     },
     {
         en: "Chair",
         pl: "Krzesło",
-        jp: "いす"
+        jp: "いす",
     },
     {
         en: "Leg / Foot",
         pl: "Noga / Stopa",
-        jp: "あし"
+        jp: "あし",
     },
     {
         en: "House",
         pl: "Dom",
-        jp: "うち"
+        jp: "うち",
     },
     {
         en: "Hand",
         pl: "Ręka",
-        jp: "て"
+        jp: "て",
     },
     {
         en: "Physical Education",
         pl: "Wychowanie fizyczne",
-        jp: "たいいく"
+        jp: "たいいく",
     },
     {
         en: "Japan",
         pl: "Japonia",
-        jp: "にほん"
+        jp: "にほん",
     },
     {
         en: "Germany",
         pl: "Niemcy",
-        jp: "ドイツ"
+        jp: "ドイツ",
     },
     {
         en: "China",
         pl: "Chiny",
-        jp: "ちゅうごく"
+        jp: "ちゅうごく",
     },
     {
         en: "Egypt",
         pl: "Egipt",
-        jp: "エジプト"
+        jp: "エジプト",
     },
     {
         en: "South Korea",
         pl: "Korea Południowa",
-        jp: "かんこく"
+        jp: "かんこく",
     },
     {
         en: "Australia",
         pl: "Australia",
-        jp: "オーストラリア"
+        jp: "オーストラリア",
     },
     {
         en: "Language",
         pl: "Język",
-        jp: "ご"
+        jp: "ご",
     },
     {
         en: "English",
         pl: "Angielski",
-        jp: "えいご"
+        jp: "えいご",
     },
     {
         en: "Spanish",
         pl: "Hiszpański",
-        jp: "スペインご"
+        jp: "スペインご",
     },
     {
         en: "Arabic",
         pl: "Arabski",
-        jp: "アラビアご"
+        jp: "アラビアご",
     },
     {
         en: "Country",
         pl: "Kraj",
-        jp: "くに"
+        jp: "くに",
     },
     {
         en: "Hindu",
         pl: "Hindi",
-        jp: "ヒンディーご"
+        jp: "ヒンディーご",
     },
     {
         en: "What is your country?",
         pl: "Jaki jest twój kraj?",
-        jp: "おくには"
+        jp: "おくには",
     },
     {
         en: "What languages do you know?",
         pl: "Jakimi językami potrafisz mówić?",
-        jp: "なにごができますか"
+        jp: "なにごができますか",
     },
     {
         en: "What is your nationality?",
         pl: "Jakiej jesteś narodowości?",
-        jp: "なにじんですか"
+        jp: "なにじんですか",
     },
     {
         en: "I speak Japanese and English.",
         pl: "Mówię po japońsku i angielsku.",
-        jp: "にほんごとえいごができます。"
+        jp: "にほんごとえいごができます。",
     },
     {
         en: "I can't speak Chinese.",
         pl: "Nie potrafię mówić po chińsku.",
-        jp: "ちゅうごくごはできません。"
+        jp: "ちゅうごくごはできません。",
     },
     {
         en: "Where are you from?",
         pl: "Skąd jesteś?",
-        jp: "どちらからきましたか"
+        jp: "どちらからきましたか",
     },
     {
         en: "I am from Poland.",
         pl: "Jestem z Polski.",
-        jp: "ポーランドからきました"
+        jp: "ポーランドからきました",
     },
     {
         en: "While studying",
         pl: "Uczę się",
-        jp: "べんきょうちゅう"
+        jp: "べんきょうちゅう",
     },
     {
         en: "Come (from)",
         pl: "Pochodzić (z)",
-        jp: "きます"
+        jp: "きます",
     },
     {
         en: "Citizen",
         pl: "Obywatel",
-        jp: "じん"
+        jp: "じん",
     },
     {
         en: "Poland",
         pl: "Polska",
-        jp: "ポーランド"
+        jp: "ポーランド",
     },
     {
         en: "Great Britain",
         pl: "Wielka Brytania",
-        jp: "イギリス"
+        jp: "イギリス",
     },
     {
         en: "France",
         pl: "Francja",
-        jp: "フランス"
+        jp: "フランス",
     },
     {
         en: "Russia",
         pl: "Rosja",
-        jp: "ロシア"
+        jp: "ロシア",
     },
     {
         en: "Ukraine",
         pl: "Ukraina",
-        jp: "ウクライナ"
+        jp: "ウクライナ",
     },
     {
         en: "Spain",
         pl: "Hiszpania",
-        jp: "スペイン"
+        jp: "スペイン",
     },
     {
         en: "Portugal",
         pl: "Portugalia",
-        jp: "ポルトガル"
+        jp: "ポルトガル",
     },
     {
         en: "India",
         pl: "Indie",
-        jp: "インド"
+        jp: "インド",
     },
     {
         en: "USA",
         pl: "USA",
-        jp: "アメリカ"
+        jp: "アメリカ",
     },
     {
         en: "Canada",
         pl: "Kanada",
-        jp: "カナダ"
+        jp: "カナダ",
     },
     {
         en: "New Zealand",
         pl: "Nowa Zelandia",
-        jp: "ニュージーランド"
+        jp: "ニュージーランド",
     },
     {
         en: "Brazil",
         pl: "Brazylia",
-        jp: "ブラジル"
+        jp: "ブラジル",
     },
     {
         en: "Mexico",
         pl: "Meksyk",
-        jp: "メキシコ"
+        jp: "メキシコ",
     },
     {
         en: "Can",
         pl: "Potrafić",
-        jp: "できます"
+        jp: "できます",
     },
     {
         en: "A little",
         pl: "Trochę",
-        jp: "すこし / ちょっと"
+        jp: "すこし / ちょっと",
     },
     {
         en: "Not enough",
         pl: "Niewystarczająco",
-        jp: "まだまだです"
+        jp: "まだまだです",
     },
     {
         en: "Very",
         pl: "Bardzo",
-        jp: "とても"
+        jp: "とても",
     },
 ];
 

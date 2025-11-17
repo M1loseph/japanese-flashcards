@@ -102,13 +102,13 @@ const duolingo_1: JapaneseWord[] = [
         en: "Mr. / Ms.",
         pl: "Pan / Pani",
         jp: "さん",
-        jp_description: "Polite suffix added to names."
+        jp_description: "Polite suffix added to names.",
     },
     {
         en: "Nice to get to know you",
         pl: "Miło cię poznać",
         jp: "どうぞよろしく",
-        jp_description: "Used when meeting someone for the first time or at the end of a self-introduction. Literally means 'Please treat me well'."
+        jp_description: "Used when meeting someone for the first time or at the end of a self-introduction. Literally means 'Please treat me well'.",
     },
     {
         en: "See you tomorrow",
@@ -164,7 +164,7 @@ const duolingo_1: JapaneseWord[] = [
         en: "Citizen (suffix)",
         pl: "Obywatel (przyrostek)",
         jp: "じん",
-        jp_description: "Suffix added to country names to indicate citizenship."
+        jp_description: "Suffix added to country names to indicate citizenship.",
     },
     {
         en: "Small",
@@ -175,7 +175,7 @@ const duolingo_1: JapaneseWord[] = [
         en: "Sorry",
         pl: "Przepraszam",
         jp: "すみません",
-    }
+    },
 ]
 
 export { duolingo_1 }

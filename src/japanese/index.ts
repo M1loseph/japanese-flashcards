@@ -18,6 +18,7 @@ import { sakura_2 } from "./vocabulary/sakura/sakura_2.ts";
 import { sakura_3 } from "./vocabulary/sakura/sakura_3.ts";
 import { sakura_4 } from "./vocabulary/sakura/sakura_4.ts";
 import { sakura_5 } from "./vocabulary/sakura/sakura_5.ts";
+import { sakura_6 } from "./vocabulary/sakura/sakura_6.ts";
 
 export type { JapaneseWord, WordBag } from "./types.ts";
 
@@ -117,7 +118,12 @@ export const availableWordBags: WordBag[] = [
         "id": "eb85a655-6758-4e7e-9e21-a8b96cc50b05",
         "name": "Sakura #5",
         "words": sakura_5,
-    }
+    },
+    {
+        "id": "3e30c119-8c88-41d7-bbe0-b28079a21214",
+        "name": "Sakura #6",
+        "words": sakura_6,
+    },
 ]
 
 export const findBagById = (id: string): WordBag | undefined => availableWordBags.find(bag => bag.id === id);
