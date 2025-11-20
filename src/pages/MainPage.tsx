@@ -1,7 +1,7 @@
 import { Container, Title, Button, Stack, Group, Collapse } from "@mantine/core";
-import { type TranslationLanguage } from "../TranslatopnLanguage.ts";
+import { type TranslationLanguage } from "../TranslationLanguage.ts";
 import { useNavigate } from "react-router";
-import { TranslationLanguages } from "../TranslatopnLanguage.ts";
+import { TranslationLanguages } from "../TranslationLanguage.ts";
 import { useMemo, useState } from "react";
 import { availableWordBags, findBagById } from "../japanese";
 
@@ -18,10 +18,10 @@ const MainPage: React.FC = () => {
 
     const usePolish = () => {
         setSelectedLanguage(TranslationLanguages.POLISH);
-    }
+    };
     const useEnglish = () => {
         setSelectedLanguage(TranslationLanguages.ENGLISH);
-    }
+    };
 
     const toggleWordBag = (bag: string) => {
         if (selectedWordBags.has(bag)) {
@@ -33,7 +33,7 @@ const MainPage: React.FC = () => {
             newBags.add(bag);
             setSelectedWordBags(newBags);
         }
-    }
+    };
     const selectedWordsCount = useMemo(() => {
         return Array.from(selectedWordBags)
             .map(bag => findBagById(bag)?.words.length ?? 0)
@@ -86,6 +86,6 @@ const MainPage: React.FC = () => {
             </Stack>
         </Container>
     );
-}
+};
 
 export default MainPage;

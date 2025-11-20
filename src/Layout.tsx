@@ -23,6 +23,6 @@ const Layout: React.FC = () => {
             </AppShell>
         </MantineProvider>
     );
-}
+};
 
 export default Layout;

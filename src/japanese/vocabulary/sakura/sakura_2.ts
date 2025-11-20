@@ -264,4 +264,4 @@ const sakura_2: JapaneseWord[] = [
     },
 ];
 
-export { sakura_2 }
+export { sakura_2 };

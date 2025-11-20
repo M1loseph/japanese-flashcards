@@ -226,6 +226,6 @@ const countriesEurope: JapaneseWord[] = [
         pl: "Watykan",
         jp: "バチカン",
     },
-]
+];
 
-export { countriesEurope }
+export { countriesEurope };

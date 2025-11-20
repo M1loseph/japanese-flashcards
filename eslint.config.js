@@ -19,7 +19,8 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules: {
-      "comma-dangle": ["error", "always-multiline"]
+      "comma-dangle": ["error", "always-multiline"],
+      "semi": ["error", "always"],
     },
   },
   reactHooks.configs.flat['recommended-latest'],

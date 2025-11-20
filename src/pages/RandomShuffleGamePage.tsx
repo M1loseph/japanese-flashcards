@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { type TranslationLanguage } from "../TranslatopnLanguage.ts";
+import { type TranslationLanguage } from "../TranslationLanguage.ts";
 import { Button, Container, Group, Stack, Title, Text, Modal } from "@mantine/core";
 import Flashcard from "../components/Flashcard.tsx";
 import { findBagById, type JapaneseWord } from "../japanese";
-import { TranslationLanguages } from "../TranslatopnLanguage.ts";
+import { TranslationLanguages } from "../TranslationLanguage.ts";
 import { useLocation, useNavigate } from "react-router";
 import usePreventAccidentalLeave from "../hooks/usePreventAccidentalLeave.ts";
 import { NOT_AVAILABLE } from "../japanese/types.ts";
@@ -61,7 +61,7 @@ const RandomShuffleGamePage: React.FC = () => {
                 word: japaneseVocabulary,
                 answered: false,
                 correct: false,
-            }
+            };
         });
         return {
             flashcards: flashcards,
@@ -69,7 +69,7 @@ const RandomShuffleGamePage: React.FC = () => {
             secondsElapsed: 0,
             selectedLanguage: selectedLanguage,
             gameId: gameId,
-        }
+        };
     });
 
     useEffect(() => {
@@ -97,7 +97,7 @@ const RandomShuffleGamePage: React.FC = () => {
             flashcards: flashcards,
             currentFlashcardIndex: 0,
         }));
-    }
+    };
 
     const gameFinished = currentFlashcardIndex === flashcards.length;
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
@@ -117,23 +117,23 @@ const RandomShuffleGamePage: React.FC = () => {
                     </Group>
                 </Stack>
             </Container>
-        </>
+        </>;
     }
 
-    const card = flashcards[currentFlashcardIndex]
+    const card = flashcards[currentFlashcardIndex];
 
     const replaceCard = (newCard: FlashcardSession): FlashcardSession[] => {
         const flashCardsCopy = [...flashcards];
         flashCardsCopy[currentFlashcardIndex] = newCard;
         return flashCardsCopy;
-    }
+    };
 
     const handlerCorrect = () => {
         const answeredCard = {
             ...card,
             answered: true,
             correct: true,
-        }
+        };
         const updatedCards = replaceCard(answeredCard);
 
 
@@ -142,14 +142,14 @@ const RandomShuffleGamePage: React.FC = () => {
             flashcards: updatedCards,
             currentFlashcardIndex: prevState.currentFlashcardIndex + 1,
         }));
-    }
+    };
 
     const handlerMistake = () => {
         const answeredCard = {
             ...card,
             answered: true,
             correct: false,
-        }
+        };
         const updatedCards = replaceCard(answeredCard);
 
         setGameState(prevState => ({
@@ -157,7 +157,7 @@ const RandomShuffleGamePage: React.FC = () => {
             flashcards: updatedCards,
             currentFlashcardIndex: prevState.currentFlashcardIndex + 1,
         }));
-    }
+    };
 
     const question = selectedLanguage === TranslationLanguages.POLISH ? card.word.pl : card.word.en;
 
@@ -170,7 +170,7 @@ const RandomShuffleGamePage: React.FC = () => {
             return card.word.jp_description;
         }
         return card.word.jp;
-    }
+    };
 
     return <>
         <Modal opened={showPrompt} onClose={cancelLeave} title="Leave game?">
@@ -212,6 +212,6 @@ const RandomShuffleGamePage: React.FC = () => {
             </Stack>
         </Container>
     </>;
-}
+};
 
 export default RandomShuffleGamePage;

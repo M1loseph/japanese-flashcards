@@ -55,6 +55,6 @@ const daysOfWeek: JapaneseWord[] = [
         jp: "週末",
         jp_pronunciation: "しゅうまつ",
     },
-]
+];
 
-export { daysOfWeek }
+export { daysOfWeek };

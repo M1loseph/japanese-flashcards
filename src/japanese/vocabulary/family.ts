@@ -189,6 +189,6 @@ const family: JapaneseWord[] = [
         jp: "お子さん",
         jp_pronunciation: "おこさん",
     },
-]
+];
 
-export { family }
+export { family };

@@ -1,6 +1,6 @@
 import { numbers } from "./vocabulary/numbers.ts";
 import { type WordBag } from "./types.ts";
-import { daysOfWeek } from "./vocabulary/daysOfWeek.ts"
+import { daysOfWeek } from "./vocabulary/daysOfWeek.ts";
 import { family } from "./vocabulary/family.ts";
 import { duolingo_1 } from "./vocabulary/duolingo/duolingo_1.ts";
 import { duolingo_2 } from "./vocabulary/duolingo/duolingo_2.ts";
@@ -124,6 +124,6 @@ export const availableWordBags: WordBag[] = [
         "name": "Sakura #6",
         "words": sakura_6,
     },
-]
+];
 
 export const findBagById = (id: string): WordBag | undefined => availableWordBags.find(bag => bag.id === id);
