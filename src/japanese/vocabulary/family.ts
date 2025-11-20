@@ -177,6 +177,18 @@ const family: JapaneseWord[] = [
         jp: "娘さん",
         jp_pronunciation: "むすめさん",
     },
+    {
+        en: "Child (humble)",
+        pl: "Dziecko (forma skromna)",
+        jp: "子供",
+        jp_pronunciation: "こども",
+    },
+    {
+        en: "Child (honorific)",
+        pl: "Dziecko (forma honoryfikatywna)",
+        jp: "お子さん",
+        jp_pronunciation: "おこさん",
+    }
 ]
 
 export { family }

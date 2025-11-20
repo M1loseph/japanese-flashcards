@@ -63,6 +63,11 @@ const sakura_5: JapaneseWord[] = [
         jp: "おいくつですか。",
     },
     {
+        en: "How old is your mother?",
+        pl: "Ile lat ma twoja mama?",
+        jp: "おかあさんは おいくつですか。",
+    },
+    {
         en: "I don't have an older sister.",
         pl: "Nie mam starszej siostry.",
         jp: "あねはいません。",
