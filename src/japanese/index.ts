@@ -19,6 +19,7 @@ import { sakura_3 } from "./vocabulary/sakura/sakura_3.ts";
 import { sakura_4 } from "./vocabulary/sakura/sakura_4.ts";
 import { sakura_5 } from "./vocabulary/sakura/sakura_5.ts";
 import { sakura_6 } from "./vocabulary/sakura/sakura_6.ts";
+import { sakura_7 } from "./vocabulary/sakura/sakura_7.ts";
 
 export type { JapaneseWord, WordBag } from "./types.ts";
 
@@ -123,6 +124,11 @@ export const availableWordBags: WordBag[] = [
         "id": "3e30c119-8c88-41d7-bbe0-b28079a21214",
         "name": "Sakura #6",
         "words": sakura_6,
+    },
+    {
+        "id": "24b5fb05-b55d-460b-a0bb-4f61738ab716",
+        "name": "Sakura #7",
+        "words": sakura_7,
     },
 ];
 
