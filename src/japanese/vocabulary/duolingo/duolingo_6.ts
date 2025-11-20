@@ -1,4 +1,4 @@
-import type { JapaneseWord } from '../../types.ts'
+import type { JapaneseWord } from '../../types.ts';
 
 const duolingo_6: JapaneseWord[] = [
     {
@@ -242,6 +242,6 @@ const duolingo_6: JapaneseWord[] = [
         pl: "W przyszłym tygodniu",
         jp: "らいしゅう",
     },
-]
+];
 
 export { duolingo_6 };

@@ -272,6 +272,6 @@ const sakura_1: JapaneseWord[] = [
         pl: "Inżynier",
         jp: "エンジニア",
     },
-]
+];
 
-export { sakura_1 }
+export { sakura_1 };

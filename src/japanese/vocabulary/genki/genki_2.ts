@@ -191,6 +191,6 @@ const genki_2: JapaneseWord[] = [
         pl: "Dziękuję (pot.)",
         jp: "どうも",
     },
-]
+];
 
-export { genki_2 }
+export { genki_2 };

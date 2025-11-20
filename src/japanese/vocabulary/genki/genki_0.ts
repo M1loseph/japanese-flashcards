@@ -98,6 +98,6 @@ const genki_0: JapaneseWord[] = [
         jp: "よろしくおねがいします",
         jp_description: "Used after introduction. Literally: Please treat me well.",
     },
-]
+];
 
-export { genki_0 }
+export { genki_0 };

@@ -163,6 +163,11 @@ const sakura_2: JapaneseWord[] = [
         jp: "べんきょうちゅう",
     },
     {
+        en: "I'm learning Japanese.",
+        pl: "Uczę się japońskiego.",
+        jp: "にほんごをべんきょうちゅうです。",
+    },
+    {
         en: "Come (from)",
         pl: "Pochodzić (z)",
         jp: "きます",
@@ -259,4 +264,4 @@ const sakura_2: JapaneseWord[] = [
     },
 ];
 
-export { sakura_2 }
+export { sakura_2 };

@@ -17,7 +17,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
 
     const toggleAnswer = () => {
         setShowAnswer(!showAnswer);
-    }
+    };
 
     const ButtonGroups: () => JSX.Element = () => {
         if (showAnswer) {
@@ -44,7 +44,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
                 </Button>
             );
         }
-    }
+    };
 
     return (
         <Card w="100%" shadow="sm" radius="md" withBorder>
@@ -60,6 +60,6 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
             </Group>
         </Card>
     );
-}
+};
 
 export default JapaneseFlashcard;

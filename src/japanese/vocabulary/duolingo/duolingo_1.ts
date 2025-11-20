@@ -176,6 +176,6 @@ const duolingo_1: JapaneseWord[] = [
         pl: "Przepraszam",
         jp: "すみません",
     },
-]
+];
 
-export { duolingo_1 }
+export { duolingo_1 };
