@@ -76,7 +76,7 @@ const MainPage: React.FC = () => {
                     size="md"
                     onClick={() => navigate("/game/shuffle", {
                         state: {
-                            selectedWordBags,
+                            selectedWordBags: Array.from(selectedWordBags),
                             selectedLanguage,
                             gameId: crypto.randomUUID(),
                         },

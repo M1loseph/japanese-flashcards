@@ -19,14 +19,13 @@ interface GameState {
     gameId: string;
     flashcards: FlashcardSession[];
     currentFlashcardIndex: number;
-    secondsElapsed: number;
     selectedLanguage: TranslationLanguage;
 }
 
 interface RandomShuffleGamePageProps {
     gameId: string;
     selectedLanguage: TranslationLanguage;
-    selectedWordBags: Set<string>;
+    selectedWordBags: string[];
 }
 
 function shuffleArray<T>(array: T[]) {
@@ -41,6 +40,7 @@ function shuffleArray<T>(array: T[]) {
 const RandomShuffleGamePage: React.FC = () => {
     const location = useLocation();
 
+    const [sessionTime, setSessionTime] = useState(0);
     const [gameState, setGameState] = useState<GameState>(() => {
         const state = location.state as RandomShuffleGamePageProps | null;
         const savedState = localStorage.getItem("randomShuffleGameState");
@@ -54,7 +54,7 @@ const RandomShuffleGamePage: React.FC = () => {
             }
         }
         const { selectedLanguage, selectedWordBags, gameId } = state!;
-        const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId)?.words || []);
+        const allWords = selectedWordBags.flatMap(bagId => findBagById(bagId)?.words || []);
         shuffleArray(allWords);
         const flashcards = allWords.map(japaneseVocabulary => {
             return {
@@ -64,11 +64,11 @@ const RandomShuffleGamePage: React.FC = () => {
             };
         });
         return {
-            flashcards: flashcards,
+            flashcards,
             currentFlashcardIndex: 0,
             secondsElapsed: 0,
-            selectedLanguage: selectedLanguage,
-            gameId: gameId,
+            selectedLanguage,
+            gameId,
         };
     });
 
@@ -80,12 +80,12 @@ const RandomShuffleGamePage: React.FC = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setGameState(prevState => ({ ...prevState, secondsElapsed: prevState.secondsElapsed + 1 }));
+            setSessionTime(prevState => prevState + 1);
         }, 1000);
         return () => clearInterval(interval);
     }, []);
 
-    const { flashcards, currentFlashcardIndex, secondsElapsed, selectedLanguage } = gameState;
+    const { flashcards, currentFlashcardIndex, selectedLanguage } = gameState;
 
     const correctAnswers = useMemo(() => flashcards.filter(card => card.correct), [flashcards]);
     const wrongAnswers = useMemo(() => flashcards.filter(card => card.answered && !card.correct), [flashcards]);
@@ -94,7 +94,7 @@ const RandomShuffleGamePage: React.FC = () => {
         const flashcards = wrongAnswers.map(card => ({ ...card, answered: false }));
         setGameState(prevState => ({
             ...prevState,
-            flashcards: flashcards,
+            flashcards,
             currentFlashcardIndex: 0,
         }));
     };
@@ -136,7 +136,6 @@ const RandomShuffleGamePage: React.FC = () => {
         };
         const updatedCards = replaceCard(answeredCard);
 
-
         setGameState(prevState => ({
             ...prevState,
             flashcards: updatedCards,
@@ -161,9 +160,9 @@ const RandomShuffleGamePage: React.FC = () => {
 
     const question = selectedLanguage === TranslationLanguages.POLISH ? card.word.pl : card.word.en;
 
-    const hours = Math.floor(secondsElapsed / 3600);
-    const minutes = Math.floor((secondsElapsed % 3600) / 60);
-    const seconds = secondsElapsed % 60;
+    const hours = Math.floor(sessionTime / 3600);
+    const minutes = Math.floor((sessionTime % 3600) / 60);
+    const seconds = sessionTime % 60;
 
     const selectAnswerText = () => {
         if (card.word.jp === NOT_AVAILABLE && card.word.jp_description) {
