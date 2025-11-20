@@ -1,7 +1,8 @@
 import { Container, Title, Button, Stack, Group, Collapse } from "@mantine/core";
+import { type TranslationLanguage } from "../TranslatopnLanguage.ts";
 import { useNavigate } from "react-router";
-import { LessonContext, TranslationLanguages } from "../LessonContext.ts";
-import { useContext, useMemo } from "react";
+import { TranslationLanguages } from "../TranslatopnLanguage.ts";
+import { useMemo, useState } from "react";
 import { availableWordBags, findBagById } from "../japanese";
 
 const SELECTED_VARIANT = "filled";
@@ -11,13 +12,17 @@ const variant = (selected: boolean) => selected ? SELECTED_VARIANT : UNSELECTED_
 
 const MainPage: React.FC = () => {
     const navigate = useNavigate();
-    const { selectedLanguage, setSelectedLanguage, selectedWordBags, setSelectedWordBags } = useContext(LessonContext);
+
+    const [selectedLanguage, setSelectedLanguage] = useState<TranslationLanguage>(TranslationLanguages.ENGLISH);
+    const [selectedWordBags, setSelectedWordBags] = useState<Set<string>>(new Set());
+
     const usePolish = () => {
         setSelectedLanguage(TranslationLanguages.POLISH);
     }
     const useEnglish = () => {
         setSelectedLanguage(TranslationLanguages.ENGLISH);
     }
+
     const toggleWordBag = (bag: string) => {
         if (selectedWordBags.has(bag)) {
             const newBags = new Set(selectedWordBags);
@@ -69,7 +74,13 @@ const MainPage: React.FC = () => {
                 <Title order={3}>3. And select game mode</Title>
                 <Button
                     size="md"
-                    onClick={() => navigate("/game/shuffle")}
+                    onClick={() => navigate("/game/shuffle", {
+                        state: {
+                            selectedWordBags,
+                            selectedLanguage,
+                            gameId: crypto.randomUUID(),
+                        },
+                    })}
                     disabled={selectedWordBags.size === 0}
                 >All random</Button>
             </Stack>

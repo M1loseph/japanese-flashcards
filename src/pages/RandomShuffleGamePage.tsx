@@ -1,9 +1,10 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { type TranslationLanguage } from "../TranslatopnLanguage.ts";
 import { Button, Container, Group, Stack, Title, Text, Modal } from "@mantine/core";
 import Flashcard from "../components/Flashcard.tsx";
 import { findBagById, type JapaneseWord } from "../japanese";
-import { LessonContext, TranslationLanguages } from "../LessonContext.ts";
-import { useNavigate } from "react-router";
+import { TranslationLanguages } from "../TranslatopnLanguage.ts";
+import { useLocation, useNavigate } from "react-router";
 import usePreventAccidentalLeave from "../hooks/usePreventAccidentalLeave.ts";
 import { NOT_AVAILABLE } from "../japanese/types.ts";
 
@@ -14,9 +15,23 @@ interface FlashcardSession {
     correct: boolean;
 }
 
+interface GameState {
+    gameId: string;
+    flashcards: FlashcardSession[];
+    currentFlashcardIndex: number;
+    secondsElapsed: number;
+    selectedLanguage: TranslationLanguage;
+}
+
+interface RandomShuffleGamePageProps {
+    gameId: string;
+    selectedLanguage: TranslationLanguage;
+    selectedWordBags: Set<string>;
+}
+
 function shuffleArray<T>(array: T[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+    for (let i = 0; i < array.length; i++) {
+        const j = Math.floor(Math.random() * (array.length - 1));
         const tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;
@@ -24,51 +39,67 @@ function shuffleArray<T>(array: T[]) {
 }
 
 const RandomShuffleGamePage: React.FC = () => {
-    const [currentFlashcard, setCurrentFlashcard] = useState(0)
-    const { selectedLanguage, selectedWordBags } = useContext(LessonContext);
-    const [secondsElapsed, setSecondsElapsed] = useState(0)
+    const location = useLocation();
 
-    const initialFlashcards = useMemo(() => {
+    const [gameState, setGameState] = useState<GameState>(() => {
+        const state = location.state as RandomShuffleGamePageProps | null;
+        const savedState = localStorage.getItem("randomShuffleGameState");
+        if (state === null && savedState === null) {
+            throw new Error("No game state found in location state or local storage");
+        }
+        if (savedState !== null) {
+            const parsedSave = JSON.parse(savedState) as GameState;
+            if (state === null || parsedSave.gameId === state.gameId) {
+                return parsedSave;
+            }
+        }
+        const { selectedLanguage, selectedWordBags, gameId } = state!;
         const allWords = Array.from(selectedWordBags).flatMap(bagId => findBagById(bagId)?.words || []);
         shuffleArray(allWords);
-        return allWords.map(japaneseVocabulary => {
+        const flashcards = allWords.map(japaneseVocabulary => {
             return {
                 word: japaneseVocabulary,
                 answered: false,
                 correct: false,
             }
         });
-    }, [selectedWordBags]);
+        return {
+            flashcards: flashcards,
+            currentFlashcardIndex: 0,
+            secondsElapsed: 0,
+            selectedLanguage: selectedLanguage,
+            gameId: gameId,
+        }
+    });
 
-    const [flashCards, setFlashcards] = useState<FlashcardSession[]>(initialFlashcards)
+    useEffect(() => {
+        localStorage.setItem("randomShuffleGameState", JSON.stringify(gameState));
+    }, [gameState]);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (selectedWordBags.size === 0) {
-            navigate("/");
-        }
-    }, [selectedWordBags, navigate])
-
-    useEffect(() => {
-        const gameBeginTime = Date.now();
         const interval = setInterval(() => {
-            const now = Date.now();
-            const elapsed = Math.floor((now - gameBeginTime) / 1000);
-            setSecondsElapsed(elapsed);
+            setGameState(prevState => ({ ...prevState, secondsElapsed: prevState.secondsElapsed + 1 }));
         }, 1000);
         return () => clearInterval(interval);
     }, []);
 
-    const correctAnswers = useMemo(() => flashCards.filter(card => card.correct), [flashCards]);
-    const wrongAnswers = useMemo(() => flashCards.filter(card => card.answered && !card.correct), [flashCards]);
+    const { flashcards, currentFlashcardIndex, secondsElapsed, selectedLanguage } = gameState;
+
+    const correctAnswers = useMemo(() => flashcards.filter(card => card.correct), [flashcards]);
+    const wrongAnswers = useMemo(() => flashcards.filter(card => card.answered && !card.correct), [flashcards]);
 
     const prepareSetForRepeat = () => {
-        setFlashcards(wrongAnswers.map(card => ({ ...card, answered: false })));
-        setCurrentFlashcard(0);
+        const flashcards = wrongAnswers.map(card => ({ ...card, answered: false }));
+        setGameState(prevState => ({
+            ...prevState,
+            flashcards: flashcards,
+            currentFlashcardIndex: 0,
+        }));
     }
 
-    const gameFinished = currentFlashcard === flashCards.length;
+    const gameFinished = currentFlashcardIndex === flashcards.length;
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
     if (gameFinished) {
@@ -89,11 +120,11 @@ const RandomShuffleGamePage: React.FC = () => {
         </>
     }
 
-    const card = flashCards[currentFlashcard]
+    const card = flashcards[currentFlashcardIndex]
 
     const replaceCard = (newCard: FlashcardSession): FlashcardSession[] => {
-        const flashCardsCopy = [...flashCards];
-        flashCardsCopy[currentFlashcard] = newCard;
+        const flashCardsCopy = [...flashcards];
+        flashCardsCopy[currentFlashcardIndex] = newCard;
         return flashCardsCopy;
     }
 
@@ -105,8 +136,12 @@ const RandomShuffleGamePage: React.FC = () => {
         }
         const updatedCards = replaceCard(answeredCard);
 
-        setFlashcards(updatedCards);
-        setCurrentFlashcard(currentFlashcard + 1)
+
+        setGameState(prevState => ({
+            ...prevState,
+            flashcards: updatedCards,
+            currentFlashcardIndex: prevState.currentFlashcardIndex + 1,
+        }));
     }
 
     const handlerMistake = () => {
@@ -117,8 +152,11 @@ const RandomShuffleGamePage: React.FC = () => {
         }
         const updatedCards = replaceCard(answeredCard);
 
-        setFlashcards(updatedCards);
-        setCurrentFlashcard(currentFlashcard + 1)
+        setGameState(prevState => ({
+            ...prevState,
+            flashcards: updatedCards,
+            currentFlashcardIndex: prevState.currentFlashcardIndex + 1,
+        }));
     }
 
     const question = selectedLanguage === TranslationLanguages.POLISH ? card.word.pl : card.word.en;
@@ -148,7 +186,7 @@ const RandomShuffleGamePage: React.FC = () => {
             <Stack align="center">
                 <Group style={{ width: "100%" }} justify="space-between" align="center">
                     <Text fw={700} size="xl">
-                        {currentFlashcard + 1}/{flashCards.length}
+                        {currentFlashcardIndex + 1}/{flashcards.length}
                     </Text>
                     <Text c="green" fw={700} size="xl">
                         {correctAnswers.length}

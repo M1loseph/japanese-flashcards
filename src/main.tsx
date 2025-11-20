@@ -17,7 +17,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/game/shuffle",
-                element: <RandomShuffleGamePage />,
+               element: <RandomShuffleGamePage />,
             },
         ],
     },
