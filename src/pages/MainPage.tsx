@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { countriesEUBag, daysOfWeekBag, duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, familyBag, findBagById, genki0Bag, genki1Bag, genki2Bag, numbersBag, sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag, sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag, timeBag } from '../japanese';
+import { countriesEUBag, daysOfWeekBag, duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, familyBag, findBagById, genki0Bag, genki1Bag, genki2Bag, numbersBag, sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag, sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag, sakura8ExtraBag, timeBag } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -23,19 +23,20 @@ const MainPage: React.FC = () => {
     };
 
     const groupedBags: Record<string, WordBag[]> = {
-        'Essentials': [
+        'Essentials 📌': [
             familyBag, numbersBag, daysOfWeekBag, timeBag,
         ],
-        'Textbooks': [
+        'Textbooks and classes 📚': [
             genki0Bag, genki1Bag, genki2Bag,
             sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag,
             sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag,
+            sakura8ExtraBag,
         ],
-        'Apps': [
+        'Apps 📱': [
             duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag,
             duolingo5Bag, duolingo6Bag,
         ],
-        'Geography': [
+        'Geography 🌍 🌎 🌏': [
             countriesEUBag,
         ],
     };
