@@ -1,90 +1,125 @@
-import { Container, Title, Button, Stack, Group, Collapse } from "@mantine/core";
-import { type TranslationLanguage } from "../TranslationLanguage.ts";
-import { useNavigate } from "react-router";
-import { TranslationLanguages } from "../TranslationLanguage.ts";
-import { useMemo, useState } from "react";
-import { availableWordBags, findBagById } from "../japanese";
-
-const SELECTED_VARIANT = "filled";
-const UNSELECTED_VARIANT = "outline";
-
-const variant = (selected: boolean) => selected ? SELECTED_VARIANT : UNSELECTED_VARIANT;
+import React, { useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { countriesEUBag, daysOfWeekBag, duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, familyBag, findBagById, genki0Bag, genki1Bag, genki2Bag, numbersBag, sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag, sakura5Bag, sakura6Bag, sakura7Bag, timeBag } from '../japanese';
+import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
+import { LanguageSelector } from '../components/LanguageSelector';
+import { CategorySection } from '../components/CategorySection';
+import { type WordBag } from '../japanese/types';
+import { Button } from '@mantine/core';
 
 const MainPage: React.FC = () => {
     const navigate = useNavigate();
-
     const [selectedLanguage, setSelectedLanguage] = useState<TranslationLanguage>(TranslationLanguages.ENGLISH);
     const [selectedWordBags, setSelectedWordBags] = useState<Set<string>>(new Set());
 
-    const usePolish = () => {
-        setSelectedLanguage(TranslationLanguages.POLISH);
-    };
-    const useEnglish = () => {
-        setSelectedLanguage(TranslationLanguages.ENGLISH);
+    const toggleWordBag = (id: string) => {
+        const newSet = new Set(selectedWordBags);
+        if (newSet.has(id)) {
+            newSet.delete(id);
+        } else {
+            newSet.add(id);
+        }
+        setSelectedWordBags(newSet);
     };
 
-    const toggleWordBag = (bag: string) => {
-        if (selectedWordBags.has(bag)) {
-            const newBags = new Set(selectedWordBags);
-            newBags.delete(bag);
-            setSelectedWordBags(newBags);
-        } else {
-            const newBags = new Set(selectedWordBags);
-            newBags.add(bag);
-            setSelectedWordBags(newBags);
-        }
+    const groupedBags: Record<string, WordBag[]> = {
+        'Essentials': [
+            familyBag, numbersBag, daysOfWeekBag, timeBag,
+        ],
+        'Textbooks': [
+            genki0Bag, genki1Bag, genki2Bag,
+            sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag,
+            sakura5Bag, sakura6Bag, sakura7Bag,
+        ],
+        'Apps': [
+            duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag,
+            duolingo5Bag, duolingo6Bag,
+        ],
+        'Geography': [
+            countriesEUBag,
+        ],
     };
+
+
+    const handleSelectAll = (bags: WordBag[]) => {
+        const newSet = new Set(selectedWordBags);
+        bags.forEach(bag => newSet.add(bag.id));
+        setSelectedWordBags(newSet);
+    };
+
+    const handleDeselectAll = (bags: WordBag[]) => {
+        const newSet = new Set(selectedWordBags);
+        bags.forEach(bag => newSet.delete(bag.id));
+        setSelectedWordBags(newSet);
+    };
+
     const selectedWordsCount = useMemo(() => {
         return Array.from(selectedWordBags)
-            .map(bag => findBagById(bag)?.words.length ?? 0)
+            .map(id => findBagById(id)?.words.length ?? 0)
             .reduce((a, b) => a + b, 0);
     }, [selectedWordBags]);
 
+    const handleStartGame = () => {
+        navigate("/game/shuffle", {
+            state: {
+                selectedWordBags: Array.from(selectedWordBags),
+                selectedLanguage,
+                gameId: crypto.randomUUID(),
+            },
+        });
+    };
+
     return (
-        <Container pt="xl">
-            <Stack justify="center" align="center" w="100%">
-                <Title order={3}>1. Select translation language</Title>
-                <Group>
-                    <Button variant={variant(selectedLanguage === TranslationLanguages.POLISH)} onClick={usePolish}>
-                        🇵🇱
+        <div className="pb-24">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+                <section>
+                    <h2 className="text-2xl font-bold mb-6 text-center">1. Choose Your Language</h2>
+                    <LanguageSelector
+                        selectedLanguage={selectedLanguage}
+                        onSelect={setSelectedLanguage}
+                    />
+                </section>
+
+                <section>
+                    <h2 className="text-2xl font-bold mb-6 text-center">2. Select Content</h2>
+                    <div className="space-y-2">
+                        {Object.entries(groupedBags).map(([category, bags]) => (
+                            bags.length > 0 && (
+                                <CategorySection
+                                    key={category}
+                                    title={category}
+                                    bags={bags}
+                                    selectedBagIds={selectedWordBags}
+                                    onToggleBag={toggleWordBag}
+                                    onSelectAll={() => handleSelectAll(bags)}
+                                    onDeselectAll={() => handleDeselectAll(bags)}
+                                />
+                            )
+                        ))}
+                    </div>
+                </section>
+            </main>
+
+            <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
+                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="text-slate-600 font-medium">
+                        {selectedWordsCount > 0 ? (
+                            <span>Ready to practice <strong className="text-primary">{selectedWordsCount}</strong> words</span>
+                        ) : (
+                            <span>Select some word bags to start</span>
+                        )}
+                    </div>
+                    <Button
+                        onClick={handleStartGame}
+                        disabled={selectedWordsCount === 0}
+                        size='lg'
+                        className='font-bold'
+                    >
+                        Start Shuffle Game
                     </Button>
-                    <Button variant={variant(selectedLanguage === TranslationLanguages.ENGLISH)} onClick={useEnglish}>
-                        🇬🇧
-                    </Button>
-                </Group>
-                <Title order={3}>2. Select word bags to use</Title>
-                <Group justify="center">
-                    {
-                        availableWordBags.map(bag => (
-                            <Button
-                                key={bag.id}
-                                onClick={() => toggleWordBag(bag.id)}
-                                variant={variant(selectedWordBags.has(bag.id))}
-                            >
-                                {bag.name}
-                            </Button>
-                        ))
-                    }
-                </Group>
-                <Collapse in={selectedWordBags.size !== 0}>
-                    {
-                        <div>Selected {selectedWordsCount} word(s)</div>
-                    }
-                </Collapse>
-                <Title order={3}>3. And select game mode</Title>
-                <Button
-                    size="md"
-                    onClick={() => navigate("/game/shuffle", {
-                        state: {
-                            selectedWordBags: Array.from(selectedWordBags),
-                            selectedLanguage,
-                            gameId: crypto.randomUUID(),
-                        },
-                    })}
-                    disabled={selectedWordBags.size === 0}
-                >All random</Button>
-            </Stack>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 };
 
