@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { countriesEUBag, daysOfWeekBag, duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, familyBag, findBagById, genki0Bag, genki1Bag, genki2Bag, numbersBag, sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag, sakura5Bag, sakura6Bag, sakura7Bag, timeBag } from '../japanese';
+import { countriesEUBag, daysOfWeekBag, duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, familyBag, findBagById, genki0Bag, genki1Bag, genki2Bag, numbersBag, sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag, sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag, timeBag } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -29,7 +29,7 @@ const MainPage: React.FC = () => {
         'Textbooks': [
             genki0Bag, genki1Bag, genki2Bag,
             sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag,
-            sakura5Bag, sakura6Bag, sakura7Bag,
+            sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag,
         ],
         'Apps': [
             duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag,
