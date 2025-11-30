@@ -30,7 +30,7 @@ export default defineConfig([
             "@stylistic/max-len": [
                 "error",
                 {
-                    "code": 400 ,
+                    "code": 400,
                     "ignoreStrings": true,
                 }
             ],

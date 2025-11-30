@@ -83,8 +83,8 @@ const sakura_8_sports: JapaneseWord[] = [
         jp: "じゅうどう",
     },
     {
-        en: "Archery",
-        pl: "Łucznictwo",
+        en: "Japanese archery",
+        pl: "Japońskie łucznictwo",
         jp: "きゅうどう",
     },
     {
