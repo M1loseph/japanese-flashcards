@@ -21,7 +21,9 @@ import { sakura_5 } from "./vocabulary/sakura/sakura_5.ts";
 import { sakura_6 } from "./vocabulary/sakura/sakura_6.ts";
 import { sakura_7 } from "./vocabulary/sakura/sakura_7.ts";
 import { sakura_8 } from "./vocabulary/sakura/sakura_8.ts";
-import { sakura_8_extra } from "./vocabulary/sakura/sakura_8_extra.ts";
+import { sakura_8_sports } from "./vocabulary/sakura/sakura_8_sports.ts";
+import { sakura_8_fruitsAndVegetables } from "./vocabulary/sakura/sakura_8_fruitsAndVegetables.ts";
+import { sakura_8_animals } from "./vocabulary/sakura/sakura_8_animals.ts";
 
 export type { JapaneseWord, WordBag } from "./types.ts";
 
@@ -157,10 +159,22 @@ export const sakura8Bag: WordBag = {
     words: sakura_8,
 };
 
-export const sakura8ExtraBag: WordBag = {
+export const sakura8SportsBag: WordBag = {
     id: "a2f4cc00-5264-4193-9a3a-37b9eda3175f",
-    name: "Sakura #8 Extra",
-    words: sakura_8_extra,
+    name: "Sakura #8 Sports",
+    words: sakura_8_sports,
+};
+
+export const sakura8FruitsAndVegetablesBag: WordBag = {
+    id: "b98c297c-307d-493f-80e8-f9ade70842e1",
+    name: "Sakura #8 Fruits and Vegetables",
+    words: sakura_8_fruitsAndVegetables,
+};
+
+export const sakura8AnimalsBag: WordBag = {
+    id: "c35ead83-d288-4681-b1f3-2c08fdafcc7f",
+    name: "Sakura #8 Animals",
+    words: sakura_8_animals,
 };
 
 const availableWordBags: WordBag[] = [
@@ -186,7 +200,9 @@ const availableWordBags: WordBag[] = [
     sakura6Bag,
     sakura7Bag,
     sakura8Bag,
-    sakura8ExtraBag,
+    sakura8SportsBag,
+    sakura8FruitsAndVegetablesBag,
+    sakura8AnimalsBag,
 ];
 
 export const findBagById = (id: string): WordBag | undefined => availableWordBags.find(bag => bag.id === id);

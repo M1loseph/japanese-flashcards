@@ -27,8 +27,13 @@ export default defineConfig([
             "semi": ["error", "always"],
             "@stylistic/indent": ["error", 4],
             "@stylistic/linebreak-style": ["error", "unix"],
-            // TODO: revert to 100 after fixing existing issues
-            "@stylistic/max-len": ["error", { "code": 400 }],
+            "@stylistic/max-len": [
+                "error",
+                {
+                    "code": 400 ,
+                    "ignoreStrings": true,
+                }
+            ],
         },
     },
     reactHooks.configs.flat['recommended-latest'],
