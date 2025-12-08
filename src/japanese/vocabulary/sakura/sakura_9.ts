@@ -7,7 +7,7 @@ const sakura_9: JapaneseWord[] = [
         jp: "あります",
     },
     {
-        en: "To have / To exist (inanimate)",
+        en: "To have / To exist (animate)",
         pl: "Mieć / Istnieć (ożywione)",
         jp: "います",
     },
