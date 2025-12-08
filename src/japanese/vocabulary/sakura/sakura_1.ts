@@ -272,6 +272,11 @@ const sakura_1: JapaneseWord[] = [
         pl: "Inżynier",
         jp: "エンジニア",
     },
+    {
+        en: "What's your nane?",
+        pl: "Jak masz na imię?",
+        jp: "おなまえは？",
+    },
 ];
 
 export { sakura_1 };
