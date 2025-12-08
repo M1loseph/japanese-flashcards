@@ -115,26 +115,6 @@ const duolingo_5: JapaneseWord[] = [
         jp: "うどん",
     },
     {
-        en: "Single",
-        pl: "Pojedynczy",
-        jp: "ひとつ",
-    },
-    {
-        en: "Double",
-        pl: "Podwójny",
-        jp: "ふたつ",
-    },
-    {
-        en: "Triplet",
-        pl: "Potrójny",
-        jp: "みっつ",
-    },
-    {
-        en: "Quartet",
-        pl: "Czwórka",
-        jp: "よっつ",
-    },
-    {
         en: "Miso soup",
         pl: "Zupa miso",
         jp: "みそしる",

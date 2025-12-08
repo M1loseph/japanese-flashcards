@@ -2,6 +2,16 @@ import type { JapaneseWord } from "../../types";
 
 const sakura_9: JapaneseWord[] = [
     {
+        en: "To have / To exist (inanimate)",
+        pl: "Mieć / Istnieć (nieożywione)",
+        jp: "あります",
+    },
+    {
+        en: "To have / To exist (animate)",
+        pl: "Mieć / Istnieć (ożywione)",
+        jp: "います",
+    },
+    {
         en: "Young",
         pl: "Młody",
         jp: "わかい",

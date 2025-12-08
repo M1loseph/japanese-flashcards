@@ -216,6 +216,16 @@ const sakura_5: JapaneseWord[] = [
         pl: "Dwanaście osób",
         jp: "じゅうににん",
     },
+    {
+        en: "How many people are in your family?",
+        pl: "Ile osób jest w twojej rodzinie?",
+        jp: "かぞくは なんにんですか。",
+    },
+    {
+        en: "My family has four people.",
+        pl: "Moja rodzina liczy cztery osoby.",
+        jp: "かぞくは よにんです。",
+    },
 ];
 
 export { sakura_5 };

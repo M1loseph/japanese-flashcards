@@ -111,8 +111,8 @@ const duolingo_6: JapaneseWord[] = [
         jp: "エレベーター",
     },
     {
-        en: "To have",
-        pl: "Mieć",
+        en: "To have (inanimate)",
+        pl: "Mieć (nieożywione)",
         jp: "あります",
     },
     {
