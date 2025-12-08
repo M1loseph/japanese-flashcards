@@ -1,10 +1,10 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
-import { defineConfig, globalIgnores } from 'eslint/config'
-import stylistic from '@stylistic/eslint-plugin'
+import js from '@eslint/js';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import tseslint from 'typescript-eslint';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import stylistic from '@stylistic/eslint-plugin';
 
 export default defineConfig([
     globalIgnores(['dist']),
@@ -32,9 +32,9 @@ export default defineConfig([
                 {
                     "code": 400,
                     "ignoreStrings": true,
-                }
+                },
             ],
         },
     },
     reactHooks.configs.flat['recommended-latest'],
-])
+]);
