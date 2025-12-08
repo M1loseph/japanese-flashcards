@@ -254,7 +254,7 @@ const numbers: JapaneseWord[] = [
         jp_pronunciation: "さんまん",
     },
     {
-        en: "Fourty thousand",
+        en: "Forty thousand",
         pl: "Czterdzieści tysięcy",
         jp: "四万",
         jp_pronunciation: "よんまん",
