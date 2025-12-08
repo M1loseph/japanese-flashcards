@@ -24,6 +24,7 @@ import { sakura_8 } from "./vocabulary/sakura/sakura_8.ts";
 import { sakura_8_sports } from "./vocabulary/sakura/sakura_8_sports.ts";
 import { sakura_8_fruitsAndVegetables } from "./vocabulary/sakura/sakura_8_fruitsAndVegetables.ts";
 import { sakura_8_animals } from "./vocabulary/sakura/sakura_8_animals.ts";
+import { sakura_9 } from "./vocabulary/sakura/sakura_9.ts";
 
 export type { JapaneseWord, WordBag } from "./types.ts";
 
@@ -177,6 +178,12 @@ export const sakura8AnimalsBag: WordBag = {
     words: sakura_8_animals,
 };
 
+export const sakura9Bag: WordBag = {
+    id: "5dede695-400b-440a-8e2a-0e8f6960d117",
+    name: "Sakura #9",
+    words: sakura_9,
+};
+
 const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
@@ -203,6 +210,7 @@ const availableWordBags: WordBag[] = [
     sakura8SportsBag,
     sakura8FruitsAndVegetablesBag,
     sakura8AnimalsBag,
+    sakura9Bag,
 ];
 
 export const findBagById = (id: string): WordBag | undefined => availableWordBags.find(bag => bag.id === id);

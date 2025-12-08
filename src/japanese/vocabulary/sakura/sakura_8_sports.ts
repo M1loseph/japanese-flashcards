@@ -1,4 +1,3 @@
-
 import type { JapaneseWord } from "../../types";
 
 const sakura_8_sports: JapaneseWord[] = [
