@@ -1,6 +1,35 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { countriesEUBag, daysOfWeekBag, duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, familyBag, findBagById, genki0Bag, genki1Bag, genki2Bag, numbersBag, sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag, sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag, sakura8AnimalsBag, sakura8FruitsAndVegetablesBag, sakura8SportsBag, timeBag, sakura9Bag } from '../japanese';
+import {
+    countriesEUBag,
+    daysOfWeekBag,
+    duolingo1Bag,
+    duolingo2Bag,
+    duolingo3Bag,
+    duolingo4Bag,
+    duolingo5Bag,
+    duolingo6Bag,
+    familyBag,
+    findBagById,
+    genki0Bag,
+    genki1Bag,
+    genki2Bag,
+    numbersBag,
+    sakura1Bag,
+    sakura2Bag,
+    sakura3Bag,
+    sakura4Bag,
+    sakura5Bag,
+    sakura6Bag,
+    sakura7Bag,
+    sakura8Bag,
+    sakura8AnimalsBag,
+    sakura8FruitsAndVegetablesBag,
+    sakura8SportsBag,
+    timeBag,
+    sakura9Bag,
+    sakura10Bag,
+} from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -23,46 +52,49 @@ const MainPage: React.FC = () => {
     };
 
     const groupedBags: Record<string, WordBag[]> = {
-        'Essentials 📌': [
-            familyBag, numbersBag, daysOfWeekBag, timeBag,
-        ],
+        'Essentials 📌': [familyBag, numbersBag, daysOfWeekBag, timeBag],
         'Textbooks and classes 📚': [
-            genki0Bag, genki1Bag, genki2Bag,
-            sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag,
-            sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag,
-            sakura8SportsBag, sakura8FruitsAndVegetablesBag, sakura8AnimalsBag,
+            genki0Bag,
+            genki1Bag,
+            genki2Bag,
+            sakura1Bag,
+            sakura2Bag,
+            sakura3Bag,
+            sakura4Bag,
+            sakura5Bag,
+            sakura6Bag,
+            sakura7Bag,
+            sakura8Bag,
+            sakura8SportsBag,
+            sakura8FruitsAndVegetablesBag,
+            sakura8AnimalsBag,
             sakura9Bag,
+            sakura10Bag,
         ],
-        'Apps 📱': [
-            duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag,
-            duolingo5Bag, duolingo6Bag,
-        ],
-        'Geography 🌍 🌎 🌏': [
-            countriesEUBag,
-        ],
+        'Apps 📱': [duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag],
+        'Geography 🌍 🌎 🌏': [countriesEUBag],
     };
-
 
     const handleSelectAll = (bags: WordBag[]) => {
         const newSet = new Set(selectedWordBags);
-        bags.forEach(bag => newSet.add(bag.id));
+        bags.forEach((bag) => newSet.add(bag.id));
         setSelectedWordBags(newSet);
     };
 
     const handleDeselectAll = (bags: WordBag[]) => {
         const newSet = new Set(selectedWordBags);
-        bags.forEach(bag => newSet.delete(bag.id));
+        bags.forEach((bag) => newSet.delete(bag.id));
         setSelectedWordBags(newSet);
     };
 
     const selectedWordsCount = useMemo(() => {
         return Array.from(selectedWordBags)
-            .map(id => findBagById(id)?.words.length ?? 0)
+            .map((id) => findBagById(id)?.words.length ?? 0)
             .reduce((a, b) => a + b, 0);
     }, [selectedWordBags]);
 
     const handleStartGame = () => {
-        navigate("/game/shuffle", {
+        navigate('/game/shuffle', {
             state: {
                 selectedWordBags: Array.from(selectedWordBags),
                 selectedLanguage,
@@ -76,28 +108,26 @@ const MainPage: React.FC = () => {
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
                 <section>
                     <h2 className="text-2xl font-bold mb-6 text-center">1. Choose Your Language</h2>
-                    <LanguageSelector
-                        selectedLanguage={selectedLanguage}
-                        onSelect={setSelectedLanguage}
-                    />
+                    <LanguageSelector selectedLanguage={selectedLanguage} onSelect={setSelectedLanguage} />
                 </section>
 
                 <section>
                     <h2 className="text-2xl font-bold mb-6 text-center">2. Select Content</h2>
                     <div className="space-y-2">
-                        {Object.entries(groupedBags).map(([category, bags]) => (
-                            bags.length > 0 && (
-                                <CategorySection
-                                    key={category}
-                                    title={category}
-                                    bags={bags}
-                                    selectedBagIds={selectedWordBags}
-                                    onToggleBag={toggleWordBag}
-                                    onSelectAll={() => handleSelectAll(bags)}
-                                    onDeselectAll={() => handleDeselectAll(bags)}
-                                />
-                            )
-                        ))}
+                        {Object.entries(groupedBags).map(
+                            ([category, bags]) =>
+                                bags.length > 0 && (
+                                    <CategorySection
+                                        key={category}
+                                        title={category}
+                                        bags={bags}
+                                        selectedBagIds={selectedWordBags}
+                                        onToggleBag={toggleWordBag}
+                                        onSelectAll={() => handleSelectAll(bags)}
+                                        onDeselectAll={() => handleDeselectAll(bags)}
+                                    />
+                                ),
+                        )}
                     </div>
                 </section>
             </main>
@@ -106,7 +136,9 @@ const MainPage: React.FC = () => {
                 <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="text-slate-600 font-medium">
                         {selectedWordsCount > 0 ? (
-                            <span>Ready to practice <strong className="text-primary">{selectedWordsCount}</strong> words</span>
+                            <span>
+                                Ready to practice <strong className="text-primary">{selectedWordsCount}</strong> words
+                            </span>
                         ) : (
                             <span>Select some word bags to start</span>
                         )}
@@ -114,8 +146,8 @@ const MainPage: React.FC = () => {
                     <Button
                         onClick={handleStartGame}
                         disabled={selectedWordsCount === 0}
-                        size='lg'
-                        className='font-bold'
+                        size="lg"
+                        className="font-bold"
                     >
                         Start Shuffle Game
                     </Button>

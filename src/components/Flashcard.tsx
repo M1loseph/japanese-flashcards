@@ -1,6 +1,6 @@
 import { Card, Text, Button, Group, Title, Space, Stack } from '@mantine/core';
-import { IconCancel, IconCheck } from "@tabler/icons-react";
-import { useState, type JSX } from "react";
+import { IconCancel, IconCheck } from '@tabler/icons-react';
+import { useState, type JSX } from 'react';
 
 interface FlashcardProps {
     question: string;
@@ -11,7 +11,14 @@ interface FlashcardProps {
     handlerMistake: () => void;
 }
 
-const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronouncitaion, description, handlerCorrect, handlerMistake }) => {
+const JapaneseFlashcard: React.FC<FlashcardProps> = ({
+    question,
+    answer,
+    pronouncitaion,
+    description,
+    handlerCorrect,
+    handlerMistake,
+}) => {
     const [showAnswer, setShowAnswer] = useState(false);
     const text = showAnswer ? answer : question;
 
@@ -36,7 +43,8 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
                         <Space w="xs" />
                         <IconCancel />
                     </Button>
-                </>);
+                </>
+            );
         } else {
             return (
                 <Button style={{ flex: 1 }} onClick={toggleAnswer} color="blue" radius="md">
@@ -48,12 +56,18 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ question, answer, pronoun
 
     return (
         <Card w="100%" shadow="sm" radius="md" withBorder>
-            <Stack mih={"15rem"} justify="center" align="center">
-                <Title ta="center" className='' order={1}>
+            <Stack mih={'15rem'} justify="center" align="center">
+                <Title ta="center" className="" order={1}>
                     {text}
                 </Title>
-                <Text size="lg" mt="sm"> {showAnswer ? pronouncitaion : ""} </Text>
-                <Text size="sm" m="sm"> {showAnswer ? description : ""} </Text>
+                <Text size="lg" mt="sm">
+                    {' '}
+                    {showAnswer ? pronouncitaion : ''}{' '}
+                </Text>
+                <Text size="sm" m="sm">
+                    {' '}
+                    {showAnswer ? description : ''}{' '}
+                </Text>
             </Stack>
             <Group justify="space-around" mt="md" mb="xs">
                 {ButtonGroups()}

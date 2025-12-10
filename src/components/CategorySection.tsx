@@ -21,7 +21,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
 }) => {
     if (bags.length === 0) return null;
 
-    const allSelected = bags.every(bag => selectedBagIds.has(bag.id));
+    const allSelected = bags.every((bag) => selectedBagIds.has(bag.id));
 
     return (
         <div className="mb-8">
@@ -39,9 +39,9 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
                     </button>
                 </div>
             </div>
-      
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {bags.map(bag => (
+                {bags.map((bag) => (
                     <WordBagCard
                         key={bag.id}
                         bag={bag}
