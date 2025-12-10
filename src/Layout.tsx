@@ -1,6 +1,6 @@
 import '@mantine/core/styles.css';
-import { MantineProvider } from "@mantine/core";
-import { theme } from "./theme.ts";
+import { MantineProvider } from '@mantine/core';
+import { theme } from './theme.ts';
 import { Outlet } from 'react-router-dom';
 import { Header } from './components/Header';
 

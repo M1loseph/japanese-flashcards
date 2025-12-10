@@ -1,13 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
-import { type TranslationLanguage } from "../TranslationLanguage.ts";
-import { Button, Container, Group, Stack, Title, Text, Modal } from "@mantine/core";
-import Flashcard from "../components/Flashcard.tsx";
-import { findBagById, type JapaneseWord } from "../japanese";
-import { TranslationLanguages } from "../TranslationLanguage.ts";
-import { useLocation, useNavigate } from "react-router";
-import usePreventAccidentalLeave from "../hooks/usePreventAccidentalLeave.ts";
-import { NOT_AVAILABLE } from "../japanese/types.ts";
-
+import { useEffect, useMemo, useState } from 'react';
+import { type TranslationLanguage } from '../TranslationLanguage.ts';
+import { Button, Container, Group, Stack, Title, Text, Modal } from '@mantine/core';
+import Flashcard from '../components/Flashcard.tsx';
+import { findBagById, type JapaneseWord } from '../japanese';
+import { TranslationLanguages } from '../TranslationLanguage.ts';
+import { useLocation, useNavigate } from 'react-router';
+import usePreventAccidentalLeave from '../hooks/usePreventAccidentalLeave.ts';
+import { NOT_AVAILABLE } from '../japanese/types.ts';
 
 interface FlashcardSession {
     word: JapaneseWord;
@@ -43,9 +42,9 @@ const RandomShuffleGamePage: React.FC = () => {
     const [sessionTime, setSessionTime] = useState(0);
     const [gameState, setGameState] = useState<GameState>(() => {
         const state = location.state as RandomShuffleGamePageProps | null;
-        const savedState = localStorage.getItem("randomShuffleGameState");
+        const savedState = localStorage.getItem('randomShuffleGameState');
         if (state === null && savedState === null) {
-            throw new Error("No game state found in location state or local storage");
+            throw new Error('No game state found in location state or local storage');
         }
         if (savedState !== null) {
             const parsedSave = JSON.parse(savedState) as GameState;
@@ -54,9 +53,9 @@ const RandomShuffleGamePage: React.FC = () => {
             }
         }
         const { selectedLanguage, selectedWordBags, gameId } = state!;
-        const allWords = selectedWordBags.flatMap(bagId => findBagById(bagId)?.words || []);
+        const allWords = selectedWordBags.flatMap((bagId) => findBagById(bagId)?.words || []);
         shuffleArray(allWords);
-        const flashcards = allWords.map(japaneseVocabulary => {
+        const flashcards = allWords.map((japaneseVocabulary) => {
             return {
                 word: japaneseVocabulary,
                 answered: false,
@@ -73,26 +72,26 @@ const RandomShuffleGamePage: React.FC = () => {
     });
 
     useEffect(() => {
-        localStorage.setItem("randomShuffleGameState", JSON.stringify(gameState));
+        localStorage.setItem('randomShuffleGameState', JSON.stringify(gameState));
     }, [gameState]);
 
     const navigate = useNavigate();
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setSessionTime(prevState => prevState + 1);
+            setSessionTime((prevState) => prevState + 1);
         }, 1000);
         return () => clearInterval(interval);
     }, []);
 
     const { flashcards, currentFlashcardIndex, selectedLanguage } = gameState;
 
-    const correctAnswers = useMemo(() => flashcards.filter(card => card.correct), [flashcards]);
-    const wrongAnswers = useMemo(() => flashcards.filter(card => card.answered && !card.correct), [flashcards]);
+    const correctAnswers = useMemo(() => flashcards.filter((card) => card.correct), [flashcards]);
+    const wrongAnswers = useMemo(() => flashcards.filter((card) => card.answered && !card.correct), [flashcards]);
 
     const prepareSetForRepeat = () => {
-        const flashcards = wrongAnswers.map(card => ({ ...card, answered: false }));
-        setGameState(prevState => ({
+        const flashcards = wrongAnswers.map((card) => ({ ...card, answered: false }));
+        setGameState((prevState) => ({
             ...prevState,
             flashcards,
             currentFlashcardIndex: 0,
@@ -103,21 +102,27 @@ const RandomShuffleGamePage: React.FC = () => {
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
     if (gameFinished) {
-        return <>
-            <Container pt="xl">
-                <Stack align="center">
-                    <Title
-                        order={2}
-                    >Congratulations, you finished!</Title>
-                    <Group>
-                        {
-                            wrongAnswers.length != 0 ? <Button color="green" onClick={prepareSetForRepeat} size="md">Repeat mistakes ({wrongAnswers.length})</Button> : <></>
-                        }
-                        <Button onClick={() => navigate("/")} size="md">Go home</Button>
-                    </Group>
-                </Stack>
-            </Container>
-        </>;
+        return (
+            <>
+                <Container pt="xl">
+                    <Stack align="center">
+                        <Title order={2}>Congratulations, you finished!</Title>
+                        <Group>
+                            {wrongAnswers.length != 0 ? (
+                                <Button color="green" onClick={prepareSetForRepeat} size="md">
+                                    Repeat mistakes ({wrongAnswers.length})
+                                </Button>
+                            ) : (
+                                <></>
+                            )}
+                            <Button onClick={() => navigate('/')} size="md">
+                                Go home
+                            </Button>
+                        </Group>
+                    </Stack>
+                </Container>
+            </>
+        );
     }
 
     const card = flashcards[currentFlashcardIndex];
@@ -136,7 +141,7 @@ const RandomShuffleGamePage: React.FC = () => {
         };
         const updatedCards = replaceCard(answeredCard);
 
-        setGameState(prevState => ({
+        setGameState((prevState) => ({
             ...prevState,
             flashcards: updatedCards,
             currentFlashcardIndex: prevState.currentFlashcardIndex + 1,
@@ -151,7 +156,7 @@ const RandomShuffleGamePage: React.FC = () => {
         };
         const updatedCards = replaceCard(answeredCard);
 
-        setGameState(prevState => ({
+        setGameState((prevState) => ({
             ...prevState,
             flashcards: updatedCards,
             currentFlashcardIndex: prevState.currentFlashcardIndex + 1,
@@ -171,46 +176,51 @@ const RandomShuffleGamePage: React.FC = () => {
         return card.word.jp;
     };
 
-    return <>
-        <Modal opened={showPrompt} onClose={cancelLeave} title="Leave game?">
-            <Stack>
-                <Text>Are you sure you want to leave? Your current progress in this round will be lost.</Text>
-                <Group justify="flex-end">
-                    <Button variant="default" onClick={cancelLeave}>Stay</Button>
-                    <Button color="red" onClick={confirmLeave}>Leave</Button>
-                </Group>
-            </Stack>
-        </Modal>
-        <Container pt="xl">
-            <Stack align="center">
-                <Group style={{ width: "100%" }} justify="space-between" align="center">
-                    <Text fw={700} size="xl">
-                        {currentFlashcardIndex + 1}/{flashcards.length}
-                    </Text>
-                    <Text c="green" fw={700} size="xl">
-                        {correctAnswers.length}
-                    </Text>
-                    <Text c="red" fw={700} size="xl">
-                        {wrongAnswers.length}
-                    </Text>
-                    <Text size="xl" fw={700}>
-                        {String(hours).padStart(2, '0')}:
-                        {String(minutes).padStart(2, '0')}:
-                        {String(seconds).padStart(2, '0')}
-                    </Text>
-                </Group>
-                <Flashcard
-                    key={card.word.jp}
-                    question={question}
-                    answer={selectAnswerText()}
-                    pronouncitaion={card.word.jp_pronunciation}
-                    description={card.word.jp_description}
-                    handlerCorrect={handlerCorrect}
-                    handlerMistake={handlerMistake}
-                />
-            </Stack>
-        </Container>
-    </>;
+    return (
+        <>
+            <Modal opened={showPrompt} onClose={cancelLeave} title="Leave game?">
+                <Stack>
+                    <Text>Are you sure you want to leave? Your current progress in this round will be lost.</Text>
+                    <Group justify="flex-end">
+                        <Button variant="default" onClick={cancelLeave}>
+                            Stay
+                        </Button>
+                        <Button color="red" onClick={confirmLeave}>
+                            Leave
+                        </Button>
+                    </Group>
+                </Stack>
+            </Modal>
+            <Container pt="xl">
+                <Stack align="center">
+                    <Group style={{ width: '100%' }} justify="space-between" align="center">
+                        <Text fw={700} size="xl">
+                            {currentFlashcardIndex + 1}/{flashcards.length}
+                        </Text>
+                        <Text c="green" fw={700} size="xl">
+                            {correctAnswers.length}
+                        </Text>
+                        <Text c="red" fw={700} size="xl">
+                            {wrongAnswers.length}
+                        </Text>
+                        <Text size="xl" fw={700}>
+                            {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:
+                            {String(seconds).padStart(2, '0')}
+                        </Text>
+                    </Group>
+                    <Flashcard
+                        key={card.word.jp}
+                        question={question}
+                        answer={selectAnswerText()}
+                        pronouncitaion={card.word.jp_pronunciation}
+                        description={card.word.jp_description}
+                        handlerCorrect={handlerCorrect}
+                        handlerMistake={handlerMistake}
+                    />
+                </Stack>
+            </Container>
+        </>
+    );
 };
 
 export default RandomShuffleGamePage;

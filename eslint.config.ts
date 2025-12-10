@@ -5,6 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import stylistic from '@stylistic/eslint-plugin';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default defineConfig([
     globalIgnores(['dist']),
@@ -17,23 +18,11 @@ export default defineConfig([
             js.configs.recommended,
             tseslint.configs.recommended,
             reactRefresh.configs.vite,
+            eslintConfigPrettier,
         ],
         languageOptions: {
             ecmaVersion: 2020,
             globals: globals.browser,
-        },
-        rules: {
-            "comma-dangle": ["error", "always-multiline"],
-            "semi": ["error", "always"],
-            "@stylistic/indent": ["error", 4],
-            "@stylistic/linebreak-style": ["error", "unix"],
-            "@stylistic/max-len": [
-                "error",
-                {
-                    "code": 400,
-                    "ignoreStrings": true,
-                },
-            ],
         },
     },
     reactHooks.configs.flat['recommended-latest'],

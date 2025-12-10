@@ -1,4 +1,4 @@
-export const NOT_AVAILABLE = "N/A";
+export const NOT_AVAILABLE = 'N/A';
 
 export interface JapaneseWord {
     en: string;
