@@ -122,13 +122,13 @@ export const sakura_10: JapaneseWord[] = [
         jp: 'かいものをします',
     },
     {
-        en: 'Do home work',
+        en: 'Do homework',
         pl: 'Robić pracę domową',
         jp: 'しゅくだいをします',
     },
     {
-        en: 'Mail',
-        pl: 'Mail',
+        en: 'Email',
+        pl: 'Email',
         jp: 'メール',
     },
 ];
