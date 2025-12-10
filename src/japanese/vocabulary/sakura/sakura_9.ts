@@ -94,7 +94,7 @@ export const sakura_9: JapaneseWord[] = [
     {
         en: 'I rarely eat ramen.',
         pl: 'Rzadko jem ramen.',
-        jp: 'あまりラーメンをたべません。',
+        jp: 'あまりラーメンはたべません。',
     },
     {
         en: 'To watch',
@@ -134,7 +134,7 @@ export const sakura_9: JapaneseWord[] = [
     {
         en: 'I never watch TV.',
         pl: 'Nigdy nie oglądam telewizji.',
-        jp: 'ぜんぜんテレビをみません。',
+        jp: 'ぜんぜんテレビはみません。',
     },
     {
         en: 'What do you watch?',
