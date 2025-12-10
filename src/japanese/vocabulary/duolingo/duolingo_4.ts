@@ -1,6 +1,6 @@
 import type { JapaneseWord } from '../../types.ts';
 
-const duolingo_4: JapaneseWord[] = [
+export const duolingo_4: JapaneseWord[] = [
     {
         en: "To watch",
         pl: "Oglądać",
@@ -210,5 +210,3 @@ const duolingo_4: JapaneseWord[] = [
         jp: "スカート",
     },
 ];
-
-export { duolingo_4 };

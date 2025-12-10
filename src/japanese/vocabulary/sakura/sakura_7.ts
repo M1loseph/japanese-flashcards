@@ -1,6 +1,6 @@
 import type { JapaneseWord } from "../../types";
 
-const sakura_7: JapaneseWord[] = [
+export const sakura_7: JapaneseWord[] = [
     {
         en: "Newspaper",
         pl: "Gazeta",
@@ -162,5 +162,3 @@ const sakura_7: JapaneseWord[] = [
         jp: "ぎゅうにゅう",
     },
 ];
-
-export { sakura_7 };

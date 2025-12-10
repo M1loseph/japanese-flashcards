@@ -1,6 +1,6 @@
 import {NOT_AVAILABLE, type JapaneseWord} from "../types.ts";
 
-const family: JapaneseWord[] = [
+export const family: JapaneseWord[] = [
     {
         en: "Mom (honorific / direct)",
         pl: "Mama (forma honoryfikatywna / bezpośrednia)",
@@ -190,5 +190,3 @@ const family: JapaneseWord[] = [
         jp_pronunciation: "おこさん",
     },
 ];
-
-export { family };

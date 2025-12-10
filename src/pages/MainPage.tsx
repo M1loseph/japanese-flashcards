@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { countriesEUBag, daysOfWeekBag, duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, familyBag, findBagById, genki0Bag, genki1Bag, genki2Bag, numbersBag, sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag, sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag, sakura8AnimalsBag, sakura8FruitsAndVegetablesBag, sakura8SportsBag, timeBag, sakura9Bag } from '../japanese';
+import { countriesEUBag, daysOfWeekBag, duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, familyBag, findBagById, genki0Bag, genki1Bag, genki2Bag, numbersBag, sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag, sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag, sakura8AnimalsBag, sakura8FruitsAndVegetablesBag, sakura8SportsBag, timeBag, sakura9Bag, sakura10Bag } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -31,7 +31,7 @@ const MainPage: React.FC = () => {
             sakura1Bag, sakura2Bag, sakura3Bag, sakura4Bag,
             sakura5Bag, sakura6Bag, sakura7Bag, sakura8Bag,
             sakura8SportsBag, sakura8FruitsAndVegetablesBag, sakura8AnimalsBag,
-            sakura9Bag,
+            sakura9Bag, sakura10Bag,
         ],
         'Apps 📱': [
             duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag,

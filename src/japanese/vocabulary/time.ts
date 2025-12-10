@@ -1,6 +1,6 @@
 import type { JapaneseWord } from '../types';
 
-const time: JapaneseWord[] = [
+export const time: JapaneseWord[] = [
     {
         en: "1 o'clock",
         pl: "Pierwsza godzina",
@@ -170,5 +170,3 @@ const time: JapaneseWord[] = [
         jp_pronunciation: "じ",
     },
 ];
-
-export { time };

@@ -1,6 +1,6 @@
 import type { JapaneseWord } from '../../types.ts';
 
-const duolingo_2: JapaneseWord[] = [
+export const duolingo_2: JapaneseWord[] = [
     {
         en: "Here",
         pl: "Tutaj",
@@ -196,5 +196,3 @@ const duolingo_2: JapaneseWord[] = [
         jp_pronunciation: "きょうと",
     },
 ];
-
-export { duolingo_2 };

@@ -1,6 +1,6 @@
 import type { JapaneseWord } from '../types';
 
-const numbers: JapaneseWord[] = [
+export const numbers: JapaneseWord[] = [
     {
         en: "One",
         pl: "Jeden",
@@ -290,5 +290,3 @@ const numbers: JapaneseWord[] = [
         jp_pronunciation: "きゅうまん",
     },
 ];
-
-export { numbers };

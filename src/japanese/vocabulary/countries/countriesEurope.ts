@@ -1,6 +1,6 @@
 import type { JapaneseWord } from "../../types.ts";
 
-const countriesEurope: JapaneseWord[] = [
+export const countriesEurope: JapaneseWord[] = [
     {
         en: "Spain",
         pl: "Hiszpania",
@@ -227,5 +227,3 @@ const countriesEurope: JapaneseWord[] = [
         jp: "バチカン",
     },
 ];
-
-export { countriesEurope };

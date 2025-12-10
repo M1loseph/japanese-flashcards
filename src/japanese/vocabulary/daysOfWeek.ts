@@ -1,6 +1,6 @@
 import { type JapaneseWord } from "../types.ts";
 
-const daysOfWeek: JapaneseWord[] = [
+export const daysOfWeek: JapaneseWord[] = [
     {
         en: "Monday",
         pl: "Poniedziałek",
@@ -56,5 +56,3 @@ const daysOfWeek: JapaneseWord[] = [
         jp_pronunciation: "しゅうまつ",
     },
 ];
-
-export { daysOfWeek };

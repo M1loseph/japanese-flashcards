@@ -2,7 +2,7 @@ import type { JapaneseWord } from "../../types";
 
 // Even though there were some countries in Genki 1, I decided to put all of them in dedicated countries file.
 // Also, the same applied for family members - they are in family.ts file.
-const genki_1: JapaneseWord[] = [
+export const genki_1: JapaneseWord[] = [
     {
         en: "University",
         pl: "Uniwersytet",
@@ -245,5 +245,3 @@ const genki_1: JapaneseWord[] = [
         jp: "べんごし",
     },
 ];
-
-export { genki_1 };

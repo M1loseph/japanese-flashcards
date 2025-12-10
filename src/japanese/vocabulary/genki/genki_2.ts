@@ -1,6 +1,6 @@
 import type { JapaneseWord } from "../../types";
 
-const genki_2: JapaneseWord[] = [
+export const genki_2: JapaneseWord[] = [
     {
         en: "Which one (of three or more)",
         pl: "Który (z trzech lub więcej)",
@@ -192,5 +192,3 @@ const genki_2: JapaneseWord[] = [
         jp: "どうも",
     },
 ];
-
-export { genki_2 };
