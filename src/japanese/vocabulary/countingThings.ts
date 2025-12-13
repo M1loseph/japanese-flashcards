@@ -1,4 +1,4 @@
-import { type JapaneseWord } from '../types.ts';
+import type{ JapaneseWord } from '../types.ts';
 
 export const countingThings: JapaneseWord[] = [
     {
@@ -59,11 +59,51 @@ export const countingThings: JapaneseWord[] = [
     {
         en: 'Eleven things',
         pl: 'Jedenaście rzeczy',
-        jp: 'じゅういち',
+        jp: 'じゅういっこ',
     },
     {
         en: 'Twelve things',
         pl: 'Dwanaście rzeczy',
-        jp: 'じゅうに',
+        jp: 'じゅうにこ',
     },
+    {
+        en: 'Thirteen things',
+        pl: 'Trzynaście rzeczy',
+        jp: 'じゅうさんこ',
+    },
+    {
+        en: 'Fourteen things',
+        pl: 'Czternaście rzeczy',
+        jp: 'じゅうよんこ',
+    },
+    {
+        en: 'Fifteen things',
+        pl: 'Piętnaście rzeczy',
+        jp: 'じゅうごこ',
+    },
+    {
+        en: 'Sixteen things',
+        pl: 'Szesnaście rzeczy',
+        jp: 'じゅうろっこ',
+    },
+    {
+        en: 'Seventeen things',
+        pl: 'Siedemnaście rzeczy',
+        jp: 'じゅうななこ',
+    },
+    {
+        en: 'Eighteen things',
+        pl: 'Osiemnaście rzeczy',
+        jp: 'じゅうはっこ',
+    },
+    {
+        en: 'Nineteen things',
+        pl: 'Dziewiętnaście rzeczy',
+        jp: 'じゅうきゅうこ',
+    },
+    {
+        en: 'Twenty things',
+        pl: 'Dwadzieścia rzeczy',
+        jp: 'にじゅっこ',
+    }
 ];

@@ -1,4 +1,4 @@
-import { type JapaneseWord } from '../types.ts';
+import type { JapaneseWord } from '../types.ts';
 
 export const daysOfWeek: JapaneseWord[] = [
     {
