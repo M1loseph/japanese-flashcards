@@ -1,4 +1,5 @@
 import { numbers } from './vocabulary/numbers.ts';
+import { countingThings } from './vocabulary/countingThings.ts';
 import { type WordBag } from './types.ts';
 import { daysOfWeek } from './vocabulary/daysOfWeek.ts';
 import { family } from './vocabulary/family.ts';
@@ -39,6 +40,12 @@ export const numbersBag: WordBag = {
     id: '05253d28-8ebf-4793-bcb2-11b117a36f86',
     name: 'Numbers',
     words: numbers,
+};
+
+export const countingThingsBag: WordBag = {
+    id: 'f1f12e01-87cf-437d-b67f-696a17be41d5',
+    name: 'Counting Things',
+    words: countingThings,
 };
 
 export const daysOfWeekBag: WordBag = {
@@ -194,6 +201,7 @@ export const sakura10Bag: WordBag = {
 const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
+    countingThingsBag,
     daysOfWeekBag,
     timeBag,
     duolingo1Bag,
