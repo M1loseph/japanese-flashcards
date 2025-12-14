@@ -105,13 +105,8 @@ export const genki_1: JapaneseWord[] = [
         jp: 'でんわ',
     },
     {
-        en: 'First, seconds, third ... (ordinal numbers)',
-        pl: 'Pierwszy, drugi, trzeci ... (liczby porządkowe)',
-        jp: '... ばん',
-    },
-    {
-        en: 'Number',
-        pl: 'Numer',
+        en: 'Number (phone / bank account etc.)',
+        pl: 'Numer (telefonu / konta bankowego itd.)',
         jp: 'ばんごう',
     },
     {
@@ -153,56 +148,6 @@ export const genki_1: JapaneseWord[] = [
         en: 'Major (university subject)',
         pl: 'Kierunek (studiów)',
         jp: 'せんこう',
-    },
-    {
-        en: 'Asian studies (subject)',
-        pl: 'Studia azjatyckie (przedmiot)',
-        jp: 'アジアけんきゅう',
-    },
-    {
-        en: 'Economics (subject)',
-        pl: 'Ekonomia (przedmiot)',
-        jp: 'けいざい',
-    },
-    {
-        en: 'Engineering (subject)',
-        pl: 'Inżynieria (przedmiot)',
-        jp: 'こうがく',
-    },
-    {
-        en: 'International relations (subject)',
-        pl: 'Stosunki międzynarodowe (przedmiot)',
-        jp: 'こくさいかんけい',
-    },
-    {
-        en: 'Computer science (subject)',
-        pl: 'Informatyka (przedmiot)',
-        jp: 'コンピューター',
-    },
-    {
-        en: 'Politics (subject)',
-        pl: 'Polityka (przedmiot)',
-        jp: 'せいじ',
-    },
-    {
-        en: 'Biology (subject)',
-        pl: 'Biologia (przedmiot)',
-        jp: 'せいぶつがく',
-    },
-    {
-        en: 'Business (subject)',
-        pl: 'Biznes (przedmiot)',
-        jp: 'ビジネス',
-    },
-    {
-        en: 'Literature (subject)',
-        pl: 'Literatura (przedmiot)',
-        jp: 'ぶんがく',
-    },
-    {
-        en: 'History (subject)',
-        pl: 'Historia (przedmiot)',
-        jp: 'れきし',
     },
     {
         en: 'Occupation / Job',

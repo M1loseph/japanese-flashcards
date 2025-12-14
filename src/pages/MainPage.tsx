@@ -30,6 +30,8 @@ import {
     sakura9Bag,
     sakura10Bag,
     countingThingsBag,
+    genki1MajorsBag,
+    ordinalNumbersBag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -53,11 +55,9 @@ const MainPage: React.FC = () => {
     };
 
     const groupedBags: Record<string, WordBag[]> = {
-        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, daysOfWeekBag, timeBag],
-        'Textbooks and classes 📚': [
-            genki0Bag,
-            genki1Bag,
-            genki2Bag,
+        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, ordinalNumbersBag, daysOfWeekBag, timeBag],
+        'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag],
+        'Classes 🎓': [
             sakura1Bag,
             sakura2Bag,
             sakura3Bag,

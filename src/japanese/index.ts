@@ -27,6 +27,8 @@ import { sakura_8_fruitsAndVegetables } from './vocabulary/sakura/sakura_8_fruit
 import { sakura_8_animals } from './vocabulary/sakura/sakura_8_animals.ts';
 import { sakura_9 } from './vocabulary/sakura/sakura_9.ts';
 import { sakura_10 } from './vocabulary/sakura/sakura_10.ts';
+import { genki_1_majors } from './vocabulary/genki/genki_1_majors.ts';
+import { ordinalNumbers } from './vocabulary/ordinalNumbers.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -40,6 +42,12 @@ export const numbersBag: WordBag = {
     id: '05253d28-8ebf-4793-bcb2-11b117a36f86',
     name: 'Numbers',
     words: numbers,
+};
+
+export const ordinalNumbersBag: WordBag = {
+    id: '5fb46e35-8f91-4a96-874f-d8e1a27789bf',
+    name: 'Ordinal Numbers',
+    words: ordinalNumbers,
 };
 
 export const countingThingsBag: WordBag = {
@@ -112,6 +120,12 @@ export const genki1Bag: WordBag = {
     id: '9ce8f1cc-8504-4639-867c-59458ab6e39f',
     name: 'Genki #1',
     words: genki_1,
+};
+
+export const genki1MajorsBag: WordBag = {
+    id: '2d8e89f2-8ebe-48c0-91cc-062b7a7676e7',
+    name: 'Genki #1 Majors',
+    words: genki_1_majors,
 };
 
 export const genki2Bag: WordBag = {
@@ -202,6 +216,7 @@ const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
     countingThingsBag,
+    ordinalNumbersBag,
     daysOfWeekBag,
     timeBag,
     duolingo1Bag,
@@ -213,6 +228,7 @@ const availableWordBags: WordBag[] = [
     countriesEUBag,
     genki0Bag,
     genki1Bag,
+    genki1MajorsBag,
     genki2Bag,
     sakura1Bag,
     sakura2Bag,
