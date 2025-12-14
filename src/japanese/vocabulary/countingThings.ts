@@ -105,5 +105,5 @@ export const countingThings: JapaneseWord[] = [
         en: 'Twenty things',
         pl: 'Dwadzieścia rzeczy',
         jp: 'にじゅっこ',
-    }
+    },
 ];
