@@ -189,4 +189,40 @@ export const family: JapaneseWord[] = [
         jp: 'お子さん',
         jp_pronunciation: 'おこさん',
     },
+    {
+        en: 'Aunt (honorific)',
+        pl: 'Ciocia (forma honoryfikatywna)',
+        jp: '叔母さん',
+        jp_pronunciation: 'おばさん',
+    },
+    {
+        en: 'Aunt (humble)',
+        pl: 'Ciocia (forma skromna)',
+        jp: '叔母',
+        jp_pronunciation: 'おば',
+    },
+    {
+        en: 'Uncle (honorific)',
+        pl: 'Wujek (forma honoryfikatywna)',
+        jp: '叔父さん',
+        jp_pronunciation: 'おじさん',
+    },
+    {
+        en: 'Uncle (humble)',
+        pl: 'Wujek (forma skromna)',
+        jp: '叔父',
+        jp_pronunciation: 'おじ',
+    },
+    {
+        en: 'Parent(s) (humble)',
+        pl: 'Rodzic(e) (forma skromna)',
+        jp: '両親',
+        jp_pronunciation: 'りょうしん',
+    },
+    {
+        en: 'Parent(s) (honorific)',
+        pl: 'Rodzic(e) (forma honoryfikatywna)',
+        jp: 'ご両親',
+        jp_pronunciation: 'ごりょうしん',
+    }
 ];

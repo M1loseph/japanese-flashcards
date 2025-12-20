@@ -33,6 +33,7 @@ import {
     genki1MajorsBag,
     ordinalNumbersBag,
     monthsBag,
+    sakura11Bag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -80,6 +81,7 @@ const MainPage: React.FC = () => {
             sakura8AnimalsBag,
             sakura9Bag,
             sakura10Bag,
+            sakura11Bag,
         ],
         'Apps 📱': [duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag],
         'Geography 🌍 🌎 🌏': [countriesEUBag],
