@@ -29,6 +29,7 @@ import { sakura_9 } from './vocabulary/sakura/sakura_9.ts';
 import { sakura_10 } from './vocabulary/sakura/sakura_10.ts';
 import { genki_1_majors } from './vocabulary/genki/genki_1_majors.ts';
 import { ordinalNumbers } from './vocabulary/ordinalNumbers.ts';
+import { months } from './vocabulary/months.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -66,6 +67,12 @@ export const timeBag: WordBag = {
     id: 'c67e0046-1cca-4ec6-87c9-be345d790236',
     name: 'Time',
     words: time,
+};
+
+export const monthsBag: WordBag = {
+    id: 'eb5ee3eb-8d1f-4046-9634-8e0915a836c3',
+    name: 'Months',
+    words: months,
 };
 
 export const countriesEUBag: WordBag = {
@@ -219,6 +226,7 @@ const availableWordBags: WordBag[] = [
     ordinalNumbersBag,
     daysOfWeekBag,
     timeBag,
+    monthsBag,
     duolingo1Bag,
     duolingo2Bag,
     duolingo3Bag,
