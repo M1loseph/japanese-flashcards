@@ -224,5 +224,5 @@ export const family: JapaneseWord[] = [
         pl: 'Rodzic(e) (forma honoryfikatywna)',
         jp: 'ご両親',
         jp_pronunciation: 'ごりょうしん',
-    }
+    },
 ];
