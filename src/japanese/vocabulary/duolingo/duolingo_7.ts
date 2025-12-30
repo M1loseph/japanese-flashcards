@@ -115,7 +115,7 @@ export const duolingo_7: JapaneseWord[] = [
         jp: 'Kポップ',
     },
     {
-        en: 'I like japanese music.',
+        en: 'I like Japanese music.',
         pl: 'Lubię japońską muzykę.',
         jp: 'にほんのおんがくがすきです。',
     },
