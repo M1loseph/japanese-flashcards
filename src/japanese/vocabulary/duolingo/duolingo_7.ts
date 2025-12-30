@@ -120,7 +120,7 @@ export const duolingo_7: JapaneseWord[] = [
         jp: 'にほんのおんがくがすきです。',
     },
     {
-        en: 'Mistery (genre)',
+        en: 'Mystery (genre)',
         pl: 'Kryminał (gatunek)',
         jp: 'ミステリー',
     },
