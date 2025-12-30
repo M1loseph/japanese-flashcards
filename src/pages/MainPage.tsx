@@ -34,6 +34,8 @@ import {
     ordinalNumbersBag,
     monthsBag,
     sakura11Bag,
+    duolingo7Bag,
+    countriesAsiaBag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -83,8 +85,8 @@ const MainPage: React.FC = () => {
             sakura10Bag,
             sakura11Bag,
         ],
-        'Apps 📱': [duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag],
-        'Geography 🌍 🌎 🌏': [countriesEUBag],
+        'Apps 📱': [duolingo1Bag, duolingo2Bag, duolingo3Bag, duolingo4Bag, duolingo5Bag, duolingo6Bag, duolingo7Bag],
+        'Geography 🌍 🌎 🌏': [countriesEUBag, countriesAsiaBag],
     };
 
     const handleSelectAll = (bags: WordBag[]) => {
