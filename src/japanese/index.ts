@@ -31,6 +31,8 @@ import { genki_1_majors } from './vocabulary/genki/genki_1_majors.ts';
 import { ordinalNumbers } from './vocabulary/ordinalNumbers.ts';
 import { months } from './vocabulary/months.ts';
 import { sakura_11 } from './vocabulary/sakura/sakura_11.ts';
+import { duolingo_7 } from './vocabulary/duolingo/duolingo_7.ts';
+import { countriesAsia } from './vocabulary/countries/countriesAsia.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -82,6 +84,12 @@ export const countriesEUBag: WordBag = {
     words: countriesEurope,
 };
 
+export const countriesAsiaBag: WordBag = {
+    id: '9889adb4-0777-4983-8a12-d580accb3ce4',
+    name: 'Countries Asia',
+    words: countriesAsia,
+};
+
 export const duolingo1Bag: WordBag = {
     id: '72d4f2a1-6963-497e-85a6-b6c2458da116',
     name: 'Duolingo #1',
@@ -116,6 +124,12 @@ export const duolingo6Bag: WordBag = {
     id: '7202e479-2fd1-4df3-9d73-47704f77919d',
     name: 'Duolingo #6',
     words: duolingo_6,
+};
+
+export const duolingo7Bag: WordBag = {
+    id: '393fdc1f-9b56-4f78-ac9f-c3f3cdce1a19',
+    name: 'Duolingo #7',
+    words: duolingo_7,
 };
 
 export const genki0Bag: WordBag = {
@@ -240,7 +254,9 @@ const availableWordBags: WordBag[] = [
     duolingo4Bag,
     duolingo5Bag,
     duolingo6Bag,
+    duolingo7Bag,
     countriesEUBag,
+    countriesAsiaBag,
     genki0Bag,
     genki1Bag,
     genki1MajorsBag,
