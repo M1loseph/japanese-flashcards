@@ -32,7 +32,7 @@ export const duolingo_8: JapaneseWord[] = [
         jp: 'たぶん',
     },
     {
-        en: 'Micowave',
+        en: 'Microwave',
         pl: 'Mikrofalówka',
         jp: 'でんしレンジ',
     },
