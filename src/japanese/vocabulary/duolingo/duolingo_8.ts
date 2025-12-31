@@ -7,7 +7,7 @@ export const duolingo_8: JapaneseWord[] = [
         jp: 'エアコン',
     },
     {
-        en: 'Vaccum cleaner',
+        en: 'Vacuum cleaner',
         pl: 'Odkurzacz',
         jp: 'そうじき',
     },
