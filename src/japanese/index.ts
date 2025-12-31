@@ -33,6 +33,7 @@ import { months } from './vocabulary/months.ts';
 import { sakura_11 } from './vocabulary/sakura/sakura_11.ts';
 import { duolingo_7 } from './vocabulary/duolingo/duolingo_7.ts';
 import { countriesAsia } from './vocabulary/countries/countriesAsia.ts';
+import { duolingo_8 } from './vocabulary/duolingo/duolingo_8.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -130,6 +131,12 @@ export const duolingo7Bag: WordBag = {
     id: '393fdc1f-9b56-4f78-ac9f-c3f3cdce1a19',
     name: 'Duolingo #7',
     words: duolingo_7,
+};
+
+export const duolingo8Bag: WordBag = {
+    id: '0decb5a3-ae11-4104-ae84-7124432b3a5d',
+    name: 'Duolingo #8',
+    words: duolingo_8,
 };
 
 export const genki0Bag: WordBag = {
@@ -255,6 +262,7 @@ const availableWordBags: WordBag[] = [
     duolingo5Bag,
     duolingo6Bag,
     duolingo7Bag,
+    duolingo8Bag,
     countriesEUBag,
     countriesAsiaBag,
     genki0Bag,
