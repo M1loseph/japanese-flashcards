@@ -99,7 +99,7 @@ export const sakura_11: JapaneseWord[] = [
     {
         en: 'Go to work',
         pl: 'Iść do pracy',
-        jp: 'しごとにいきます',
+        jp: 'かいしゃにいきます',
     },
     {
         en: "It's 7 AM now.",
@@ -166,4 +166,19 @@ export const sakura_11: JapaneseWord[] = [
         pl: 'Jechać do pracy pociągiem',
         jp: 'でんしゃでしごとにいきます',
     },
+    {
+        en: 'Walk',
+        pl: 'Spacerować',
+        jp: 'さんぽをします',
+    },
+    {
+        en: 'Enter',
+        pl: 'Wchodzić',
+        jp: 'はいります',
+    },
+    {
+        en: 'Enter the school',
+        pl: 'Wchodzić do szkoły',
+        jp: 'がっこうにはいります',
+    }
 ];
