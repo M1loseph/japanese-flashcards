@@ -180,5 +180,5 @@ export const sakura_11: JapaneseWord[] = [
         en: 'Enter the school',
         pl: 'Wchodzić do szkoły',
         jp: 'がっこうにはいります',
-    }
+    },
 ];
