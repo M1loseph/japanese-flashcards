@@ -37,6 +37,7 @@ import {
     duolingo7Bag,
     countriesAsiaBag,
     duolingo8Bag,
+    sakura12Bag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -85,6 +86,7 @@ const MainPage: React.FC = () => {
             sakura9Bag,
             sakura10Bag,
             sakura11Bag,
+            sakura12Bag,
         ],
         'Apps 📱': [
             duolingo1Bag,
