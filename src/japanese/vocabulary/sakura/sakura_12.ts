@@ -142,7 +142,7 @@ export const sakura_12: JapaneseWord[] = [
         jp: 'ピエロギをつくります',
     },
     {
-        en: 'Cook japanese food',
+        en: 'Cook Japanese food',
         pl: 'Gotować japońskie jedzenie',
         jp: 'にほんのりょうりをつくります',
     },
