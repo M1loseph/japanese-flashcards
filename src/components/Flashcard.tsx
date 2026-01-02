@@ -71,6 +71,8 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
                 return 'orange';
             case 'suffix':
                 return 'cyan';
+            case 'other':
+                return 'gray';
             default:
                 throw Error('Unknown word type');
         }
@@ -86,10 +88,10 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
                     {text}
                 </Title>
                 <Text size="lg" mt="sm">
-                    {showAnswer ? pronouncitaion : ''}{' '}
+                    {showAnswer ? pronouncitaion : ''}
                 </Text>
                 <Text size="sm" m="sm">
-                    {showAnswer ? description : ''}{' '}
+                    {showAnswer ? description : ''}
                 </Text>
             </Stack>
             <Group justify="space-around" mt="md" mb="xs">

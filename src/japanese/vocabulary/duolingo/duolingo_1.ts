@@ -181,7 +181,7 @@ export const duolingo_1: JapaneseWord[] = [
         jp: 'ケーキ',
     },
     {
-        type: 'other',
+        type: 'phrase',
         en: 'Yes',
         pl: 'Tak',
         jp: 'はい',
