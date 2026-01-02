@@ -1,4 +1,4 @@
-import { Card, Text, Button, Group, Title, Space, Stack, Pill, Badge } from '@mantine/core';
+import { Card, Text, Button, Group, Title, Space, Stack, Badge } from '@mantine/core';
 import { IconCancel, IconCheck } from '@tabler/icons-react';
 import { useState, type JSX } from 'react';
 import type { WordType } from '../japanese/types';
@@ -58,7 +58,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
     };
 
     const badgeColor = (type: WordType): string => {
-        switch(type) {
+        switch (type) {
             case 'noun':
                 return 'teal';
             case 'verb':
@@ -74,7 +74,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
             default:
                 throw Error('Unknown word type');
         }
-    }
+    };
 
     return (
         <Card w="100%" shadow="sm" radius="md" withBorder>
