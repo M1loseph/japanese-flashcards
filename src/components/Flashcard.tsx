@@ -1,8 +1,10 @@
-import { Card, Text, Button, Group, Title, Space, Stack } from '@mantine/core';
+import { Card, Text, Button, Group, Title, Space, Stack, Pill, Badge } from '@mantine/core';
 import { IconCancel, IconCheck } from '@tabler/icons-react';
 import { useState, type JSX } from 'react';
+import type { WordType } from '../japanese/types';
 
 interface FlashcardProps {
+    type: WordType;
     question: string;
     answer: string;
     pronouncitaion?: string;
@@ -12,6 +14,7 @@ interface FlashcardProps {
 }
 
 const JapaneseFlashcard: React.FC<FlashcardProps> = ({
+    type,
     question,
     answer,
     pronouncitaion,
@@ -54,18 +57,38 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
         }
     };
 
+    const badgeColor = (type: WordType): string => {
+        switch(type) {
+            case 'noun':
+                return 'teal';
+            case 'verb':
+                return 'blue';
+            case 'adjective':
+                return 'grape';
+            case 'particle':
+                return 'yellow';
+            case 'phrase':
+                return 'orange';
+            case 'suffix':
+                return 'cyan';
+            default:
+                throw Error('Unknown word type');
+        }
+    }
+
     return (
         <Card w="100%" shadow="sm" radius="md" withBorder>
+            <Badge mb="md" color={badgeColor(type)} variant="light">
+                {type.toUpperCase()}
+            </Badge>
             <Stack mih={'15rem'} justify="center" align="center">
                 <Title ta="center" className="" order={1}>
                     {text}
                 </Title>
                 <Text size="lg" mt="sm">
-                    {' '}
                     {showAnswer ? pronouncitaion : ''}{' '}
                 </Text>
                 <Text size="sm" m="sm">
-                    {' '}
                     {showAnswer ? description : ''}{' '}
                 </Text>
             </Stack>

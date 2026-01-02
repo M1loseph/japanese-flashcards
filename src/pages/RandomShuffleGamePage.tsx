@@ -209,6 +209,7 @@ const RandomShuffleGamePage: React.FC = () => {
                         </Text>
                     </Group>
                     <Flashcard
+                        type={card.word.type}
                         key={card.word.jp}
                         question={question}
                         answer={selectAnswerText()}
