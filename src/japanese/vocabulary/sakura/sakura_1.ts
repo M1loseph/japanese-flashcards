@@ -69,7 +69,7 @@ export const sakura_1: JapaneseWord[] = [
         jp: 'すみません',
     },
     {
-        type: 'noun',
+        type: 'suffix',
         en: 'Mr./Ms.',
         pl: 'Pan/Pani',
         jp: '...さん',

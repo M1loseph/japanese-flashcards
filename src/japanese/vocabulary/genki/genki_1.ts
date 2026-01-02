@@ -40,7 +40,7 @@ export const genki_1: JapaneseWord[] = [
         jp: 'せんせい',
     },
     {
-        type: 'noun',
+        type: 'suffix',
         en: '... year student',
         pl: 'Student ... roku',
         jp: '...ねんせい',
@@ -65,13 +65,13 @@ export const genki_1: JapaneseWord[] = [
         jp: 'ともだち',
     },
     {
-        type: 'noun',
+        type: 'suffix',
         en: 'Mr. / Ms. ...',
         pl: 'Pan / Pani ...',
         jp: '... さん',
     },
     {
-        type: 'noun',
+        type: 'suffix',
         en: 'Citizen of ...',
         pl: 'Obywatel ...',
         jp: '... じん',

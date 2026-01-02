@@ -118,7 +118,7 @@ export const duolingo_1: JapaneseWord[] = [
         jp: 'さようなら',
     },
     {
-        type: 'other',
+        type: 'suffix',
         en: 'Mr. / Ms.',
         pl: 'Pan / Pani',
         jp: 'さん',

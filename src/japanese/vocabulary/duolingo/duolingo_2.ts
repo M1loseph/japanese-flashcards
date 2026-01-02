@@ -202,7 +202,7 @@ export const duolingo_2: JapaneseWord[] = [
         jp: 'ようこそ',
     },
     {
-        type: 'noun',
+        type: 'suffix',
         en: 'Comes from ...',
         pl: 'Pochodzi z ...',
         jp: '...しゅっしん',

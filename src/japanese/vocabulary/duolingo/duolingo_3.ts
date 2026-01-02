@@ -68,7 +68,7 @@ export const duolingo_3: JapaneseWord[] = [
         jp: 'どうですか',
     },
     {
-        type: 'other',
+        type: 'suffix',
         en: '... years old',
         pl: '... lat',
         jp: 'さい',
