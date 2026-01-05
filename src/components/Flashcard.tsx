@@ -22,7 +22,7 @@ const badgeColor = (type?: WordType): string | undefined => {
             const _exhaustiveCheck: never = type;
             return _exhaustiveCheck;
     }
-}
+};
 
 interface DescriptionProps {
     showAnswer: boolean;
@@ -111,7 +111,11 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, h
 
     return (
         <Card w="100%" shadow="sm" radius="md" withBorder>
-            {color && <Badge color={color} variant="filled" size="lg" mb="sm">{card.type}</Badge>}
+            {color && (
+                <Badge color={color} variant="filled" size="lg" mb="sm">
+                    {card.type}
+                </Badge>
+            )}
             <Stack mih={'15rem'} justify="center" align="center">
                 <Title ta="center" className="" order={1}>
                     {text}
