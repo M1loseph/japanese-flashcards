@@ -1,9 +1,28 @@
-import { Card, Text, Button, Group, Title, Space, Stack, List } from '@mantine/core';
+import { Card, Text, Button, Group, Title, Space, Stack, List, Badge } from '@mantine/core';
 import { IconCancel, IconCheck } from '@tabler/icons-react';
 import { useState, type JSX } from 'react';
 import { TranslationLanguages } from '../TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
-import { NOT_AVAILABLE } from '../japanese/types';
+import { NOT_AVAILABLE, WordTypes, type WordType } from '../japanese/types';
+
+const badgeColor = (type?: WordType): string | undefined => {
+    if (!type) return;
+    switch (type) {
+        case WordTypes.VERB:
+            return 'red';
+        case WordTypes.NOUN:
+            return 'blue';
+        case WordTypes.ADJECTIVE:
+            return 'green';
+        case WordTypes.PHRASE:
+            return 'yellow';
+        case WordTypes.PRONOUN:
+            return 'purple';
+        default:
+            const _exhaustiveCheck: never = type;
+            return _exhaustiveCheck;
+    }
+}
 
 interface DescriptionProps {
     showAnswer: boolean;
@@ -88,8 +107,11 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, h
         }
     };
 
+    const color = badgeColor(card.type);
+
     return (
         <Card w="100%" shadow="sm" radius="md" withBorder>
+            {color && <Badge color={color} variant="filled" size="lg" mb="sm">{card.type}</Badge>}
             <Stack mih={'15rem'} justify="center" align="center">
                 <Title ta="center" className="" order={1}>
                     {text}

@@ -8,6 +8,7 @@ export const sakura_12: JapaneseWord[] = [
         jp: 'ともだちがわたしのうちにきます。',
     },
     {
+        type: 'pronoun',
         en: 'When',
         pl: 'Kiedy',
         jp: 'いつ',
@@ -163,6 +164,7 @@ export const sakura_12: JapaneseWord[] = [
         jp: 'ジャケットをきる',
     },
     {
+        type: 'phrase',
         en: 'All day',
         pl: 'Cały dzień',
         jp: 'いちにちじゅう',
@@ -195,7 +197,7 @@ export const sakura_12: JapaneseWord[] = [
         type: 'phrase',
         en: 'Cook Japanese food',
         pl: 'Gotować japońskie jedzenie',
-        jp: 'にほんのりょうりをつk',
+        jp: 'にほんのりょうりをつくる',
     },
     {
         type: 'noun',
@@ -222,7 +224,7 @@ export const sakura_12: JapaneseWord[] = [
         jp: 'ギター',
     },
     {
-        type: 'noun',
+        type: 'adjective',
         en: 'Yellow',
         pl: 'Żółty',
         jp: 'きいろい',

@@ -1,9 +1,17 @@
 export const NOT_AVAILABLE = 'N/A';
 
-export type QuestionType = 'verb' | 'phrase' | 'noun' | 'adjective';
+export const WordTypes = {
+    VERB: 'verb',
+    PHRASE: 'phrase',
+    NOUN: 'noun',
+    ADJECTIVE: 'adjective',
+    PRONOUN: 'pronoun',
+} as const;
+
+export type WordType = (typeof WordTypes)[keyof typeof WordTypes];
 
 export interface JapaneseWord {
-    type?: QuestionType;
+    type?: WordType;
     en: string;
     pl: string;
     jp: string;
