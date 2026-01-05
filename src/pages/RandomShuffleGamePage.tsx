@@ -3,10 +3,8 @@ import { type TranslationLanguage } from '../TranslationLanguage.ts';
 import { Button, Container, Group, Stack, Title, Text, Modal } from '@mantine/core';
 import Flashcard from '../components/Flashcard.tsx';
 import { findBagById, type JapaneseWord } from '../japanese';
-import { TranslationLanguages } from '../TranslationLanguage.ts';
 import { useLocation, useNavigate } from 'react-router';
 import usePreventAccidentalLeave from '../hooks/usePreventAccidentalLeave.ts';
-import { NOT_AVAILABLE } from '../japanese/types.ts';
 
 interface FlashcardSession {
     word: JapaneseWord;
@@ -163,18 +161,9 @@ const RandomShuffleGamePage: React.FC = () => {
         }));
     };
 
-    const question = selectedLanguage === TranslationLanguages.POLISH ? card.word.pl : card.word.en;
-
     const hours = Math.floor(sessionTime / 3600);
     const minutes = Math.floor((sessionTime % 3600) / 60);
     const seconds = sessionTime % 60;
-
-    const selectAnswerText = () => {
-        if (card.word.jp === NOT_AVAILABLE && card.word.jp_description) {
-            return card.word.jp_description;
-        }
-        return card.word.jp;
-    };
 
     return (
         <>
@@ -209,11 +198,8 @@ const RandomShuffleGamePage: React.FC = () => {
                         </Text>
                     </Group>
                     <Flashcard
-                        key={card.word.jp}
-                        question={question}
-                        answer={selectAnswerText()}
-                        pronouncitaion={card.word.jp_pronunciation}
-                        description={card.word.jp_description}
+                        card={card.word}
+                        selectedLanguage={selectedLanguage}
                         handlerCorrect={handlerCorrect}
                         handlerMistake={handlerMistake}
                     />

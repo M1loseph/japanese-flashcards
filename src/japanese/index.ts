@@ -36,7 +36,7 @@ import { countriesAsia } from './vocabulary/countries/countriesAsia.ts';
 import { duolingo_8 } from './vocabulary/duolingo/duolingo_8.ts';
 import { sakura_12 } from './vocabulary/sakura/sakura_12.ts';
 
-export type { JapaneseWord, WordBag } from './types.ts';
+export type { JapaneseWord as JapaneseWord, WordBag } from './types.ts';
 
 export const familyBag: WordBag = {
     id: '83be35f1-ba1d-4a71-86df-1a52fc4b51ce',
