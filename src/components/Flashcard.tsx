@@ -37,7 +37,7 @@ interface DescriptionProps {
 
 const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
     if (!showAnswer || !card.jp_description || card.jp === NOT_AVAILABLE) {
-        return <></>;
+        return null;
     }
     if (typeof card.jp_description === 'string') {
         return <Text m="sm">{card.jp_description}</Text>;
