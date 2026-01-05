@@ -200,8 +200,8 @@ const RandomShuffleGamePage: React.FC = () => {
                     <Flashcard
                         card={card.word}
                         selectedLanguage={selectedLanguage}
-                        handlerCorrect={handlerCorrect}
-                        handlerMistake={handlerMistake}
+                        handleCorrect={handlerCorrect}
+                        handleMistake={handlerMistake}
                     />
                 </Stack>
             </Container>

@@ -1,26 +1,32 @@
 import { Card, Text, Button, Group, Title, Space, Stack, List, Badge } from '@mantine/core';
 import { IconCancel, IconCheck } from '@tabler/icons-react';
 import { useState, type JSX } from 'react';
-import { TranslationLanguages } from '../TranslationLanguage';
+import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
 import { NOT_AVAILABLE, WordTypes, type WordType } from '../japanese/types';
 
 const badgeColor = (type?: WordType): string | undefined => {
     if (!type) return;
     switch (type) {
-        case WordTypes.VERB:
+        case WordTypes.VERB: {
             return 'red';
-        case WordTypes.NOUN:
+        }
+        case WordTypes.NOUN: {
             return 'blue';
-        case WordTypes.ADJECTIVE:
+        }
+        case WordTypes.ADJECTIVE: {
             return 'green';
-        case WordTypes.PHRASE:
+        }
+        case WordTypes.PHRASE: {
             return 'yellow';
-        case WordTypes.PRONOUN:
+        }
+        case WordTypes.PRONOUN: {
             return 'purple';
-        default:
+        }
+        default: {
             const _exhaustiveCheck: never = type;
             return _exhaustiveCheck;
+        }
     }
 };
 
@@ -30,7 +36,7 @@ interface DescriptionProps {
 }
 
 const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
-    if (!showAnswer || !card.jp_description) {
+    if (!showAnswer || !card.jp_description || card.jp === NOT_AVAILABLE) {
         return <></>;
     }
     if (typeof card.jp_description === 'string') {
@@ -50,12 +56,17 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
 
 interface FlashcardProps {
     card: JapaneseWord;
-    selectedLanguage: string;
-    handlerCorrect: () => void;
-    handlerMistake: () => void;
+    selectedLanguage: TranslationLanguage;
+    handleCorrect: () => void;
+    handleMistake: () => void;
 }
 
-const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, handlerCorrect, handlerMistake }) => {
+const JapaneseFlashcard: React.FC<FlashcardProps> = ({
+    card,
+    selectedLanguage,
+    handleCorrect: handlerCorrect,
+    handleMistake: handlerMistake,
+}) => {
     const [showAnswer, setShowAnswer] = useState(false);
 
     const selectAnswerText = () => {
@@ -65,7 +76,21 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, h
         return card.jp;
     };
 
-    const question = selectedLanguage === TranslationLanguages.POLISH ? card.pl : card.en;
+    const question: string = (() => {
+        switch (selectedLanguage) {
+            case TranslationLanguages.ENGLISH: {
+                return card.pl;
+            }
+            case TranslationLanguages.POLISH: {
+                return card.en;
+            }
+            default: {
+                const _neverCheck: never = selectedLanguage;
+                return _neverCheck;
+            }
+        }
+    })();
+
     const text = showAnswer ? selectAnswerText() : question;
 
     const toggleAnswer = () => {
@@ -120,7 +145,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, h
                 </Badge>
             )}
             <Stack mih={'15rem'} justify="center" align="center">
-                <Title ta="center" className="" order={1}>
+                <Title ta="center" order={1}>
                     {text}
                 </Title>
                 <Text size="lg" mt="sm">
