@@ -8,19 +8,19 @@ const badgeColor = (type?: WordType): string | undefined => {
     if (!type) return;
     switch (type) {
         case WordTypes.VERB: {
-            return 'red';
+            return 'badge-error';
         }
         case WordTypes.NOUN: {
-            return 'blue';
+            return 'badge-info';
         }
         case WordTypes.ADJECTIVE: {
-            return 'green';
+            return 'badge-success';
         }
         case WordTypes.PHRASE: {
-            return 'yellow';
+            return 'badge-warning';
         }
         case WordTypes.PRONOUN: {
-            return 'purple';
+            return 'badge-secondary';
         }
         default: {
             const _exhaustiveCheck: never = type;
@@ -39,17 +39,18 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
         return null;
     }
     if (typeof card.jp_description === 'string') {
-        return <Text m="sm">{card.jp_description}</Text>;
+        return <p className="mt-4">{card.jp_description}</p>;
     }
     return (
-        <List spacing="xs" withPadding>
+        <ul className="list-disc pl-6 space-y-1">
             {card.jp_description.map((desc) => (
-                // list-disc className is required by tailwind to show bullet points
-                <List.Item className="list-disc" key={desc}>
-                    {desc}
-                </List.Item>
+                <li key={desc}>
+                    <span className="text-lg">
+                        {desc}
+                    </span>
+                </li>
             ))}
-        </List>
+        </ul>
     );
 };
 
@@ -110,26 +111,24 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
         if (showAnswer) {
             return (
                 <>
-                    <Button style={{ flex: 1 }} onClick={correctPressed} color="green" radius="md">
+                    <button className="btn btn-success flex-1" onClick={correctPressed}>
                         Correct
-                        <Space w="xs" />
-                        <IconCheck />
-                    </Button>
-                    <Button style={{ flex: 1 }} onClick={toggleAnswer} color="blue" radius="md">
+                        <IconCheck className="ml-2" />
+                    </button>
+                    <button className="btn btn-info flex-1" onClick={toggleAnswer}>
                         Hide
-                    </Button>
-                    <Button style={{ flex: 1 }} onClick={mistakePressed} color="red" radius="md">
+                    </button>
+                    <button className="btn btn-error flex-1" onClick={mistakePressed}>
                         Wrong
-                        <Space w="xs" />
-                        <IconCancel />
-                    </Button>
+                        <IconCancel className="ml-2" />
+                    </button>
                 </>
             );
         } else {
             return (
-                <Button style={{ flex: 1 }} onClick={toggleAnswer} color="blue" radius="md">
+                <button className="btn btn-info flex-1" onClick={toggleAnswer}>
                     Show
-                </Button>
+                </button>
             );
         }
     };
@@ -137,25 +136,27 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
     const color = badgeColor(card.type);
 
     return (
-        <Card w="100%" shadow="sm" radius="md" withBorder>
-            {color && (
-                <Badge color={color} variant="filled" size="lg" mb="sm">
-                    {card.type}
-                </Badge>
-            )}
-            <Stack mih={'15rem'} justify="center" align="center">
-                <Title ta="center" order={1}>
-                    {text}
-                </Title>
-                <Text size="lg" mt="sm">
-                    {showAnswer ? card.jp_pronunciation : ''}
-                </Text>
-                <Description showAnswer={showAnswer} card={card} />
-            </Stack>
-            <Group justify="space-around" mt="md" mb="xs">
-                {ButtonGroups()}
-            </Group>
-        </Card>
+        <div className="card w-full bg-base-100 shadow-xl border border-base-300">
+            <div className="card-body">
+                {color && (
+                    <div className={`badge ${color} badge-lg mb-4`}>
+                        {card.type}
+                    </div>
+                )}
+                <div className="flex flex-col items-center min-h-[15rem] space-y-4">
+                    <h1 className="text-4xl font-bold text-center">
+                        {text}
+                    </h1>
+                    <p className="flex-0 text-lg mt-4">
+                        {showAnswer ? card.jp_pronunciation : ''}
+                    </p>
+                    <Description showAnswer={showAnswer} card={card} />
+                </div>
+                <div className="flex justify-around gap-2 mt-4">
+                    {ButtonGroups()}
+                </div>
+            </div>
+        </div>
     );
 };
 

@@ -100,25 +100,23 @@ const RandomShuffleGamePage: React.FC = () => {
 
     if (gameFinished) {
         return (
-            <>
-                <Container pt="xl">
-                    <Stack align="center">
-                        <Title order={2}>Congratulations, you finished!</Title>
-                        <Group>
-                            {wrongAnswers.length != 0 ? (
-                                <Button color="green" onClick={prepareSetForRepeat} size="md">
-                                    Repeat mistakes ({wrongAnswers.length})
-                                </Button>
-                            ) : (
-                                <></>
-                            )}
-                            <Button onClick={() => navigate('/')} size="md">
-                                Go home
-                            </Button>
-                        </Group>
-                    </Stack>
-                </Container>
-            </>
+            <div className="container mx-auto pt-12">
+                <div className="flex flex-col items-center space-y-6">
+                    <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
+                    <div className="flex gap-4">
+                        {wrongAnswers.length != 0 ? (
+                            <button className="btn btn-success btn-lg" onClick={prepareSetForRepeat}>
+                                Repeat mistakes ({wrongAnswers.length})
+                            </button>
+                        ) : (
+                            <></>
+                        )}
+                        <button className="btn btn-lg" onClick={() => navigate('/')}>
+                            Go home
+                        </button>
+                    </div>
+                </div>
+            </div>
         );
     }
 
@@ -166,44 +164,47 @@ const RandomShuffleGamePage: React.FC = () => {
 
     return (
         <>
-            <Modal opened={showPrompt} onClose={cancelLeave} title="Leave game?">
-                <Stack>
-                    <Text>Are you sure you want to leave? Your current progress in this round will be lost.</Text>
-                    <Group justify="flex-end">
-                        <Button variant="default" onClick={cancelLeave}>
+            <div className={`modal ${showPrompt ? 'modal-open' : ''}`}>
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg mb-4">Leave game?</h3>
+                    <p className="py-4">Are you sure you want to leave? Your current progress in this round will be lost.</p>
+                    <div className="modal-action">
+                        <button className="btn" onClick={cancelLeave}>
                             Stay
-                        </Button>
-                        <Button color="red" onClick={confirmLeave}>
+                        </button>
+                        <button className="btn btn-error" onClick={confirmLeave}>
                             Leave
-                        </Button>
-                    </Group>
-                </Stack>
-            </Modal>
-            <Container pt="xl">
-                <Stack align="center">
-                    <Group style={{ width: '100%' }} justify="space-between" align="center">
-                        <Text fw={700} size="xl">
+                        </button>
+                    </div>
+                </div>
+                <div className="modal-backdrop" onClick={cancelLeave}></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto pt-12 px-4">
+                <div className="flex flex-col items-center space-y-6">
+                    <div className="flex w-full justify-between items-center bg-base-200 p-4 rounded-lg shadow-md">
+                        <p className="text-xl font-bold">
                             {currentFlashcardIndex + 1}/{flashcards.length}
-                        </Text>
-                        <Text c="green" fw={700} size="xl">
+                        </p>
+                        <p className="text-xl font-bold text-success">
                             {correctAnswers.length}
-                        </Text>
-                        <Text c="red" fw={700} size="xl">
+                        </p>
+                        <p className="text-xl font-bold text-error">
                             {wrongAnswers.length}
-                        </Text>
-                        <Text size="xl" fw={700}>
+                        </p>
+                        <p className="text-xl font-bold">
                             {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:
                             {String(seconds).padStart(2, '0')}
-                        </Text>
-                    </Group>
+                        </p>
+                    </div>
                     <Flashcard
                         card={card.word}
                         selectedLanguage={selectedLanguage}
                         handleCorrect={handlerCorrect}
                         handleMistake={handlerMistake}
                     />
-                </Stack>
-            </Container>
+                </div>
+            </div>
         </>
     );
 };
