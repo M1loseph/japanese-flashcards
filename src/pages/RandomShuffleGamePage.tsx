@@ -77,7 +77,7 @@ const RandomShuffleGamePage: React.FC = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            // setSessionTime((prevState) => prevState + 1);
+            setSessionTime((prevState) => prevState + 1);
         }, 1000);
         return () => clearInterval(interval);
     }, []);
