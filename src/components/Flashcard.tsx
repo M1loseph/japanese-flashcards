@@ -37,9 +37,12 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
         return <Text m="sm">{card.jp_description}</Text>;
     }
     return (
-        <List spacing="xs">
+        <List spacing="xs" withPadding>
             {card.jp_description.map((desc) => (
-                <List.Item key={desc}>{desc}</List.Item>
+                // list-disc className is required by tailwind to show bullet points
+                <List.Item className="list-disc" key={desc}>
+                    {desc}
+                </List.Item>
             ))}
         </List>
     );
