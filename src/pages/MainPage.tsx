@@ -43,7 +43,6 @@ import { type TranslationLanguage, TranslationLanguages } from '../TranslationLa
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
 import { type WordBag } from '../japanese/types';
-import { Button } from '@mantine/core';
 
 const MainPage: React.FC = () => {
     const navigate = useNavigate();
@@ -169,14 +168,13 @@ const MainPage: React.FC = () => {
                             <span>Select some word bags to start</span>
                         )}
                     </div>
-                    <Button
+                    <button
                         onClick={handleStartGame}
                         disabled={selectedWordsCount === 0}
-                        size="lg"
-                        className="font-bold"
+                        className="btn btn-lg btn-primary"
                     >
                         Start Shuffle Game
-                    </Button>
+                    </button>
                 </div>
             </div>
         </div>

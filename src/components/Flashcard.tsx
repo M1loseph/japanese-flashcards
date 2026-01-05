@@ -1,4 +1,3 @@
-import { Card, Text, Button, Group, Title, Space, Stack, List, Badge } from '@mantine/core';
 import { IconCancel, IconCheck } from '@tabler/icons-react';
 import { useState, type JSX } from 'react';
 import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';

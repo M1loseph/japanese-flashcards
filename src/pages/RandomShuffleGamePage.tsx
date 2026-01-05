@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import { type TranslationLanguage } from '../TranslationLanguage.ts';
-import { Button, Container, Group, Stack, Title, Text, Modal } from '@mantine/core';
 import Flashcard from '../components/Flashcard.tsx';
 import { findBagById, type JapaneseWord } from '../japanese';
 import { useLocation, useNavigate } from 'react-router';
