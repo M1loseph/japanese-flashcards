@@ -78,10 +78,10 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
 
     const question: string = (() => {
         switch (selectedLanguage) {
-            case TranslationLanguages.ENGLISH: {
+            case TranslationLanguages.POLISH: {
                 return card.pl;
             }
-            case TranslationLanguages.POLISH: {
+            case TranslationLanguages.ENGLISH: {
                 return card.en;
             }
             default: {
