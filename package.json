@@ -15,7 +15,7 @@
   "dependencies": {
     "@tabler/icons-react": "^3.35.0",
     "react": "^19.1.1",
-    "react-dom": "^19.2.0",
+    "react-dom": "^19.2.3",
     "react-router-dom": "^7.10.1"
   },
   "devDependencies": {
@@ -23,7 +23,7 @@
     "@stylistic/eslint-plugin": "^5.6.1",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.1.13",
-    "@types/react-dom": "^19.2.2",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.22",
     "baseline-browser-mapping": "^2.8.30",
