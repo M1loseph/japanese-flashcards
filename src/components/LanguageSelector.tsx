@@ -13,10 +13,11 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLang
                 onClick={() => onSelect(TranslationLanguages.POLISH)}
                 className={`
           relative overflow-hidden p-6 rounded-xl border-2 transition-all duration-200 flex items-center justify-center gap-4 group
-          ${selectedLanguage === TranslationLanguages.POLISH
-                        ? 'border-primary bg-primary/5 shadow-md'
-                        : 'border-slate-200 hover:border-primary/50 hover:shadow-sm'
-                    }
+          ${
+              selectedLanguage === TranslationLanguages.POLISH
+                  ? 'border-primary bg-primary/5 shadow-md'
+                  : 'border-slate-200 hover:border-primary/50 hover:shadow-sm'
+          }
         `}
             >
                 <span className="text-4xl group-hover:scale-110 transition-transform duration-200">🇵🇱</span>
@@ -31,10 +32,11 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLang
                 onClick={() => onSelect(TranslationLanguages.ENGLISH)}
                 className={`
           relative overflow-hidden p-6 rounded-xl border-2 transition-all duration-200 flex items-center justify-center gap-4 group
-          ${selectedLanguage === TranslationLanguages.ENGLISH
-                        ? 'border-primary bg-primary/5 shadow-md'
-                        : 'border-slate-200 hover:border-primary/50 hover:shadow-sm'
-                    }
+          ${
+              selectedLanguage === TranslationLanguages.ENGLISH
+                  ? 'border-primary bg-primary/5 shadow-md'
+                  : 'border-slate-200 hover:border-primary/50 hover:shadow-sm'
+          }
         `}
             >
                 <span className="text-4xl group-hover:scale-110 transition-transform duration-200">🇬🇧</span>

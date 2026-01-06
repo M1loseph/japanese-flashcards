@@ -167,7 +167,9 @@ const RandomShuffleGamePage: React.FC = () => {
             <div className={`modal ${showPrompt ? 'modal-open' : ''}`}>
                 <div className="modal-box">
                     <h3 className="font-bold text-lg mb-4">Leave game?</h3>
-                    <p className="py-4">Are you sure you want to leave? Your current progress in this round will be lost.</p>
+                    <p className="py-4">
+                        Are you sure you want to leave? Your current progress in this round will be lost.
+                    </p>
                     <div className="modal-action">
                         <button className="btn" onClick={cancelLeave}>
                             Stay
@@ -186,12 +188,8 @@ const RandomShuffleGamePage: React.FC = () => {
                         <p className="text-xl font-bold">
                             {currentFlashcardIndex + 1}/{flashcards.length}
                         </p>
-                        <p className="text-xl font-bold text-success">
-                            {correctAnswers.length}
-                        </p>
-                        <p className="text-xl font-bold text-error">
-                            {wrongAnswers.length}
-                        </p>
+                        <p className="text-xl font-bold text-success">{correctAnswers.length}</p>
+                        <p className="text-xl font-bold text-error">{wrongAnswers.length}</p>
                         <p className="text-xl font-bold">
                             {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:
                             {String(seconds).padStart(2, '0')}

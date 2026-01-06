@@ -13,10 +13,7 @@ export const WordBagCard: React.FC<WordBagCardProps> = ({ bag, isSelected, onTog
             onClick={() => onToggle(bag.id)}
             className={`
         cursor-pointer relative p-4 rounded-lg border transition-all duration-200 hover:shadow-md
-        ${isSelected
-                    ? 'border-primary bg-primary/5 ring-1 ring-primary'
-                    : 'border-slate-200 hover:border-primary/30'
-                }
+        ${isSelected ? 'border-primary bg-primary/5 ring-1 ring-primary' : 'border-slate-200 hover:border-primary/30'}
       `}
             role="checkbox"
             aria-checked={isSelected}

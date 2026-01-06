@@ -45,9 +45,7 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
         <ul className="list-disc pl-6 space-y-1">
             {card.jp_description.map((desc) => (
                 <li key={desc}>
-                    <span className="text-lg">
-                        {desc}
-                    </span>
+                    <span className="text-lg">{desc}</span>
                 </li>
             ))}
         </ul>
@@ -138,23 +136,13 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
     return (
         <div className="card w-full bg-base-100 shadow-xl border border-base-300">
             <div className="card-body">
-                {color && (
-                    <div className={`badge ${color} badge-lg mb-4`}>
-                        {card.type}
-                    </div>
-                )}
+                {color && <div className={`badge ${color} badge-lg mb-4`}>{card.type}</div>}
                 <div className="flex flex-col items-center min-h-[15rem] space-y-4">
-                    <h1 className="text-4xl font-bold text-center">
-                        {text}
-                    </h1>
-                    <p className="flex-0 text-lg mt-4">
-                        {showAnswer ? card.jp_pronunciation : ''}
-                    </p>
+                    <h1 className="text-4xl font-bold text-center">{text}</h1>
+                    <p className="flex-0 text-lg mt-4">{showAnswer ? card.jp_pronunciation : ''}</p>
                     <Description showAnswer={showAnswer} card={card} />
                 </div>
-                <div className="flex justify-around gap-2 mt-4">
-                    {ButtonGroups()}
-                </div>
+                <div className="flex justify-around gap-2 mt-4">{ButtonGroups()}</div>
             </div>
         </div>
     );
