@@ -63,7 +63,7 @@ export const sakura_12: JapaneseWord[] = [
         type: 'verb',
         en: 'Send',
         pl: 'Wysyłać',
-        jp: 'おくる [ru]',
+        jp: 'おくる [u]',
         jp_description: ['おくります', 'おくりません'],
     },
     {

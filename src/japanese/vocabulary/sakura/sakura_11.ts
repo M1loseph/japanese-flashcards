@@ -172,7 +172,7 @@ export const sakura_11: JapaneseWord[] = [
         type: 'phrase',
         en: 'Take a bath',
         pl: 'Brać kąpiel',
-        jp: 'おふろにはいりる',
+        jp: 'おふろにはいる',
     },
     {
         type: 'verb',
