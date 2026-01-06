@@ -16,7 +16,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLang
           ${
               selectedLanguage === TranslationLanguages.POLISH
                   ? 'border-primary bg-primary/5 shadow-md'
-                  : 'border-slate-200 bg-white hover:border-primary/50 hover:shadow-sm'
+                  : 'border-slate-200 hover:border-primary/50 hover:shadow-sm'
           }
         `}
             >
@@ -26,9 +26,6 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLang
                 >
                     Polish
                 </span>
-                {selectedLanguage === TranslationLanguages.POLISH && (
-                    <div className="absolute top-3 right-3 w-3 h-3 bg-primary rounded-full" />
-                )}
             </button>
 
             <button
@@ -38,7 +35,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLang
           ${
               selectedLanguage === TranslationLanguages.ENGLISH
                   ? 'border-primary bg-primary/5 shadow-md'
-                  : 'border-slate-200 bg-white hover:border-primary/50 hover:shadow-sm'
+                  : 'border-slate-200 hover:border-primary/50 hover:shadow-sm'
           }
         `}
             >
@@ -48,9 +45,6 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLang
                 >
                     English
                 </span>
-                {selectedLanguage === TranslationLanguages.ENGLISH && (
-                    <div className="absolute top-3 right-3 w-3 h-3 bg-primary rounded-full" />
-                )}
             </button>
         </div>
     );
