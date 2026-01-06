@@ -6,6 +6,7 @@ export const WordTypes = {
     NOUN: 'noun',
     ADJECTIVE: 'adjective',
     PRONOUN: 'pronoun',
+    SUFFIX: 'suffix',
 } as const;
 
 export type WordType = (typeof WordTypes)[keyof typeof WordTypes];

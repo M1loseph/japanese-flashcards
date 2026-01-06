@@ -22,6 +22,9 @@ const badgeColor = (type?: WordType): string | undefined => {
         case WordTypes.PRONOUN: {
             return 'badge-secondary';
         }
+        case WordTypes.SUFFIX: {
+            return 'badge-accent';
+        }
         default: {
             const _exhaustiveCheck: never = type;
             return _exhaustiveCheck;

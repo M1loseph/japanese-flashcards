@@ -227,7 +227,7 @@ export const sakura_12: JapaneseWord[] = [
         type: 'adjective',
         en: 'Yellow',
         pl: 'Żółty',
-        jp: 'きいろい',
+        jp: 'きいろい [i]',
     },
     {
         type: 'noun',
@@ -245,7 +245,7 @@ export const sakura_12: JapaneseWord[] = [
         type: 'adjective',
         en: 'Big',
         pl: 'Duży',
-        jp: 'おおきい',
+        jp: 'おおきい [i]',
     },
     {
         type: 'noun',
@@ -257,13 +257,13 @@ export const sakura_12: JapaneseWord[] = [
         type: 'adjective',
         en: 'Small',
         pl: 'Mały',
-        jp: 'ちいさい',
+        jp: 'ちいさい [i]',
     },
     {
         type: 'adjective',
         en: 'Far',
         pl: 'Daleko',
-        jp: 'とおい',
+        jp: 'とおい [i]',
     },
     {
         type: 'noun',
