@@ -157,7 +157,7 @@ const MainPage: React.FC = () => {
                 </section>
             </main>
 
-            <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
+            <div className="fixed bottom-0 left-0 right-0 p-4 bg-base-100 border-t border-slate-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
                 <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="text-slate-600 font-medium">
                         {selectedWordsCount > 0 ? (

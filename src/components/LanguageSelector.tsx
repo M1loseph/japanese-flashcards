@@ -15,7 +15,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLang
           relative overflow-hidden p-6 rounded-xl border-2 transition-all duration-200 flex items-center justify-center gap-4 group
           ${selectedLanguage === TranslationLanguages.POLISH
                         ? 'border-primary bg-primary/5 shadow-md'
-                        : 'border-slate-200 bg-white hover:border-primary/50 hover:shadow-sm'
+                        : 'border-slate-200 hover:border-primary/50 hover:shadow-sm'
                     }
         `}
             >
@@ -33,7 +33,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLang
           relative overflow-hidden p-6 rounded-xl border-2 transition-all duration-200 flex items-center justify-center gap-4 group
           ${selectedLanguage === TranslationLanguages.ENGLISH
                         ? 'border-primary bg-primary/5 shadow-md'
-                        : 'border-slate-200 bg-white hover:border-primary/50 hover:shadow-sm'
+                        : 'border-slate-200 hover:border-primary/50 hover:shadow-sm'
                     }
         `}
             >
