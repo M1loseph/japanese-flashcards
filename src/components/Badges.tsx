@@ -1,5 +1,10 @@
 import { WordTypes, type Adjective, type JapaneseWord, type Verb, type WordType } from '../japanese/types';
 
+type BadgeColorAndText = {
+    color: string;
+    text: string;
+};
+
 const createTypeBadge = (type?: WordType): BadgeColorAndText | undefined => {
     if (!type) return;
     let color: string;
@@ -101,18 +106,13 @@ const createAdjectiveTypeBadge = (adjectiveType: Adjective['adjective_type']): B
     };
 };
 
-type BadgeColorAndText = {
-    color: string;
-    text: string;
-};
-
 interface BadgesProps {
     card: JapaneseWord;
     showAnswer: boolean;
 }
 
 export const Badges: React.FC<BadgesProps> = ({ card, showAnswer }) => {
-    const badges = [];
+    const badges: BadgeColorAndText[] = [];
     const typeBadge = createTypeBadge(card.type);
     if (typeBadge) {
         badges.push(typeBadge);
@@ -125,8 +125,8 @@ export const Badges: React.FC<BadgesProps> = ({ card, showAnswer }) => {
     }
     return (
         <div className="flex flex-row">
-            {badges.map((badge, index) => (
-                <div key={index} className={`badge ${badge.color} badge-lg ml-2 mb-4`}>
+            {badges.map((badge) => (
+                <div key={badge.text} className={`badge ${badge.color} badge-lg ml-2 mb-4`}>
                     {badge.text}
                 </div>
             ))}
