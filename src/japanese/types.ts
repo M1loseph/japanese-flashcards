@@ -36,6 +36,7 @@ export type Phrase = Translation & {
 
 export type Adjective = Translation & {
     type: 'adjective';
+    adjective_type: 'i-adjective' | 'na-adjective';
 };
 
 export type Pronoun = Translation & {
