@@ -2,41 +2,8 @@ import { IconCancel, IconCheck } from '@tabler/icons-react';
 import { useState, type JSX } from 'react';
 import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
-import { WordTypes, type WordType } from '../japanese/types';
-
-const badgeColor = (type?: WordType): string | undefined => {
-    if (!type) return;
-    switch (type) {
-        case WordTypes.VERB: {
-            return 'badge-error';
-        }
-        case WordTypes.NOUN: {
-            return 'badge-info';
-        }
-        case WordTypes.ADJECTIVE: {
-            return 'badge-success';
-        }
-        case WordTypes.PHRASE: {
-            return 'badge-warning';
-        }
-        case WordTypes.PRONOUN: {
-            return 'badge-secondary';
-        }
-        case WordTypes.SUFFIX: {
-            return 'badge-accent';
-        }
-        case WordTypes.NUMERAL: {
-            return 'badge-primary';
-        }
-        case WordTypes.UNKNOWN: {
-            return 'badge-ghost';
-        }
-        default: {
-            const _exhaustiveCheck: never = type;
-            return _exhaustiveCheck;
-        }
-    }
-};
+import { WordTypes } from '../japanese/types';
+import { Badges } from './Badges';
 
 interface DescriptionProps {
     showAnswer: boolean;
@@ -139,12 +106,10 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
         }
     };
 
-    const color = badgeColor(card.type);
-
     return (
         <div className="card w-full bg-base-100 shadow-xl border border-base-300">
             <div className="card-body">
-                {color && <div className={`badge ${color} badge-lg mb-4`}>{card.type}</div>}
+                <Badges card={card} showAnswer={showAnswer} />
                 <div className="flex flex-col items-center min-h-[15rem] space-y-4">
                     <h1 className="text-4xl font-bold text-center">{text}</h1>
                     <p className="flex-0 text-lg mt-4">{showAnswer ? card.jp_pronunciation : ''}</p>
