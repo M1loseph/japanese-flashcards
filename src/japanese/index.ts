@@ -28,7 +28,6 @@ import { sakura_8_animals } from './vocabulary/sakura/sakura_8_animals.ts';
 import { sakura_9 } from './vocabulary/sakura/sakura_9.ts';
 import { sakura_10 } from './vocabulary/sakura/sakura_10.ts';
 import { genki_1_majors } from './vocabulary/genki/genki_1_majors.ts';
-import { ordinalNumbers } from './vocabulary/ordinalNumbers.ts';
 import { months } from './vocabulary/months.ts';
 import { sakura_11 } from './vocabulary/sakura/sakura_11.ts';
 import { duolingo_7 } from './vocabulary/duolingo/duolingo_7.ts';
@@ -48,12 +47,6 @@ export const numbersBag: WordBag = {
     id: '05253d28-8ebf-4793-bcb2-11b117a36f86',
     name: 'Numbers',
     words: numbers,
-};
-
-export const ordinalNumbersBag: WordBag = {
-    id: '5fb46e35-8f91-4a96-874f-d8e1a27789bf',
-    name: 'Ordinal Numbers',
-    words: ordinalNumbers,
 };
 
 export const countingThingsBag: WordBag = {
@@ -258,7 +251,6 @@ const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
     countingThingsBag,
-    ordinalNumbersBag,
     daysOfWeekBag,
     timeBag,
     monthsBag,

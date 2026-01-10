@@ -21,16 +21,19 @@ export const countriesAsia: JapaneseWord[] = [
         jp: 'たいわん',
     },
     {
+        type: 'noun',
         en: 'India',
         pl: 'Indie',
         jp: 'インド',
     },
     {
+        type: 'noun',
         en: 'South Korea',
         pl: 'Korea Południowa',
         jp: 'かんこく',
     },
     {
+        type: 'noun',
         en: 'Vietnam',
         pl: 'Wietnam',
         jp: 'ベトナム',

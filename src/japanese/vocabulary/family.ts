@@ -1,4 +1,4 @@
-import { NOT_AVAILABLE, type JapaneseWord } from '../types.ts';
+import { type JapaneseWord } from '../types.ts';
 
 export const family: JapaneseWord[] = [
     {
@@ -44,11 +44,10 @@ export const family: JapaneseWord[] = [
         jp_pronunciation: 'いもうと',
     },
     {
-        type: 'noun',
+        type: 'phrase',
         en: 'Younger sister (direct)',
         pl: 'Młodsza siostra (forma bezpośrednia)',
-        jp: NOT_AVAILABLE,
-        jp_description: 'Use her name 😊',
+        jp: 'Her name 😊',
     },
     {
         type: 'noun',
@@ -68,8 +67,7 @@ export const family: JapaneseWord[] = [
         type: 'noun',
         en: 'Younger brother (direct)',
         pl: 'Młodszy brat (forma bezpośrednia)',
-        jp: NOT_AVAILABLE,
-        jp_description: 'Use his name 😊',
+        jp: 'His name 😊',
     },
     {
         type: 'noun',
