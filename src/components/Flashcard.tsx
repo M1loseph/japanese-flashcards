@@ -2,7 +2,7 @@ import { IconCancel, IconCheck } from '@tabler/icons-react';
 import { useState, type JSX } from 'react';
 import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
-import { NOT_AVAILABLE, WordTypes, type WordType } from '../japanese/types';
+import { WordTypes, type WordType } from '../japanese/types';
 
 const badgeColor = (type?: WordType): string | undefined => {
     if (!type) return;
@@ -25,6 +25,12 @@ const badgeColor = (type?: WordType): string | undefined => {
         case WordTypes.SUFFIX: {
             return 'badge-accent';
         }
+        case WordTypes.NUMERAL: {
+            return 'badge-primary';
+        }
+        case WordTypes.UNKNOWN: {
+            return 'badge-ghost';
+        }
         default: {
             const _exhaustiveCheck: never = type;
             return _exhaustiveCheck;
@@ -38,20 +44,27 @@ interface DescriptionProps {
 }
 
 const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
-    if (!showAnswer || !card.jp_description || card.jp === NOT_AVAILABLE) {
+    if (!showAnswer) {
         return null;
     }
-    if (typeof card.jp_description === 'string') {
+    if (card.type != WordTypes.VERB) {
+
         return <p className="mt-4">{card.jp_description}</p>;
     }
     return (
-        <ul className="list-disc pl-6 space-y-1">
-            {card.jp_description.map((desc) => (
-                <li key={desc}>
-                    <span className="text-lg">{desc}</span>
+        <>
+            <span className='text-lg'>Verb in masu form:</span>
+            <ul className="list-disc pl-6 space-y-1">
+                <li>
+                    <span className="text-lg">{card.masu_form}</span>
                 </li>
-            ))}
-        </ul>
+                <li>
+                    <span className="text-lg">{card.masen_form}</span>
+                </li>
+            </ul>
+            <br />
+            {card.jp_description}
+        </>
     );
 };
 
@@ -70,13 +83,6 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
 }) => {
     const [showAnswer, setShowAnswer] = useState(false);
 
-    const selectAnswerText = () => {
-        if (card.jp === NOT_AVAILABLE && card.jp_description) {
-            return card.jp_description;
-        }
-        return card.jp;
-    };
-
     const question: string = (() => {
         switch (selectedLanguage) {
             case TranslationLanguages.POLISH: {
@@ -92,7 +98,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
         }
     })();
 
-    const text = showAnswer ? selectAnswerText() : question;
+    const text = showAnswer ? card.jp : question;
 
     const toggleAnswer = () => {
         setShowAnswer(!showAnswer);

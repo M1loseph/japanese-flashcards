@@ -2,123 +2,148 @@ import type { JapaneseWord } from '../../types';
 
 export const sakura_4: JapaneseWord[] = [
     {
+        type: 'unknown',
         en: 'Living room',
         pl: 'Salon',
         jp: 'いま',
     },
     {
+        type: 'unknown',
         en: 'Bugs / Insects',
         pl: 'Owady',
         jp: 'むし',
     },
     {
+        type: 'unknown',
         en: 'Sea',
         pl: 'Morze',
         jp: 'うみ',
     },
     {
+        type: 'unknown',
         en: 'Paper',
         pl: 'Papier',
         jp: 'かみ',
     },
     {
+        type: 'unknown',
         en: 'Snow',
         pl: 'Śnieg',
         jp: 'ゆき',
     },
     {
+        type: 'unknown',
         en: 'Mountain',
         pl: 'Góra',
         jp: 'やま',
     },
     {
+        type: 'unknown',
         en: 'Eye',
         pl: 'Oko',
         jp: 'め',
     },
     {
+        type: 'unknown',
         en: 'Shopping',
         pl: 'Zakupy',
         jp: 'かいもの',
     },
     {
+        type: 'unknown',
         en: 'Winter',
         pl: 'Zima',
         jp: 'ふゆ',
     },
     {
+        type: 'unknown',
         en: 'Shoes',
         pl: 'Buty',
         jp: 'くつ',
     },
     {
+        type: 'unknown',
         en: 'Hat / Cap',
         pl: 'Kapelusz / Czapka',
         jp: 'ぼうし',
     },
     {
+        type: 'unknown',
         en: 'Bike',
         pl: 'Rower',
         jp: 'じてんしゃ',
     },
     {
+        type: 'unknown',
         en: 'T-shirt',
         pl: 'Koszulka',
         jp: 'Tシャツ',
     },
     {
+        type: 'unknown',
         en: 'Employee (of a specific company)',
         pl: 'Pracownik (konkretnej firmy)',
         jp: '...のしゃいん',
     },
     {
+        type: 'unknown',
         en: 'TOYOTA employee',
         pl: 'Pracownik TOYOTY',
         jp: 'トヨタのしゃいん',
     },
     {
+        type: 'unknown',
         en: 'Question',
         pl: 'Pytanie',
         jp: 'しつもん',
     },
     {
+        type: 'unknown',
         en: 'Answer',
         pl: 'Odpowiedź',
         jp: 'こたえ',
     },
     {
+        type: 'unknown',
         en: 'Number',
         pl: 'Liczba',
         jp: 'すうじ',
     },
     {
+        type: 'unknown',
         en: 'Plus',
         pl: 'Dodać',
         jp: 'たす',
     },
     {
+        type: 'unknown',
         en: 'Minus',
         pl: 'Odjąć',
         jp: 'ひく',
     },
     {
+        type: 'unknown',
         en: 'Two plus two equals four.',
         pl: 'Dwa dodać dwa równa się cztery.',
         jp: 'にたすにはよん',
     },
     {
+        type: 'unknown',
         en: 'Professor',
         pl: 'Profesor',
         jp: 'きょうじゅ',
     },
     {
+        type: 'unknown',
         en: 'C.E.O.',
         pl: 'Prezes (firma)',
         jp: 'しゃちょう',
     },
     {
+        type: 'unknown',
         en: 'Designer',
         pl: 'Projektant',
         jp: 'デザイナー',
     },
 ];
+ 
