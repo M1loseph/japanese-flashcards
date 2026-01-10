@@ -333,4 +333,3 @@ export const sakura_1: JapaneseWord[] = [
         jp: 'おなまえは？',
     },
 ];
- 

@@ -48,12 +48,11 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
         return null;
     }
     if (card.type != WordTypes.VERB) {
-
         return <p className="mt-4">{card.jp_description}</p>;
     }
     return (
         <>
-            <span className='text-lg'>Verb in masu form:</span>
+            <span className="text-lg">Verb in masu form:</span>
             <ul className="list-disc pl-6 space-y-1">
                 <li>
                     <span className="text-lg">{card.masu_form}</span>

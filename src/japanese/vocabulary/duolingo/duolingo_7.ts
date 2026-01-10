@@ -269,4 +269,3 @@ export const duolingo_7: JapaneseWord[] = [
         jp: 'ほんだな',
     },
 ];
- 

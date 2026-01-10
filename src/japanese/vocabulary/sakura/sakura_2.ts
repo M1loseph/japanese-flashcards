@@ -314,4 +314,3 @@ export const sakura_2: JapaneseWord[] = [
         jp: 'とても',
     },
 ];
- 

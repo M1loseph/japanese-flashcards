@@ -227,4 +227,3 @@ export const genki_1: JapaneseWord[] = [
         jp: 'べんごし',
     },
 ];
- 

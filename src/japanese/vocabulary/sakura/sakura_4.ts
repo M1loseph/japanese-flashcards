@@ -146,4 +146,3 @@ export const sakura_4: JapaneseWord[] = [
         jp: 'デザイナー',
     },
 ];
- 
