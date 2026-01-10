@@ -47,24 +47,24 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
     if (!showAnswer) {
         return null;
     }
-    if (card.type != WordTypes.VERB) {
-        return <p className="mt-4">{card.jp_description}</p>;
+    if (card.type === WordTypes.VERB) {
+        return (
+            <>
+                <span className="text-lg">Verb in masu form:</span>
+                <ul className="list-disc pl-6 space-y-1">
+                    <li>
+                        <span className="text-lg">{card.masu_form}</span>
+                    </li>
+                    <li>
+                        <span className="text-lg">{card.masen_form}</span>
+                    </li>
+                </ul>
+                <br />
+                {card.jp_description}
+            </>
+        );
     }
-    return (
-        <>
-            <span className="text-lg">Verb in masu form:</span>
-            <ul className="list-disc pl-6 space-y-1">
-                <li>
-                    <span className="text-lg">{card.masu_form}</span>
-                </li>
-                <li>
-                    <span className="text-lg">{card.masen_form}</span>
-                </li>
-            </ul>
-            <br />
-            {card.jp_description}
-        </>
-    );
+    return <p className="mt-4">{card.jp_description}</p>;
 };
 
 interface FlashcardProps {
