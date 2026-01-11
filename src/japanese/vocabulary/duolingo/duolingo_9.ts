@@ -64,7 +64,7 @@ export const duolingo_9: JapaneseWord[] = [
         type: 'phrase',
         en: 'Feel bad',
         pl: 'Czuć się źle',
-        jp: 'guaiわるいです。',
+        jp: 'ぐあいわるいです。',
     },
     {
         type: 'noun',
