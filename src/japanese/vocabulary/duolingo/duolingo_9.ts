@@ -279,7 +279,7 @@ export const duolingo_9: JapaneseWord[] = [
     },
     {
         type: 'phrase',
-        en: 'What kind of person is you older sister?',
+        en: 'What kind of person is your older sister?',
         pl: 'Jaka jest twoja starsza siostra?',
         jp: 'おねえさんはどんなひとですか。',
     },
