@@ -275,7 +275,7 @@ export const duolingo_9: JapaneseWord[] = [
         type: 'phrase',
         en: 'Today is still cold.',
         pl: 'Dziś jest nadal zimno.',
-        jp: 'きょうまださむいです。',
+        jp: 'きょうはまださむいです。',
     },
     {
         type: 'phrase',
