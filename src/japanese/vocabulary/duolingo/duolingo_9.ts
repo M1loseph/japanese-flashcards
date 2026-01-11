@@ -251,7 +251,7 @@ export const duolingo_9: JapaneseWord[] = [
         type: 'noun',
         en: 'Hot chocolate',
         pl: 'Gorąca czekolada',
-        jp: ' ココア',
+        jp: 'ココア',
     },
     {
         type: 'noun',
