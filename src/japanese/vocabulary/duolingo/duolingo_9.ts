@@ -261,7 +261,7 @@ export const duolingo_9: JapaneseWord[] = [
     },
     {
         type: 'adverb',
-        en: 'Poperly / Appropriately',
+        en: 'Properly / Appropriately',
         pl: 'Właściwie / Odpowiednio',
         jp: 'ちゃんと',
     },
