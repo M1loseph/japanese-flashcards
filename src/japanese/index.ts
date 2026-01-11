@@ -9,6 +9,7 @@ import { duolingo_3 } from './vocabulary/duolingo/duolingo_3.ts';
 import { duolingo_4 } from './vocabulary/duolingo/duolingo_4.ts';
 import { duolingo_5 } from './vocabulary/duolingo/duolingo_5.ts';
 import { duolingo_6 } from './vocabulary/duolingo/duolingo_6.ts';
+import { duolingo_9 } from './vocabulary/duolingo/duolingo_9.ts';
 import { countriesEurope } from './vocabulary/countries/countriesEurope.ts';
 import { time } from './vocabulary/time.ts';
 import { genki_0 } from './vocabulary/genki/genki_0.ts';
@@ -131,6 +132,12 @@ export const duolingo8Bag: WordBag = {
     id: '0decb5a3-ae11-4104-ae84-7124432b3a5d',
     name: 'Duolingo #8',
     words: duolingo_8,
+};
+
+export const duolingo9Bag: WordBag = {
+    id: '5331605f-af4f-4613-b9ea-a2574d9f519b',
+    name: 'Duolingo #9',
+    words: duolingo_9,
 };
 
 export const genki0Bag: WordBag = {
@@ -262,6 +269,7 @@ const availableWordBags: WordBag[] = [
     duolingo6Bag,
     duolingo7Bag,
     duolingo8Bag,
+    duolingo9Bag,
     countriesEUBag,
     countriesAsiaBag,
     genki0Bag,

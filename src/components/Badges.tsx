@@ -5,36 +5,46 @@ type BadgeColorAndText = {
     text: string;
 };
 
+const COLOR_INTENSITY = '300';
+
 const createTypeBadge = (type?: WordType): BadgeColorAndText | undefined => {
     if (!type) return;
     let color: string;
     switch (type) {
         case WordTypes.VERB: {
-            color = 'badge-error';
+            color = `bg-red-${COLOR_INTENSITY}`;
             break;
         }
         case WordTypes.NOUN: {
-            color = 'badge-info';
+            color = `bg-blue-${COLOR_INTENSITY}`;
+            break;
+        }
+        case WordTypes.ADVERB: {
+            color = `bg-gray-${COLOR_INTENSITY}`;
             break;
         }
         case WordTypes.ADJECTIVE: {
-            color = 'badge-success';
+            color = `bg-green-${COLOR_INTENSITY}`;
             break;
         }
         case WordTypes.PHRASE: {
-            color = 'badge-warning';
+            color = `bg-yellow-${COLOR_INTENSITY}`;
             break;
         }
         case WordTypes.PRONOUN: {
-            color = 'badge-secondary';
+            color = `bg-purple-${COLOR_INTENSITY}`;
             break;
         }
         case WordTypes.SUFFIX: {
-            color = 'badge-accent';
+            color = `bg-pink-${COLOR_INTENSITY}`;
             break;
         }
         case WordTypes.NUMERAL: {
-            color = 'badge-primary';
+            color = `bg-indigo-${COLOR_INTENSITY}`;
+            break;
+        }
+        case WordTypes.PRE_NOUN_ADJECTIVE: {
+            color = `bg-teal-${COLOR_INTENSITY}`;
             break;
         }
         case WordTypes.UNKNOWN: {
@@ -56,17 +66,17 @@ const createVerbTypeBadge = (verbType: Verb['verb_type']): BadgeColorAndText => 
     let text: string;
     switch (verbType) {
         case 'godan': {
-            color = 'badge-error';
+            color = `bg-blue-${COLOR_INTENSITY}`;
             text = 'godan (u)';
             break;
         }
         case 'ichidan': {
-            color = 'badge-success';
+            color = `bg-green-${COLOR_INTENSITY}`;
             text = 'ichidan (ru)';
             break;
         }
         case 'irregular': {
-            color = 'badge-warning';
+            color = `bg-yellow-${COLOR_INTENSITY}`;
             text = 'irregular';
             break;
         }
@@ -86,12 +96,12 @@ const createAdjectiveTypeBadge = (adjectiveType: Adjective['adjective_type']): B
     let text: string;
     switch (adjectiveType) {
         case 'i-adjective': {
-            color = 'badge-success';
+            color = `bg-lime-${COLOR_INTENSITY}`;
             text = 'i adjective';
             break;
         }
         case 'na-adjective': {
-            color = 'badge-warning';
+            color = `bg-yellow-${COLOR_INTENSITY}`;
             text = 'na adjective';
             break;
         }
