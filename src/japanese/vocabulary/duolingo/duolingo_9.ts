@@ -162,7 +162,7 @@ export const duolingo_9: JapaneseWord[] = [
         en: 'Sunny',
         pl: 'Słoneczny',
         jp: 'はれ',
-        jp_description: 'Literraly "clear weather"',
+        jp_description: 'Literally "clear weather"',
     },
     {
         type: 'phrase',
