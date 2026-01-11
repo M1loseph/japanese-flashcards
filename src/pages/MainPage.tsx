@@ -37,6 +37,7 @@ import {
     countriesAsiaBag,
     duolingo8Bag,
     sakura12Bag,
+    duolingo9Bag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -87,6 +88,7 @@ const MainPage: React.FC = () => {
             duolingo6Bag,
             duolingo7Bag,
             duolingo8Bag,
+            duolingo9Bag,
         ],
         'Geography 🌍 🌎 🌏': [countriesEUBag, countriesAsiaBag],
     };

@@ -10,31 +10,39 @@ const createTypeBadge = (type?: WordType): BadgeColorAndText | undefined => {
     let color: string;
     switch (type) {
         case WordTypes.VERB: {
-            color = 'badge-error';
+            color = `bg-red-300`;
             break;
         }
         case WordTypes.NOUN: {
-            color = 'badge-info';
+            color = `bg-blue-300`;
+            break;
+        }
+        case WordTypes.ADVERB: {
+            color = `bg-gray-300`;
             break;
         }
         case WordTypes.ADJECTIVE: {
-            color = 'badge-success';
+            color = `bg-green-300`;
             break;
         }
         case WordTypes.PHRASE: {
-            color = 'badge-warning';
+            color = `bg-yellow-300`;
             break;
         }
         case WordTypes.PRONOUN: {
-            color = 'badge-secondary';
+            color = `bg-purple-300`;
             break;
         }
         case WordTypes.SUFFIX: {
-            color = 'badge-accent';
+            color = `bg-pink-300`;
             break;
         }
         case WordTypes.NUMERAL: {
-            color = 'badge-primary';
+            color = `bg-indigo-300`;
+            break;
+        }
+        case WordTypes.PRE_NOUN_ADJECTIVE: {
+            color = `bg-teal-300`;
             break;
         }
         case WordTypes.UNKNOWN: {
@@ -56,17 +64,17 @@ const createVerbTypeBadge = (verbType: Verb['verb_type']): BadgeColorAndText => 
     let text: string;
     switch (verbType) {
         case 'godan': {
-            color = 'badge-error';
+            color = `bg-blue-300`;
             text = 'godan (u)';
             break;
         }
         case 'ichidan': {
-            color = 'badge-success';
+            color = `bg-green-300`;
             text = 'ichidan (ru)';
             break;
         }
         case 'irregular': {
-            color = 'badge-warning';
+            color = `bg-yellow-300`;
             text = 'irregular';
             break;
         }
@@ -86,12 +94,12 @@ const createAdjectiveTypeBadge = (adjectiveType: Adjective['adjective_type']): B
     let text: string;
     switch (adjectiveType) {
         case 'i-adjective': {
-            color = 'badge-success';
+            color = `bg-lime-300`;
             text = 'i adjective';
             break;
         }
         case 'na-adjective': {
-            color = 'badge-warning';
+            color = `bg-yellow-300`;
             text = 'na adjective';
             break;
         }
