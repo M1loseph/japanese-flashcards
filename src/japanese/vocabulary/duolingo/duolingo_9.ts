@@ -267,7 +267,7 @@ export const duolingo_9: JapaneseWord[] = [
     },
     {
         type: 'phrase',
-        en: 'Eat your vergetables properly.',
+        en: 'Eat your vegetables properly.',
         pl: 'Jedz warzywa właściwie.',
         jp: 'やさいをちゃんとたべなさい。',
     },
