@@ -232,7 +232,7 @@ export const genki_2: JapaneseWord[] = [
     },
     {
         type: 'noun',
-        en: 'Black board',
+        en: 'Blackboard',
         pl: 'Tablica',
         jp: 'こくばん',
     },
