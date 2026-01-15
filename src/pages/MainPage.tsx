@@ -38,6 +38,7 @@ import {
     duolingo8Bag,
     sakura12Bag,
     duolingo9Bag,
+    genki3Bag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -61,7 +62,7 @@ const MainPage: React.FC = () => {
 
     const groupedBags: Record<string, WordBag[]> = {
         'Essentials 📌': [familyBag, numbersBag, countingThingsBag, daysOfWeekBag, timeBag, monthsBag],
-        'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag],
+        'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag],
         'Classes 🎓': [
             sakura1Bag,
             sakura2Bag,

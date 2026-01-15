@@ -35,6 +35,7 @@ import { duolingo_7 } from './vocabulary/duolingo/duolingo_7.ts';
 import { countriesAsia } from './vocabulary/countries/countriesAsia.ts';
 import { duolingo_8 } from './vocabulary/duolingo/duolingo_8.ts';
 import { sakura_12 } from './vocabulary/sakura/sakura_12.ts';
+import { genki_3 } from './vocabulary/genki/genki_3.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -164,6 +165,12 @@ export const genki2Bag: WordBag = {
     words: genki_2,
 };
 
+export const genki3Bag: WordBag = {
+    id: '55b65f52-ba34-4e03-9e58-228fea22a3cf',
+    name: 'Genki #3',
+    words: genki_3,
+};
+
 export const sakura1Bag: WordBag = {
     id: '63ac3538-65e8-46a3-a248-a2a7560cc046',
     name: 'Sakura #1',
@@ -276,6 +283,7 @@ const availableWordBags: WordBag[] = [
     genki1Bag,
     genki1MajorsBag,
     genki2Bag,
+    genki3Bag,
     sakura1Bag,
     sakura2Bag,
     sakura3Bag,
