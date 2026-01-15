@@ -114,6 +114,13 @@ const createAdjectiveTypeBadge = (adjectiveType: Adjective['adjective_type']): B
     };
 };
 
+const createHasKanjiBadge = (): BadgeColorAndText => {
+    return {
+        color: 'bg-sky-300',
+        text: 'kanji',
+    };
+};
+
 interface BadgesProps {
     card: JapaneseWord;
     showAnswer: boolean;
@@ -124,6 +131,9 @@ export const Badges: React.FC<BadgesProps> = ({ card, showAnswer }) => {
     const typeBadge = createTypeBadge(card.type);
     if (typeBadge) {
         badges.push(typeBadge);
+    }
+    if (card.jp_pronunciation) {
+        badges.push(createHasKanjiBadge());
     }
     if (card.type === WordTypes.VERB && showAnswer) {
         badges.push(createVerbTypeBadge(card.verb_type));
