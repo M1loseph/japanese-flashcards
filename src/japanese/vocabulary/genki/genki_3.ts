@@ -318,7 +318,7 @@ export const genki_3: JapaneseWord[] = [
         en: 'Never',
         pl: 'Nigdy',
         jp: '全然',
-        jp_description: 'ぜんぜん',
+        jp_pronunciation: 'ぜんぜん',
     },
     {
         type: 'adverb',
