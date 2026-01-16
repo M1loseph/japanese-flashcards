@@ -75,8 +75,8 @@ export const sakura_2_1: JapaneseWord[] = [
     },
     {
         type: 'phrase',
-        en: 'On evening I go for a walk.',
-        pl: 'Wieczorem idę na spacer.',
+        en: 'On evenings I go for a walk.',
+        pl: 'Wieczorami chodzę na spacer.',
         jp: 'ゆうがたさんぽをします。',
         jp_description:
             'Note there is no particle "に" after "ゆうがた". The same applies to other time expressions like "あさ" (morning) or "ばん" (night).',
