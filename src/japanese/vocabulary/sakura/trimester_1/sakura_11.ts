@@ -1,6 +1,6 @@
-import type { JapaneseWord } from '../../types';
+import type { JapaneseWord } from '../../../types';
 
-export const sakura_11: JapaneseWord[] = [
+export const sakura_1_11: JapaneseWord[] = [
     {
         type: 'pronoun',
         en: 'You (polite)',
