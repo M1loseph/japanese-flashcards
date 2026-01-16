@@ -63,7 +63,7 @@ export const sakura_2_1: JapaneseWord[] = [
     },
     {
         type: 'noun',
-        en: 'Yersterday',
+        en: 'Yesterday',
         pl: 'Wczoraj',
         jp: 'きのう',
     },
