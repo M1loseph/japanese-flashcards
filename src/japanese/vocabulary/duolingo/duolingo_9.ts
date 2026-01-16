@@ -223,9 +223,9 @@ export const duolingo_9: JapaneseWord[] = [
         jp_description: 'Literally "cloudiness" or "clouded weather"',
     },
     {
-        type: 'phrase',
-        en: 'This evening',
-        pl: 'Dziś wieczorem',
+        type: 'noun',
+        en: 'This evening / Tonight',
+        pl: 'Dziś wieczorem / Dziś nocą',
         jp: 'こんばん',
     },
     {

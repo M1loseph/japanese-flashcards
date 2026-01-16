@@ -128,8 +128,8 @@ export const genki_3: JapaneseWord[] = [
     },
     {
         type: 'noun',
-        en: 'This evening',
-        pl: 'Dziś wieczorem',
+        en: 'This evening / Tonight',
+        pl: 'Dziś wieczorem / Dziś nocą',
         jp: '今晩',
         jp_pronunciation: 'こんばん',
     },
