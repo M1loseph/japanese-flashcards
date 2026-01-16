@@ -15,26 +15,26 @@ import { time } from './vocabulary/time.ts';
 import { genki_0 } from './vocabulary/genki/genki_0.ts';
 import { genki_1 } from './vocabulary/genki/genki_1.ts';
 import { genki_2 } from './vocabulary/genki/genki_2.ts';
-import { sakura_1 } from './vocabulary/sakura/sakura_1.ts';
-import { sakura_2 } from './vocabulary/sakura/sakura_2.ts';
-import { sakura_3 } from './vocabulary/sakura/sakura_3.ts';
-import { sakura_4 } from './vocabulary/sakura/sakura_4.ts';
-import { sakura_5 } from './vocabulary/sakura/sakura_5.ts';
-import { sakura_6 } from './vocabulary/sakura/sakura_6.ts';
-import { sakura_7 } from './vocabulary/sakura/sakura_7.ts';
-import { sakura_8 } from './vocabulary/sakura/sakura_8.ts';
-import { sakura_8_sports } from './vocabulary/sakura/sakura_8_sports.ts';
-import { sakura_8_fruitsAndVegetables } from './vocabulary/sakura/sakura_8_fruitsAndVegetables.ts';
-import { sakura_8_animals } from './vocabulary/sakura/sakura_8_animals.ts';
-import { sakura_9 } from './vocabulary/sakura/sakura_9.ts';
-import { sakura_10 } from './vocabulary/sakura/sakura_10.ts';
+import { sakura_1 } from './vocabulary/sakura/trimester_1/sakura_1.ts';
+import { sakura_2 } from './vocabulary/sakura/trimester_1/sakura_2.ts';
+import { sakura_3 } from './vocabulary/sakura/trimester_1/sakura_3.ts';
+import { sakura_4 } from './vocabulary/sakura/trimester_1/sakura_4.ts';
+import { sakura_5 } from './vocabulary/sakura/trimester_1/sakura_5.ts';
+import { sakura_6 } from './vocabulary/sakura/trimester_1/sakura_6.ts';
+import { sakura_7 } from './vocabulary/sakura/trimester_1/sakura_7.ts';
+import { sakura_8 } from './vocabulary/sakura/trimester_1/sakura_8.ts';
+import { sakura_8_sports } from './vocabulary/sakura/trimester_1/sakura_8_sports.ts';
+import { sakura_8_fruitsAndVegetables } from './vocabulary/sakura/trimester_1/sakura_8_fruitsAndVegetables.ts';
+import { sakura_8_animals } from './vocabulary/sakura/trimester_1/sakura_8_animals.ts';
+import { sakura_9 } from './vocabulary/sakura/trimester_1/sakura_9.ts';
+import { sakura_10 } from './vocabulary/sakura/trimester_1/sakura_10.ts';
 import { genki_1_majors } from './vocabulary/genki/genki_1_majors.ts';
 import { months } from './vocabulary/months.ts';
-import { sakura_11 } from './vocabulary/sakura/sakura_11.ts';
+import { sakura_11 } from './vocabulary/sakura/trimester_1/sakura_11.ts';
 import { duolingo_7 } from './vocabulary/duolingo/duolingo_7.ts';
 import { countriesAsia } from './vocabulary/countries/countriesAsia.ts';
 import { duolingo_8 } from './vocabulary/duolingo/duolingo_8.ts';
-import { sakura_12 } from './vocabulary/sakura/sakura_12.ts';
+import { sakura_12 } from './vocabulary/sakura/trimester_1/sakura_12.ts';
 import { genki_3 } from './vocabulary/genki/genki_3.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
@@ -173,91 +173,91 @@ export const genki3Bag: WordBag = {
 
 export const sakura1Bag: WordBag = {
     id: '63ac3538-65e8-46a3-a248-a2a7560cc046',
-    name: 'Sakura #1',
+    name: 'Sakura #1.1',
     words: sakura_1,
 };
 
 export const sakura2Bag: WordBag = {
     id: 'e4755c96-cd28-40d5-8962-a8d00d23967b',
-    name: 'Sakura #2',
+    name: 'Sakura #1.2',
     words: sakura_2,
 };
 
 export const sakura3Bag: WordBag = {
     id: '169b93bd-599a-4976-8ab2-d280e2af4f63',
-    name: 'Sakura #3',
+    name: 'Sakura #1.3',
     words: sakura_3,
 };
 
 export const sakura4Bag: WordBag = {
     id: '4c96ca61-8767-4120-8291-19241e14370f',
-    name: 'Sakura #4',
+    name: 'Sakura #1.4',
     words: sakura_4,
 };
 
 export const sakura5Bag: WordBag = {
     id: 'eb85a655-6758-4e7e-9e21-a8b96cc50b05',
-    name: 'Sakura #5',
+    name: 'Sakura #1.5',
     words: sakura_5,
 };
 
 export const sakura6Bag: WordBag = {
     id: '3e30c119-8c88-41d7-bbe0-b28079a21214',
-    name: 'Sakura #6',
+    name: 'Sakura #1.6',
     words: sakura_6,
 };
 
 export const sakura7Bag: WordBag = {
     id: '24b5fb05-b55d-460b-a0bb-4f61738ab716',
-    name: 'Sakura #7',
+    name: 'Sakura #1.7',
     words: sakura_7,
 };
 
 export const sakura8Bag: WordBag = {
     id: '5f580975-1012-46a1-b43a-8d059b536333',
-    name: 'Sakura #8',
+    name: 'Sakura #1.8',
     words: sakura_8,
 };
 
 export const sakura8SportsBag: WordBag = {
     id: 'a2f4cc00-5264-4193-9a3a-37b9eda3175f',
-    name: 'Sakura #8 Sports',
+    name: 'Sakura #1.8 Sports',
     words: sakura_8_sports,
 };
 
 export const sakura8FruitsAndVegetablesBag: WordBag = {
     id: 'b98c297c-307d-493f-80e8-f9ade70842e1',
-    name: 'Sakura #8 Fruits and Vegetables',
+    name: 'Sakura #1.8 Fruits and Vegetables',
     words: sakura_8_fruitsAndVegetables,
 };
 
 export const sakura8AnimalsBag: WordBag = {
     id: 'c35ead83-d288-4681-b1f3-2c08fdafcc7f',
-    name: 'Sakura #8 Animals',
+    name: 'Sakura #1.8 Animals',
     words: sakura_8_animals,
 };
 
 export const sakura9Bag: WordBag = {
     id: '5dede695-400b-440a-8e2a-0e8f6960d117',
-    name: 'Sakura #9',
+    name: 'Sakura #1.9',
     words: sakura_9,
 };
 
 export const sakura10Bag: WordBag = {
     id: '06f98e3d-c908-4bc0-a2b9-e66de058ab35',
-    name: 'Sakura #10',
+    name: 'Sakura #1.10',
     words: sakura_10,
 };
 
 export const sakura11Bag: WordBag = {
     id: 'b10b4340-1df6-42c3-a1be-633b109fd6a0',
-    name: 'Sakura #11',
+    name: 'Sakura #1.11',
     words: sakura_11,
 };
 
 export const sakura12Bag: WordBag = {
     id: '0dd511ac-1108-49ff-96f9-dc4a91c964c6',
-    name: 'Sakura #12',
+    name: 'Sakura #1.12',
     words: sakura_12,
 };
 
