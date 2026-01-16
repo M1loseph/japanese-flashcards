@@ -123,7 +123,7 @@ export const sakura_2_1: JapaneseWord[] = [
     },
     {
         type: 'phrase',
-        en: "I didn't wear jacket yesterday.",
+        en: "I didn't wear a jacket yesterday.",
         pl: 'Wczoraj nie założyłem kurtki.',
         jp: 'きのうジャケットをきませんでした。',
     },
