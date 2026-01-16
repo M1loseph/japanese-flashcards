@@ -5,7 +5,7 @@ type BadgeColorAndText = {
     text: string;
 };
 
-const createTypeBadge = (type?: WordType): BadgeColorAndText | undefined => {
+const createTypeBadge: (type?: WordType) => BadgeColorAndText | undefined = (type) => {
     if (!type) return;
     let color: string;
     switch (type) {
@@ -59,7 +59,7 @@ const createTypeBadge = (type?: WordType): BadgeColorAndText | undefined => {
     };
 };
 
-const createVerbTypeBadge = (verbType: Verb['verb_type']): BadgeColorAndText => {
+const createVerbTypeBadge: (verbType: Verb['verb_type']) => BadgeColorAndText = (verbType) => {
     let color: string;
     let text: string;
     switch (verbType) {
@@ -89,7 +89,7 @@ const createVerbTypeBadge = (verbType: Verb['verb_type']): BadgeColorAndText => 
     };
 };
 
-const createAdjectiveTypeBadge = (adjectiveType: Adjective['adjective_type']): BadgeColorAndText => {
+const createAdjectiveTypeBadge: (adjectiveType: Adjective['adjective_type']) => BadgeColorAndText = (adjectiveType) => {
     let color: string;
     let text: string;
     switch (adjectiveType) {
@@ -114,7 +114,7 @@ const createAdjectiveTypeBadge = (adjectiveType: Adjective['adjective_type']): B
     };
 };
 
-const createHasKanjiBadge = (): BadgeColorAndText => {
+const createHasKanjiBadge: () => BadgeColorAndText = () => {
     return {
         color: 'bg-sky-300',
         text: 'kanji',
