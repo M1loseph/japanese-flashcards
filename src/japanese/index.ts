@@ -263,7 +263,7 @@ export const sakura1_12Bag: WordBag = {
 };
 
 export const sakura2_1Bag: WordBag = {
-    id: '0dd511ac-1108-49ff-96f9-dc4a91c964c6',
+    id: '16ad0aab-df84-46c1-801e-ad829f453a05',
     name: 'Sakura #2.1',
     words: sakura_2_1,
 };
