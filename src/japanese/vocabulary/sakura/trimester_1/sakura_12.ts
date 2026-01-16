@@ -1,6 +1,6 @@
 import type { JapaneseWord } from '../../../types';
 
-export const sakura_12: JapaneseWord[] = [
+export const sakura_1_12: JapaneseWord[] = [
     {
         type: 'phrase',
         en: 'Friends will come to my house.',

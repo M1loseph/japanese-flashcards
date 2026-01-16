@@ -1,6 +1,6 @@
 import type { JapaneseWord } from '../../../types';
 
-export const sakura_8: JapaneseWord[] = [
+export const sakura_1_8: JapaneseWord[] = [
     {
         type: 'unknown',
         en: '4 things',
