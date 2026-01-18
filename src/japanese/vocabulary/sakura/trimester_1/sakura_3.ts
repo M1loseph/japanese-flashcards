@@ -105,13 +105,13 @@ export const sakura_1_3: JapaneseWord[] = [
         jp: 'かばん',
     },
     {
-        type: 'unknown',
-        en: 'Table',
-        pl: 'Stół',
+        type: 'noun',
+        en: 'Desk',
+        pl: 'Biurko',
         jp: 'つくえ',
     },
     {
-        type: 'unknown',
+        type: 'noun',
         en: 'Chair',
         pl: 'Krzesło',
         jp: 'いす',

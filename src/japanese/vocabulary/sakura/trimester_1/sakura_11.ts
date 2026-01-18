@@ -194,6 +194,13 @@ export const sakura_1_11: JapaneseWord[] = [
         masen_form: 'ねません',
     },
     {
+        type: 'adjective',
+        adjective_type: 'i-adjective',
+        en: 'Busy',
+        pl: 'Zajęty',
+        jp: 'いそがしい',
+    },
+    {
         type: 'phrase',
         en: 'I am busy.',
         pl: 'Jestem zajęty.',
@@ -221,7 +228,7 @@ export const sakura_1_11: JapaneseWord[] = [
         type: 'phrase',
         en: 'Go to work by train',
         pl: 'Jechać do pracy pociągiem',
-        jp: 'でんしゃでしごとにいく',
+        jp: 'でんしゃでかいしゃにいく',
     },
     {
         type: 'phrase',
