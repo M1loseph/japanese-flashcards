@@ -369,4 +369,10 @@ export const genki_3: JapaneseWord[] = [
         pl: 'Tak (mniej formalne)',
         jp: 'ええ',
     },
+    {
+        type: 'phrase',
+        en: 'Where do you play tennis?',
+        pl: 'Gdzie grasz w tenisa?',
+        jp: 'どこでテニスをしますか。',
+    },
 ];

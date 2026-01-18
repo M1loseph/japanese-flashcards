@@ -68,16 +68,18 @@ export const sakura_1_7: JapaneseWord[] = [
         jp: 'だれがいますか',
     },
     {
-        type: 'unknown',
+        type: 'suffix',
         en: 'City',
         pl: 'Miasto',
-        jp: 'し',
+        jp: '市',
+        jp_pronunciation: 'し',
     },
     {
         type: 'unknown',
         en: 'Leszno city',
         pl: 'Miasto Leszno',
-        jp: 'レスノし',
+        jp: 'レスノ市',
+        jp_description: 'Note that "city" here is translated as "市" (し) as a suffix.',
     },
     {
         type: 'unknown',
