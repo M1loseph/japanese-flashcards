@@ -100,7 +100,7 @@ export const sakura_2_1: JapaneseWord[] = [
         type: 'phrase',
         en: "Yesterday at 9 o'clock I ate sushi.",
         pl: 'Wczoraj o dziewiątej jadłem sushi.',
-        jp: 'きのうくじにすしをたべました。',
+        jp: 'きのうのくじにすしをたべました。',
         jp_description: 'The particle "に" is used after "くじ", even though before it there is "きのう" (yesterday).',
     },
     {
@@ -125,6 +125,6 @@ export const sakura_2_1: JapaneseWord[] = [
         type: 'phrase',
         en: "I didn't wear a jacket yesterday.",
         pl: 'Wczoraj nie założyłem kurtki.',
-        jp: 'きのうジャケットをきませんでした。',
+        jp: 'きのうジャケットはきませんでした。',
     },
 ];

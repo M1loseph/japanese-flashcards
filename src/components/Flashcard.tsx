@@ -2,7 +2,6 @@ import { IconCancel, IconCheck } from '@tabler/icons-react';
 import { useState, type JSX } from 'react';
 import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
-import { WordTypes } from '../japanese/types';
 import { Badges } from './Badges';
 
 interface DescriptionProps {
@@ -14,7 +13,7 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
     if (!showAnswer) {
         return null;
     }
-    if (card.type === WordTypes.VERB) {
+    if (card.type === 'verb') {
         return (
             <>
                 <span className="text-lg">Verb in masu form:</span>

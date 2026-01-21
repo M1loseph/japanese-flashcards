@@ -1,18 +1,3 @@
-export const WordTypes = {
-    VERB: 'verb',
-    PHRASE: 'phrase',
-    NOUN: 'noun',
-    ADJECTIVE: 'adjective',
-    PRONOUN: 'pronoun',
-    SUFFIX: 'suffix',
-    NUMERAL: 'numeral',
-    UNKNOWN: 'unknown',
-    ADVERB: 'adverb',
-    PRE_NOUN_ADJECTIVE: 'pre-noun-adjective',
-} as const;
-
-export type WordType = (typeof WordTypes)[keyof typeof WordTypes];
-
 type Translation = {
     en: string;
     pl: string;
@@ -61,6 +46,10 @@ export type Numeral = Translation & {
     type: 'numeral';
 };
 
+export type Particle = Translation & {
+    type: 'particle';
+};
+
 export type UnknownWord = Translation & {
     type: 'unknown';
 };
@@ -75,7 +64,10 @@ export type JapaneseWord =
     | Numeral
     | Adverb
     | PreNounAdjective
+    | Particle
     | UnknownWord;
+
+export type WordType = JapaneseWord['type'];
 
 export interface WordBag {
     id: string;
