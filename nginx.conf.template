@@ -1,0 +1,49 @@
+server {
+    # Mime types
+    include /etc/nginx/mime.types;
+
+    listen ${PORT};
+    server_name localhost;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # Compression
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript;
+    gzip_min_length 1000;
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+
+    # Cache versioned assets (with content hash in filename)
+    location ~* \.(js|css)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+    
+    # Always revalidate index.html
+    location = /index.html {
+        expires off;
+        add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Health check endpoint
+    location /health {
+        access_log off;
+        add_header Content-Type text/plain;
+        return 200 "healthy\n";
+    }
+
+    # Disable access to hidden files
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+}
+
