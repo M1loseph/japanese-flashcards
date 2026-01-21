@@ -1,7 +1,7 @@
 import { numbers } from './vocabulary/numbers.ts';
 import { countingThings } from './vocabulary/countingThings.ts';
 import { type WordBag } from './types.ts';
-import { daysOfWeek } from './vocabulary/daysOfWeek.ts';
+import { week } from './vocabulary/week.ts';
 import { family } from './vocabulary/family.ts';
 import { duolingo_1 } from './vocabulary/duolingo/duolingo_1.ts';
 import { duolingo_2 } from './vocabulary/duolingo/duolingo_2.ts';
@@ -37,6 +37,7 @@ import { duolingo_8 } from './vocabulary/duolingo/duolingo_8.ts';
 import { sakura_1_12 } from './vocabulary/sakura/trimester_1/sakura_12.ts';
 import { genki_3 } from './vocabulary/genki/genki_3.ts';
 import { sakura_2_1 } from './vocabulary/sakura/trimester_2/sakura_1.ts';
+import { sakura_2_2 } from './vocabulary/sakura/trimester_2/sakura_2.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -58,10 +59,10 @@ export const countingThingsBag: WordBag = {
     words: countingThings,
 };
 
-export const daysOfWeekBag: WordBag = {
+export const weekBag: WordBag = {
     id: 'a6d25f35-b38e-4598-9c52-c27f8827f5d5',
-    name: 'Days of the Week',
-    words: daysOfWeek,
+    name: 'Week',
+    words: week,
 };
 
 export const timeBag: WordBag = {
@@ -268,11 +269,17 @@ export const sakura2_1Bag: WordBag = {
     words: sakura_2_1,
 };
 
+export const sakura2_2Bag: WordBag = {
+    id: '0eee12bb-6afa-48ea-9583-755c73ccc7e4',
+    name: 'Sakura #2.2',
+    words: sakura_2_2,
+};
+
 const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
     countingThingsBag,
-    daysOfWeekBag,
+    weekBag,
     timeBag,
     monthsBag,
     duolingo1Bag,
@@ -307,6 +314,7 @@ const availableWordBags: WordBag[] = [
     sakura1_11Bag,
     sakura1_12Bag,
     sakura2_1Bag,
+    sakura2_2Bag,
 ];
 
 export const findBagById = (id: string): WordBag | undefined => availableWordBags.find((bag) => bag.id === id);

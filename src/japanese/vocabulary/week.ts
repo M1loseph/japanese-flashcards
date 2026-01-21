@@ -1,6 +1,6 @@
 import type { JapaneseWord } from '../types.ts';
 
-export const daysOfWeek: JapaneseWord[] = [
+export const week: JapaneseWord[] = [
     {
         type: 'noun',
         en: 'Monday',
@@ -63,5 +63,54 @@ export const daysOfWeek: JapaneseWord[] = [
         pl: 'Weekend',
         jp: '週末',
         jp_pronunciation: 'しゅうまつ',
+    },
+    {
+        type: 'noun',
+        en: 'This week',
+        pl: 'W tym tygodniu',
+        jp: '今週',
+        jp_pronunciation: 'こんしゅう',
+    },
+    {
+        type: 'noun',
+        en: 'Last week',
+        pl: 'W zeszłym tygodniu',
+        jp: '先週',
+        jp_pronunciation: 'せんしゅう',
+    },
+    {
+        type: 'noun',
+        en: 'Next week',
+        pl: 'W przyszłym tygodniu',
+        jp: '来週',
+        jp_pronunciation: 'らいしゅう',
+    },
+    {
+        type: 'noun',
+        en: 'Today',
+        pl: 'Dzisiaj',
+        jp: '今日',
+        jp_pronunciation: 'きょう',
+    },
+    {
+        type: 'noun',
+        en: 'Tomorrow',
+        pl: 'Jutro',
+        jp: '明日',
+        jp_pronunciation: 'あした',
+    },
+    {
+        type: 'noun',
+        en: 'Yesterday',
+        pl: 'Wczoraj',
+        jp: '昨日',
+        jp_pronunciation: 'きのう',
+    },
+    {
+        type: 'noun',
+        en: 'Day',
+        pl: 'Dzień',
+        jp: '日',
+        jp_pronunciation: 'ひ',
     },
 ];

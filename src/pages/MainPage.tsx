@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     countriesEUBag,
-    daysOfWeekBag,
+    weekBag,
     duolingo1Bag,
     duolingo2Bag,
     duolingo3Bag,
@@ -40,6 +40,7 @@ import {
     duolingo9Bag,
     genki3Bag,
     sakura2_1Bag,
+    sakura2_2Bag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -62,7 +63,7 @@ const MainPage: React.FC = () => {
     };
 
     const groupedBags: Record<string, WordBag[]> = {
-        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, daysOfWeekBag, timeBag, monthsBag],
+        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, weekBag, timeBag, monthsBag],
         'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag],
         'Classes 🎓': [
             sakura1_1Bag,
@@ -81,6 +82,7 @@ const MainPage: React.FC = () => {
             sakura1_11Bag,
             sakura1_12Bag,
             sakura2_1Bag,
+            sakura2_2Bag,
         ],
         'Apps 📱': [
             duolingo1Bag,

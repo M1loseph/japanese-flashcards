@@ -1,4 +1,4 @@
-import { WordTypes, type Adjective, type JapaneseWord, type Verb, type WordType } from '../japanese/types';
+import { type Adjective, type JapaneseWord, type Verb, type WordType } from '../japanese/types';
 
 type BadgeColorAndText = {
     color: string;
@@ -9,43 +9,47 @@ const createTypeBadge: (type?: WordType) => BadgeColorAndText | undefined = (typ
     if (!type) return;
     let color: string;
     switch (type) {
-        case WordTypes.VERB: {
+        case 'verb': {
             color = `bg-red-300`;
             break;
         }
-        case WordTypes.NOUN: {
+        case 'noun': {
             color = `bg-blue-300`;
             break;
         }
-        case WordTypes.ADVERB: {
+        case 'adverb': {
             color = `bg-gray-300`;
             break;
         }
-        case WordTypes.ADJECTIVE: {
+        case 'adjective': {
             color = `bg-green-300`;
             break;
         }
-        case WordTypes.PHRASE: {
+        case 'phrase': {
             color = `bg-yellow-300`;
             break;
         }
-        case WordTypes.PRONOUN: {
+        case 'pronoun': {
             color = `bg-purple-300`;
             break;
         }
-        case WordTypes.SUFFIX: {
+        case 'suffix': {
             color = `bg-pink-300`;
             break;
         }
-        case WordTypes.NUMERAL: {
+        case 'numeral': {
             color = `bg-indigo-300`;
             break;
         }
-        case WordTypes.PRE_NOUN_ADJECTIVE: {
+        case 'pre-noun-adjective': {
             color = `bg-teal-300`;
             break;
         }
-        case WordTypes.UNKNOWN: {
+        case 'particle': {
+            color = `bg-orange-300`;
+            break;
+        }
+        case 'unknown': {
             return;
         }
         default: {
@@ -135,10 +139,10 @@ export const Badges: React.FC<BadgesProps> = ({ card, showAnswer }) => {
     if (card.jp_pronunciation) {
         badges.push(createHasKanjiBadge());
     }
-    if (card.type === WordTypes.VERB && showAnswer) {
+    if (card.type === 'verb' && showAnswer) {
         badges.push(createVerbTypeBadge(card.verb_type));
     }
-    if (card.type === WordTypes.ADJECTIVE && showAnswer) {
+    if (card.type === 'adjective' && showAnswer) {
         badges.push(createAdjectiveTypeBadge(card.adjective_type));
     }
     return (
