@@ -209,7 +209,7 @@ export const sakura_1_12: JapaneseWord[] = [
         type: 'phrase',
         en: 'I shop twice every week.',
         pl: 'Robię zakupy dwa razy w każdy tydzień.',
-        jp: 'まいしゅうににかいかいものをします。',
+        jp: 'まいしゅうにかいかいものをします。',
     },
     {
         type: 'phrase',
