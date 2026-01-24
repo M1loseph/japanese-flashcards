@@ -113,7 +113,7 @@ export const sakura_2_1: JapaneseWord[] = [
         type: 'phrase',
         en: "Next week I won't meet my mom.",
         pl: 'W przyszłym tygodniu nie spotkam się z mamą.',
-        jp: 'らいしゅうは母とあいません。',
+        jp: 'らいしゅう母とあいません。',
     },
     {
         type: 'phrase',
