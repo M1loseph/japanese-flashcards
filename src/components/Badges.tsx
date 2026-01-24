@@ -1,52 +1,53 @@
 import { type Adjective, type JapaneseWord, type Verb, type WordType } from '../japanese/types';
 
-type BadgeColorAndText = {
+type BadgeMetadata = {
     color: string;
     text: string;
+    show: boolean;
 };
 
-const createTypeBadge: (type?: WordType) => BadgeColorAndText | undefined = (type) => {
+const createTypeBadge: (type?: WordType) => BadgeMetadata | undefined = (type) => {
     if (!type) return;
     let color: string;
     switch (type) {
         case 'verb': {
-            color = `bg-red-300`;
+            color = `bg-red-300/75`;
             break;
         }
         case 'noun': {
-            color = `bg-blue-300`;
+            color = `bg-blue-300/75`;
             break;
         }
         case 'adverb': {
-            color = `bg-gray-300`;
+            color = `bg-gray-300/75`;
             break;
         }
         case 'adjective': {
-            color = `bg-green-300`;
+            color = `bg-green-300/75`;
             break;
         }
         case 'phrase': {
-            color = `bg-yellow-300`;
+            color = `bg-yellow-300/75`;
             break;
         }
         case 'pronoun': {
-            color = `bg-purple-300`;
+            color = `bg-purple-300/75`;
             break;
         }
         case 'suffix': {
-            color = `bg-pink-300`;
+            color = `bg-pink-300/75`;
             break;
         }
         case 'numeral': {
-            color = `bg-indigo-300`;
+            color = `bg-indigo-300/75`;
             break;
         }
         case 'pre-noun-adjective': {
-            color = `bg-teal-300`;
+            color = `bg-teal-300/75`;
             break;
         }
         case 'particle': {
-            color = `bg-orange-300`;
+            color = `bg-orange-300/75`;
             break;
         }
         case 'unknown': {
@@ -60,25 +61,26 @@ const createTypeBadge: (type?: WordType) => BadgeColorAndText | undefined = (typ
     return {
         color,
         text: type,
+        show: true,
     };
 };
 
-const createVerbTypeBadge: (verbType: Verb['verb_type']) => BadgeColorAndText = (verbType) => {
+const createVerbTypeBadge: (verbType: Verb['verb_type'], show: boolean) => BadgeMetadata = (verbType, show) => {
     let color: string;
     let text: string;
     switch (verbType) {
         case 'godan': {
-            color = `bg-blue-300`;
+            color = `bg-blue-300/75`;
             text = 'godan (u)';
             break;
         }
         case 'ichidan': {
-            color = `bg-green-300`;
+            color = `bg-green-300/75`;
             text = 'ichidan (ru)';
             break;
         }
         case 'irregular': {
-            color = `bg-yellow-300`;
+            color = `bg-yellow-300/75`;
             text = 'irregular';
             break;
         }
@@ -90,20 +92,24 @@ const createVerbTypeBadge: (verbType: Verb['verb_type']) => BadgeColorAndText = 
     return {
         color,
         text,
+        show,
     };
 };
 
-const createAdjectiveTypeBadge: (adjectiveType: Adjective['adjective_type']) => BadgeColorAndText = (adjectiveType) => {
+const createAdjectiveTypeBadge: (adjectiveType: Adjective['adjective_type'], show: boolean) => BadgeMetadata = (
+    adjectiveType,
+    show,
+) => {
     let color: string;
     let text: string;
     switch (adjectiveType) {
         case 'i-adjective': {
-            color = `bg-lime-300`;
+            color = `bg-lime-300/75`;
             text = 'i adjective';
             break;
         }
         case 'na-adjective': {
-            color = `bg-yellow-300`;
+            color = `bg-yellow-300/75`;
             text = 'na adjective';
             break;
         }
@@ -115,13 +121,15 @@ const createAdjectiveTypeBadge: (adjectiveType: Adjective['adjective_type']) => 
     return {
         color,
         text,
+        show,
     };
 };
 
-const createHasKanjiBadge: () => BadgeColorAndText = () => {
+const createHasKanjiBadge: () => BadgeMetadata = () => {
     return {
-        color: 'bg-sky-300',
+        color: 'bg-sky-300/75',
         text: 'kanji',
+        show: true,
     };
 };
 
@@ -131,7 +139,7 @@ interface BadgesProps {
 }
 
 export const Badges: React.FC<BadgesProps> = ({ card, showAnswer }) => {
-    const badges: BadgeColorAndText[] = [];
+    const badges: BadgeMetadata[] = [];
     const typeBadge = createTypeBadge(card.type);
     if (typeBadge) {
         badges.push(typeBadge);
@@ -139,16 +147,19 @@ export const Badges: React.FC<BadgesProps> = ({ card, showAnswer }) => {
     if (card.jp_pronunciation) {
         badges.push(createHasKanjiBadge());
     }
-    if (card.type === 'verb' && showAnswer) {
-        badges.push(createVerbTypeBadge(card.verb_type));
+    if (card.type === 'verb') {
+        badges.push(createVerbTypeBadge(card.verb_type, showAnswer));
     }
-    if (card.type === 'adjective' && showAnswer) {
-        badges.push(createAdjectiveTypeBadge(card.adjective_type));
+    if (card.type === 'adjective') {
+        badges.push(createAdjectiveTypeBadge(card.adjective_type, showAnswer));
     }
     return (
         <div className="flex flex-row">
             {badges.map((badge) => (
-                <div key={badge.text} className={`badge ${badge.color} badge-lg ml-2 mb-4`}>
+                <div
+                    key={badge.text}
+                    className={`badge ${badge.color} badge-lg ml-2 mb-4 transition-all duration-200 ${badge.show ? 'opacity-100' : 'opacity-0'}`}
+                >
                     {badge.text}
                 </div>
             ))}

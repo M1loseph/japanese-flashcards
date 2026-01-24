@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { type TranslationLanguage } from '../TranslationLanguage.ts';
 import Flashcard from '../components/Flashcard.tsx';
-import { findBagById, type JapaneseWord } from '../japanese';
+import ProgressBar from '../components/ProgressBar.tsx';
+import { findBagById, type JapaneseWord, type WordBag } from '../japanese';
 import { useLocation, useNavigate } from 'react-router';
 import usePreventAccidentalLeave from '../hooks/usePreventAccidentalLeave.ts';
 
 interface FlashcardSession {
     word: JapaneseWord;
+    wordBag: string;
     answered: boolean;
     correct: boolean;
 }
@@ -50,15 +52,20 @@ const RandomShuffleGamePage: React.FC = () => {
             }
         }
         const { selectedLanguage, selectedWordBags, gameId } = state!;
-        const allWords = selectedWordBags.flatMap((bagId) => findBagById(bagId)?.words || []);
-        shuffleArray(allWords);
-        const flashcards = allWords.map((japaneseVocabulary) => {
-            return {
-                word: japaneseVocabulary,
-                answered: false,
-                correct: false,
-            };
+        const bags = selectedWordBags
+            .map((bagId) => findBagById(bagId))
+            .filter((bag: WordBag | undefined) => bag !== undefined);
+        const flashcards = bags.flatMap((bag) => {
+            return bag.words.map((japaneseVocabulary) => {
+                return {
+                    word: japaneseVocabulary,
+                    wordBag: bag.name,
+                    answered: false,
+                    correct: false,
+                };
+            });
         });
+        shuffleArray(flashcards);
         return {
             flashcards,
             currentFlashcardIndex: 0,
@@ -83,8 +90,12 @@ const RandomShuffleGamePage: React.FC = () => {
 
     const { flashcards, currentFlashcardIndex, selectedLanguage } = gameState;
 
-    const correctAnswers = useMemo(() => flashcards.filter((card) => card.correct), [flashcards]);
     const wrongAnswers = useMemo(() => flashcards.filter((card) => card.answered && !card.correct), [flashcards]);
+    const wordBags = useMemo(() => {
+        const bagsSet = new Set<string>();
+        flashcards.forEach((card) => bagsSet.add(card.wordBag));
+        return Array.from(bagsSet).sort();
+    }, [flashcards]);
 
     const prepareSetForRepeat = () => {
         const flashcards = wrongAnswers.map((card) => ({ ...card, answered: false }));
@@ -158,10 +169,6 @@ const RandomShuffleGamePage: React.FC = () => {
         }));
     };
 
-    const hours = Math.floor(sessionTime / 3600);
-    const minutes = Math.floor((sessionTime % 3600) / 60);
-    const seconds = sessionTime % 60;
-
     return (
         <>
             <div className={`modal ${showPrompt ? 'modal-open' : ''}`}>
@@ -184,17 +191,12 @@ const RandomShuffleGamePage: React.FC = () => {
 
             <div className="max-w-7xl mx-auto pt-12 px-4">
                 <div className="flex flex-col items-center space-y-6">
-                    <div className="flex w-full justify-between items-center bg-base-200 p-4 rounded-lg shadow-md">
-                        <p className="text-xl font-bold">
-                            {currentFlashcardIndex + 1}/{flashcards.length}
-                        </p>
-                        <p className="text-xl font-bold text-success">{correctAnswers.length}</p>
-                        <p className="text-xl font-bold text-error">{wrongAnswers.length}</p>
-                        <p className="text-xl font-bold">
-                            {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:
-                            {String(seconds).padStart(2, '0')}
-                        </p>
-                    </div>
+                    <ProgressBar
+                        wordBags={wordBags}
+                        current={currentFlashcardIndex + 1}
+                        total={flashcards.length}
+                        timeInSeconds={sessionTime}
+                    />
                     <Flashcard
                         card={card.word}
                         selectedLanguage={selectedLanguage}

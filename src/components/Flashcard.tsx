@@ -1,5 +1,5 @@
-import { IconCancel, IconCheck } from '@tabler/icons-react';
-import { useState, type JSX } from 'react';
+import { IconCheck, IconEye, IconEyeOff, IconRepeat } from '@tabler/icons-react';
+import { useState } from 'react';
 import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
 import { Badges } from './Badges';
@@ -10,27 +10,24 @@ interface DescriptionProps {
 }
 
 const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
-    if (!showAnswer) {
-        return null;
-    }
     if (card.type === 'verb') {
         return (
-            <>
-                <span className="text-lg">Verb in masu form:</span>
-                <ul className="list-disc pl-6 space-y-1">
-                    <li>
-                        <span className="text-lg">{card.masu_form}</span>
-                    </li>
-                    <li>
-                        <span className="text-lg">{card.masen_form}</span>
-                    </li>
-                </ul>
+            <div className={`flex flex-col items-stretch ${showAnswer ? '' : 'invisible'}`}>
+                <div className="text-md text-center text-base-content/60">Masu form</div>
+                <div className="p-2 bg-base-300/50 rounded-lg flex justify-between items-center">
+                    <span>{card.masu_form}</span>
+                    <span className="text-xs text-base-content/60">Present</span>
+                </div>
+                <div className="mt-1 p-2 bg-base-300/50 rounded-lg flex justify-between items-center">
+                    <span>{card.masen_form}</span>
+                    <span className="text-xs text-base-content/60">Negative</span>
+                </div>
                 <br />
-                {card.jp_description}
-            </>
+                <span>{card.jp_description}</span>
+            </div>
         );
     }
-    return <p className="mt-4">{card.jp_description}</p>;
+    return <p className={`${showAnswer ? '' : 'invisible'}`}>{card.jp_description}</p>;
 };
 
 interface FlashcardProps {
@@ -40,12 +37,7 @@ interface FlashcardProps {
     handleMistake: () => void;
 }
 
-const JapaneseFlashcard: React.FC<FlashcardProps> = ({
-    card,
-    selectedLanguage,
-    handleCorrect: handlerCorrect,
-    handleMistake: handlerMistake,
-}) => {
+const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, handleCorrect, handleMistake }) => {
     const [showAnswer, setShowAnswer] = useState(false);
 
     const question: string = (() => {
@@ -71,50 +63,40 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
 
     const correctPressed = () => {
         setShowAnswer(false);
-        handlerCorrect();
+        handleCorrect();
     };
 
     const mistakePressed = () => {
         setShowAnswer(false);
-        handlerMistake();
-    };
-
-    const ButtonGroups: () => JSX.Element = () => {
-        if (showAnswer) {
-            return (
-                <>
-                    <button className="btn btn-success flex-1" onClick={correctPressed}>
-                        Correct
-                        <IconCheck className="ml-2" />
-                    </button>
-                    <button className="btn btn-info flex-1" onClick={toggleAnswer}>
-                        Hide
-                    </button>
-                    <button className="btn btn-error flex-1" onClick={mistakePressed}>
-                        Wrong
-                        <IconCancel className="ml-2" />
-                    </button>
-                </>
-            );
-        } else {
-            return (
-                <button className="btn btn-info flex-1" onClick={toggleAnswer}>
-                    Show
-                </button>
-            );
-        }
+        handleMistake();
     };
 
     return (
-        <div className="card w-full bg-base-100 shadow-xl border border-base-300">
-            <div className="card-body">
-                <Badges card={card} showAnswer={showAnswer} />
-                <div className="flex flex-col items-center min-h-[15rem] space-y-4">
-                    <h1 className="text-4xl font-bold text-center">{text}</h1>
-                    <p className="flex-0 text-lg mt-4">{showAnswer ? card.jp_pronunciation : ''}</p>
-                    <Description showAnswer={showAnswer} card={card} />
+        <div className="w-full">
+            <div className="rounded-xl bg-base-100 shadow-2xl border border-base-300 max-w-3xl mx-auto">
+                <div className="p-5">
+                    <Badges card={card} showAnswer={showAnswer} />
+                    <div className="flex flex-col justify-center items-stretch min-h-[15rem]">
+                        <h1 className="text-4xl font-bold text-center">
+                            {text} {showAnswer && card.jp_pronunciation ? `(${card.jp_pronunciation})` : ''}
+                        </h1>
+                        <Description showAnswer={showAnswer} card={card} />
+                    </div>
                 </div>
-                <div className="flex justify-around gap-2 mt-4">{ButtonGroups()}</div>
+            </div>
+            <div className="flex justify-around gap-3 pt-4 flex-col md:flex-row">
+                <button disabled={!showAnswer} className="btn btn-success font-bold md:flex-1" onClick={correctPressed}>
+                    <IconCheck />
+                    Correct
+                </button>
+                <button className="btn btn-info md:flex-1" onClick={toggleAnswer}>
+                    {showAnswer ? <IconEyeOff /> : <IconEye />}
+                    {showAnswer ? 'Hide' : 'Show'}
+                </button>
+                <button disabled={!showAnswer} className="btn btn-error md:flex-1" onClick={mistakePressed}>
+                    <IconRepeat />
+                    Wrong
+                </button>
             </div>
         </div>
     );
