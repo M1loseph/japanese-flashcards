@@ -52,7 +52,9 @@ const RandomShuffleGamePage: React.FC = () => {
             }
         }
         const { selectedLanguage, selectedWordBags, gameId } = state!;
-        const bags = selectedWordBags.map((bagId) => findBagById(bagId)).filter((bag: WordBag | undefined) => bag !== undefined);
+        const bags = selectedWordBags
+            .map((bagId) => findBagById(bagId))
+            .filter((bag: WordBag | undefined) => bag !== undefined);
         const flashcards = bags.flatMap((bag) => {
             return bag.words.map((japaneseVocabulary) => {
                 return {

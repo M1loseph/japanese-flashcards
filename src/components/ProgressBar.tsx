@@ -1,4 +1,4 @@
-import { IconClock, IconStack3 } from "@tabler/icons-react";
+import { IconClock, IconStack3 } from '@tabler/icons-react';
 
 interface MetadataProps {
     total: number;
@@ -8,22 +8,19 @@ interface MetadataProps {
 }
 
 const Metadata = ({ total, current, timeString, className }: MetadataProps) => {
-    return <div className={`flex items-center text-sm text-base-600 ${className}`}>
-        <div className="flex flex-row">
-            <IconStack3 size={14} />
-            <span className="ml-2">
-                Cards left: {total - current}
-            </span>
+    return (
+        <div className={`flex items-center text-sm text-base-600 ${className}`}>
+            <div className="flex flex-row">
+                <IconStack3 size={14} />
+                <span className="ml-2">Cards left: {total - current}</span>
+            </div>
+            <div className="flex flex-row">
+                <IconClock size={14} className="ml-2" />
+                <span className="ml-2">{timeString}</span>
+            </div>
         </div>
-        <div className="flex flex-row">
-            <IconClock size={14} className="ml-2" />
-            <span className="ml-2">
-                {timeString}
-            </span>
-        </div>
-    </div>;
-
-}
+    );
+};
 
 interface ProgressBarProps {
     wordBags: string[];
@@ -60,7 +57,6 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ wordBags, current, total, tim
             {Metadata({ total, current, timeString, className: 'justify-between md:hidden' })}
         </div>
     );
-
 };
 
 export default ProgressBar;

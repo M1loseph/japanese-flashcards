@@ -96,7 +96,10 @@ const createVerbTypeBadge: (verbType: Verb['verb_type'], show: boolean) => Badge
     };
 };
 
-const createAdjectiveTypeBadge: (adjectiveType: Adjective['adjective_type'], show: boolean) => BadgeMetadata = (adjectiveType, show) => {
+const createAdjectiveTypeBadge: (adjectiveType: Adjective['adjective_type'], show: boolean) => BadgeMetadata = (
+    adjectiveType,
+    show,
+) => {
     let color: string;
     let text: string;
     switch (adjectiveType) {
@@ -153,7 +156,10 @@ export const Badges: React.FC<BadgesProps> = ({ card, showAnswer }) => {
     return (
         <div className="flex flex-row">
             {badges.map((badge) => (
-                <div key={badge.text} className={`badge ${badge.color} badge-lg ml-2 mb-4 transition-all duration-200 ${badge.show ? 'opacity-100' : 'opacity-0'}`}>
+                <div
+                    key={badge.text}
+                    className={`badge ${badge.color} badge-lg ml-2 mb-4 transition-all duration-200 ${badge.show ? 'opacity-100' : 'opacity-0'}`}
+                >
                     {badge.text}
                 </div>
             ))}

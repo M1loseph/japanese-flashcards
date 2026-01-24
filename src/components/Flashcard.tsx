@@ -23,9 +23,7 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
                     <span className="text-xs text-base-content/60">Negative</span>
                 </div>
                 <br />
-                <span>
-                    {card.jp_description}
-                </span>
+                <span>{card.jp_description}</span>
             </div>
         );
     }
@@ -39,12 +37,7 @@ interface FlashcardProps {
     handleMistake: () => void;
 }
 
-const JapaneseFlashcard: React.FC<FlashcardProps> = ({
-    card,
-    selectedLanguage,
-    handleCorrect,
-    handleMistake,
-}) => {
+const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, handleCorrect, handleMistake }) => {
     const [showAnswer, setShowAnswer] = useState(false);
 
     const question: string = (() => {
@@ -84,7 +77,9 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
                 <div className="p-5">
                     <Badges card={card} showAnswer={showAnswer} />
                     <div className="flex flex-col justify-center items-stretch min-h-[15rem]">
-                        <h1 className="text-4xl font-bold text-center">{text} {showAnswer && card.jp_pronunciation ? `(${card.jp_pronunciation})` : ''}</h1>
+                        <h1 className="text-4xl font-bold text-center">
+                            {text} {showAnswer && card.jp_pronunciation ? `(${card.jp_pronunciation})` : ''}
+                        </h1>
                         <Description showAnswer={showAnswer} card={card} />
                     </div>
                 </div>
@@ -95,11 +90,7 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({
                     Correct
                 </button>
                 <button className="btn btn-info md:flex-1" onClick={toggleAnswer}>
-                    {showAnswer ? (
-                        <IconEyeOff />
-                    ) : (
-                        <IconEye />
-                    )}
+                    {showAnswer ? <IconEyeOff /> : <IconEye />}
                     {showAnswer ? 'Hide' : 'Show'}
                 </button>
                 <button disabled={!showAnswer} className="btn btn-error md:flex-1" onClick={mistakePressed}>
