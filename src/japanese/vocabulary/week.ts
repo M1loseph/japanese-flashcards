@@ -113,4 +113,11 @@ export const week: JapaneseWord[] = [
         jp: '日',
         jp_pronunciation: 'ひ',
     },
+    {
+        type: 'noun',
+        en: 'This year',
+        pl: 'W tym roku',
+        jp: '今年',
+        jp_pronunciation: 'ことし',
+    },
 ];
