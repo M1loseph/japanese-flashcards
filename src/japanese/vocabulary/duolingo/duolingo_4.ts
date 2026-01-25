@@ -216,14 +216,14 @@ export const duolingo_4: JapaneseWord[] = [
         en: 'Old (thing)',
         pl: 'Stary (rzecz)',
         jp: '古い',
-        jp_description: 'ふるい',
+        jp_pronunciation: 'ふるい',
     },
     {
         type: 'unknown',
         en: 'New (thing)',
         pl: 'Nowy (rzecz)',
         jp: '新しい',
-        jp_description: 'あたらしい',
+        jp_pronunciation: 'あたらしい',
     },
     {
         type: 'unknown',
