@@ -27,7 +27,14 @@ const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
             </div>
         );
     }
-    return <p className={`${showAnswer ? '' : 'invisible'}`}>{card.jp_description}</p>;
+    if (!card.jp_description) {
+        return <></>;
+    }
+    return (
+        <p className={`${showAnswer ? '' : 'invisible'} text-sm mt-2 p-2 bg-base-300/50 rounded-lg`}>
+            {card.jp_description}
+        </p>
+    );
 };
 
 interface FlashcardProps {
@@ -77,9 +84,11 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, h
                 <div className="p-5">
                     <Badges card={card} showAnswer={showAnswer} />
                     <div className="flex flex-col justify-center items-stretch min-h-[15rem]">
-                        <h1 className="text-4xl font-bold text-center">
-                            {text} {showAnswer && card.jp_pronunciation ? `(${card.jp_pronunciation})` : ''}
-                        </h1>
+                        <div className="flex justify-center">
+                            <h1 className="text-3xl font-bold">
+                                {text} {showAnswer && card.jp_pronunciation ? `(${card.jp_pronunciation})` : ''}
+                            </h1>
+                        </div>
                         <Description showAnswer={showAnswer} card={card} />
                     </div>
                 </div>

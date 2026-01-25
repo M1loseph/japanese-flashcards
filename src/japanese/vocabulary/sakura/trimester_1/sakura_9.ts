@@ -8,10 +8,13 @@ export const sakura_1_9: JapaneseWord[] = [
         jp: 'あります',
     },
     {
-        type: 'unknown',
-        en: 'To have / To exist (animate)',
-        pl: 'Mieć / Istnieć (ożywione)',
-        jp: 'います',
+        type: 'verb',
+        verb_type: 'ichidan',
+        en: 'To have / To exist / There is (animate)',
+        pl: 'Mieć / Istnieć / Być (ożywione)',
+        jp: 'いる',
+        masu_form: 'います',
+        masen_form: 'いません',
     },
     {
         type: 'unknown',

@@ -106,7 +106,7 @@ export const duolingo_9: JapaneseWord[] = [
         type: 'phrase',
         en: 'I will rest today.',
         pl: 'Dzisiaj odpocznę.',
-        jp: 'きょうはやすみます。',
+        jp: 'きょうやすみます。',
     },
     {
         type: 'noun',

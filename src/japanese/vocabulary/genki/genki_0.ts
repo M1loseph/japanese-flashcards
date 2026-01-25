@@ -36,7 +36,7 @@ export const genki_0: JapaneseWord[] = [
         en: 'Good night',
         pl: 'Dobranoc',
         jp: 'おやすみ(なさい)',
-        jp_description: 'なさい is a polite ending, can be omitted in casual speech',
+        jp_description: 'なさい is a polite ending, can be omitted in casual speech.',
     },
     {
         type: 'unknown',
@@ -74,7 +74,7 @@ export const genki_0: JapaneseWord[] = [
         en: 'Please go and come back',
         pl: 'Idź i wróć',
         jp: 'いってらっしゃい',
-        jp_description: 'Used as a goodbye when someone else is leaving a home',
+        jp_description: 'Used as a goodbye when someone else is leaving a home.',
     },
     {
         type: 'unknown',
@@ -87,7 +87,7 @@ export const genki_0: JapaneseWord[] = [
         en: 'Welcome home',
         pl: 'Witaj w domu',
         jp: 'おかえり(なさい)',
-        jp_description: 'Used to welcome someone home',
+        jp_description: 'Used to welcome someone home.',
     },
     {
         type: 'unknown',
