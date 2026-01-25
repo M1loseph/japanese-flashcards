@@ -46,7 +46,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ wordBags, current, total, tim
                     <span className="ml-2 mr-2 text-sm">/</span>
                     <span className="text-md font-medium">{wordBags.join(', ')}</span>
                 </div>
-                {Metadata({ total, current, timeString, className: 'hidden md:flex' })}
+                <Metadata total={total} current={current} timeString={timeString} className="hidden md:flex" />
             </div>
             <div className="w-full bg-gray-300 rounded-full h-3 overflow-hidden">
                 <div
@@ -54,7 +54,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ wordBags, current, total, tim
                     style={{ width: `${progressPercentage}%` }}
                 />
             </div>
-            {Metadata({ total, current, timeString, className: 'justify-between md:hidden' })}
+            <Metadata total={total} current={current} timeString={timeString} className="justify-between md:hidden" />
         </div>
     );
 };

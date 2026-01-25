@@ -115,7 +115,7 @@ const RandomShuffleGamePage: React.FC = () => {
                 <div className="flex flex-col items-center space-y-6">
                     <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
                     <div className="flex gap-4">
-                        {wrongAnswers.length != 0 ? (
+                        {wrongAnswers.length !== 0 ? (
                             <button className="btn btn-success btn-lg" onClick={prepareSetForRepeat}>
                                 Repeat mistakes ({wrongAnswers.length})
                             </button>
@@ -139,7 +139,7 @@ const RandomShuffleGamePage: React.FC = () => {
         return flashCardsCopy;
     };
 
-    const handlerCorrect = () => {
+    const handleCorrect = () => {
         const answeredCard = {
             ...card,
             answered: true,
@@ -154,7 +154,7 @@ const RandomShuffleGamePage: React.FC = () => {
         }));
     };
 
-    const handlerMistake = () => {
+    const handleMistake = () => {
         const answeredCard = {
             ...card,
             answered: true,
@@ -200,8 +200,8 @@ const RandomShuffleGamePage: React.FC = () => {
                     <Flashcard
                         card={card.word}
                         selectedLanguage={selectedLanguage}
-                        handleCorrect={handlerCorrect}
-                        handleMistake={handlerMistake}
+                        handleCorrect={handleCorrect}
+                        handleMistake={handleMistake}
                     />
                 </div>
             </div>
