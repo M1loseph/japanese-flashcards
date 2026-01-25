@@ -13,7 +13,10 @@ import {
     findBagById,
     genki0Bag,
     genki1Bag,
+    genki1MajorsBag,
     genki2Bag,
+    genki3Bag,
+    genki4Bag,
     numbersBag,
     sakura1_1Bag,
     sakura1_2Bag,
@@ -30,7 +33,6 @@ import {
     sakura1_9Bag,
     sakura1_10Bag,
     countingThingsBag,
-    genki1MajorsBag,
     monthsBag,
     sakura1_11Bag,
     duolingo7Bag,
@@ -38,9 +40,9 @@ import {
     duolingo8Bag,
     sakura1_12Bag,
     duolingo9Bag,
-    genki3Bag,
     sakura2_1Bag,
     sakura2_2Bag,
+    directionsBag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -63,8 +65,8 @@ const MainPage: React.FC = () => {
     };
 
     const groupedBags: Record<string, WordBag[]> = {
-        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, weekBag, timeBag, monthsBag],
-        'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag],
+        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, weekBag, timeBag, monthsBag, directionsBag],
+        'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag, genki4Bag],
         'Classes 🎓': [
             sakura1_1Bag,
             sakura1_2Bag,

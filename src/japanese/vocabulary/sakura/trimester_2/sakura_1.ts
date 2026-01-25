@@ -21,8 +21,8 @@ export const sakura_2_1: JapaneseWord[] = [
     },
     {
         type: 'noun',
-        en: 'Hairdresser',
-        pl: 'Fryzjer',
+        en: "Hairdresser's salon",
+        pl: 'Salon fryzjerski',
         jp: 'びよういん',
     },
     {

@@ -38,6 +38,8 @@ import { sakura_1_12 } from './vocabulary/sakura/trimester_1/sakura_12.ts';
 import { genki_3 } from './vocabulary/genki/genki_3.ts';
 import { sakura_2_1 } from './vocabulary/sakura/trimester_2/sakura_1.ts';
 import { sakura_2_2 } from './vocabulary/sakura/trimester_2/sakura_2.ts';
+import { genki_4 } from './vocabulary/genki/genki_4.ts';
+import { direction } from './vocabulary/direction.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -75,6 +77,12 @@ export const monthsBag: WordBag = {
     id: 'eb5ee3eb-8d1f-4046-9634-8e0915a836c3',
     name: 'Months',
     words: months,
+};
+
+export const directionsBag: WordBag = {
+    id: '3a3f535c-4618-47bc-9f4c-d519964637fb',
+    name: 'Directions',
+    words: direction,
 };
 
 export const countriesEUBag: WordBag = {
@@ -171,6 +179,12 @@ export const genki3Bag: WordBag = {
     id: '55b65f52-ba34-4e03-9e58-228fea22a3cf',
     name: 'Genki #3',
     words: genki_3,
+};
+
+export const genki4Bag: WordBag = {
+    id: 'e7d98dcc-2680-41e7-b951-6c2f279b5791',
+    name: 'Genki #4',
+    words: genki_4,
 };
 
 export const sakura1_1Bag: WordBag = {
@@ -282,6 +296,7 @@ const availableWordBags: WordBag[] = [
     weekBag,
     timeBag,
     monthsBag,
+    directionsBag,
     duolingo1Bag,
     duolingo2Bag,
     duolingo3Bag,
@@ -298,6 +313,7 @@ const availableWordBags: WordBag[] = [
     genki1MajorsBag,
     genki2Bag,
     genki3Bag,
+    genki4Bag,
     sakura1_1Bag,
     sakura1_2Bag,
     sakura1_3Bag,

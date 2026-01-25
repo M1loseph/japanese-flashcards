@@ -4,7 +4,7 @@ A simple app to support me on my japanese learning journey. I store the words I'
 
 ## Play around
 
-The app is available at [https://esbeiks.duckdns.org](https://esbeiks.duckdns.org). Maybe it will be deployed to some reasonable hosting in the future, right now it sits on my orange pi.
+The app is available at [https://japonski.dev](https://japonski.dev) using GCP hosting.
 
 ## Technologies
 
@@ -12,7 +12,7 @@ It uses the following technologies:
 
 - React
 - React router DOM
-- Mantine as a compoenent library
+- Tailwind and Daisy UI for styling
 
 ## AI
 

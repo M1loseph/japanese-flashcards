@@ -48,7 +48,7 @@ export const sakura_1_1: JapaneseWord[] = [
         en: 'Goodbye (business situation, person staying)',
         pl: 'Do widzenia (sytuacja biznesowa, osoba zostająca)',
         jp: 'おつかれさまでした',
-        jp_description: "Literally means 'you must be tired' xd",
+        jp_description: 'Literally means "you must be tired".',
     },
     {
         type: 'particle',

@@ -10,11 +10,11 @@ interface MetadataProps {
 const Metadata = ({ total, current, timeString, className }: MetadataProps) => {
     return (
         <div className={`flex items-center text-sm text-base-600 ${className}`}>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
                 <IconStack3 size={14} />
                 <span className="ml-2">Cards left: {total - current}</span>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
                 <IconClock size={14} className="ml-2" />
                 <span className="ml-2">{timeString}</span>
             </div>
@@ -46,7 +46,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ wordBags, current, total, tim
                     <span className="ml-2 mr-2 text-sm">/</span>
                     <span className="text-md font-medium">{wordBags.join(', ')}</span>
                 </div>
-                {Metadata({ total, current, timeString, className: 'hidden md:flex' })}
+                <Metadata total={total} current={current} timeString={timeString} className="hidden md:flex" />
             </div>
             <div className="w-full bg-gray-300 rounded-full h-3 overflow-hidden">
                 <div
@@ -54,7 +54,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ wordBags, current, total, tim
                     style={{ width: `${progressPercentage}%` }}
                 />
             </div>
-            {Metadata({ total, current, timeString, className: 'justify-between md:hidden' })}
+            <Metadata total={total} current={current} timeString={timeString} className="justify-between md:hidden" />
         </div>
     );
 };
