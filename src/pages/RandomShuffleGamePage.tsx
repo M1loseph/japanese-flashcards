@@ -16,6 +16,7 @@ interface FlashcardSession {
 interface GameState {
     gameId: string;
     flashcards: FlashcardSession[];
+    gameStartTimeMs: number;
     currentFlashcardIndex: number;
     selectedLanguage: TranslationLanguage;
 }
@@ -68,8 +69,8 @@ const RandomShuffleGamePage: React.FC = () => {
         shuffleArray(flashcards);
         return {
             flashcards,
+            gameStartTimeMs: Date.now(),
             currentFlashcardIndex: 0,
-            secondsElapsed: 0,
             selectedLanguage,
             gameId,
         };
@@ -83,10 +84,11 @@ const RandomShuffleGamePage: React.FC = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setSessionTime((prevState) => prevState + 1);
+            const diff = Date.now() - gameState.gameStartTimeMs;
+            setSessionTime(Math.floor(diff / 1000));
         }, 1000);
         return () => clearInterval(interval);
-    }, []);
+    }, [gameState.gameStartTimeMs]);
 
     const { flashcards, currentFlashcardIndex, selectedLanguage } = gameState;
 

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
 import { Badges } from './Badges';
+import { FlashcardMainText } from './FlashcardMainText';
 
 interface DescriptionProps {
     showAnswer: boolean;
@@ -62,8 +63,6 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, h
         }
     })();
 
-    const text = showAnswer ? card.jp : question;
-
     const toggleAnswer = () => {
         setShowAnswer(!showAnswer);
     };
@@ -85,9 +84,12 @@ const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, h
                     <Badges card={card} showAnswer={showAnswer} />
                     <div className="flex flex-col justify-center items-stretch min-h-[15rem]">
                         <div className="flex justify-center">
-                            <h1 className="text-3xl font-bold">
-                                {text} {showAnswer && card.jp_pronunciation ? `(${card.jp_pronunciation})` : ''}
-                            </h1>
+                            <FlashcardMainText
+                                question={question}
+                                answer={card.jp}
+                                pronounciation={card.jp_pronunciation}
+                                showAnswer={showAnswer}
+                            />
                         </div>
                         <Description showAnswer={showAnswer} card={card} />
                     </div>
