@@ -18,7 +18,7 @@ const wrapKanjiWithLink = (text: string): React.ReactNode[] => {
             return (
                 <a
                     key={char + index}
-                    href={`https://jisho.org/search/${char}#kanji`}
+                    href={`https://jisho.org/search/${char}%23kanji`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline link-primary underline-offset-8"
