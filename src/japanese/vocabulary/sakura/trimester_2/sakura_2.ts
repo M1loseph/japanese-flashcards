@@ -66,4 +66,34 @@ export const sakura_2_2: JapaneseWord[] = [
         masu_form: '依ります',
         masen_form: '依りません',
     },
+    {
+        type: 'noun',
+        en: 'Japanese sweet dumplings',
+        pl: 'Japońskie słodkie kluski',
+        jp: 'だんご',
+    },
+    {
+        type: 'noun',
+        en: 'Traditional Japanese floor cushion',
+        pl: 'Tradycyjna japońska poduszka podłogowa',
+        jp: 'ざぶとん',
+    },
+    {
+        type: 'noun',
+        en: 'Foreigner',
+        pl: 'Obcokrajowiec',
+        jp: 'がいこくじん',
+    },
+    {
+        type: 'noun',
+        en: 'Dandelion',
+        pl: 'Dmuchawiec',
+        jp: 'たんぽぽ',
+    },
+    {
+        type: 'noun',
+        en: 'Cliff',
+        pl: 'Klif',
+        jp: 'がんぺき',
+    },
 ];
