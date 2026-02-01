@@ -2,7 +2,7 @@ import type { JapaneseWord } from '../../types.ts';
 
 export const genki_0: JapaneseWord[] = [
     {
-        type: 'unknown',
+        type: 'phrase',
         en: 'Good morning',
         pl: 'Dzień dobry (rano)',
         jp: 'おはよう',
