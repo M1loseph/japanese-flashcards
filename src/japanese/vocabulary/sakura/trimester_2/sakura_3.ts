@@ -53,4 +53,33 @@ export const sakura_2_3: JapaneseWord[] = [
         pl: 'Miejsce (siedzące)',
         jp: 'せき',
     },
+    {
+        type: 'phrase',
+        en: 'How many hours do you sleep?',
+        pl: 'Ile godzin śpisz?',
+        jp: 'なんじかんねますか。',
+    },
+    {
+        type: 'phrase',
+        en: 'I always sleep 7 hours.',
+        pl: 'Zawsze śpię 7 godzin.',
+        jp: 'いつも七時間ねます。',
+        jp_pronunciation: 'いつもしちじかんねます。',
+        jp_description: 'Note there is no particle "に" after the time duration.',
+    },
+    {
+        type: 'phrase',
+        en: 'I go to school for 30 minutes.',
+        pl: 'Idę do szkoły przez 30 minut.',
+        jp: '三十分がっこうにいきます。',
+        jp_pronunciation: 'さんじゅっぷんがっこうにいきます。',
+        jp_description: 'Note there is no particle "に" after the time duration.',
+    },
+    {
+        type: 'phrase',
+        en: 'I work for around 8 hours every day.',
+        pl: 'Pracuję około 8 godzin każdego dnia.',
+        jp: 'まいにち八時間ぐらいしごとをします。',
+        jp_pronunciation: 'まいにちはちじかんぐらいしごとをします。',
+    },
 ];
