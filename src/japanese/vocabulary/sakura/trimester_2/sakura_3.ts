@@ -1,0 +1,85 @@
+import type { JapaneseWord } from '../../../types';
+
+export const sakura_2_3: JapaneseWord[] = [
+    {
+        type: 'noun',
+        en: 'Reading (process)',
+        pl: 'Czytanie',
+        jp: 'どくしょ',
+    },
+    {
+        type: 'noun',
+        en: 'Distance',
+        pl: 'Odległość',
+        jp: 'きょり',
+    },
+    {
+        type: 'verb',
+        verb_type: 'godan',
+        en: 'Chill / Calm down / Refrigerate',
+        pl: 'Ochłonąć / Schłodzić',
+        jp: 'ひやす',
+        masu_form: 'ひやします',
+        masen_form: 'ひやしません',
+    },
+    {
+        type: 'adjective',
+        adjective_type: 'i-adjective',
+        en: 'Brown',
+        pl: 'Brązowy',
+        jp: 'ちゃいろい',
+    },
+    {
+        type: 'noun',
+        en: 'Prisoner',
+        pl: 'Więzień',
+        jp: 'しゅうじん',
+    },
+    {
+        type: 'noun',
+        en: 'Landlord / Landlady',
+        pl: 'Właściciel / Właścicielka',
+        jp: 'おおや',
+    },
+    {
+        type: 'noun',
+        en: 'Century',
+        pl: 'Wiek / Stulecie',
+        jp: 'せいき',
+    },
+    {
+        type: 'noun',
+        en: 'Seat',
+        pl: 'Miejsce (siedzące)',
+        jp: 'せき',
+    },
+    {
+        type: 'phrase',
+        en: 'How many hours do you sleep?',
+        pl: 'Ile godzin śpisz?',
+        jp: 'なんじかんねますか。',
+    },
+    {
+        type: 'phrase',
+        en: 'I always sleep 7 hours.',
+        pl: 'Zawsze śpię 7 godzin.',
+        jp: 'いつも七時間ねます。',
+        jp_pronunciation: 'いつもしちじかんねます。',
+        jp_description: 'Note there is no particle "に" after the time duration.',
+    },
+    {
+        type: 'phrase',
+        en: 'I go to school for 30 minutes.',
+        pl: 'Idę do szkoły przez 30 minut.',
+        jp: '三十分がっこうにいきます。',
+        jp_pronunciation: 'さんじゅっぷんがっこうにいきます。',
+        jp_description: 'Note there is no particle "に" after the time duration.',
+    },
+    {
+        type: 'phrase',
+        en: 'I work for around 8 hours every day.',
+        pl: 'Pracuję około 8 godzin każdego dnia.',
+        jp: 'まいにち八時間ぐらいしごとをします。',
+        jp_pronunciation: 'まいにちはちじかんぐらいしごとをします。',
+    },
+];

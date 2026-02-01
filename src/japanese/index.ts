@@ -40,6 +40,7 @@ import { sakura_2_1 } from './vocabulary/sakura/trimester_2/sakura_1.ts';
 import { sakura_2_2 } from './vocabulary/sakura/trimester_2/sakura_2.ts';
 import { genki_4 } from './vocabulary/genki/genki_4.ts';
 import { direction } from './vocabulary/direction.ts';
+import { sakura_2_3 } from './vocabulary/sakura/trimester_2/sakura_3.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -289,6 +290,12 @@ export const sakura2_2Bag: WordBag = {
     words: sakura_2_2,
 };
 
+export const sakura2_3Bag: WordBag = {
+    id: '0dc6626f-d9e0-4a8b-abb5-9e4948ea30f2',
+    name: 'Sakura #2.3',
+    words: sakura_2_3,
+};
+
 const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
@@ -331,6 +338,7 @@ const availableWordBags: WordBag[] = [
     sakura1_12Bag,
     sakura2_1Bag,
     sakura2_2Bag,
+    sakura2_3Bag,
 ];
 
 export const findBagById = (id: string): WordBag | undefined => availableWordBags.find((bag) => bag.id === id);
