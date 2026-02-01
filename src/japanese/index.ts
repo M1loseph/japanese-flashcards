@@ -41,6 +41,7 @@ import { sakura_2_2 } from './vocabulary/sakura/trimester_2/sakura_2.ts';
 import { genki_4 } from './vocabulary/genki/genki_4.ts';
 import { direction } from './vocabulary/direction.ts';
 import { sakura_2_3 } from './vocabulary/sakura/trimester_2/sakura_3.ts';
+import { duolingo_10 } from './vocabulary/duolingo/duolingo_10.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -150,6 +151,12 @@ export const duolingo9Bag: WordBag = {
     id: '5331605f-af4f-4613-b9ea-a2574d9f519b',
     name: 'Duolingo #9',
     words: duolingo_9,
+};
+
+export const duolingo10Bag: WordBag = {
+    id: '585cb618-ae76-48b7-ba02-e7aa0b4b206d',
+    name: 'Duolingo #10',
+    words: duolingo_10,
 };
 
 export const genki0Bag: WordBag = {
@@ -313,6 +320,7 @@ const availableWordBags: WordBag[] = [
     duolingo7Bag,
     duolingo8Bag,
     duolingo9Bag,
+    duolingo10Bag,
     countriesEUBag,
     countriesAsiaBag,
     genki0Bag,

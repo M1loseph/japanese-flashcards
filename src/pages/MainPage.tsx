@@ -43,6 +43,8 @@ import {
     sakura2_1Bag,
     sakura2_2Bag,
     directionsBag,
+    sakura2_3Bag,
+    duolingo10Bag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -85,6 +87,7 @@ const MainPage: React.FC = () => {
             sakura1_12Bag,
             sakura2_1Bag,
             sakura2_2Bag,
+            sakura2_3Bag,
         ],
         'Apps 📱': [
             duolingo1Bag,
@@ -96,6 +99,7 @@ const MainPage: React.FC = () => {
             duolingo7Bag,
             duolingo8Bag,
             duolingo9Bag,
+            duolingo10Bag,
         ],
         'Geography 🌍 🌎 🌏': [countriesEUBag, countriesAsiaBag],
     };
