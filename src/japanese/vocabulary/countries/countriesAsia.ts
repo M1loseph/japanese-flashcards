@@ -38,4 +38,10 @@ export const countriesAsia: JapaneseWord[] = [
         pl: 'Wietnam',
         jp: 'ベトナム',
     },
+    {
+        type: 'noun',
+        en: 'Malaysia',
+        pl: 'Malezja',
+        jp: 'マレーシア',
+    },
 ];
