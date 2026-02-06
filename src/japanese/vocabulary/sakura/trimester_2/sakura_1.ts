@@ -56,6 +56,12 @@ export const sakura_2_1: JapaneseWord[] = [
         jp: 'しょくじをする',
     },
     {
+        type: 'noun',
+        en: 'Meal',
+        pl: 'Posiłek',
+        jp: 'しょくじ',
+    },
+    {
         type: 'phrase',
         en: 'Wednesday next week',
         pl: 'Środa w przyszłym tygodniu',

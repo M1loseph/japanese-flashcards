@@ -169,7 +169,7 @@ export const duolingo_9: JapaneseWord[] = [
         en: 'I go to the beach in summer.',
         pl: 'Latem chodzę na plażę.',
         jp: 'なつにうみにいきます。',
-        jp_description: 'うみ means "sea" or "beach". So the direct translation is "In summer, I go to the sea/beach."',
+        jp_description: 'うみ means "sea". So the direct translation is "In summer, I go to the sea."',
     },
     {
         type: 'noun',

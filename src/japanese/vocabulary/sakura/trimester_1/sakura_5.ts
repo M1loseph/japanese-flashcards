@@ -273,4 +273,10 @@ export const sakura_1_5: JapaneseWord[] = [
         pl: 'Moja rodzina liczy cztery osoby.',
         jp: 'かぞくはよにんです。',
     },
+    {
+        type: 'phrase',
+        en: 'I have two older sisters.',
+        pl: 'Mam dwie starsze siostry.',
+        jp: 'あねがふたりいます。',
+    },
 ];
