@@ -1,3 +1,4 @@
+import { type FC } from 'react';
 import { IconCheck, IconEye, IconEyeOff, IconRepeat } from '@tabler/icons-react';
 import { useState } from 'react';
 import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';
@@ -10,7 +11,7 @@ interface DescriptionProps {
     card: JapaneseWord;
 }
 
-const Description: React.FC<DescriptionProps> = ({ showAnswer, card }) => {
+const Description: FC<DescriptionProps> = ({ showAnswer, card }) => {
     if (card.type === 'verb') {
         return (
             <div className={`flex flex-col items-stretch ${showAnswer ? '' : 'invisible'}`}>
@@ -45,7 +46,7 @@ interface FlashcardProps {
     handleMistake: () => void;
 }
 
-const JapaneseFlashcard: React.FC<FlashcardProps> = ({ card, selectedLanguage, handleCorrect, handleMistake }) => {
+const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, handleCorrect, handleMistake }) => {
     const [showAnswer, setShowAnswer] = useState(false);
 
     const question: string = (() => {

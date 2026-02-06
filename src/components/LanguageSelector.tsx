@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 
 interface LanguageSelectorProps {
@@ -6,7 +6,7 @@ interface LanguageSelectorProps {
     onSelect: (language: TranslationLanguage) => void;
 }
 
-export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ selectedLanguage, onSelect }) => {
+export const LanguageSelector: FC<LanguageSelectorProps> = ({ selectedLanguage, onSelect }) => {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mx-auto">
             <button

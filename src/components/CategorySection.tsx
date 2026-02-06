@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { type WordBag } from '../japanese/types';
 import { WordBagCard } from './WordBagCard';
 
@@ -11,7 +11,7 @@ interface CategorySectionProps {
     onDeselectAll: () => void;
 }
 
-export const CategorySection: React.FC<CategorySectionProps> = ({
+export const CategorySection: FC<CategorySectionProps> = ({
     title,
     bags,
     selectedBagIds,

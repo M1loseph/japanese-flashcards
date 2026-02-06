@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { type WordBag } from '../japanese/types';
 
 interface WordBagCardProps {
@@ -7,7 +7,7 @@ interface WordBagCardProps {
     onToggle: (id: string) => void;
 }
 
-export const WordBagCard: React.FC<WordBagCardProps> = ({ bag, isSelected, onToggle }) => {
+export const WordBagCard: FC<WordBagCardProps> = ({ bag, isSelected, onToggle }) => {
     return (
         <div
             onClick={() => onToggle(bag.id)}

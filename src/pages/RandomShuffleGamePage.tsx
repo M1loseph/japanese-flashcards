@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { type FC, useEffect, useMemo, useState } from 'react';
 import { type TranslationLanguage } from '../TranslationLanguage.ts';
 import Flashcard from '../components/Flashcard.tsx';
 import ProgressBar from '../components/ProgressBar.tsx';
@@ -36,7 +36,7 @@ function shuffleArray<T>(array: T[]) {
     }
 }
 
-const RandomShuffleGamePage: React.FC = () => {
+const RandomShuffleGamePage: FC = () => {
     const location = useLocation();
 
     const [sessionTime, setSessionTime] = useState(0);
@@ -195,7 +195,7 @@ const RandomShuffleGamePage: React.FC = () => {
                 <div className="flex flex-col items-center space-y-6">
                     <ProgressBar
                         wordBags={wordBags}
-                        current={currentFlashcardIndex + 1}
+                        currentIndex={currentFlashcardIndex}
                         total={flashcards.length}
                         timeInSeconds={sessionTime}
                     />
