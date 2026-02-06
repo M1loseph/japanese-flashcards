@@ -1,7 +1,7 @@
-import React from 'react';
+import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const Header: React.FC = () => {
+export const Header: FC = () => {
     const navigate = useNavigate();
 
     return (

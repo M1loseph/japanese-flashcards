@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 
 interface FlashcardMainTextProps {
     question: string;
@@ -32,12 +32,7 @@ const wrapKanjiWithLink = (text: string): React.ReactNode[] => {
     });
 };
 
-export const FlashcardMainText: React.FC<FlashcardMainTextProps> = ({
-    question,
-    answer,
-    pronounciation,
-    showAnswer,
-}) => {
+export const FlashcardMainText: FC<FlashcardMainTextProps> = ({ question, answer, pronounciation, showAnswer }) => {
     const text = showAnswer ? wrapKanjiWithLink(answer) : question;
     return (
         <h1 className="text-3xl font-bold">

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     countriesEUBag,
@@ -45,13 +45,14 @@ import {
     directionsBag,
     sakura2_3Bag,
     duolingo10Bag,
+    sakura2_4Bag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
 import { type WordBag } from '../japanese/types';
 
-const MainPage: React.FC = () => {
+const MainPage: FC = () => {
     const navigate = useNavigate();
     const [selectedLanguage, setSelectedLanguage] = useState<TranslationLanguage>(TranslationLanguages.ENGLISH);
     const [selectedWordBags, setSelectedWordBags] = useState<Set<string>>(new Set());
@@ -88,6 +89,7 @@ const MainPage: React.FC = () => {
             sakura2_1Bag,
             sakura2_2Bag,
             sakura2_3Bag,
+            sakura2_4Bag,
         ],
         'Apps 📱': [
             duolingo1Bag,

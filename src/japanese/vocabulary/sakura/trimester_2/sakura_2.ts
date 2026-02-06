@@ -63,8 +63,8 @@ export const sakura_2_2: JapaneseWord[] = [
         pl: 'Zależeć od',
         jp: '依る',
         jp_pronunciation: 'よる',
-        masu_form: '依ります',
-        masen_form: '依りません',
+        masu_form: '依ります (よります)',
+        masen_form: '依りません (よりません)',
     },
     {
         type: 'noun',

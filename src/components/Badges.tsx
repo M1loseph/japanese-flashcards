@@ -1,3 +1,4 @@
+import { type FC } from 'react';
 import { type Adjective, type JapaneseWord, type Verb, type WordType } from '../japanese/types';
 
 type BadgeMetadata = {
@@ -138,7 +139,7 @@ interface BadgesProps {
     showAnswer: boolean;
 }
 
-export const Badges: React.FC<BadgesProps> = ({ card, showAnswer }) => {
+export const Badges: FC<BadgesProps> = ({ card, showAnswer }) => {
     const badges: BadgeMetadata[] = [];
     const typeBadge = createTypeBadge(card.type);
     if (typeBadge) {

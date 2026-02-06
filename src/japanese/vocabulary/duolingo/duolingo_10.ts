@@ -98,6 +98,12 @@ export const duolingo_10: JapaneseWord[] = [
         jp: 'そして',
     },
     {
+        type: 'phrase',
+        en: "I played games. As a result I didn't do my homework.",
+        pl: 'Grałem w gry. W rezultacie nie zrobiłem pracy domowej.',
+        jp: 'ゲームをしました。そして、しゅくだいはしませんでした。',
+    },
+    {
         type: 'noun',
         en: 'Stretching',
         pl: 'Rozciąganie',

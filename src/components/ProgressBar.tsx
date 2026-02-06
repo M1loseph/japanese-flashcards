@@ -1,18 +1,19 @@
+import { type FC } from 'react';
 import { IconClock, IconStack3 } from '@tabler/icons-react';
 
 interface MetadataProps {
     total: number;
-    current: number;
+    currentIndex: number;
     timeString: string;
     className?: string;
 }
 
-const Metadata = ({ total, current, timeString, className }: MetadataProps) => {
+const Metadata: FC<MetadataProps> = ({ total, currentIndex, timeString, className }) => {
     return (
         <div className={`flex items-center text-sm text-base-600 ${className}`}>
             <div className="flex flex-row items-center">
                 <IconStack3 size={14} />
-                <span className="ml-2">Cards left: {total - current}</span>
+                <span className="ml-2">Cards left: {total - currentIndex - 1}</span>
             </div>
             <div className="flex flex-row items-center">
                 <IconClock size={14} className="ml-2" />
@@ -24,13 +25,13 @@ const Metadata = ({ total, current, timeString, className }: MetadataProps) => {
 
 interface ProgressBarProps {
     wordBags: string[];
-    current: number;
+    currentIndex: number;
     total: number;
     timeInSeconds: number;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ wordBags, current, total, timeInSeconds }) => {
-    const progressPercentage = Math.round((current / total) * 100);
+const ProgressBar: FC<ProgressBarProps> = ({ wordBags, currentIndex, total, timeInSeconds }) => {
+    const progressPercentage = Math.round((currentIndex / total) * 100);
 
     const hours = Math.floor(timeInSeconds / 3600);
     const minutes = Math.floor((timeInSeconds % 3600) / 60);
@@ -46,7 +47,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ wordBags, current, total, tim
                     <span className="ml-2 mr-2 text-sm">/</span>
                     <span className="text-md font-medium">{wordBags.join(', ')}</span>
                 </div>
-                <Metadata total={total} current={current} timeString={timeString} className="hidden md:flex" />
+                <Metadata
+                    total={total}
+                    currentIndex={currentIndex}
+                    timeString={timeString}
+                    className="hidden md:flex"
+                />
             </div>
             <div className="w-full bg-gray-300 rounded-full h-3 overflow-hidden">
                 <div
@@ -54,7 +60,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ wordBags, current, total, tim
                     style={{ width: `${progressPercentage}%` }}
                 />
             </div>
-            <Metadata total={total} current={current} timeString={timeString} className="justify-between md:hidden" />
+            <Metadata
+                total={total}
+                currentIndex={currentIndex}
+                timeString={timeString}
+                className="justify-between md:hidden"
+            />
         </div>
     );
 };

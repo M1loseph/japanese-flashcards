@@ -85,4 +85,32 @@ export const months: JapaneseWord[] = [
         jp: '十二月',
         jp_pronunciation: 'じゅうにがつ',
     },
+    {
+        type: 'noun',
+        en: 'Next month',
+        pl: 'Następny miesiąc',
+        jp: '来月',
+        jp_pronunciation: 'らいげつ',
+    },
+    {
+        type: 'noun',
+        en: 'Last month',
+        pl: 'Poprzedni miesiąc',
+        jp: '先月',
+        jp_pronunciation: 'せんげつ',
+    },
+    {
+        type: 'noun',
+        en: 'This month',
+        pl: 'Ten miesiąc',
+        jp: '今月',
+        jp_pronunciation: 'こんげつ',
+    },
+    {
+        type: 'noun',
+        en: 'Month',
+        pl: 'Miesiąc',
+        jp: '月',
+        jp_pronunciation: 'つき',
+    },
 ];

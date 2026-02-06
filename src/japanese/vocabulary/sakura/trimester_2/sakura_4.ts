@@ -1,0 +1,95 @@
+import type { JapaneseWord } from '../../../types';
+
+export const sakura_2_4: JapaneseWord[] = [
+    {
+        type: 'noun',
+        en: 'Birthday party',
+        pl: 'Przyjęcie urodzinowe',
+        jp: 'バースデーパーティー',
+    },
+    {
+        type: 'phrase',
+        en: 'Saturday is okay.',
+        pl: 'Sobota może być. (Nie mam nic przeciwko sobocie.)',
+        jp: '土曜日はだいじょうぶです。',
+        jp_pronunciation: 'どようびはだいじょうぶです。',
+    },
+    {
+        type: 'phrase',
+        en: 'Saturday works for me.',
+        pl: 'Sobota mi pasuje.',
+        jp: '土曜日はいいです。',
+        jp_pronunciation: 'どようびはいいです。',
+    },
+    {
+        type: 'phrase',
+        en: 'Any time is fine.',
+        pl: 'Obojętnie kiedy.',
+        jp: 'いつでもいいです。',
+    },
+    {
+        type: 'phrase',
+        en: 'Any hour works for me.',
+        pl: 'Każda godzina mi pasuje.',
+        jp: '何時でもいいです。',
+        jp_pronunciation: 'なんじでもいいです。',
+    },
+    {
+        type: 'noun',
+        en: 'Circle',
+        pl: 'Koło',
+        jp: 'まる',
+    },
+    {
+        type: 'noun',
+        en: 'Cross',
+        pl: 'Krzyżyk',
+        jp: 'ばつ',
+    },
+    {
+        type: 'phrase',
+        en: "Does 7 o'clock work for you?",
+        pl: 'Czy godzina 7 ci pasuje?',
+        jp: '七時はいいですか。',
+        jp_pronunciation: 'しちじはいいですか。',
+    },
+    {
+        type: 'noun',
+        en: 'Live / Concert',
+        pl: 'Koncert / Transmisja na żywo',
+        jp: 'ライブ',
+    },
+    {
+        type: 'phrase',
+        en: "Thursday doesn't work for me.",
+        pl: 'Czwartek mi nie pasuje.',
+        jp: '木曜日はだめです。',
+        jp_pronunciation: 'もくようびはだめです。',
+    },
+    {
+        type: 'adjective',
+        adjective_type: 'na-adjective',
+        en: 'Not good',
+        pl: 'Niedobry / Nie w porządku',
+        jp: 'だめ',
+    },
+    {
+        type: 'phrase',
+        en: 'What time is good for you?',
+        pl: 'Która godzina ci pasuje?',
+        jp: '何時がいいですか。',
+        jp_pronunciation: 'なんじがいいですか。',
+    },
+    {
+        type: 'phrase',
+        en: 'When is good for you?',
+        pl: 'Kiedy ci pasuje?',
+        jp: 'いつがいいですか。',
+    },
+    {
+        type: 'phrase',
+        en: "It's fine.",
+        pl: 'W porządku.',
+        jp: 'いいですよ。',
+    },
+];
