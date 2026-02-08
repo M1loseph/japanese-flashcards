@@ -136,10 +136,11 @@ const createHasKanjiBadge: () => BadgeMetadata = () => {
 
 interface BadgesProps {
     card: JapaneseWord;
-    showAnswer: boolean;
+    size?: 'sm' | 'md' | 'lg';
+    showAnswer?: boolean;
 }
 
-export const Badges: FC<BadgesProps> = ({ card, showAnswer }) => {
+export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }) => {
     const badges: BadgeMetadata[] = [];
     const typeBadge = createTypeBadge(card.type);
     if (typeBadge) {
@@ -154,12 +155,13 @@ export const Badges: FC<BadgesProps> = ({ card, showAnswer }) => {
     if (card.type === 'adjective') {
         badges.push(createAdjectiveTypeBadge(card.adjective_type, showAnswer));
     }
+    const sizeClass = size === 'sm' ? 'badge-sm' : size === 'lg' ? 'badge-lg' : '';
     return (
-        <div className="flex flex-row">
+        <div className="flex flex-row flex-wrap gap-1">
             {badges.map((badge) => (
                 <div
                     key={badge.text}
-                    className={`badge ${badge.color} badge-lg ml-2 mb-4 transition-all duration-200 ${badge.show ? 'opacity-100' : 'opacity-0'}`}
+                    className={`badge ${badge.color} ${sizeClass} text-nowrap transition-all duration-200 ${badge.show ? 'opacity-100' : 'opacity-0'}`}
                 >
                     {badge.text}
                 </div>

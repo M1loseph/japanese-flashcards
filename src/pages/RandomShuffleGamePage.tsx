@@ -4,7 +4,7 @@ import Flashcard from '../components/Flashcard.tsx';
 import ProgressBar from '../components/ProgressBar.tsx';
 import { findBagById, type JapaneseWord, type WordBag } from '../japanese';
 import { useLocation, useNavigate } from 'react-router';
-import usePreventAccidentalLeave from '../hooks/usePreventAccidentalLeave.ts';
+import { usePreventAccidentalLeave } from '../hooks/usePreventAccidentalLeave.ts';
 
 interface FlashcardSession {
     word: JapaneseWord;
@@ -170,10 +170,9 @@ const RandomShuffleGamePage: FC = () => {
             currentFlashcardIndex: prevState.currentFlashcardIndex + 1,
         }));
     };
-
     return (
         <>
-            <div className={`modal ${showPrompt ? 'modal-open' : ''}`}>
+            <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
                 <div className="modal-box">
                     <h3 className="font-bold text-lg mb-4">Leave game?</h3>
                     <p className="py-4">
@@ -189,8 +188,7 @@ const RandomShuffleGamePage: FC = () => {
                     </div>
                 </div>
                 <div className="modal-backdrop" onClick={cancelLeave}></div>
-            </div>
-
+            </dialog>
             <div className="max-w-7xl mx-auto pt-12 px-4">
                 <div className="flex flex-col items-center space-y-6">
                     <ProgressBar
