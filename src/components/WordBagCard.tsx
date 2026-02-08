@@ -1,5 +1,7 @@
 import { type FC } from 'react';
 import { type WordBag } from '../japanese/types';
+import { IconZoom } from '@tabler/icons-react';
+import { useNavigate } from 'react-router-dom';
 
 interface WordBagCardProps {
     bag: WordBag;
@@ -8,6 +10,13 @@ interface WordBagCardProps {
 }
 
 export const WordBagCard: FC<WordBagCardProps> = ({ bag, isSelected, onToggle }) => {
+    const navigate = useNavigate();
+
+    const navigateToBag = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        navigate(`/bags/${bag.id}`);
+    };
+
     return (
         <div
             onClick={() => onToggle(bag.id)}
@@ -25,12 +34,13 @@ export const WordBagCard: FC<WordBagCardProps> = ({ bag, isSelected, onToggle })
                 }
             }}
         >
-            <div className="flex justify-between items-start mb-2">
+            <div className="flex justify-between items-center mb-2">
                 <h3
                     className={`font-semibold text-sm sm:text-base line-clamp-2 ${isSelected ? 'text-primary' : 'text-slate-800'}`}
                 >
                     {bag.name}
                 </h3>
+                <IconZoom size={14} role="button" className="cursor-pointer" onClick={navigateToBag} />
             </div>
             <div className="flex items-center gap-2">
                 <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-600">

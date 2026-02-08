@@ -4,7 +4,7 @@ import { useBlocker } from 'react-router';
 const beforeUnloadEvent = 'beforeunload';
 // Hook that blocks in-app route transitions (React Router) and browser unload (tab close/refresh)
 // while `enabled` is true. It exposes UI state so the page can render a confirmation modal.
-export function usePreventAccidentalLeave(enabled: boolean) {
+export const usePreventAccidentalLeave = (enabled: boolean) => {
     const blocker = useBlocker(enabled);
     const showPrompt = blocker.state === 'blocked';
 
@@ -32,6 +32,4 @@ export function usePreventAccidentalLeave(enabled: boolean) {
     };
 
     return { showPrompt, confirmLeave, cancelLeave };
-}
-
-export default usePreventAccidentalLeave;
+};

@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage.tsx';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage.tsx';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import Layout from './Layout.tsx';
+import BagPage from './pages/BagPage.tsx';
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             {
                 path: '/game/shuffle',
                 element: <RandomShuffleGamePage />,
+            },
+            {
+                path: '/bags/:bagId',
+                element: <BagPage />,
             },
             {
                 path: '*',
