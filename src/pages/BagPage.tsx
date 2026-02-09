@@ -1,4 +1,4 @@
-import { useMemo, useState, type FC } from 'react';
+import { useEffect, useMemo, useState, type FC } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { findBagById } from '../japanese';
 import { IconZoom } from '@tabler/icons-react';
@@ -12,6 +12,10 @@ const BagPage: FC = () => {
         if (!bagId) return undefined;
         return findBagById(bagId);
     }, [bagId]);
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, []);
+
     if (!bag) {
         return <Navigate to="/" replace />;
     }
@@ -43,7 +47,7 @@ const BagPage: FC = () => {
                     />
                 </label>
             </div>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 pb-12">
                 {words.map((word) => (
                     <div key={word.jp + word.en} className="card card-xs bg-base-100 shadow-md">
                         <div className="card-body">

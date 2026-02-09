@@ -113,21 +113,19 @@ const RandomShuffleGamePage: FC = () => {
 
     if (gameFinished) {
         return (
-            <div className="container mx-auto pt-12">
-                <div className="flex flex-col items-center space-y-6">
-                    <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
-                    <div className="flex gap-4">
-                        {wrongAnswers.length !== 0 ? (
-                            <button className="btn btn-success btn-lg" onClick={prepareSetForRepeat}>
-                                Repeat mistakes ({wrongAnswers.length})
-                            </button>
-                        ) : (
-                            <></>
-                        )}
-                        <button className="btn btn-lg" onClick={() => navigate('/')}>
-                            Go home
+            <div className="pt-12 flex flex-col items-center space-y-6">
+                <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
+                <div className="flex gap-4">
+                    {wrongAnswers.length !== 0 ? (
+                        <button className="btn btn-success btn-lg" onClick={prepareSetForRepeat}>
+                            Repeat mistakes ({wrongAnswers.length})
                         </button>
-                    </div>
+                    ) : (
+                        <></>
+                    )}
+                    <button className="btn btn-lg" onClick={() => navigate('/')}>
+                        Go home
+                    </button>
                 </div>
             </div>
         );
@@ -189,21 +187,19 @@ const RandomShuffleGamePage: FC = () => {
                 </div>
                 <div className="modal-backdrop" onClick={cancelLeave}></div>
             </dialog>
-            <div className="max-w-7xl mx-auto pt-12 px-4">
-                <div className="flex flex-col items-center space-y-6">
-                    <ProgressBar
-                        wordBags={wordBags}
-                        currentIndex={currentFlashcardIndex}
-                        total={flashcards.length}
-                        timeInSeconds={sessionTime}
-                    />
-                    <Flashcard
-                        card={card.word}
-                        selectedLanguage={selectedLanguage}
-                        handleCorrect={handleCorrect}
-                        handleMistake={handleMistake}
-                    />
-                </div>
+            <div className="flex flex-col items-center space-y-6">
+                <ProgressBar
+                    wordBags={wordBags}
+                    currentIndex={currentFlashcardIndex}
+                    total={flashcards.length}
+                    timeInSeconds={sessionTime}
+                />
+                <Flashcard
+                    card={card.word}
+                    selectedLanguage={selectedLanguage}
+                    handleCorrect={handleCorrect}
+                    handleMistake={handleMistake}
+                />
             </div>
         </>
     );
