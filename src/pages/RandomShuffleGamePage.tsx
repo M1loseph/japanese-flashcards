@@ -27,7 +27,7 @@ interface RandomShuffleGamePageProps {
     selectedWordBags: string[];
 }
 
-function shuffleArray<T>(array: T[]) {
+function shuffleArrayInPlace<T>(array: T[]) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const tmp = array[i];
@@ -66,7 +66,7 @@ const RandomShuffleGamePage: FC = () => {
                 };
             });
         });
-        shuffleArray(flashcards);
+        shuffleArrayInPlace(flashcards);
         return {
             flashcards,
             gameStartTimeMs: Date.now(),
@@ -101,6 +101,7 @@ const RandomShuffleGamePage: FC = () => {
 
     const prepareSetForRepeat = () => {
         const flashcards = wrongAnswers.map((card) => ({ ...card, answered: false }));
+        shuffleArrayInPlace(flashcards);
         setGameState((prevState) => ({
             ...prevState,
             flashcards,
