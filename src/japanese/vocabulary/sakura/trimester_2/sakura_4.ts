@@ -36,15 +36,17 @@ export const sakura_2_4: JapaneseWord[] = [
     },
     {
         type: 'noun',
-        en: 'Circle',
-        pl: 'Koło',
+        en: 'Circle / Correct',
+        pl: 'Koło / Poprawne',
         jp: 'まる',
+        jp_description: 'Symbol indicating something is correct or good.',
     },
     {
         type: 'noun',
-        en: 'Cross',
-        pl: 'Krzyżyk',
+        en: 'Cross / Incorrect',
+        pl: 'Krzyżyk / Niepoprawne',
         jp: 'ばつ',
+        jp_description: 'Symbol indicating something is incorrect or bad.',
     },
     {
         type: 'phrase',
@@ -91,5 +93,23 @@ export const sakura_2_4: JapaneseWord[] = [
         en: "It's fine.",
         pl: 'W porządku.',
         jp: 'いいですよ。',
+    },
+    {
+        type: 'noun',
+        en: 'Dried seaweed',
+        pl: 'Suszone wodorosty',
+        jp: 'のり',
+    },
+    {
+        type: 'noun',
+        en: 'Overtime',
+        pl: 'Nadgodziny',
+        jp: 'ざんぎょう',
+    },
+    {
+        type: 'phrase',
+        en: 'Work overtime',
+        pl: 'Pracować po godzinach',
+        jp: 'ざんぎょうをする',
     },
 ];
