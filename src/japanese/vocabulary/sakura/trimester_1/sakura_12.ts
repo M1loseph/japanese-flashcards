@@ -36,7 +36,8 @@ export const sakura_1_12: JapaneseWord[] = [
         type: 'phrase',
         en: 'With whom do you meet?',
         pl: 'Z kim się spotykasz?',
-        jp: 'だれとあいますか？',
+        jp: 'だれと会いますか。',
+        jp_pronunciation: 'だれとあいますか。',
     },
     {
         type: 'verb',

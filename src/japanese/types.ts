@@ -50,6 +50,10 @@ export type Particle = Translation & {
     type: 'particle';
 };
 
+export type Conjunction = Translation & {
+    type: 'conjunction';
+};
+
 export type UnknownWord = Translation & {
     type: 'unknown';
 };
@@ -65,6 +69,7 @@ export type JapaneseWord =
     | Adverb
     | PreNounAdjective
     | Particle
+    | Conjunction
     | UnknownWord;
 
 export type WordType = JapaneseWord['type'];

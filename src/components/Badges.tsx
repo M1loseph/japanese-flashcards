@@ -51,6 +51,10 @@ const createTypeBadge: (type?: WordType) => BadgeMetadata | undefined = (type) =
             color = `bg-orange-300/75`;
             break;
         }
+        case 'conjunction': {
+            color = `bg-cyan-300/75`;
+            break;
+        }
         case 'unknown': {
             return;
         }
