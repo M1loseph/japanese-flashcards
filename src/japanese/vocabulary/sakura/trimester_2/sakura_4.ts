@@ -39,12 +39,14 @@ export const sakura_2_4: JapaneseWord[] = [
         en: 'Circle / Correct',
         pl: 'Koło / Poprawne',
         jp: 'まる',
+        jp_description: 'Symbol indicating something is correct or good.',
     },
     {
         type: 'noun',
         en: 'Cross / Incorrect',
         pl: 'Krzyżyk / Niepoprawne',
         jp: 'ばつ',
+        jp_description: 'Symbol indicating something is incorrect or bad.',
     },
     {
         type: 'phrase',
