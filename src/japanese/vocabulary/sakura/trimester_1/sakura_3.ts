@@ -50,7 +50,7 @@ export const sakura_1_3: JapaneseWord[] = [
         jp: 'はな',
     },
     {
-        type: 'particle',
+        type: 'conjunction',
         en: 'And',
         pl: 'I / Oraz',
         jp: 'と',
