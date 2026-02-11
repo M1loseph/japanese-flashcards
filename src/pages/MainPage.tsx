@@ -46,6 +46,7 @@ import {
     sakura2_3Bag,
     duolingo10Bag,
     sakura2_4Bag,
+    duolingo11Bag,
 } from '../japanese';
 import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -102,6 +103,7 @@ const MainPage: FC = () => {
             duolingo8Bag,
             duolingo9Bag,
             duolingo10Bag,
+            duolingo11Bag,
         ],
         'Geography 🌍 🌎 🌏': [countriesEUBag, countriesAsiaBag],
     };
