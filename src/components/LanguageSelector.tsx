@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
+import { type TranslationLanguage, TranslationLanguages } from '../types/TranslationLanguage';
 
 interface LanguageSelectorProps {
     selectedLanguage: TranslationLanguage;

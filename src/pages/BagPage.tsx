@@ -5,10 +5,10 @@ import { IconZoom } from '@tabler/icons-react';
 import { toRomaji } from 'wanakana';
 import { Badges } from '../components/Badges';
 import { TextWithJishoLinks } from '../components/TextWithJishoLinks';
-import { useGameSettings } from '../context/GameStateContext/GameSettingsContext';
+import { useGameSettingsContext } from '../context/GameStateContext';
 
 const BagPage: FC = () => {
-    const { selectedLanguage } = useGameSettings();
+    const { selectedLanguage } = useGameSettingsContext();
     const [searchText, setSearchText] = useState<string>('');
     const bagId = useParams().bagId;
     const bag = useMemo(() => {

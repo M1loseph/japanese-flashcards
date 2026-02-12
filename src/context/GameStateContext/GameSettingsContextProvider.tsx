@@ -1,6 +1,6 @@
 import { useMemo, useState, type FC, type ReactNode } from 'react';
 import { GameSettingsContext, type GameSettingsContextType } from './GameSettingsContext';
-import { TranslationLanguages, type TranslationLanguage } from '../../TranslationLanguage';
+import { TranslationLanguages, type TranslationLanguage } from '../../types/TranslationLanguage';
 
 interface GameSettingsProviderProps {
     children: ReactNode;
