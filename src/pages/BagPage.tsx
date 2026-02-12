@@ -4,6 +4,7 @@ import { findBagById } from '../japanese';
 import { IconZoom } from '@tabler/icons-react';
 import { toRomaji } from 'wanakana';
 import { Badges } from '../components/Badges';
+import { TextWithJishoLinks } from '../components/TextWithJishoLinks';
 
 const BagPage: FC = () => {
     const [searchText, setSearchText] = useState<string>('');
@@ -51,7 +52,9 @@ const BagPage: FC = () => {
                 {words.map((word) => (
                     <div key={word.jp + word.en} className="card card-xs bg-base-100 shadow-md">
                         <div className="card-body">
-                            <h3 className="text-lg text-primary font-semibold text-center w-full">{word.jp}</h3>
+                            <h3 className="text-lg text-primary font-semibold text-center w-full">
+                                <TextWithJishoLinks text={word.jp} />
+                            </h3>
                             <hr className="my-1 border-slate-300 border-dashed" />
                             {word.jp_pronunciation && <p className="text-sm text-semibold">{word.jp_pronunciation}</p>}
                             <p className="text-sm text-slate-600 italic">{word.en}</p>
