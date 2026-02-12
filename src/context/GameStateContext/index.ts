@@ -1,4 +1,4 @@
-import { GameSettingsContext, useGameSettings } from './GameSettingsContext';
+import { GameSettingsContext, useGameSettingsContext } from './GameSettingsContext';
 import { GameSettingsProvider } from './GameSettingsContextProvider';
 
-export { GameSettingsContext, useGameSettings, GameSettingsProvider };
+export { GameSettingsContext, useGameSettingsContext, GameSettingsProvider };

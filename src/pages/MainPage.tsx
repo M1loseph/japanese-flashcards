@@ -51,12 +51,16 @@ import {
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
 import { type WordBag } from '../japanese/types';
-import { useGameSettings } from '../context/GameStateContext/GameSettingsContext';
+import { useGameSettingsContext } from '../context/GameStateContext';
+import { shuffleArrayInPlace } from '../utils';
+import { useGameContext } from '../context/GameContext';
+import { IconRestore } from '@tabler/icons-react';
 
 const MainPage: FC = () => {
     const navigate = useNavigate();
+    const { setGameState, gameState } = useGameContext();
     const { selectedLanguage, setSelectedLanguage, selectedWordBags, toggleWordBag, selectBags, deselectBags } =
-        useGameSettings();
+        useGameSettingsContext();
 
     const groupedBags: Record<string, WordBag[]> = {
         'Essentials 📌': [familyBag, numbersBag, countingThingsBag, weekBag, timeBag, monthsBag, directionsBag],
@@ -113,18 +117,65 @@ const MainPage: FC = () => {
     }, [selectedWordBags]);
 
     const handleStartGame = () => {
-        navigate('/game/shuffle', {
-            state: {
-                selectedWordBags: Array.from(selectedWordBags),
-                selectedLanguage,
-                gameId: crypto.randomUUID(),
-            },
+        const bags = Array.from(selectedWordBags)
+            .map((bagId) => findBagById(bagId))
+            .filter((bag: WordBag | undefined) => bag !== undefined);
+
+        const newFlashcards = bags.flatMap((bag) => {
+            return bag.words.map((japaneseVocabulary) => {
+                return {
+                    word: japaneseVocabulary,
+                    wordBag: bag.name,
+                    answered: false,
+                    correct: false,
+                };
+            });
         });
+
+        const wordBagNames = Array.from(selectedWordBags)
+            .map((id) => findBagById(id)?.name)
+            .filter((name) => name !== undefined);
+
+        shuffleArrayInPlace(newFlashcards);
+
+        setGameState({
+            initialWordBags: wordBagNames,
+            flashcards: newFlashcards,
+            gameStartTimeMs: Date.now(),
+            currentFlashcardIndex: 0,
+            selectedLanguage,
+        });
+        navigate('/game/shuffle');
+    };
+
+    const handleResumeSave = () => {
+        navigate('/game/shuffle');
     };
 
     return (
         <>
             <main className="pb-24">
+                {gameState && (
+                    <section>
+                        <div role="alert" className="alert bg-warning/5 border-warning mb-10">
+                            <div className="p-2 bg-warning/40 rounded-md">
+                                <IconRestore color="orange" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="font-semibold text-warning">GAME IN PROGRESS</span>
+                                <span className="text-lg font-medium">
+                                    {gameState?.initialWordBags.join(', ')} (
+                                    {gameState.flashcards.filter((card) => card.answered).length}/
+                                    {gameState.flashcards.length})
+                                </span>
+                            </div>
+
+                            <button onClick={handleResumeSave} className="btn btn-warning">
+                                Resume
+                            </button>
+                        </div>
+                    </section>
+                )}
                 <section>
                     <h2 className="text-2xl font-bold mb-6 text-center">1. Choose Your Language</h2>
                     <LanguageSelector selectedLanguage={selectedLanguage} onSelect={setSelectedLanguage} />

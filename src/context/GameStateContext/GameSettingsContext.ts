@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { type TranslationLanguage } from '../../TranslationLanguage';
+import { type TranslationLanguage } from '../../types/TranslationLanguage';
 
 export interface GameSettingsContextType {
     selectedLanguage: TranslationLanguage;
@@ -12,10 +12,10 @@ export interface GameSettingsContextType {
 
 export const GameSettingsContext = createContext<GameSettingsContextType | undefined>(undefined);
 
-export const useGameSettings = () => {
+export const useGameSettingsContext = () => {
     const context = useContext(GameSettingsContext);
     if (!context) {
-        throw new Error('useGameSettings must be used within a GameSettingsProvider');
+        throw new Error('useGameSettingsContext must be used within a GameSettingsProvider');
     }
     return context;
 };

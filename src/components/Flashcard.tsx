@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { IconCheck, IconEye, IconEyeOff, IconRepeat } from '@tabler/icons-react';
 import { useState } from 'react';
-import { type TranslationLanguage } from '../TranslationLanguage';
+import { type TranslationLanguage } from '../types/TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
 import { Badges } from './Badges';
 import { FlashcardMainText } from './FlashcardMainText';

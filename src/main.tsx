@@ -7,6 +7,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.tsx';
 import BagPage from './pages/BagPage.tsx';
 import { GameSettingsProvider } from './context/GameStateContext';
+import { GameContextProvider } from './context/GameContext';
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <GameSettingsProvider>
-            <RouterProvider router={router} />
+            <GameContextProvider>
+                <RouterProvider router={router} />
+            </GameContextProvider>
         </GameSettingsProvider>
     </StrictMode>,
 );
