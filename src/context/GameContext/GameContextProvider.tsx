@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type FC, type ReactNode } from 'react';
-import { GameContext } from './GameContext.tsx';
+import { GameContext } from './GameContext.ts';
 import type { GameState } from '../../types/GameState.ts';
 
 export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
