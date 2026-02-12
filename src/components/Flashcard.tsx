@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { IconCheck, IconEye, IconEyeOff, IconRepeat } from '@tabler/icons-react';
 import { useState } from 'react';
-import { TranslationLanguages, type TranslationLanguage } from '../TranslationLanguage';
+import { type TranslationLanguage } from '../TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
 import { Badges } from './Badges';
 import { FlashcardMainText } from './FlashcardMainText';
@@ -49,21 +49,7 @@ interface FlashcardProps {
 const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, handleCorrect, handleMistake }) => {
     const [showAnswer, setShowAnswer] = useState(false);
 
-    const question: string = (() => {
-        switch (selectedLanguage) {
-            case TranslationLanguages.POLISH: {
-                return card.pl;
-            }
-            case TranslationLanguages.ENGLISH: {
-                return card.en;
-            }
-            default: {
-                const _neverCheck: never = selectedLanguage;
-                return _neverCheck;
-            }
-        }
-    })();
-
+    const question: string = card[selectedLanguage];
     const toggleAnswer = () => {
         setShowAnswer(!showAnswer);
     };
