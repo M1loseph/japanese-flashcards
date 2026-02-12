@@ -1,4 +1,4 @@
-import { type FC, useMemo, useState } from 'react';
+import { type FC, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     countriesEUBag,
@@ -48,25 +48,15 @@ import {
     sakura2_4Bag,
     duolingo11Bag,
 } from '../japanese';
-import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
 import { type WordBag } from '../japanese/types';
+import { useGameSettings } from '../context/GameSettingsContext';
 
 const MainPage: FC = () => {
     const navigate = useNavigate();
-    const [selectedLanguage, setSelectedLanguage] = useState<TranslationLanguage>(TranslationLanguages.ENGLISH);
-    const [selectedWordBags, setSelectedWordBags] = useState<Set<string>>(new Set());
-
-    const toggleWordBag = (id: string) => {
-        const newSet = new Set(selectedWordBags);
-        if (newSet.has(id)) {
-            newSet.delete(id);
-        } else {
-            newSet.add(id);
-        }
-        setSelectedWordBags(newSet);
-    };
+    const { selectedLanguage, setSelectedLanguage, selectedWordBags, toggleWordBag, selectBags, deselectBags } =
+        useGameSettings();
 
     const groupedBags: Record<string, WordBag[]> = {
         'Essentials 📌': [familyBag, numbersBag, countingThingsBag, weekBag, timeBag, monthsBag, directionsBag],
@@ -109,15 +99,11 @@ const MainPage: FC = () => {
     };
 
     const handleSelectAll = (bags: WordBag[]) => {
-        const newSet = new Set(selectedWordBags);
-        bags.forEach((bag) => newSet.add(bag.id));
-        setSelectedWordBags(newSet);
+        selectBags(bags.map((bag) => bag.id));
     };
 
     const handleDeselectAll = (bags: WordBag[]) => {
-        const newSet = new Set(selectedWordBags);
-        bags.forEach((bag) => newSet.delete(bag.id));
-        setSelectedWordBags(newSet);
+        deselectBags(bags.map((bag) => bag.id));
     };
 
     const selectedWordsCount = useMemo(() => {

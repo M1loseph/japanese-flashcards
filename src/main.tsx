@@ -6,6 +6,7 @@ import RandomShuffleGamePage from './pages/RandomShuffleGamePage.tsx';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import Layout from './Layout.tsx';
 import BagPage from './pages/BagPage.tsx';
+import { GameSettingsProvider } from './context/GameSettingsContext.tsx';
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <RouterProvider router={router} />
+        <GameSettingsProvider>
+            <RouterProvider router={router} />
+        </GameSettingsProvider>
     </StrictMode>,
 );

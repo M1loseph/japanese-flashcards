@@ -5,8 +5,10 @@ import { IconZoom } from '@tabler/icons-react';
 import { toRomaji } from 'wanakana';
 import { Badges } from '../components/Badges';
 import { TextWithJishoLinks } from '../components/TextWithJishoLinks';
+import { useGameSettings } from '../context/GameSettingsContext';
 
 const BagPage: FC = () => {
+    const { selectedLanguage } = useGameSettings();
     const [searchText, setSearchText] = useState<string>('');
     const bagId = useParams().bagId;
     const bag = useMemo(() => {
@@ -24,7 +26,7 @@ const BagPage: FC = () => {
         if (!searchText) return true;
         const wordRomaji = toRomaji(word.jp_pronunciation || word.jp);
         if (wordRomaji.includes(searchText)) return true;
-        if (word.en.toLocaleLowerCase().includes(searchText)) return true;
+        if (word[selectedLanguage].toLocaleLowerCase().includes(searchText)) return true;
         return false;
     });
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,7 +59,7 @@ const BagPage: FC = () => {
                             </h3>
                             <hr className="my-1 border-slate-300 border-dashed" />
                             {word.jp_pronunciation && <p className="text-sm text-semibold">{word.jp_pronunciation}</p>}
-                            <p className="text-sm text-slate-600 italic">{word.en}</p>
+                            <p className="text-sm text-slate-600 italic">{word[selectedLanguage]}</p>
                             <Badges size="sm" card={word} showAnswer />
                         </div>
                     </div>
