@@ -6,7 +6,7 @@ import RandomShuffleGamePage from './pages/RandomShuffleGamePage.tsx';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import Layout from './Layout.tsx';
 import BagPage from './pages/BagPage.tsx';
-import { GameSettingsProvider } from './context/GameSettingsContext.tsx';
+import { GameSettingsProvider } from './context/GameStateContext';
 
 const router = createBrowserRouter([
     {

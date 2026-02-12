@@ -51,7 +51,7 @@ import {
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
 import { type WordBag } from '../japanese/types';
-import { useGameSettings } from '../context/GameSettingsContext';
+import { useGameSettings } from '../context/GameStateContext/GameSettingsContext';
 
 const MainPage: FC = () => {
     const navigate = useNavigate();

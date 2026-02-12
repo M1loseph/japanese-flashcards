@@ -1,24 +1,6 @@
-import { createContext, type FC, type ReactNode, useContext, useMemo, useState } from 'react';
-import { type TranslationLanguage, TranslationLanguages } from '../TranslationLanguage';
-
-interface GameSettingsContextType {
-    selectedLanguage: TranslationLanguage;
-    setSelectedLanguage: (lang: TranslationLanguage) => void;
-    selectedWordBags: Set<string>;
-    toggleWordBag: (id: string) => void;
-    selectBags: (ids: string[]) => void;
-    deselectBags: (ids: string[]) => void;
-}
-
-const GameSettingsContext = createContext<GameSettingsContextType | undefined>(undefined);
-
-export const useGameSettings = () => {
-    const context = useContext(GameSettingsContext);
-    if (!context) {
-        throw new Error('useGameSettings must be used within a GameSettingsProvider');
-    }
-    return context;
-};
+import { useMemo, useState, type FC, type ReactNode } from 'react';
+import { GameSettingsContext, type GameSettingsContextType } from './GameSettingsContext';
+import { TranslationLanguages, type TranslationLanguage } from '../../TranslationLanguage';
 
 interface GameSettingsProviderProps {
     children: ReactNode;

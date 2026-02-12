@@ -5,7 +5,7 @@ import { IconZoom } from '@tabler/icons-react';
 import { toRomaji } from 'wanakana';
 import { Badges } from '../components/Badges';
 import { TextWithJishoLinks } from '../components/TextWithJishoLinks';
-import { useGameSettings } from '../context/GameSettingsContext';
+import { useGameSettings } from '../context/GameStateContext/GameSettingsContext';
 
 const BagPage: FC = () => {
     const { selectedLanguage } = useGameSettings();
