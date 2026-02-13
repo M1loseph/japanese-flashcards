@@ -1,8 +1,11 @@
-import type { JapaneseWord } from '../japanese';
+import * as z from 'zod';
+import { JapaneseWordSchema } from '../japanese/types';
 
-export interface FlashcardSession {
-    word: JapaneseWord;
-    wordBag: string;
-    answered: boolean;
-    correct: boolean;
-}
+export const FlashcardSessionSchema = z.object({
+    word: JapaneseWordSchema,
+    wordBag: z.string(),
+    answered: z.boolean(),
+    correct: z.boolean(),
+});
+
+export type FlashcardSession = z.infer<typeof FlashcardSessionSchema>;

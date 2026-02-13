@@ -139,6 +139,7 @@ const MainPage: FC = () => {
         shuffleArrayInPlace(newFlashcards);
 
         setGameState({
+            version: 1,
             initialWordBags: wordBagNames,
             flashcards: newFlashcards,
             gameStartTimeMs: Date.now(),

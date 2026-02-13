@@ -113,7 +113,8 @@ const RandomShuffleGamePage: FC = () => {
                 <div className="modal-box">
                     <h3 className="font-bold text-lg mb-4">Leave game?</h3>
                     <p className="py-4">
-                        Are you sure you want to leave? Your current progress in this round will be lost.
+                        Are you sure you want to leave? Your current progress in this round will be saved. You can
+                        resume it later from the main page.
                     </p>
                     <div className="modal-action">
                         <button className="btn" onClick={cancelLeave}>
