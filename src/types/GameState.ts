@@ -1,10 +1,14 @@
-import type { FlashcardSession } from './FlashcardSession';
-import type { TranslationLanguage } from './TranslationLanguage';
+import { FlashcardSessionSchema } from './FlashcardSession';
+import { TranslationLanguagesSchema } from './TranslationLanguage';
+import * as z from 'zod';
 
-export interface GameState {
-    initialWordBags: string[];
-    flashcards: FlashcardSession[];
-    gameStartTimeMs: number;
-    currentFlashcardIndex: number;
-    selectedLanguage: TranslationLanguage;
-}
+export const GameStateSchema = z.object({
+    version: z.literal(1),
+    initialWordBags: z.array(z.string()),
+    flashcards: z.array(FlashcardSessionSchema),
+    gameStartTimeMs: z.number(),
+    currentFlashcardIndex: z.number(),
+    selectedLanguage: TranslationLanguagesSchema,
+});
+
+export type GameState = z.infer<typeof GameStateSchema>;

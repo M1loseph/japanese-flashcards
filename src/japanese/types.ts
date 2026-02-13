@@ -1,81 +1,92 @@
-type Translation = {
-    en: string;
-    pl: string;
-    jp: string;
-    jp_pronunciation?: string;
-    jp_description?: string;
-};
+import * as z from 'zod';
 
-export type Verb = Translation & {
-    type: 'verb';
-    verb_type: 'godan' | 'ichidan' | 'irregular';
-    masu_form: string;
-    masen_form: string;
-};
+const TranslationSchema = z.object({
+    en: z.string(),
+    pl: z.string(),
+    jp: z.string(),
+    jp_pronunciation: z.string().optional(),
+    jp_description: z.string().optional(),
+});
 
-export type Noun = Translation & {
-    type: 'noun';
-};
+const VerbSchema = TranslationSchema.extend({
+    type: z.literal('verb'),
+    verb_type: z.enum(['godan', 'ichidan', 'irregular']),
+    masu_form: z.string(),
+    masen_form: z.string(),
+});
 
-export type Adverb = Translation & {
-    type: 'adverb';
-};
+export type Verb = z.infer<typeof VerbSchema>;
 
-export type Phrase = Translation & {
-    type: 'phrase';
-};
+const NounSchema = TranslationSchema.extend({
+    type: z.literal('noun'),
+});
 
-export type PreNounAdjective = Translation & {
-    type: 'pre-noun-adjective';
-};
+const AdverbSchema = TranslationSchema.extend({
+    type: z.literal('adverb'),
+});
 
-export type Adjective = Translation & {
-    type: 'adjective';
-    adjective_type: 'i-adjective' | 'na-adjective';
-};
+const PhraseSchema = TranslationSchema.extend({
+    type: z.literal('phrase'),
+});
 
-export type Pronoun = Translation & {
-    type: 'pronoun';
-};
+const PreNounAdjectiveSchema = TranslationSchema.extend({
+    type: z.literal('pre-noun-adjective'),
+});
 
-export type Suffix = Translation & {
-    type: 'suffix';
-};
+const AdjectiveSchema = TranslationSchema.extend({
+    type: z.literal('adjective'),
+    adjective_type: z.enum(['i-adjective', 'na-adjective']),
+});
 
-export type Numeral = Translation & {
-    type: 'numeral';
-};
+export type Adjective = z.infer<typeof AdjectiveSchema>;
 
-export type Particle = Translation & {
-    type: 'particle';
-};
+const PronounSchema = TranslationSchema.extend({
+    type: z.literal('pronoun'),
+});
 
-export type Conjunction = Translation & {
-    type: 'conjunction';
-};
+const SuffixSchema = TranslationSchema.extend({
+    type: z.literal('suffix'),
+});
 
-export type UnknownWord = Translation & {
-    type: 'unknown';
-};
+const NumeralSchema = TranslationSchema.extend({
+    type: z.literal('numeral'),
+});
 
-export type JapaneseWord =
-    | Verb
-    | Noun
-    | Phrase
-    | Adjective
-    | Pronoun
-    | Suffix
-    | Numeral
-    | Adverb
-    | PreNounAdjective
-    | Particle
-    | Conjunction
-    | UnknownWord;
+const ParticleSchema = TranslationSchema.extend({
+    type: z.literal('particle'),
+});
+
+const ConjunctionSchema = TranslationSchema.extend({
+    type: z.literal('conjunction'),
+});
+
+const UnknownWordSchema = TranslationSchema.extend({
+    type: z.literal('unknown'),
+});
+
+export const JapaneseWordSchema = z.discriminatedUnion('type', [
+    VerbSchema,
+    NounSchema,
+    PhraseSchema,
+    AdjectiveSchema,
+    PronounSchema,
+    SuffixSchema,
+    NumeralSchema,
+    AdverbSchema,
+    PreNounAdjectiveSchema,
+    ParticleSchema,
+    ConjunctionSchema,
+    UnknownWordSchema,
+]);
+
+export type JapaneseWord = z.infer<typeof JapaneseWordSchema>;
 
 export type WordType = JapaneseWord['type'];
 
-export interface WordBag {
-    id: string;
-    name: string;
-    words: JapaneseWord[];
-}
+export const WordBagSchema = z.object({
+    id: z.string(),
+    name: z.string(),
+    words: z.array(JapaneseWordSchema),
+});
+
+export type WordBag = z.infer<typeof WordBagSchema>;
