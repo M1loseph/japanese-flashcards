@@ -83,7 +83,7 @@ export type JapaneseWord = z.infer<typeof JapaneseWordSchema>;
 
 export type WordType = JapaneseWord['type'];
 
-const WordBagSchema = z.object({
+export const WordBagSchema = z.object({
     id: z.string(),
     name: z.string(),
     words: z.array(JapaneseWordSchema),
