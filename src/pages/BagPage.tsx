@@ -6,6 +6,7 @@ import { toRomaji } from 'wanakana';
 import { Badges } from '../components/Badges';
 import { TextWithJishoLinks } from '../components/TextWithJishoLinks';
 import { useGameSettingsContext } from '../context/GameStateContext';
+import { ScrollablePage } from './common/ScrollablePage';
 
 const BagPage: FC = () => {
     const { selectedLanguage } = useGameSettingsContext();
@@ -33,39 +34,43 @@ const BagPage: FC = () => {
         setSearchText(e.target.value.toLowerCase());
     };
     return (
-        <div className="p-2">
-            <div className="p-2">
-                <h2 className="text-2xl font-semibold">{bag.name}</h2>
-                <h4 className="text-slate-600 text-sm">{bag.words.length} cards</h4>
-            </div>
-            <div className="my-3">
-                <label className="input w-full">
-                    <IconZoom size={16} className="opacity-50" />
-                    <input
-                        value={searchText}
-                        type="search"
-                        className="grow"
-                        placeholder="Search by reading or meaning"
-                        onChange={handleSearchChange}
-                    />
-                </label>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 pb-12">
-                {words.map((word) => (
-                    <div key={word.jp + word.en} className="card card-xs bg-base-100 shadow-md">
-                        <div className="card-body">
-                            <h3 className="text-lg text-primary font-semibold text-center w-full">
-                                <TextWithJishoLinks text={word.jp} />
-                            </h3>
-                            <hr className="my-1 border-slate-300 border-dashed" />
-                            {word.jp_pronunciation && <p className="text-sm text-semibold">{word.jp_pronunciation}</p>}
-                            <p className="text-sm text-slate-600 italic">{word[selectedLanguage]}</p>
-                            <Badges size="sm" card={word} showAnswer />
+        <ScrollablePage>
+            <div className="p-2 grow">
+                <div className="p-2">
+                    <h2 className="text-2xl font-semibold">{bag.name}</h2>
+                    <h4 className="text-slate-600 text-sm">{bag.words.length} cards</h4>
+                </div>
+                <div className="my-3">
+                    <label className="input w-full">
+                        <IconZoom size={16} className="opacity-50" />
+                        <input
+                            value={searchText}
+                            type="search"
+                            className="grow"
+                            placeholder="Search by reading or meaning"
+                            onChange={handleSearchChange}
+                        />
+                    </label>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 pb-12">
+                    {words.map((word) => (
+                        <div key={word.jp + word.en} className="card card-xs bg-base-100 shadow-md">
+                            <div className="card-body">
+                                <h3 className="text-lg text-primary font-semibold text-center w-full">
+                                    <TextWithJishoLinks text={word.jp} />
+                                </h3>
+                                <hr className="my-1 border-slate-300 border-dashed" />
+                                {word.jp_pronunciation && (
+                                    <p className="text-sm text-semibold">{word.jp_pronunciation}</p>
+                                )}
+                                <p className="text-sm text-slate-600 italic">{word[selectedLanguage]}</p>
+                                <Badges size="sm" card={word} showAnswer />
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+        </ScrollablePage>
     );
 };
 

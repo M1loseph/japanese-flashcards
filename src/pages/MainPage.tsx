@@ -47,6 +47,7 @@ import {
     duolingo10Bag,
     sakura2_4Bag,
     duolingo11Bag,
+    sakura2_5Bag,
 } from '../japanese';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -55,6 +56,7 @@ import { useGameSettingsContext } from '../context/GameStateContext';
 import { shuffleArrayInPlace } from '../utils';
 import { useGameContext } from '../context/GameContext';
 import { IconRestore } from '@tabler/icons-react';
+import { ScrollablePage } from './common/ScrollablePage';
 
 const MainPage: FC = () => {
     const navigate = useNavigate();
@@ -85,6 +87,7 @@ const MainPage: FC = () => {
             sakura2_2Bag,
             sakura2_3Bag,
             sakura2_4Bag,
+            sakura2_5Bag,
         ],
         'Apps 📱': [
             duolingo1Bag,
@@ -154,8 +157,8 @@ const MainPage: FC = () => {
     };
 
     return (
-        <>
-            <main className="pb-24">
+        <ScrollablePage>
+            <main className="pb-24 grow">
                 {gameState && (
                     <section>
                         <div role="alert" className="alert bg-warning/5 border-warning mb-10">
@@ -223,7 +226,7 @@ const MainPage: FC = () => {
                     </button>
                 </div>
             </div>
-        </>
+        </ScrollablePage>
     );
 };
 
