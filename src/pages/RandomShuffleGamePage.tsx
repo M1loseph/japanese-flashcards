@@ -6,11 +6,14 @@ import { usePreventAccidentalLeave } from '../hooks/usePreventAccidentalLeave.ts
 import { useGameContext } from '../context/GameContext';
 import { shuffleArrayInPlace } from '../utils.ts';
 import type { FlashcardSession } from '../types/FlashcardSession.ts';
+import { FlashcardButtons } from '../components/FlashcardButtons.tsx';
+import { FixedSizePage } from './common/FixedSizePage.tsx';
 
 const RandomShuffleGamePage: FC = () => {
     const navigate = useNavigate();
     const { gameState, setGameState, clearGame } = useGameContext();
     const [sessionTime, setSessionTime] = useState(0);
+    const [showAnswer, setShowAnswer] = useState(false);
 
     useEffect(() => {
         if (!gameState) return;
@@ -52,7 +55,7 @@ const RandomShuffleGamePage: FC = () => {
 
     if (gameFinished) {
         return (
-            <div className="pt-12 flex flex-col items-center space-y-6">
+            <div className="pt-12 grow flex flex-col items-center space-y-6">
                 <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
                 <div className="flex gap-4">
                     {wrongAnswers.length !== 0 ? (
@@ -107,41 +110,57 @@ const RandomShuffleGamePage: FC = () => {
             currentFlashcardIndex: gameState.currentFlashcardIndex + 1,
         });
     };
+
+    const toggleAnswer = () => {
+        setShowAnswer(!showAnswer);
+    };
+
+    const correctPressed = () => {
+        setShowAnswer(false);
+        handleCorrect();
+    };
+
+    const mistakePressed = () => {
+        setShowAnswer(false);
+        handleMistake();
+    };
+
     return (
-        <>
-            <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg mb-4">Leave game?</h3>
-                    <p className="py-4">
-                        Are you sure you want to leave? Your current progress in this round will be saved. You can
-                        resume it later from the main page.
-                    </p>
-                    <div className="modal-action">
-                        <button className="btn" onClick={cancelLeave}>
-                            Stay
-                        </button>
-                        <button className="btn btn-error" onClick={confirmLeave}>
-                            Leave
-                        </button>
-                    </div>
-                </div>
-                <div className="modal-backdrop" onClick={cancelLeave}></div>
-            </dialog>
-            <div className="flex flex-col items-center space-y-6">
+        <FixedSizePage>
+            <div className="flex-1 flex flex-col items-stretch space-y-6 overflow-hidden">
                 <ProgressBar
                     wordBags={gameState.initialWordBags}
                     currentIndex={gameState.currentFlashcardIndex}
                     total={gameState.flashcards.length}
                     timeInSeconds={sessionTime}
                 />
-                <Flashcard
-                    card={card.word}
-                    selectedLanguage={gameState.selectedLanguage}
-                    handleCorrect={handleCorrect}
-                    handleMistake={handleMistake}
+                <Flashcard card={card.word} selectedLanguage={gameState.selectedLanguage} showAnswer={showAnswer} />
+                <FlashcardButtons
+                    showAnswer={showAnswer}
+                    toggleAnswer={toggleAnswer}
+                    correctPressed={correctPressed}
+                    mistakePressed={mistakePressed}
                 />
+                <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
+                    <div className="modal-box">
+                        <h3 className="font-bold text-lg mb-4">Leave game?</h3>
+                        <p className="py-4">
+                            Are you sure you want to leave? Your current progress in this round will be saved. You can
+                            resume it later from the main page.
+                        </p>
+                        <div className="modal-action">
+                            <button className="btn" onClick={cancelLeave}>
+                                Stay
+                            </button>
+                            <button className="btn btn-error" onClick={confirmLeave}>
+                                Leave
+                            </button>
+                        </div>
+                    </div>
+                    <div className="modal-backdrop" onClick={cancelLeave}></div>
+                </dialog>
             </div>
-        </>
+        </FixedSizePage>
     );
 };
 

@@ -6,6 +6,7 @@ const TranslationSchema = z.object({
     jp: z.string(),
     jp_pronunciation: z.string().optional(),
     jp_description: z.string().optional(),
+    image_url: z.string().optional(),
 });
 
 const VerbSchema = TranslationSchema.extend({

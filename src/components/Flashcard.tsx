@@ -1,6 +1,4 @@
 import { type FC } from 'react';
-import { IconCheck, IconEye, IconEyeOff, IconRepeat } from '@tabler/icons-react';
-import { useState } from 'react';
 import { type TranslationLanguage } from '../types/TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
 import { Badges } from './Badges';
@@ -42,60 +40,31 @@ const Description: FC<DescriptionProps> = ({ showAnswer, card }) => {
 interface FlashcardProps {
     card: JapaneseWord;
     selectedLanguage: TranslationLanguage;
-    handleCorrect: () => void;
-    handleMistake: () => void;
+    showAnswer: boolean;
 }
 
-const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, handleCorrect, handleMistake }) => {
-    const [showAnswer, setShowAnswer] = useState(false);
-
+const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, showAnswer }) => {
     const question: string = card[selectedLanguage];
-    const toggleAnswer = () => {
-        setShowAnswer(!showAnswer);
-    };
-
-    const correctPressed = () => {
-        setShowAnswer(false);
-        handleCorrect();
-    };
-
-    const mistakePressed = () => {
-        setShowAnswer(false);
-        handleMistake();
-    };
 
     return (
-        <div className="w-full">
-            <div className="rounded-xl bg-base-100 shadow-2xl border border-base-300 max-w-3xl mx-auto">
-                <div className="p-5">
-                    <Badges card={card} showAnswer={showAnswer} />
-                    <div className="flex flex-col justify-center items-stretch min-h-[15rem]">
-                        <div className="flex justify-center">
-                            <FlashcardMainText
-                                question={question}
-                                answer={card.jp}
-                                pronounciation={card.jp_pronunciation}
-                                showAnswer={showAnswer}
-                            />
-                        </div>
-                        <Description showAnswer={showAnswer} card={card} />
-                    </div>
+        <div className="flex-1 min-h-0 flex flex-col lg:flex-row rounded-xl bg-base-100 shadow-2xl border border-base-300">
+            <div className="flex-1 flex flex-col p-5">
+                <Badges card={card} showAnswer={showAnswer} />
+                <div className="grow flex flex-col justify-center items-stretch">
+                    <FlashcardMainText
+                        question={question}
+                        answer={card.jp}
+                        pronounciation={card.jp_pronunciation}
+                        showAnswer={showAnswer}
+                    />
+                    <Description showAnswer={showAnswer} card={card} />
                 </div>
             </div>
-            <div className="flex justify-around gap-3 pt-4 flex-col md:flex-row">
-                <button disabled={!showAnswer} className="btn btn-success font-bold md:flex-1" onClick={correctPressed}>
-                    <IconCheck />
-                    Correct
-                </button>
-                <button className="btn btn-info md:flex-1" onClick={toggleAnswer}>
-                    {showAnswer ? <IconEyeOff /> : <IconEye />}
-                    {showAnswer ? 'Hide' : 'Show'}
-                </button>
-                <button disabled={!showAnswer} className="btn btn-error md:flex-1" onClick={mistakePressed}>
-                    <IconRepeat />
-                    Wrong
-                </button>
-            </div>
+            {card.image_url && (
+                <div className="flex-1 overflow-hidden">
+                    <img src={card.image_url} alt={card.jp} className="object-contain w-full h-full rounded-r-xl" />
+                </div>
+            )}
         </div>
     );
 };
