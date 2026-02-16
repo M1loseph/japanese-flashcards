@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from 'react';
+import { Header } from '../../components/Header';
 
 interface FixedSizePageProps {
     children: ReactNode;
@@ -6,8 +7,11 @@ interface FixedSizePageProps {
 
 export const FixedSizePage: FC<FixedSizePageProps> = ({ children }) => {
     return (
-        <div className="container grow flex flex-col px-4 sm:px-6 lg:px-8 py-8 space-y-12 overflow-hidden">
-            {children}
+        <div className="h-dvh flex flex-col items-center font-sans">
+            <Header />
+            <div className="container flex-1 mx-auto h-full flex flex-col px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+                {children}
+            </div>
         </div>
     );
 };

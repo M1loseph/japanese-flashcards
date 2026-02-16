@@ -4,7 +4,6 @@ import './index.css';
 import MainPage from './pages/MainPage.tsx';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage.tsx';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import Layout from './Layout.tsx';
 import BagPage from './pages/BagPage.tsx';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { GameContextProvider } from './context/GameContext';
@@ -12,7 +11,6 @@ import { GameContextProvider } from './context/GameContext';
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />,
         children: [
             {
                 path: '/',
