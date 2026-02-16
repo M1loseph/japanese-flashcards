@@ -61,7 +61,7 @@ const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, showAns
                 </div>
             </div>
             {card.image_url && (
-                <div className="flex-1 overflow-hidden">
+                <div className="flex-1 min-h-0">
                     <img src={card.image_url} alt={card.jp} className="object-contain w-full h-full rounded-r-xl" />
                 </div>
             )}
