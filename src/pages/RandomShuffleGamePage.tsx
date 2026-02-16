@@ -55,19 +55,21 @@ const RandomShuffleGamePage: FC = () => {
 
     if (gameFinished) {
         return (
-            <div className="pt-12 grow flex flex-col items-center space-y-6">
-                <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
-                <div className="flex gap-4">
-                    {wrongAnswers.length !== 0 && (
-                        <button className="btn btn-success btn-lg" onClick={prepareSetForRepeat}>
-                            Repeat mistakes ({wrongAnswers.length})
+            <FixedSizePage>
+                <div className="pt-12 h-full flex flex-col items-center space-y-6">
+                    <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
+                    <div className="flex gap-4">
+                        {wrongAnswers.length !== 0 && (
+                            <button className="btn btn-success btn-lg" onClick={prepareSetForRepeat}>
+                                Repeat mistakes ({wrongAnswers.length})
+                            </button>
+                        )}
+                        <button className="btn btn-lg" onClick={handleFinish}>
+                            Go home
                         </button>
-                    )}
-                    <button className="btn btn-lg" onClick={handleFinish}>
-                        Go home
-                    </button>
+                    </div>
                 </div>
-            </div>
+            </FixedSizePage>
         );
     }
 
