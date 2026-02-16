@@ -125,7 +125,7 @@ const RandomShuffleGamePage: FC = () => {
 
     return (
         <FixedSizePage>
-            <div className="h-100 flex-1 flex flex-col items-stretch space-y-6">
+            <div className="h-full flex flex-col items-stretch space-y-6">
                 <ProgressBar
                     wordBags={gameState.initialWordBags}
                     currentIndex={gameState.currentFlashcardIndex}
