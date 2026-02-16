@@ -58,12 +58,10 @@ const RandomShuffleGamePage: FC = () => {
             <div className="pt-12 grow flex flex-col items-center space-y-6">
                 <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
                 <div className="flex gap-4">
-                    {wrongAnswers.length !== 0 ? (
+                    {wrongAnswers.length !== 0 && (
                         <button className="btn btn-success btn-lg" onClick={prepareSetForRepeat}>
                             Repeat mistakes ({wrongAnswers.length})
                         </button>
-                    ) : (
-                        <></>
                     )}
                     <button className="btn btn-lg" onClick={handleFinish}>
                         Go home
@@ -127,7 +125,7 @@ const RandomShuffleGamePage: FC = () => {
 
     return (
         <FixedSizePage>
-            <div className="flex-1 flex flex-col items-stretch space-y-6 overflow-hidden">
+            <div className="h-full flex flex-col items-stretch space-y-6">
                 <ProgressBar
                     wordBags={gameState.initialWordBags}
                     currentIndex={gameState.currentFlashcardIndex}
