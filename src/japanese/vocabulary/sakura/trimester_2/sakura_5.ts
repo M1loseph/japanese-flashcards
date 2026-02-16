@@ -23,8 +23,8 @@ export const sakura_2_5: JapaneseWord[] = [
     {
         type: 'verb',
         verb_type: 'irregular',
-        en: "Go (towards speaker's perspective)",
-        pl: 'Iść (w kierunku mówiącego)',
+        en: "Come (towards speaker's perspective)",
+        pl: 'Przychodzić (w kierunku mówiącego)',
         jp: '来る',
         jp_pronunciation: 'くる',
         masu_form: '来ます (きます)',
@@ -44,7 +44,8 @@ export const sakura_2_5: JapaneseWord[] = [
         type: 'noun',
         en: 'Cafe (native Japanese word)',
         pl: 'Kawiarnia (słowo pochodzenia japońskiego)',
-        jp: 'きっさてん',
+        jp: '喫茶店',
+        jp_pronunciation: 'きっさてん',
     },
     {
         type: 'phrase',
@@ -64,8 +65,8 @@ export const sakura_2_5: JapaneseWord[] = [
     },
     {
         type: 'phrase',
-        en: 'I went to the company in the morning.',
-        pl: 'Poszedłem do firmy rano.',
+        en: 'I came to the company in the morning.',
+        pl: 'Przyszedłem do firmy rano.',
         jp: 'あさかいしゃに来ました。',
         jp_pronunciation: 'あさかいしゃにきました。',
         image_url: wentToCompanyInTheMorning,
