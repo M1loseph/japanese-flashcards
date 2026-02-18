@@ -224,7 +224,9 @@ export const sakura_1_12: JapaneseWord[] = [
         type: 'phrase',
         en: 'Cook Japanese food',
         pl: 'Gotować japońskie jedzenie',
-        jp: 'にほんのりょうりをつくる',
+        jp: 'にほんりょうりをつくる',
+        jp_description:
+            'Technically, this should be "にほんのりょうりをつくる", but the particle "の" is often omitted in casual speech.',
     },
     {
         type: 'noun',
@@ -301,5 +303,11 @@ export const sakura_1_12: JapaneseWord[] = [
         en: 'Fridge',
         pl: 'Lodówka',
         jp: 'れいぞうこ',
+    },
+    {
+        type: 'phrase',
+        en: 'Play football',
+        pl: 'Grać w piłkę nożną',
+        jp: 'サッカーをする',
     },
 ];

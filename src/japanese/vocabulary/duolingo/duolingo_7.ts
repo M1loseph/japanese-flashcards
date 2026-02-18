@@ -44,11 +44,14 @@ export const duolingo_7: JapaneseWord[] = [
         jp: 'はしります',
     },
     {
-        type: 'unknown',
+        type: 'verb',
+        verb_type: 'godan',
         en: 'Drink',
         pl: 'Pić',
-        jp: '飲みます',
-        jp_pronunciation: 'のみます',
+        jp: '飲む',
+        jp_pronunciation: 'のむ',
+        masu_form: '飲みます (のみます)',
+        masen_form: '飲みません (のみません)',
     },
     {
         type: 'unknown',

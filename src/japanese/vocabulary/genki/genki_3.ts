@@ -375,4 +375,25 @@ export const genki_3: JapaneseWord[] = [
         pl: 'Gdzie grasz w tenisa?',
         jp: 'どこでテニスをしますか。',
     },
+    {
+        type: 'phrase',
+        en: 'Would you like to go out for a date together?',
+        pl: 'Czy chciałbyś pójść razem ze mną na randkę?',
+        jp: 'いっしょにデートに行きませんか。',
+        jp_pronunciation: 'いっしょにデートにいきませんか。',
+    },
+    {
+        type: 'phrase',
+        en: 'Would you like to see a movie?',
+        pl: 'Czy chciałbyś pójść do kina?',
+        jp: 'えいがを見ませんか。',
+        jp_pronunciation: 'えいがをみませんか。',
+    },
+    {
+        type: 'phrase',
+        en: 'Would you like to eat breakfast?',
+        pl: 'Czy chciałbyś zjeść śniadanie?',
+        jp: 'あさごはんを食べませんか。',
+        jp_pronunciation: 'あさごはんをたべませんか。',
+    },
 ];

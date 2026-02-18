@@ -92,4 +92,11 @@ export const direction: JapaneseWord[] = [
         jp: 'ホテルの前です。',
         jp_pronunciation: 'ホテルのまえです。',
     },
+    {
+        type: 'phrase',
+        en: "It's near the supermarket.",
+        pl: 'To jest blisko supermarketu.',
+        jp: 'スーパーの近くです。',
+        jp_pronunciation: 'スーパーのちかくです。',
+    },
 ];

@@ -77,9 +77,9 @@ export const sakura_1_5: JapaneseWord[] = [
     },
     {
         type: 'phrase',
-        en: 'How old is your mother?',
-        pl: 'Ile lat ma twoja mama?',
-        jp: 'おかあさんは おいくつですか。',
+        en: 'How old is your mother? (formal)',
+        pl: 'Ile lat ma twoja mama? (formalnie)',
+        jp: 'おかあさんはおいくつですか。',
     },
     {
         type: 'phrase',
