@@ -48,6 +48,7 @@ import {
     sakura2_4Bag,
     duolingo11Bag,
     sakura2_5Bag,
+    sakura2_6Bag,
 } from '../japanese';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -88,6 +89,7 @@ const MainPage: FC = () => {
             sakura2_3Bag,
             sakura2_4Bag,
             sakura2_5Bag,
+            sakura2_6Bag,
         ],
         'Apps 📱': [
             duolingo1Bag,
