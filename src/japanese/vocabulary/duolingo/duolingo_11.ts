@@ -82,7 +82,7 @@ export const duolingo_11: JapaneseWord[] = [
         type: 'phrase',
         en: 'On friday afternoon I will have free time.',
         pl: 'W piątek po południu będę mieć czas wolny.',
-        jp: 'きんようびのごごはひまです。',
+        jp: 'きんようびのごごひまです。',
     },
     {
         type: 'noun',
@@ -201,6 +201,8 @@ export const duolingo_11: JapaneseWord[] = [
         en: 'A lot of / Many',
         pl: 'Dużo',
         jp: 'たくさん',
+        jp_description:
+            'This should always modify the verb, so it should be used before it. Some people in every-day speech might say "たくさんしゅくだい", but the correct way to say it is "しゅくだいがたくさんあります".',
     },
     {
         type: 'phrase',
@@ -210,8 +212,8 @@ export const duolingo_11: JapaneseWord[] = [
     },
     {
         type: 'adverb',
-        en: 'Soon',
-        pl: 'Wkrótce / Niedługo',
+        en: 'Early',
+        pl: 'Wcześnie',
         jp: 'はやく',
     },
     {

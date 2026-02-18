@@ -21,8 +21,8 @@ export const duolingo_10: JapaneseWord[] = [
     },
     {
         type: 'phrase',
-        en: 'After work I go home.',
-        pl: 'Po pracy idę do domu.',
+        en: 'After work I return home.',
+        pl: 'Po pracy wracam do domu.',
         jp: 'しごとのあとうちにかえります。',
     },
     {
@@ -196,9 +196,15 @@ export const duolingo_10: JapaneseWord[] = [
     },
     {
         type: 'phrase',
-        en: 'French kitchen',
+        en: 'French cuisine',
         pl: 'Francuska kuchnia',
         jp: 'フランスりょうり',
+    },
+    {
+        type: 'phrase',
+        en: 'Italian dish',
+        pl: 'Włoskie danie',
+        jp: 'イタリアのりょうり',
     },
     {
         type: 'noun',
@@ -227,7 +233,7 @@ export const duolingo_10: JapaneseWord[] = [
     {
         type: 'adjective',
         adjective_type: 'na-adjective',
-        en: 'Convenient',
+        en: 'Convenient / Useful',
         pl: 'Wygodny / Dogodny',
         jp: 'べんり',
     },
