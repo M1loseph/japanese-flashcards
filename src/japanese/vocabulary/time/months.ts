@@ -1,4 +1,4 @@
-import type { JapaneseWord } from '../types.ts';
+import type { JapaneseWord } from '../../types.ts';
 
 export const months: JapaneseWord[] = [
     {
@@ -112,5 +112,19 @@ export const months: JapaneseWord[] = [
         pl: 'Miesiąc',
         jp: '月',
         jp_pronunciation: 'つき',
+    },
+    {
+        type: 'noun',
+        en: 'Two months ago',
+        pl: 'Dwa miesiące temu',
+        jp: '二か月前',
+        jp_pronunciation: 'にかげつまえ',
+    },
+    {
+        type: 'noun',
+        en: 'The month after next',
+        pl: 'Miesiąc po następnym',
+        jp: '再来月',
+        jp_pronunciation: 'さらいげつ',
     },
 ];

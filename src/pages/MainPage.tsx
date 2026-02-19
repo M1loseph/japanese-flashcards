@@ -29,7 +29,8 @@ import {
     sakura1_8AnimalsBag,
     sakura1_8FruitsAndVegetablesBag,
     sakura1_8SportsBag,
-    timeBag,
+    hoursBag,
+    minutesBag,
     sakura1_9Bag,
     sakura1_10Bag,
     countingThingsBag,
@@ -49,6 +50,8 @@ import {
     duolingo11Bag,
     sakura2_5Bag,
     sakura2_6Bag,
+    yearsBag,
+    daysOfMonthBag,
 } from '../japanese';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -66,7 +69,8 @@ const MainPage: FC = () => {
         useGameSettingsContext();
 
     const groupedBags: Record<string, WordBag[]> = {
-        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, weekBag, timeBag, monthsBag, directionsBag],
+        'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, daysOfMonthBag, yearsBag],
+        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, directionsBag],
         'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag, genki4Bag],
         'Classes 🎓': [
             sakura1_1Bag,

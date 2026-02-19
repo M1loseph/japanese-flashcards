@@ -1,7 +1,7 @@
 import { numbers } from './vocabulary/numbers.ts';
 import { countingThings } from './vocabulary/countingThings.ts';
 import { type WordBag } from './types.ts';
-import { week } from './vocabulary/week.ts';
+import { week } from './vocabulary/time/week.ts';
 import { family } from './vocabulary/family.ts';
 import { duolingo_1 } from './vocabulary/duolingo/duolingo_1.ts';
 import { duolingo_2 } from './vocabulary/duolingo/duolingo_2.ts';
@@ -11,7 +11,8 @@ import { duolingo_5 } from './vocabulary/duolingo/duolingo_5.ts';
 import { duolingo_6 } from './vocabulary/duolingo/duolingo_6.ts';
 import { duolingo_9 } from './vocabulary/duolingo/duolingo_9.ts';
 import { countriesEurope } from './vocabulary/countries/countriesEurope.ts';
-import { time } from './vocabulary/time.ts';
+import { hours } from './vocabulary/time/hours.ts';
+import { minutes } from './vocabulary/time/minutes.ts';
 import { genki_0 } from './vocabulary/genki/genki_0.ts';
 import { genki_1 } from './vocabulary/genki/genki_1.ts';
 import { genki_2 } from './vocabulary/genki/genki_2.ts';
@@ -29,7 +30,7 @@ import { sakura_1_8_animals } from './vocabulary/sakura/trimester_1/sakura_8_ani
 import { sakura_1_9 } from './vocabulary/sakura/trimester_1/sakura_9.ts';
 import { sakura_1_10 } from './vocabulary/sakura/trimester_1/sakura_10.ts';
 import { genki_1_majors } from './vocabulary/genki/genki_1_majors.ts';
-import { months } from './vocabulary/months.ts';
+import { months } from './vocabulary/time/months.ts';
 import { sakura_1_11 } from './vocabulary/sakura/trimester_1/sakura_11.ts';
 import { duolingo_7 } from './vocabulary/duolingo/duolingo_7.ts';
 import { countriesAsia } from './vocabulary/countries/countriesAsia.ts';
@@ -46,6 +47,8 @@ import { sakura_2_4 } from './vocabulary/sakura/trimester_2/sakura_4.ts';
 import { duolingo_11 } from './vocabulary/duolingo/duolingo_11.ts';
 import { sakura_2_5 } from './vocabulary/sakura/trimester_2/sakura_5.ts';
 import { sakura_2_6 } from './vocabulary/sakura/trimester_2/sakura_6.ts';
+import { daysOfMonth } from './vocabulary/time/daysOfMonth.ts';
+import { years } from './vocabulary/time/years.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -73,16 +76,34 @@ export const weekBag: WordBag = {
     words: week,
 };
 
-export const timeBag: WordBag = {
+export const hoursBag: WordBag = {
     id: 'c67e0046-1cca-4ec6-87c9-be345d790236',
-    name: 'Time',
-    words: time,
+    name: 'Hours',
+    words: hours,
+};
+
+export const minutesBag: WordBag = {
+    id: '46288155-b71e-4303-b665-3cc5c82ed1e9',
+    name: 'Minutes',
+    words: minutes,
 };
 
 export const monthsBag: WordBag = {
     id: 'eb5ee3eb-8d1f-4046-9634-8e0915a836c3',
     name: 'Months',
     words: months,
+};
+
+export const daysOfMonthBag: WordBag = {
+    id: '61da60a2-4e5f-4dd2-b419-0c9557593e9c',
+    name: 'Days of Month',
+    words: daysOfMonth,
+};
+
+export const yearsBag: WordBag = {
+    id: '79c50834-d434-40e7-8cf1-042d7af3fe8b',
+    name: 'Years',
+    words: years,
 };
 
 export const directionsBag: WordBag = {
@@ -336,8 +357,11 @@ const availableWordBags: WordBag[] = [
     numbersBag,
     countingThingsBag,
     weekBag,
-    timeBag,
+    hoursBag,
+    minutesBag,
     monthsBag,
+    daysOfMonthBag,
+    yearsBag,
     directionsBag,
     duolingo1Bag,
     duolingo2Bag,
@@ -381,4 +405,10 @@ const availableWordBags: WordBag[] = [
     sakura2_6Bag,
 ];
 
-export const findBagById = (id: string): WordBag | undefined => availableWordBags.find((bag) => bag.id === id);
+export const findBagById: (id: string) => WordBag | undefined = (() => {
+    const wordBagsById: Map<string, WordBag> = availableWordBags.reduce((acc, bag) => {
+        acc.set(bag.id, bag);
+        return acc;
+    }, new Map<string, WordBag>());
+    return (id: string): WordBag | undefined => wordBagsById.get(id);
+})();

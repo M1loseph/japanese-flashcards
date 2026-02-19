@@ -1,4 +1,4 @@
-import type { JapaneseWord } from '../types.ts';
+import type { JapaneseWord } from '../../types.ts';
 
 export const week: JapaneseWord[] = [
     {
@@ -112,12 +112,5 @@ export const week: JapaneseWord[] = [
         pl: 'Dzień',
         jp: '日',
         jp_pronunciation: 'ひ',
-    },
-    {
-        type: 'noun',
-        en: 'This year',
-        pl: 'W tym roku',
-        jp: '今年',
-        jp_pronunciation: 'ことし',
     },
 ];
