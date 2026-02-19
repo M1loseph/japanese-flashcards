@@ -48,7 +48,12 @@ interface FlashcardProps {
 const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, showAnswer }) => {
     const question: string = card[selectedLanguage];
     const { isHardWord, toggleHardWord } = useHardWords();
-    const isHard = isHardWord(card.jp);
+    const isHard = isHardWord(card);
+
+    const handleToggleHardWord = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        toggleHardWord(card);
+    };
 
     return (
         <div className="flex-1 min-h-0 flex flex-col lg:flex-row rounded-xl bg-base-100 shadow-2xl border border-base-300">
@@ -56,7 +61,7 @@ const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, showAns
                 <div className="flex items-center">
                     <Badges card={card} showAnswer={showAnswer} />
                     <div className="grow" />
-                    <button className="btn btn-ghost btn-circle z-10" onClick={() => toggleHardWord(card.jp)}>
+                    <button className="btn btn-ghost btn-circle z-10" onClick={handleToggleHardWord}>
                         {isHard ? (
                             <IconStarFilled className="text-yellow-500" />
                         ) : (

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type FC, type ReactNode } from 'react';
 import { HardWordsContext, type HardWordsContextType } from './HardWordsContext';
 import * as z from 'zod';
+import type { JapaneseWord } from '../../japanese';
 
 const HARD_WORDS_KEY = 'hardWords';
 
@@ -37,9 +38,13 @@ export const HardWordsProvider: FC<HardWordsProviderProps> = ({ children }) => {
     }, [hardWords]);
 
     const value: HardWordsContextType = useMemo(() => {
-        const isHardWord = (wordId: string) => hardWords.has(wordId);
+        const isHardWord = (word: JapaneseWord) => {
+            const wordId = word.jp;
+            return hardWords.has(wordId);
+        };
 
-        const toggleHardWord = (wordId: string) => {
+        const toggleHardWord = (word: JapaneseWord) => {
+            const wordId = word.jp;
             setHardWords((prev) => {
                 const newSet = new Set(prev);
                 if (newSet.has(wordId)) {

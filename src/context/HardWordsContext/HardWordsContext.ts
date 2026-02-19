@@ -1,8 +1,9 @@
 import { createContext, useContext } from 'react';
+import type { JapaneseWord } from '../../japanese';
 
 export interface HardWordsContextType {
-    isHardWord: (wordId: string) => boolean;
-    toggleHardWord: (wordId: string) => void;
+    isHardWord: (word: JapaneseWord) => boolean;
+    toggleHardWord: (word: JapaneseWord) => void;
 }
 
 export const HardWordsContext = createContext<HardWordsContextType | undefined>(undefined);
