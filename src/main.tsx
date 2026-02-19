@@ -7,6 +7,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import BagPage from './pages/BagPage.tsx';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { GameContextProvider } from './context/GameContext';
+import { HardWordsProvider } from './context/HardWordsContext';
 
 const router = createBrowserRouter([
     {
@@ -34,10 +35,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <GameSettingsProvider>
-            <GameContextProvider>
-                <RouterProvider router={router} />
-            </GameContextProvider>
-        </GameSettingsProvider>
+        <HardWordsProvider>
+            <GameSettingsProvider>
+                <GameContextProvider>
+                    <RouterProvider router={router} />
+                </GameContextProvider>
+            </GameSettingsProvider>
+        </HardWordsProvider>
     </StrictMode>,
 );
