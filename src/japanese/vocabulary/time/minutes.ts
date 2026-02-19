@@ -1,90 +1,6 @@
-import type { JapaneseWord } from '../types';
+import type { JapaneseWord } from '../../types';
 
-export const time: JapaneseWord[] = [
-    {
-        type: 'noun',
-        en: "1 o'clock",
-        pl: 'Pierwsza godzina',
-        jp: '一時',
-        jp_pronunciation: 'いちじ',
-    },
-    {
-        type: 'noun',
-        en: "2 o'clock",
-        pl: 'Druga godzina',
-        jp: '二時',
-        jp_pronunciation: 'にじ',
-    },
-    {
-        type: 'noun',
-        en: "3 o'clock",
-        pl: 'Trzecia godzina',
-        jp: '三時',
-        jp_pronunciation: 'さんじ',
-    },
-    {
-        type: 'noun',
-        en: "4 o'clock",
-        pl: 'Czwarta godzina',
-        jp: '四時',
-        jp_pronunciation: 'よじ',
-    },
-    {
-        type: 'noun',
-        en: "5 o'clock",
-        pl: 'Piąta godzina',
-        jp: '五時',
-        jp_pronunciation: 'ごじ',
-    },
-    {
-        type: 'noun',
-        en: "6 o'clock",
-        pl: 'Szósta godzina',
-        jp: '六時',
-        jp_pronunciation: 'ろくじ',
-    },
-    {
-        type: 'noun',
-        en: "7 o'clock",
-        pl: 'Siódma godzina',
-        jp: '七時',
-        jp_pronunciation: 'しちじ',
-    },
-    {
-        type: 'noun',
-        en: "8 o'clock",
-        pl: 'Ósma godzina',
-        jp: '八時',
-        jp_pronunciation: 'はちじ',
-    },
-    {
-        type: 'noun',
-        en: "9 o'clock",
-        pl: 'Dziewiąta godzina',
-        jp: '九時',
-        jp_pronunciation: 'くじ',
-    },
-    {
-        type: 'noun',
-        en: "10 o'clock",
-        pl: 'Dziesiąta godzina',
-        jp: '十時',
-        jp_pronunciation: 'じゅうじ',
-    },
-    {
-        type: 'noun',
-        en: "11 o'clock",
-        pl: 'Jedenasta godzina',
-        jp: '十一時',
-        jp_pronunciation: 'じゅういちじ',
-    },
-    {
-        type: 'noun',
-        en: "12 o'clock",
-        pl: 'Dwunasta godzina',
-        jp: '十二時',
-        jp_pronunciation: 'じゅうにじ',
-    },
+export const minutes: JapaneseWord[] = [
     {
         type: 'noun',
         en: 'One minute',
@@ -189,12 +105,5 @@ export const time: JapaneseWord[] = [
         pl: 'Minuta',
         jp: '分',
         jp_pronunciation: 'ふん',
-    },
-    {
-        type: 'suffix',
-        en: 'Hour',
-        pl: 'Godzina',
-        jp: '時',
-        jp_pronunciation: 'じ',
     },
 ];
