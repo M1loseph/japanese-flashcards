@@ -52,6 +52,7 @@ import {
     sakura2_6Bag,
     yearsBag,
     daysOfMonthBag,
+    genki5Bag,
 } from '../japanese';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -71,7 +72,7 @@ const MainPage: FC = () => {
     const groupedBags: Record<string, WordBag[]> = {
         'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, daysOfMonthBag, yearsBag],
         'Essentials 📌': [familyBag, numbersBag, countingThingsBag, directionsBag],
-        'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag, genki4Bag],
+        'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag, genki4Bag, genki5Bag],
         'Classes 🎓': [
             sakura1_1Bag,
             sakura1_2Bag,

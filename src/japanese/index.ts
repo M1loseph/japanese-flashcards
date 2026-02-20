@@ -49,6 +49,7 @@ import { sakura_2_5 } from './vocabulary/sakura/trimester_2/sakura_5.ts';
 import { sakura_2_6 } from './vocabulary/sakura/trimester_2/sakura_6.ts';
 import { daysOfMonth } from './vocabulary/time/daysOfMonth.ts';
 import { years } from './vocabulary/time/years.ts';
+import { genki_5 } from './vocabulary/genki/genki_5.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -226,6 +227,12 @@ export const genki4Bag: WordBag = {
     words: genki_4,
 };
 
+export const genki5Bag: WordBag = {
+    id: '9f296182-f313-4986-9486-f21c55cbb608',
+    name: 'Genki #5',
+    words: genki_5,
+};
+
 export const sakura1_1Bag: WordBag = {
     id: '63ac3538-65e8-46a3-a248-a2a7560cc046',
     name: 'Sakura #1.1',
@@ -382,6 +389,7 @@ const availableWordBags: WordBag[] = [
     genki2Bag,
     genki3Bag,
     genki4Bag,
+    genki5Bag,
     sakura1_1Bag,
     sakura1_2Bag,
     sakura1_3Bag,
