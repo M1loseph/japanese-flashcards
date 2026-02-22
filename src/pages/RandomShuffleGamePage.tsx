@@ -1,17 +1,15 @@
-import { type FC, useEffect, useMemo, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import Flashcard from '../components/Flashcard.tsx';
 import ProgressBar from '../components/ProgressBar.tsx';
-import { Navigate, useNavigate } from 'react-router';
+import { Navigate } from 'react-router';
 import { usePreventAccidentalLeave } from '../hooks/usePreventAccidentalLeave.ts';
-import { useGameContext } from '../context/GameContext';
-import { shuffleArrayInPlace } from '../utils.ts';
+import { useGameContext } from '../context/GameContext/index.ts';
 import type { FlashcardSession } from '../types/FlashcardSession.ts';
 import { FlashcardButtons } from '../components/FlashcardButtons.tsx';
 import { FixedSizePage } from './common/FixedSizePage.tsx';
 
 const RandomShuffleGamePage: FC = () => {
-    const navigate = useNavigate();
-    const { gameState, setGameState, clearGame } = useGameContext();
+    const { gameState, setGameState } = useGameContext();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
 
@@ -24,11 +22,6 @@ const RandomShuffleGamePage: FC = () => {
         return () => clearInterval(interval);
     }, [gameState]);
 
-    const wrongAnswers = useMemo(() => {
-        if (!gameState) return [];
-        return gameState.flashcards.filter((card) => card.answered && !card.correct);
-    }, [gameState]);
-
     const gameFinished = gameState ? gameState.currentFlashcardIndex === gameState.flashcards.length : false;
 
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
@@ -37,40 +30,8 @@ const RandomShuffleGamePage: FC = () => {
         return <Navigate to="/" replace />;
     }
 
-    const prepareSetForRepeat = () => {
-        const newFlashcards = wrongAnswers.map((card) => ({ ...card, answered: false }));
-        shuffleArrayInPlace(newFlashcards);
-
-        setGameState({
-            ...gameState,
-            flashcards: newFlashcards,
-            currentFlashcardIndex: 0,
-        });
-    };
-
-    const handleFinish = () => {
-        clearGame();
-        navigate('/');
-    };
-
     if (gameFinished) {
-        return (
-            <FixedSizePage>
-                <div className="pt-12 h-full flex flex-col items-center space-y-6">
-                    <h2 className="text-3xl font-bold">Congratulations, you finished!</h2>
-                    <div className="flex gap-4">
-                        {wrongAnswers.length !== 0 && (
-                            <button className="btn btn-success btn-lg" onClick={prepareSetForRepeat}>
-                                Repeat mistakes ({wrongAnswers.length})
-                            </button>
-                        )}
-                        <button className="btn btn-lg" onClick={handleFinish}>
-                            Go home
-                        </button>
-                    </div>
-                </div>
-            </FixedSizePage>
-        );
+        return <Navigate to="/game/summary" />;
     }
 
     const card = gameState.flashcards[gameState.currentFlashcardIndex];
