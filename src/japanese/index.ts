@@ -1,5 +1,5 @@
 import { numbers } from './vocabulary/numbers.ts';
-import { countingThings } from './vocabulary/countingThings.ts';
+import { countingThings } from './counting/countingThings.ts';
 import { type WordBag } from './types.ts';
 import { week } from './vocabulary/time/week.ts';
 import { family } from './vocabulary/family.ts';
@@ -50,6 +50,8 @@ import { sakura_2_6 } from './vocabulary/sakura/trimester_2/sakura_6.ts';
 import { daysOfMonth } from './vocabulary/time/daysOfMonth.ts';
 import { years } from './vocabulary/time/years.ts';
 import { genki_5 } from './vocabulary/genki/genki_5.ts';
+import { countingFloors } from './counting/countingFloors.ts';
+import { duolingo_12 } from './vocabulary/duolingo/duolingo_12.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -69,6 +71,12 @@ export const countingThingsBag: WordBag = {
     id: 'f1f12e01-87cf-437d-b67f-696a17be41d5',
     name: 'Counting Things',
     words: countingThings,
+};
+
+export const countingFloorsBag: WordBag = {
+    id: 'ea053297-9592-45fc-be6e-6a48da0980d1',
+    name: 'Counting Floors',
+    words: countingFloors,
 };
 
 export const weekBag: WordBag = {
@@ -189,6 +197,12 @@ export const duolingo11Bag: WordBag = {
     id: '1999231f-b001-4608-aeae-d6670eeef340',
     name: 'Duolingo #11',
     words: duolingo_11,
+};
+
+export const duolingo12Bag: WordBag = {
+    id: '5dda1abf-a337-4591-8e04-aa5c2f1b20fb',
+    name: 'Duolingo #12',
+    words: duolingo_12,
 };
 
 export const genki0Bag: WordBag = {
@@ -363,6 +377,7 @@ const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
     countingThingsBag,
+    countingFloorsBag,
     weekBag,
     hoursBag,
     minutesBag,
@@ -381,6 +396,7 @@ const availableWordBags: WordBag[] = [
     duolingo9Bag,
     duolingo10Bag,
     duolingo11Bag,
+    duolingo12Bag,
     countriesEUBag,
     countriesAsiaBag,
     genki0Bag,
