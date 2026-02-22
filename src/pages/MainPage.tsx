@@ -53,6 +53,8 @@ import {
     yearsBag,
     daysOfMonthBag,
     genki5Bag,
+    countingFloorsBag,
+    duolingo12Bag,
 } from '../japanese';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { CategorySection } from '../components/CategorySection';
@@ -71,7 +73,7 @@ const MainPage: FC = () => {
 
     const groupedBags: Record<string, WordBag[]> = {
         'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, daysOfMonthBag, yearsBag],
-        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, directionsBag],
+        'Essentials 📌': [familyBag, numbersBag, countingThingsBag, countingFloorsBag, directionsBag],
         'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag, genki4Bag, genki5Bag],
         'Classes 🎓': [
             sakura1_1Bag,
@@ -108,6 +110,7 @@ const MainPage: FC = () => {
             duolingo9Bag,
             duolingo10Bag,
             duolingo11Bag,
+            duolingo12Bag,
         ],
         'Geography 🌍 🌎 🌏': [countriesEUBag, countriesAsiaBag],
     };
