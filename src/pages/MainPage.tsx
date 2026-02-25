@@ -153,6 +153,7 @@ const MainPage: FC = () => {
 
         setGameState({
             version: 1,
+            type: 'in-progress',
             initialWordBags: wordBagNames,
             flashcards: newFlashcards,
             gameStartTimeMs: Date.now(),
@@ -190,13 +191,13 @@ const MainPage: FC = () => {
                         </div>
                     </section>
                 )}
-                <section>
+                <section className="mb-6">
                     <h2 className="text-2xl font-bold mb-6 text-center">1. Choose Your Language</h2>
                     <LanguageSelector selectedLanguage={selectedLanguage} onSelect={setSelectedLanguage} />
                 </section>
 
                 <section>
-                    <h2 className="text-2xl font-bold mb-6 text-center">2. Select Content</h2>
+                    <h2 className="text-2xl font-bold text-center">2. Select Content</h2>
                     <div className="space-y-2">
                         {Object.entries(groupedBags).map(
                             ([category, bags]) =>

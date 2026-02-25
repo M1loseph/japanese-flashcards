@@ -8,6 +8,7 @@ import BagPage from './pages/BagPage.tsx';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { GameContextProvider } from './context/GameContext';
 import { HardWordsProvider } from './context/HardWordsContext';
+import SummaryPage from './pages/SummaryPage.tsx';
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: '/game/shuffle',
                 element: <RandomShuffleGamePage />,
+            },
+            {
+                path: '/game/summary',
+                element: <SummaryPage />,
             },
             {
                 path: '/bags/:bagId',
