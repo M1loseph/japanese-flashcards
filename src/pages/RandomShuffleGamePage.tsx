@@ -1,7 +1,7 @@
 import { type FC, useEffect, useState } from 'react';
 import Flashcard from '../components/Flashcard.tsx';
 import ProgressBar from '../components/ProgressBar.tsx';
-import { Navigate } from 'react-router';
+import { Navigate, useNavigate } from 'react-router';
 import { usePreventAccidentalLeave } from '../hooks/usePreventAccidentalLeave.ts';
 import { useGameContext } from '../context/GameContext/index.ts';
 import type { FlashcardSession } from '../types/FlashcardSession.ts';
@@ -12,6 +12,7 @@ const RandomShuffleGamePage: FC = () => {
     const { gameState, setGameState } = useGameContext();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!gameState) return;
@@ -26,12 +27,18 @@ const RandomShuffleGamePage: FC = () => {
 
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
+    useEffect(() => {
+        if (gameFinished) {
+            navigate('/game/summary');
+        }
+    }, [gameFinished, navigate]);
+
     if (!gameState) {
         return <Navigate to="/" replace />;
     }
 
     if (gameFinished) {
-        return <Navigate to="/game/summary" />;
+        return null;
     }
 
     const card = gameState.flashcards[gameState.currentFlashcardIndex];
