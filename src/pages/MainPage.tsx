@@ -197,7 +197,7 @@ const MainPage: FC = () => {
                 </section>
 
                 <section>
-                    <h2 className="text-2xl font-bold text-center">2. Select Content</h2>
+                    <h2 className="text-2xl font-bold mb-6 text-center">2. Select Content</h2>
                     <div className="space-y-2">
                         {Object.entries(groupedBags).map(
                             ([category, bags]) =>
