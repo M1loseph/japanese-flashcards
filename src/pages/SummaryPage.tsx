@@ -18,15 +18,13 @@ const SummaryPage: FC = () => {
     const navigate = useNavigate();
     const { gameState, setGameState, clearGame } = useGameContext();
 
-    const gameFinished = gameState ? gameState.currentFlashcardIndex === gameState.flashcards.length : false;
-
     const wrongAnswers = useMemo(() => {
         if (!gameState) return [];
         return gameState.flashcards.filter((card) => card.answered && !card.correct);
     }, [gameState]);
 
     const stats: SessionStats = useMemo(() => {
-        if (!gameState)
+        if (!gameState || gameState.type !== 'finished') {
             return {
                 totalCards: 0,
                 accuracy: 0,
@@ -34,6 +32,7 @@ const SummaryPage: FC = () => {
                 accuracyColor: 'text-success',
                 elapsedTime: '',
             };
+        }
 
         const totalCards = gameState.flashcards.length;
         const correctCards = gameState.flashcards.filter((card) => card.answered && card.correct).length;
@@ -42,7 +41,7 @@ const SummaryPage: FC = () => {
         const accuracyLabel = accuracy >= 90 ? 'High' : accuracy >= 70 ? 'Medium' : 'Low';
         const accuracyColor = accuracy >= 90 ? 'text-success' : accuracy >= 70 ? 'text-warning' : 'text-error';
 
-        const elapsedMs = Date.now() - gameState.gameStartTimeMs;
+        const elapsedMs = gameState.gameEndTimeMs - gameState.gameStartTimeMs;
         const totalSeconds = Math.floor(elapsedMs / 1000);
         const hours = Math.floor(totalSeconds / 3600);
         const minutes = Math.floor((totalSeconds % 3600) / 60);
@@ -61,7 +60,7 @@ const SummaryPage: FC = () => {
         return <Navigate to="/" replace />;
     }
 
-    if (!gameFinished) {
+    if (gameState.type !== 'finished') {
         return <Navigate to="/game/shuffle" replace />;
     }
 
@@ -72,7 +71,11 @@ const SummaryPage: FC = () => {
         shuffleArrayInPlace(newFlashcards);
 
         setGameState({
-            ...gameState,
+            version: gameState.version,
+            type: 'in-progress',
+            selectedLanguage: gameState.selectedLanguage,
+            initialWordBags: gameState.initialWordBags,
+            gameStartTimeMs: Date.now(),
             flashcards: newFlashcards,
             currentFlashcardIndex: 0,
         });

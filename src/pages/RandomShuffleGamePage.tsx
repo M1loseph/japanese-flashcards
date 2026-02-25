@@ -22,7 +22,7 @@ const RandomShuffleGamePage: FC = () => {
         return () => clearInterval(interval);
     }, [gameState]);
 
-    const gameFinished = gameState ? gameState.currentFlashcardIndex === gameState.flashcards.length : false;
+    const gameFinished = gameState?.type === 'finished';
 
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
@@ -42,14 +42,22 @@ const RandomShuffleGamePage: FC = () => {
         return flashCardsCopy;
     };
 
-    const handleCorrect = () => {
+    const proceedToNextCard = (correct: boolean) => {
         const answeredCard = {
             ...card,
             answered: true,
-            correct: true,
+            correct: correct,
         };
         const updatedCards = replaceCard(answeredCard);
-
+        if (gameState.currentFlashcardIndex === gameState.flashcards.length - 1) {
+            setGameState({
+                ...gameState,
+                flashcards: updatedCards,
+                type: 'finished',
+                gameEndTimeMs: Date.now(),
+            });
+            return;
+        }
         setGameState({
             ...gameState,
             flashcards: updatedCards,
@@ -57,19 +65,12 @@ const RandomShuffleGamePage: FC = () => {
         });
     };
 
-    const handleMistake = () => {
-        const answeredCard = {
-            ...card,
-            answered: true,
-            correct: false,
-        };
-        const updatedCards = replaceCard(answeredCard);
+    const handleCorrect = () => {
+        proceedToNextCard(true);
+    };
 
-        setGameState({
-            ...gameState,
-            flashcards: updatedCards,
-            currentFlashcardIndex: gameState.currentFlashcardIndex + 1,
-        });
+    const handleMistake = () => {
+        proceedToNextCard(false);
     };
 
     const toggleAnswer = () => {
