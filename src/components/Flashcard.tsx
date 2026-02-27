@@ -3,8 +3,7 @@ import { type TranslationLanguage } from '../types/TranslationLanguage';
 import type { JapaneseWord } from '../japanese';
 import { Badges } from './Badges';
 import { FlashcardMainText } from './FlashcardMainText';
-import { useHardWords } from '../context/HardWordsContext';
-import { IconStar, IconStarFilled } from '@tabler/icons-react';
+import { HardWordIcon } from './HardWordIcon';
 
 interface DescriptionProps {
     showAnswer: boolean;
@@ -47,27 +46,13 @@ interface FlashcardProps {
 
 const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, showAnswer }) => {
     const question: string = card[selectedLanguage];
-    const { isHardWord, toggleHardWord } = useHardWords();
-    const isHard = isHardWord(card);
-
-    const handleToggleHardWord = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-        toggleHardWord(card);
-    };
 
     return (
         <div className="flex-1 min-h-0 flex flex-col lg:flex-row rounded-xl bg-base-100 shadow-2xl border border-base-300">
             <div className="flex-1 flex flex-col p-5">
-                <div className="flex items-center">
+                <div className="flex items-center justify-between">
                     <Badges card={card} showAnswer={showAnswer} />
-                    <div className="grow" />
-                    <button className="btn btn-ghost btn-circle z-10" onClick={handleToggleHardWord}>
-                        {isHard ? (
-                            <IconStarFilled className="text-yellow-500" />
-                        ) : (
-                            <IconStar className="text-base-content/30" />
-                        )}
-                    </button>
+                    <HardWordIcon word={card} />
                 </div>
                 <div className="grow flex flex-col justify-center items-stretch">
                     <FlashcardMainText

@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useState, type FC } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import { findBagById } from '../japanese';
+import { findBagById } from '../../japanese';
 import { IconZoom } from '@tabler/icons-react';
 import { toRomaji } from 'wanakana';
-import { Badges } from '../components/Badges';
-import { TextWithJishoLinks } from '../components/TextWithJishoLinks';
-import { useGameSettingsContext } from '../context/GameStateContext';
-import { ScrollablePage } from './common/ScrollablePage';
+import { useGameSettingsContext } from '../../context/GameStateContext';
+import { ScrollablePage } from '../common/ScrollablePage';
+import { Word } from './Word';
 
 const BagPage: FC = () => {
     const { selectedLanguage } = useGameSettingsContext();
@@ -16,6 +15,7 @@ const BagPage: FC = () => {
         if (!bagId) return undefined;
         return findBagById(bagId);
     }, [bagId]);
+
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }, []);
@@ -23,6 +23,7 @@ const BagPage: FC = () => {
     if (!bag) {
         return <Navigate to="/" replace />;
     }
+
     const words = bag.words.filter((word) => {
         if (!searchText) return true;
         const wordRomaji = toRomaji(word.jp_pronunciation || word.jp);
@@ -30,9 +31,11 @@ const BagPage: FC = () => {
         if (word[selectedLanguage].toLocaleLowerCase().includes(searchText)) return true;
         return false;
     });
+
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchText(e.target.value.toLowerCase());
     };
+
     return (
         <ScrollablePage>
             <div className="p-2 grow">
@@ -54,19 +57,7 @@ const BagPage: FC = () => {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 pb-12">
                     {words.map((word) => (
-                        <div key={word.jp + word.en} className="card card-xs bg-base-100 shadow-md">
-                            <div className="card-body">
-                                <h3 className="text-lg text-primary font-semibold text-center w-full">
-                                    <TextWithJishoLinks text={word.jp} />
-                                </h3>
-                                <hr className="my-1 border-slate-300 border-dashed" />
-                                {word.jp_pronunciation && (
-                                    <p className="text-sm text-semibold">{word.jp_pronunciation}</p>
-                                )}
-                                <p className="text-sm text-slate-600 italic">{word[selectedLanguage]}</p>
-                                <Badges size="sm" card={word} showAnswer />
-                            </div>
-                        </div>
+                        <Word key={word.jp + word.en} word={word} />
                     ))}
                 </div>
             </div>
