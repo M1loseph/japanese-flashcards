@@ -4,7 +4,7 @@ import './index.css';
 import MainPage from './pages/MainPage.tsx';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage.tsx';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import BagPage from './pages/BagPage.tsx';
+import BagPage from './pages/BagPage';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { GameContextProvider } from './context/GameContext';
 import { HardWordsProvider } from './context/HardWordsContext';
