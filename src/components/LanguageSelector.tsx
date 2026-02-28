@@ -20,7 +20,7 @@ export const LanguageSelector: FC<LanguageSelectorProps> = ({ selectedLanguage, 
           }
         `}
             >
-                <span className="text-4xl group-hover:scale-110 transition-transform duration-200">🇵🇱</span>
+                <span className="text-2xl group-hover:scale-110 transition-transform duration-200">🇵🇱</span>
                 <span
                     className={`text-lg font-medium ${selectedLanguage === TranslationLanguages.POLISH ? 'text-primary' : 'text-slate-600'}`}
                 >
@@ -39,7 +39,7 @@ export const LanguageSelector: FC<LanguageSelectorProps> = ({ selectedLanguage, 
           }
         `}
             >
-                <span className="text-4xl group-hover:scale-110 transition-transform duration-200">🇬🇧</span>
+                <span className="text-2xl group-hover:scale-110 transition-transform duration-200">🇬🇧</span>
                 <span
                     className={`text-lg font-medium ${selectedLanguage === TranslationLanguages.ENGLISH ? 'text-primary' : 'text-slate-600'}`}
                 >

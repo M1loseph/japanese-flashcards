@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { type WordBag } from '../japanese/types';
+import { type WordBag } from '../../japanese/types';
 import { IconZoom } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 

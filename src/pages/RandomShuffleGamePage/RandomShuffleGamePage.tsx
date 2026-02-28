@@ -1,17 +1,20 @@
 import { type FC, useEffect, useState } from 'react';
-import Flashcard from '../components/Flashcard.tsx';
-import ProgressBar from '../components/ProgressBar.tsx';
+import Flashcard from '../../components/Flashcard.tsx';
+import ProgressBar from '../../components/ProgressBar.tsx';
 import { Navigate, useNavigate } from 'react-router';
-import { usePreventAccidentalLeave } from '../hooks/usePreventAccidentalLeave.ts';
-import { useGameContext } from '../context/GameContext/index.ts';
-import type { FlashcardSession } from '../types/FlashcardSession.ts';
-import { FlashcardButtons } from '../components/FlashcardButtons.tsx';
-import { FixedSizePage } from './common/FixedSizePage.tsx';
+import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave.ts';
+import { useGameContext } from '../../context/GameContext/index.ts';
+import type { FlashcardSession } from '../../types/FlashcardSession.ts';
+import { FlashcardButtons } from '../../components/FlashcardButtons.tsx';
+import { FixedSizePage } from '../common/FixedSizePage.tsx';
+import { IconSettings } from '@tabler/icons-react';
+import { GameSettingsModal } from './GameSettingsModal.tsx';
 
 const RandomShuffleGamePage: FC = () => {
-    const { gameState, setGameState } = useGameContext();
+    const { gameState, setGameState, updateLanguage } = useGameContext();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
+    const [showSettings, setShowSettings] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -80,22 +83,34 @@ const RandomShuffleGamePage: FC = () => {
         proceedToNextCard(false);
     };
 
-    const toggleAnswer = () => {
+    const handleToggleAnswer = () => {
         setShowAnswer(!showAnswer);
     };
 
-    const correctPressed = () => {
+    const handleCorrectPressed = () => {
         setShowAnswer(false);
         handleCorrect();
     };
 
-    const mistakePressed = () => {
+    const handleMistakePressed = () => {
         setShowAnswer(false);
         handleMistake();
     };
 
+    const handleOpenSettings = () => {
+        setShowSettings(true);
+    };
+
+    const headerSettings = (
+        <div className="flex justify-end items-center">
+            <button className="btn btn-ghost btn-circle" onClick={handleOpenSettings}>
+                <IconSettings />
+            </button>
+        </div>
+    );
+
     return (
-        <FixedSizePage>
+        <FixedSizePage additionalHeaderComponents={headerSettings}>
             <div className="h-full flex flex-col items-stretch space-y-6">
                 <ProgressBar
                     wordBags={gameState.initialWordBags}
@@ -106,9 +121,9 @@ const RandomShuffleGamePage: FC = () => {
                 <Flashcard card={card.word} selectedLanguage={gameState.selectedLanguage} showAnswer={showAnswer} />
                 <FlashcardButtons
                     showAnswer={showAnswer}
-                    toggleAnswer={toggleAnswer}
-                    correctPressed={correctPressed}
-                    mistakePressed={mistakePressed}
+                    toggleAnswer={handleToggleAnswer}
+                    correctPressed={handleCorrectPressed}
+                    mistakePressed={handleMistakePressed}
                 />
                 <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
                     <div className="modal-box">
@@ -129,6 +144,12 @@ const RandomShuffleGamePage: FC = () => {
                     <div className="modal-backdrop" onClick={cancelLeave}></div>
                 </dialog>
             </div>
+            <GameSettingsModal
+                open={showSettings}
+                onClose={() => setShowSettings(false)}
+                currentLanguage={gameState.selectedLanguage}
+                updateLanguage={updateLanguage}
+            />
         </FixedSizePage>
     );
 };

@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState, type FC, type ReactNode } from 'react';
-import { GameContext } from './GameContext.ts';
+import { GameContext, type SelectedJapaneseWord } from './GameContext.ts';
 import { GameStateSchema, type GameState } from '../../types/GameState.ts';
+import { shuffleArrayInPlace } from '../../utils.ts';
+import type { TranslationLanguage } from '../../types/TranslationLanguage.ts';
 
 const RANDOM_SHUFFLE_GAME_STATE_KEY = 'randomShuffleGameState';
 
@@ -17,6 +19,19 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         }
     });
 
+    const updateLanguage = useMemo(
+        () => (language: TranslationLanguage) => {
+            setGameState((prev) => {
+                if (!prev) return undefined;
+                return {
+                    ...prev,
+                    selectedLanguage: language,
+                };
+            });
+        },
+        [setGameState],
+    );
+
     useEffect(() => {
         if (gameState) {
             localStorage.setItem(RANDOM_SHUFFLE_GAME_STATE_KEY, JSON.stringify(gameState));
@@ -24,12 +39,37 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
     }, [gameState]);
 
     const gameContextValue = useMemo(() => {
+        const createNewGame = (selectedWords: SelectedJapaneseWord[], selectedLanguage: TranslationLanguage) => {
+            shuffleArrayInPlace(selectedWords);
+            const initialWordBags = Array.from(new Set(selectedWords.map((w) => w.wordBag)));
+
+            const flashcards = selectedWords.map(({ word, wordBag }) => ({
+                word,
+                wordBag,
+                answered: false,
+                correct: false,
+            }));
+
+            const newGameState: GameState = {
+                version: 1,
+                type: 'in-progress',
+                initialWordBags,
+                flashcards,
+                currentFlashcardIndex: 0,
+                selectedLanguage,
+                gameStartTimeMs: Date.now(),
+            };
+
+            setGameState(newGameState);
+        };
+
         const clearGame = () => {
             localStorage.removeItem(RANDOM_SHUFFLE_GAME_STATE_KEY);
             setGameState(undefined);
         };
-        return { gameState, setGameState, clearGame };
-    }, [gameState, setGameState]);
+
+        return { gameState, setGameState, clearGame, createNewGame, updateLanguage };
+    }, [gameState, updateLanguage, setGameState]);
 
     return <GameContext.Provider value={gameContextValue}>{children}</GameContext.Provider>;
 };

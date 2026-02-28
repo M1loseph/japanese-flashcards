@@ -1,7 +1,7 @@
 import { useMemo, type FC } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { useGameContext } from '../context/GameContext';
-import { shuffleArrayInPlace } from '../utils.ts';
+import { shuffleArray } from '../utils.ts';
 import { FixedSizePage } from './common/FixedSizePage.tsx';
 import { IconHome, IconRepeat } from '@tabler/icons-react';
 import { PaperPlaneIcon } from '../assets/PaperPlaneIcon.tsx';
@@ -68,7 +68,6 @@ const SummaryPage: FC = () => {
         const wrongAnswers = gameState.flashcards.filter((card) => card.answered && !card.correct);
 
         const newFlashcards = wrongAnswers.map((card) => ({ ...card, answered: false }));
-        shuffleArrayInPlace(newFlashcards);
 
         setGameState({
             version: gameState.version,
@@ -76,7 +75,7 @@ const SummaryPage: FC = () => {
             selectedLanguage: gameState.selectedLanguage,
             initialWordBags: gameState.initialWordBags,
             gameStartTimeMs: Date.now(),
-            flashcards: newFlashcards,
+            flashcards: shuffleArray(newFlashcards),
             currentFlashcardIndex: 0,
         });
         navigate('/game/shuffle');
