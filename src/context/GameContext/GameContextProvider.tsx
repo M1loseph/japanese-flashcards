@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type FC, type ReactNode } from 'react';
 import { GameContext, type SelectedJapaneseWord } from './GameContext.ts';
 import { GameStateSchema, type GameState } from '../../types/GameState.ts';
-import { shuffleArrayInPlace } from '../../utils.ts';
+import { shuffleArray } from '../../utils.ts';
 import type { TranslationLanguage } from '../../types/TranslationLanguage.ts';
 
 const RANDOM_SHUFFLE_GAME_STATE_KEY = 'randomShuffleGameState';
@@ -40,10 +40,9 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
 
     const gameContextValue = useMemo(() => {
         const createNewGame = (selectedWords: SelectedJapaneseWord[], selectedLanguage: TranslationLanguage) => {
-            shuffleArrayInPlace(selectedWords);
             const initialWordBags = Array.from(new Set(selectedWords.map((w) => w.wordBag)));
 
-            const flashcards = selectedWords.map(({ word, wordBag }) => ({
+            const flashcards = shuffleArray(selectedWords).map(({ word, wordBag }) => ({
                 word,
                 wordBag,
                 answered: false,
