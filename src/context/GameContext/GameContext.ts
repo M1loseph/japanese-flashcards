@@ -10,8 +10,9 @@ export interface SelectedJapaneseWord {
 
 interface GameContextType {
     gameState: GameState | undefined;
-    setGameState: (state: GameState) => void;
     clearGame: () => void;
+    markCurrentFlashcard: (correct: boolean) => void;
+    createNewGameFromWrongAnswers: () => void;
     createNewGame: (flashcards: SelectedJapaneseWord[], selectedLanguage: TranslationLanguage) => void;
     updateLanguage: (language: TranslationLanguage) => void;
 }
