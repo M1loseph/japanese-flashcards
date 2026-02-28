@@ -1,4 +1,4 @@
-import type { JapaneseWord } from '../types.ts';
+import type { JapaneseWord } from '../../types.ts';
 
 export const countingThings: JapaneseWord[] = [
     {
@@ -62,8 +62,8 @@ export const countingThings: JapaneseWord[] = [
         jp: 'とお',
     },
     {
-        type: 'numeral',
-        en: 'How many ramens do you want?',
+        type: 'phrase',
+        en: 'How many ramen do you want?',
         pl: 'Ile ramenów chcesz?',
         jp: 'ラーメンがいくつほしいですか',
     },
