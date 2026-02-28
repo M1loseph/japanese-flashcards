@@ -4,14 +4,13 @@ import ProgressBar from '../../components/ProgressBar.tsx';
 import { Navigate, useNavigate } from 'react-router';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave.ts';
 import { useGameContext } from '../../context/GameContext/index.ts';
-import type { FlashcardSession } from '../../types/FlashcardSession.ts';
 import { FlashcardButtons } from '../../components/FlashcardButtons.tsx';
 import { FixedSizePage } from '../common/FixedSizePage.tsx';
 import { IconSettings } from '@tabler/icons-react';
 import { GameSettingsModal } from './GameSettingsModal.tsx';
 
 const RandomShuffleGamePage: FC = () => {
-    const { gameState, setGameState, updateLanguage } = useGameContext();
+    const { gameState, updateLanguage, markCurrentFlashcard } = useGameContext();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -46,41 +45,12 @@ const RandomShuffleGamePage: FC = () => {
 
     const card = gameState.flashcards[gameState.currentFlashcardIndex];
 
-    const replaceCard = (newCard: FlashcardSession): FlashcardSession[] => {
-        const flashCardsCopy = [...gameState.flashcards];
-        flashCardsCopy[gameState.currentFlashcardIndex] = newCard;
-        return flashCardsCopy;
-    };
-
-    const proceedToNextCard = (correct: boolean) => {
-        const answeredCard = {
-            ...card,
-            answered: true,
-            correct: correct,
-        };
-        const updatedCards = replaceCard(answeredCard);
-        if (gameState.currentFlashcardIndex === gameState.flashcards.length - 1) {
-            setGameState({
-                ...gameState,
-                flashcards: updatedCards,
-                type: 'finished',
-                gameEndTimeMs: Date.now(),
-            });
-            return;
-        }
-        setGameState({
-            ...gameState,
-            flashcards: updatedCards,
-            currentFlashcardIndex: gameState.currentFlashcardIndex + 1,
-        });
-    };
-
     const handleCorrect = () => {
-        proceedToNextCard(true);
+        markCurrentFlashcard(true);
     };
 
     const handleMistake = () => {
-        proceedToNextCard(false);
+        markCurrentFlashcard(false);
     };
 
     const handleToggleAnswer = () => {

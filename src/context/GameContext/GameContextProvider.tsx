@@ -19,26 +19,13 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         }
     });
 
-    const updateLanguage = useMemo(
-        () => (language: TranslationLanguage) => {
-            setGameState((prev) => {
-                if (!prev) return undefined;
-                return {
-                    ...prev,
-                    selectedLanguage: language,
-                };
-            });
-        },
-        [setGameState],
-    );
-
     useEffect(() => {
         if (gameState) {
             localStorage.setItem(RANDOM_SHUFFLE_GAME_STATE_KEY, JSON.stringify(gameState));
         }
     }, [gameState]);
 
-    const gameContextValue = useMemo(() => {
+    const gameContextFunctions = useMemo(() => {
         const createNewGame = (selectedWords: SelectedJapaneseWord[], selectedLanguage: TranslationLanguage) => {
             const initialWordBags = Array.from(new Set(selectedWords.map((w) => w.wordBag)));
 
@@ -67,8 +54,75 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             setGameState(undefined);
         };
 
-        return { gameState, setGameState, clearGame, createNewGame, updateLanguage };
-    }, [gameState, updateLanguage, setGameState]);
+        const updateLanguage = (language: TranslationLanguage) => {
+            setGameState((prev) => {
+                if (!prev) throw new Error('Can only update language if the game is in progress');
+                return {
+                    ...prev,
+                    selectedLanguage: language,
+                };
+            });
+        };
 
-    return <GameContext.Provider value={gameContextValue}>{children}</GameContext.Provider>;
+        const markCurrentFlashcard = (correct: boolean) => {
+            setGameState((prev) => {
+                if (!prev || prev.type !== 'in-progress')
+                    throw new Error('Can only mark flashcards if the game is in progress');
+
+                const currentCard = prev.flashcards[prev.currentFlashcardIndex];
+                const updatedCard = { ...currentCard, answered: true, correct };
+                const updatedFlashcards = [...prev.flashcards];
+                updatedFlashcards[prev.currentFlashcardIndex] = updatedCard;
+
+                if (prev.currentFlashcardIndex === prev.flashcards.length - 1) {
+                    const { version, initialWordBags, selectedLanguage, gameStartTimeMs } = prev;
+                    return {
+                        version,
+                        type: 'finished',
+                        gameStartTimeMs,
+                        initialWordBags,
+                        selectedLanguage,
+                        flashcards: updatedFlashcards,
+                        gameEndTimeMs: Date.now(),
+                    };
+                }
+
+                return {
+                    ...prev,
+                    flashcards: updatedFlashcards,
+                    currentFlashcardIndex: prev.currentFlashcardIndex + 1,
+                };
+            });
+        };
+
+        const createNewGameFromWrongAnswers = () => {
+            setGameState((prev) => {
+                if (!prev || prev.type !== 'finished')
+                    throw new Error('Can only create new game from wrong answers if previous game is finished');
+
+                const wrongAnswers = prev.flashcards.filter((card) => card.answered && !card.correct);
+
+                if (wrongAnswers.length === 0) {
+                    throw new Error('No wrong answers to create a new game from');
+                }
+
+                const newFlashcards = shuffleArray(wrongAnswers.map((card) => ({ ...card, answered: false })));
+                const { version, initialWordBags, selectedLanguage } = prev;
+
+                return {
+                    version,
+                    type: 'in-progress',
+                    initialWordBags,
+                    selectedLanguage,
+                    currentFlashcardIndex: 0,
+                    flashcards: newFlashcards,
+                    gameStartTimeMs: Date.now(),
+                };
+            });
+        };
+
+        return { clearGame, createNewGame, updateLanguage, markCurrentFlashcard, createNewGameFromWrongAnswers };
+    }, []);
+
+    return <GameContext.Provider value={{ ...gameContextFunctions, gameState }}>{children}</GameContext.Provider>;
 };

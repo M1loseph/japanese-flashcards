@@ -1,7 +1,6 @@
 import { useMemo, type FC } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { useGameContext } from '../context/GameContext';
-import { shuffleArray } from '../utils.ts';
 import { FixedSizePage } from './common/FixedSizePage.tsx';
 import { IconHome, IconRepeat } from '@tabler/icons-react';
 import { PaperPlaneIcon } from '../assets/PaperPlaneIcon.tsx';
@@ -16,7 +15,7 @@ interface SessionStats {
 
 const SummaryPage: FC = () => {
     const navigate = useNavigate();
-    const { gameState, setGameState, clearGame } = useGameContext();
+    const { gameState, clearGame, createNewGameFromWrongAnswers } = useGameContext();
 
     const wrongAnswers = useMemo(() => {
         if (!gameState) return [];
@@ -65,19 +64,7 @@ const SummaryPage: FC = () => {
     }
 
     const prepareSetForRepeat = () => {
-        const wrongAnswers = gameState.flashcards.filter((card) => card.answered && !card.correct);
-
-        const newFlashcards = wrongAnswers.map((card) => ({ ...card, answered: false }));
-
-        setGameState({
-            version: gameState.version,
-            type: 'in-progress',
-            selectedLanguage: gameState.selectedLanguage,
-            initialWordBags: gameState.initialWordBags,
-            gameStartTimeMs: Date.now(),
-            flashcards: shuffleArray(newFlashcards),
-            currentFlashcardIndex: 0,
-        });
+        createNewGameFromWrongAnswers();
         navigate('/game/shuffle');
     };
 
