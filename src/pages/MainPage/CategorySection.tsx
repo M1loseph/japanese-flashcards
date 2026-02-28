@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react';
 import { IconChevronDown } from '@tabler/icons-react';
-import { type WordBag } from '../japanese/types';
+import { type WordBag } from '../../japanese/types';
 import { WordBagCard } from './WordBagCard';
 
 interface CategorySectionProps {

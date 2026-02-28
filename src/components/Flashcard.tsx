@@ -14,7 +14,7 @@ const Description: FC<DescriptionProps> = ({ showAnswer, card }) => {
     if (card.type === 'verb') {
         return (
             <div className={`flex flex-col items-stretch ${showAnswer ? '' : 'invisible'}`}>
-                <div className="text-md text-center text-base-content/60">Masu form</div>
+                <div className="text-center text-base-content/60">Masu form</div>
                 <div className="p-2 bg-base-300/50 rounded-lg flex justify-between items-center">
                     <span>{card.masu_form}</span>
                     <span className="text-xs text-base-content/60">Present</span>

@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import MainPage from './pages/MainPage.tsx';
-import RandomShuffleGamePage from './pages/RandomShuffleGamePage.tsx';
+import MainPage from './pages/MainPage';
+import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import BagPage from './pages/BagPage';
 import { GameSettingsProvider } from './context/GameStateContext';

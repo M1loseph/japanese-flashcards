@@ -45,7 +45,7 @@ const ProgressBar: FC<ProgressBarProps> = ({ wordBags, currentIndex, total, time
                 <div className="flex-1">
                     <span className="text-xl font-semibold text-primary">{progressPercentage}%</span>
                     <span className="ml-2 mr-2 text-sm">/</span>
-                    <span className="text-md font-medium">{wordBags.join(', ')}</span>
+                    <span className="font-medium">{wordBags.join(', ')}</span>
                 </div>
                 <Metadata
                     total={total}
