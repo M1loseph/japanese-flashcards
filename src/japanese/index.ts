@@ -1,5 +1,5 @@
 import { numbers } from './vocabulary/numbers.ts';
-import { countingThings } from './counting/countingThings.ts';
+import { countingThings } from './vocabulary/counting/countingThings.ts';
 import { type WordBag } from './types.ts';
 import { week } from './vocabulary/time/week.ts';
 import { family } from './vocabulary/family.ts';
@@ -50,8 +50,10 @@ import { sakura_2_6 } from './vocabulary/sakura/trimester_2/sakura_6.ts';
 import { daysOfMonth } from './vocabulary/time/daysOfMonth.ts';
 import { years } from './vocabulary/time/years.ts';
 import { genki_5 } from './vocabulary/genki/genki_5.ts';
-import { countingFloors } from './counting/countingFloors.ts';
+import { countingFloors } from './vocabulary/counting/countingFloors.ts';
 import { duolingo_12 } from './vocabulary/duolingo/duolingo_12.ts';
+import { countingThinObjects } from './vocabulary/counting/countingThinObjects.ts';
+import { countingLongCylindricalThings } from './vocabulary/counting/countingLongCylindricalThings.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -71,6 +73,18 @@ export const countingThingsBag: WordBag = {
     id: 'f1f12e01-87cf-437d-b67f-696a17be41d5',
     name: 'Counting Things',
     words: countingThings,
+};
+
+export const countingThinObjectsBag: WordBag = {
+    id: '03f1b394-7ca4-4f53-aff3-f94dfa1f5737',
+    name: 'Counting Thin Objects',
+    words: countingThinObjects,
+};
+
+export const countingLongCylindricalThingsBag: WordBag = {
+    id: '18a934d5-156a-4300-a2ca-f09ed5886797',
+    name: 'Counting Long Cylindrical Things',
+    words: countingLongCylindricalThings,
 };
 
 export const countingFloorsBag: WordBag = {
@@ -378,6 +392,8 @@ const availableWordBags: WordBag[] = [
     numbersBag,
     countingThingsBag,
     countingFloorsBag,
+    countingLongCylindricalThingsBag,
+    countingThinObjectsBag,
     weekBag,
     hoursBag,
     minutesBag,

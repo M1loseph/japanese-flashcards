@@ -69,4 +69,11 @@ export const sakura_2_6: JapaneseWord[] = [
         pl: 'Nie tutaj',
         jp: 'ここじゃない',
     },
+    {
+        type: 'noun',
+        en: 'Yen',
+        pl: 'Jen',
+        jp: '円',
+        jp_pronunciation: 'えん',
+    },
 ];
