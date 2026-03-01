@@ -333,4 +333,18 @@ export const sakura_2_7: JapaneseWord[] = [
         masu_form: '覆います (おおいます)',
         masen_form: '覆いません (おおいません)',
     },
+    {
+        type: 'phrase',
+        en: 'My favorite animal is a cow.',
+        pl: 'Moim ulubionym zwierzęciem jest krowa.',
+        jp: '私の好きな動物は牛です。',
+        jp_pronunciation: 'わたしのすきなどうぶつはうしです。',
+    },
+    {
+        type: 'phrase',
+        en: 'My least favorite food is pumpkin.',
+        pl: 'Moim najmniej ulubionym jedzeniem jest dynia.',
+        jp: '私の嫌いな食べ物はかぼちゃです。',
+        jp_pronunciation: 'わたしのきらいなたべものはかぼちゃです。',
+    },
 ];
