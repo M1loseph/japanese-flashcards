@@ -54,6 +54,7 @@ import { countingFloors } from './vocabulary/counting/countingFloors.ts';
 import { duolingo_12 } from './vocabulary/duolingo/duolingo_12.ts';
 import { countingThinObjects } from './vocabulary/counting/countingThinObjects.ts';
 import { countingLongCylindricalThings } from './vocabulary/counting/countingLongCylindricalThings.ts';
+import { sakura_2_7 } from './vocabulary/sakura/trimester_2/sakura_7.ts';
 
 export type { JapaneseWord, WordBag } from './types.ts';
 
@@ -387,6 +388,12 @@ export const sakura2_6Bag: WordBag = {
     words: sakura_2_6,
 };
 
+export const sakura2_7Bag: WordBag = {
+    id: '53da5382-b3a4-4444-9d9b-8df97fc08281',
+    name: 'Sakura #2.7',
+    words: sakura_2_7,
+};
+
 const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
@@ -443,6 +450,7 @@ const availableWordBags: WordBag[] = [
     sakura2_4Bag,
     sakura2_5Bag,
     sakura2_6Bag,
+    sakura2_7Bag,
 ];
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {
