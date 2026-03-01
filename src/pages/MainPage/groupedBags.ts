@@ -55,6 +55,7 @@ import {
     type WordBag,
     countingThinObjectsBag,
     countingLongCylindricalThingsBag,
+    sakura2_7Bag,
 } from '../../japanese';
 
 export const groupedBags: Record<string, WordBag[]> = {
@@ -84,6 +85,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         sakura2_4Bag,
         sakura2_5Bag,
         sakura2_6Bag,
+        sakura2_7Bag,
     ],
     'Apps 📱': [
         duolingo1Bag,
