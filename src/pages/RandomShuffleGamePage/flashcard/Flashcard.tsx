@@ -3,7 +3,7 @@ import { type TranslationLanguage } from '../../../types/TranslationLanguage';
 import type { TranslatedJapaneseText } from '../../../japanese';
 import { Badges } from '../../../components/Badges';
 import { FlashcardMainText } from './FlashcardMainText';
-import { HardWordIcon } from '../../../components/HardWordIcon';
+import { HardTextIcon } from '../../../components/HardTextIcon';
 import { Description } from './Description';
 
 interface FlashcardProps {
@@ -20,7 +20,7 @@ const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, showAns
             <div className="flex-1 flex flex-col p-5">
                 <div className="flex items-center justify-between">
                     <Badges card={card} showAnswer={showAnswer} />
-                    <HardWordIcon word={card} />
+                    <HardTextIcon word={card} />
                 </div>
                 <div className="grow flex flex-col justify-center items-stretch">
                     <FlashcardMainText question={question} answer={card.jp} showAnswer={showAnswer} />

@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import type { TranslatedJapaneseText } from '../../japanese/types';
-import { HardWordIcon } from '../../components/HardWordIcon';
+import { HardTextIcon } from '../../components/HardTextIcon';
 import { Badges } from '../../components/Badges';
 import { TextWithJishoLinks } from '../../components/TextWithJishoLinks';
 import { useGameSettingsContext } from '../../context/GameStateContext';
@@ -18,7 +18,7 @@ export const Word: FC<WordProps> = ({ word }) => {
             <div className="card-body">
                 <div className="flex flex-row items-center justify-between">
                     <Badges size="sm" card={word} showAnswer />
-                    <HardWordIcon size="sm" word={word} />
+                    <HardTextIcon size="sm" word={word} />
                 </div>
                 <h3 className="text-lg text-primary font-semibold text-center w-full">
                     <TextWithJishoLinks text={jp.text} />
