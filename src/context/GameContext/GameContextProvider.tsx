@@ -1,5 +1,5 @@
 import { useEffect, useState, type FC, type ReactNode } from 'react';
-import { GameContext, type SelectedJapaneseWord } from './GameContext.ts';
+import { GameContext, type SelectedTranslatedJapaneseText } from './GameContext.ts';
 import { GameStateSchema, type GameState } from '../../types/GameState.ts';
 import { shuffleArray } from '../../utils.ts';
 import type { TranslationLanguage } from '../../types/TranslationLanguage.ts';
@@ -25,7 +25,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         }
     }, [gameState]);
 
-    const createNewGame = (selectedWords: SelectedJapaneseWord[], selectedLanguage: TranslationLanguage) => {
+    const createNewGame = (selectedWords: SelectedTranslatedJapaneseText[], selectedLanguage: TranslationLanguage) => {
         const initialWordBags = Array.from(new Set(selectedWords.map((w) => w.wordBag)));
 
         const flashcards = shuffleArray(selectedWords).map(({ word, wordBag }) => ({

@@ -39,12 +39,12 @@ export const HardWordsProvider: FC<HardWordsProviderProps> = ({ children }) => {
 
     const value: HardWordsContextType = useMemo(() => {
         const isHardWord = (word: JapaneseWord) => {
-            const wordId = word.jp.word;
+            const wordId = word.jp.text;
             return hardWords.has(wordId);
         };
 
         const toggleHardWord = (word: JapaneseWord) => {
-            const wordId = word.jp.word;
+            const wordId = word.jp.text;
             setHardWords((prev) => {
                 const newSet = new Set(prev);
                 if (newSet.has(wordId)) {

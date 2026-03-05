@@ -1,10 +1,10 @@
 import { type FC, useEffect, useState } from 'react';
-import Flashcard from '../../components/Flashcard.tsx';
-import ProgressBar from '../../components/ProgressBar.tsx';
+import Flashcard from './flashcard/Flashcard.tsx';
+import ProgressBar from './flashcard/ProgressBar.tsx';
 import { Navigate, useNavigate } from 'react-router';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave.ts';
 import { useGameContext } from '../../context/GameContext/index.ts';
-import { FlashcardButtons } from '../../components/FlashcardButtons.tsx';
+import { FlashcardButtons } from './flashcard/FlashcardButtons.tsx';
 import { FixedSizePage } from '../common/FixedSizePage.tsx';
 import { IconSettings } from '@tabler/icons-react';
 import { GameSettingsModal } from './GameSettingsModal.tsx';
@@ -88,12 +88,7 @@ const RandomShuffleGamePage: FC = () => {
                     total={gameState.flashcards.length}
                     timeInSeconds={sessionTime}
                 />
-                <Flashcard
-                    card={card.word}
-                    selectedLanguage={gameState.selectedLanguage}
-                    showAnswer={showAnswer}
-                    simplifiedMode={gameState.simplifiedMode}
-                />
+                <Flashcard card={card.word} selectedLanguage={gameState.selectedLanguage} showAnswer={showAnswer} />
                 <FlashcardButtons
                     showAnswer={showAnswer}
                     toggleAnswer={handleToggleAnswer}

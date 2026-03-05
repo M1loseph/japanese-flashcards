@@ -1,8 +1,8 @@
 import * as z from 'zod';
-import { JapaneseWordSchema } from '../japanese/types';
+import { TranslatedJapaneseTextSchema } from '../japanese/types';
 
 export const FlashcardSessionSchema = z.object({
-    word: JapaneseWordSchema,
+    word: TranslatedJapaneseTextSchema,
     wordBag: z.string(),
     answered: z.boolean(),
     correct: z.boolean(),

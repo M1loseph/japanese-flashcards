@@ -1,46 +1,46 @@
-import type { JapaneseWord } from '../../types';
+import type { TranslatedJapaneseText } from '../../types';
 
-export const countriesAsia: JapaneseWord[] = [
+export const countriesAsia: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'China',
         pl: 'Chiny',
-        jp: { word: 'ちゅうごく' },
+        jp: { text: 'ちゅうごく' },
     },
     {
         type: 'noun',
         en: 'Japan',
         pl: 'Japonia',
-        jp: { word: '日本', pronunciation: 'にほん' },
+        jp: { text: '日本', pronunciation: 'にほん' },
     },
     {
         type: 'noun',
         en: 'Taiwan',
         pl: 'Tajwan',
-        jp: { word: 'たいわん' },
+        jp: { text: 'たいわん' },
     },
     {
         type: 'noun',
         en: 'India',
         pl: 'Indie',
-        jp: { word: 'インド' },
+        jp: { text: 'インド' },
     },
     {
         type: 'noun',
         en: 'South Korea',
         pl: 'Korea Południowa',
-        jp: { word: 'かんこく' },
+        jp: { text: 'かんこく' },
     },
     {
         type: 'noun',
         en: 'Vietnam',
         pl: 'Wietnam',
-        jp: { word: 'ベトナム' },
+        jp: { text: 'ベトナム' },
     },
     {
         type: 'noun',
         en: 'Malaysia',
         pl: 'Malezja',
-        jp: { word: 'マレーシア' },
+        jp: { text: 'マレーシア' },
     },
 ];

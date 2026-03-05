@@ -1,6 +1,11 @@
 import { type FC } from 'react';
 import { isKanji } from 'wanakana';
-import { type Adjective, type JapaneseWord, type Verb, type WordType } from '../japanese/types';
+import {
+    type Adjective,
+    type TranslatedJapaneseText,
+    type Verb,
+    type TranslatedJapaneseTextType,
+} from '../japanese/types';
 
 type BadgeMetadata = {
     color: string;
@@ -8,7 +13,7 @@ type BadgeMetadata = {
     show: boolean;
 };
 
-const createTypeBadge: (type?: WordType) => BadgeMetadata | undefined = (type) => {
+const createTypeBadge: (type?: TranslatedJapaneseTextType) => BadgeMetadata | undefined = (type) => {
     if (!type) return;
     let color: string;
     switch (type) {
@@ -140,7 +145,7 @@ const createHasKanjiBadge: () => BadgeMetadata = () => {
 };
 
 interface BadgesProps {
-    card: JapaneseWord;
+    card: TranslatedJapaneseText;
     size?: 'sm' | 'md' | 'lg';
     showAnswer?: boolean;
 }
@@ -151,7 +156,7 @@ export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }
     if (typeBadge) {
         badges.push(typeBadge);
     }
-    const anyKanji = card.jp.word.split('').some(isKanji);
+    const anyKanji = card.jp.text.split('').some(isKanji);
     if (anyKanji) {
         badges.push(createHasKanjiBadge());
     }
