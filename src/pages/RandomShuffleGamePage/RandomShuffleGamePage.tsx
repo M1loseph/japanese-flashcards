@@ -10,7 +10,7 @@ import { IconSettings } from '@tabler/icons-react';
 import { GameSettingsModal } from './GameSettingsModal.tsx';
 
 const RandomShuffleGamePage: FC = () => {
-    const { gameState, updateLanguage, markCurrentFlashcard } = useGameContext();
+    const { gameState, updateLanguage, markCurrentFlashcard, updateSimplifiedMode } = useGameContext();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -88,7 +88,12 @@ const RandomShuffleGamePage: FC = () => {
                     total={gameState.flashcards.length}
                     timeInSeconds={sessionTime}
                 />
-                <Flashcard card={card.word} selectedLanguage={gameState.selectedLanguage} showAnswer={showAnswer} />
+                <Flashcard
+                    card={card.word}
+                    selectedLanguage={gameState.selectedLanguage}
+                    showAnswer={showAnswer}
+                    simplifiedMode={gameState.simplifiedMode}
+                />
                 <FlashcardButtons
                     showAnswer={showAnswer}
                     toggleAnswer={handleToggleAnswer}
@@ -119,6 +124,8 @@ const RandomShuffleGamePage: FC = () => {
                 onClose={() => setShowSettings(false)}
                 currentLanguage={gameState.selectedLanguage}
                 updateLanguage={updateLanguage}
+                simplifiedMode={gameState.simplifiedMode}
+                updateSimplifiedMode={updateSimplifiedMode}
             />
         </FixedSizePage>
     );

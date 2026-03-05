@@ -15,6 +15,7 @@ interface GameContextType {
     createNewGameFromWrongAnswers: () => void;
     createNewGame: (flashcards: SelectedJapaneseWord[], selectedLanguage: TranslationLanguage) => void;
     updateLanguage: (language: TranslationLanguage) => void;
+    updateSimplifiedMode: (enabled: boolean) => void;
 }
 
 export const GameContext = createContext<GameContextType | undefined>(undefined);

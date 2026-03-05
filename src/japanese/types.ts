@@ -1,19 +1,27 @@
 import * as z from 'zod';
 
+const WordWithPronunciationSchema = z.object({
+    word: z.string(),
+    pronunciation: z.string().optional(),
+});
+
 const TranslationSchema = z.object({
     en: z.string(),
     pl: z.string(),
-    jp: z.string(),
-    jp_pronunciation: z.string().optional(),
-    jp_description: z.string().optional(),
+    jp: WordWithPronunciationSchema,
+    description: z.string().optional(),
     image_url: z.string().optional(),
 });
 
 const VerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     verb_type: z.enum(['godan', 'ichidan', 'irregular']),
-    masu_form: z.string(),
-    masen_form: z.string(),
+    present: z.object({
+        masu: z.object({
+            affirmative: WordWithPronunciationSchema,
+            negative: WordWithPronunciationSchema,
+        }),
+    }),
 });
 
 export type Verb = z.infer<typeof VerbSchema>;

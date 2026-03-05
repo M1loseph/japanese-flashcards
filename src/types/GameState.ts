@@ -7,6 +7,7 @@ export const CommonGameStateSchema = z.object({
     initialWordBags: z.array(z.string()),
     flashcards: z.array(FlashcardSessionSchema),
     gameStartTimeMs: z.number(),
+    simplifiedMode: z.boolean(),
     selectedLanguage: TranslationLanguagesSchema,
 });
 

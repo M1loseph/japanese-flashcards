@@ -26,7 +26,7 @@ const BagPage: FC = () => {
 
     const words = bag.words.filter((word) => {
         if (!searchText) return true;
-        const wordRomaji = toRomaji(word.jp_pronunciation || word.jp);
+        const wordRomaji = toRomaji(word.jp.pronunciation || word.jp.word);
         if (wordRomaji.includes(searchText)) return true;
         if (word[selectedLanguage].toLocaleLowerCase().includes(searchText)) return true;
         return false;
@@ -57,7 +57,7 @@ const BagPage: FC = () => {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 pb-12">
                     {words.map((word) => (
-                        <Word key={word.jp + word.en} word={word} />
+                        <Word key={word.jp.word + word.en} word={word} />
                     ))}
                 </div>
             </div>

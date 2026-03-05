@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { isKanji } from 'wanakana';
 import { type Adjective, type JapaneseWord, type Verb, type WordType } from '../japanese/types';
 
 type BadgeMetadata = {
@@ -150,7 +151,8 @@ export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }
     if (typeBadge) {
         badges.push(typeBadge);
     }
-    if (card.jp_pronunciation) {
+    const anyKanji = card.jp.word.split('').some(isKanji);
+    if (anyKanji) {
         badges.push(createHasKanjiBadge());
     }
     if (card.type === 'verb') {

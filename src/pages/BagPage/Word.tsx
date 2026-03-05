@@ -11,6 +11,7 @@ interface WordProps {
 
 export const Word: FC<WordProps> = ({ word }) => {
     const { selectedLanguage } = useGameSettingsContext();
+    const jp = word.jp;
 
     return (
         <div className="card card-xs bg-base-100 shadow-md">
@@ -20,10 +21,10 @@ export const Word: FC<WordProps> = ({ word }) => {
                     <HardWordIcon size="sm" word={word} />
                 </div>
                 <h3 className="text-lg text-primary font-semibold text-center w-full">
-                    <TextWithJishoLinks text={word.jp} />
+                    <TextWithJishoLinks text={jp.word} />
                 </h3>
                 <hr className="my-1 border-slate-300 border-dashed" />
-                {word.jp_pronunciation && <p className="text-sm text-semibold">{word.jp_pronunciation}</p>}
+                {jp.pronunciation && <p className="text-sm text-semibold">{jp.pronunciation}</p>}
                 <p className="text-sm text-slate-600 italic">{word[selectedLanguage]}</p>
             </div>
         </div>
