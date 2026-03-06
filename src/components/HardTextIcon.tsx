@@ -1,6 +1,6 @@
 import { type FC } from 'react';
-import type { JapaneseWord } from '../japanese';
-import { useHardWords } from '../context/HardWordsContext';
+import type { TranslatedJapaneseText } from '../japanese';
+import { useHardText } from '../context/HardWordsContext';
 import { IconStar, IconStarFilled } from '@tabler/icons-react';
 
 type HardWordIconSize = 'sm' | 'md';
@@ -12,21 +12,21 @@ const HardWordIconSizeMapping = {
 
 interface HardWordIconProps {
     size?: HardWordIconSize;
-    word: JapaneseWord;
+    word: TranslatedJapaneseText;
 }
 
-export const HardWordIcon: FC<HardWordIconProps> = ({ word, size = 'md' }) => {
-    const { isHardWord, toggleHardWord } = useHardWords();
-    const isHard = isHardWord(word);
+export const HardTextIcon: FC<HardWordIconProps> = ({ word, size = 'md' }) => {
+    const { isHardText, toggleHardText } = useHardText();
+    const isHard = isHardText(word);
 
     const iconSize = HardWordIconSizeMapping[size];
 
-    const handleToggleHardWord = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleToggleHardText = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
-        toggleHardWord(word);
+        toggleHardText(word);
     };
     return (
-        <button className="btn btn-ghost btn-circle z-10" onClick={handleToggleHardWord}>
+        <button className="btn btn-ghost btn-circle z-10" onClick={handleToggleHardText}>
             {isHard ? (
                 <IconStarFilled size={iconSize} className="text-yellow-500" />
             ) : (

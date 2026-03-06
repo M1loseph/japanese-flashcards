@@ -56,7 +56,7 @@ import { countingThinObjects } from './vocabulary/counting/countingThinObjects.t
 import { countingLongCylindricalThings } from './vocabulary/counting/countingLongCylindricalThings.ts';
 import { sakura_2_7 } from './vocabulary/sakura/trimester_2/sakura_7.ts';
 
-export type { JapaneseWord, WordBag } from './types.ts';
+export type { TranslatedJapaneseText, WordBag } from './types.ts';
 
 export const familyBag: WordBag = {
     id: '83be35f1-ba1d-4a71-86df-1a52fc4b51ce',

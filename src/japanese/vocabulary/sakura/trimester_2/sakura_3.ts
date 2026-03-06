@@ -1,85 +1,86 @@
-import type { JapaneseWord } from '../../../types';
+import type { TranslatedJapaneseText } from '../../../types';
 
-export const sakura_2_3: JapaneseWord[] = [
+export const sakura_2_3: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Reading (process)',
         pl: 'Czytanie',
-        jp: 'どくしょ',
+        jp: { text: 'どくしょ' },
     },
     {
         type: 'noun',
         en: 'Distance',
         pl: 'Odległość',
-        jp: 'きょり',
+        jp: { text: 'きょり' },
     },
     {
         type: 'verb',
         verb_type: 'godan',
         en: 'Chill / Calm down / Refrigerate',
         pl: 'Ochłonąć / Schłodzić',
-        jp: 'ひやす',
-        masu_form: 'ひやします',
-        masen_form: 'ひやしません',
+        jp: { text: 'ひやす' },
+        present: {
+            masu: {
+                affirmative: { text: 'ひやします' },
+                negative: { text: 'ひやしません' },
+            },
+        },
     },
     {
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Brown',
         pl: 'Brązowy',
-        jp: 'ちゃいろい',
+        jp: { text: 'ちゃいろい' },
     },
     {
         type: 'noun',
         en: 'Prisoner',
         pl: 'Więzień',
-        jp: 'しゅうじん',
+        jp: { text: 'しゅうじん' },
     },
     {
         type: 'noun',
         en: 'Landlord / Landlady',
         pl: 'Właściciel / Właścicielka',
-        jp: 'おおや',
+        jp: { text: 'おおや' },
     },
     {
         type: 'noun',
         en: 'Century',
         pl: 'Wiek / Stulecie',
-        jp: 'せいき',
+        jp: { text: 'せいき' },
     },
     {
         type: 'noun',
         en: 'Seat',
         pl: 'Miejsce (siedzące)',
-        jp: 'せき',
+        jp: { text: 'せき' },
     },
     {
         type: 'phrase',
         en: 'How many hours do you sleep?',
         pl: 'Ile godzin śpisz?',
-        jp: 'なんじかんねますか。',
+        jp: { text: 'なんじかんねますか。' },
     },
     {
         type: 'phrase',
         en: 'I always sleep 7 hours.',
         pl: 'Zawsze śpię 7 godzin.',
-        jp: 'いつも七時間ねます。',
-        jp_pronunciation: 'いつもしちじかんねます。',
-        jp_description: 'Note there is no particle "に" after the time duration.',
+        jp: { text: 'いつも七時間ねます。', pronunciation: 'いつもしちじかんねます。' },
+        description: 'Note there is no particle "に" after the time duration.',
     },
     {
         type: 'phrase',
         en: 'I go to school for 30 minutes.',
         pl: 'Idę do szkoły przez 30 minut.',
-        jp: '三十分がっこうにいきます。',
-        jp_pronunciation: 'さんじゅっぷんがっこうにいきます。',
-        jp_description: 'Note there is no particle "に" after the time duration.',
+        jp: { text: '三十分がっこうにいきます。', pronunciation: 'さんじゅっぷんがっこうにいきます。' },
+        description: 'Note there is no particle "に" after the time duration.',
     },
     {
         type: 'phrase',
         en: 'I work for around 8 hours every day.',
         pl: 'Pracuję około 8 godzin każdego dnia.',
-        jp: 'まいにち八時間ぐらいしごとをします。',
-        jp_pronunciation: 'まいにちはちじかんぐらいしごとをします。',
+        jp: { text: 'まいにち八時間ぐらいしごとをします。', pronunciation: 'まいにちはちじかんぐらいしごとをします。' },
     },
 ];

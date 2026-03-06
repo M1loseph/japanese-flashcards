@@ -1,99 +1,101 @@
-import type { JapaneseWord } from '../../../types';
+import type { TranslatedJapaneseText } from '../../../types';
 
-export const sakura_2_2: JapaneseWord[] = [
+export const sakura_2_2: TranslatedJapaneseText[] = [
     {
         type: 'phrase',
         en: 'Take care / Stay well',
         pl: 'Szybko wracaj do zdrowia / Trzymaj się',
-        jp: 'おだいじに',
+        jp: { text: 'おだいじに' },
     },
     {
         type: 'noun',
         en: 'Nothing',
         pl: 'Nic',
-        jp: 'なにも',
+        jp: { text: 'なにも' },
     },
     {
         type: 'particle',
         en: 'From (a time)',
         pl: 'Od (czas)',
-        jp: 'から',
+        jp: { text: 'から' },
     },
     {
         type: 'particle',
         en: 'Until (a time)',
         pl: 'Do (czas)',
-        jp: 'まで',
+        jp: { text: 'まで' },
     },
     {
         type: 'phrase',
         en: 'I work from 9AM to 5PM.',
         pl: 'Pracuję od 9 rano do 5 po południu.',
-        jp: 'ごぜん九時からごご五時までしごとをします。',
+        jp: { text: 'ごぜん九時からごご五時までしごとをします。' },
     },
     {
         type: 'noun',
         en: 'Day off / Break',
         pl: 'Dzień wolny / Przerwa',
-        jp: 'やすみ',
+        jp: { text: 'やすみ' },
     },
     {
         type: 'phrase',
         en: "It's open from 6AM to 10PM.",
         pl: 'Jest otwarte od 6 rano do 10 wieczorem.',
-        jp: 'ごぜん六時からごご十時までです。',
+        jp: { text: 'ごぜん六時からごご十時までです。' },
     },
     {
         type: 'phrase',
         en: 'It does not have a day off.',
         pl: 'Nie ma dnia wolnego.',
-        jp: 'やすみはありません。',
+        jp: { text: 'やすみはありません。' },
     },
     {
         type: 'phrase',
         en: 'It depends on the day.',
         pl: 'To zależy od dnia.',
-        jp: '日によります。',
-        jp_pronunciation: 'ひによります。',
+        jp: { text: '日によります。', pronunciation: 'ひによります。' },
     },
     {
         type: 'verb',
         verb_type: 'godan',
         en: 'To be caused by / To depend on',
         pl: 'Zależeć od',
-        jp: '依る',
-        jp_pronunciation: 'よる',
-        masu_form: '依ります (よります)',
-        masen_form: '依りません (よりません)',
+        jp: { text: '依る', pronunciation: 'よる' },
+        present: {
+            masu: {
+                affirmative: { text: '依ります', pronunciation: 'よります' },
+                negative: { text: '依りません', pronunciation: 'よりません' },
+            },
+        },
     },
     {
         type: 'noun',
         en: 'Japanese sweet dumplings',
         pl: 'Japońskie słodkie kluski',
-        jp: 'だんご',
+        jp: { text: 'だんご' },
     },
     {
         type: 'noun',
         en: 'Traditional Japanese floor cushion',
         pl: 'Tradycyjna japońska poduszka podłogowa',
-        jp: 'ざぶとん',
+        jp: { text: 'ざぶとん' },
     },
     {
         type: 'noun',
         en: 'Foreigner',
         pl: 'Obcokrajowiec',
-        jp: 'がいこくじん',
+        jp: { text: 'がいこくじん' },
     },
     {
         type: 'noun',
         en: 'Dandelion',
         pl: 'Dmuchawiec',
-        jp: 'たんぽぽ',
+        jp: { text: 'たんぽぽ' },
     },
     {
         type: 'noun',
         en: 'Cliff',
         pl: 'Klif',
-        jp: 'がんぺき',
+        jp: { text: 'がんぺき' },
     },
 ];

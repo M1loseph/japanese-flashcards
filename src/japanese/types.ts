@@ -1,19 +1,29 @@
 import * as z from 'zod';
 
+const TextWithPronunciationSchema = z.object({
+    text: z.string(),
+    pronunciation: z.string().optional(),
+});
+
+export type TextWithPronunciation = z.infer<typeof TextWithPronunciationSchema>;
+
 const TranslationSchema = z.object({
     en: z.string(),
     pl: z.string(),
-    jp: z.string(),
-    jp_pronunciation: z.string().optional(),
-    jp_description: z.string().optional(),
+    jp: TextWithPronunciationSchema,
+    description: z.string().optional(),
     image_url: z.string().optional(),
 });
 
 const VerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     verb_type: z.enum(['godan', 'ichidan', 'irregular']),
-    masu_form: z.string(),
-    masen_form: z.string(),
+    present: z.object({
+        masu: z.object({
+            affirmative: TextWithPronunciationSchema,
+            negative: TextWithPronunciationSchema,
+        }),
+    }),
 });
 
 export type Verb = z.infer<typeof VerbSchema>;
@@ -65,7 +75,7 @@ const UnknownWordSchema = TranslationSchema.extend({
     type: z.literal('unknown'),
 });
 
-export const JapaneseWordSchema = z.discriminatedUnion('type', [
+export const TranslatedJapaneseTextSchema = z.discriminatedUnion('type', [
     VerbSchema,
     NounSchema,
     PhraseSchema,
@@ -80,14 +90,14 @@ export const JapaneseWordSchema = z.discriminatedUnion('type', [
     UnknownWordSchema,
 ]);
 
-export type JapaneseWord = z.infer<typeof JapaneseWordSchema>;
+export type TranslatedJapaneseText = z.infer<typeof TranslatedJapaneseTextSchema>;
 
-export type WordType = JapaneseWord['type'];
+export type TranslatedJapaneseTextType = TranslatedJapaneseText['type'];
 
 export const WordBagSchema = z.object({
     id: z.string(),
     name: z.string(),
-    words: z.array(JapaneseWordSchema),
+    words: z.array(TranslatedJapaneseTextSchema),
 });
 
 export type WordBag = z.infer<typeof WordBagSchema>;

@@ -1,74 +1,79 @@
-import type { JapaneseWord } from '../../../types';
+import type { TranslatedJapaneseText } from '../../../types';
 import iGoToSchool from './sakura5Assets/1.jpg';
 import friendAreCommingToMyHouse from './sakura5Assets/2.jpg';
 import wentToCompanyInTheMorning from './sakura5Assets/3.jpg';
 
-export const sakura_2_5: JapaneseWord[] = [
+export const sakura_2_5: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Pool',
         pl: 'Basen',
-        jp: 'プール',
+        jp: { text: 'プール' },
     },
     {
         type: 'verb',
         verb_type: 'godan',
         en: "Go (away from speaker's perspective)",
         pl: 'Iść (w przeciwnym kierunku niż mówiący)',
-        jp: '行く',
-        jp_pronunciation: 'いく',
-        masu_form: '行きます (いきます)',
-        masen_form: '行きません (いきません)',
+        jp: { text: '行く', pronunciation: 'いく' },
+        present: {
+            masu: {
+                affirmative: { text: '行きます', pronunciation: 'いきます' },
+                negative: { text: '行きません', pronunciation: 'いきません' },
+            },
+        },
     },
     {
         type: 'verb',
         verb_type: 'irregular',
         en: "Come (towards speaker's perspective)",
         pl: 'Przychodzić (w kierunku mówiącego)',
-        jp: '来る',
-        jp_pronunciation: 'くる',
-        masu_form: '来ます (きます)',
-        masen_form: '来ません (きません)',
+        jp: { text: '来る', pronunciation: 'くる' },
+        present: {
+            masu: {
+                affirmative: { text: '来ます', pronunciation: 'きます' },
+                negative: { text: '来ません', pronunciation: 'きません' },
+            },
+        },
     },
     {
         type: 'verb',
         verb_type: 'godan',
         en: 'Return / Come back',
         pl: 'Wracać',
-        jp: '帰る',
-        jp_pronunciation: 'かえる',
-        masu_form: '帰ります (かえります)',
-        masen_form: '帰りません (かえりません)',
+        jp: { text: '帰る', pronunciation: 'かえる' },
+        present: {
+            masu: {
+                affirmative: { text: '帰ります', pronunciation: 'かえります' },
+                negative: { text: '帰りません', pronunciation: 'かえりません' },
+            },
+        },
     },
     {
         type: 'noun',
         en: 'Cafe (native Japanese word)',
         pl: 'Kawiarnia (słowo pochodzenia japońskiego)',
-        jp: '喫茶店',
-        jp_pronunciation: 'きっさてん',
+        jp: { text: '喫茶店', pronunciation: 'きっさてん' },
     },
     {
         type: 'phrase',
         en: 'I will go to school.',
         pl: 'Pójdę do szkoły.',
-        jp: 'がっこうに行きます。',
-        jp_pronunciation: 'がっこうにいきます。',
+        jp: { text: 'がっこうに行きます。', pronunciation: 'がっこうにいきます。' },
         image_url: iGoToSchool,
     },
     {
         type: 'phrase',
         en: 'Friends are coming to my house.',
         pl: 'Przyjaciele przychodzą do mojego domu.',
-        jp: 'ともだちがわたしのうちに来ます。',
-        jp_pronunciation: 'ともだちがわたしのうちにきます。',
+        jp: { text: 'ともだちがわたしのうちに来ます。', pronunciation: 'ともだちがわたしのうちにきます。' },
         image_url: friendAreCommingToMyHouse,
     },
     {
         type: 'phrase',
         en: 'I came to the company in the morning.',
         pl: 'Przyszedłem do firmy rano.',
-        jp: 'あさかいしゃに来ました。',
-        jp_pronunciation: 'あさかいしゃにきました。',
+        jp: { text: 'あさかいしゃに来ました。', pronunciation: 'あさかいしゃにきました。' },
         image_url: wentToCompanyInTheMorning,
     },
 ];

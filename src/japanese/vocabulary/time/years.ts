@@ -1,46 +1,40 @@
-import type { JapaneseWord } from '../../types';
+import type { TranslatedJapaneseText } from '../../types';
 
-export const years: JapaneseWord[] = [
+export const years: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'This year',
         pl: 'W tym roku',
-        jp: '今年',
-        jp_pronunciation: 'ことし',
+        jp: { text: '今年', pronunciation: 'ことし' },
     },
     {
         type: 'noun',
         en: 'Last year',
         pl: 'W zeszłym roku',
-        jp: '去年',
-        jp_pronunciation: 'きょねん',
+        jp: { text: '去年', pronunciation: 'きょねん' },
     },
     {
         type: 'noun',
         en: 'Next year',
         pl: 'W przyszłym roku',
-        jp: '来年',
-        jp_pronunciation: 'らいねん',
+        jp: { text: '来年', pronunciation: 'らいねん' },
     },
     {
         type: 'noun',
         en: 'Year',
         pl: 'Rok',
-        jp: '年',
-        jp_pronunciation: 'とし',
+        jp: { text: '年', pronunciation: 'とし' },
     },
     {
         type: 'noun',
         en: 'The year before last',
         pl: 'Przed zeszłym rokiem',
-        jp: '一昨年',
-        jp_pronunciation: 'おととし',
+        jp: { text: '一昨年', pronunciation: 'おととし' },
     },
     {
         type: 'noun',
         en: 'The year after next',
         pl: 'Rok po przyszłym roku',
-        jp: '再来年',
-        jp_pronunciation: 'さらいねん',
+        jp: { text: '再来年', pronunciation: 'さらいねん' },
     },
 ];

@@ -1,16 +1,16 @@
 import { type FC, useEffect, useState } from 'react';
-import Flashcard from '../../components/Flashcard.tsx';
-import ProgressBar from '../../components/ProgressBar.tsx';
+import Flashcard from './flashcard/Flashcard.tsx';
+import ProgressBar from './flashcard/ProgressBar.tsx';
 import { Navigate, useNavigate } from 'react-router';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave.ts';
 import { useGameContext } from '../../context/GameContext/index.ts';
-import { FlashcardButtons } from '../../components/FlashcardButtons.tsx';
+import { FlashcardButtons } from './flashcard/FlashcardButtons.tsx';
 import { FixedSizePage } from '../common/FixedSizePage.tsx';
 import { IconSettings } from '@tabler/icons-react';
 import { GameSettingsModal } from './GameSettingsModal.tsx';
 
 const RandomShuffleGamePage: FC = () => {
-    const { gameState, updateLanguage, markCurrentFlashcard } = useGameContext();
+    const { gameState, updateLanguage, markCurrentFlashcard, updateSimplifiedMode } = useGameContext();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -119,6 +119,8 @@ const RandomShuffleGamePage: FC = () => {
                 onClose={() => setShowSettings(false)}
                 currentLanguage={gameState.selectedLanguage}
                 updateLanguage={updateLanguage}
+                simplifiedMode={gameState.simplifiedMode}
+                updateSimplifiedMode={updateSimplifiedMode}
             />
         </FixedSizePage>
     );
