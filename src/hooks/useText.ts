@@ -10,6 +10,9 @@ export const useMainText = (word: TextWithPronunciation): string => {
     if (simplifiedMode) {
         return word.pronunciation || word.text;
     }
+    if (word.pronunciation) {
+        return `${word.text} (${word.pronunciation})`;
+    }
     return word.text;
 };
 
