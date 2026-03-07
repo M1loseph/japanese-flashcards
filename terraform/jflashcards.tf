@@ -95,3 +95,9 @@ resource "google_service_account" "jflashcards-v2-service-account" {
   account_id   = "jflashcards-v2"
   display_name = "Service Account for jflashcards-v2"
 }
+
+resource "google_service_account_iam_member" "allow_github_service_account_user" {
+  service_account_id = google_service_account.jflashcards-v2-service-account.name
+  role               = "roles/iam.serviceAccountUser"
+  member             = "serviceAccount:terraform-account@${var.project_id}.iam.gserviceaccount.com"
+}
