@@ -11,7 +11,7 @@ export const countriesAsia: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Japan',
         pl: 'Japonia',
-        jp: { text: '日本', pronunciation: 'にほん' },
+        jp: { text: '日本', pronunciation: 'にほん / にっぽん' },
     },
     {
         type: 'noun',
