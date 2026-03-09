@@ -15,15 +15,3 @@ export const useMainText = (word: TextWithPronunciation): string => {
     }
     return word.text;
 };
-
-export const useOptionalPronunciation = (word: TextWithPronunciation): string | undefined => {
-    const { gameState } = useGameContext();
-    if (!gameState) {
-        throw new Error('useOptionalPronunciation must be used within a GameProvider');
-    }
-    const { simplifiedMode } = gameState;
-    if (simplifiedMode) {
-        return undefined;
-    }
-    return word.pronunciation;
-};
