@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
 
-export const countriesEurope: TranslatedJapaneseText[] = [
+const countriesEurope: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Spain',
@@ -227,7 +227,7 @@ export const countriesEurope: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'North Macedonia',
         pl: 'Północna Macedonia',
-        jp: { text: '北マケドニア' },
+        jp: { text: '北マケドニア', pronunciation: 'きたマケドニア' },
     },
     {
         type: 'noun',
@@ -272,3 +272,9 @@ export const countriesEurope: TranslatedJapaneseText[] = [
         jp: { text: 'バチカン' },
     },
 ];
+
+export const countriesEuropeBag: WordBag = {
+    id: 'efcf6fe8-9b79-436f-8c4d-0987393fb4c6',
+    name: 'Countries Europe',
+    words: countriesEurope,
+};

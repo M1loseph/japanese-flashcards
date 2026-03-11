@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
 
-export const duolingo_7: TranslatedJapaneseText[] = [
+const duolingo_7: TranslatedJapaneseText[] = [
     {
         type: 'unknown',
         en: 'Tomorrow',
@@ -273,3 +273,9 @@ export const duolingo_7: TranslatedJapaneseText[] = [
         jp: { text: 'ほんだな' },
     },
 ];
+
+export const duolingo7Bag: WordBag = {
+    id: '393fdc1f-9b56-4f78-ac9f-c3f3cdce1a19',
+    name: 'Duolingo #7',
+    words: duolingo_7,
+};

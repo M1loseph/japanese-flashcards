@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-export const genki_3: TranslatedJapaneseText[] = [
+const genki_3: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Movie',
@@ -412,3 +412,9 @@ export const genki_3: TranslatedJapaneseText[] = [
         jp: { text: 'あさごはんを食べませんか。', pronunciation: 'あさごはんをたべませんか。' },
     },
 ];
+
+export const genki3Bag: WordBag = {
+    id: '55b65f52-ba34-4e03-9e58-228fea22a3cf',
+    name: 'Genki #3',
+    words: genki_3,
+};

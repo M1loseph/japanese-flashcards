@@ -1,6 +1,6 @@
-import { type TranslatedJapaneseText } from '../../types';
+import { type TranslatedJapaneseText, type WordBag } from '../../types';
 
-export const countingLongCylindricalThings: TranslatedJapaneseText[] = [
+const countingLongCylindricalThings: TranslatedJapaneseText[] = [
     {
         type: 'numeral',
         en: 'One long cylindrical thing',
@@ -122,3 +122,9 @@ export const countingLongCylindricalThings: TranslatedJapaneseText[] = [
         jp: { text: '二十本', pronunciation: 'にじゅっぽん' },
     },
 ];
+
+export const countingLongCylindricalThingsBag: WordBag = {
+    id: '18a934d5-156a-4300-a2ca-f09ed5886797',
+    name: 'Counting Long Cylindrical Things',
+    words: countingLongCylindricalThings,
+};

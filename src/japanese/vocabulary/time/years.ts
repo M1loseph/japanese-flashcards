@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-export const years: TranslatedJapaneseText[] = [
+const years: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'This year',
@@ -38,3 +38,9 @@ export const years: TranslatedJapaneseText[] = [
         jp: { text: '再来年', pronunciation: 'さらいねん' },
     },
 ];
+
+export const yearsBag: WordBag = {
+    id: '79c50834-d434-40e7-8cf1-042d7af3fe8b',
+    name: 'Years',
+    words: years,
+};

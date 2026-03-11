@@ -1,11 +1,11 @@
-import type { TranslatedJapaneseText } from '../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-export const countriesAsia: TranslatedJapaneseText[] = [
+const countriesAsia: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'China',
         pl: 'Chiny',
-        jp: { text: 'ちゅうごく' },
+        jp: { text: '中国', pronunciation: 'ちゅうごく' },
     },
     {
         type: 'noun',
@@ -17,7 +17,7 @@ export const countriesAsia: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Taiwan',
         pl: 'Tajwan',
-        jp: { text: 'たいわん' },
+        jp: { text: '台湾', pronunciation: 'たいわん' },
     },
     {
         type: 'noun',
@@ -29,7 +29,7 @@ export const countriesAsia: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'South Korea',
         pl: 'Korea Południowa',
-        jp: { text: 'かんこく' },
+        jp: { text: '韓国', pronunciation: 'かんこく' },
     },
     {
         type: 'noun',
@@ -44,3 +44,9 @@ export const countriesAsia: TranslatedJapaneseText[] = [
         jp: { text: 'マレーシア' },
     },
 ];
+
+export const countriesAsiaBag: WordBag = {
+    id: '9889adb4-0777-4983-8a12-d580accb3ce4',
+    name: 'Countries Asia',
+    words: countriesAsia,
+};

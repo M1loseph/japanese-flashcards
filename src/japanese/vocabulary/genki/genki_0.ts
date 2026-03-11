@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
 
-export const genki_0: TranslatedJapaneseText[] = [
+const genki_0: TranslatedJapaneseText[] = [
     {
         type: 'phrase',
         en: 'Good morning',
@@ -116,3 +116,9 @@ export const genki_0: TranslatedJapaneseText[] = [
         description: 'Used after introduction. Literally: Please treat me well.',
     },
 ];
+
+export const genki0Bag: WordBag = {
+    id: '56d838c8-4a95-4eb0-b903-14528a8dc6d6',
+    name: 'Genki #0',
+    words: genki_0,
+};

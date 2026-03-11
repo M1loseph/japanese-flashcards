@@ -1,5 +1,5 @@
 import {
-    countriesEUBag,
+    countriesEuropeBag,
     weekBag,
     duolingo1Bag,
     duolingo2Bag,
@@ -57,11 +57,19 @@ import {
     countingLongCylindricalThingsBag,
     sakura2_7Bag,
     sakura2_8Bag,
+    planetsBag,
+    countingSmallAndMediumAnimalsBag,
 } from '../../japanese';
 
 export const groupedBags: Record<string, WordBag[]> = {
     'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, daysOfMonthBag, yearsBag],
-    'Counting 🔢': [countingThinObjectsBag, countingLongCylindricalThingsBag, countingThingsBag, countingFloorsBag],
+    'Counting 🔢': [
+        countingThinObjectsBag,
+        countingLongCylindricalThingsBag,
+        countingThingsBag,
+        countingFloorsBag,
+        countingSmallAndMediumAnimalsBag,
+    ],
     'Essentials 📌': [familyBag, numbersBag, directionsBag],
     'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag, genki4Bag, genki5Bag],
     'Classes 🎓': [
@@ -103,5 +111,5 @@ export const groupedBags: Record<string, WordBag[]> = {
         duolingo11Bag,
         duolingo12Bag,
     ],
-    'Geography 🌍 🌎 🌏': [countriesEUBag, countriesAsiaBag],
+    'Geography 🌍 🌎 🌏': [countriesEuropeBag, countriesAsiaBag, planetsBag],
 };
