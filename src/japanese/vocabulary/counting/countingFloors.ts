@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-export const countingFloors: TranslatedJapaneseText[] = [
+const countingFloors: TranslatedJapaneseText[] = [
     {
         type: 'numeral',
         en: 'First floor',
@@ -128,3 +128,9 @@ export const countingFloors: TranslatedJapaneseText[] = [
         jp: { text: '何階', pronunciation: 'なんがい' },
     },
 ];
+
+export const countingFloorsBag: WordBag = {
+    id: 'ea053297-9592-45fc-be6e-6a48da0980d1',
+    name: 'Counting Floors',
+    words: countingFloors,
+};

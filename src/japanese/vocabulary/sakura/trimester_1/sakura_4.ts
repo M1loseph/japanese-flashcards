@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../../types';
 
-export const sakura_1_4: TranslatedJapaneseText[] = [
+const sakura_1_4: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Living room',
@@ -160,3 +160,9 @@ export const sakura_1_4: TranslatedJapaneseText[] = [
         jp: { text: 'デザイナー' },
     },
 ];
+
+export const sakura1_4Bag: WordBag = {
+    id: '4c96ca61-8767-4120-8291-19241e14370f',
+    name: 'Sakura #1.4',
+    words: sakura_1_4,
+};

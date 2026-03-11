@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../../types';
 
-export const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
+const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Strawberry',
@@ -254,3 +254,9 @@ export const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
         jp: { text: 'アスパラガス' },
     },
 ];
+
+export const sakura1_8FruitsAndVegetablesBag: WordBag = {
+    id: 'b98c297c-307d-493f-80e8-f9ade70842e1',
+    name: 'Sakura #1.8 Fruits and Vegetables',
+    words: sakura_1_8_fruitsAndVegetables,
+};

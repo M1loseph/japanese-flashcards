@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
 
-export const countingThings: TranslatedJapaneseText[] = [
+const countingThings: TranslatedJapaneseText[] = [
     {
         type: 'numeral',
         en: 'One thing',
@@ -128,3 +128,9 @@ export const countingThings: TranslatedJapaneseText[] = [
         jp: { text: 'にじゅっこ' },
     },
 ];
+
+export const countingThingsBag: WordBag = {
+    id: 'f1f12e01-87cf-437d-b67f-696a17be41d5',
+    name: 'Counting Things',
+    words: countingThings,
+};

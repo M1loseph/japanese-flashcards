@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../types';
+import type { TranslatedJapaneseText, WordBag } from '../types';
 
-export const numbers: TranslatedJapaneseText[] = [
+const numbers: TranslatedJapaneseText[] = [
     {
         type: 'numeral',
         en: 'One',
@@ -290,3 +290,9 @@ export const numbers: TranslatedJapaneseText[] = [
         jp: { text: '九万', pronunciation: 'きゅうまん' },
     },
 ];
+
+export const numbersBag: WordBag = {
+    id: '05253d28-8ebf-4793-bcb2-11b117a36f86',
+    name: 'Numbers',
+    words: numbers,
+};

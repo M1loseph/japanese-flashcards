@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../types';
+import type { TranslatedJapaneseText, WordBag } from '../types';
 
-export const direction: TranslatedJapaneseText[] = [
+const directions: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Right',
@@ -86,3 +86,9 @@ export const direction: TranslatedJapaneseText[] = [
         jp: { text: 'スーパーの近くです。', pronunciation: 'スーパーのちかくです。' },
     },
 ];
+
+export const directionsBag: WordBag = {
+    id: '3a3f535c-4618-47bc-9f4c-d519964637fb',
+    name: 'Directions',
+    words: directions,
+};

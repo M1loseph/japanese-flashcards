@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../../types';
 
-export const sakura_2_7: TranslatedJapaneseText[] = [
+const sakura_2_7: TranslatedJapaneseText[] = [
     {
         type: 'phrase',
         en: "I'm at home.",
@@ -320,3 +320,9 @@ export const sakura_2_7: TranslatedJapaneseText[] = [
         jp: { text: '私の嫌いな食べ物はかぼちゃです。', pronunciation: 'わたしのきらいなたべものはかぼちゃです。' },
     },
 ];
+
+export const sakura2_7Bag: WordBag = {
+    id: '53da5382-b3a4-4444-9d9b-8df97fc08281',
+    name: 'Sakura #2.7',
+    words: sakura_2_7,
+};

@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
 
-export const daysOfMonth: TranslatedJapaneseText[] = [
+const daysOfMonth: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'First day of the month',
@@ -188,3 +188,9 @@ export const daysOfMonth: TranslatedJapaneseText[] = [
         jp: { text: '三十一日', pronunciation: 'さんじゅういちにち' },
     },
 ];
+
+export const daysOfMonthBag: WordBag = {
+    id: '61da60a2-4e5f-4dd2-b419-0c9557593e9c',
+    name: 'Days of Month',
+    words: daysOfMonth,
+};

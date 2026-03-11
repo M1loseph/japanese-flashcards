@@ -1,9 +1,9 @@
-import type { TranslatedJapaneseText } from '../../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../../types';
 import iGoToSchool from './sakura5Assets/1.jpg';
 import friendAreCommingToMyHouse from './sakura5Assets/2.jpg';
 import wentToCompanyInTheMorning from './sakura5Assets/3.jpg';
 
-export const sakura_2_5: TranslatedJapaneseText[] = [
+const sakura_2_5: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Pool',
@@ -77,3 +77,9 @@ export const sakura_2_5: TranslatedJapaneseText[] = [
         image_url: wentToCompanyInTheMorning,
     },
 ];
+
+export const sakura2_5Bag: WordBag = {
+    id: 'e8551b60-d724-4367-9ccb-aa3af4df23a1',
+    name: 'Sakura #2.5',
+    words: sakura_2_5,
+};

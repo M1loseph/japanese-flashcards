@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-export const countriesAsia: TranslatedJapaneseText[] = [
+const countriesAsia: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'China',
@@ -44,3 +44,9 @@ export const countriesAsia: TranslatedJapaneseText[] = [
         jp: { text: 'マレーシア' },
     },
 ];
+
+export const countriesAsiaBag: WordBag = {
+    id: '9889adb4-0777-4983-8a12-d580accb3ce4',
+    name: 'Countries Asia',
+    words: countriesAsia,
+};

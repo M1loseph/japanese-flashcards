@@ -1,5 +1,5 @@
 import {
-    countriesEUBag,
+    countriesEuropeBag,
     weekBag,
     duolingo1Bag,
     duolingo2Bag,
@@ -103,5 +103,5 @@ export const groupedBags: Record<string, WordBag[]> = {
         duolingo11Bag,
         duolingo12Bag,
     ],
-    'Geography 🌍 🌎 🌏': [countriesEUBag, countriesAsiaBag],
+    'Geography 🌍 🌎 🌏': [countriesEuropeBag, countriesAsiaBag],
 };

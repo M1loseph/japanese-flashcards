@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-export const hours: TranslatedJapaneseText[] = [
+const hours: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: "1 o'clock",
@@ -80,3 +80,9 @@ export const hours: TranslatedJapaneseText[] = [
         jp: { text: '時', pronunciation: 'じ' },
     },
 ];
+
+export const hoursBag: WordBag = {
+    id: 'c67e0046-1cca-4ec6-87c9-be345d790236',
+    name: 'Hours',
+    words: hours,
+};

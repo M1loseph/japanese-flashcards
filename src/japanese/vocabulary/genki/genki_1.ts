@@ -1,8 +1,8 @@
-import type { TranslatedJapaneseText } from '../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 // Even though there were some countries in Genki 1, I decided to put all of them in dedicated countries file.
 // Also, the same applied for family members - they are in family.ts file.
-export const genki_1: TranslatedJapaneseText[] = [
+const genki_1: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'University',
@@ -226,3 +226,9 @@ export const genki_1: TranslatedJapaneseText[] = [
         jp: { text: 'べんごし' },
     },
 ];
+
+export const genki1Bag: WordBag = {
+    id: '9ce8f1cc-8504-4639-867c-59458ab6e39f',
+    name: 'Genki #1',
+    words: genki_1,
+};

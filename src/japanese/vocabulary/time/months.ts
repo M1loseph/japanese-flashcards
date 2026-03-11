@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
 
-export const months: TranslatedJapaneseText[] = [
+const months: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'January',
@@ -110,3 +110,9 @@ export const months: TranslatedJapaneseText[] = [
         jp: { text: '再来月', pronunciation: 'さらいげつ' },
     },
 ];
+
+export const monthsBag: WordBag = {
+    id: 'eb5ee3eb-8d1f-4046-9634-8e0915a836c3',
+    name: 'Months',
+    words: months,
+};

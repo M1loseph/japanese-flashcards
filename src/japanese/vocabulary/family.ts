@@ -1,6 +1,6 @@
-import { type TranslatedJapaneseText } from '../types.ts';
+import { type TranslatedJapaneseText, type WordBag } from '../types.ts';
 
-export const family: TranslatedJapaneseText[] = [
+const family: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Mom (honorific / direct)',
@@ -254,3 +254,9 @@ export const family: TranslatedJapaneseText[] = [
         jp: { text: 'ご兄弟', pronunciation: 'ごきょうだい' },
     },
 ];
+
+export const familyBag: WordBag = {
+    id: '83be35f1-ba1d-4a71-86df-1a52fc4b51ce',
+    name: 'Family',
+    words: family,
+};

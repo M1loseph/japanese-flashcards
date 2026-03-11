@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-export const countingThinObjects: TranslatedJapaneseText[] = [
+const countingThinObjects: TranslatedJapaneseText[] = [
     {
         type: 'numeral',
         en: 'One thin object',
@@ -122,3 +122,9 @@ export const countingThinObjects: TranslatedJapaneseText[] = [
         jp: { text: '二十枚', pronunciation: 'にじゅうまい' },
     },
 ];
+
+export const countingThinObjectsBag: WordBag = {
+    id: '03f1b394-7ca4-4f53-aff3-f94dfa1f5737',
+    name: 'Counting Thin Objects',
+    words: countingThinObjects,
+};

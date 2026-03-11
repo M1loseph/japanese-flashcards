@@ -1,6 +1,6 @@
-import type { TranslatedJapaneseText } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
 
-export const week: TranslatedJapaneseText[] = [
+const week: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Monday',
@@ -98,3 +98,9 @@ export const week: TranslatedJapaneseText[] = [
         jp: { text: '日', pronunciation: 'ひ' },
     },
 ];
+
+export const weekBag: WordBag = {
+    id: 'a6d25f35-b38e-4598-9c52-c27f8827f5d5',
+    name: 'Week',
+    words: week,
+};
