@@ -27,6 +27,9 @@ jobs:
       - name: Run linter and format check
         run: npm run lint && npm run format-check
 
+      - name: Test
+        run: npm run test
+
       - name: Build
         run: npm run build
 
