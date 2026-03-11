@@ -227,7 +227,7 @@ const countriesEurope: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'North Macedonia',
         pl: 'Północna Macedonia',
-        jp: { text: '北マケドニア' },
+        jp: { text: '北マケドニア', pronunciation: 'きたマケドニア' },
     },
     {
         type: 'noun',

@@ -12,8 +12,8 @@ import { monthsBag } from './vocabulary/time/months.ts';
 import { daysOfMonthBag } from './vocabulary/time/daysOfMonth.ts';
 import { yearsBag } from './vocabulary/time/years.ts';
 import { directionsBag } from './vocabulary/directions.ts';
-import { countriesEuropeBag } from './vocabulary/countries/countriesEurope.ts';
-import { countriesAsiaBag } from './vocabulary/countries/countriesAsia.ts';
+import { countriesEuropeBag } from './vocabulary/geography/countriesEurope.ts';
+import { countriesAsiaBag } from './vocabulary/geography/countriesAsia.ts';
 import { duolingo1Bag } from './vocabulary/duolingo/duolingo_1.ts';
 import { duolingo2Bag } from './vocabulary/duolingo/duolingo_2.ts';
 import { duolingo3Bag } from './vocabulary/duolingo/duolingo_3.ts';
@@ -56,6 +56,8 @@ import { sakura2_5Bag } from './vocabulary/sakura/trimester_2/sakura_5.ts';
 import { sakura2_6Bag } from './vocabulary/sakura/trimester_2/sakura_6.ts';
 import { sakura2_7Bag } from './vocabulary/sakura/trimester_2/sakura_7.ts';
 import { sakura2_8Bag } from './vocabulary/sakura/trimester_2/sakura_8.ts';
+import { planetsBag } from './vocabulary/geography/planets.ts';
+import { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals.ts';
 
 export type { TranslatedJapaneseText, WordBag } from './types.ts';
 
@@ -66,6 +68,7 @@ export {
     countingThinObjectsBag,
     countingLongCylindricalThingsBag,
     countingFloorsBag,
+    countingSmallAndMediumAnimalsBag,
     weekBag,
     hoursBag,
     minutesBag,
@@ -75,6 +78,7 @@ export {
     directionsBag,
     countriesEuropeBag,
     countriesAsiaBag,
+    planetsBag,
     duolingo1Bag,
     duolingo2Bag,
     duolingo3Bag,
@@ -124,6 +128,7 @@ const availableWordBags: WordBag[] = [
     numbersBag,
     countingThingsBag,
     countingFloorsBag,
+    countingSmallAndMediumAnimalsBag,
     countingLongCylindricalThingsBag,
     countingThinObjectsBag,
     weekBag,
@@ -147,6 +152,7 @@ const availableWordBags: WordBag[] = [
     duolingo12Bag,
     countriesEuropeBag,
     countriesAsiaBag,
+    planetsBag,
     genki0Bag,
     genki1Bag,
     genki1MajorsBag,

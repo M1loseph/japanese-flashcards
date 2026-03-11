@@ -5,7 +5,7 @@ const countriesAsia: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'China',
         pl: 'Chiny',
-        jp: { text: 'ちゅうごく' },
+        jp: { text: '中国', pronunciation: 'ちゅうごく' },
     },
     {
         type: 'noun',
@@ -17,7 +17,7 @@ const countriesAsia: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Taiwan',
         pl: 'Tajwan',
-        jp: { text: 'たいわん' },
+        jp: { text: '台湾', pronunciation: 'たいわん' },
     },
     {
         type: 'noun',
@@ -29,7 +29,7 @@ const countriesAsia: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'South Korea',
         pl: 'Korea Południowa',
-        jp: { text: 'かんこく' },
+        jp: { text: '韓国', pronunciation: 'かんこく' },
     },
     {
         type: 'noun',
