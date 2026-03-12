@@ -60,6 +60,7 @@ import {
     planetsBag,
     countingSmallAndMediumAnimalsBag,
 } from '../../japanese';
+import { genki5AdjectivesBag } from '../../japanese/vocabulary/genki/genki_5_adjectives';
 
 export const groupedBags: Record<string, WordBag[]> = {
     'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, daysOfMonthBag, yearsBag],
@@ -71,7 +72,16 @@ export const groupedBags: Record<string, WordBag[]> = {
         countingSmallAndMediumAnimalsBag,
     ],
     'Essentials 📌': [familyBag, numbersBag, directionsBag],
-    'Genki books 📚': [genki0Bag, genki1Bag, genki1MajorsBag, genki2Bag, genki3Bag, genki4Bag, genki5Bag],
+    'Genki books 📚': [
+        genki0Bag,
+        genki1Bag,
+        genki1MajorsBag,
+        genki2Bag,
+        genki3Bag,
+        genki4Bag,
+        genki5Bag,
+        genki5AdjectivesBag,
+    ],
     'Classes 🎓': [
         sakura1_1Bag,
         sakura1_2Bag,

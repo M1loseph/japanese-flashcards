@@ -3,6 +3,18 @@ import type { TranslatedJapaneseText, WordBag } from '../types';
 const numbers: TranslatedJapaneseText[] = [
     {
         type: 'numeral',
+        en: 'Zero (kanji)',
+        pl: 'Zero (kanji)',
+        jp: { text: '零', pronunciation: 'れい' },
+    },
+    {
+        type: 'numeral',
+        en: 'Zero (katakana)',
+        pl: 'Zero (katakana)',
+        jp: { text: 'ゼロ' },
+    },
+    {
+        type: 'numeral',
         en: 'One',
         pl: 'Jeden',
         jp: { text: '一', pronunciation: 'いち' },
