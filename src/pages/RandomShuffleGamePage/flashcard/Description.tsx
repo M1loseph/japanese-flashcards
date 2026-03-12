@@ -14,14 +14,15 @@ interface VerbDescriptionProps {
 }
 
 const VerbDescription: FC<VerbDescriptionProps> = ({ card }) => {
-    if (!card.present) {
-        return null;
-    }
-    const masuForm = card.present.masu.affirmative;
-    const masenForm = card.present.masu.negative;
+    const masuForm = card.present?.masu.affirmative;
+    const masenForm = card.present?.masu.negative;
 
     const masuText = useMainText(masuForm);
     const masenText = useMainText(masenForm);
+
+    if (!card.present) {
+        return null;
+    }
 
     return (
         <>
