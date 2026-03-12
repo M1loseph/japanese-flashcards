@@ -97,6 +97,30 @@ const week: TranslatedJapaneseText[] = [
         pl: 'Dzień',
         jp: { text: '日', pronunciation: 'ひ' },
     },
+    {
+        type: 'noun',
+        en: 'Weekend',
+        pl: 'Weekend',
+        jp: { text: '週末', pronunciation: 'しゅうまつ' },
+    },
+    {
+        type: 'noun',
+        en: 'Next weekend',
+        pl: 'Przyszły weekend',
+        jp: { text: '来週末', pronunciation: 'らいしゅうまつ' },
+    },
+    {
+        type: 'noun',
+        en: 'Last weekend',
+        pl: 'Zeszły weekend',
+        jp: { text: '先週末', pronunciation: 'せんしゅうまつ' },
+    },
+    {
+        type: 'noun',
+        en: 'Next Sunday',
+        pl: 'Przyszła niedziela',
+        jp: { text: '次の日曜日', pronunciation: 'つぎのにちようび' },
+    },
 ];
 
 export const weekBag: WordBag = {

@@ -172,7 +172,7 @@ export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }
             {badges.map((badge) => (
                 <div
                     key={badge.text}
-                    className={`badge ${badge.color} ${sizeClass} text-nowrap transition-all duration-200 ${badge.show ? 'opacity-100' : 'opacity-0'}`}
+                    className={`badge ${badge.color} ${sizeClass} text-nowrap transition-all duration-200 ${!badge.show && 'opacity-0'}`}
                 >
                     {badge.text}
                 </div>
