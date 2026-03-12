@@ -95,6 +95,11 @@ const createVerbTypeBadge: (verbType: Verb['verb_type'], show: boolean) => Badge
             text = 'irregular';
             break;
         }
+        case 'auxiliary': {
+            color = `bg-pink-300/75`;
+            text = 'auxiliary';
+            break;
+        }
         default: {
             const _exhaustiveCheck: never = verbType;
             return _exhaustiveCheck;

@@ -45,6 +45,14 @@ const godanVerb: TranslatedJapaneseText = {
     },
 };
 
+const auxiliaryVerb: TranslatedJapaneseText = {
+    type: 'verb',
+    en: 'to be',
+    pl: 'być',
+    jp: { text: 'だ', pronunciation: 'だ' },
+    verb_type: 'auxiliary',
+};
+
 const irregularVerb: TranslatedJapaneseText = {
     type: 'verb',
     en: 'to do',
@@ -162,6 +170,11 @@ describe('Badges', () => {
         it('renders irregular badge for irregular verbs', () => {
             render(<Badges card={irregularVerb} />);
             expect(screen.getByText('irregular')).toBeInTheDocument();
+        });
+
+        it('renders auxiliary badge for auxiliary verbs', () => {
+            render(<Badges card={auxiliaryVerb} />);
+            expect(screen.getByText('auxiliary')).toBeInTheDocument();
         });
 
         it('hides verb type badge when showAnswer is false', () => {
