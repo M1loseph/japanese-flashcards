@@ -59,6 +59,7 @@ import { sakura2_8Bag } from './vocabulary/sakura/trimester_2/sakura_8.ts';
 import { planetsBag } from './vocabulary/geography/planets.ts';
 import { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals.ts';
 import { genki5AdjectivesBag } from './vocabulary/genki/genki_5_adjectives.ts';
+import { sakura2_9Bag } from './vocabulary/sakura/trimester_2/sakura_9.ts';
 
 export type { TranslatedJapaneseText, WordBag } from './types.ts';
 
@@ -185,6 +186,7 @@ const availableWordBags: WordBag[] = [
     sakura2_6Bag,
     sakura2_7Bag,
     sakura2_8Bag,
+    sakura2_9Bag,
 ];
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {

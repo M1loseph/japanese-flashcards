@@ -66,7 +66,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         adjective_type: 'na-adjective',
         en: 'Disliked',
         pl: 'Nielubiany',
-        jp: { text: 'きらい' },
+        jp: { text: '嫌い', pronunciation: 'きらい' },
     },
     {
         type: 'noun',

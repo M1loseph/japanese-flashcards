@@ -45,6 +45,24 @@ const week: TranslatedJapaneseText[] = [
     },
     {
         type: 'noun',
+        en: 'Last Friday',
+        pl: 'Zeszły piątek',
+        jp: { text: '先週の金曜日', pronunciation: 'せんしゅうのきんようび' },
+    },
+    {
+        type: 'noun',
+        en: 'Next Friday',
+        pl: 'Przyszły piątek',
+        jp: { text: '来週の金曜日', pronunciation: 'らいしゅうのきんようび' },
+    },
+    {
+        type: 'noun',
+        en: 'This Friday',
+        pl: 'Ten piątek',
+        jp: { text: '今週の金曜日', pronunciation: 'こんしゅうのきんようび' },
+    },
+    {
+        type: 'noun',
         en: 'Week',
         pl: 'Tydzień',
         jp: { text: '週', pronunciation: 'しゅう' },

@@ -17,13 +17,15 @@ const TranslationSchema = z.object({
 
 const VerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
-    verb_type: z.enum(['godan', 'ichidan', 'irregular']),
-    present: z.object({
-        masu: z.object({
-            affirmative: TextWithPronunciationSchema,
-            negative: TextWithPronunciationSchema,
-        }),
-    }),
+    verb_type: z.enum(['godan', 'ichidan', 'auxiliary', 'irregular']),
+    present: z
+        .object({
+            masu: z.object({
+                affirmative: TextWithPronunciationSchema,
+                negative: TextWithPronunciationSchema,
+            }),
+        })
+        .optional(),
 });
 
 export type Verb = z.infer<typeof VerbSchema>;

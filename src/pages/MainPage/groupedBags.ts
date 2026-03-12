@@ -61,6 +61,7 @@ import {
     countingSmallAndMediumAnimalsBag,
 } from '../../japanese';
 import { genki5AdjectivesBag } from '../../japanese/vocabulary/genki/genki_5_adjectives';
+import { sakura2_9Bag } from '../../japanese/vocabulary/sakura/trimester_2/sakura_9';
 
 export const groupedBags: Record<string, WordBag[]> = {
     'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, daysOfMonthBag, yearsBag],
@@ -106,6 +107,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         sakura2_6Bag,
         sakura2_7Bag,
         sakura2_8Bag,
+        sakura2_9Bag,
     ],
     'Apps 📱': [
         duolingo1Bag,
