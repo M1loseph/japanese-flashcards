@@ -14,12 +14,7 @@ export default defineConfig([
             '@stylistic': stylistic,
         },
         files: ['**/*.{ts,tsx}'],
-        extends: [
-            js.configs.recommended,
-            tseslint.configs.recommended,
-            reactRefresh.configs.vite,
-            eslintConfigPrettier,
-        ],
+        extends: [js.configs.recommended, tseslint.configs.strict, reactRefresh.configs.vite, eslintConfigPrettier],
         languageOptions: {
             ecmaVersion: 2020,
             globals: globals.browser,

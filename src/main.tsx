@@ -8,7 +8,7 @@ import BagPage from './pages/BagPage';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { GameContextProvider } from './context/GameContext';
 import { HardTextProvider } from './context/HardWordsContext';
-import SummaryPage from './pages/SummaryPage.tsx';
+import SummaryPage from './pages/SummaryPage';
 
 const router = createBrowserRouter([
     {
@@ -38,7 +38,13 @@ const router = createBrowserRouter([
     },
 ]);
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root');
+
+if (!root) {
+    throw new Error('Root element not found');
+}
+
+createRoot(root).render(
     <StrictMode>
         <HardTextProvider>
             <GameSettingsProvider>
