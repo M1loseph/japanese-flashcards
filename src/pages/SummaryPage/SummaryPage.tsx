@@ -1,9 +1,12 @@
-import { useMemo, type FC } from 'react';
+import { useMemo, useState, type FC } from 'react';
 import { Navigate, useNavigate } from 'react-router';
-import { useGameContext } from '../context/GameContext';
-import { FixedSizePage } from './common/FixedSizePage.tsx';
+import { motion } from 'motion/react';
+import { useGameContext } from '../../context/GameContext';
+import { FixedSizePage } from '../common/FixedSizePage';
 import { IconHome, IconRepeat } from '@tabler/icons-react';
-import { PaperPlaneIcon } from '../assets/PaperPlaneIcon.tsx';
+import { PaperPlaneIcon } from '../../assets/PaperPlaneIcon';
+import { useCountUp } from './useCountUp';
+import { Confetti } from './Confetti';
 
 interface SessionStats {
     totalCards: number;
@@ -38,7 +41,11 @@ const SummaryPage: FC = () => {
         const accuracy = totalCards > 0 ? Math.round((correctCards / totalCards) * 100) : 0;
 
         const accuracyLabel = accuracy >= 90 ? 'High' : accuracy >= 70 ? 'Medium' : 'Low';
-        const accuracyColor = accuracy >= 90 ? 'text-success' : accuracy >= 70 ? 'text-warning' : 'text-error';
+        const accuracyColor = (() => {
+            if (accuracyLabel === 'High') return 'text-success';
+            if (accuracyLabel === 'Medium') return 'text-warning';
+            return 'text-error';
+        })();
 
         const elapsedMs = gameState.gameEndTimeMs - gameState.gameStartTimeMs;
         const totalSeconds = Math.floor(elapsedMs / 1000);
@@ -54,6 +61,12 @@ const SummaryPage: FC = () => {
 
         return { totalCards, accuracy, accuracyLabel, accuracyColor, elapsedTime };
     }, [gameState]);
+
+    const hasMistakes = wrongAnswers.length > 0;
+    const [planeFloating, setPlaneFloating] = useState(false);
+
+    const animatedCards = useCountUp(stats.totalCards, 800, 1000);
+    const animatedAccuracy = useCountUp(stats.accuracy, 1200, 1200);
 
     if (!gameState) {
         return <Navigate to="/" replace />;
@@ -79,38 +92,84 @@ const SummaryPage: FC = () => {
         }
     };
 
-    const hasMistakes = wrongAnswers.length > 0;
-
     return (
         <FixedSizePage preHomeNavigationHook={handleHomeNavigation}>
+            <Confetti />
             <div className="h-full flex flex-col items-center justify-center px-4">
-                <p className="text-xs font-semibold tracking-widest uppercase text-base-content/50 mb-6">
+                <motion.p
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+                    className="text-xs font-semibold tracking-widest uppercase text-base-content/50 mb-6"
+                >
                     Session Results
-                </p>
+                </motion.p>
 
-                <div className="relative h-[12rem] aspect-square mb-8">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.3, rotate: 6 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 6 }}
+                    transition={{ duration: 0.7, ease: [0.34, 1.56, 0.64, 1], delay: 0.2 }}
+                    className="relative h-[12rem] aspect-square mb-8"
+                >
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-sky-400 to-sky-200 shadow-lg rotate-6" />
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-sky-400 to-sky-100 shadow-xl flex items-center justify-center">
-                        <PaperPlaneIcon className="w-20 h-20 drop-shadow-md -rotate-12" aria-hidden="true" />
+                        <motion.div
+                            className="w-20 h-20 drop-shadow-md"
+                            initial={planeFloating ? false : { opacity: 0, x: -60, y: 40, rotate: 10, scale: 0.5 }}
+                            animate={
+                                planeFloating
+                                    ? { x: [0, 4, 0], y: [0, -6, 0], rotate: [-12, -16, -12] }
+                                    : { opacity: 1, x: 0, y: 0, rotate: -12, scale: 1 }
+                            }
+                            transition={
+                                planeFloating
+                                    ? { duration: 3, ease: 'easeInOut', repeat: Infinity }
+                                    : { delay: 0.5, duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }
+                            }
+                            onAnimationComplete={() => {
+                                if (!planeFloating) setPlaneFloating(true);
+                            }}
+                        >
+                            <PaperPlaneIcon className="w-full h-full" aria-hidden="true" />
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
 
-                <h2 className="text-3xl font-bold text-base-content mb-1">Deck Mastered!</h2>
-                <p className="text-lg text-success font-medium mb-8">おめでとう！(Congratulations!)</p>
+                <motion.h2
+                    initial={{ opacity: 0, scale: 0.3 }}
+                    animate={{ opacity: [0, 1, 1, 1], scale: [0.3, 1.1, 0.95, 1] }}
+                    transition={{ duration: 0.7, times: [0, 0.5, 0.7, 1], ease: [0.34, 1.56, 0.64, 1], delay: 0.5 }}
+                    className="text-3xl font-bold text-base-content mb-1"
+                >
+                    Deck Mastered!
+                </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 0.7 }}
+                    className="text-lg text-success font-medium mb-8"
+                >
+                    おめでとう！(Congratulations!)
+                </motion.p>
 
-                <div className="flex w-full rounded-xl border border-base-300 bg-base-200/50 divide-x divide-base-300 mb-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 }}
+                    className="flex w-full rounded-xl border border-base-300 bg-base-200/50 divide-x divide-base-300 mb-10"
+                >
                     <div className="flex-1 flex flex-col items-center py-4 gap-0.5">
                         <span className="text-xs font-semibold tracking-wider uppercase text-base-content/50">
                             Cards
                         </span>
-                        <span className="text-2xl font-bold text-base-content">{stats.totalCards}</span>
+                        <span className="text-2xl font-bold text-base-content">{animatedCards}</span>
                     </div>
 
                     <div className="flex-1 flex flex-col items-center py-4 gap-0.5">
                         <span className="text-xs font-semibold tracking-wider uppercase text-base-content/50">
                             Accuracy
                         </span>
-                        <span className="text-2xl font-bold text-base-content">{stats.accuracy}%</span>
+                        <span className="text-2xl font-bold text-base-content">{animatedAccuracy}%</span>
                         <span className={`text-sm font-medium ${stats.accuracyColor}`}>{stats.accuracyLabel}</span>
                     </div>
 
@@ -118,16 +177,27 @@ const SummaryPage: FC = () => {
                         <span className="text-xs font-semibold tracking-wider uppercase text-base-content/50">
                             Time
                         </span>
-                        <span className="text-2xl font-bold text-base-content">{stats.elapsedTime}</span>
+                        <motion.span
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: 'easeOut', delay: 1 }}
+                            className="text-2xl font-bold text-base-content"
+                        >
+                            {stats.elapsedTime}
+                        </motion.span>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col w-full items-stretch md:flex-1 md:flex-row justify-center gap-3">
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut', delay: 1.1 }}
+                    className="flex flex-col w-full items-stretch md:flex-1 md:flex-row justify-center gap-3"
+                >
                     <button
                         className="btn btn-primary md:flex-1 md:max-w-lg btn-lg rounded-xl text-white"
                         onClick={prepareSetForRepeat}
                         aria-label={`Repeat ${wrongAnswers.length} mistakes`}
-                        tabIndex={0}
                         disabled={!hasMistakes}
                     >
                         <IconRepeat />
@@ -137,12 +207,11 @@ const SummaryPage: FC = () => {
                         className={`btn btn-primary ${hasMistakes && 'btn-outline'} md:flex-1 md:max-w-lg btn-lg rounded-xl`}
                         onClick={handleFinish}
                         aria-label="Go back to decks"
-                        tabIndex={0}
                     >
                         <IconHome />
                         Back to Home
                     </button>
-                </div>
+                </motion.div>
             </div>
         </FixedSizePage>
     );
