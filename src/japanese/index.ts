@@ -62,3 +62,5 @@ export { sakura2_9Bag } from './vocabulary/sakura/trimester_2/sakura_9.ts';
 export { duolingo13Bag } from './vocabulary/duolingo/duolingo_13.ts';
 
 export type { TranslatedJapaneseText, WordBag } from './types.ts';
+
+export { findBagById } from './search.ts';
