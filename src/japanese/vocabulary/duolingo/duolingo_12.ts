@@ -215,7 +215,7 @@ const duolingo_12: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Training / Practice',
-        pl: 'Szkolenie / Ćwiczenia',
+        pl: 'Trening / Ćwiczenia',
         jp: { text: 'トレーニング' },
     },
     {
