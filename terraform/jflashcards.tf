@@ -80,7 +80,7 @@ resource "google_cloud_run_v2_service" "jflashcards-v2" {
 
 resource "google_cloud_run_domain_mapping" "jflashcards-v2-domain" {
   location = var.region
-  name     = "japonski.dev"
+  name     = "japonskie-fiszki.com"
 
   metadata {
     namespace = var.project_id
