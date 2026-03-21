@@ -28,8 +28,8 @@ export const Header: FC<HeaderProps> = ({ preHomeNavigationHook, additionalCompo
                 <div
                     className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
                     tabIndex={0}
-                    role='button'
-                    aria-label='Home'
+                    role="button"
+                    aria-label="Home"
                     onKeyDown={handleKeyDown}
                     onClick={handleHomeClick}
                 >
