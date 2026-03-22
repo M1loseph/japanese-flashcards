@@ -33,8 +33,12 @@ export const Header: FC<HeaderProps> = ({ preHomeNavigationHook, additionalCompo
                     onKeyDown={handleKeyDown}
                     onClick={handleHomeClick}
                 >
-                    <img src="/favicon-96x96.png" alt="Logo" className="w-12 h-12" />
-                    <h1 className="text-xl font-bold text-slate-800 tracking-tight">JFlashcards</h1>
+                    <h1>
+                        <span className="text-2xl font-bold mr-2" aria-hidden="true">
+                            日本
+                        </span>
+                        <span className="text-xl font-bold text-slate-800 tracking-tight">Japanese Flashcards</span>
+                    </h1>
                 </div>
                 <div className="grow">{additionalComponents}</div>
             </div>
