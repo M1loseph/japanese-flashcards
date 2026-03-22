@@ -57,6 +57,7 @@ export { sakura2_7Bag } from './vocabulary/sakura/trimester_2/sakura_7.ts';
 export { sakura2_8Bag } from './vocabulary/sakura/trimester_2/sakura_8.ts';
 export { planetsBag } from './vocabulary/geography/planets.ts';
 export { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals.ts';
+export { countingPeopleBag } from './vocabulary/counting/countingPeople.ts';
 export { genki5AdjectivesBag } from './vocabulary/genki/genki_5_adjectives.ts';
 export { sakura2_9Bag } from './vocabulary/sakura/trimester_2/sakura_9.ts';
 export { duolingo13Bag } from './vocabulary/duolingo/duolingo_13.ts';

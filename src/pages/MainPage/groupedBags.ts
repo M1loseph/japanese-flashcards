@@ -61,6 +61,7 @@ import {
     genki5AdjectivesBag,
     planetsBag,
     countingSmallAndMediumAnimalsBag,
+    countingPeopleBag,
     duolingo13Bag,
 } from '../../japanese';
 
@@ -72,6 +73,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         countingThingsBag,
         countingFloorsBag,
         countingSmallAndMediumAnimalsBag,
+        countingPeopleBag,
     ],
     'Essentials 📌': [familyBag, numbersBag, directionsBag],
     'Genki books 📚': [
