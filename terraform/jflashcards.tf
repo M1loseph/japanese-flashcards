@@ -91,6 +91,27 @@ resource "google_cloud_run_domain_mapping" "jflashcards-v2-domain" {
   }
 }
 
+resource "google_dns_managed_zone" "jflashcards-zone" {
+  name     = "japonskie-fiszki-com"
+  dns_name = "japonskie-fiszki.com."
+}
+
+resource "google_dns_record_set" "jflashcards-a" {
+  name         = google_dns_managed_zone.jflashcards-zone.dns_name
+  managed_zone = google_dns_managed_zone.jflashcards-zone.name
+  type         = "A"
+  ttl          = 1800
+  rrdatas      = [for record in google_cloud_run_domain_mapping.jflashcards-v2-domain.status[0].resource_records : record.rrdata if record.type == "A"]
+}
+
+resource "google_dns_record_set" "jflashcards-aaaa" {
+  name         = google_dns_managed_zone.jflashcards-zone.dns_name
+  managed_zone = google_dns_managed_zone.jflashcards-zone.name
+  type         = "AAAA"
+  ttl          = 1800
+  rrdatas      = [for record in google_cloud_run_domain_mapping.jflashcards-v2-domain.status[0].resource_records : record.rrdata if record.type == "AAAA"]
+}
+
 resource "google_service_account" "jflashcards-v2-service-account" {
   account_id   = "jflashcards-v2"
   display_name = "Service Account for jflashcards-v2"
