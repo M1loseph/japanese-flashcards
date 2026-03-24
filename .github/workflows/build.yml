@@ -10,6 +10,9 @@ on:
 permissions:
   contents: write
 
+env:
+  TERRAFORM_VERSION: 1.14.6
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -38,6 +41,8 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
 
       - name: Terraform init
         working-directory: terraform
@@ -139,15 +144,22 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.14.6
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
 
       - name: Terraform init
         working-directory: terraform
         run: terraform init
 
+      - name: Terraform plan
+        working-directory: terraform
+        run: |
+          terraform plan \
+            -var="jflashcards_image=${{ needs.publish_docker_image.outputs.IMAGE_NAME }}" \
+            -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
+            -out=tfplan \
+            -input=false
+
       - name: Terraform apply
         working-directory: terraform
         run: |
-          terraform apply -auto-approve \
-            -var="jflashcards_image=${{ needs.publish_docker_image.outputs.IMAGE_NAME }}" \
-            -var="project_id=${{ secrets.GCP_PROJECT_ID }}"
+          terraform apply tfplan -input=false
