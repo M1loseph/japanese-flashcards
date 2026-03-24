@@ -7,6 +7,37 @@ updates:
     commit-message:
       prefix: "dependabot:"
     groups:
+      dev-dependencies:
+        dependency-type: "development"
+      production-dependencies:
+        dependency-type: "production"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "dependabot:"
+    groups:
+      all:
+        patterns:
+          - "*"
+  - package-ecosystem: "terraform"
+    directory: "/terraform"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "dependabot:"
+    groups:
+      all:
+        patterns:
+          - "*"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "dependabot:"
+    groups:
       all:
         patterns:
           - "*"
