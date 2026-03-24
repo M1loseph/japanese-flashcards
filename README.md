@@ -4,7 +4,16 @@ A simple app to support me on my japanese learning journey. I store the words I'
 
 ## Play around
 
-The app is available at [https://japonski.dev](https://japonski.dev) using GCP hosting.
+The app is available at [https://japonskie-fiszki.com](https://japonskie-fiszki.com) using GCP hosting.
+
+## Getting Started
+
+In order to start the app locally, run these two commands:
+
+```bash
+npm install
+npm run dev
+```
 
 ## Technologies
 
