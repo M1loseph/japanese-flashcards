@@ -160,4 +160,4 @@ jobs:
       - name: Terraform apply
         working-directory: terraform
         run: |
-          terraform apply tfplan -input=false
+          terraform apply -input=false tfplan
