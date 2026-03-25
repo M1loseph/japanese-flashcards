@@ -14,6 +14,19 @@ export default defineConfig({
         tailwindcss(),
         VitePWA({
             registerType: 'autoUpdate',
+            strategies: 'generateSW',
+            workbox: {
+                navigateFallback: '/',
+                runtimeCaching: [
+                    {
+                        urlPattern: ({ request }) => request.destination === 'document',
+                        handler: 'NetworkFirst',
+                        options: {
+                            networkTimeoutSeconds: 5,
+                        },
+                    },
+                ],
+            },
             manifest: {
                 name: 'Japonskie Fiszki',
                 short_name: 'Fiszki',
