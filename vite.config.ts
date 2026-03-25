@@ -24,7 +24,7 @@ export default defineConfig({
                         options: {
                             networkTimeoutSeconds: 5,
                         },
-                    }
+                    },
                 ],
             },
             manifest: {
