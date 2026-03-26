@@ -15,7 +15,13 @@ terraform {
 }
 
 provider "google" {
-  project = var.project_id
+  project               = var.project_id
+  user_project_override = true
+  billing_project       = var.project_id
+}
+
+data "google_project" "jflashcards-project" {
+  project_id = var.project_id
 }
 
 resource "google_cloud_run_v2_service" "jflashcards-v2" {
@@ -121,4 +127,30 @@ resource "google_service_account_iam_member" "allow_github_service_account_user"
   service_account_id = google_service_account.jflashcards-v2-service-account.name
   role               = "roles/iam.serviceAccountUser"
   member             = "serviceAccount:terraform-account@${var.project_id}.iam.gserviceaccount.com"
+}
+
+resource "google_billing_budget" "my_monthly_budget" {
+  billing_account = var.billing_account_id
+  display_name    = "JFlashcards monthly budget"
+  amount {
+    specified_amount {
+      currency_code = "PLN"
+      units         = "10"
+    }
+  }
+  budget_filter {
+    projects = ["projects/${data.google_project.jflashcards-project.number}"]
+  }
+  threshold_rules {
+    threshold_percent = 0.5
+  }
+  threshold_rules {
+    threshold_percent = 0.9
+  }
+  threshold_rules {
+    threshold_percent = 1
+  }
+  threshold_rules {
+    threshold_percent = 1.5
+  }
 }
