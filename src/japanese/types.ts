@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react';
 import * as z from 'zod';
 
 const TextWithPronunciationSchema = z.object({
@@ -100,6 +101,7 @@ export const WordBagSchema = z.object({
     id: z.string(),
     name: z.string(),
     words: z.array(TranslatedJapaneseTextSchema),
+    cultureNotes: z.custom<ReactNode>().optional(),
 });
 
 export type WordBag = z.infer<typeof WordBagSchema>;
