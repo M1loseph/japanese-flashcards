@@ -154,6 +154,7 @@ jobs:
           terraform plan \
             -var="jflashcards_image=${{ needs.publish_docker_image.outputs.IMAGE_NAME }}" \
             -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
+            -var="billing_account_id=${{ secrets.GCP_BILLING_ACCOUNT_ID }}" \
             -out=tfplan \
             -input=false
 

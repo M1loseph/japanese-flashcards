@@ -13,3 +13,8 @@ variable "jflashcards_image" {
   description = "The full name with a tag of the jflashcards Docker image to deploy."
   type        = string
 }
+
+variable "billing_account_id" {
+  description = "The ID of the billing account to use for the budget."
+  type        = string
+}
