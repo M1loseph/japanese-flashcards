@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { DevelopmentOnly } from './DevelopmentOnly';
 
 interface HeaderProps {
     preHomeNavigationHook?: () => void;
@@ -33,7 +34,10 @@ export const Header: FC<HeaderProps> = ({ preHomeNavigationHook, additionalCompo
                     onKeyDown={handleKeyDown}
                     onClick={handleHomeClick}
                 >
-                    <h1>
+                    <h1 className="relative">
+                        <DevelopmentOnly>
+                            <div className="badge absolute -top-2 -left-5 badge-xs badge-secondary">DEV</div>
+                        </DevelopmentOnly>
                         <span className="text-2xl font-bold mr-2" aria-hidden="true">
                             日本
                         </span>

@@ -9,10 +9,12 @@ import { GameSettingsProvider } from './context/GameStateContext';
 import { GameContextProvider } from './context/GameContext';
 import { HardTextProvider } from './context/HardWordsContext';
 import SummaryPage from './pages/SummaryPage';
+import { PageViewTracker } from './components/PageViewTracker';
 
 const router = createBrowserRouter([
     {
         path: '/',
+        Component: PageViewTracker,
         children: [
             {
                 path: '/',
