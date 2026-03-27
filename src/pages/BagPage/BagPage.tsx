@@ -1,15 +1,18 @@
-import { useEffect, useMemo, useState, type FC } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { useEffect, useMemo, type FC } from 'react';
+import { Navigate, Outlet, useMatches, useNavigate, useParams } from 'react-router-dom';
 import { findBagById } from '../../japanese';
-import { IconZoom } from '@tabler/icons-react';
-import { toRomaji } from 'wanakana';
-import { useGameSettingsContext } from '../../context/GameStateContext';
 import { ScrollablePage } from '../common/ScrollablePage';
-import { Word } from './Word';
+import { z } from 'zod';
+
+const TabSchema = z.enum(['words', 'cultureNotes']);
+
+type Tab = z.infer<typeof TabSchema>;
+
+const HandleSchema = z.object({
+    tab: TabSchema,
+});
 
 const BagPage: FC = () => {
-    const { selectedLanguage } = useGameSettingsContext();
-    const [searchText, setSearchText] = useState<string>('');
     const bagId = useParams().bagId;
     const bag = useMemo(() => {
         if (!bagId) return undefined;
@@ -20,20 +23,26 @@ const BagPage: FC = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }, []);
 
-    if (!bag) {
+    const navigate = useNavigate();
+    const activeTab = useMatches()
+        .map((match) => HandleSchema.safeParse(match.handle))
+        .find((result) => result.success)?.data.tab;
+
+    if (!bag || !activeTab) {
         return <Navigate to="/" replace />;
     }
 
-    const words = bag.words.filter((word) => {
-        if (!searchText) return true;
-        const wordRomaji = toRomaji(word.jp.pronunciation || word.jp.text);
-        if (wordRomaji.includes(searchText)) return true;
-        if (word[selectedLanguage].toLocaleLowerCase().includes(searchText)) return true;
-        return false;
-    });
+    const hasCultureNotes = !!bag.cultureNotes;
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchText(e.target.value.toLowerCase());
+    const handleTabClick = (tab: Tab) => () => {
+        navigate(`/bags/${bagId}/${tab}`);
+    };
+
+    const handleTabKeyDown = (tab: Tab) => (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navigate(`/bags/${bagId}/${tab}`);
+        }
     };
 
     return (
@@ -43,23 +52,33 @@ const BagPage: FC = () => {
                     <h2 className="text-2xl font-semibold">{bag.name}</h2>
                     <h4 className="text-slate-600 text-sm">{bag.words.length} cards</h4>
                 </div>
-                <div className="my-3">
-                    <label className="input w-full">
-                        <IconZoom size={16} className="opacity-50" />
-                        <input
-                            value={searchText}
-                            type="search"
-                            className="grow"
-                            placeholder="Search by reading or meaning"
-                            onChange={handleSearchChange}
-                        />
-                    </label>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 pb-12">
-                    {words.map((word) => (
-                        <Word key={word.jp.text + word.en} word={word} />
-                    ))}
-                </div>
+                {hasCultureNotes && (
+                    <div role="tablist" className="tabs tabs-bordered my-3">
+                        <a
+                            role="tab"
+                            tabIndex={0}
+                            aria-label="Words tab"
+                            aria-selected={activeTab === 'words'}
+                            className={`tab ${activeTab === 'words' ? 'tab-active' : ''}`}
+                            onClick={handleTabClick('words')}
+                            onKeyDown={handleTabKeyDown('words')}
+                        >
+                            Words
+                        </a>
+                        <a
+                            role="tab"
+                            tabIndex={0}
+                            aria-label="Culture Notes tab"
+                            aria-selected={activeTab === 'cultureNotes'}
+                            className={`tab ${activeTab === 'cultureNotes' ? 'tab-active' : ''}`}
+                            onClick={handleTabClick('cultureNotes')}
+                            onKeyDown={handleTabKeyDown('cultureNotes')}
+                        >
+                            Culture Notes
+                        </a>
+                    </div>
+                )}
+                <Outlet context={bag} />
             </div>
         </ScrollablePage>
     );

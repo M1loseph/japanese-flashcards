@@ -4,7 +4,7 @@ import './index.css';
 import MainPage from './pages/MainPage';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import BagPage from './pages/BagPage';
+import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { GameContextProvider } from './context/GameContext';
 import { HardTextProvider } from './context/HardWordsContext';
@@ -16,19 +16,35 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <MainPage />,
+                Component: MainPage,
             },
             {
                 path: '/game/shuffle',
-                element: <RandomShuffleGamePage />,
+                Component: RandomShuffleGamePage,
             },
             {
                 path: '/game/summary',
-                element: <SummaryPage />,
+                Component: SummaryPage,
             },
             {
                 path: '/bags/:bagId',
-                element: <BagPage />,
+                Component: BagPage,
+                children: [
+                    {
+                        path: 'words',
+                        Component: WordsTab,
+                        handle: {
+                            tab: 'words',
+                        },
+                    },
+                    {
+                        path: 'cultureNotes',
+                        Component: CultureNotesTab,
+                        handle: {
+                            tab: 'cultureNotes',
+                        },
+                    },
+                ],
             },
             {
                 path: '*',

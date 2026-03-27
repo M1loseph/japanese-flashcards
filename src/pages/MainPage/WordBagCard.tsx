@@ -14,7 +14,7 @@ export const WordBagCard: FC<WordBagCardProps> = ({ bag, isSelected, onToggle })
 
     const navigateToBag = (e: React.MouseEvent) => {
         e.stopPropagation();
-        navigate(`/bags/${bag.id}`);
+        navigate(`/bags/${bag.id}/words`);
     };
 
     return (
