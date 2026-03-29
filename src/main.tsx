@@ -8,11 +8,14 @@ import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { GameContextProvider } from './context/GameContext';
 import { HardTextProvider } from './context/HardWordsContext';
+import { ConsentProvider } from './context/ConsentContext';
 import SummaryPage from './pages/SummaryPage';
+import { PageViewTracker } from './components/PageViewTracker';
 
 const router = createBrowserRouter([
     {
         path: '/',
+        Component: PageViewTracker,
         children: [
             {
                 path: '/',
@@ -63,11 +66,13 @@ if (!root) {
 createRoot(root).render(
     <StrictMode>
         <HardTextProvider>
-            <GameSettingsProvider>
-                <GameContextProvider>
-                    <RouterProvider router={router} />
-                </GameContextProvider>
-            </GameSettingsProvider>
+            <ConsentProvider>
+                <GameSettingsProvider>
+                    <GameContextProvider>
+                        <RouterProvider router={router} />
+                    </GameContextProvider>
+                </GameSettingsProvider>
+            </ConsentProvider>
         </HardTextProvider>
     </StrictMode>,
 );
