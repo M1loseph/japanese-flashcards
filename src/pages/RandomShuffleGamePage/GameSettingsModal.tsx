@@ -1,7 +1,7 @@
 import { type FC } from 'react';
+import { BigButton } from '../../components/BigButton';
 import { LanguageSelector } from '../../components/LanguageSelector';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
-import { BigButton } from '../../components/BigButton';
 
 interface GameSettingsModalProps {
     open: boolean;

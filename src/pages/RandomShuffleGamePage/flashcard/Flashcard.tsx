@@ -1,10 +1,10 @@
 import { type FC } from 'react';
-import { type TranslationLanguage } from '../../../types/TranslationLanguage';
-import type { TranslatedJapaneseText } from '../../../japanese';
 import { Badges } from '../../../components/Badges';
-import { FlashcardMainText } from './FlashcardMainText';
 import { HardTextIcon } from '../../../components/HardTextIcon';
+import type { TranslatedJapaneseText } from '../../../japanese';
+import { type TranslationLanguage } from '../../../types/TranslationLanguage';
 import { Description } from './Description';
+import { FlashcardMainText } from './FlashcardMainText';
 
 interface FlashcardProps {
     card: TranslatedJapaneseText;

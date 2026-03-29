@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import { Badges } from './Badges';
+import { describe, expect, it } from 'vitest';
 import type { TranslatedJapaneseText } from '../japanese/types';
+import { Badges } from './Badges';
 
 const noun: TranslatedJapaneseText = {
     type: 'noun',

@@ -1,7 +1,7 @@
 import { type FC } from 'react';
+import { useMainText } from '../../../hooks/useText';
 import type { TranslatedJapaneseText } from '../../../japanese';
 import type { Verb } from '../../../japanese/types';
-import { useMainText } from '../../../hooks/useText';
 
 interface DescriptionProps {
     showAnswer: boolean;

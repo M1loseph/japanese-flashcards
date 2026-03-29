@@ -3,8 +3,8 @@ import { isKanji } from 'wanakana';
 import {
     type Adjective,
     type TranslatedJapaneseText,
-    type Verb,
     type TranslatedJapaneseTextType,
+    type Verb,
 } from '../japanese/types';
 
 type BadgeMetadata = {

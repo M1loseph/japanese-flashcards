@@ -1,10 +1,10 @@
+import { IconZoom } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { IconZoom } from '@tabler/icons-react';
 import { toRomaji } from 'wanakana';
 import { useGameSettingsContext } from '../../context/GameStateContext';
-import { Word } from './Word';
 import type { WordBag } from '../../japanese/types';
+import { Word } from './Word';
 
 export const WordsTab: FC = () => {
     const bag = useOutletContext<WordBag>();

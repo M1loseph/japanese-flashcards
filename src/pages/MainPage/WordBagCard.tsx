@@ -1,7 +1,7 @@
-import { type FC } from 'react';
-import { type WordBag } from '../../japanese/types';
 import { IconZoom } from '@tabler/icons-react';
+import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { type WordBag } from '../../japanese/types';
 
 interface WordBagCardProps {
     bag: WordBag;

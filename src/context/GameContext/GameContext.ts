@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
-import type { GameState } from '../../types/GameState.ts';
 import type { TranslatedJapaneseText } from '../../japanese/types.ts';
+import type { GameState } from '../../types/GameState.ts';
 import type { TranslationLanguage } from '../../types/TranslationLanguage.ts';
 
 export interface SelectedTranslatedJapaneseText {

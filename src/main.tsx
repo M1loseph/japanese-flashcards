@@ -1,13 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { GameContextProvider } from './context/GameContext';
+import { GameSettingsProvider } from './context/GameStateContext';
+import { HardTextProvider } from './context/HardWordsContext';
 import './index.css';
+import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
 import MainPage from './pages/MainPage';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
-import { GameSettingsProvider } from './context/GameStateContext';
-import { GameContextProvider } from './context/GameContext';
-import { HardTextProvider } from './context/HardWordsContext';
 import SummaryPage from './pages/SummaryPage';
 
 const router = createBrowserRouter([

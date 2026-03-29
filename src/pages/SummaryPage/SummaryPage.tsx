@@ -1,12 +1,12 @@
+import { IconHome, IconRepeat } from '@tabler/icons-react';
+import { motion } from 'motion/react';
 import { useMemo, useState, type FC } from 'react';
 import { Navigate, useNavigate } from 'react-router';
-import { motion } from 'motion/react';
+import { PaperPlaneIcon } from '../../assets/PaperPlaneIcon';
 import { useGameContext } from '../../context/GameContext';
 import { FixedSizePage } from '../common/FixedSizePage';
-import { IconHome, IconRepeat } from '@tabler/icons-react';
-import { PaperPlaneIcon } from '../../assets/PaperPlaneIcon';
-import { useCountUp } from './useCountUp';
 import { Confetti } from './Confetti';
+import { useCountUp } from './useCountUp';
 
 interface SessionStats {
     totalCards: number;

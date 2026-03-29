@@ -1,13 +1,13 @@
+import { IconRestore } from '@tabler/icons-react';
 import { type FC, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { findBagById } from '../../japanese';
 import { LanguageSelector } from '../../components/LanguageSelector';
-import { CategorySection } from './CategorySection';
-import { type WordBag } from '../../japanese/types';
-import { useGameSettingsContext } from '../../context/GameStateContext';
 import { useGameContext } from '../../context/GameContext';
-import { IconRestore } from '@tabler/icons-react';
+import { useGameSettingsContext } from '../../context/GameStateContext';
+import { findBagById } from '../../japanese';
+import { type WordBag } from '../../japanese/types';
 import { ScrollablePage } from '../common/ScrollablePage';
+import { CategorySection } from './CategorySection';
 import { groupedBags } from './groupedBags';
 
 const MainPage: FC = () => {
