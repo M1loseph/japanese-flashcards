@@ -3,4 +3,4 @@ export const AppModes = {
     PRODUCTION: 'production',
 } as const;
 
-export type AppMode = typeof AppModes[keyof typeof AppModes];
+export type AppMode = (typeof AppModes)[keyof typeof AppModes];
