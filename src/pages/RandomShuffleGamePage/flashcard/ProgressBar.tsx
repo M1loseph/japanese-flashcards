@@ -1,5 +1,5 @@
-import { type FC } from 'react';
 import { IconClock, IconStack3 } from '@tabler/icons-react';
+import { type FC } from 'react';
 
 interface MetadataProps {
     total: number;

@@ -1,9 +1,9 @@
 import { type FC } from 'react';
-import type { TranslatedJapaneseText } from '../../japanese/types';
-import { HardTextIcon } from '../../components/HardTextIcon';
 import { Badges } from '../../components/Badges';
+import { HardTextIcon } from '../../components/HardTextIcon';
 import { TextWithJishoLinks } from '../../components/TextWithJishoLinks';
 import { useGameSettingsContext } from '../../context/GameStateContext';
+import type { TranslatedJapaneseText } from '../../japanese/types';
 
 interface WordProps {
     word: TranslatedJapaneseText;

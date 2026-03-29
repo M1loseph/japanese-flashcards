@@ -1,12 +1,12 @@
-import { type FC, useEffect, useState } from 'react';
-import Flashcard from './flashcard/Flashcard.tsx';
-import ProgressBar from './flashcard/ProgressBar.tsx';
-import { Navigate, useNavigate } from 'react-router';
-import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave.ts';
-import { useGameContext } from '../../context/GameContext/index.ts';
-import { FlashcardButtons } from './flashcard/FlashcardButtons.tsx';
-import { FixedSizePage } from '../common/FixedSizePage.tsx';
 import { IconSettings } from '@tabler/icons-react';
+import { type FC, useEffect, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router';
+import { useGameContext } from '../../context/GameContext/index.ts';
+import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave.ts';
+import { FixedSizePage } from '../common/FixedSizePage.tsx';
+import Flashcard from './flashcard/Flashcard.tsx';
+import { FlashcardButtons } from './flashcard/FlashcardButtons.tsx';
+import ProgressBar from './flashcard/ProgressBar.tsx';
 import { GameSettingsModal } from './GameSettingsModal.tsx';
 
 const RandomShuffleGamePage: FC = () => {

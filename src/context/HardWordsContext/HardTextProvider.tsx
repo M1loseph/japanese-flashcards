@@ -1,7 +1,7 @@
 import { useEffect, useState, type FC, type ReactNode } from 'react';
-import { HardTextContext } from './HardTextContext';
 import * as z from 'zod';
 import type { TranslatedJapaneseText } from '../../japanese';
+import { HardTextContext } from './HardTextContext';
 
 const HARD_TEXT_KEY = 'hardWords';
 

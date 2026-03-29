@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, it, expect, vi } from 'vitest';
-import { HardTextIcon } from './HardTextIcon';
+import { describe, expect, it, vi } from 'vitest';
 import { HardTextContext, type HardTextContextType } from '../context/HardWordsContext/HardTextContext';
 import type { TranslatedJapaneseText } from '../japanese';
+import { HardTextIcon } from './HardTextIcon';
 
 const mockWord: TranslatedJapaneseText = {
     type: 'noun',

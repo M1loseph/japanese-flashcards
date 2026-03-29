@@ -1,8 +1,8 @@
 import { useEffect, useMemo, type FC } from 'react';
 import { Navigate, Outlet, useMatches, useNavigate, useParams } from 'react-router-dom';
+import { z } from 'zod';
 import { findBagById } from '../../japanese';
 import { ScrollablePage } from '../common/ScrollablePage';
-import { z } from 'zod';
 
 const TabSchema = z.enum(['words', 'cultureNotes']);
 

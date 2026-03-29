@@ -1,4 +1,4 @@
 import { GameContext, useGameContext } from './GameContext';
 import { GameContextProvider } from './GameContextProvider';
 
-export { GameContext, useGameContext, GameContextProvider };
+export { GameContext, GameContextProvider, useGameContext };
