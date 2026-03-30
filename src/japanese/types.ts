@@ -50,6 +50,7 @@ const PreNounAdjectiveSchema = TranslationSchema.extend({
 const AdjectiveSchema = TranslationSchema.extend({
     type: z.literal('adjective'),
     adjective_type: z.enum(['i-adjective', 'na-adjective']),
+    negative: TextWithPronunciationSchema.optional(),
 });
 
 export type Adjective = z.infer<typeof AdjectiveSchema>;
