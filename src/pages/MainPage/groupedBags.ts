@@ -3,6 +3,7 @@ import {
     countingFloorsBag,
     countingLongCylindricalThingsBag,
     countingPeopleBag,
+    countingPeoplePoliteBag,
     countingSmallAndMediumAnimalsBag,
     countingThingsBag,
     countingThinObjectsBag,
@@ -77,6 +78,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         countingFloorsBag,
         countingSmallAndMediumAnimalsBag,
         countingPeopleBag,
+        countingPeoplePoliteBag,
     ],
     'Essentials 📌': [familyBag, numbersBag, directionsBag],
     'Genki books 📚': [

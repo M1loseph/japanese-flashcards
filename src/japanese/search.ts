@@ -2,6 +2,7 @@ import type { WordBag } from './types';
 import { countingFloorsBag } from './vocabulary/counting/countingFloors.tsx';
 import { countingLongCylindricalThingsBag } from './vocabulary/counting/countingLongCylindricalThings.ts';
 import { countingPeopleBag } from './vocabulary/counting/countingPeople.ts';
+import { countingPeoplePoliteBag } from './vocabulary/counting/countingPeoplePolite.ts';
 import { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals.ts';
 import { countingThingsBag } from './vocabulary/counting/countingThings.ts';
 import { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects.ts';
@@ -73,6 +74,7 @@ const availableWordBags: WordBag[] = [
     countingFloorsBag,
     countingSmallAndMediumAnimalsBag,
     countingPeopleBag,
+    countingPeoplePoliteBag,
     countingLongCylindricalThingsBag,
     countingThinObjectsBag,
     weekBag,

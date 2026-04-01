@@ -1,6 +1,7 @@
 export { countingFloorsBag } from './vocabulary/counting/countingFloors.tsx';
 export { countingLongCylindricalThingsBag } from './vocabulary/counting/countingLongCylindricalThings.ts';
 export { countingPeopleBag } from './vocabulary/counting/countingPeople.ts';
+export { countingPeoplePoliteBag } from './vocabulary/counting/countingPeoplePolite.ts';
 export { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals.ts';
 export { countingThingsBag } from './vocabulary/counting/countingThings.ts';
 export { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects.ts';
