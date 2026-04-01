@@ -1,4 +1,5 @@
 import {
+    cardinalDirectionsBag,
     countingFloorsBag,
     countingLongCylindricalThingsBag,
     countingPeopleBag,
@@ -131,5 +132,5 @@ export const groupedBags: Record<string, WordBag[]> = {
         duolingo12Bag,
         duolingo13Bag,
     ],
-    'Geography 🌍 🌎 🌏': [countriesEuropeBag, countriesAsiaBag, planetsBag],
+    'Geography 🌍 🌎 🌏': [countriesEuropeBag, countriesAsiaBag, planetsBag, cardinalDirectionsBag],
 };

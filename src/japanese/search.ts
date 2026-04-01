@@ -28,6 +28,7 @@ import { genki3Bag } from './vocabulary/genki/genki_3.ts';
 import { genki4Bag } from './vocabulary/genki/genki_4.ts';
 import { genki5Bag } from './vocabulary/genki/genki_5.ts';
 import { genki5AdjectivesBag } from './vocabulary/genki/genki_5_adjectives.ts';
+import { cardinalDirectionsBag } from './vocabulary/geography/cardinalDirections.ts';
 import { countriesAsiaBag } from './vocabulary/geography/countriesAsia.ts';
 import { countriesEuropeBag } from './vocabulary/geography/countriesEurope.ts';
 import { planetsBag } from './vocabulary/geography/planets.ts';
@@ -97,6 +98,7 @@ const availableWordBags: WordBag[] = [
     countriesEuropeBag,
     countriesAsiaBag,
     planetsBag,
+    cardinalDirectionsBag,
     genki0Bag,
     genki1Bag,
     genki1MajorsBag,

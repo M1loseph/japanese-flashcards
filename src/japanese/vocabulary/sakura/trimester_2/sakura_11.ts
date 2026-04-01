@@ -73,15 +73,15 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         type: 'adjective',
         adjective_type: 'i-adjective',
-        en: 'Hot (temperature)',
-        pl: 'Gorący (temperatura)',
+        en: 'Hot (weather / perceived)',
+        pl: 'Gorący (pogoda / odczuwalna temperatura)',
         jp: { text: '暑い', pronunciation: 'あつい' },
     },
     {
         type: 'adjective',
         adjective_type: 'i-adjective',
-        en: 'Cold (temperature)',
-        pl: 'Zimny (temperatura)',
+        en: 'Cold (weather / perceived)',
+        pl: 'Zimny (pogoda / odczuwalna temperatura)',
         jp: { text: '寒い', pronunciation: 'さむい' },
     },
     {
@@ -147,6 +147,13 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         en: 'New',
         pl: 'Nowy',
         jp: { text: '新しい', pronunciation: 'あたらしい' },
+    },
+    {
+        type: 'adjective',
+        adjective_type: 'i-adjective',
+        en: 'Old (thing)',
+        pl: 'Stary (rzecz)',
+        jp: { text: '古い', pronunciation: 'ふるい' },
     },
     {
         type: 'adjective',
@@ -412,6 +419,42 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         en: 'Fermented soybeans',
         pl: 'Sfermentowana soja',
         jp: { text: '納豆', pronunciation: 'なっとう' },
+    },
+    {
+        type: 'phrase',
+        en: 'Okay',
+        pl: 'Okej',
+        jp: { text: 'オーケー' },
+    },
+    {
+        type: 'noun',
+        en: 'Cake',
+        pl: 'Tort / Ciasto',
+        jp: { text: 'ケーキ' },
+    },
+    {
+        type: 'noun',
+        en: 'Wear / Clothing',
+        pl: 'Ubranie',
+        jp: { text: 'ウェア' },
+    },
+    {
+        type: 'noun',
+        en: 'Cola',
+        pl: 'Cola',
+        jp: { text: 'コーラ' },
+    },
+    {
+        type: 'noun',
+        en: 'Kiwi',
+        pl: 'Kiwi',
+        jp: { text: 'キウイフルーツ' },
+    },
+    {
+        type: 'noun',
+        en: 'Cocoa / Hot cocoa',
+        pl: 'Kakałko',
+        jp: { text: 'ココア' },
     },
 ];
 
