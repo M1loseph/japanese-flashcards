@@ -51,6 +51,7 @@ export { sakura1_9Bag } from './vocabulary/sakura/trimester_1/sakura_9.ts';
 export { sakura2_1Bag } from './vocabulary/sakura/trimester_2/sakura_1.ts';
 export { sakura2_10Bag } from './vocabulary/sakura/trimester_2/sakura_10.ts';
 export { sakura2_11Bag } from './vocabulary/sakura/trimester_2/sakura_11.ts';
+export { sakura2_12Bag } from './vocabulary/sakura/trimester_2/sakura_12.ts';
 export { sakura2_2Bag } from './vocabulary/sakura/trimester_2/sakura_2.ts';
 export { sakura2_3Bag } from './vocabulary/sakura/trimester_2/sakura_3.ts';
 export { sakura2_4Bag } from './vocabulary/sakura/trimester_2/sakura_4.ts';
