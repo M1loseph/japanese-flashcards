@@ -315,10 +315,11 @@ const genki_3: TranslatedJapaneseText[] = [
     },
     {
         type: 'adjective',
-        adjective_type: 'i-adjective',
+        adjective_type: 'i-adjective-irregular',
         en: 'Good',
         pl: 'Dobry',
         jp: { text: 'いい' },
+        negative: { text: 'よくない' },
     },
     {
         type: 'adjective',

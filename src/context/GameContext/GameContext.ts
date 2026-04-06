@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
-import type { TranslatedJapaneseText } from '../../japanese/types.ts';
-import type { GameState } from '../../types/GameState.ts';
-import type { TranslationLanguage } from '../../types/TranslationLanguage.ts';
+import type { TranslatedJapaneseText } from '../../japanese/types';
+import type { GameState } from '../../types/GameState';
+import type { TranslationLanguage } from '../../types/TranslationLanguage';
 
 export interface SelectedTranslatedJapaneseText {
     word: TranslatedJapaneseText;

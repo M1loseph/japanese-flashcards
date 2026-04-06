@@ -1,4 +1,4 @@
-import { type TranslatedJapaneseText, type WordBag } from '../types.ts';
+import { type TranslatedJapaneseText, type WordBag } from '../types';
 
 const family: TranslatedJapaneseText[] = [
     {

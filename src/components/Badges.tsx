@@ -129,6 +129,11 @@ const createAdjectiveTypeBadge: (adjectiveType: Adjective['adjective_type'], sho
             text = 'na adjective';
             break;
         }
+        case 'i-adjective-irregular': {
+            color = `bg-red-300/75`;
+            text = 'i adjective (irregular)';
+            break;
+        }
         default: {
             const _exhaustiveCheck: never = adjectiveType;
             return _exhaustiveCheck;

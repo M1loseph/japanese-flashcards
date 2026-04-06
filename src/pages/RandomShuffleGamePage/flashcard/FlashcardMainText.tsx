@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { TextWithJishoLinks } from '../../../components/TextWithJishoLinks';
-import { useMainText } from '../../../hooks/useText';
+import { useMainText, useSecondaryText } from '../../../hooks/useText';
 import type { TextWithPronunciation } from '../../../japanese/types';
 
 interface FlashcardMainTextProps {
@@ -11,10 +11,16 @@ interface FlashcardMainTextProps {
 
 export const FlashcardMainText: FC<FlashcardMainTextProps> = ({ question, answer, showAnswer }) => {
     const answerText = useMainText(answer);
+    const secondaryText = useSecondaryText(answer);
+
     const text = showAnswer ? answerText : question;
+    const secondary = showAnswer ? secondaryText : undefined;
     return (
-        <h1 className="text-3xl text-center font-bold">
-            <TextWithJishoLinks text={text} />
-        </h1>
+        <>
+            <h1 className="text-3xl text-center font-bold">
+                <TextWithJishoLinks text={text} />
+            </h1>
+            {secondary && <h2 className="text-2xl text-center text-base-content/60 mt-4">{secondary}</h2>}
+        </>
     );
 };

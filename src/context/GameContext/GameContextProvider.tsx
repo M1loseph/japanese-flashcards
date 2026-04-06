@@ -1,8 +1,8 @@
 import { useEffect, useState, type FC, type ReactNode } from 'react';
-import { GameStateSchema, type GameState } from '../../types/GameState.ts';
-import type { TranslationLanguage } from '../../types/TranslationLanguage.ts';
-import { shuffleArray } from '../../utils.ts';
-import { GameContext, type SelectedTranslatedJapaneseText } from './GameContext.ts';
+import { GameStateSchema, type GameState } from '../../types/GameState';
+import type { TranslationLanguage } from '../../types/TranslationLanguage';
+import { shuffleArray } from '../../utils';
+import { GameContext, type SelectedTranslatedJapaneseText } from './GameContext';
 
 const RANDOM_SHUFFLE_GAME_STATE_KEY = 'randomShuffleGameState';
 
