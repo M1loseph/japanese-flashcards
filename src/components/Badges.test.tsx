@@ -79,9 +79,9 @@ const iAdjectiveIrregular: TranslatedJapaneseText = {
     type: 'adjective',
     en: 'good',
     pl: 'dobry',
-    jp: { text: '良い', pronunciation: 'いい' },
+    jp: { text: 'いい' },
     adjective_type: 'i-adjective-irregular',
-    negative: { text: '良くない', pronunciation: 'よくない' },
+    negative: { text: 'よくない' },
 };
 
 const naAdjective: TranslatedJapaneseText = {

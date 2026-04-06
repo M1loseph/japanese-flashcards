@@ -183,10 +183,11 @@ const genki_5: TranslatedJapaneseText[] = [
     },
     {
         type: 'adjective',
-        adjective_type: 'i-adjective',
+        adjective_type: 'i-adjective-irregular',
         en: 'Good-looking / Cool / Stylish',
         pl: 'Przystojny / Fajny / Stylowy',
         jp: { text: 'かっこいい' },
+        negative: { text: 'かっこよくない' },
     },
     {
         type: 'adjective',
