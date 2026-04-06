@@ -75,6 +75,15 @@ const iAdjective: TranslatedJapaneseText = {
     adjective_type: 'i-adjective',
 };
 
+const iAdjectiveIrregular: TranslatedJapaneseText = {
+    type: 'adjective',
+    en: 'good',
+    pl: 'dobry',
+    jp: { text: 'いい' },
+    adjective_type: 'i-adjective-irregular',
+    negative: { text: 'よくない' },
+};
+
 const naAdjective: TranslatedJapaneseText = {
     type: 'adjective',
     en: 'quiet',
@@ -199,6 +208,11 @@ describe('Badges', () => {
         it('renders na adjective badge', () => {
             render(<Badges card={naAdjective} />);
             expect(screen.getByText('na adjective')).toBeInTheDocument();
+        });
+
+        it('renders irregular i adjective badge', () => {
+            render(<Badges card={iAdjectiveIrregular} />);
+            expect(screen.getByText('i adjective (irregular)')).toBeInTheDocument();
         });
 
         it('hides adjective type badge when showAnswer is false', () => {

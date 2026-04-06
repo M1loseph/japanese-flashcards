@@ -16,18 +16,47 @@ const TranslationSchema = z.object({
     image_url: z.string().optional(),
 });
 
-const VerbSchema = TranslationSchema.extend({
-    type: z.literal('verb'),
-    verb_type: z.enum(['godan', 'ichidan', 'auxiliary', 'irregular']),
-    present: z
-        .object({
-            masu: z.object({
-                affirmative: TextWithPronunciationSchema,
-                negative: TextWithPronunciationSchema,
-            }),
-        })
-        .optional(),
+const PresentFormSchema = z.object({
+    masu: z.object({ affirmative: TextWithPronunciationSchema, negative: TextWithPronunciationSchema }),
 });
+
+const AuxiliaryVerbSchema = TranslationSchema.extend({
+    type: z.literal('verb'),
+    verb_type: z.literal('auxiliary'),
+});
+
+const GodanVerbSchema = TranslationSchema.extend({
+    type: z.literal('verb'),
+    verb_type: z.literal('godan'),
+    present: PresentFormSchema,
+});
+
+const IchidanVerbSchema = TranslationSchema.extend({
+    type: z.literal('verb'),
+    verb_type: z.literal('ichidan'),
+    present: PresentFormSchema,
+});
+
+const IrregularVerbSchema = TranslationSchema.extend({
+    type: z.literal('verb'),
+    verb_type: z.literal('irregular'),
+    present: PresentFormSchema,
+});
+
+const VerbSchema = z.discriminatedUnion('verb_type', [
+    AuxiliaryVerbSchema,
+    GodanVerbSchema,
+    IchidanVerbSchema,
+    IrregularVerbSchema,
+]);
+
+export type AuxiliaryVerb = z.infer<typeof AuxiliaryVerbSchema>;
+
+export type GodanVerb = z.infer<typeof GodanVerbSchema>;
+
+export type IchidanVerb = z.infer<typeof IchidanVerbSchema>;
+
+export type IrregularVerb = z.infer<typeof IrregularVerbSchema>;
 
 export type Verb = z.infer<typeof VerbSchema>;
 
@@ -47,11 +76,27 @@ const PreNounAdjectiveSchema = TranslationSchema.extend({
     type: z.literal('pre-noun-adjective'),
 });
 
-const AdjectiveSchema = TranslationSchema.extend({
+const IAdjectiveSchema = TranslationSchema.extend({
     type: z.literal('adjective'),
-    adjective_type: z.enum(['i-adjective', 'na-adjective']),
-    negative: TextWithPronunciationSchema.optional(),
+    adjective_type: z.literal('i-adjective'),
 });
+
+const IIrregularAdjectiveSchema = TranslationSchema.extend({
+    type: z.literal('adjective'),
+    adjective_type: z.literal('i-adjective-irregular'),
+    negative: TextWithPronunciationSchema,
+});
+
+const NaAdjectiveSchema = TranslationSchema.extend({
+    type: z.literal('adjective'),
+    adjective_type: z.literal('na-adjective'),
+});
+
+const AdjectiveSchema = z.discriminatedUnion('adjective_type', [
+    IAdjectiveSchema,
+    IIrregularAdjectiveSchema,
+    NaAdjectiveSchema,
+]);
 
 export type Adjective = z.infer<typeof AdjectiveSchema>;
 

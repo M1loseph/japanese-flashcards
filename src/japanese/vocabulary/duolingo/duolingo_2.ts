@@ -1,4 +1,4 @@
-import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 const duolingo_2: TranslatedJapaneseText[] = [
     {

@@ -1,4 +1,4 @@
-import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 const duolingo_1: TranslatedJapaneseText[] = [
     {
@@ -58,10 +58,11 @@ const duolingo_1: TranslatedJapaneseText[] = [
     },
     {
         type: 'adjective',
-        adjective_type: 'i-adjective',
+        adjective_type: 'i-adjective-irregular',
         en: 'Cool / Good-looking',
         pl: 'Fajny / Przystojny',
-        jp: { text: '格好いい', pronunciation: 'かっこいい' },
+        jp: { text: 'かっこいい' },
+        negative: { text: 'かっこよくない' },
     },
     {
         type: 'noun',

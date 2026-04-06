@@ -128,11 +128,11 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     },
     {
         type: 'adjective',
-        adjective_type: 'i-adjective',
+        adjective_type: 'i-adjective-irregular',
         en: 'Good',
         pl: 'Dobry',
-        jp: { text: '良い', pronunciation: 'いい' },
-        negative: { text: '良くない', pronunciation: 'よくない' },
+        jp: { text: 'いい' },
+        negative: { text: 'よくない' },
     },
     {
         type: 'adjective',
@@ -262,7 +262,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     },
     {
         type: 'adjective',
-        adjective_type: 'i-adjective',
+        adjective_type: 'i-adjective-irregular',
         en: 'Handsome / Cool',
         pl: 'Przystojny / Fajny',
         jp: { text: 'かっこいい' },

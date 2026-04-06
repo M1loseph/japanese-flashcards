@@ -1,13 +1,13 @@
 import { IconSettings } from '@tabler/icons-react';
 import { type FC, useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
-import { useGameContext } from '../../context/GameContext/index.ts';
-import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave.ts';
-import { FixedSizePage } from '../common/FixedSizePage.tsx';
-import Flashcard from './flashcard/Flashcard.tsx';
-import { FlashcardButtons } from './flashcard/FlashcardButtons.tsx';
-import ProgressBar from './flashcard/ProgressBar.tsx';
-import { GameSettingsModal } from './GameSettingsModal.tsx';
+import { useGameContext } from '../../context/GameContext';
+import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
+import { FixedSizePage } from '../common/FixedSizePage';
+import Flashcard from './flashcard/Flashcard';
+import { FlashcardButtons } from './flashcard/FlashcardButtons';
+import ProgressBar from './flashcard/ProgressBar';
+import { GameSettingsModal } from './GameSettingsModal';
 
 const RandomShuffleGamePage: FC = () => {
     const { gameState, updateLanguage, markCurrentFlashcard, updateSimplifiedMode } = useGameContext();

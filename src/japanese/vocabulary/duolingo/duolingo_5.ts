@@ -1,4 +1,4 @@
-import type { TranslatedJapaneseText, WordBag } from '../../types.ts';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 const duolingo_5: TranslatedJapaneseText[] = [
     {
@@ -69,10 +69,12 @@ const duolingo_5: TranslatedJapaneseText[] = [
         jp: { text: 'すてき' },
     },
     {
-        type: 'unknown',
+        type: 'adjective',
+        adjective_type: 'i-adjective-irregular',
         en: 'Good',
         pl: 'Dobry',
         jp: { text: 'いい' },
+        negative: { text: 'よくない' },
     },
     {
         type: 'unknown',
