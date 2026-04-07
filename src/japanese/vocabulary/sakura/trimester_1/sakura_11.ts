@@ -86,17 +86,10 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         jp: { text: 'ごろ' },
     },
     {
-        type: 'verb',
-        verb_type: 'irregular',
+        type: 'phrase',
         en: 'Work',
         pl: 'Pracować',
         jp: { text: 'しごとをする' },
-        present: {
-            masu: {
-                affirmative: { text: 'しごとをします' },
-                negative: { text: 'しごとをしません' },
-            },
-        },
     },
     {
         type: 'verb',
