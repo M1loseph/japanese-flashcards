@@ -445,6 +445,13 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '変', pronunciation: 'へん' },
     },
     {
+        type: 'adjective',
+        adjective_type: 'na-adjective',
+        en: 'Terrible / Difficult',
+        pl: 'Trudny / Ciężki',
+        jp: { text: '大変', pronunciation: 'たいへん' },
+    },
+    {
         type: 'noun',
         en: 'Money',
         pl: 'Pieniądze',
