@@ -241,10 +241,17 @@ const sakura_1_1: TranslatedJapaneseText[] = [
         jp: { text: 'おしいです' },
     },
     {
-        type: 'phrase',
-        en: "It's not correct",
-        pl: 'To nie jest poprawne',
-        jp: { text: 'ちがいます' },
+        type: 'verb',
+        verb_type: 'godan',
+        en: 'To be different / To be wrong',
+        pl: 'Różnić się / Mylić się',
+        jp: { text: '違う', pronunciation: 'ちがう' },
+        present: {
+            masu: {
+                affirmative: { text: 'ちがいます' },
+                negative: { text: 'ちがいません' },
+            },
+        },
     },
     {
         type: 'phrase',

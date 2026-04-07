@@ -229,13 +229,19 @@ const duolingo_11: TranslatedJapaneseText[] = [
         verb_type: 'godan',
         en: 'End',
         pl: 'Kończyć się',
-        jp: { text: 'おわる' },
+        jp: { text: '終わる', pronunciation: 'おわる' },
         present: {
             masu: {
-                affirmative: { text: 'おわります' },
-                negative: { text: 'おわりません' },
+                affirmative: { text: '終わります', pronunciation: 'おわります' },
+                negative: { text: '終わりません', pronunciation: 'おわりません' },
             },
         },
+    },
+    {
+        type: 'phrase',
+        en: "The class ends at 3 o'clock.",
+        pl: 'Zajęcia kończą się o 3.',
+        jp: { text: '授業は三時に終わります。', pronunciation: 'じゅぎょうはさんじにおわります。' },
     },
     {
         type: 'verb',
@@ -305,17 +311,29 @@ const duolingo_11: TranslatedJapaneseText[] = [
         jp: { text: 'うんてんをする' },
     },
     {
+        type: 'phrase',
+        en: 'I will drive to the supermarket by car.',
+        pl: 'Pojadę samochodem do supermarketu.',
+        jp: { text: 'スーパーまで車を運転します。', pronunciation: 'スーパーまでくるまをうんてんします。' },
+    },
+    {
         type: 'verb',
         verb_type: 'godan',
         en: 'Wash / Clean',
         pl: 'Myć / Czyścić',
-        jp: { text: 'あらう' },
+        jp: { text: '洗う', pronunciation: 'あらう' },
         present: {
             masu: {
-                affirmative: { text: 'あらいます' },
-                negative: { text: 'あらいません' },
+                affirmative: { text: '洗います', pronunciation: 'あらいます' },
+                negative: { text: '洗いません', pronunciation: 'あらいません' },
             },
         },
+    },
+    {
+        type: 'phrase',
+        en: 'I clean my car every week.',
+        pl: 'Myję mój samochód co tydzień.',
+        jp: { text: '毎週車を洗います。', pronunciation: 'まいしゅうくるまをあらいます。' },
     },
     {
         type: 'noun',

@@ -253,6 +253,18 @@ const family: TranslatedJapaneseText[] = [
         pl: 'Rodzeństwo (forma honoryfikatywna)',
         jp: { text: 'ご兄弟', pronunciation: 'ごきょうだい' },
     },
+    {
+        type: 'noun',
+        en: 'Cousin (humble)',
+        pl: 'Kuzyn / kuzynka (forma skromna)',
+        jp: { text: 'いとこ' },
+    },
+    {
+        type: 'noun',
+        en: 'Cousin (honorific)',
+        pl: 'Kuzyn / kuzynka (forma honoryfikatywna)',
+        jp: { text: 'いとこさん' },
+    },
 ];
 
 export const familyBag: WordBag = {

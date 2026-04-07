@@ -3,7 +3,7 @@ import type { TranslatedJapaneseText, WordBag } from '../../../types';
 const sakura_1_9: TranslatedJapaneseText[] = [
     {
         type: 'verb',
-        verb_type: 'irregular',
+        verb_type: 'godan',
         en: 'Have / Exist / Be located (inanimate)',
         pl: 'Mieć / Istnieć / Znajdować się (nieożywione)',
         jp: { text: 'ある' },
