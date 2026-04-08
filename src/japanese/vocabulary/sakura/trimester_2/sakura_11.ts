@@ -452,6 +452,13 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '大変', pronunciation: 'たいへん' },
     },
     {
+        type: 'adjective',
+        adjective_type: 'i-adjective',
+        en: 'Smart / Intelligent',
+        pl: 'Mądry / Inteligentny',
+        jp: { text: '頭がいい', pronunciation: 'あたまがいい' },
+    },
+    {
         type: 'noun',
         en: 'Money',
         pl: 'Pieniądze',
