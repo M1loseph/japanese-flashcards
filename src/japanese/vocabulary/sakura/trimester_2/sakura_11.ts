@@ -453,10 +453,11 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     },
     {
         type: 'adjective',
-        adjective_type: 'i-adjective',
+        adjective_type: 'i-adjective-irregular',
         en: 'Smart / Intelligent',
         pl: 'Mądry / Inteligentny',
         jp: { text: '頭がいい', pronunciation: 'あたまがいい' },
+        negative: { text: '頭がよくない', pronunciation: 'あたまがよくない' },
     },
     {
         type: 'noun',
