@@ -130,7 +130,7 @@ const sakura_3_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: "I'm not skilled and I'm short.",
         pl: 'Nie jestem zdolny i jestem niski.',
-        jp: { text: '上手じゃなくて背が低いです。', pronunciation: 'じょうずじゃなくてせがひくいです。' },
+        jp: { text: '得意じゃなくて背が低いです。', pronunciation: 'とくいじゃなくてせがひくいです。' },
     },
 ];
 
