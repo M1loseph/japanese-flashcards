@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { DrawerProvider } from './context/DrawerContext';
 import { GameContextProvider } from './context/GameContext';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { HardTextProvider } from './context/HardWordsContext';
@@ -8,11 +9,14 @@ import './index.css';
 import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
 import MainPage from './pages/MainPage';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
+import SearchPage from './pages/SearchPage';
 import SummaryPage from './pages/SummaryPage';
+import { DrawerLayout } from './pages/common/DrawerLayout';
 
 const router = createBrowserRouter([
     {
         path: '/',
+        Component: DrawerLayout,
         children: [
             {
                 path: '/',
@@ -25,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/game/summary',
                 Component: SummaryPage,
+            },
+            {
+                path: '/search',
+                Component: SearchPage,
             },
             {
                 path: '/bags/:bagId',
@@ -62,12 +70,14 @@ if (!root) {
 
 createRoot(root).render(
     <StrictMode>
-        <HardTextProvider>
-            <GameSettingsProvider>
-                <GameContextProvider>
-                    <RouterProvider router={router} />
-                </GameContextProvider>
-            </GameSettingsProvider>
-        </HardTextProvider>
+        <DrawerProvider>
+            <HardTextProvider>
+                <GameSettingsProvider>
+                    <GameContextProvider>
+                        <RouterProvider router={router} />
+                    </GameContextProvider>
+                </GameSettingsProvider>
+            </HardTextProvider>
+        </DrawerProvider>
     </StrictMode>,
 );

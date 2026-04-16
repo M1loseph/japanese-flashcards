@@ -1,5 +1,7 @@
+import { IconMenu2 } from '@tabler/icons-react';
 import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDrawer } from '../context/DrawerContext';
 
 interface HeaderProps {
     preHomeNavigationHook?: () => void;
@@ -9,6 +11,8 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = ({ preHomeNavigationHook, additionalComponents }) => {
     const navigate = useNavigate();
 
+    const { toggleDrawer } = useDrawer();
+
     const handleHomeClick = () => {
         if (preHomeNavigationHook) {
             preHomeNavigationHook();
@@ -16,21 +20,24 @@ export const Header: FC<HeaderProps> = ({ preHomeNavigationHook, additionalCompo
         navigate('/');
     };
 
-    const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const handleHomeKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
         if (event.key === 'Enter' || event.key === ' ') {
             handleHomeClick();
         }
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full backdrop-blur-md shadow-sm border-b border-slate-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+        <div className="navbar sticky top-0 z-50 backdrop-blur-md shadow-sm">
+            <div className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+                <button className="btn btn-square btn-ghost" aria-label="Open sidebar" onClick={toggleDrawer}>
+                    <IconMenu2 />
+                </button>
                 <div
-                    className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+                    className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity ml-2"
                     tabIndex={0}
                     role="button"
                     aria-label="Home"
-                    onKeyDown={handleKeyDown}
+                    onKeyDown={handleHomeKeyDown}
                     onClick={handleHomeClick}
                 >
                     <h1>
@@ -42,6 +49,6 @@ export const Header: FC<HeaderProps> = ({ preHomeNavigationHook, additionalCompo
                 </div>
                 <div className="grow">{additionalComponents}</div>
             </div>
-        </header>
+        </div>
     );
 };
