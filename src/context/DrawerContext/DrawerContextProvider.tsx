@@ -1,7 +1,5 @@
-import { type FC, type ReactNode, useContext, useState } from 'react';
+import { type FC, type ReactNode, useState } from 'react';
 import { DrawerContext } from './DrawerContext';
-
-export const useDrawer = () => useContext(DrawerContext);
 
 interface DrawerProviderProps {
     children: ReactNode;
