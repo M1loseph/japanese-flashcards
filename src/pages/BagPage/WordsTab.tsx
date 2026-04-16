@@ -1,8 +1,8 @@
 import { IconZoom } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { toRomaji } from 'wanakana';
 import { useGameSettingsContext } from '../../context/GameStateContext';
+import { textMatchesQuery } from '../../japanese/search';
 import type { WordBag } from '../../japanese/types';
 import { Word } from './Word';
 
@@ -12,11 +12,7 @@ export const WordsTab: FC = () => {
     const [searchText, setSearchText] = useState<string>('');
 
     const words = bag.words.filter((word) => {
-        if (!searchText) return true;
-        const wordRomaji = toRomaji(word.jp.pronunciation || word.jp.text);
-        if (wordRomaji.includes(searchText)) return true;
-        if (word[selectedLanguage].toLocaleLowerCase().includes(searchText)) return true;
-        return false;
+        return textMatchesQuery(word, searchText.toLowerCase(), selectedLanguage);
     });
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {

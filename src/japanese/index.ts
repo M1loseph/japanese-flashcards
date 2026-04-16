@@ -70,4 +70,4 @@ export { yearsBag } from './vocabulary/time/years';
 
 export type { TranslatedJapaneseText, WordBag } from './types';
 
-export { findBagById } from './search';
+export { availableWordBags, findBagById } from './search';

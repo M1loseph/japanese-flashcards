@@ -1,4 +1,6 @@
-import type { WordBag } from './types';
+import { toRomaji } from 'wanakana';
+import type { TranslationLanguage } from '../types/TranslationLanguage';
+import type { TranslatedJapaneseText, WordBag } from './types';
 import { countingFloorsBag } from './vocabulary/counting/countingFloors';
 import { countingLongCylindricalThingsBag } from './vocabulary/counting/countingLongCylindricalThings';
 import { countingPeopleBag } from './vocabulary/counting/countingPeople';
@@ -69,7 +71,7 @@ import { monthsBag } from './vocabulary/time/months';
 import { weekBag } from './vocabulary/time/week';
 import { yearsBag } from './vocabulary/time/years';
 
-const availableWordBags: WordBag[] = [
+export const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
     countingThingsBag,
@@ -151,3 +153,15 @@ export const findBagById: (id: string) => WordBag | undefined = (() => {
     }, new Map<string, WordBag>());
     return (id: string): WordBag | undefined => wordBagsById.get(id);
 })();
+
+export const textMatchesQuery = (
+    text: TranslatedJapaneseText,
+    query: string,
+    selectedLanguage: TranslationLanguage,
+): boolean => {
+    if (query === '') return true;
+    const wordRomaji = toRomaji(text.jp.pronunciation || text.jp.text);
+    if (wordRomaji.includes(query)) return true;
+    if (text[selectedLanguage].toLocaleLowerCase().includes(query)) return true;
+    return false;
+};

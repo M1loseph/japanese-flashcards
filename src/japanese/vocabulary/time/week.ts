@@ -69,12 +69,6 @@ const week: TranslatedJapaneseText[] = [
     },
     {
         type: 'noun',
-        en: 'Weekend',
-        pl: 'Weekend',
-        jp: { text: '週末', pronunciation: 'しゅうまつ' },
-    },
-    {
-        type: 'noun',
         en: 'This week',
         pl: 'Ten tydzień',
         jp: { text: '今週', pronunciation: 'こんしゅう' },
