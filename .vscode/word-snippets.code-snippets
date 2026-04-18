@@ -1,0 +1,10 @@
+{
+	"Noun snippet": {
+		"scope": "typescript",
+		"prefix": "noun",
+		"body": [
+			"{\n  type: 'noun',\n    en: '${1}',\n    pl: '${2}',\n    jp: '${3}', \n}"
+		],
+		"description": "Insert noun snippet"
+	}
+}

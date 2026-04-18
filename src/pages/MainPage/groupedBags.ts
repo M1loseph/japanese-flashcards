@@ -66,6 +66,7 @@ import {
     sakura2_8Bag,
     sakura2_9Bag,
     sakura3_1Bag,
+    sakura3_2Bag,
     weekBag,
     yearsBag,
     type WordBag,
@@ -122,6 +123,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         sakura2_11Bag,
         sakura2_12Bag,
         sakura3_1Bag,
+        sakura3_2Bag,
     ],
     'Apps 📱': [
         duolingo1Bag,

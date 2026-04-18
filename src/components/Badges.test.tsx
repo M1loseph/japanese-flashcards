@@ -140,6 +140,7 @@ describe('Badges', () => {
             ['numeral', 'numeral'],
             ['pre-noun-adjective', 'pre-noun-adjective'],
             ['particle', 'particle'],
+            ['prefix', 'prefix'],
             ['conjunction', 'conjunction'],
         ] as const)('renders a %s badge', (type, expectedText) => {
             const card: TranslatedJapaneseText = {
