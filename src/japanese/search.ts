@@ -1,6 +1,7 @@
 import { toRomaji } from 'wanakana';
 import type { TranslationLanguage } from '../types/TranslationLanguage';
 import type { TranslatedJapaneseText, WordBag } from './types';
+import { countingAgeBag } from './vocabulary/counting/countingAge';
 import { countingFloorsBag } from './vocabulary/counting/countingFloors';
 import { countingLongCylindricalThingsBag } from './vocabulary/counting/countingLongCylindricalThings';
 import { countingPeopleBag } from './vocabulary/counting/countingPeople';
@@ -75,6 +76,7 @@ import { yearsBag } from './vocabulary/time/years';
 export const availableWordBags: WordBag[] = [
     familyBag,
     numbersBag,
+    countingAgeBag,
     countingThingsBag,
     countingFloorsBag,
     countingSmallAndMediumAnimalsBag,

@@ -1,5 +1,6 @@
 import {
     cardinalDirectionsBag,
+    countingAgeBag,
     countingFloorsBag,
     countingLongCylindricalThingsBag,
     countingPeopleBag,
@@ -75,6 +76,7 @@ import {
 export const groupedBags: Record<string, WordBag[]> = {
     'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, daysOfMonthBag, yearsBag],
     'Counting 🔢': [
+        countingAgeBag,
         countingThinObjectsBag,
         countingLongCylindricalThingsBag,
         countingThingsBag,
