@@ -271,8 +271,8 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         type: 'adjective',
         adjective_type: 'i-adjective',
-        en: 'Nice / Kind',
-        pl: 'Miły / Uprzejmy',
+        en: 'Nice / Kind (can be used for all people)',
+        pl: 'Miły / Uprzejmy (może być używane do wszystkich osób)',
         jp: { text: '優しい', pronunciation: 'やさしい' },
     },
     {
@@ -426,8 +426,8 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         type: 'adjective',
         adjective_type: 'na-adjective',
-        en: 'Nice / Kind',
-        pl: 'Miły / Uprzejmy',
+        en: 'Nice / Kind (can only be used for not close people)',
+        pl: 'Miły / Uprzejmy (może być używane tylko do osób, z którymi nie jesteśmy blisko)',
         jp: { text: '親切', pronunciation: 'しんせつ' },
     },
     {

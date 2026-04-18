@@ -104,6 +104,10 @@ const PronounSchema = TranslationSchema.extend({
     type: z.literal('pronoun'),
 });
 
+const PrefixSchema = TranslationSchema.extend({
+    type: z.literal('prefix'),
+});
+
 const SuffixSchema = TranslationSchema.extend({
     type: z.literal('suffix'),
 });
@@ -130,6 +134,7 @@ export const TranslatedJapaneseTextSchema = z.discriminatedUnion('type', [
     PhraseSchema,
     AdjectiveSchema,
     PronounSchema,
+    PrefixSchema,
     SuffixSchema,
     NumeralSchema,
     AdverbSchema,
