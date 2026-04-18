@@ -61,6 +61,10 @@ const createTypeBadge: (type?: TranslatedJapaneseTextType) => BadgeMetadata | un
             color = `bg-cyan-300/75`;
             break;
         }
+        case 'prefix': {
+            color = `bg-lime-300/75`;
+            break;
+        }
         case 'unknown': {
             return;
         }
