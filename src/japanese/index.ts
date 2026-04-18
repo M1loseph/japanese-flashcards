@@ -1,3 +1,4 @@
+export { countingAgeBag } from './vocabulary/counting/countingAge';
 export { countingFloorsBag } from './vocabulary/counting/countingFloors';
 export { countingLongCylindricalThingsBag } from './vocabulary/counting/countingLongCylindricalThings';
 export { countingPeopleBag } from './vocabulary/counting/countingPeople';
