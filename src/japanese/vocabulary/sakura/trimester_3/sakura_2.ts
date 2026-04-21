@@ -102,19 +102,19 @@ const sakura_3_2: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'There is a desk in my room.',
         pl: 'W moim pokoju jest biurko.',
-        jp: { text: '私の部屋には机があります。', pronunciation: 'わたしのへやにはつくえがあります。' },
+        jp: { text: '私の部屋に机があります。', pronunciation: 'わたしのへやにつくえがあります。' },
     },
     {
         type: 'phrase',
         en: 'There is a flower in the garden.',
         pl: 'W ogrodzie jest kwiat.',
-        jp: { text: '庭には花があります。', pronunciation: 'にわにははながあります。' },
+        jp: { text: '庭に花があります。', pronunciation: 'にわにはながあります。' },
     },
     {
         type: 'phrase',
         en: 'There is a cat in the café.',
         pl: 'W kawiarni jest kot.',
-        jp: { text: '喫茶店には猫がいます。', pronunciation: 'きっさてんにはねこがいます。' },
+        jp: { text: '喫茶店に猫がいます。', pronunciation: 'きっさてんにねこがいます。' },
     },
     {
         type: 'phrase',
@@ -126,7 +126,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Who is in the room?',
         pl: 'Kto jest w pokoju?',
-        jp: { text: '部屋に誰がいますか？', pronunciation: 'へやにだれがいますか？' },
+        jp: { text: '部屋に誰がいますか。', pronunciation: 'へやにだれがいますか。' },
     },
     {
         type: 'phrase',
@@ -139,6 +139,12 @@ const sakura_3_2: TranslatedJapaneseText[] = [
         en: 'There is a cat in the library.',
         pl: 'W bibliotece jest kot.',
         jp: { text: '図書館に猫がいます。', pronunciation: 'としょかんにねこがいます。' },
+    },
+    {
+        type: 'phrase',
+        en: 'The homework is fairly easy.',
+        pl: 'Praca domowa jest w miarę łatwa.',
+        jp: { text: '宿題はまあまあ簡単です。', pronunciation: 'しゅくだいはまあまあかんたんです。' },
     },
 ];
 

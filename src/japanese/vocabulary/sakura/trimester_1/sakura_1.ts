@@ -255,6 +255,18 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     },
     {
         type: 'phrase',
+        en: "No, it's wrong.",
+        pl: 'Nie, to jest błędne.',
+        jp: { text: 'いいえ、違います。', pronunciation: 'いいえ、ちがいます。' },
+    },
+    {
+        type: 'phrase',
+        en: 'This car is different from my car.',
+        pl: 'Ten samochód różni się od mojego samochodu.',
+        jp: { text: 'この車は私の車と違います。', pronunciation: 'このくるまはわたしのくるまとちがいます。' },
+    },
+    {
+        type: 'phrase',
         en: 'Please one more time',
         pl: 'Proszę jeszcze raz',
         jp: { text: 'もういちどおねがいします' },
@@ -269,7 +281,7 @@ const sakura_1_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: "What does '... ' mean?",
         pl: "Co znaczy '... '?",
-        jp: { text: '...はなんですか？' },
+        jp: { text: '...はなんですか。' },
     },
     {
         type: 'phrase',
