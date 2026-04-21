@@ -107,8 +107,8 @@ const duolingo_8: TranslatedJapaneseText[] = [
     },
     {
         type: 'noun',
-        en: 'Apartment',
-        pl: 'Mieszkanie',
+        en: 'Apartment in a small building',
+        pl: 'Mieszkanie w małym budynku',
         jp: { text: 'アパート' },
     },
     {
