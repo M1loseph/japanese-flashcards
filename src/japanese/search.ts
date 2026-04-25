@@ -9,12 +9,14 @@ import { countingPeoplePoliteBag } from './vocabulary/counting/countingPeoplePol
 import { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals';
 import { countingThingsBag } from './vocabulary/counting/countingThings';
 import { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects';
+import { ordinalNumbersBag } from './vocabulary/counting/ordinalNumbers';
 import { directionsBag } from './vocabulary/directions';
 import { duolingo1Bag } from './vocabulary/duolingo/duolingo_1';
 import { duolingo10Bag } from './vocabulary/duolingo/duolingo_10';
 import { duolingo11Bag } from './vocabulary/duolingo/duolingo_11';
 import { duolingo12Bag } from './vocabulary/duolingo/duolingo_12';
 import { duolingo13Bag } from './vocabulary/duolingo/duolingo_13';
+import { duolingo14Bag } from './vocabulary/duolingo/duolingo_14';
 import { duolingo2Bag } from './vocabulary/duolingo/duolingo_2';
 import { duolingo3Bag } from './vocabulary/duolingo/duolingo_3';
 import { duolingo4Bag } from './vocabulary/duolingo/duolingo_4';
@@ -85,6 +87,7 @@ export const availableWordBags: WordBag[] = [
     countingPeoplePoliteBag,
     countingLongCylindricalThingsBag,
     countingThinObjectsBag,
+    ordinalNumbersBag,
     weekBag,
     hoursBag,
     minutesBag,
@@ -105,6 +108,7 @@ export const availableWordBags: WordBag[] = [
     duolingo11Bag,
     duolingo12Bag,
     duolingo13Bag,
+    duolingo14Bag,
     countriesEuropeBag,
     countriesAsiaBag,
     planetsBag,

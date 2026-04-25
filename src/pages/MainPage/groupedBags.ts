@@ -16,6 +16,7 @@ import {
     duolingo11Bag,
     duolingo12Bag,
     duolingo13Bag,
+    duolingo14Bag,
     duolingo1Bag,
     duolingo2Bag,
     duolingo3Bag,
@@ -38,6 +39,7 @@ import {
     minutesBag,
     monthsBag,
     numbersBag,
+    ordinalNumbersBag,
     planetsBag,
     sakura1_10Bag,
     sakura1_11Bag,
@@ -85,6 +87,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         countingSmallAndMediumAnimalsBag,
         countingPeopleBag,
         countingPeoplePoliteBag,
+        ordinalNumbersBag,
     ],
     'Essentials 📌': [familyBag, numbersBag, directionsBag],
     'Genki books 📚': [
@@ -143,6 +146,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         duolingo11Bag,
         duolingo12Bag,
         duolingo13Bag,
+        duolingo14Bag,
     ],
     'Geography 🌍 🌎 🌏': [countriesEuropeBag, countriesAsiaBag, planetsBag, cardinalDirectionsBag],
 };

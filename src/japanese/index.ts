@@ -6,12 +6,14 @@ export { countingPeoplePoliteBag } from './vocabulary/counting/countingPeoplePol
 export { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals';
 export { countingThingsBag } from './vocabulary/counting/countingThings';
 export { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects';
+export { ordinalNumbersBag } from './vocabulary/counting/ordinalNumbers';
 export { directionsBag } from './vocabulary/directions';
 export { duolingo1Bag } from './vocabulary/duolingo/duolingo_1';
 export { duolingo10Bag } from './vocabulary/duolingo/duolingo_10';
 export { duolingo11Bag } from './vocabulary/duolingo/duolingo_11';
 export { duolingo12Bag } from './vocabulary/duolingo/duolingo_12';
 export { duolingo13Bag } from './vocabulary/duolingo/duolingo_13';
+export { duolingo14Bag } from './vocabulary/duolingo/duolingo_14';
 export { duolingo2Bag } from './vocabulary/duolingo/duolingo_2';
 export { duolingo3Bag } from './vocabulary/duolingo/duolingo_3';
 export { duolingo4Bag } from './vocabulary/duolingo/duolingo_4';
