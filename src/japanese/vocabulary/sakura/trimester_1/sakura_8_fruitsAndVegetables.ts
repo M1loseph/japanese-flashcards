@@ -5,7 +5,7 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Strawberry',
         pl: 'Truskawka',
-        jp: { text: 'いちご' },
+        jp: { text: '苺', pronunciation: 'いちご' },
     },
     {
         type: 'noun',
@@ -23,7 +23,7 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Peach',
         pl: 'Brzoskwinia',
-        jp: { text: 'もも' },
+        jp: { text: '桃', pronunciation: 'もも' },
     },
     {
         type: 'noun',
@@ -39,20 +39,20 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
     },
     {
         type: 'noun',
-        en: 'Kaki fruit',
+        en: 'Persimmon / Kaki fruit',
         pl: 'Owoc kaki',
-        jp: { text: 'かき' },
+        jp: { text: '柿', pronunciation: 'かき' },
     },
     {
         type: 'noun',
         en: 'Pear',
         pl: 'Gruszka',
-        jp: { text: 'なし' },
+        jp: { text: '梨', pronunciation: 'なし' },
     },
     {
         type: 'noun',
         en: 'Cherry',
-        pl: 'Wiśnia',
+        pl: 'Wiśnia / Czereśnia',
         jp: { text: 'さくらんぼ' },
     },
     {
@@ -94,7 +94,7 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Blueberry',
-        pl: 'Jagoda',
+        pl: 'Borówka amerykańska',
         jp: { text: 'ブルーベリー' },
     },
     {
@@ -113,7 +113,7 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'White radish',
         pl: 'Biała rzodkiew',
-        jp: { text: 'だいこん' },
+        jp: { text: '大根', pronunciation: 'だいこん' },
     },
     {
         type: 'noun',
@@ -125,7 +125,7 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Edamame',
         pl: 'Edamame',
-        jp: { text: 'えだまめ' },
+        jp: { text: '枝豆', pronunciation: 'えだまめ' },
     },
     {
         type: 'noun',
@@ -135,15 +135,22 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
     },
     {
         type: 'noun',
+        en: 'Green onion / Spring onion',
+        pl: 'Zielona cebulka / Dymka',
+        jp: { text: 'ねぎ' },
+    },
+    {
+        type: 'noun',
         en: 'Leek',
         pl: 'Por',
-        jp: { text: 'ねぎ' },
+        jp: { text: 'リーキ' },
     },
     {
         type: 'noun',
         en: 'Onion',
         pl: 'Cebula',
-        jp: { text: 'たまねぎ' },
+        jp: { text: '玉ねぎ', pronunciation: 'たまねぎ' },
+        description: 'Literally translates to: "ball green onion".',
     },
     {
         type: 'noun',
@@ -161,13 +168,13 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Chinese cabbage',
         pl: 'Kapusta pekińska',
-        jp: { text: 'はくさい' },
+        jp: { text: '白菜', pronunciation: 'はくさい' },
     },
     {
         type: 'noun',
         en: 'Pumpkin',
         pl: 'Dynia',
-        jp: { text: 'かぼちゃ' },
+        jp: { text: '南瓜', pronunciation: 'かぼちゃ' },
     },
     {
         type: 'noun',
@@ -179,11 +186,11 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Carrot',
         pl: 'Marchewka',
-        jp: { text: 'にんじん' },
+        jp: { text: '人参', pronunciation: 'にんじん' },
     },
     {
         type: 'noun',
-        en: 'Paprika',
+        en: 'Bell pepper',
         pl: 'Papryka',
         jp: { text: 'パプリカ' },
     },
@@ -196,7 +203,7 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Sweet potato',
-        pl: 'Słodki ziemniak',
+        pl: 'Batat / Słodki ziemniak',
         jp: { text: 'さつまいも' },
     },
     {
@@ -215,7 +222,7 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Eggplant',
         pl: 'Bakłażan',
-        jp: { text: 'なす' },
+        jp: { text: '茄子', pronunciation: 'なす' },
     },
     {
         type: 'noun',
@@ -250,7 +257,7 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Asparagus',
-        pl: 'Szparagi',
+        pl: 'Szparag',
         jp: { text: 'アスパラガス' },
     },
 ];
