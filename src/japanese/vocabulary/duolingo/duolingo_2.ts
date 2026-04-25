@@ -47,7 +47,7 @@ const duolingo_2: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Train station',
         pl: 'Dworzec kolejowy',
-        jp: { text: 'えき' },
+        jp: { text: '駅', pronunciation: 'えき' },
     },
     {
         type: 'noun',
