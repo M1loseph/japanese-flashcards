@@ -28,13 +28,11 @@ const AuxiliaryVerbSchema = TranslationSchema.extend({
 const GodanVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     verb_type: z.literal('godan'),
-    present: PresentFormSchema,
 });
 
 const IchidanVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     verb_type: z.literal('ichidan'),
-    present: PresentFormSchema,
 });
 
 const IrregularVerbSchema = TranslationSchema.extend({

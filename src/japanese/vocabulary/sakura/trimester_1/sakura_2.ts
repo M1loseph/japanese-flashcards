@@ -304,12 +304,6 @@ const sakura_1_2: TranslatedJapaneseText[] = [
         en: 'Can',
         pl: 'Potrafić',
         jp: { text: 'できる' },
-        present: {
-            masu: {
-                affirmative: { text: 'できます' },
-                negative: { text: 'できません' },
-            },
-        },
     },
     {
         type: 'adverb',

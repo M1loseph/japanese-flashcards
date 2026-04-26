@@ -31,12 +31,6 @@ const duolingo_10: TranslatedJapaneseText[] = [
         en: 'Help',
         pl: 'Pomagać',
         jp: { text: 'てつだう' },
-        present: {
-            masu: {
-                affirmative: { text: 'てつだいます' },
-                negative: { text: 'てつだいません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -295,12 +289,6 @@ const duolingo_10: TranslatedJapaneseText[] = [
         en: 'Wait',
         pl: 'Czekać',
         jp: { text: 'まつ' },
-        present: {
-            masu: {
-                affirmative: { text: 'まちます' },
-                negative: { text: 'まちません' },
-            },
-        },
     },
     {
         type: 'noun',

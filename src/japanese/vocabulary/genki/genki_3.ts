@@ -157,12 +157,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Go',
         pl: 'Iść',
         jp: { text: '行く', pronunciation: 'いく' },
-        present: {
-            masu: {
-                affirmative: { text: '行きます' },
-                negative: { text: '行きません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -170,12 +164,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Return',
         pl: 'Wracać',
         jp: { text: '帰る', pronunciation: 'かえる' },
-        present: {
-            masu: {
-                affirmative: { text: '帰ります' },
-                negative: { text: '帰りません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -183,12 +171,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Listen / Hear',
         pl: 'Słuchać / Słyszeć',
         jp: { text: '聞く', pronunciation: 'きく' },
-        present: {
-            masu: {
-                affirmative: { text: '聞きます' },
-                negative: { text: '聞きません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -196,12 +178,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Drink',
         pl: 'Pić',
         jp: { text: '飲む', pronunciation: 'のむ' },
-        present: {
-            masu: {
-                affirmative: { text: '飲みます' },
-                negative: { text: '飲みません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -209,12 +185,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Speak / Talk',
         pl: 'Mówić',
         jp: { text: '話す', pronunciation: 'はなす' },
-        present: {
-            masu: {
-                affirmative: { text: '話します' },
-                negative: { text: '話しません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -222,12 +192,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Read',
         pl: 'Czytać',
         jp: { text: '読む', pronunciation: 'よむ' },
-        present: {
-            masu: {
-                affirmative: { text: '読みます' },
-                negative: { text: '読みません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -235,12 +199,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Get up',
         pl: 'Wstawać',
         jp: { text: '起きる', pronunciation: 'おきる' },
-        present: {
-            masu: {
-                affirmative: { text: '起きます' },
-                negative: { text: '起きません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -248,12 +206,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Eat',
         pl: 'Jeść',
         jp: { text: '食べる', pronunciation: 'たべる' },
-        present: {
-            masu: {
-                affirmative: { text: '食べます' },
-                negative: { text: '食べません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -261,12 +213,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Sleep / Go to bed',
         pl: 'Spać / Iść spać',
         jp: { text: '寝る', pronunciation: 'ねる' },
-        present: {
-            masu: {
-                affirmative: { text: '寝ます' },
-                negative: { text: '寝ません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -274,12 +220,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'See / Watch / Look at',
         pl: 'Widzieć / Oglądać / Patrzeć na',
         jp: { text: '見る', pronunciation: 'みる' },
-        present: {
-            masu: {
-                affirmative: { text: '見ます' },
-                negative: { text: '見ません' },
-            },
-        },
     },
     {
         type: 'verb',

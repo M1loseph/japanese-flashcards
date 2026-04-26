@@ -50,12 +50,6 @@ const duolingo_9: TranslatedJapaneseText[] = [
         en: 'Sit',
         pl: 'Siedzieć',
         jp: { text: 'すわる' },
-        present: {
-            masu: {
-                affirmative: { text: 'すわります' },
-                negative: { text: 'すわりません' },
-            },
-        },
     },
     {
         type: 'adjective',

@@ -101,12 +101,6 @@ const sakura_1_7: TranslatedJapaneseText[] = [
         en: 'Eat',
         pl: 'Jeść',
         jp: { text: 'たべる' },
-        present: {
-            masu: {
-                affirmative: { text: 'たべます' },
-                negative: { text: 'たべません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -162,12 +156,6 @@ const sakura_1_7: TranslatedJapaneseText[] = [
         en: 'Drink',
         pl: 'Pić',
         jp: { text: 'のむ' },
-        present: {
-            masu: {
-                affirmative: { text: 'のみます' },
-                negative: { text: 'のみません' },
-            },
-        },
     },
     {
         type: 'noun',

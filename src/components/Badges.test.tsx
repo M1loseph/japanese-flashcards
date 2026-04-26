@@ -23,12 +23,6 @@ const verb: TranslatedJapaneseText = {
     pl: 'jeść',
     jp: { text: '食べる', pronunciation: 'たべる' },
     verb_type: 'ichidan',
-    present: {
-        masu: {
-            affirmative: { text: '食べます', pronunciation: 'たべます' },
-            negative: { text: '食べません', pronunciation: 'たべません' },
-        },
-    },
 };
 
 const godanVerb: TranslatedJapaneseText = {
@@ -37,12 +31,6 @@ const godanVerb: TranslatedJapaneseText = {
     pl: 'pić',
     jp: { text: '飲む', pronunciation: 'のむ' },
     verb_type: 'godan',
-    present: {
-        masu: {
-            affirmative: { text: '飲みます', pronunciation: 'のみます' },
-            negative: { text: '飲みません', pronunciation: 'のみません' },
-        },
-    },
 };
 
 const auxiliaryVerb: TranslatedJapaneseText = {

@@ -61,12 +61,6 @@ const sakura_2_2: TranslatedJapaneseText[] = [
         en: 'To be caused by / To depend on',
         pl: 'Zależeć od',
         jp: { text: '依る', pronunciation: 'よる' },
-        present: {
-            masu: {
-                affirmative: { text: '依ります', pronunciation: 'よります' },
-                negative: { text: '依りません', pronunciation: 'よりません' },
-            },
-        },
     },
     {
         type: 'noun',

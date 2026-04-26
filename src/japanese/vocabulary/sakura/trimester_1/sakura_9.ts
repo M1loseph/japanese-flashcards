@@ -7,12 +7,6 @@ const sakura_1_9: TranslatedJapaneseText[] = [
         en: 'Have / Exist / Be located (inanimate)',
         pl: 'Mieć / Istnieć / Znajdować się (nieożywione)',
         jp: { text: 'ある' },
-        present: {
-            masu: {
-                affirmative: { text: 'あります' },
-                negative: { text: 'ありません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -20,12 +14,6 @@ const sakura_1_9: TranslatedJapaneseText[] = [
         en: 'To have / To exist / There is (animate)',
         pl: 'Mieć / Istnieć / Być (ożywione)',
         jp: { text: 'いる' },
-        present: {
-            masu: {
-                affirmative: { text: 'います' },
-                negative: { text: 'いません' },
-            },
-        },
     },
     {
         type: 'adjective',
@@ -137,12 +125,6 @@ const sakura_1_9: TranslatedJapaneseText[] = [
         en: 'To watch',
         pl: 'Oglądać',
         jp: { text: 'みる' },
-        present: {
-            masu: {
-                affirmative: { text: 'みます' },
-                negative: { text: 'みません' },
-            },
-        },
     },
     {
         type: 'noun',
