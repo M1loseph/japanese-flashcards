@@ -19,12 +19,6 @@ const sakura_2_3: TranslatedJapaneseText[] = [
         en: 'Chill / Calm down / Refrigerate',
         pl: 'Ochłonąć / Schłodzić',
         jp: { text: 'ひやす' },
-        present: {
-            masu: {
-                affirmative: { text: 'ひやします' },
-                negative: { text: 'ひやしません' },
-            },
-        },
     },
     {
         type: 'adjective',

@@ -136,16 +136,10 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     },
     {
         type: 'verb',
+        verb_type: 'ichidan',
         en: 'Open',
         pl: 'Otwierać',
         jp: { text: 'あける' },
-        verb_type: 'ichidan',
-        present: {
-            masu: {
-                affirmative: { text: 'あけます' },
-                negative: { text: 'あけません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -159,12 +153,6 @@ const sakura_1_1: TranslatedJapaneseText[] = [
         en: 'Say; Speak; Tell',
         pl: 'Mówić; Powiedzieć',
         jp: { text: 'いう' },
-        present: {
-            masu: {
-                affirmative: { text: 'いいます' },
-                negative: { text: 'いいません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -246,12 +234,6 @@ const sakura_1_1: TranslatedJapaneseText[] = [
         en: 'To be different / To be wrong',
         pl: 'Różnić się / Mylić się',
         jp: { text: '違う', pronunciation: 'ちがう' },
-        present: {
-            masu: {
-                affirmative: { text: 'ちがいます' },
-                negative: { text: 'ちがいません' },
-            },
-        },
     },
     {
         type: 'phrase',

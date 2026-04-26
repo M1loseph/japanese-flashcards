@@ -115,12 +115,6 @@ const sakura_1_4: TranslatedJapaneseText[] = [
         en: 'Plus / Add',
         pl: 'Dodać',
         jp: { text: 'たす' },
-        present: {
-            masu: {
-                affirmative: { text: 'たします' },
-                negative: { text: 'たしません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -128,12 +122,6 @@ const sakura_1_4: TranslatedJapaneseText[] = [
         en: 'Minus / Subtract',
         pl: 'Odjąć',
         jp: { text: 'ひく' },
-        present: {
-            masu: {
-                affirmative: { text: 'ひきます' },
-                negative: { text: 'ひきません' },
-            },
-        },
     },
     {
         type: 'phrase',

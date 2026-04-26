@@ -98,12 +98,6 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         en: 'Go back',
         pl: 'Wracać',
         jp: { text: 'かえる' },
-        present: {
-            masu: {
-                affirmative: { text: 'かえります' },
-                negative: { text: 'かえりません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -117,12 +111,6 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         en: 'Wake up',
         pl: 'Budzić się',
         jp: { text: 'おきる' },
-        present: {
-            masu: {
-                affirmative: { text: 'おきます' },
-                negative: { text: 'おきません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -130,12 +118,6 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         en: 'Go',
         pl: 'Iść',
         jp: { text: 'いく' },
-        present: {
-            masu: {
-                affirmative: { text: 'いきます' },
-                negative: { text: 'いきません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -179,12 +161,6 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         en: 'Take (a shower)',
         pl: 'Brać (prysznic)',
         jp: { text: 'あびる' },
-        present: {
-            masu: {
-                affirmative: { text: 'あびます' },
-                negative: { text: 'あびません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -204,12 +180,6 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         en: 'Sleep',
         pl: 'Spać',
         jp: { text: 'ねる' },
-        present: {
-            masu: {
-                affirmative: { text: 'ねます' },
-                negative: { text: 'ねません' },
-            },
-        },
     },
     {
         type: 'adjective',
@@ -263,12 +233,6 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         en: 'Enter',
         pl: 'Wchodzić',
         jp: { text: 'はいる' },
-        present: {
-            masu: {
-                affirmative: { text: 'はいります' },
-                negative: { text: 'はいりません' },
-            },
-        },
     },
     {
         type: 'phrase',

@@ -19,12 +19,6 @@ const duolingo_13: TranslatedJapaneseText[] = [
         en: 'Sing',
         pl: 'Śpiewać',
         jp: { text: '歌う', pronunciation: 'うたう' },
-        present: {
-            masu: {
-                affirmative: { text: '歌います', pronunciation: 'うたいます' },
-                negative: { text: '歌いません', pronunciation: 'うたいません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -104,12 +98,6 @@ const duolingo_13: TranslatedJapaneseText[] = [
         en: 'Play (a musical instrument)',
         pl: 'Grać (na instrumencie muzycznym)',
         jp: { text: '弾く', pronunciation: 'ひく' },
-        present: {
-            masu: {
-                affirmative: { text: '弾きます', pronunciation: 'ひきます' },
-                negative: { text: '弾きません', pronunciation: 'ひきません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -147,12 +135,6 @@ const duolingo_13: TranslatedJapaneseText[] = [
         en: 'Dance',
         pl: 'Tańczyć',
         jp: { text: '踊る', pronunciation: 'おどる' },
-        present: {
-            masu: {
-                affirmative: { text: '踊ります', pronunciation: 'おどります' },
-                negative: { text: '踊りません', pronunciation: 'おどりません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -160,12 +142,6 @@ const duolingo_13: TranslatedJapaneseText[] = [
         en: 'Begin',
         pl: 'Zaczynać się',
         jp: { text: '始まる', pronunciation: 'はじまる' },
-        present: {
-            masu: {
-                affirmative: { text: '始まります', pronunciation: 'はじまります' },
-                negative: { text: '始まりません', pronunciation: 'はじまりません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -173,12 +149,6 @@ const duolingo_13: TranslatedJapaneseText[] = [
         en: 'Write',
         pl: 'Pisać',
         jp: { text: '書く', pronunciation: 'かく' },
-        present: {
-            masu: {
-                affirmative: { text: '書きます', pronunciation: 'かきます' },
-                negative: { text: '書きません', pronunciation: 'かきません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -186,12 +156,6 @@ const duolingo_13: TranslatedJapaneseText[] = [
         en: 'Make',
         pl: 'Robić',
         jp: { text: '作る', pronunciation: 'つくる' },
-        present: {
-            masu: {
-                affirmative: { text: '作ります', pronunciation: 'つくります' },
-                negative: { text: '作りません', pronunciation: 'つくりません' },
-            },
-        },
     },
     {
         type: 'noun',

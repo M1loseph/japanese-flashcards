@@ -19,12 +19,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Use',
         pl: 'Używać',
         jp: { text: 'つかう' },
-        present: {
-            masu: {
-                affirmative: { text: 'つかいます' },
-                negative: { text: 'つかいません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -32,12 +26,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Meet',
         pl: 'Spotykać',
         jp: { text: '会う', pronunciation: 'あう' },
-        present: {
-            masu: {
-                affirmative: { text: '会います', pronunciation: 'あいます' },
-                negative: { text: '会いません', pronunciation: 'あいません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -51,12 +39,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Make / Create',
         pl: 'Robić / Tworzyć',
         jp: { text: 'つくる' },
-        present: {
-            masu: {
-                affirmative: { text: 'つくります' },
-                negative: { text: 'つくりません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -70,12 +52,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Take (an object or picture)',
         pl: 'Brać (przedmiot) lub robić (zdjęcie)',
         jp: { text: '撮る', pronunciation: 'とる' },
-        present: {
-            masu: {
-                affirmative: { text: '撮ります', pronunciation: 'とります' },
-                negative: { text: '撮りません', pronunciation: 'とりません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -89,12 +65,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Send',
         pl: 'Wysyłać',
         jp: { text: 'おくる' },
-        present: {
-            masu: {
-                affirmative: { text: 'おくります' },
-                negative: { text: 'おくりません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -120,12 +90,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Play / Have fun / Hang out',
         pl: 'Bawić się / Miło spędzać czas',
         jp: { text: 'あそぶ' },
-        present: {
-            masu: {
-                affirmative: { text: 'あそびます' },
-                negative: { text: 'あそびません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -139,12 +103,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Play (a musical instrument)',
         pl: 'Grać (na instrumencie muzycznym)',
         jp: { text: 'ひく' },
-        present: {
-            masu: {
-                affirmative: { text: 'ひきます' },
-                negative: { text: 'ひきません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -158,12 +116,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Rest',
         pl: 'Odpoczywać',
         jp: { text: 'やすむ' },
-        present: {
-            masu: {
-                affirmative: { text: 'やすみます' },
-                negative: { text: 'やすみません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -171,12 +123,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Swim',
         pl: 'Pływać',
         jp: { text: 'およぐ' },
-        present: {
-            masu: {
-                affirmative: { text: 'およぎます' },
-                negative: { text: 'およぎません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -184,12 +130,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Talk',
         pl: 'Rozmawiać',
         jp: { text: 'はなす' },
-        present: {
-            masu: {
-                affirmative: { text: 'はなします' },
-                negative: { text: 'はなしません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -203,12 +143,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Teach',
         pl: 'Uczyć (kogoś)',
         jp: { text: 'おしえる' },
-        present: {
-            masu: {
-                affirmative: { text: 'おしえます' },
-                negative: { text: 'おしえません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -222,12 +156,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Put on (clothes)',
         pl: 'Zakładać (ubrania)',
         jp: { text: 'きる' },
-        present: {
-            masu: {
-                affirmative: { text: 'きます' },
-                negative: { text: 'きません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -265,7 +193,7 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Cook pierogi',
         pl: 'Gotować pierogi',
-        jp: { text: 'ピエロギをつくります' },
+        jp: { text: 'ピエロギをつくる' },
     },
     {
         type: 'phrase',

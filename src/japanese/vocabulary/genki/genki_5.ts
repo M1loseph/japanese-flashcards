@@ -279,12 +279,6 @@ const genki_5: TranslatedJapaneseText[] = [
         en: 'Swim',
         pl: 'Pływać',
         jp: { text: '泳ぐ', pronunciation: 'およぐ' },
-        present: {
-            masu: {
-                affirmative: { text: '泳ぎます', pronunciation: 'およぎます' },
-                negative: { text: '泳ぎません', pronunciation: 'およぎません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -292,12 +286,6 @@ const genki_5: TranslatedJapaneseText[] = [
         en: 'Listen / Ask',
         pl: 'Słuchać / Pytać',
         jp: { text: '聞く', pronunciation: 'きく' },
-        present: {
-            masu: {
-                affirmative: { text: '聞きます', pronunciation: 'ききます' },
-                negative: { text: '聞きません', pronunciation: 'ききません' },
-            },
-        },
         description:
             'When using this verb in the meaning of "ask", it is usually followed by に (e.g. 先生に聞きます - I ask the teacher). In the meaning of "listen", it is usually followed by を (e.g. 音楽を聞きます - I listen to music).',
     },
@@ -307,12 +295,6 @@ const genki_5: TranslatedJapaneseText[] = [
         en: 'Ride / Board',
         pl: 'Jeździć / Wsiadać',
         jp: { text: '乗る', pronunciation: 'のる' },
-        present: {
-            masu: {
-                affirmative: { text: '乗ります', pronunciation: 'のります' },
-                negative: { text: '乗りません', pronunciation: 'のりません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -320,25 +302,13 @@ const genki_5: TranslatedJapaneseText[] = [
         en: 'To do / Perform',
         pl: 'Robić / Wykonywać',
         jp: { text: 'やる' },
-        present: {
-            masu: {
-                affirmative: { text: 'やります' },
-                negative: { text: 'やりません' },
-            },
-        },
     },
     {
         type: 'verb',
         verb_type: 'ichidan',
-        en: 'Go out',
+        en: 'Go out / Exit',
         pl: 'Wyjść',
         jp: { text: '出かける', pronunciation: 'でかける' },
-        present: {
-            masu: {
-                affirmative: { text: '出かけます', pronunciation: 'でかけます' },
-                negative: { text: '出かけません', pronunciation: 'でかけません' },
-            },
-        },
     },
     {
         type: 'noun',

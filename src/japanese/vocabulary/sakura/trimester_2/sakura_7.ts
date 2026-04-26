@@ -281,12 +281,6 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         en: 'To pass through',
         pl: 'Przechodzić przez',
         jp: { text: '通る', pronunciation: 'とおる' },
-        present: {
-            masu: {
-                affirmative: { text: '通ります', pronunciation: 'とおります' },
-                negative: { text: '通りません', pronunciation: 'とおりません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -300,12 +294,6 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         en: 'Cover',
         pl: 'Przykrywać / Zakrywać',
         jp: { text: '覆う', pronunciation: 'おおう' },
-        present: {
-            masu: {
-                affirmative: { text: '覆います', pronunciation: 'おおいます' },
-                negative: { text: '覆いません', pronunciation: 'おおいません' },
-            },
-        },
     },
     {
         type: 'phrase',

@@ -151,12 +151,6 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'Meet',
         pl: 'Spotykać',
         jp: { text: '会う', pronunciation: 'あう' },
-        present: {
-            masu: {
-                affirmative: { text: '会います', pronunciation: 'あいます' },
-                negative: { text: '会いません', pronunciation: 'あいません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -164,12 +158,6 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'There is / There are (inanimate)',
         pl: 'Jest / Są (nieożywione)',
         jp: { text: 'あります' },
-        present: {
-            masu: {
-                affirmative: { text: 'あります' },
-                negative: { text: 'ありません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -177,12 +165,6 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'Buy',
         pl: 'Kupować',
         jp: { text: '買う', pronunciation: 'かう' },
-        present: {
-            masu: {
-                affirmative: { text: '買います', pronunciation: 'かいます' },
-                negative: { text: '買いません', pronunciation: 'かいません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -190,12 +172,6 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'Write',
         pl: 'Pisać',
         jp: { text: '書く', pronunciation: 'かく' },
-        present: {
-            masu: {
-                affirmative: { text: '書きます', pronunciation: 'かきます' },
-                negative: { text: '書きません', pronunciation: 'かきません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -203,12 +179,6 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'Take (a picture)',
         pl: 'Robić (zdjęcie)',
         jp: { text: '撮る', pronunciation: 'とる' },
-        present: {
-            masu: {
-                affirmative: { text: '撮ります', pronunciation: 'とります' },
-                negative: { text: '撮りません', pronunciation: 'とりません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -216,12 +186,6 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'Wait',
         pl: 'Czekać',
         jp: { text: '待つ', pronunciation: 'まつ' },
-        present: {
-            masu: {
-                affirmative: { text: '待ちます', pronunciation: 'まちます' },
-                negative: { text: '待ちません', pronunciation: 'まちません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -229,12 +193,6 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'Understand',
         pl: 'Rozumieć',
         jp: { text: '分かる', pronunciation: 'わかる' },
-        present: {
-            masu: {
-                affirmative: { text: '分かります', pronunciation: 'わかります' },
-                negative: { text: '分かりません', pronunciation: 'わかりません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -242,12 +200,6 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'There is / There are (animate)',
         pl: 'Jest / Są (ożywione)',
         jp: { text: 'いる' },
-        present: {
-            masu: {
-                affirmative: { text: 'います' },
-                negative: { text: 'いません' },
-            },
-        },
     },
     {
         type: 'suffix',

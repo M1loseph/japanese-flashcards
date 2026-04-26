@@ -37,12 +37,6 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         en: 'Listen',
         pl: 'Słuchać',
         jp: { text: 'きく' },
-        present: {
-            masu: {
-                affirmative: { text: 'ききます' },
-                negative: { text: 'ききません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -80,12 +74,6 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         en: 'Draw',
         pl: 'Rysować',
         jp: { text: 'かく' },
-        present: {
-            masu: {
-                affirmative: { text: 'かきます' },
-                negative: { text: 'かきません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -93,12 +81,6 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         en: 'Write',
         pl: 'Pisać',
         jp: { text: '書く', pronunciation: 'かく' },
-        present: {
-            masu: {
-                affirmative: { text: '書きます', pronunciation: 'かきます' },
-                negative: { text: '書きません', pronunciation: 'かきません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -106,12 +88,6 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         en: 'Buy',
         pl: 'Kupować',
         jp: { text: '買う', pronunciation: 'かう' },
-        present: {
-            masu: {
-                affirmative: { text: '買います', pronunciation: 'かいます' },
-                negative: { text: '買いません', pronunciation: 'かいません' },
-            },
-        },
     },
     {
         type: 'noun',

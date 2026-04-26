@@ -13,12 +13,6 @@ const duolingo_11: TranslatedJapaneseText[] = [
         en: 'Get on / Ride (transport)',
         pl: 'Wsiadać / Jeździć (transport)',
         jp: { text: 'のる' },
-        present: {
-            masu: {
-                affirmative: { text: 'のります' },
-                negative: { text: 'のりません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -230,12 +224,6 @@ const duolingo_11: TranslatedJapaneseText[] = [
         en: 'End',
         pl: 'Kończyć się',
         jp: { text: '終わる', pronunciation: 'おわる' },
-        present: {
-            masu: {
-                affirmative: { text: '終わります', pronunciation: 'おわります' },
-                negative: { text: '終わりません', pronunciation: 'おわりません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -249,12 +237,6 @@ const duolingo_11: TranslatedJapaneseText[] = [
         en: 'Ask',
         pl: 'Pytać',
         jp: { text: 'きく' },
-        present: {
-            masu: {
-                affirmative: { text: 'ききます' },
-                negative: { text: 'ききません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -324,12 +306,6 @@ const duolingo_11: TranslatedJapaneseText[] = [
         en: 'Wash / Clean',
         pl: 'Myć / Czyścić',
         jp: { text: '洗う', pronunciation: 'あらう' },
-        present: {
-            masu: {
-                affirmative: { text: '洗います', pronunciation: 'あらいます' },
-                negative: { text: '洗いません', pronunciation: 'あらいません' },
-            },
-        },
     },
     {
         type: 'phrase',

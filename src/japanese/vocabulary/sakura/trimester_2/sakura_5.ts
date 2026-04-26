@@ -16,12 +16,6 @@ const sakura_2_5: TranslatedJapaneseText[] = [
         en: "Go (away from speaker's perspective)",
         pl: 'Iść (w przeciwnym kierunku niż mówiący)',
         jp: { text: '行く', pronunciation: 'いく' },
-        present: {
-            masu: {
-                affirmative: { text: '行きます', pronunciation: 'いきます' },
-                negative: { text: '行きません', pronunciation: 'いきません' },
-            },
-        },
     },
     {
         type: 'verb',
@@ -42,12 +36,6 @@ const sakura_2_5: TranslatedJapaneseText[] = [
         en: 'Return / Come back',
         pl: 'Wracać',
         jp: { text: '帰る', pronunciation: 'かえる' },
-        present: {
-            masu: {
-                affirmative: { text: '帰ります', pronunciation: 'かえります' },
-                negative: { text: '帰りません', pronunciation: 'かえりません' },
-            },
-        },
     },
     {
         type: 'noun',

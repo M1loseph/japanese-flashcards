@@ -26,12 +26,6 @@ const sakura_2_9: TranslatedJapaneseText[] = [
         en: 'To come out',
         pl: 'Wychodzić',
         jp: { text: '出る', pronunciation: 'でる' },
-        present: {
-            masu: {
-                affirmative: { text: '出ます', pronunciation: 'でます' },
-                negative: { text: '出ません', pronunciation: 'でません' },
-            },
-        },
     },
     {
         type: 'noun',

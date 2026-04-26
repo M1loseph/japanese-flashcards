@@ -19,12 +19,6 @@ const duolingo_14: TranslatedJapaneseText[] = [
         en: 'Wear',
         pl: 'Nosić',
         jp: { text: '着る', pronunciation: 'きる' },
-        present: {
-            masu: {
-                affirmative: { text: '着ます', pronunciation: 'きます' },
-                negative: { text: '着ません', pronunciation: 'きません' },
-            },
-        },
     },
     {
         type: 'adjective',
@@ -142,12 +136,6 @@ const duolingo_14: TranslatedJapaneseText[] = [
         en: 'Get off',
         pl: 'Wysiadać',
         jp: { text: '降りる', pronunciation: 'おりる' },
-        present: {
-            masu: {
-                affirmative: { text: '降ります', pronunciation: 'おります' },
-                negative: { text: '降りません', pronunciation: 'おりません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -179,12 +167,6 @@ const duolingo_14: TranslatedJapaneseText[] = [
         en: 'Transfer',
         pl: 'Przesiadać się',
         jp: { text: '乗り換える', pronunciation: 'のりかえる' },
-        present: {
-            masu: {
-                affirmative: { text: '乗り換えます', pronunciation: 'のりかえます' },
-                negative: { text: '乗り換えません', pronunciation: 'のりかえません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -198,12 +180,6 @@ const duolingo_14: TranslatedJapaneseText[] = [
         en: 'Pay',
         pl: 'Płacić',
         jp: { text: '払う', pronunciation: 'はらう' },
-        present: {
-            masu: {
-                affirmative: { text: '払います', pronunciation: 'はらいます' },
-                negative: { text: '払いません', pronunciation: 'はらいません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -237,12 +213,6 @@ const duolingo_14: TranslatedJapaneseText[] = [
         en: 'Call / Invite / Summon',
         pl: 'Wołać / Zapraszać / Przywoływać',
         jp: { text: '呼ぶ', pronunciation: 'よぶ' },
-        present: {
-            masu: {
-                affirmative: { text: '呼びます', pronunciation: 'よびます' },
-                negative: { text: '呼びません', pronunciation: 'よびません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -382,12 +352,6 @@ const duolingo_14: TranslatedJapaneseText[] = [
         pl: 'Wejść / Dołączyć',
         verb_type: 'godan',
         jp: { text: '入る', pronunciation: 'はいる' },
-        present: {
-            masu: {
-                affirmative: { text: '入ります', pronunciation: 'はいります' },
-                negative: { text: '入りません', pronunciation: 'はいりません' },
-            },
-        },
     },
     {
         type: 'phrase',
@@ -401,12 +365,6 @@ const duolingo_14: TranslatedJapaneseText[] = [
         en: 'Speak / Talk',
         pl: 'Mówić / Rozmawiać',
         jp: { text: '話す', pronunciation: 'はなす' },
-        present: {
-            masu: {
-                affirmative: { text: '話します', pronunciation: 'はなします' },
-                negative: { text: '話しません', pronunciation: 'はなしません' },
-            },
-        },
     },
     {
         type: 'phrase',

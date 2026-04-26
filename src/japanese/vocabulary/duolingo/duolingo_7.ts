@@ -49,12 +49,6 @@ const duolingo_7: TranslatedJapaneseText[] = [
         en: 'Drink',
         pl: 'Pić',
         jp: { text: '飲む', pronunciation: 'のむ' },
-        present: {
-            masu: {
-                affirmative: { text: '飲みます', pronunciation: 'のみます' },
-                negative: { text: '飲みません', pronunciation: 'のみません' },
-            },
-        },
     },
     {
         type: 'unknown',
@@ -224,12 +218,6 @@ const duolingo_7: TranslatedJapaneseText[] = [
         en: 'Move (to a new house)',
         pl: 'Przeprowadzić się (do nowego domu)',
         jp: { text: '引っ越す', pronunciation: 'ひっこす' },
-        present: {
-            masu: {
-                affirmative: { text: '引っ越します', pronunciation: 'ひっこします' },
-                negative: { text: '引っ越しません', pronunciation: 'ひっこしません' },
-            },
-        },
     },
     {
         type: 'unknown',

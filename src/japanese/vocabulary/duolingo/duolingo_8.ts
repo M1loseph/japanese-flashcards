@@ -135,12 +135,6 @@ const duolingo_8: TranslatedJapaneseText[] = [
         en: 'Go',
         pl: 'Iść',
         jp: { text: '行く', pronunciation: 'いく' },
-        present: {
-            masu: {
-                affirmative: { text: '行きます', pronunciation: 'いきます' },
-                negative: { text: '行きません', pronunciation: 'いきません' },
-            },
-        },
     },
     {
         type: 'noun',
@@ -210,12 +204,6 @@ const duolingo_8: TranslatedJapaneseText[] = [
         en: 'Take (time)',
         pl: 'Zająć (czas)',
         jp: { text: 'かかる' },
-        present: {
-            masu: {
-                affirmative: { text: 'かかります' },
-                negative: { text: 'かかりません' },
-            },
-        },
     },
     {
         type: 'suffix',
