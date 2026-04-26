@@ -287,7 +287,8 @@ const duolingo_11: TranslatedJapaneseText[] = [
         jp: { text: 'としょかん' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Translate',
         pl: 'Tłumaczyć',
         jp: { text: 'ほんやくをする' },
@@ -305,7 +306,8 @@ const duolingo_11: TranslatedJapaneseText[] = [
         jp: { text: 'ナビ' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Drive',
         pl: 'Kierować pojazdem',
         jp: { text: 'うんてんをする' },

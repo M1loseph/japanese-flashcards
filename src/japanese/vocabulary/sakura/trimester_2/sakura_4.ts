@@ -101,7 +101,8 @@ const sakura_2_4: TranslatedJapaneseText[] = [
         jp: { text: 'ざんぎょう' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Work overtime',
         pl: 'Pracować po godzinach',
         jp: { text: 'ざんぎょうをする' },

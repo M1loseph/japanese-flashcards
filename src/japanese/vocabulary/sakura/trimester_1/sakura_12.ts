@@ -242,13 +242,15 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'いちにちじゅう' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Cook',
         pl: 'Gotować',
         jp: { text: 'りょうりをする' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Do sports',
         pl: 'Uprawiać sport',
         jp: { text: 'スポーツをする' },
@@ -280,7 +282,8 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'コピー' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Make a copy',
         pl: 'Robić kopię',
         jp: { text: 'コピーをする' },
@@ -350,7 +353,8 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'れいぞうこ' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Play football',
         pl: 'Grać w piłkę nożną',
         jp: { text: 'サッカーをする' },

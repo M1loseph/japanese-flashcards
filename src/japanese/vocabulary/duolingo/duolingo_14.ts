@@ -64,7 +64,8 @@ const duolingo_14: TranslatedJapaneseText[] = [
         jp: { text: 'ポップコーン' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Reserve',
         pl: 'Rezerwować',
         jp: { text: '予約する', pronunciation: 'よやくする' },
@@ -223,10 +224,12 @@ const duolingo_14: TranslatedJapaneseText[] = [
         jp: { text: '南口', pronunciation: 'みなみぐち' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Relax',
         pl: 'Relaksować się',
         jp: { text: 'ゆっくりする' },
+        description: 'ゆっくりする is an adverb + する rather than a noun + する, which is atypical for suru verbs.',
     },
     {
         type: 'verb',
@@ -244,7 +247,7 @@ const duolingo_14: TranslatedJapaneseText[] = [
     {
         type: 'phrase',
         en: 'I will call a taxi at the north exit.',
-        pl: 'Zadzwonię po taksówkę przy wyjściu północnym.',
+        pl: 'Zamówię taksówkę przy wyjściu północnym.',
         jp: { text: '北口でタクシーを呼びます。', pronunciation: 'きたぐちでタクシーをよびます。' },
     },
     {

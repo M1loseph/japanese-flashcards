@@ -104,6 +104,11 @@ const createVerbTypeBadge: (verbType: Verb['verb_type'], show: boolean) => Badge
             text = 'auxiliary';
             break;
         }
+        case 'suru': {
+            color = `bg-purple-300/75`;
+            text = 'suru';
+            break;
+        }
         default: {
             const _exhaustiveCheck: never = verbType;
             return _exhaustiveCheck;

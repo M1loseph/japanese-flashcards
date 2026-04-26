@@ -14,10 +14,17 @@ const duolingo_4: TranslatedJapaneseText[] = [
         jp: { text: 'サッカー' },
     },
     {
-        type: 'unknown',
+        type: 'verb',
+        verb_type: 'irregular',
         en: 'Do',
         pl: 'Robić',
-        jp: { text: 'します' },
+        jp: { text: 'する' },
+        present: {
+            masu: {
+                affirmative: { text: 'します' },
+                negative: { text: 'しません' },
+            },
+        },
     },
     {
         type: 'unknown',

@@ -308,7 +308,8 @@ const genki_3: TranslatedJapaneseText[] = [
         },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Study',
         pl: 'Uczyć się',
         jp: { text: '勉強する', pronunciation: 'べんきょうする' },
