@@ -50,13 +50,15 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         jp: { text: 'パーティー' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Throw a party',
         pl: 'Urządzić imprezę',
         jp: { text: 'パーティーをする' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Have a meal',
         pl: 'Zjeść posiłek',
         jp: { text: 'しょくじをする' },

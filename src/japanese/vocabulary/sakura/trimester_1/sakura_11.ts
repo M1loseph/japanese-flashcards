@@ -47,7 +47,7 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'What time is it now?',
         pl: 'Która jest teraz godzina?',
-        jp: { text: 'いまなんじですか' },
+        jp: { text: 'いまなんじですか。' },
     },
     {
         type: 'noun',
@@ -86,7 +86,8 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         jp: { text: 'ごろ' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Work',
         pl: 'Pracować',
         jp: { text: 'しごとをする' },
@@ -224,13 +225,15 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         jp: { text: 'いそがしいです。' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Work out',
         pl: 'Ćwiczyć',
         jp: { text: 'うんどうをする' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Do housework',
         pl: 'Robić prace domowe',
         jp: { text: 'かじをする' },
@@ -248,7 +251,8 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         jp: { text: 'でんしゃでかいしゃにいく' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'Walk',
         pl: 'Spacerować',
         jp: { text: 'さんぽをする' },

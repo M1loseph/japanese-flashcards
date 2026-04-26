@@ -67,6 +67,14 @@ const irregularVerb: TranslatedJapaneseText = {
     },
 };
 
+const suruVerb: TranslatedJapaneseText = {
+    type: 'verb',
+    en: 'to study',
+    pl: 'uczyć się',
+    jp: { text: '勉強する', pronunciation: 'べんきょうする' },
+    verb_type: 'suru',
+};
+
 const iAdjective: TranslatedJapaneseText = {
     type: 'adjective',
     en: 'big',
@@ -185,6 +193,11 @@ describe('Badges', () => {
         it('renders auxiliary badge for auxiliary verbs', () => {
             render(<Badges card={auxiliaryVerb} />);
             expect(screen.getByText('auxiliary')).toBeInTheDocument();
+        });
+
+        it('renders suru badge for suru verbs', () => {
+            render(<Badges card={suruVerb} />);
+            expect(screen.getByText('suru')).toBeInTheDocument();
         });
 
         it('hides verb type badge when showAnswer is false', () => {

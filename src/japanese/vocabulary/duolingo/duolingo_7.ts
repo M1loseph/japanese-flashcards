@@ -219,10 +219,17 @@ const duolingo_7: TranslatedJapaneseText[] = [
         jp: { text: 'このいえはふるいですね。' },
     },
     {
-        type: 'unknown',
+        type: 'verb',
+        verb_type: 'godan',
         en: 'Move (to a new house)',
         pl: 'Przeprowadzić się (do nowego domu)',
-        jp: { text: 'ひっこします' },
+        jp: { text: '引っ越す', pronunciation: 'ひっこす' },
+        present: {
+            masu: {
+                affirmative: { text: '引っ越します', pronunciation: 'ひっこします' },
+                negative: { text: '引っ越しません', pronunciation: 'ひっこしません' },
+            },
+        },
     },
     {
         type: 'unknown',

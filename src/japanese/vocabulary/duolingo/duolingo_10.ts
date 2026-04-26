@@ -45,7 +45,8 @@ const duolingo_10: TranslatedJapaneseText[] = [
         jp: { text: 'そうじ' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'To clean',
         pl: 'Sprzątać',
         jp: { text: 'そうじをする' },
@@ -64,7 +65,8 @@ const duolingo_10: TranslatedJapaneseText[] = [
         jp: { text: 'せんたく' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'To do laundry',
         pl: 'Robić pranie',
         jp: { text: 'せんたくをする' },
@@ -114,7 +116,8 @@ const duolingo_10: TranslatedJapaneseText[] = [
         jp: { text: 'ストレッチ' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'To stretch',
         pl: 'Rozciągać się',
         jp: { text: 'ストレッチをする' },
@@ -139,7 +142,8 @@ const duolingo_10: TranslatedJapaneseText[] = [
         jp: { text: 'ガーデニング' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'To do gardening',
         pl: 'Uprawiać ogród',
         jp: { text: 'ガーデニングをする' },
@@ -266,7 +270,8 @@ const duolingo_10: TranslatedJapaneseText[] = [
         jp: { text: 'かんこう' },
     },
     {
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'suru',
         en: 'To do sightseeing',
         pl: 'Zwiedzać',
         jp: { text: 'かんこうをする' },

@@ -43,8 +43,14 @@ const IrregularVerbSchema = TranslationSchema.extend({
     present: PresentFormSchema,
 });
 
+const SuruVerbSchema = TranslationSchema.extend({
+    type: z.literal('verb'),
+    verb_type: z.literal('suru'),
+});
+
 const VerbSchema = z.discriminatedUnion('verb_type', [
     AuxiliaryVerbSchema,
+    SuruVerbSchema,
     GodanVerbSchema,
     IchidanVerbSchema,
     IrregularVerbSchema,
