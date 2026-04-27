@@ -116,7 +116,7 @@ const duolingo_9: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Rain',
         pl: 'Deszcz',
-        jp: { text: 'あめ' },
+        jp: { text: '雨', pronunciation: 'あめ' },
     },
     {
         type: 'noun',

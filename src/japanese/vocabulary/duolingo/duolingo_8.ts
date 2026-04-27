@@ -35,7 +35,7 @@ const duolingo_8: TranslatedJapaneseText[] = [
         type: 'adverb',
         en: 'Probably',
         pl: 'Prawdopodobnie',
-        jp: { text: 'たぶん' },
+        jp: { text: '多分', pronunciation: 'たぶん' },
     },
     {
         type: 'noun',

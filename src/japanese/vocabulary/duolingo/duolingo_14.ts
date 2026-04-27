@@ -403,6 +403,24 @@ const duolingo_14: TranslatedJapaneseText[] = [
         pl: 'Oczy',
         jp: { text: '目', pronunciation: 'め' },
     },
+    {
+        type: 'noun',
+        en: 'Credit card',
+        pl: 'Karta kredytowa',
+        jp: { text: 'クレジットカード' },
+    },
+    {
+        type: 'noun',
+        en: 'Internet',
+        pl: 'Internet',
+        jp: { text: 'ネット' },
+    },
+    {
+        type: 'noun',
+        en: 'Check-in',
+        pl: 'Odprawa / Meldunek',
+        jp: { text: 'チェックイン' },
+    },
 ];
 
 export const duolingo14Bag: WordBag = {
