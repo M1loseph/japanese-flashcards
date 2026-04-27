@@ -17,6 +17,7 @@ import {
     duolingo12Bag,
     duolingo13Bag,
     duolingo14Bag,
+    duolingo15Bag,
     duolingo1Bag,
     duolingo2Bag,
     duolingo3Bag,
@@ -147,6 +148,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         duolingo12Bag,
         duolingo13Bag,
         duolingo14Bag,
+        duolingo15Bag,
     ],
     'Geography 🌍 🌎 🌏': [countriesEuropeBag, countriesAsiaBag, planetsBag, cardinalDirectionsBag],
 };
