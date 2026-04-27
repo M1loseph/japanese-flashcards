@@ -360,6 +360,24 @@ const duolingo_15: TranslatedJapaneseText[] = [
         pl: 'Rachunek',
         jp: { text: '会計', pronunciation: 'かいけい' },
     },
+    {
+        type: 'noun',
+        en: 'Credit card',
+        pl: 'Karta kredytowa',
+        jp: { text: 'クレジットカード' },
+    },
+    {
+        type: 'noun',
+        en: 'Internet',
+        pl: 'Internet',
+        jp: { text: 'ネット' },
+    },
+    {
+        type: 'noun',
+        en: 'Check-in',
+        pl: 'Odprawa / Meldunek',
+        jp: { text: 'チェックイン' },
+    },
 ];
 
 export const duolingo15Bag: WordBag = {
