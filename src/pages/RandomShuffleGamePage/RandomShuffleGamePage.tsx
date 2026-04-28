@@ -41,7 +41,7 @@ const RandomShuffleGamePage: FC = () => {
             setShowAnswer(false);
         }, 600);
         return () => clearTimeout(handle);
-    }, [lastFlashcardAnswer]);
+    }, [lastFlashcardAnswer, markCurrentFlashcard]);
 
     const gameFinished = gameState?.type === 'finished';
 
