@@ -73,6 +73,7 @@ const duolingo_6: TranslatedJapaneseText[] = [
         en: 'Talk',
         pl: 'Rozmawiać',
         jp: { text: '話す', pronunciation: 'はなす' },
+        te_form: { text: '話して', pronunciation: 'はなして' },
     },
     {
         type: 'unknown',

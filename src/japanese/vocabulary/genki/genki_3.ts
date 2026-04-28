@@ -187,6 +187,7 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Speak / Talk',
         pl: 'Mówić',
         jp: { text: '話す', pronunciation: 'はなす' },
+        te_form: { text: '話して', pronunciation: 'はなして' },
     },
     {
         type: 'verb',

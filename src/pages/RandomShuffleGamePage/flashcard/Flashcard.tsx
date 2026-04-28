@@ -1,4 +1,5 @@
-import { type FC } from 'react';
+import { motion } from 'motion/react';
+import { forwardRef, useImperativeHandle, useState } from 'react';
 import { Badges } from '../../../components/Badges';
 import { HardTextIcon } from '../../../components/HardTextIcon';
 import type { TranslatedJapaneseText } from '../../../japanese';
@@ -12,11 +13,41 @@ interface FlashcardProps {
     showAnswer: boolean;
 }
 
-const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, showAnswer }) => {
+export interface FlashcardHandle {
+    playAnimation: (result: boolean) => void;
+}
+
+const SHADOW = '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 10px 20px -10px rgba(0, 0, 0, 0.2)';
+
+const GLOW_GREEN = '0 0 20px 6px rgba(74, 222, 128, 0.7)';
+const GLOW_RED = '0 0 20px 6px rgba(248, 113, 113, 0.7)';
+
+const JapaneseFlashcard = forwardRef<FlashcardHandle, FlashcardProps>(({ card, selectedLanguage, showAnswer }, ref) => {
     const question: string = card[selectedLanguage];
+    const [animationPlaying, setAnimationPlaying] = useState(false);
+    const [glowResult, setGlowResult] = useState(true);
+
+    useImperativeHandle(ref, () => ({
+        playAnimation(result: boolean) {
+            setGlowResult(result);
+            setAnimationPlaying(true);
+        },
+    }));
+
+    const handleAnimationComplete = () => {
+        setAnimationPlaying(false);
+    };
 
     return (
-        <div className="flex-1 min-h-0 flex flex-col lg:flex-row rounded-xl bg-base-100 shadow-2xl border border-base-300">
+        <motion.div
+            className="flex-1 min-h-0 rounded-xl 0 bg-base-100 border border-base-300 flex flex-col lg:flex-row rounded-xl"
+            animate={{
+                boxShadow: animationPlaying ? (glowResult ? GLOW_GREEN : GLOW_RED) : SHADOW,
+                y: animationPlaying ? -8 : 0,
+            }}
+            transition={{ duration: 0.3, repeat: animationPlaying ? 1 : 0, repeatType: 'reverse' }}
+            onAnimationComplete={handleAnimationComplete}
+        >
             <div className="flex-1 flex flex-col p-5">
                 <div className="flex items-center justify-between">
                     <Badges card={card} showAnswer={showAnswer} />
@@ -36,8 +67,10 @@ const JapaneseFlashcard: FC<FlashcardProps> = ({ card, selectedLanguage, showAns
                     />
                 </div>
             )}
-        </div>
+        </motion.div>
     );
-};
+});
+
+JapaneseFlashcard.displayName = 'JapaneseFlashcard';
 
 export default JapaneseFlashcard;
