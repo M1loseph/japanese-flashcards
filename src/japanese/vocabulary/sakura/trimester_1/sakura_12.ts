@@ -122,14 +122,16 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         verb_type: 'godan',
         en: 'Swim',
         pl: 'Pływać',
-        jp: { text: 'およぐ' },
+        jp: { text: '泳ぐ', pronunciation: 'およぐ' },
+        te_form: { text: '泳いで', pronunciation: 'およいで' },
     },
     {
         type: 'verb',
         verb_type: 'godan',
         en: 'Talk',
         pl: 'Rozmawiać',
-        jp: { text: 'はなす' },
+        jp: { text: '話す', pronunciation: 'はなす' },
+        te_form: { text: '話して', pronunciation: 'はなして' },
     },
     {
         type: 'phrase',

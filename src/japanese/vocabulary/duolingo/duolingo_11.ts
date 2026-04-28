@@ -236,7 +236,8 @@ const duolingo_11: TranslatedJapaneseText[] = [
         verb_type: 'godan',
         en: 'Ask',
         pl: 'Pytać',
-        jp: { text: 'きく' },
+        jp: { text: '聞く', pronunciation: 'きく' },
+        te_form: { text: '聞いて', pronunciation: 'きいて' },
     },
     {
         type: 'phrase',

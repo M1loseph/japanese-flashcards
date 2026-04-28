@@ -16,6 +16,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
         en: "Go (away from speaker's perspective)",
         pl: 'Iść (w przeciwnym kierunku niż mówiący)',
         jp: { text: '行く', pronunciation: 'いく' },
+        te_form: { text: '行って', pronunciation: 'いって' },
     },
     {
         type: 'verb',
@@ -29,6 +30,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
                 negative: { text: '来ません', pronunciation: 'きません' },
             },
         },
+        te_form: { text: '来て', pronunciation: 'きて' },
     },
     {
         type: 'verb',

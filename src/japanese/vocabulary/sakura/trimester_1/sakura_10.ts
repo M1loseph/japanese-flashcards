@@ -36,7 +36,8 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         verb_type: 'godan',
         en: 'Listen',
         pl: 'Słuchać',
-        jp: { text: 'きく' },
+        jp: { text: '聞く', pronunciation: 'きく' },
+        te_form: { text: '聞いて', pronunciation: 'きいて' },
     },
     {
         type: 'noun',
@@ -107,6 +108,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
                 negative: { text: 'しません' },
             },
         },
+        te_form: { text: 'して' },
     },
     {
         type: 'verb',

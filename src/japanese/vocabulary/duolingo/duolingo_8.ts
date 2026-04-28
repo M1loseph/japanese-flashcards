@@ -135,6 +135,7 @@ const duolingo_8: TranslatedJapaneseText[] = [
         en: 'Go',
         pl: 'Iść',
         jp: { text: '行く', pronunciation: 'いく' },
+        te_form: { text: '行って', pronunciation: 'いって' },
     },
     {
         type: 'noun',
@@ -178,6 +179,7 @@ const duolingo_8: TranslatedJapaneseText[] = [
                 negative: { text: '来ません', pronunciation: 'きません' },
             },
         },
+        te_form: { text: '来て', pronunciation: 'きて' },
     },
     {
         type: 'noun',

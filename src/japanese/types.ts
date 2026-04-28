@@ -28,17 +28,20 @@ const AuxiliaryVerbSchema = TranslationSchema.extend({
 const GodanVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     verb_type: z.literal('godan'),
+    te_form: TextWithPronunciationSchema.optional(),
 });
 
 const IchidanVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     verb_type: z.literal('ichidan'),
+    te_form: TextWithPronunciationSchema.optional(),
 });
 
 const IrregularVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     verb_type: z.literal('irregular'),
     present: PresentFormSchema,
+    te_form: TextWithPronunciationSchema,
 });
 
 const SuruVerbSchema = TranslationSchema.extend({
