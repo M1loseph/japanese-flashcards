@@ -365,6 +365,7 @@ const duolingo_14: TranslatedJapaneseText[] = [
         en: 'Speak / Talk',
         pl: 'Mówić / Rozmawiać',
         jp: { text: '話す', pronunciation: 'はなす' },
+        te_form: { text: '話して', pronunciation: 'はなして' },
     },
     {
         type: 'phrase',

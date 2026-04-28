@@ -1,10 +1,10 @@
 import { IconSettings } from '@tabler/icons-react';
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { useGameContext } from '../../context/GameContext';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
 import { FixedSizePage } from '../common/FixedSizePage';
-import Flashcard from './flashcard/Flashcard';
+import Flashcard, { type FlashcardHandle } from './flashcard/Flashcard';
 import { FlashcardButtons } from './flashcard/FlashcardButtons';
 import ProgressBar from './flashcard/ProgressBar';
 import { GameSettingsModal } from './GameSettingsModal';
@@ -16,6 +16,9 @@ const RandomShuffleGamePage: FC = () => {
     const [showSettings, setShowSettings] = useState(false);
     const navigate = useNavigate();
 
+    const flashcardRef = useRef<FlashcardHandle>(null);
+    const [lastFlashcardAnswer, setLastFlashcardAnswer] = useState<boolean | undefined>(undefined);
+
     useEffect(() => {
         if (!gameState) return;
         const interval = setInterval(() => {
@@ -24,6 +27,21 @@ const RandomShuffleGamePage: FC = () => {
         }, 1000);
         return () => clearInterval(interval);
     }, [gameState]);
+
+    useEffect(() => {
+        if (lastFlashcardAnswer === undefined) return;
+        const result = lastFlashcardAnswer;
+        const handle = setTimeout(() => {
+            setLastFlashcardAnswer(undefined);
+            if (result) {
+                markCurrentFlashcard(true);
+            } else {
+                markCurrentFlashcard(false);
+            }
+            setShowAnswer(false);
+        }, 600);
+        return () => clearTimeout(handle);
+    }, [lastFlashcardAnswer]);
 
     const gameFinished = gameState?.type === 'finished';
 
@@ -45,26 +63,18 @@ const RandomShuffleGamePage: FC = () => {
 
     const card = gameState.flashcards[gameState.currentFlashcardIndex];
 
-    const handleCorrect = () => {
-        markCurrentFlashcard(true);
-    };
-
-    const handleMistake = () => {
-        markCurrentFlashcard(false);
-    };
-
     const handleToggleAnswer = () => {
         setShowAnswer(!showAnswer);
     };
 
     const handleCorrectPressed = () => {
-        setShowAnswer(false);
-        handleCorrect();
+        flashcardRef.current?.playAnimation(true);
+        setLastFlashcardAnswer(true);
     };
 
     const handleMistakePressed = () => {
-        setShowAnswer(false);
-        handleMistake();
+        flashcardRef.current?.playAnimation(false);
+        setLastFlashcardAnswer(false);
     };
 
     const handleOpenSettings = () => {
@@ -88,12 +98,18 @@ const RandomShuffleGamePage: FC = () => {
                     total={gameState.flashcards.length}
                     timeInSeconds={sessionTime}
                 />
-                <Flashcard card={card.word} selectedLanguage={gameState.selectedLanguage} showAnswer={showAnswer} />
+                <Flashcard
+                    ref={flashcardRef}
+                    card={card.word}
+                    selectedLanguage={gameState.selectedLanguage}
+                    showAnswer={showAnswer}
+                />
                 <FlashcardButtons
                     showAnswer={showAnswer}
                     toggleAnswer={handleToggleAnswer}
                     correctPressed={handleCorrectPressed}
                     mistakePressed={handleMistakePressed}
+                    disableButtons={lastFlashcardAnswer !== undefined}
                 />
                 <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
                     <div className="modal-box">
