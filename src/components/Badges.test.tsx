@@ -45,14 +45,15 @@ const irregularVerb: TranslatedJapaneseText = {
     type: 'verb',
     en: 'to do',
     pl: 'robić',
-    jp: { text: 'する', pronunciation: 'する' },
+    jp: { text: 'する' },
     verb_type: 'irregular',
     present: {
         masu: {
-            affirmative: { text: 'します', pronunciation: 'します' },
-            negative: { text: 'しません', pronunciation: 'しません' },
+            affirmative: { text: 'します' },
+            negative: { text: 'しません' },
         },
     },
+    te_form: { text: 'して' },
 };
 
 const suruVerb: TranslatedJapaneseText = {
