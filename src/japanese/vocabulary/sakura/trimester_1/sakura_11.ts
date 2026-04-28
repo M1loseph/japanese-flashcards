@@ -117,7 +117,8 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         verb_type: 'godan',
         en: 'Go',
         pl: 'Iść',
-        jp: { text: 'いく' },
+        jp: { text: '行く', pronunciation: 'いく' },
+        te_form: { text: '行って', pronunciation: 'いって' },
     },
     {
         type: 'phrase',

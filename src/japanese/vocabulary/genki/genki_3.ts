@@ -157,6 +157,7 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Go',
         pl: 'Iść',
         jp: { text: '行く', pronunciation: 'いく' },
+        te_form: { text: '行って', pronunciation: 'いって' },
     },
     {
         type: 'verb',
@@ -171,6 +172,7 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Listen / Hear',
         pl: 'Słuchać / Słyszeć',
         jp: { text: '聞く', pronunciation: 'きく' },
+        te_form: { text: '聞いて', pronunciation: 'きいて' },
     },
     {
         type: 'verb',
@@ -233,6 +235,7 @@ const genki_3: TranslatedJapaneseText[] = [
                 negative: { text: 'しません' },
             },
         },
+        te_form: { text: 'して' },
     },
     {
         type: 'verb',
@@ -246,6 +249,7 @@ const genki_3: TranslatedJapaneseText[] = [
                 negative: { text: '来ません' },
             },
         },
+        te_form: { text: '来て', pronunciation: 'きて' },
     },
     {
         type: 'verb',

@@ -25,6 +25,7 @@ const duolingo_4: TranslatedJapaneseText[] = [
                 negative: { text: 'しません' },
             },
         },
+        te_form: { text: 'して' },
     },
     {
         type: 'unknown',

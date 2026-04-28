@@ -206,13 +206,14 @@ const sakura_1_2: TranslatedJapaneseText[] = [
         verb_type: 'irregular',
         en: 'Come',
         pl: 'Przychodzić',
-        jp: { text: 'くる' },
+        jp: { text: '来る', pronunciation: 'くる' },
         present: {
             masu: {
-                affirmative: { text: 'きます' },
-                negative: { text: 'きません' },
+                affirmative: { text: '来ます', pronunciation: 'きます' },
+                negative: { text: '来ません', pronunciation: 'きません' },
             },
         },
+        te_form: { text: '来て', pronunciation: 'きて' },
     },
     {
         type: 'suffix',
