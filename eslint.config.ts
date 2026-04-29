@@ -3,6 +3,7 @@ import stylistic from '@stylistic/eslint-plugin';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import { importX } from 'eslint-plugin-import-x';
 import reactHooks from 'eslint-plugin-react-hooks';
+// eslint-disable-next-line import-x/no-named-as-default
 import reactRefresh from 'eslint-plugin-react-refresh';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
@@ -17,6 +18,7 @@ export default defineConfig([
         files: ['**/*.{ts,tsx}'],
         extends: [
             js.configs.recommended,
+            // eslint-disable-next-line import-x/no-named-as-default-member
             tseslint.configs.strict,
             reactRefresh.configs.vite,
             eslintConfigPrettier,

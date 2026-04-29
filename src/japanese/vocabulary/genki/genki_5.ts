@@ -234,8 +234,8 @@ const genki_5: TranslatedJapaneseText[] = [
     {
         type: 'adjective',
         adjective_type: 'na-adjective',
-        en: 'Hated',
-        pl: 'Znienawidzony',
+        en: 'Hated / Very disliked',
+        pl: 'Znienawidzony / Bardzo nielubiany',
         jp: { text: '大嫌い', pronunciation: 'だいきらい' },
     },
     {
@@ -304,6 +304,12 @@ const genki_5: TranslatedJapaneseText[] = [
         en: 'To do / Perform',
         pl: 'Robić / Wykonywać',
         jp: { text: 'やる' },
+    },
+    {
+        type: 'phrase',
+        en: "I'm going to do my homework. (determined)",
+        pl: 'Zrobię moją pracę domową. (zdeterminowany)',
+        jp: { text: '宿題をやります。', pronunciation: 'しゅくだいをやります。' },
     },
     {
         type: 'verb',
