@@ -129,10 +129,10 @@ const duolingo_7: TranslatedJapaneseText[] = [
         jp: { text: 'しゅみがありますか。' },
     },
     {
-        type: 'unknown',
+        type: 'noun',
         en: 'KPop',
         pl: 'KPop',
-        jp: { text: 'Kポップ' },
+        jp: { text: 'Kポップ', pronunciation: 'ケーポップ' },
     },
     {
         type: 'unknown',
@@ -201,10 +201,10 @@ const duolingo_7: TranslatedJapaneseText[] = [
         jp: { text: 'こちらはわたしのかれしです。' },
     },
     {
-        type: 'unknown',
+        type: 'noun',
         en: 'House',
         pl: 'Dom',
-        jp: { text: 'いえ' },
+        jp: { text: '家', pronunciation: 'いえ' },
     },
     {
         type: 'unknown',
@@ -232,7 +232,7 @@ const duolingo_7: TranslatedJapaneseText[] = [
         jp: { text: 'ひろい' },
     },
     {
-        type: 'unknown',
+        type: 'noun',
         en: 'Kitchen',
         pl: 'Kuchnia',
         jp: { text: 'キッチン' },

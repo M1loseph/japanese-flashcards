@@ -9,13 +9,14 @@ const duolingo_5: TranslatedJapaneseText[] = [
         description: "Used as a subtle way to say you don't like something.",
     },
     {
-        type: 'unknown',
+        type: 'adjective',
+        adjective_type: 'i-adjective',
         en: 'New',
         pl: 'Nowy',
         jp: { text: '新しい', pronunciation: 'あたらしい' },
     },
     {
-        type: 'unknown',
+        type: 'noun',
         en: 'Skirt',
         pl: 'Spódnica',
         jp: { text: 'スカート' },
@@ -27,13 +28,13 @@ const duolingo_5: TranslatedJapaneseText[] = [
         jp: { text: 'ほしい' },
     },
     {
-        type: 'unknown',
+        type: 'phrase',
         en: 'I want a new skirt.',
         pl: 'Chcę nową spódnicę.',
         jp: { text: 'あたらしいスカートがほしいです。' },
     },
     {
-        type: 'unknown',
+        type: 'noun',
         en: 'Jacket',
         pl: 'Kurtka',
         jp: { text: 'ジャケット' },
@@ -51,10 +52,10 @@ const duolingo_5: TranslatedJapaneseText[] = [
         jp: { text: '古いジャケットはほしくないです', pronunciation: 'ふるいジャケットはほしくないです' },
     },
     {
-        type: 'unknown',
+        type: 'noun',
         en: 'T-shirt',
         pl: 'Koszulka',
-        jp: { text: 'Tシャツ' },
+        jp: { text: 'Tシャツ', pronunciation: 'ティーシャツ' },
     },
     {
         type: 'unknown',
@@ -95,10 +96,10 @@ const duolingo_5: TranslatedJapaneseText[] = [
         jp: { text: 'これはいくらですか？' },
     },
     {
-        type: 'unknown',
+        type: 'noun',
         en: 'Yen',
         pl: 'Jen',
-        jp: { text: 'えん' },
+        jp: { text: '円', pronunciation: 'えん' },
     },
     {
         type: 'unknown',

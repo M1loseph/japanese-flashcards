@@ -18,6 +18,7 @@ import { duolingo12Bag } from './vocabulary/duolingo/duolingo_12';
 import { duolingo13Bag } from './vocabulary/duolingo/duolingo_13';
 import { duolingo14Bag } from './vocabulary/duolingo/duolingo_14';
 import { duolingo15Bag } from './vocabulary/duolingo/duolingo_15';
+import { duolingo16Bag } from './vocabulary/duolingo/duolingo_16';
 import { duolingo2Bag } from './vocabulary/duolingo/duolingo_2';
 import { duolingo3Bag } from './vocabulary/duolingo/duolingo_3';
 import { duolingo4Bag } from './vocabulary/duolingo/duolingo_4';
@@ -111,6 +112,7 @@ export const availableWordBags: WordBag[] = [
     duolingo13Bag,
     duolingo14Bag,
     duolingo15Bag,
+    duolingo16Bag,
     countriesEuropeBag,
     countriesAsiaBag,
     planetsBag,
