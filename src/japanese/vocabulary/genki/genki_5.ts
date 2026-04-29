@@ -307,7 +307,7 @@ const genki_5: TranslatedJapaneseText[] = [
     },
     {
         type: 'phrase',
-        en: 'I\'m going to do my homework. (determined)',
+        en: "I'm going to do my homework. (determined)",
         pl: 'Zrobię moją pracę domową. (zdeterminowany)',
         jp: { text: '宿題をやります。', pronunciation: 'しゅくだいをやります。' },
     },
