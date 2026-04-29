@@ -15,6 +15,7 @@ export { duolingo12Bag } from './vocabulary/duolingo/duolingo_12';
 export { duolingo13Bag } from './vocabulary/duolingo/duolingo_13';
 export { duolingo14Bag } from './vocabulary/duolingo/duolingo_14';
 export { duolingo15Bag } from './vocabulary/duolingo/duolingo_15';
+export { duolingo16Bag } from './vocabulary/duolingo/duolingo_16';
 export { duolingo2Bag } from './vocabulary/duolingo/duolingo_2';
 export { duolingo3Bag } from './vocabulary/duolingo/duolingo_3';
 export { duolingo4Bag } from './vocabulary/duolingo/duolingo_4';
