@@ -65,9 +65,6 @@ const createTypeBadge: (type?: TranslatedJapaneseTextType) => BadgeMetadata | un
             color = `bg-lime-300/75`;
             break;
         }
-        case 'unknown': {
-            return;
-        }
         default: {
             const _exhaustiveCheck: never = type;
             return _exhaustiveCheck;

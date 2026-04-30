@@ -131,10 +131,6 @@ const ConjunctionSchema = TranslationSchema.extend({
     type: z.literal('conjunction'),
 });
 
-const UnknownWordSchema = TranslationSchema.extend({
-    type: z.literal('unknown'),
-});
-
 export const TranslatedJapaneseTextSchema = z.discriminatedUnion('type', [
     VerbSchema,
     NounSchema,
@@ -148,7 +144,6 @@ export const TranslatedJapaneseTextSchema = z.discriminatedUnion('type', [
     PreNounAdjectiveSchema,
     ParticleSchema,
     ConjunctionSchema,
-    UnknownWordSchema,
 ]);
 
 export type TranslatedJapaneseText = z.infer<typeof TranslatedJapaneseTextSchema>;
