@@ -77,13 +77,6 @@ const duolingo_7: TranslatedJapaneseText[] = [
         jp: { text: 'あしたははとばんごはんをたべます。' },
     },
     {
-        type: 'verb',
-        verb_type: 'godan',
-        en: 'Play / Hang out',
-        pl: 'Bawić się / Spędzać czas',
-        jp: { text: 'あそぶ' },
-    },
-    {
         type: 'phrase',
         en: 'I go to sleep around 22:30 every night.',
         pl: 'Każdej nocy kładę się spać około 22:30.',

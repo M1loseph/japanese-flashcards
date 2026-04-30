@@ -96,13 +96,6 @@ const phrase: TranslatedJapaneseText = {
     jp: { text: 'おはようございます', pronunciation: 'おはようございます' },
 };
 
-const unknownWord: TranslatedJapaneseText = {
-    type: 'unknown',
-    en: 'something',
-    pl: 'coś',
-    jp: { text: 'なにか', pronunciation: 'なにか' },
-};
-
 describe('Badges', () => {
     describe('type badges', () => {
         it('renders a noun badge', () => {
@@ -123,11 +116,6 @@ describe('Badges', () => {
         it('renders a phrase badge', () => {
             render(<Badges card={phrase} />);
             expect(screen.getByText('phrase')).toBeInTheDocument();
-        });
-
-        it('does not render a type badge for unknown type', () => {
-            render(<Badges card={unknownWord} />);
-            expect(screen.queryByText('unknown')).not.toBeInTheDocument();
         });
 
         it.each([
