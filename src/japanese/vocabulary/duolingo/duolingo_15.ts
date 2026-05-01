@@ -361,6 +361,12 @@ const duolingo_15: TranslatedJapaneseText[] = [
         jp: { text: '会計', pronunciation: 'かいけい' },
     },
     {
+        type: 'phrase',
+        en: 'Can I have the bill, please?',
+        pl: 'Czy mogę prosić o rachunek?',
+        jp: { text: 'お会計をお願いします。', pronunciation: 'おかいけいをおねがいします。' },
+    },
+    {
         type: 'noun',
         en: 'Credit card',
         pl: 'Karta kredytowa',

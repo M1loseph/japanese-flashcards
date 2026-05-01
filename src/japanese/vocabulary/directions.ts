@@ -51,9 +51,15 @@ const directions: TranslatedJapaneseText[] = [
     },
     {
         type: 'noun',
-        en: 'Next to / Beside',
-        pl: 'Obok',
+        en: 'Next to / Beside (same type / nothing in between)',
+        pl: 'Obok (ten sam typ / nic pomiędzy)',
         jp: { text: '隣', pronunciation: 'となり' },
+    },
+    {
+        type: 'noun',
+        en: 'Next to / Beside (can be of different type / something in between)',
+        pl: 'Obok (może być inny typ / coś pomiędzy)',
+        jp: { text: '横', pronunciation: 'よこ' },
     },
     {
         type: 'noun',
@@ -66,6 +72,12 @@ const directions: TranslatedJapaneseText[] = [
         en: "It's between the bank and the post office.",
         pl: 'To jest pomiędzy bankiem a pocztą.',
         jp: { text: '銀行と郵便局の間です。', pronunciation: 'ぎんこうとゆうびんきょくのあいだです。' },
+    },
+    {
+        type: 'phrase',
+        en: "I'm next to the supermarket.",
+        pl: 'Jestem obok supermarketu.',
+        jp: { text: 'スーパーの横にいます。', pronunciation: 'スーパーのよこにいます。' },
     },
     {
         type: 'phrase',
