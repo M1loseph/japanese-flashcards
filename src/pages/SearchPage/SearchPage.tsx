@@ -1,5 +1,6 @@
 import { IconZoom } from '@tabler/icons-react';
-import { useMemo, useState, type FC } from 'react';
+import { useMemo, type FC } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useGameSettingsContext } from '../../context/GameStateContext';
 import { availableWordBags } from '../../japanese';
 import { textMatchesQuery } from '../../japanese/search';
@@ -13,6 +14,8 @@ interface SearchResult {
     word: TranslatedJapaneseText;
 }
 
+const SEARCH_KEY = 'q';
+
 const searchWords = (query: string, selectedLanguage: TranslationLanguage): SearchResult[] => {
     if (query.length < 2) return [];
 
@@ -22,13 +25,26 @@ const searchWords = (query: string, selectedLanguage: TranslationLanguage): Sear
 };
 
 export const SearchPage: FC = () => {
-    const [query, setQuery] = useState('');
+    const [searchParams, setSearchParams] = useSearchParams();
+    const query = searchParams.get(SEARCH_KEY) || '';
     const { selectedLanguage } = useGameSettingsContext();
 
     const results = useMemo(() => searchWords(query, selectedLanguage), [query, selectedLanguage]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(e.target.value.toLocaleLowerCase());
+        const value = e.target.value.toLocaleLowerCase();
+        setSearchParams(
+            (prev) => {
+                const newParams = new URLSearchParams(prev);
+                if (value.length > 0) {
+                    newParams.set(SEARCH_KEY, value);
+                } else {
+                    newParams.delete(SEARCH_KEY);
+                }
+                return newParams;
+            },
+            { replace: true },
+        );
     };
 
     const groupedResults = useMemo(() => {
@@ -77,7 +93,9 @@ export const SearchPage: FC = () => {
 
                 {groupedResults.map(({ bag, words }) => (
                     <section key={bag.id} className="flex flex-col gap-3">
-                        <h2 className="text-lg font-semibold text-secondary">{bag.name}</h2>
+                        <Link to={`/bags/${bag.id}/words`}>
+                            <h2 className="text-lg font-semibold text-secondary link">{bag.name}</h2>
+                        </Link>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                             {words.map((word) => (
                                 <Word key={`${bag.id}-${word.jp.text}-${word.en}`} word={word} />

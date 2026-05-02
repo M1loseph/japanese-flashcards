@@ -209,8 +209,8 @@ const genki_4: TranslatedJapaneseText[] = [
     },
     {
         type: 'phrase',
-        en: "I'm sorry",
-        pl: 'Przepraszam',
+        en: "I'm sorry (informal)",
+        pl: 'Przepraszam (nieformalnie)',
         jp: { text: 'ごめんなさい' },
     },
     {
