@@ -3,9 +3,9 @@ import type { TranslatedJapaneseText, WordBag } from '../../types';
 const duolingo_12: TranslatedJapaneseText[] = [
     {
         type: 'noun',
-        en: 'Entrance',
-        pl: 'Wejście',
-        jp: { text: '入口', pronunciation: 'いりぐち' },
+        en: 'Entrance (general)',
+        pl: 'Wejście (ogólne)',
+        jp: { text: '入り口', pronunciation: 'いりぐち' },
     },
     {
         type: 'noun',

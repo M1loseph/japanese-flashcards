@@ -27,7 +27,7 @@ Otherwise it should be omitted.
 
 Check if the "type" field is appropriate for each word. Avaiable types are in file src/japanese/types.ts. If the word is of type that is not in the types.ts file, report it as an error.
 
-Phrases (type: 'phrase') should end with a japanese period "。" if "en" or "pl" translation ends with a period or requestion mark. If such a phrase does not end with "。", report it as an error.
+Phrases (type: 'phrase') should end with a japanese period "。" if "en" or "pl" translation ends with a period, question mark or exclamation mark. If such a phrase does not end with "。", report it as an error.
 
 ## Output Format
 Your output should be structured as follows:

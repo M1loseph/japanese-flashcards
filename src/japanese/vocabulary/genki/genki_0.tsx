@@ -52,7 +52,7 @@ const genki_0: TranslatedJapaneseText[] = [
     },
     {
         type: 'phrase',
-        en: "Excuse me; I'm sorry",
+        en: "Excuse me / I'm sorry",
         pl: 'Przepraszam',
         jp: { text: 'すみません' },
     },

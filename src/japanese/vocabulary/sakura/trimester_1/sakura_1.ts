@@ -52,8 +52,8 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     },
     {
         type: 'particle',
-        en: 'No; No problem',
-        pl: 'Nie; Nie ma problemu',
+        en: 'No / No problem',
+        pl: 'Nie / Nie ma problemu',
         jp: { text: 'いいえ' },
     },
     {
@@ -64,21 +64,21 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     },
     {
         type: 'phrase',
-        en: "I'm sorry; Excuse me; Thank you (for your trouble)",
-        pl: 'Przepraszam; Dziękuję (za kłopot)',
+        en: "I'm sorry / Excuse me / Thank you (for your trouble)",
+        pl: 'Przepraszam / Dziękuję (za kłopot)',
         jp: { text: 'すみません' },
     },
     {
         type: 'suffix',
         en: 'Mr./Ms.',
         pl: 'Pan/Pani',
-        jp: { text: '...さん' },
+        jp: { text: 'さん' },
     },
     {
         type: 'phrase',
         en: 'Present!',
         pl: 'Obecny!',
-        jp: { text: 'います' },
+        jp: { text: 'います。' },
     },
     {
         type: 'particle',
@@ -94,7 +94,7 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     },
     {
         type: 'phrase',
-        en: 'Not present; Absent',
+        en: 'Not present / Absent',
         pl: 'Nieobecny',
         jp: { text: 'いません' },
     },
@@ -150,8 +150,8 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     {
         type: 'verb',
         verb_type: 'godan',
-        en: 'Say; Speak; Tell',
-        pl: 'Mówić; Powiedzieć',
+        en: 'Say / Speak / Tell',
+        pl: 'Mówić / Powiedzieć',
         jp: { text: 'いう' },
     },
     {
@@ -174,15 +174,15 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     },
     {
         type: 'phrase',
-        en: "I don't understand",
-        pl: 'Nie rozumiem',
-        jp: { text: 'わかりません' },
+        en: "I don't understand.",
+        pl: 'Nie rozumiem.',
+        jp: { text: 'わかりません。' },
     },
     {
         type: 'phrase',
-        en: "It's easy",
-        pl: 'To jest łatwe',
-        jp: { text: 'かんたんです' },
+        en: "It's easy.",
+        pl: 'To jest łatwe.',
+        jp: { text: 'かんたんです。' },
     },
     {
         type: 'adjective',

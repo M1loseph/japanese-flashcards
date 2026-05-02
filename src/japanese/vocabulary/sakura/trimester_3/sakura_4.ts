@@ -63,8 +63,8 @@ const sakura_3_4: TranslatedJapaneseText[] = [
     },
     {
         type: 'noun',
-        en: 'Japanese home entrance',
-        pl: 'Japońskie wejście do domu',
+        en: 'Building entrance / Japanese home entrance',
+        pl: 'Wejście do budynku / Japońskie wejście do domu',
         jp: { text: '玄関', pronunciation: 'げんかん' },
     },
     {
