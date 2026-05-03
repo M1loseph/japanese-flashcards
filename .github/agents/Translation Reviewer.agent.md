@@ -25,6 +25,8 @@ Field "jp.pronunciation" should be present only in two cases:
  - if the "jp.word" entry contains a latin letter that should be read in Japanese in a specific way (e.g. 'Lサイズ' -> 'エルサイズ').
 Otherwise it should be omitted. 
 
+If the word is not a verb, the "te_form" field should be omitted. Field "te_form" should be present only for verbs which have irregular te-form. If the verb has regular te-form, the "te_form" field should be omitted as it can be generated automatically from the "jp.word" field.
+
 Check if the "type" field is appropriate for each word. Avaiable types are in file src/japanese/types.ts. If the word is of type that is not in the types.ts file, report it as an error.
 
 Phrases (type: 'phrase') should end with a japanese period "。" if "en" or "pl" translation ends with a period, question mark or exclamation mark. If such a phrase does not end with "。", report it as an error.

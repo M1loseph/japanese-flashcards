@@ -123,7 +123,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Swim',
         pl: 'Pływać',
         jp: { text: '泳ぐ', pronunciation: 'およぐ' },
-        te_form: { text: '泳いで', pronunciation: 'およいで' },
     },
     {
         type: 'verb',
@@ -131,7 +130,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Talk',
         pl: 'Rozmawiać',
         jp: { text: '話す', pronunciation: 'はなす' },
-        te_form: { text: '話して', pronunciation: 'はなして' },
     },
     {
         type: 'phrase',
