@@ -37,6 +37,7 @@ import {
     genki4Bag,
     genki5AdjectivesBag,
     genki5Bag,
+    genki6Bag,
     hoursBag,
     minutesBag,
     monthsBag,
@@ -102,6 +103,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         genki4Bag,
         genki5Bag,
         genki5AdjectivesBag,
+        genki6Bag,
     ],
     'Classes 🎓': [
         sakura1_1Bag,
