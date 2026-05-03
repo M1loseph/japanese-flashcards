@@ -37,7 +37,6 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         en: 'Listen',
         pl: 'Słuchać',
         jp: { text: '聞く', pronunciation: 'きく' },
-        te_form: { text: '聞いて', pronunciation: 'きいて' },
     },
     {
         type: 'noun',

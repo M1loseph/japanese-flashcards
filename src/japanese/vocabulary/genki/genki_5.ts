@@ -279,7 +279,6 @@ const genki_5: TranslatedJapaneseText[] = [
         en: 'Swim',
         pl: 'Pływać',
         jp: { text: '泳ぐ', pronunciation: 'およぐ' },
-        te_form: { text: '泳いで', pronunciation: 'およいで' },
     },
     {
         type: 'verb',
@@ -287,7 +286,6 @@ const genki_5: TranslatedJapaneseText[] = [
         en: 'Listen / Ask',
         pl: 'Słuchać / Pytać',
         jp: { text: '聞く', pronunciation: 'きく' },
-        te_form: { text: '聞いて', pronunciation: 'きいて' },
         description:
             'When using this verb in the meaning of "ask", it is usually followed by に (e.g. 先生に聞きます - I ask the teacher). In the meaning of "listen", it is usually followed by を (e.g. 音楽を聞きます - I listen to music).',
     },

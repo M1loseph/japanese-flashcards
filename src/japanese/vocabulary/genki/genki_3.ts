@@ -172,7 +172,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Listen / Hear',
         pl: 'Słuchać / Słyszeć',
         jp: { text: '聞く', pronunciation: 'きく' },
-        te_form: { text: '聞いて', pronunciation: 'きいて' },
     },
     {
         type: 'verb',
@@ -187,7 +186,6 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Speak / Talk',
         pl: 'Mówić',
         jp: { text: '話す', pronunciation: 'はなす' },
-        te_form: { text: '話して', pronunciation: 'はなして' },
     },
     {
         type: 'verb',
