@@ -2,24 +2,28 @@ import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 const duolingo_3: TranslatedJapaneseText[] = [
     {
+        id: '8c69b553-8fad-424f-839b-0ebc099ae717',
         type: 'phrase',
         en: 'I live in Tokyo.',
         pl: 'Mieszkam w Tokio.',
         jp: { text: '東京に住んでいます。', pronunciation: 'とうきょうにすんでいます。' },
     },
     {
+        id: '59609841-857d-4848-b92c-9351579850fa',
         type: 'phrase',
         en: "What's your name?",
         pl: 'Jak masz na imię?',
         jp: { text: 'おなまえは？' },
     },
     {
+        id: '474369ee-da12-4b52-91b2-5b244887dcf9',
         type: 'noun',
         en: 'City',
         pl: 'Miasto',
         jp: { text: 'とし' },
     },
     {
+        id: 'a83e9477-98b3-4d8f-843d-5df4d2a3bf68',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Lively / Energetic / Busy',
@@ -27,6 +31,7 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'にぎやか' },
     },
     {
+        id: 'b0c9a3a4-d1cc-4f54-81e0-707dfc2ac5a7',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Quiet / Peaceful',
@@ -34,6 +39,7 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'しずか' },
     },
     {
+        id: '0678c018-4ba9-44ce-bd01-6e79d176f34f',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Clean / Beautiful',
@@ -41,18 +47,21 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'きれい' },
     },
     {
+        id: 'e19afa97-c5c8-4d85-9e62-2173b524838d',
         type: 'noun',
         en: 'Town',
         pl: 'Miasteczko',
         jp: { text: 'まち' },
     },
     {
+        id: 'dcb944c6-693d-4254-a38d-de0d26943c09',
         type: 'adverb',
         en: 'Very',
         pl: 'Bardzo',
         jp: { text: 'とても' },
     },
     {
+        id: 'ba7db85d-18a8-462c-ae99-d63c2d3ca9d2',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Loud',
@@ -60,18 +69,21 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'うるさい' },
     },
     {
+        id: '88e59e4b-1ae6-409c-8d97-fb4248f1991e',
         type: 'phrase',
         en: 'How is...',
         pl: 'Jakie jest...',
         jp: { text: 'どうですか' },
     },
     {
+        id: '945f8954-e2e2-40cf-b7a8-f27c52499374',
         type: 'suffix',
         en: 'Years old',
         pl: 'Lat',
         jp: { text: 'さい' },
     },
     {
+        id: '5c778348-5ad9-4189-8f76-9af62ae76a23',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Famous',
@@ -79,24 +91,28 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'ゆうめい' },
     },
     {
+        id: 'f72c47d3-44d2-4f47-b0d0-90ecdcf8ec13',
         type: 'noun',
         en: 'Wife',
         pl: 'Żona',
         jp: { text: 'つま' },
     },
     {
+        id: '4e8d27f3-85bd-47bc-8ad3-94265049c350',
         type: 'noun',
         en: 'Husband',
         pl: 'Mąż',
         jp: { text: 'おっと' },
     },
     {
+        id: '9378f5c8-10de-4fb2-8d86-f5fc6b87dee0',
         type: 'noun',
         en: 'Family',
         pl: 'Rodzina',
         jp: { text: 'かぞく' },
     },
     {
+        id: '2817d0d2-ad76-4e35-b4d5-3818a2f79cd5',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Busy',
@@ -104,12 +120,14 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'いそがしい' },
     },
     {
+        id: 'c812a15f-a1ea-4d4d-bfde-0147e9896188',
         type: 'noun',
         en: 'Engineer',
         pl: 'Inżynier',
         jp: { text: 'エンジニア' },
     },
     {
+        id: 'da0ea546-6aff-4db9-908a-6a5612b3722f',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Funny',
@@ -117,24 +135,28 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'おもしろい' },
     },
     {
+        id: 'b425d3a5-3eaa-4f1f-8571-cff6e55f81b0',
         type: 'noun',
         en: 'Company employee',
         pl: 'Pracownik firmy',
         jp: { text: 'かいしゃいん' },
     },
     {
+        id: 'c6f9db48-647c-4827-a27b-ca3f385e3f87',
         type: 'noun',
         en: 'Nurse',
         pl: 'Pielęgniarka / Pielęgniarz',
         jp: { text: 'かんごし' },
     },
     {
+        id: '2aa44845-1321-4737-879e-c2f743f8cd9b',
         type: 'noun',
         en: 'Student (university)',
         pl: 'Student (uniwersytet)',
         jp: { text: 'だいがくせい' },
     },
     {
+        id: '9a8b7be4-5227-41f4-a4e2-36fbcab0c0ac',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Fashionable / Trendy',
@@ -142,6 +164,7 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'おしゃれ' },
     },
     {
+        id: '2d8052d3-1ebc-4124-b362-83066d491142',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Smart',
@@ -149,12 +172,14 @@ const duolingo_3: TranslatedJapaneseText[] = [
         jp: { text: 'あたまがいい' },
     },
     {
+        id: 'af948028-8863-44ae-94cf-2a853481ba8d',
         type: 'phrase',
         en: 'Welcome',
         pl: 'Witamy',
         jp: { text: 'ようこそ' },
     },
     {
+        id: '7863d699-174d-4262-907a-b21299bdecea',
         type: 'noun',
         en: 'Anime',
         pl: 'Anime',

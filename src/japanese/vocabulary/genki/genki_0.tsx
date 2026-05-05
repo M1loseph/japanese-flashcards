@@ -2,36 +2,42 @@ import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 const genki_0: TranslatedJapaneseText[] = [
     {
+        id: 'ba7815aa-2fb1-4278-a50a-3334b6f8ed70',
         type: 'phrase',
         en: 'Good morning',
         pl: 'Dzień dobry (rano)',
         jp: { text: 'おはよう' },
     },
     {
+        id: '3977c3a7-ca52-469f-a59a-34fa1099371c',
         type: 'phrase',
         en: 'Good morning (polite)',
         pl: 'Dzień dobry (rano, grzecznościowe)',
         jp: { text: 'おはようございます' },
     },
     {
+        id: 'de6d4c96-fc67-48b8-b822-1df5a1b80fc2',
         type: 'phrase',
         en: 'Good afternoon',
         pl: 'Dzień dobry (po południu)',
         jp: { text: 'こんにちは' },
     },
     {
+        id: '98c89f15-36ae-4c68-bf3b-95fcbab4ad15',
         type: 'phrase',
         en: 'Good evening',
         pl: 'Dobry wieczór',
         jp: { text: 'こんばんは' },
     },
     {
+        id: '180e0283-322e-491f-bd90-572d10586300',
         type: 'phrase',
         en: 'Goodbye (for a longer time)',
         pl: 'Do widzenia (na dłuższy czas)',
         jp: { text: 'さようなら' },
     },
     {
+        id: 'ececb7c2-f942-4d91-9948-f25c0fdcab85',
         type: 'phrase',
         en: 'Good night',
         pl: 'Dobranoc',
@@ -39,30 +45,35 @@ const genki_0: TranslatedJapaneseText[] = [
         description: 'なさい is a polite ending, can be omitted in casual speech.',
     },
     {
+        id: '52f8a667-dd9a-4c5f-97e3-10b2241e06eb',
         type: 'phrase',
         en: 'Thank you (polite)',
         pl: 'Dziękuję (grzecznościowe)',
         jp: { text: 'ありがとうございます' },
     },
     {
+        id: '747ecc37-a537-4e97-839f-7713d2da2756',
         type: 'phrase',
         en: 'Thank you (casual)',
         pl: 'Dziękuję (potoczne)',
         jp: { text: 'ありがとう' },
     },
     {
+        id: 'b9d80656-8060-42d9-bcf3-934bc2503768',
         type: 'phrase',
         en: "Excuse me / I'm sorry",
         pl: 'Przepraszam',
         jp: { text: 'すみません' },
     },
     {
+        id: 'f80b657a-2708-477d-ae8c-169301eb2875',
         type: 'phrase',
         en: 'No / Not at all',
         pl: 'Nie / Nie szkodzi',
         jp: { text: 'いいえ' },
     },
     {
+        id: 'de5421be-8e85-4af8-95ed-85aecaf88e27',
         type: 'phrase',
         en: "I'll go and come back",
         pl: 'Idę i wrócę',
@@ -70,6 +81,7 @@ const genki_0: TranslatedJapaneseText[] = [
         description: 'Used when leaving home',
     },
     {
+        id: 'ed659595-220f-4af4-8be5-eb1ecdd5ee37',
         type: 'phrase',
         en: 'Please go and come back',
         pl: 'Idź i wróć',
@@ -77,12 +89,14 @@ const genki_0: TranslatedJapaneseText[] = [
         description: 'Used as a goodbye when someone else is leaving a home.',
     },
     {
+        id: 'b925af83-ee7c-40aa-8b86-371a9adc351d',
         type: 'phrase',
         en: "I'm home",
         pl: 'Już jestem w domu',
         jp: { text: 'ただいま' },
     },
     {
+        id: '884bd18f-75d8-4613-9da8-f90ab8ac61ba',
         type: 'phrase',
         en: 'Welcome home',
         pl: 'Witaj w domu',
@@ -90,6 +104,7 @@ const genki_0: TranslatedJapaneseText[] = [
         description: 'Used to welcome someone home.',
     },
     {
+        id: 'fbf5bee5-3ff8-4b30-8e37-208db78e16db',
         type: 'phrase',
         en: 'Bon appétit',
         pl: 'Smacznego',
@@ -97,18 +112,21 @@ const genki_0: TranslatedJapaneseText[] = [
         description: 'Said before eating. Literally: Thank you for the meal',
     },
     {
+        id: 'd6623730-33ab-43c2-8127-35c5384dd82c',
         type: 'phrase',
         en: 'Thank you for the meal',
         pl: 'Dziękuję za posiłek',
         jp: { text: 'ごちそうさまでした' },
     },
     {
+        id: '233a642f-aa22-4d54-8af6-167925d2e1f9',
         type: 'phrase',
         en: 'Nice to meet you (at the beginning of introduction)',
         pl: 'Miło cię poznać (na początku przedstawiania się)',
         jp: { text: 'はじめまして' },
     },
     {
+        id: '1343b338-c605-4338-90c3-7c4c719ad4e5',
         type: 'phrase',
         en: 'Nice to meet you (said after introduction)',
         pl: 'Miło cię poznać (po przedstawieniu się)',

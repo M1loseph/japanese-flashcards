@@ -183,3 +183,14 @@ export const textMatchesQuery = (
     if (text[selectedLanguage].toLocaleLowerCase().includes(query)) return true;
     return false;
 };
+
+export const findWordById = (id: string): TranslatedJapaneseText | undefined =>
+    (() => {
+        const wordsById: Map<string, TranslatedJapaneseText> = availableWordBags.reduce((acc, bag) => {
+            bag.words.forEach((word) => {
+                acc.set(word.id, word);
+            });
+            return acc;
+        }, new Map<string, TranslatedJapaneseText>());
+        return wordsById.get(id);
+    })();

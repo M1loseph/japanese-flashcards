@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { findBagById, textMatchesQuery } from './search';
+import { availableWordBags, findBagById, textMatchesQuery } from './search';
 import type { TranslatedJapaneseText } from './types';
 import { familyBag } from './vocabulary/family';
 
@@ -21,6 +21,7 @@ describe('textMatchesQuery', () => {
         en: string,
         pl: string,
     ): TranslatedJapaneseText => ({
+        id: 'e54cf70c-56c6-4a14-b98c-f1b68c163e89',
         type: 'noun',
         jp,
         en,
@@ -65,5 +66,21 @@ describe('textMatchesQuery', () => {
     it('returns false when nothing matches', () => {
         const text = makeNoun({ text: '犬', pronunciation: 'いぬ' }, 'dog', 'pies');
         expect(textMatchesQuery(text, 'xyz', 'en')).toBe(false);
+    });
+});
+
+describe('no ids clash', () => {
+    it('ensures all word ids are unique', () => {
+        const allWords: TranslatedJapaneseText[] = availableWordBags.flatMap((bag) => bag.words);
+        const ids = allWords.map((word) => word.id);
+        const uniqueIds = new Set(ids);
+
+        expect(uniqueIds.size).toBe(ids.length);
+    });
+
+    it('ensures all bag ids are unique', () => {
+        const bagIds = availableWordBags.map((bag) => bag.id);
+        const uniqueBagIds = new Set(bagIds);
+        expect(uniqueBagIds.size).toBe(bagIds.length);
     });
 });

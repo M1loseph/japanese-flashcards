@@ -2,18 +2,21 @@ import type { TranslatedJapaneseText, WordBag } from '../../../types';
 
 const sakura_1_12: TranslatedJapaneseText[] = [
     {
+        id: '64a85c3e-3ac5-4e8b-a6fc-1f430164cd58',
         type: 'phrase',
         en: 'Friends will come to my house.',
         pl: 'Przyjaciele przyjdą do mojego domu.',
         jp: { text: 'ともだちがわたしのうちにきます。' },
     },
     {
+        id: '0c214fbd-eadb-474f-b9d4-730234d44d42',
         type: 'pronoun',
         en: 'When',
         pl: 'Kiedy',
         jp: { text: 'いつ' },
     },
     {
+        id: '251bf442-dd05-4bde-879a-50cefbfbcbee',
         type: 'verb',
         verb_type: 'godan',
         en: 'Use',
@@ -21,6 +24,7 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'つかう' },
     },
     {
+        id: '988b6ee6-fe98-4974-95ee-6f821431264b',
         type: 'verb',
         verb_type: 'godan',
         en: 'Meet',
@@ -28,12 +32,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: '会う', pronunciation: 'あう' },
     },
     {
+        id: '815da87d-0687-42d6-bdee-e70b444277f6',
         type: 'phrase',
         en: 'With whom do you meet?',
         pl: 'Z kim się spotykasz?',
         jp: { text: 'だれと会いますか。', pronunciation: 'だれとあいますか。' },
     },
     {
+        id: 'c5ec38f5-89bf-444c-9873-44e2a50ef5a9',
         type: 'verb',
         verb_type: 'godan',
         en: 'Make / Create',
@@ -41,12 +47,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'つくる' },
     },
     {
+        id: '612eeb27-b913-418c-b733-10cf2ff4fca4',
         type: 'phrase',
         en: 'I use a phone.',
         pl: 'Używam telefonu.',
         jp: { text: 'でんわをつかいます。' },
     },
     {
+        id: '8ea0455a-539f-4dd0-8113-7f925792d20a',
         type: 'verb',
         verb_type: 'godan',
         en: 'Take (an object or picture)',
@@ -54,12 +62,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: '撮る', pronunciation: 'とる' },
     },
     {
+        id: '9fd3b602-1575-42c9-a3f9-045f72e45ace',
         type: 'phrase',
         en: 'Take pictures',
         pl: 'Robić zdjęcia',
         jp: { text: 'しゃしんをとる' },
     },
     {
+        id: 'df4183ff-1fd2-4377-a0fd-e1c9cdae3e8b',
         type: 'verb',
         verb_type: 'godan',
         en: 'Send',
@@ -67,24 +77,28 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'おくる' },
     },
     {
+        id: '8858ac46-8fbf-453c-b6a0-53bc3d60d6ca',
         type: 'phrase',
         en: 'Send a letter',
         pl: 'Wysyłać list',
         jp: { text: 'てがみをおくります' },
     },
     {
+        id: '5b2459f5-207b-49c0-8cbd-6613d85e685b',
         type: 'noun',
         en: 'Package',
         pl: 'Paczka',
         jp: { text: 'にもつ' },
     },
     {
+        id: 'fd7ed2a2-3d16-4564-8eb1-f76be703a15d',
         type: 'phrase',
         en: 'Play by yourself',
         pl: 'Bawić się samemu',
         jp: { text: 'ひとりであそぶ' },
     },
     {
+        id: '76199ba7-2cda-4c33-a176-5a4811bd605d',
         type: 'verb',
         verb_type: 'godan',
         en: 'Play / Have fun / Hang out',
@@ -92,12 +106,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'あそぶ' },
     },
     {
+        id: '9cc47543-c74f-46cd-962e-d67c3a475ada',
         type: 'noun',
         en: 'Musical instrument',
         pl: 'Instrument muzyczny',
         jp: { text: 'がっき' },
     },
     {
+        id: '6c41053a-f0b7-41f6-a1bd-9dc196e177d6',
         type: 'verb',
         verb_type: 'godan',
         en: 'Play (a musical instrument)',
@@ -105,12 +121,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'ひく' },
     },
     {
+        id: '00173d0b-bda4-45bd-866a-6a4645b6d3a7',
         type: 'phrase',
         en: 'Play an instrument',
         pl: 'Grać na instrumencie',
         jp: { text: 'がっきをひく' },
     },
     {
+        id: '89e17e20-fec4-4e3b-8625-ab2aae5ea166',
         type: 'verb',
         verb_type: 'godan',
         en: 'Rest',
@@ -118,6 +136,7 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'やすむ' },
     },
     {
+        id: 'f7db90e3-e5ed-4a44-b1bd-a27571822823',
         type: 'verb',
         verb_type: 'godan',
         en: 'Swim',
@@ -125,6 +144,7 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: '泳ぐ', pronunciation: 'およぐ' },
     },
     {
+        id: 'b285b276-7df3-44f7-b761-9cc71c1169a9',
         type: 'verb',
         verb_type: 'godan',
         en: 'Talk',
@@ -132,12 +152,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: '話す', pronunciation: 'はなす' },
     },
     {
+        id: 'a3f8ae6a-b88d-4957-8107-fb27f96ffc65',
         type: 'phrase',
         en: 'Who are you talking with?',
         pl: 'Z kim rozmawiasz?',
         jp: { text: 'だれとはなしますか？' },
     },
     {
+        id: '4febbdcc-824f-4ccf-a941-82675312c0d7',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Teach',
@@ -145,12 +167,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'おしえる' },
     },
     {
+        id: '123c5221-ab8d-4461-ae69-96672b9bcf5a',
         type: 'phrase',
         en: 'I teach my children math.',
         pl: 'Uczę moje dzieci matematyki.',
         jp: { text: 'わたしはこどもにすうがくをおしえます。' },
     },
     {
+        id: '438b0076-de9a-4ce2-8c47-a7faae340280',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Put on (clothes)',
@@ -158,18 +182,21 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'きる' },
     },
     {
+        id: 'd6734b02-18f8-413f-8bdc-49ca1c9ef286',
         type: 'phrase',
         en: 'Put on a jacket',
         pl: 'Zakładać kurtkę',
         jp: { text: 'ジャケットをきる' },
     },
     {
+        id: '522e9228-4749-4615-95ce-d6a71524d33f',
         type: 'phrase',
         en: 'All day',
         pl: 'Cały dzień',
         jp: { text: 'いちにちじゅう' },
     },
     {
+        id: '4f642d19-5515-47f5-958f-da07163fea45',
         type: 'verb',
         verb_type: 'suru',
         en: 'Cook',
@@ -177,6 +204,7 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'りょうりをする' },
     },
     {
+        id: '6feb73e4-a5f4-412e-9ca8-2eb455666963',
         type: 'verb',
         verb_type: 'suru',
         en: 'Do sports',
@@ -184,18 +212,21 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'スポーツをする' },
     },
     {
+        id: 'ce9367f4-c68f-4be0-81c9-c356cfc10e64',
         type: 'phrase',
         en: 'I shop twice every week.',
         pl: 'Robię zakupy dwa razy w każdy tydzień.',
         jp: { text: 'まいしゅうにかいかいものをします。' },
     },
     {
+        id: 'a5d17100-94d4-441e-add2-8045707cb527',
         type: 'phrase',
         en: 'Cook pierogi',
         pl: 'Gotować pierogi',
         jp: { text: 'ピエロギをつくる' },
     },
     {
+        id: '8648be4b-5677-436e-ba21-44341f83323b',
         type: 'phrase',
         en: 'Cook Japanese food',
         pl: 'Gotować japońskie jedzenie',
@@ -204,12 +235,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
             'Technically, this should be "にほんのりょうりをつくる", but the particle "の" is often omitted in casual speech.',
     },
     {
+        id: '01303ebd-938c-477b-91ce-5f20898fb01a',
         type: 'noun',
         en: 'Copy',
         pl: 'Kopia',
         jp: { text: 'コピー' },
     },
     {
+        id: 'e97b142d-41b2-40ce-b70b-1d3049b18d48',
         type: 'verb',
         verb_type: 'suru',
         en: 'Make a copy',
@@ -217,18 +250,21 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'コピーをする' },
     },
     {
+        id: '3625fb24-c8dd-4f74-badb-c793e09f192d',
         type: 'noun',
         en: 'Piano',
         pl: 'Pianino',
         jp: { text: 'ピアノ' },
     },
     {
+        id: '7e7824a1-1fbd-4942-bcc4-e6e509428a0e',
         type: 'noun',
         en: 'Guitar',
         pl: 'Gitara',
         jp: { text: 'ギター' },
     },
     {
+        id: 'd38c2fb9-2708-43db-9516-6007d8821fdf',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Yellow',
@@ -236,18 +272,21 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'きいろい' },
     },
     {
+        id: 'b3a3a71c-6d10-4cd0-b9be-47440a7efd81',
         type: 'noun',
         en: 'Street',
         pl: 'Ulica',
         jp: { text: 'とおり' },
     },
     {
+        id: '950e1371-92c6-44a0-8ead-3b38d3f41f53',
         type: 'noun',
         en: 'Air',
         pl: 'Powietrze',
         jp: { text: 'くうき' },
     },
     {
+        id: 'cd8692b3-28c3-48f1-bb8f-8fcfaa36f80a',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Big',
@@ -255,12 +294,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'おおきい' },
     },
     {
+        id: 'f39aa583-aea1-4c43-b4e0-063d2270c037',
         type: 'noun',
         en: 'Wolf',
         pl: 'Wilk',
         jp: { text: 'おおかみ' },
     },
     {
+        id: '36d4d1ca-c347-4768-9b2a-09a99a205e2e',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Small',
@@ -268,6 +309,7 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'ちいさい' },
     },
     {
+        id: '7ab9e903-8079-489a-81b1-9470799d37f6',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Far',
@@ -275,12 +317,14 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         jp: { text: 'とおい' },
     },
     {
+        id: 'abaf5430-13a3-4875-96a3-9b171dc0c339',
         type: 'noun',
         en: 'Fridge',
         pl: 'Lodówka',
         jp: { text: 'れいぞうこ' },
     },
     {
+        id: 'c2408328-8593-44ba-9004-36fb7fb71bf0',
         type: 'verb',
         verb_type: 'suru',
         en: 'Play football',

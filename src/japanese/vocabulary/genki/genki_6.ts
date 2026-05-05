@@ -2,108 +2,126 @@ import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 const genki_6: TranslatedJapaneseText[] = [
     {
+        id: '23667681-4ea7-48bb-8a7f-6533e8c804f9',
         type: 'noun',
         en: 'Kanji / Chinese character',
         pl: 'Kanji / Chiński znak',
         jp: { text: '漢字', pronunciation: 'かんじ' },
     },
     {
+        id: '6b4ab2c4-3575-4610-890f-5c725bd0e0a2',
         type: 'noun',
         en: 'Textbook',
         pl: 'Podręcznik',
         jp: { text: '教科書', pronunciation: 'きょうかしょ' },
     },
     {
+        id: '2d799eb3-1ff4-4818-ad21-b82666ec066f',
         type: 'noun',
         en: 'Page',
         pl: 'Strona',
         jp: { text: 'ページ' },
     },
     {
+        id: '020e10e1-d0f4-4df1-80f1-fa7cda8a0292',
         type: 'noun',
         en: 'Next',
         pl: 'Następny',
         jp: { text: '次', pronunciation: 'つぎ' },
     },
     {
+        id: '53c3e802-bfb6-43dd-b899-6270c26ed6ad',
         type: 'noun',
         en: 'Money',
         pl: 'Pieniądze',
         jp: { text: 'お金', pronunciation: 'おかね' },
     },
     {
+        id: '12cdaa0a-0faa-4415-9089-b148cf896263',
         type: 'noun',
         en: 'Baggage',
         pl: 'Bagaż',
         jp: { text: '荷物', pronunciation: 'にもつ' },
     },
     {
+        id: '65650142-bee7-4578-ae75-68d73a8a8ded',
         type: 'noun',
         en: 'Personal computer',
         pl: 'Komputer osobisty',
         jp: { text: 'パソコン' },
     },
     {
+        id: 'c1142dd0-e7b1-4025-8d8f-734ccbca8ef8',
         type: 'noun',
         en: 'Shower',
         pl: 'Prysznic',
         jp: { text: 'シャワー' },
     },
     {
+        id: '26dd7624-08ab-49f0-8072-ee74ac0b796f',
         type: 'noun',
         en: 'Air conditioner',
         pl: 'Klimatyzacja',
         jp: { text: 'エアコン' },
     },
     {
+        id: 'ab5bac34-d15c-44a1-b8d3-ab19512f2976',
         type: 'noun',
         en: 'Electricity / Electric light',
         pl: 'Elektryczność / Światło elektryczne',
         jp: { text: '電気', pronunciation: 'でんき' },
     },
     {
+        id: '8fdc8e2b-2ca4-4de4-bb6b-e5c44cb8bb6c',
         type: 'noun',
         en: 'Window',
         pl: 'Okno',
         jp: { text: '窓', pronunciation: 'まど' },
     },
     {
+        id: '6c2c4219-bd88-493a-a7c7-1f16ac945bf5',
         type: 'noun',
         en: 'Train',
         pl: 'Pociąg',
         jp: { text: '電車', pronunciation: 'でんしゃ' },
     },
     {
+        id: 'f8491618-a609-43c9-bfaa-201a962657ba',
         type: 'noun',
         en: 'Country',
         pl: 'Kraj',
         jp: { text: '国', pronunciation: 'くに' },
     },
     {
+        id: 'b3c6186b-6915-4196-bfe3-041679ed5345',
         type: 'noun',
         en: 'This week',
         pl: 'Ten tydzień',
         jp: { text: '今週', pronunciation: 'こんしゅう' },
     },
     {
+        id: '21bf51c7-ef38-415c-b660-09ea92349e8e',
         type: 'noun',
         en: 'Next week',
         pl: 'Następny tydzień',
         jp: { text: '来週', pronunciation: 'らいしゅう' },
     },
     {
+        id: '4a7ea721-5179-4d46-b939-199000180229',
         type: 'noun',
         en: 'Next year',
         pl: 'Następny rok',
         jp: { text: '来年', pronunciation: 'らいねん' },
     },
     {
+        id: '40e2fccc-afba-47ae-a6ba-045a2d63f41f',
         type: 'noun',
         en: 'Night',
         pl: 'Noc',
         jp: { text: '夜', pronunciation: 'よる' },
     },
     {
+        id: '829cde97-a83b-4211-a074-8415996a350c',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Tough (situation)',
@@ -111,6 +129,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '大変', pronunciation: 'たいへん' },
     },
     {
+        id: '53441915-9a96-430a-b49b-73d9b276f478',
         type: 'verb',
         verb_type: 'godan',
         en: 'Play / Hang out',
@@ -118,6 +137,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '遊ぶ', pronunciation: 'あそぶ' },
     },
     {
+        id: 'c02a3736-f62e-489e-b70e-4db75cbb00b1',
         type: 'verb',
         verb_type: 'godan',
         en: 'Hurry',
@@ -125,6 +145,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '急ぐ', pronunciation: 'いそぐ' },
     },
     {
+        id: '26a6b882-7bd4-4fbd-8cb3-09faaae54352',
         type: 'verb',
         verb_type: 'godan',
         en: 'Return (a thing)',
@@ -132,6 +153,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '返す', pronunciation: 'かえす' },
     },
     {
+        id: '216c4070-c0da-446d-b17d-5c2f7f4ac39c',
         type: 'verb',
         verb_type: 'godan',
         en: 'Turn off / Erase',
@@ -139,6 +161,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '消す', pronunciation: 'けす' },
     },
     {
+        id: '47419c6d-771b-4feb-9804-c04b342321b1',
         type: 'verb',
         verb_type: 'godan',
         en: 'Die',
@@ -146,6 +169,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '死ぬ', pronunciation: 'しぬ' },
     },
     {
+        id: '5577869b-cea7-47a2-a7ae-493a54208a45',
         type: 'verb',
         verb_type: 'godan',
         en: 'Sit down',
@@ -153,6 +177,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '座る', pronunciation: 'すわる' },
     },
     {
+        id: '25633963-5f9b-4734-9290-37bef4cb600b',
         type: 'verb',
         verb_type: 'godan',
         en: 'Stand up',
@@ -160,6 +185,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '立つ', pronunciation: 'たつ' },
     },
     {
+        id: 'c5ecf3cf-0d2f-4b77-b587-19a157264933',
         type: 'verb',
         verb_type: 'godan',
         en: 'Smoke',
@@ -167,6 +193,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: 'たばこを吸う', pronunciation: 'たばこをすう' },
     },
     {
+        id: '6b2b6165-fec9-48fa-bf16-3296923da8fa',
         type: 'verb',
         verb_type: 'godan',
         en: 'Use',
@@ -174,6 +201,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '使う', pronunciation: 'つかう' },
     },
     {
+        id: '4d589553-5709-4506-8d50-94d3101baee4',
         type: 'verb',
         verb_type: 'godan',
         en: 'Help',
@@ -181,6 +209,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '手伝う', pronunciation: 'てつだう' },
     },
     {
+        id: '3f0c23b5-531d-4620-8d5c-a311e1909993',
         type: 'verb',
         verb_type: 'godan',
         en: 'Enter',
@@ -188,6 +217,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '入る', pronunciation: 'はいる' },
     },
     {
+        id: '094f3039-2e93-4098-bb4f-b8f49528bf41',
         type: 'verb',
         verb_type: 'godan',
         en: 'Carry / Hold',
@@ -195,6 +225,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '持つ', pronunciation: 'もつ' },
     },
     {
+        id: '9a6d5643-9dd1-4969-878d-44f4476ee0c0',
         type: 'verb',
         verb_type: 'godan',
         en: 'Be absent / Rest',
@@ -202,6 +233,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '休む', pronunciation: 'やすむ' },
     },
     {
+        id: 'fd526a28-2806-4157-9d28-5193eeb28939',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Open',
@@ -209,6 +241,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '開ける', pronunciation: 'あける' },
     },
     {
+        id: 'af97ae7a-ea17-4117-80f9-10d4460b9a2e',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Close',
@@ -216,6 +249,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '閉める', pronunciation: 'しめる' },
     },
     {
+        id: 'a5444a79-9fd3-4e47-ac30-05c62a538e9d',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Teach / Instruct',
@@ -223,6 +257,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '教える', pronunciation: 'おしえる' },
     },
     {
+        id: 'bfdd5ebd-432c-491e-b964-d0627a527d13',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Forget / Leave behind',
@@ -230,6 +265,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '忘れる', pronunciation: 'わすれる' },
     },
     {
+        id: '59def8ca-096a-417c-9e25-67b68ed802c8',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Get off',
@@ -237,6 +273,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '降りる', pronunciation: 'おりる' },
     },
     {
+        id: '0cf4e540-8100-4853-8cf1-35988b90f7ef',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Borrow',
@@ -244,6 +281,7 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '借りる', pronunciation: 'かりる' },
     },
     {
+        id: '2f47cbaf-3952-497c-adc1-b5660c5b9d7a',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Turn on',
@@ -251,12 +289,14 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: 'つける' },
     },
     {
+        id: '605bcd3e-9b9f-4f82-b332-bfe622c48b03',
         type: 'phrase',
         en: 'Take a shower',
         pl: 'Brać prysznic',
         jp: { text: 'シャワーを浴びる', pronunciation: 'シャワーをあびる' },
     },
     {
+        id: '65e59af2-32be-48db-83e3-cdb6eac4a138',
         type: 'verb',
         verb_type: 'suru',
         en: 'Call',
@@ -264,30 +304,35 @@ const genki_6: TranslatedJapaneseText[] = [
         jp: { text: '電話する', pronunciation: 'でんわする' },
     },
     {
+        id: '22f631c7-85cc-4e46-9efc-22ac0e050f44',
         type: 'adverb',
         en: 'Later / Afterwards',
         pl: 'Później',
         jp: { text: '後で', pronunciation: 'あとで' },
     },
     {
+        id: '88b45a29-9d57-4d51-a2cb-cdacd4c43a26',
         type: 'adverb',
         en: 'Immediately',
         pl: 'Natychmiast',
         jp: { text: 'すぐ' },
     },
     {
+        id: '2e964b48-afc5-4d08-8e4e-63b78254402c',
         type: 'adverb',
         en: 'Slowly',
         pl: 'Powoli',
         jp: { text: 'ゆっくり' },
     },
     {
+        id: '7ed9a75b-955c-4039-9015-0517482e124a',
         type: 'phrase',
         en: 'No, thank you.',
         pl: 'Nie, dziękuję.',
         jp: { text: 'いいえ、結構です。', pronunciation: 'いいえ、けっこうです。' },
     },
     {
+        id: '476b2c81-e94b-42fb-865c-8e077ca35a37',
         type: 'phrase',
         en: 'Really? / Is that so?',
         pl: 'Naprawdę? / Czy tak jest?',

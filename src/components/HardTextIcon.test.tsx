@@ -6,6 +6,7 @@ import type { TranslatedJapaneseText } from '../japanese';
 import { HardTextIcon } from './HardTextIcon';
 
 const mockWord: TranslatedJapaneseText = {
+    id: '8b2071ca-2293-4ee7-8ff7-3d6283f469c8',
     type: 'noun',
     en: 'cat',
     pl: 'kot',
