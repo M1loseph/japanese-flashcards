@@ -2,12 +2,14 @@ import type { TranslatedJapaneseText, WordBag } from '../../../types';
 
 const sakura_2_11: TranslatedJapaneseText[] = [
     {
+        id: '1468810b-4188-47a6-b166-77c1ea3765bf',
         type: 'noun',
         en: 'Bus',
         pl: 'Autobus',
         jp: { text: 'バス' },
     },
     {
+        id: '4105a0c3-1d37-4099-8a61-3d0aa9241c83',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Beautiful (not "clean")',
@@ -15,6 +17,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '美しい', pronunciation: 'うつくしい' },
     },
     {
+        id: '3320c150-abc1-4f92-947d-cb8c1581cd12',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Tasty',
@@ -22,6 +25,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '美味しい', pronunciation: 'おいしい' },
     },
     {
+        id: 'fe0f8f59-0506-47fd-8b65-57d9849615ef',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Bad-tasting',
@@ -29,6 +33,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '不味い', pronunciation: 'まずい' },
     },
     {
+        id: '71b16953-b99b-4345-bc11-ecd049af1d5b',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Expensive',
@@ -36,6 +41,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '高い', pronunciation: 'たかい' },
     },
     {
+        id: '3bbacd12-4e8c-463c-8c24-79ae80ca578b',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Cheap',
@@ -43,6 +49,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '安い', pronunciation: 'やすい' },
     },
     {
+        id: '663b0482-20c8-4aae-9208-160fe4159bb5',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Fast',
@@ -50,6 +57,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '速い', pronunciation: 'はやい' },
     },
     {
+        id: '8a707767-18e1-45c9-bbc5-56ae66f7596e',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Slow',
@@ -57,6 +65,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '遅い', pronunciation: 'おそい' },
     },
     {
+        id: 'd081d7b6-db87-4692-a225-9bdf97d986c2',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Big',
@@ -64,6 +73,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '大きい', pronunciation: 'おおきい' },
     },
     {
+        id: '20be46b1-29dc-4a09-b905-1c059a05f87d',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Small',
@@ -71,6 +81,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '小さい', pronunciation: 'ちいさい' },
     },
     {
+        id: 'd8b28b3f-3dbc-4e18-a402-d9d56a66dc41',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Hot (weather / perceived)',
@@ -78,6 +89,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '暑い', pronunciation: 'あつい' },
     },
     {
+        id: 'acf9758c-7aa0-43dd-8200-997b47e5e99a',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Cold (weather / perceived)',
@@ -85,6 +97,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '寒い', pronunciation: 'さむい' },
     },
     {
+        id: '42ae9cd9-7e19-4b05-ae5e-8d75dcdd2e04',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Hot (thing)',
@@ -92,6 +105,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '熱い', pronunciation: 'あつい' },
     },
     {
+        id: 'e391896b-a326-4b6a-97b3-e7c074d8d8f9',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Cold (thing)',
@@ -99,6 +113,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '冷たい', pronunciation: 'つめたい' },
     },
     {
+        id: '35927577-894c-493b-96ba-679720a92fd6',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Tall',
@@ -106,6 +121,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '高い', pronunciation: 'たかい' },
     },
     {
+        id: '1288397a-5a06-4a20-bf3a-046a4c35dc60',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Short (height)',
@@ -113,6 +129,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '低い', pronunciation: 'ひくい' },
     },
     {
+        id: 'c07ecfa4-ce3f-4a96-9c45-efb21a691a12',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Tall (person)',
@@ -120,6 +137,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '背が高い', pronunciation: 'せがたかい' },
     },
     {
+        id: '06fde0cb-3d74-4996-9576-6f32ccb46900',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Short (person)',
@@ -127,6 +145,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '背が低い', pronunciation: 'せがひくい' },
     },
     {
+        id: 'b453a589-78ab-4542-b32a-bbc20229abc3',
         type: 'adjective',
         adjective_type: 'i-adjective-irregular',
         en: 'Good',
@@ -135,6 +154,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         negative: { text: 'よくない' },
     },
     {
+        id: '3d421567-6614-4a9f-9b83-ab2489c5eb5f',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Bad',
@@ -142,6 +162,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '悪い', pronunciation: 'わるい' },
     },
     {
+        id: 'efb5b9bc-cafb-410d-b087-c33ef530baea',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'New',
@@ -149,6 +170,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '新しい', pronunciation: 'あたらしい' },
     },
     {
+        id: 'c843573a-71f4-4dde-8216-9b7653449d67',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Old (thing)',
@@ -156,6 +178,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '古い', pronunciation: 'ふるい' },
     },
     {
+        id: '5d0b5339-309a-465f-81b1-54f413714a0b',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Bright / Cheerful',
@@ -163,6 +186,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '明るい', pronunciation: 'あかるい' },
     },
     {
+        id: 'ff68f97d-ba03-47d6-9eb6-a4fc48fe8a60',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Dark / Gloomy',
@@ -170,6 +194,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '暗い', pronunciation: 'くらい' },
     },
     {
+        id: 'b86baa6f-6379-4fb3-8dec-3aaaa304ffb9',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Wide / Spacious',
@@ -177,6 +202,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '広い', pronunciation: 'ひろい' },
     },
     {
+        id: 'df8e43ca-1d94-4861-bc7e-0fc23b1a7c30',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Narrow / Cramped',
@@ -184,6 +210,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '狭い', pronunciation: 'せまい' },
     },
     {
+        id: '4348a790-71aa-4189-9873-f6f6f037a599',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Long',
@@ -191,6 +218,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '長い', pronunciation: 'ながい' },
     },
     {
+        id: '168036ac-513d-4406-a7e7-df06140fd2e6',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Short (length)',
@@ -198,6 +226,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '短い', pronunciation: 'みじかい' },
     },
     {
+        id: '4167f08d-54b8-4eb2-b7e3-808c869284c4',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Close',
@@ -205,6 +234,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '近い', pronunciation: 'ちかい' },
     },
     {
+        id: '25ca7df7-6133-4e94-9370-dc965ae7f97d',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Far',
@@ -212,6 +242,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '遠い', pronunciation: 'とおい' },
     },
     {
+        id: '3a02dfba-57be-4e20-b19e-1d15dc4855e2',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Interesting',
@@ -219,6 +250,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '面白い', pronunciation: 'おもしろい' },
     },
     {
+        id: '03073ce5-bd35-432b-83d6-903f1384625c',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Fun / Enjoyable',
@@ -226,6 +258,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '楽しい', pronunciation: 'たのしい' },
     },
     {
+        id: '8b9c82b1-2c8e-4761-8d53-eba5f8d9668e',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Boring',
@@ -233,6 +266,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: 'つまらない' },
     },
     {
+        id: '436fbe1b-881f-45a9-ae03-5420e1c56416',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Noisy',
@@ -240,6 +274,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: 'うるさい' },
     },
     {
+        id: '12aa1f7e-3e64-4d74-859b-e751088982fa',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Difficult',
@@ -247,6 +282,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '難しい', pronunciation: 'むずかしい' },
     },
     {
+        id: 'fb9b4d70-e6c1-4be6-8b56-e0c56d6769e5',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Busy',
@@ -254,6 +290,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '忙しい', pronunciation: 'いそがしい' },
     },
     {
+        id: 'bd2e427b-8b2e-467c-a322-158af2acfede',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Cute',
@@ -261,6 +298,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '可愛い', pronunciation: 'かわいい' },
     },
     {
+        id: '08024086-31d6-4438-8edf-5175c57e6caa',
         type: 'adjective',
         adjective_type: 'i-adjective-irregular',
         en: 'Handsome / Cool',
@@ -269,6 +307,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         negative: { text: 'かっこよくない' },
     },
     {
+        id: '075dc039-0e7e-42f8-8736-03fce869042e',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Nice / Kind (can be used for all people)',
@@ -276,6 +315,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '優しい', pronunciation: 'やさしい' },
     },
     {
+        id: 'edb2d6fd-82dc-4b95-81bf-30b56c3f20e1',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Scary',
@@ -283,6 +323,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '怖い', pronunciation: 'こわい' },
     },
     {
+        id: '2a376c2a-0cd3-438e-b390-27844268a066',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Terrible',
@@ -290,6 +331,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: 'ひどい' },
     },
     {
+        id: '51fb0aaf-dcbb-434f-97b1-9ff935c49f4b',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Dirty',
@@ -297,6 +339,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '汚い', pronunciation: 'きたない' },
     },
     {
+        id: 'ce5af7ad-7425-422a-8919-4d761540f8e0',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Liked',
@@ -304,12 +347,14 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '好き', pronunciation: 'すき' },
     },
     {
+        id: '0fe06a4f-74ea-4dd6-b4b2-f1a81b561b80',
         type: 'phrase',
         en: 'I like elephants.',
         pl: 'Lubię słonie.',
         jp: { text: '象が好きです。', pronunciation: 'ぞうがすきです。' },
     },
     {
+        id: 'c4aaf13b-423c-4252-bc5b-79ffb22b2e94',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Disliked',
@@ -317,12 +362,14 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '嫌い', pronunciation: 'きらい' },
     },
     {
+        id: 'a846293f-23bd-440f-95c4-76628481cae5',
         type: 'phrase',
         en: 'I dislike biology.',
         pl: 'Nie lubię biologii.',
         jp: { text: '生物学が嫌いです。', pronunciation: 'せいぶつがくがきらいです。' },
     },
     {
+        id: 'e974c233-d3a1-4e20-a65b-38dddb255dc5',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Good at / Skilled (when referring to someone else)',
@@ -330,12 +377,14 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '上手', pronunciation: 'じょうず' },
     },
     {
+        id: '8ad522b6-c87a-43c4-a039-2215d676dd3d',
         type: 'phrase',
         en: 'She is good at cooking.',
         pl: 'Ona jest dobra w gotowaniu.',
         jp: { text: '料理が上手です。', pronunciation: 'りょうりがじょうずです。' },
     },
     {
+        id: '947da212-6bcd-4f4b-b1db-f6b854639670',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Bad at / Unskilled (when referring to someone else)',
@@ -343,12 +392,14 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '下手', pronunciation: 'へた' },
     },
     {
+        id: '70b29b0f-d244-482d-b8b4-6582da13241d',
         type: 'phrase',
         en: 'He is bad at sports.',
         pl: 'On jest słaby w sporcie.',
         jp: { text: 'スポーツが下手です。', pronunciation: 'スポーツがへたです。' },
     },
     {
+        id: '86aa0384-3006-4685-9c14-b25144313be1',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Good at / Skilled (when referring to oneself)',
@@ -356,12 +407,14 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '得意', pronunciation: 'とくい' },
     },
     {
+        id: 'f480bc56-ee51-4850-bca8-9094f2b622ab',
         type: 'phrase',
         en: 'I am good at math.',
         pl: 'Jestem dobry w matematyce.',
         jp: { text: '数学が得意です。', pronunciation: 'すうがくがとくいです。' },
     },
     {
+        id: '01d3cd1b-4aae-43b9-8040-70c371acb641',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Bad at / Unskilled (when referring to oneself)',
@@ -369,12 +422,14 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '苦手', pronunciation: 'にがて' },
     },
     {
+        id: '9da6b9de-2f4a-47e1-8554-0e0240b2ef09',
         type: 'phrase',
         en: 'I am bad at Japanese.',
         pl: 'Jestem słaby w japońskim.',
         jp: { text: '日本語が苦手です。', pronunciation: 'にほんごがにがてです。' },
     },
     {
+        id: '57b5aaae-adb2-4c16-85b0-4b1751092953',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Lively',
@@ -382,6 +437,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '賑やか', pronunciation: 'にぎやか' },
     },
     {
+        id: '769f72cf-4dff-4572-8189-26e9f736e64b',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Quiet',
@@ -389,6 +445,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '静か', pronunciation: 'しずか' },
     },
     {
+        id: 'aceb41ca-50b2-4f6e-8832-e7d1a90dcd74',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Beautiful / Clean',
@@ -396,6 +453,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: 'きれい' },
     },
     {
+        id: '668cbf70-c884-461b-9f6a-f7b71acf2a52',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Famous',
@@ -403,6 +461,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '有名', pronunciation: 'ゆうめい' },
     },
     {
+        id: '516c85c0-d521-4e59-a2bb-656293f14a13',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Convenient',
@@ -410,6 +469,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '便利', pronunciation: 'べんり' },
     },
     {
+        id: '1e000f64-5812-494a-b075-0c1bad9d4c2a',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Easy',
@@ -417,6 +477,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '簡単', pronunciation: 'かんたん' },
     },
     {
+        id: '7b3c2446-c6dc-4f04-8d87-98fc031ddb10',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Healthy / Energetic',
@@ -424,6 +485,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '元気', pronunciation: 'げんき' },
     },
     {
+        id: '3de3257f-cedd-435f-b95a-e07d1b4f1edb',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Nice / Kind (can only be used for not close people)',
@@ -431,6 +493,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '親切', pronunciation: 'しんせつ' },
     },
     {
+        id: '957ea556-dd2b-4fba-8771-d6ccce8a2c75',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Free (not busy)',
@@ -438,6 +501,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '暇', pronunciation: 'ひま' },
     },
     {
+        id: '58b54a1f-9f9e-4222-9569-dfcbc80d3c46',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Weird',
@@ -445,6 +509,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '変', pronunciation: 'へん' },
     },
     {
+        id: '86fc88da-4ef5-4ed2-98a5-f645a2f4dfeb',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Terrible / Difficult',
@@ -452,6 +517,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         jp: { text: '大変', pronunciation: 'たいへん' },
     },
     {
+        id: 'c968f1c0-6576-4d5e-82b1-3f805a91ac69',
         type: 'adjective',
         adjective_type: 'i-adjective-irregular',
         en: 'Smart / Intelligent',
@@ -460,48 +526,56 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         negative: { text: '頭がよくない', pronunciation: 'あたまがよくない' },
     },
     {
+        id: 'dbc23121-4211-4dfa-a8b5-ac8f6007b59d',
         type: 'noun',
         en: 'Money',
         pl: 'Pieniądze',
         jp: { text: 'お金', pronunciation: 'おかね' },
     },
     {
+        id: 'a995569f-ae11-42c3-8361-99c31c22b91f',
         type: 'noun',
         en: 'Fermented soybeans',
         pl: 'Sfermentowana soja',
         jp: { text: '納豆', pronunciation: 'なっとう' },
     },
     {
+        id: '93c65c9f-3c5c-4f2f-839e-154894967340',
         type: 'phrase',
         en: 'Okay',
         pl: 'Okej',
         jp: { text: 'オーケー' },
     },
     {
+        id: 'f44eb7bc-ba3f-4c9d-8265-47a95b7c6b1b',
         type: 'noun',
         en: 'Cake',
         pl: 'Tort / Ciasto',
         jp: { text: 'ケーキ' },
     },
     {
+        id: 'b5e8842f-d00f-4a6f-b4cd-10359e8ed003',
         type: 'noun',
         en: 'Wear / Clothing',
         pl: 'Ubranie',
         jp: { text: 'ウェア' },
     },
     {
+        id: '2ffda05c-5427-496c-b488-1bb6dd93a3f5',
         type: 'noun',
         en: 'Cola',
         pl: 'Cola',
         jp: { text: 'コーラ' },
     },
     {
+        id: '78c40f36-33e9-49d1-b34d-246d9b7850ec',
         type: 'noun',
         en: 'Kiwi',
         pl: 'Kiwi',
         jp: { text: 'キウイフルーツ' },
     },
     {
+        id: '61f44219-1ea1-44a2-9c00-3e843e4ccf7b',
         type: 'noun',
         en: 'Cocoa / Hot cocoa',
         pl: 'Kakałko',

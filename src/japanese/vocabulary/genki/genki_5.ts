@@ -2,102 +2,119 @@ import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 const genki_5: TranslatedJapaneseText[] = [
     {
+        id: 'e672f127-e62b-4ca1-b9f2-88d73d154693',
         type: 'noun',
         en: 'Food',
         pl: 'Jedzenie',
         jp: { text: '食べ物', pronunciation: 'たべもの' },
     },
     {
+        id: 'c6064112-0e81-463f-8470-360e57844425',
         type: 'noun',
         en: 'Drink',
         pl: 'Napój',
         jp: { text: '飲み物', pronunciation: 'のみもの' },
     },
     {
+        id: 'de9c7de3-c5b2-4750-bbdb-c885ec544e63',
         type: 'noun',
         en: 'Fruit',
         pl: 'Owoc',
         jp: { text: '果物', pronunciation: 'くだもの' },
     },
     {
+        id: '04eee17b-ed49-4877-a5b7-5121e300e33e',
         type: 'noun',
         en: 'Holiday / Day off / Absence',
         pl: 'Święto / Dzień wolny / Nieobecność',
         jp: { text: '休み', pronunciation: 'やすみ' },
     },
     {
+        id: '272d982e-f350-4c76-be7c-ed521c51bf33',
         type: 'noun',
         en: 'Travel',
         pl: 'Podróż',
         jp: { text: '旅行', pronunciation: 'りょこう' },
     },
     {
+        id: '24c0e6e3-1487-455c-aec8-ee1b5475beb0',
         type: 'noun',
         en: 'Sea',
         pl: 'Morze',
         jp: { text: '海', pronunciation: 'うみ' },
     },
     {
+        id: '8721a8b3-f6e2-4fad-bee6-ddbe967576e9',
         type: 'noun',
         en: 'Surfing',
         pl: 'Surfing',
         jp: { text: 'サーフィン' },
     },
     {
+        id: '36d43350-8aef-49fc-bcde-c0b30a1b2559',
         type: 'noun',
         en: 'Souvenir',
         pl: 'Pamiątka',
         jp: { text: 'お土産', pronunciation: 'おみやげ' },
     },
     {
+        id: '9cb53cce-6c98-48ce-8a6c-98039fea3d32',
         type: 'noun',
         en: 'Bus',
         pl: 'Autobus',
         jp: { text: 'バス' },
     },
     {
+        id: '4431380a-33eb-4e77-97d3-9c06cd547e48',
         type: 'noun',
         en: 'Weather',
         pl: 'Pogoda',
         jp: { text: '天気', pronunciation: 'てんき' },
     },
     {
+        id: 'd419a546-5655-4f04-90fc-d9bd7d354763',
         type: 'noun',
         en: 'Homework',
         pl: 'Praca domowa',
         jp: { text: '宿題', pronunciation: 'しゅくだい' },
     },
     {
+        id: '06cef647-6698-4304-a51c-6edfd1c04b07',
         type: 'noun',
         en: 'Test',
         pl: 'Test',
         jp: { text: 'テスト' },
     },
     {
+        id: 'b6661182-4bef-44c6-b965-1fb3f0e60c1b',
         type: 'noun',
         en: 'Birthday',
         pl: 'Urodziny',
         jp: { text: '誕生日', pronunciation: 'たんじょうび' },
     },
     {
+        id: 'ce7d5013-84db-4ef3-873a-cfe676fff2ef',
         type: 'noun',
         en: 'Room',
         pl: 'Pokój',
         jp: { text: '部屋', pronunciation: 'へや' },
     },
     {
+        id: '4863ec82-b88a-4c8c-9e40-a434bdb4322f',
         type: 'noun',
         en: 'I (used by man)',
         pl: 'Ja (używane przez mężczyznę)',
         jp: { text: '僕', pronunciation: 'ぼく' },
     },
     {
+        id: 'fc252cbf-674f-430a-a7b5-267aa0c39be9',
         type: 'noun',
         en: 'Size L',
         pl: 'Rozmiar L',
         jp: { text: 'Lサイズ', pronunciation: 'エルサイズ' },
     },
     {
+        id: '1e33379f-3c09-43c2-809a-3b7e6737ea1b',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'New',
@@ -105,6 +122,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '新しい', pronunciation: 'あたらしい' },
     },
     {
+        id: '2b590e63-8858-43d7-ac98-9930a168bf77',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Old (thing)',
@@ -112,6 +130,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '古い', pronunciation: 'ふるい' },
     },
     {
+        id: 'd36963b4-13dd-4008-8858-732d6204c1ce',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Hot (weather)',
@@ -119,6 +138,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '暑い', pronunciation: 'あつい' },
     },
     {
+        id: '52d46015-73be-4eba-85a8-223908083f7e',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Cold (weather)',
@@ -126,6 +146,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '寒い', pronunciation: 'さむい' },
     },
     {
+        id: '65989b96-9bb3-42cc-92c5-a846ac0d3900',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Hot (thing)',
@@ -133,6 +154,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '熱い', pronunciation: 'あつい' },
     },
     {
+        id: '6a0a6b65-8135-40c3-8c61-21aac1bc6350',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Busy (people/day)',
@@ -140,6 +162,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '忙しい', pronunciation: 'いそがしい' },
     },
     {
+        id: '94b81683-b355-4cd0-ba87-077335f8c991',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Large',
@@ -147,6 +170,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '大きい', pronunciation: 'おおきい' },
     },
     {
+        id: '1540e94d-f8c1-40d1-9e07-182fba9b5db6',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Small',
@@ -154,6 +178,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '小さい', pronunciation: 'ちいさい' },
     },
     {
+        id: 'd8e7aa22-bbbf-4b85-9778-ea1f3cbed1ac',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Interesting / Funny',
@@ -161,6 +186,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '面白い', pronunciation: 'おもしろい' },
     },
     {
+        id: 'c071d088-11fd-4ad6-9d56-563e59842521',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Boring',
@@ -168,6 +194,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: 'つまらない' },
     },
     {
+        id: 'd4d6f498-dd35-46b0-9c9c-bf596a393730',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Easy (problem) / Kind (person)',
@@ -175,6 +202,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: 'やさしい' },
     },
     {
+        id: '3bc33df6-2f29-437d-9dcc-0dbc67d8b206',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Difficult',
@@ -182,6 +210,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '難しい', pronunciation: 'むずかしい' },
     },
     {
+        id: '7053d0b1-c46d-4544-b73c-12c7d1f0f82c',
         type: 'adjective',
         adjective_type: 'i-adjective-irregular',
         en: 'Good-looking / Cool / Stylish',
@@ -190,6 +219,7 @@ const genki_5: TranslatedJapaneseText[] = [
         negative: { text: 'かっこよくない' },
     },
     {
+        id: 'ad2b0ef0-fa44-4ddc-a3a9-bfea288b3773',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Scary / Frightening',
@@ -197,6 +227,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: 'こわい' },
     },
     {
+        id: '1164e6ab-e892-40d3-be0e-3eb66949e38f',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Fun / Enjoyable / Happy',
@@ -204,6 +235,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '楽しい', pronunciation: 'たのしい' },
     },
     {
+        id: 'd3ee79a1-8bce-4a70-a046-3e4ba9c9dfee',
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Cheap',
@@ -211,6 +243,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '安い', pronunciation: 'やすい' },
     },
     {
+        id: '4146991f-ae73-43d1-a2dc-f2f14b6134ee',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Fond of / Liked',
@@ -218,6 +251,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '好き', pronunciation: 'すき' },
     },
     {
+        id: '12d147dc-8377-4b23-b46b-73f15b641fef',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Disliked',
@@ -225,6 +259,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '嫌い', pronunciation: 'きらい' },
     },
     {
+        id: 'c3a3571b-4845-4308-9ec1-d3d54542824b',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Very fond of / Beloved',
@@ -232,6 +267,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '大好き', pronunciation: 'だいすき' },
     },
     {
+        id: 'dd5de9d3-6ebb-4dc0-a3df-3d72ce90f421',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Hated / Very disliked',
@@ -239,6 +275,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '大嫌い', pronunciation: 'だいきらい' },
     },
     {
+        id: 'b3196f6d-e3fb-4be3-aab0-18669f1e2c80',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Beautiful / Clean',
@@ -246,6 +283,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: 'きれい' },
     },
     {
+        id: '924386b8-f57d-4dac-9ada-7d414dbd67b8',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Healthy / Energetic',
@@ -253,6 +291,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '元気', pronunciation: 'げんき' },
     },
     {
+        id: 'deffee19-b20d-4c5f-8dfd-f8d32cd6a0fc',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Quiet',
@@ -260,6 +299,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '静か', pronunciation: 'しずか' },
     },
     {
+        id: '98aea2fa-d576-4b69-ba6e-37d346516753',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Lively',
@@ -267,6 +307,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '賑やか', pronunciation: 'にぎやか' },
     },
     {
+        id: 'ab43168a-127c-4e52-b4e1-2238afdbfb2d',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Not busy / Free (time)',
@@ -274,6 +315,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '暇', pronunciation: 'ひま' },
     },
     {
+        id: '8feea92e-6ad6-4fee-b3f2-fc5cbb53ab69',
         type: 'verb',
         verb_type: 'godan',
         en: 'Swim',
@@ -281,6 +323,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '泳ぐ', pronunciation: 'およぐ' },
     },
     {
+        id: '22f5f598-7e2b-434c-b054-53f00a5f4b67',
         type: 'verb',
         verb_type: 'godan',
         en: 'Listen / Ask',
@@ -290,6 +333,7 @@ const genki_5: TranslatedJapaneseText[] = [
             'When using this verb in the meaning of "ask", it is usually followed by に (e.g. 先生に聞きます - I ask the teacher). In the meaning of "listen", it is usually followed by を (e.g. 音楽を聞きます - I listen to music).',
     },
     {
+        id: 'a8f386ba-c5be-4001-a79f-74213f32c24c',
         type: 'verb',
         verb_type: 'godan',
         en: 'Ride / Board',
@@ -297,6 +341,7 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '乗る', pronunciation: 'のる' },
     },
     {
+        id: 'cea7dc18-d265-4cdd-9a6f-de366560c191',
         type: 'verb',
         verb_type: 'godan',
         en: 'To do / Perform',
@@ -304,12 +349,14 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: 'やる' },
     },
     {
+        id: '274f644a-d4cc-4575-b213-d8ac8761eb44',
         type: 'phrase',
         en: "I'm going to do my homework. (determined)",
         pl: 'Zrobię moją pracę domową. (zdeterminowany)',
         jp: { text: '宿題をやります。', pronunciation: 'しゅくだいをやります。' },
     },
     {
+        id: 'c5af3824-0e59-4288-b0bd-5f2948d45cf9',
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Go out / Exit',
@@ -317,24 +364,28 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '出かける', pronunciation: 'でかける' },
     },
     {
+        id: '9beeae05-cbdb-4443-b282-df73ff1c58cc',
         type: 'noun',
         en: 'Together',
         pl: 'Razem',
         jp: { text: '一緒', pronunciation: 'いっしょ' },
     },
     {
+        id: '1e540b33-d10f-4f3b-838d-1331542c126a',
         type: 'phrase',
         en: 'To go together',
         pl: 'Iść razem',
         jp: { text: '一緒に行く', pronunciation: 'いっしょにいく' },
     },
     {
+        id: '1fbdef8a-f5be-4544-8edb-8aaf873f50a0',
         type: 'adverb',
         en: 'Extremely (casual)',
         pl: 'Bardzo (nieformalnie)',
         jp: { text: 'すごく' },
     },
     {
+        id: 'ed790d82-ea1c-420e-bfc7-6db13fc25de8',
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Fine / OK / Alright',
@@ -342,12 +393,14 @@ const genki_5: TranslatedJapaneseText[] = [
         jp: { text: '大丈夫', pronunciation: 'だいじょうぶ' },
     },
     {
+        id: '731d37de-650d-4cd5-8252-c5a8189bafec',
         type: 'adverb',
         en: 'Very (neutral)',
         pl: 'Bardzo (neutralnie)',
         jp: { text: 'とても' },
     },
     {
+        id: '25da5dbb-fa67-41eb-9af3-b2f0d9336e51',
         type: 'pre-noun-adjective',
         en: 'What kind of',
         pl: 'Jaki rodzaj',

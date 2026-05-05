@@ -2,36 +2,42 @@ import type { TranslatedJapaneseText, WordBag } from '../../../types';
 
 const sakura_1_10: TranslatedJapaneseText[] = [
     {
+        id: '37af3581-72b8-4483-adf6-d60f3b43e457',
         type: 'noun',
         en: 'Breakfast',
         pl: 'Śniadanie',
         jp: { text: 'あさごはん' },
     },
     {
+        id: '6b7f5f6a-3c6f-4426-8000-5fbf14d1134e',
         type: 'noun',
         en: 'Lunch',
         pl: 'Obiad',
         jp: { text: 'ひるごはん' },
     },
     {
+        id: 'f5c031a2-63d7-429f-abaa-8db999528bd1',
         type: 'noun',
         en: 'Dinner',
         pl: 'Kolacja',
         jp: { text: 'ばんごはん' },
     },
     {
+        id: '96c1daed-62a9-42e3-9db6-c6c80399b32f',
         type: 'noun',
         en: 'Picture / Drawing',
         pl: 'Obrazek / Rysunek',
         jp: { text: 'え' },
     },
     {
+        id: 'ec8cf99b-1a5f-4b52-a90d-da9113084620',
         type: 'noun',
         en: 'Music',
         pl: 'Muzyka',
         jp: { text: 'おんがく' },
     },
     {
+        id: 'bee5308b-0877-434d-9608-cae98697c4ec',
         type: 'verb',
         verb_type: 'godan',
         en: 'Listen',
@@ -39,36 +45,42 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: '聞く', pronunciation: 'きく' },
     },
     {
+        id: '497197a7-7c8b-409e-803b-c7ee8a557210',
         type: 'noun',
         en: 'Radio',
         pl: 'Radio',
         jp: { text: 'ラジオ' },
     },
     {
+        id: 'cf2f6a7a-96b0-4348-a8ca-0a516f861cce',
         type: 'noun',
         en: 'News',
         pl: 'Wiadomości',
         jp: { text: 'ニュース' },
     },
     {
+        id: '61f0decf-f4f1-4e7d-8526-fea9593b4c4e',
         type: 'noun',
         en: 'Hiragana',
         pl: 'Hiragana',
         jp: { text: 'ひらがな' },
     },
     {
+        id: '70a76c43-1b0b-498a-9cf7-dfc9d90fc055',
         type: 'noun',
         en: 'Katakana',
         pl: 'Katakana',
         jp: { text: 'カタカナ' },
     },
     {
+        id: 'd209cb43-8284-4a1f-b6c8-3a11e40a4b62',
         type: 'noun',
         en: 'Kanji',
         pl: 'Kanji',
         jp: { text: 'かんじ' },
     },
     {
+        id: '66955fb5-841e-4e46-a2c4-12edb50e0ac1',
         type: 'verb',
         verb_type: 'godan',
         en: 'Draw',
@@ -76,6 +88,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: 'かく' },
     },
     {
+        id: 'f72f2d7d-8312-4528-b6cc-bdbacd5f6f7c',
         type: 'verb',
         verb_type: 'godan',
         en: 'Write',
@@ -83,6 +96,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: '書く', pronunciation: 'かく' },
     },
     {
+        id: 'c7e0d3d3-d14c-4118-8143-543243aa512c',
         type: 'verb',
         verb_type: 'godan',
         en: 'Buy',
@@ -90,12 +104,14 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: '買う', pronunciation: 'かう' },
     },
     {
+        id: 'c46b8e23-289e-484b-815b-46628249c1dc',
         type: 'noun',
         en: 'Smartphone',
         pl: 'Smartfon',
         jp: { text: 'スマホ' },
     },
     {
+        id: '96b66965-91b0-4831-9868-09dc2b9c6fe2',
         type: 'verb',
         verb_type: 'irregular',
         en: 'Do / Play',
@@ -110,6 +126,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         te_form: { text: 'して' },
     },
     {
+        id: 'adbf3a30-a473-4b37-8bf4-d174a36dadf7',
         type: 'verb',
         verb_type: 'suru',
         en: 'Learn',
@@ -117,6 +134,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: 'べんきょうをする' },
     },
     {
+        id: '32375b48-83a1-4cde-8ae2-83767375b959',
         type: 'verb',
         verb_type: 'suru',
         en: 'Do judo',
@@ -124,6 +142,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: 'じゅうどうをする' },
     },
     {
+        id: '86f7ce4e-82c8-438d-8af7-0e28c438aa57',
         type: 'verb',
         verb_type: 'suru',
         en: 'Play games',
@@ -131,6 +150,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: 'ゲームをする' },
     },
     {
+        id: '84adca9f-ced3-44f8-a6fc-c496707e4e30',
         type: 'verb',
         verb_type: 'suru',
         en: 'Do shopping',
@@ -138,6 +158,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: 'かいものをする' },
     },
     {
+        id: '09b81034-4e01-460b-a692-a5b1feb547af',
         type: 'verb',
         verb_type: 'suru',
         en: 'Do homework',
@@ -145,6 +166,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         jp: { text: 'しゅくだいをする' },
     },
     {
+        id: 'ebac4ec6-182a-49e8-bc6b-b700b92b8a5b',
         type: 'noun',
         en: 'Email',
         pl: 'Email',

@@ -9,6 +9,7 @@ const TextWithPronunciationSchema = z.object({
 export type TextWithPronunciation = z.infer<typeof TextWithPronunciationSchema>;
 
 const TranslationSchema = z.object({
+    id: z.uuidv4(),
     en: z.string(),
     pl: z.string(),
     jp: TextWithPronunciationSchema,
