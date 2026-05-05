@@ -4,6 +4,7 @@ import type { TranslatedJapaneseText } from '../japanese/types';
 import { Badges } from './Badges';
 
 const noun: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'noun',
     en: 'cat',
     pl: 'kot',
@@ -11,6 +12,7 @@ const noun: TranslatedJapaneseText = {
 };
 
 const nounWithKanji: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'noun',
     en: 'cat',
     pl: 'kot',
@@ -18,6 +20,7 @@ const nounWithKanji: TranslatedJapaneseText = {
 };
 
 const verb: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
     en: 'to eat',
     pl: 'jeść',
@@ -26,6 +29,7 @@ const verb: TranslatedJapaneseText = {
 };
 
 const godanVerb: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
     en: 'to drink',
     pl: 'pić',
@@ -34,6 +38,7 @@ const godanVerb: TranslatedJapaneseText = {
 };
 
 const auxiliaryVerb: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
     en: 'to be',
     pl: 'być',
@@ -42,6 +47,7 @@ const auxiliaryVerb: TranslatedJapaneseText = {
 };
 
 const irregularVerb: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
     en: 'to do',
     pl: 'robić',
@@ -57,6 +63,7 @@ const irregularVerb: TranslatedJapaneseText = {
 };
 
 const suruVerb: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
     en: 'to study',
     pl: 'uczyć się',
@@ -65,6 +72,7 @@ const suruVerb: TranslatedJapaneseText = {
 };
 
 const iAdjective: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'adjective',
     en: 'big',
     pl: 'duży',
@@ -73,6 +81,7 @@ const iAdjective: TranslatedJapaneseText = {
 };
 
 const iAdjectiveIrregular: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'adjective',
     en: 'good',
     pl: 'dobry',
@@ -82,6 +91,7 @@ const iAdjectiveIrregular: TranslatedJapaneseText = {
 };
 
 const naAdjective: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'adjective',
     en: 'quiet',
     pl: 'cichy',
@@ -90,6 +100,7 @@ const naAdjective: TranslatedJapaneseText = {
 };
 
 const phrase: TranslatedJapaneseText = {
+    id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'phrase',
     en: 'good morning',
     pl: 'dzień dobry',
@@ -129,6 +140,7 @@ describe('Badges', () => {
             ['conjunction', 'conjunction'],
         ] as const)('renders a %s badge', (type, expectedText) => {
             const card: TranslatedJapaneseText = {
+                id: 'b38a274b-c008-4c49-a9d7-240f86297024',
                 type,
                 en: 'test',
                 pl: 'test',
