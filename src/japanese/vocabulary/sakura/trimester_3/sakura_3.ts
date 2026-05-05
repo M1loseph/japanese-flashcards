@@ -40,7 +40,7 @@ const sakura_3_3: TranslatedJapaneseText[] = [
     {
         type: 'noun',
         en: 'Check-in',
-        pl: 'Odprawa',
+        pl: 'Odprawa / Meldunek',
         jp: { text: 'チェックイン' },
     },
     {
@@ -65,7 +65,7 @@ const sakura_3_3: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'How many apples are in the room?',
         pl: 'Ile jabłek jest w pokoju?',
-        jp: { text: '部屋にりんごはいくつありますか。', pronunciation: 'へやにりんごはいくつありますか。' },
+        jp: { text: '部屋にりんごがいくつありますか。', pronunciation: 'へやにりんごがいくつありますか。' },
     },
     {
         type: 'noun',
