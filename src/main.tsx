@@ -5,13 +5,15 @@ import { DrawerProvider } from './context/DrawerContext';
 import { GameContextProvider } from './context/GameContext';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { HardTextProvider } from './context/HardWordsContext';
+import { SRSContextProvider } from './context/SRSContext';
 import './index.css';
 import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
+import { DrawerLayout } from './pages/common/DrawerLayout';
 import MainPage from './pages/MainPage';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
 import SearchPage from './pages/SearchPage';
+import { SpacedRepetitionSystemPage } from './pages/SpacedRepetitionSystem';
 import SummaryPage from './pages/SummaryPage';
-import { DrawerLayout } from './pages/common/DrawerLayout';
 
 const router = createBrowserRouter([
     {
@@ -55,6 +57,10 @@ const router = createBrowserRouter([
                 ],
             },
             {
+                path: '/srs',
+                Component: SpacedRepetitionSystemPage,
+            },
+            {
                 path: '*',
                 element: <Navigate to="/" replace />,
             },
@@ -74,7 +80,9 @@ createRoot(root).render(
             <HardTextProvider>
                 <GameSettingsProvider>
                     <GameContextProvider>
-                        <RouterProvider router={router} />
+                        <SRSContextProvider>
+                            <RouterProvider router={router} />
+                        </SRSContextProvider>
                     </GameContextProvider>
                 </GameSettingsProvider>
             </HardTextProvider>

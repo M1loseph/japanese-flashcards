@@ -5,9 +5,12 @@ interface DrawerContextType {
     toggleDrawer: () => void;
 }
 
-export const useDrawer = () => useContext(DrawerContext);
+export const useDrawer = () => {
+    const context = useContext(DrawerContext);
+    if (!context) {
+        throw new Error('useDrawer must be used within a DrawerProvider');
+    }
+    return context;
+};
 
-export const DrawerContext = createContext<DrawerContextType>({
-    isDrawerOpen: false,
-    toggleDrawer: () => {},
-});
+export const DrawerContext = createContext<DrawerContextType | undefined>(undefined);
