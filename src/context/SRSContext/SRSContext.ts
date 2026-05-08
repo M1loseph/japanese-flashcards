@@ -1,8 +1,17 @@
 import { createContext, useContext } from 'react';
 
+interface AsyncOperation<T> {
+    data?: T;
+}
+
+interface SRSStatistics {
+    buckets: Map<number, number>;
+}
+
 export interface SRSContextType {
-    addNewRandomWords: (count: number, preferredWordBags?: string[]) => Promise<void>;
-    listWordsToReview: () => Promise<string[]>;
+    addNewRandomWords: (count: number, preferredWordBags?: string[]) => void;
+    wordsToReview: AsyncOperation<string[]>;
+    statistics: AsyncOperation<SRSStatistics>;
     markWordAsReviewed: (wordId: string, correct: boolean) => Promise<void>;
 }
 

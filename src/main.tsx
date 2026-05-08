@@ -1,3 +1,4 @@
+import { QueryClientProvider } from '@tanstack/react-query';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
@@ -14,6 +15,7 @@ import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
 import SearchPage from './pages/SearchPage';
 import { SpacedRepetitionSystemPage } from './pages/SpacedRepetitionSystem';
 import SummaryPage from './pages/SummaryPage';
+import { queryClient } from './queryClient';
 
 const router = createBrowserRouter([
     {
@@ -76,16 +78,18 @@ if (!root) {
 
 createRoot(root).render(
     <StrictMode>
-        <DrawerProvider>
-            <HardTextProvider>
-                <GameSettingsProvider>
-                    <GameContextProvider>
-                        <SRSContextProvider>
-                            <RouterProvider router={router} />
-                        </SRSContextProvider>
-                    </GameContextProvider>
-                </GameSettingsProvider>
-            </HardTextProvider>
-        </DrawerProvider>
+        <QueryClientProvider client={queryClient}>
+            <DrawerProvider>
+                <HardTextProvider>
+                    <GameSettingsProvider>
+                        <GameContextProvider>
+                            <SRSContextProvider>
+                                <RouterProvider router={router} />
+                            </SRSContextProvider>
+                        </GameContextProvider>
+                    </GameSettingsProvider>
+                </HardTextProvider>
+            </DrawerProvider>
+        </QueryClientProvider>
     </StrictMode>,
 );

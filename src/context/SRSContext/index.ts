@@ -1,2 +1,2 @@
 export { useSRSContext } from './SRSContext';
-export { SRSContextProvider } from './SRSContextProvider';
+export { SRSContextProvider, SRS_STAGES } from './SRSContextProvider';
