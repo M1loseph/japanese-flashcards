@@ -1,80 +1,14 @@
-import {
-    IconBabyCarriage,
-    IconBulb,
-    IconCertificate,
-    IconChessKnight,
-    IconDiamond,
-    IconInfinity,
-    IconMicroscope,
-    IconSchool,
-    IconSeedling,
-    IconTool,
-} from '@tabler/icons-react';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { type FC, type ReactNode } from 'react';
-import dayjs from '../../dayjs';
 import { availableWordBags } from '../../japanese';
-import type { SRSStage } from '../../types/SpacedRepetitionSystem';
 import { shuffleArray } from '../../utils';
 import { SRSContext } from './SRSContext';
 import { db } from './srsdb';
+import { SRS_STAGES } from './Stages';
 
 interface SRSContextProviderProps {
     children: ReactNode;
 }
-
-export const SRS_STAGES: SRSStage[] = [
-    {
-        label: 'Novice',
-        icon: IconBabyCarriage,
-        waitDuration: dayjs.duration({ hours: 4 }),
-    },
-    {
-        label: 'Beginner',
-        icon: IconSeedling,
-        waitDuration: dayjs.duration({ hours: 4 }),
-    },
-    {
-        label: 'Apprentice',
-        icon: IconSchool,
-        waitDuration: dayjs.duration({ hours: 8 }),
-    },
-    {
-        label: 'Practictioner',
-        icon: IconTool,
-        waitDuration: dayjs.duration({ days: 1 }),
-    },
-    {
-        label: 'Specialist',
-        icon: IconMicroscope,
-        waitDuration: dayjs.duration({ days: 2 }),
-    },
-    {
-        label: 'Strategist',
-        icon: IconChessKnight,
-        waitDuration: dayjs.duration({ days: 7 }),
-    },
-    {
-        label: 'Expert',
-        icon: IconCertificate,
-        waitDuration: dayjs.duration({ days: 14 }),
-    },
-    {
-        label: 'Master',
-        icon: IconDiamond,
-        waitDuration: dayjs.duration({ months: 1 }),
-    },
-    {
-        label: 'Visionary',
-        icon: IconBulb,
-        waitDuration: dayjs.duration({ months: 2 }),
-    },
-    {
-        label: 'Sage',
-        icon: IconInfinity,
-        waitDuration: dayjs.duration({ months: 4 }),
-    },
-];
 
 const MINIMUM_LEVEL = 0;
 const MAXIMUM_LEVEL = SRS_STAGES.length - 1;

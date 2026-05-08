@@ -62,7 +62,7 @@ const RandomShuffleGamePage: FC = () => {
             recordActivity();
             navigate('/game/summary');
         }
-    }, [gameFinished, navigate]);
+    }, [gameFinished, gameState, navigate, recordActivity, markWordAsReviewed]);
 
     if (!gameState) {
         return <Navigate to="/" replace />;
