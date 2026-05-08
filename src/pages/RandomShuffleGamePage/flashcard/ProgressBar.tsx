@@ -24,13 +24,13 @@ const Metadata: FC<MetadataProps> = ({ total, currentIndex, timeString, classNam
 };
 
 interface ProgressBarProps {
-    wordBags: string[];
+    title: string;
     currentIndex: number;
     total: number;
     timeInSeconds: number;
 }
 
-const ProgressBar: FC<ProgressBarProps> = ({ wordBags, currentIndex, total, timeInSeconds }) => {
+const ProgressBar: FC<ProgressBarProps> = ({ title, currentIndex, total, timeInSeconds }) => {
     const progressPercentage = Math.round((currentIndex / total) * 100);
 
     const hours = Math.floor(timeInSeconds / 3600);
@@ -45,7 +45,7 @@ const ProgressBar: FC<ProgressBarProps> = ({ wordBags, currentIndex, total, time
                 <div className="flex-1">
                     <span className="text-xl font-semibold text-primary">{progressPercentage}%</span>
                     <span className="ml-2 mr-2 text-sm">/</span>
-                    <span className="font-medium">{wordBags.join(', ')}</span>
+                    <span className="font-medium">{title}</span>
                 </div>
                 <Metadata
                     total={total}

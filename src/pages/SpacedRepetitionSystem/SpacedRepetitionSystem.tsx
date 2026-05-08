@@ -1,24 +1,14 @@
-import {
-    IconArrowRight,
-    IconBolt,
-    IconFlame,
-    IconListDetails,
-    IconPlus,
-} from '@tabler/icons-react';
+import { IconArrowRight, IconBolt, IconFlame, IconListDetails, IconPlus } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ExistingGameAlert } from '../../components/ExistingGameAlert';
+import { useGameContext } from '../../context/GameContext';
+import { useGameSettingsContext } from '../../context/GameStateContext';
 import { SRS_STAGES, useSRSContext } from '../../context/SRSContext';
 import { ScrollablePage } from '../common/ScrollablePage';
 
 const HARDCODED_STATS = {
     dayStreak: 14,
-    wordsInSRS: 842,
-    stages: {
-        apprentice: 142,
-        guru: 315,
-        master: 184,
-        enlightened: 96,
-        burned: 105,
-    },
 };
 
 const WORD_COUNT_OPTIONS = [5, 10, 15] as const;
@@ -26,6 +16,9 @@ const WORD_COUNT_OPTIONS = [5, 10, 15] as const;
 type WordCountOption = (typeof WORD_COUNT_OPTIONS)[number];
 
 export const SpacedRepetitionSystemPage: FC = () => {
+    const navigate = useNavigate();
+    const { createNewGame } = useGameContext();
+    const { selectedLanguage } = useGameSettingsContext();
     const { wordsToReview, addNewRandomWords, statistics } = useSRSContext();
     const { data: wordsToReviewData } = wordsToReview;
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
@@ -42,7 +35,13 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleStartReview = () => {
-        addNewRandomWords(selectedWordCount);
+        if (!wordsToReview.data) {
+            return;
+        }
+        const title = `Review Session - ${wordsToReview.data.length} items`;
+
+        createNewGame(wordsToReview.data, selectedLanguage, title, '/srs');
+        navigate('/game/shuffle');
     };
 
     const handleStartReviewKeyDown = (e: React.KeyboardEvent) => {
@@ -64,9 +63,17 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const numberOfWordsToReview = wordsToReviewData ? wordsToReviewData.length : 0;
+    const totalWordsInSRS = statistics.data
+        ? Array.from(statistics.data.buckets.values()).reduce((sum, count) => sum + count, 0)
+        : 0;
+
+    const newWordsInStage0 = statistics.data?.buckets.get(0);
+    const disableAddButton = newWordsInStage0 === undefined || newWordsInStage0 > 0;
 
     return (
         <ScrollablePage>
+            <ExistingGameAlert />
+
             <p className="text-base-content/70 mb-6">Optimize your memory retention through precision-timed reviews.</p>
 
             <section aria-label="Review and statistics" className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
@@ -93,7 +100,6 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 onClick={handleStartReview}
                                 onKeyDown={handleStartReviewKeyDown}
                                 aria-label={`Start review session with ${numberOfWordsToReview} items`}
-                                tabIndex={0}
                             >
                                 Start Review ({numberOfWordsToReview})
                                 <IconArrowRight size={18} aria-hidden="true" />
@@ -129,7 +135,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 <IconListDetails size={20} className="text-primary" aria-hidden="true" />
                             </div>
                             <div className="flex items-baseline gap-1">
-                                <span className="text-4xl font-bold">{HARDCODED_STATS.wordsInSRS}</span>
+                                <span className="text-4xl font-bold">{totalWordsInSRS}</span>
                                 <span className="text-sm text-base-content/70">vocabulary items</span>
                             </div>
                             <div className="flex gap-1">
@@ -168,7 +174,9 @@ export const SpacedRepetitionSystemPage: FC = () => {
                         <div>
                             <h2 className="text-xl font-bold">Expand Vocabulary</h2>
                             <p className="text-base-content/70 mt-1">
-                                Ready for a challenge? Add new vocabulary items to your SRS queue.
+                                {disableAddButton
+                                    ? 'You have new words waiting in first stage. Review them before adding more to keep your learning focused.'
+                                    : 'Ready for a challenge? Add new vocabulary items to your SRS queue.'}
                             </p>
                         </div>
                         <div className="flex flex-col md:flex-row justify-between w-full">
@@ -176,12 +184,12 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 {WORD_COUNT_OPTIONS.map((count) => (
                                     <button
                                         key={count}
+                                        disabled={disableAddButton}
                                         className={`btn ${selectedWordCount === count ? 'btn-primary' : ''}`}
                                         onClick={() => handleWordCountSelect(count)}
                                         onKeyDown={(e) => handleWordCountKeyDown(e, count)}
                                         aria-pressed={selectedWordCount === count}
                                         aria-label={`Select ${count} words`}
-                                        tabIndex={0}
                                     >
                                         {count} Words
                                     </button>
@@ -191,8 +199,8 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 className="btn btn-primary mt-6 md:mt-0"
                                 onClick={handleConfirmAdd}
                                 onKeyDown={handleConfirmAddKeyDown}
+                                disabled={disableAddButton}
                                 aria-label={`Confirm and add ${selectedWordCount} words to SRS queue`}
-                                tabIndex={0}
                             >
                                 <IconPlus size={16} aria-hidden="true" />
                                 Confirm &amp; Add

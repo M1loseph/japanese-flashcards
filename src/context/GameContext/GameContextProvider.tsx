@@ -2,7 +2,7 @@ import { useEffect, useState, type FC, type ReactNode } from 'react';
 import { GameStateSchema, type GameState } from '../../types/GameState';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { shuffleArray } from '../../utils';
-import { GameContext, type SelectedTranslatedJapaneseText } from './GameContext';
+import { GameContext } from './GameContext';
 
 const RANDOM_SHUFFLE_GAME_STATE_KEY = 'randomShuffleGameState';
 
@@ -25,12 +25,14 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         }
     }, [gameState]);
 
-    const createNewGame = (selectedWords: SelectedTranslatedJapaneseText[], selectedLanguage: TranslationLanguage) => {
-        const initialWordBags = Array.from(new Set(selectedWords.map((w) => w.wordBag)));
-
-        const flashcards = shuffleArray(selectedWords).map(({ word, wordBag }) => ({
-            word,
-            wordBag,
+    const createNewGame = (
+        wordIds: string[],
+        selectedLanguage: TranslationLanguage,
+        title: string,
+        finishRedirectPath: string,
+    ) => {
+        const flashcards = shuffleArray(wordIds).map((wordId) => ({
+            wordId,
             answered: false,
             correct: false,
         }));
@@ -38,7 +40,8 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         const newGameState: GameState = {
             version: 1,
             type: 'in-progress',
-            initialWordBags,
+            title,
+            finishRedirectPath,
             flashcards,
             currentFlashcardIndex: 0,
             selectedLanguage,
@@ -75,12 +78,13 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             updatedFlashcards[prev.currentFlashcardIndex] = updatedCard;
 
             if (prev.currentFlashcardIndex === prev.flashcards.length - 1) {
-                const { version, initialWordBags, selectedLanguage, gameStartTimeMs, simplifiedMode } = prev;
+                const { version, title, finishRedirectPath, selectedLanguage, gameStartTimeMs, simplifiedMode } = prev;
                 return {
                     version,
                     type: 'finished',
                     gameStartTimeMs,
-                    initialWordBags,
+                    title,
+                    finishRedirectPath,
                     selectedLanguage,
                     flashcards: updatedFlashcards,
                     simplifiedMode,
@@ -108,12 +112,13 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             }
 
             const newFlashcards = shuffleArray(wrongAnswers.map((card) => ({ ...card, answered: false })));
-            const { version, initialWordBags, selectedLanguage, simplifiedMode } = prev;
+            const { version, title, finishRedirectPath, selectedLanguage, simplifiedMode } = prev;
 
             return {
                 version,
                 type: 'in-progress',
-                initialWordBags,
+                title,
+                finishRedirectPath,
                 selectedLanguage,
                 simplifiedMode,
                 currentFlashcardIndex: 0,

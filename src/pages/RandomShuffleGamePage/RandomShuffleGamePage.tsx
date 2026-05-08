@@ -1,8 +1,9 @@
 import { IconSettings } from '@tabler/icons-react';
-import { type FC, useEffect, useRef, useState } from 'react';
+import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { useGameContext } from '../../context/GameContext';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
+import { findWordById } from '../../japanese/search';
 import { FixedSizePage } from '../common/FixedSizePage';
 import Flashcard, { type FlashcardHandle } from './flashcard/Flashcard';
 import { FlashcardButtons } from './flashcard/FlashcardButtons';
@@ -89,18 +90,23 @@ const RandomShuffleGamePage: FC = () => {
         </div>
     );
 
+    const word = useMemo(() => {
+        return findWordById(card.wordId);
+    }, [card.wordId]);
+
     return (
         <FixedSizePage additionalHeaderComponents={headerSettings}>
             <div className="h-full flex flex-col items-stretch space-y-6">
                 <ProgressBar
-                    wordBags={gameState.initialWordBags}
+                    title={gameState.title}
                     currentIndex={gameState.currentFlashcardIndex}
                     total={gameState.flashcards.length}
                     timeInSeconds={sessionTime}
                 />
                 <Flashcard
                     ref={flashcardRef}
-                    card={card.word}
+                    // TODO: handle case when word is not found (shouldn't happen, but better be safe)
+                    card={word!!}
                     selectedLanguage={gameState.selectedLanguage}
                     showAnswer={showAnswer}
                 />

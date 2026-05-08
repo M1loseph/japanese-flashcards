@@ -4,7 +4,8 @@ import { TranslationLanguagesSchema } from './TranslationLanguage';
 
 export const CommonGameStateSchema = z.object({
     version: z.literal(1),
-    initialWordBags: z.array(z.string()),
+    title: z.string(),
+    finishRedirectPath: z.string(),
     flashcards: z.array(FlashcardSessionSchema),
     gameStartTimeMs: z.number(),
     simplifiedMode: z.boolean(),

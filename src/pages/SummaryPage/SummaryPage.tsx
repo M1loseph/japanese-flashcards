@@ -82,8 +82,9 @@ const SummaryPage: FC = () => {
     };
 
     const handleFinish = () => {
+        const navigation = gameState.finishRedirectPath;
         clearGame();
-        navigate('/');
+        navigate(navigation);
     };
 
     const handleHomeNavigation = () => {
