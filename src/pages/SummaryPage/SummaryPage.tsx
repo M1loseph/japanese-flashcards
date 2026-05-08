@@ -64,9 +64,14 @@ const SummaryPage: FC = () => {
 
     const hasMistakes = wrongAnswers.length > 0;
     const [planeFloating, setPlaneFloating] = useState(false);
+    const [isLeaving, setIsLeaving] = useState(false);
 
     const animatedCards = useCountUp(stats.totalCards, 800, 1000);
     const animatedAccuracy = useCountUp(stats.accuracy, 1200, 1200);
+
+    if (isLeaving) {
+        return null;
+    }
 
     if (!gameState) {
         return <Navigate to="/" replace />;
@@ -82,9 +87,19 @@ const SummaryPage: FC = () => {
     };
 
     const handleFinish = () => {
-        const navigation = gameState.finishRedirectPath;
+        const gameType = gameState.gameType;
+        setIsLeaving(true);
         clearGame();
-        navigate(navigation);
+        if (gameType === 'practice') {
+            navigate('/');
+            return;
+        }
+        if (gameType === 'srs') {
+            navigate('/srs');
+            return;
+        }
+        const _exhaustiveCheck: never = gameType;
+        return _exhaustiveCheck;
     };
 
     const handleHomeNavigation = () => {

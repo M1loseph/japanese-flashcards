@@ -40,7 +40,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
         }
         const title = `Review Session - ${wordsToReview.data.length} items`;
 
-        createNewGame(wordsToReview.data, selectedLanguage, title, '/srs');
+        createNewGame(wordsToReview.data, selectedLanguage, title, 'srs');
         navigate('/game/shuffle');
     };
 
@@ -68,7 +68,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
         : 0;
 
     const newWordsInStage0 = statistics.data?.buckets.get(0);
-    const disableAddButton = newWordsInStage0 === undefined || newWordsInStage0 > 0;
+    const disableAddButton = (newWordsInStage0 === undefined || newWordsInStage0 > 0) && numberOfWordsToReview > 0;
 
     return (
         <ScrollablePage>

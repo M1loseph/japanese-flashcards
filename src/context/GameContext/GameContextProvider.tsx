@@ -1,5 +1,5 @@
 import { useEffect, useState, type FC, type ReactNode } from 'react';
-import { GameStateSchema, type GameState } from '../../types/GameState';
+import { GameStateSchema, type GameState, type GameType } from '../../types/GameState';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { shuffleArray } from '../../utils';
 import { GameContext } from './GameContext';
@@ -29,7 +29,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         wordIds: string[],
         selectedLanguage: TranslationLanguage,
         title: string,
-        finishRedirectPath: string,
+        gameType: GameType,
     ) => {
         const flashcards = shuffleArray(wordIds).map((wordId) => ({
             wordId,
@@ -41,7 +41,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             version: 1,
             type: 'in-progress',
             title,
-            finishRedirectPath,
+            gameType,
             flashcards,
             currentFlashcardIndex: 0,
             selectedLanguage,
@@ -78,13 +78,13 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             updatedFlashcards[prev.currentFlashcardIndex] = updatedCard;
 
             if (prev.currentFlashcardIndex === prev.flashcards.length - 1) {
-                const { version, title, finishRedirectPath, selectedLanguage, gameStartTimeMs, simplifiedMode } = prev;
+                const { version, title, gameType, selectedLanguage, gameStartTimeMs, simplifiedMode } = prev;
                 return {
                     version,
                     type: 'finished',
+                    gameType,
                     gameStartTimeMs,
                     title,
-                    finishRedirectPath,
                     selectedLanguage,
                     flashcards: updatedFlashcards,
                     simplifiedMode,
@@ -112,13 +112,13 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             }
 
             const newFlashcards = shuffleArray(wrongAnswers.map((card) => ({ ...card, answered: false })));
-            const { version, title, finishRedirectPath, selectedLanguage, simplifiedMode } = prev;
+            const { version, title, gameType, selectedLanguage, simplifiedMode } = prev;
 
             return {
                 version,
                 type: 'in-progress',
+                gameType,
                 title,
-                finishRedirectPath,
                 selectedLanguage,
                 simplifiedMode,
                 currentFlashcardIndex: 0,

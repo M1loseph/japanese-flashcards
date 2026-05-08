@@ -160,8 +160,22 @@ export const SRSContextProvider: FC<SRSContextProviderProps> = ({ children }) =>
         },
     });
 
+    const markWordAsReviewedMutation = useMutation({
+        mutationKey: ['markWordAsReviewed'],
+        mutationFn: ({ wordId, correct }: { wordId: string; correct: boolean }) =>
+            markWordAsReviewedFunction(wordId, correct),
+        onSuccess: () => {
+            statistics.refetch();
+            wordsToReview.refetch();
+        },
+    });
+
     const addNewRandomWordsMutationWrapper = (count: number, preferredWordBags?: string[]) => {
         addNewRandomWordsMutation.mutate({ count, preferredWordBags });
+    };
+
+    const markWordAsReviewedWrapper = (wordId: string, correct: boolean) => {
+        markWordAsReviewedMutation.mutate({ wordId, correct });
     };
 
     return (
@@ -170,7 +184,7 @@ export const SRSContextProvider: FC<SRSContextProviderProps> = ({ children }) =>
                 wordsToReview,
                 addNewRandomWords: addNewRandomWordsMutationWrapper,
                 statistics,
-                markWordAsReviewed: markWordAsReviewedFunction,
+                markWordAsReviewed: markWordAsReviewedWrapper,
             }}
         >
             {children}

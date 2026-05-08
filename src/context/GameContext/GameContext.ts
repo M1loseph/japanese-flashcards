@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import type { GameState } from '../../types/GameState';
+import type { GameState, GameType } from '../../types/GameState';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
 
 interface GameContextType {
@@ -11,7 +11,7 @@ interface GameContextType {
         wordIds: string[],
         selectedLanguage: TranslationLanguage,
         title: string,
-        finishRedirectPath: string,
+        gameType: GameType,
     ) => void;
     updateLanguage: (language: TranslationLanguage) => void;
     updateSimplifiedMode: (enabled: boolean) => void;

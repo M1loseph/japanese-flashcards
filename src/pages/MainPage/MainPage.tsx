@@ -46,7 +46,7 @@ const MainPage: FC = () => {
         });
         const title = bags.map((bag) => bag.name).join(', ');
 
-        createNewGame(selectedJapaneseWord, selectedLanguage, title, '/');
+        createNewGame(selectedJapaneseWord, selectedLanguage, title, 'practice');
         navigate('/game/shuffle');
     };
 

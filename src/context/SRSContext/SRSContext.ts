@@ -12,7 +12,7 @@ export interface SRSContextType {
     addNewRandomWords: (count: number, preferredWordBags?: string[]) => void;
     wordsToReview: AsyncOperation<string[]>;
     statistics: AsyncOperation<SRSStatistics>;
-    markWordAsReviewed: (wordId: string, correct: boolean) => Promise<void>;
+    markWordAsReviewed: (wordId: string, correct: boolean) => void;
 }
 
 export const SRSContext = createContext<SRSContextType | undefined>(undefined);

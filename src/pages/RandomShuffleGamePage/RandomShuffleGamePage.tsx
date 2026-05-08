@@ -2,6 +2,7 @@ import { IconSettings } from '@tabler/icons-react';
 import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { useGameContext } from '../../context/GameContext';
+import { useSRSContext } from '../../context/SRSContext';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
 import { findWordById } from '../../japanese/search';
 import { FixedSizePage } from '../common/FixedSizePage';
@@ -12,6 +13,7 @@ import { GameSettingsModal } from './GameSettingsModal';
 
 const RandomShuffleGamePage: FC = () => {
     const { gameState, updateLanguage, markCurrentFlashcard, updateSimplifiedMode } = useGameContext();
+    const { markWordAsReviewed } = useSRSContext();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -50,6 +52,11 @@ const RandomShuffleGamePage: FC = () => {
 
     useEffect(() => {
         if (gameFinished) {
+            if (gameState.gameType === 'srs') {
+                gameState.flashcards.forEach((card) => {
+                    markWordAsReviewed(card.wordId, card.correct);
+                });
+            }
             navigate('/game/summary');
         }
     }, [gameFinished, navigate]);
