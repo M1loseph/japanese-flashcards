@@ -7,6 +7,7 @@ import { GameContextProvider } from './context/GameContext';
 import { GameSettingsProvider } from './context/GameStateContext';
 import { HardTextProvider } from './context/HardWordsContext';
 import { SRSContextProvider } from './context/SRSContext';
+import { StreakContextProvider } from './context/StreakContext';
 import './index.css';
 import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
 import { DrawerLayout } from './pages/common/DrawerLayout';
@@ -81,13 +82,15 @@ createRoot(root).render(
         <QueryClientProvider client={queryClient}>
             <DrawerProvider>
                 <HardTextProvider>
-                    <GameSettingsProvider>
-                        <GameContextProvider>
-                            <SRSContextProvider>
-                                <RouterProvider router={router} />
-                            </SRSContextProvider>
-                        </GameContextProvider>
-                    </GameSettingsProvider>
+                    <StreakContextProvider>
+                        <GameSettingsProvider>
+                            <GameContextProvider>
+                                <SRSContextProvider>
+                                    <RouterProvider router={router} />
+                                </SRSContextProvider>
+                            </GameContextProvider>
+                        </GameSettingsProvider>
+                    </StreakContextProvider>
                 </HardTextProvider>
             </DrawerProvider>
         </QueryClientProvider>

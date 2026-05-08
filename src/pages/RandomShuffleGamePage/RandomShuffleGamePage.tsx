@@ -1,8 +1,9 @@
 import { IconSettings } from '@tabler/icons-react';
-import { type FC, useEffect, useMemo, useRef, useState } from 'react';
+import { type FC, useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { useGameContext } from '../../context/GameContext';
 import { useSRSContext } from '../../context/SRSContext';
+import { useStreak } from '../../context/StreakContext';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
 import { findWordById } from '../../japanese/search';
 import { FixedSizePage } from '../common/FixedSizePage';
@@ -18,6 +19,7 @@ const RandomShuffleGamePage: FC = () => {
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
     const navigate = useNavigate();
+    const { recordActivity } = useStreak();
 
     const flashcardRef = useRef<FlashcardHandle>(null);
     const [lastFlashcardAnswer, setLastFlashcardAnswer] = useState<boolean | undefined>(undefined);
@@ -57,6 +59,7 @@ const RandomShuffleGamePage: FC = () => {
                     markWordAsReviewed(card.wordId, card.correct);
                 });
             }
+            recordActivity();
             navigate('/game/summary');
         }
     }, [gameFinished, navigate]);
@@ -97,9 +100,7 @@ const RandomShuffleGamePage: FC = () => {
         </div>
     );
 
-    const word = useMemo(() => {
-        return findWordById(card.wordId);
-    }, [card.wordId]);
+    const word = findWordById(card.wordId);
 
     return (
         <FixedSizePage additionalHeaderComponents={headerSettings}>

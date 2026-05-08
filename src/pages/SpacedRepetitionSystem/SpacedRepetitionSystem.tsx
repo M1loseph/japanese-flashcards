@@ -5,11 +5,8 @@ import { ExistingGameAlert } from '../../components/ExistingGameAlert';
 import { useGameContext } from '../../context/GameContext';
 import { useGameSettingsContext } from '../../context/GameStateContext';
 import { SRS_STAGES, useSRSContext } from '../../context/SRSContext';
+import { useStreak } from '../../context/StreakContext';
 import { ScrollablePage } from '../common/ScrollablePage';
-
-const HARDCODED_STATS = {
-    dayStreak: 14,
-};
 
 const WORD_COUNT_OPTIONS = [5, 10, 15] as const;
 
@@ -22,6 +19,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const { wordsToReview, addNewRandomWords, statistics } = useSRSContext();
     const { data: wordsToReviewData } = wordsToReview;
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
+    const { currentStreak } = useStreak();
 
     const handleWordCountSelect = (count: WordCountOption) => {
         setSelectedWordCount(count);
@@ -116,14 +114,14 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 <IconFlame size={20} className="text-primary" aria-hidden="true" />
                             </div>
                             <div className="flex items-baseline gap-1">
-                                <span className="text-4xl font-bold">{HARDCODED_STATS.dayStreak}</span>
+                                <span className="text-4xl font-bold">{currentStreak}</span>
                                 <span className="text-sm text-base-content/70">days</span>
                             </div>
                             <progress
                                 className="progress progress-primary w-full"
-                                value={HARDCODED_STATS.dayStreak}
+                                value={currentStreak}
                                 max={30}
-                                aria-label={`Day streak: ${HARDCODED_STATS.dayStreak} days`}
+                                aria-label={`Day streak: ${currentStreak} days`}
                             />
                         </div>
                     </div>
