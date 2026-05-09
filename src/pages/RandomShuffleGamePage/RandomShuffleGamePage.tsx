@@ -1,11 +1,11 @@
 import { IconSettings } from '@tabler/icons-react';
 import { type FC, useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
-import { useGameContext } from '../../context/GameContext';
-import { useSRSContext } from '../../context/SRSContext';
-import { useStreak } from '../../context/StreakContext';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
 import { findWordById } from '../../japanese/search';
+import { useGameContext } from '../../services/GameContext';
+import { useMarkWordAsReviewed } from '../../services/SRS';
+import { useStreak } from '../../services/StreakContext';
 import { FixedSizePage } from '../common/FixedSizePage';
 import Flashcard, { type FlashcardHandle } from './flashcard/Flashcard';
 import { FlashcardButtons } from './flashcard/FlashcardButtons';
@@ -14,7 +14,7 @@ import { GameSettingsModal } from './GameSettingsModal';
 
 const RandomShuffleGamePage: FC = () => {
     const { gameState, updateLanguage, markCurrentFlashcard, updateSimplifiedMode } = useGameContext();
-    const { markWordAsReviewed } = useSRSContext();
+    const { mutate: markWordAsReviewed } = useMarkWordAsReviewed();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -56,7 +56,7 @@ const RandomShuffleGamePage: FC = () => {
         if (gameFinished) {
             if (gameState.gameType === 'srs') {
                 gameState.flashcards.forEach((card) => {
-                    markWordAsReviewed(card.wordId, card.correct);
+                    markWordAsReviewed({ wordId: card.wordId, correct: card.correct });
                 });
             }
             recordActivity();
@@ -102,6 +102,12 @@ const RandomShuffleGamePage: FC = () => {
 
     const word = findWordById(card.wordId);
 
+    if (!word) {
+        throw new Error(
+            `Word with id ${card.wordId} not found. This should have been handled when fetching words or deserializing the game.`,
+        );
+    }
+
     return (
         <FixedSizePage additionalHeaderComponents={headerSettings}>
             <div className="h-full flex flex-col items-stretch space-y-6">
@@ -113,8 +119,7 @@ const RandomShuffleGamePage: FC = () => {
                 />
                 <Flashcard
                     ref={flashcardRef}
-                    // TODO: handle case when word is not found (shouldn't happen, but better be safe)
-                    card={word!!}
+                    card={word}
                     selectedLanguage={gameState.selectedLanguage}
                     showAnswer={showAnswer}
                 />

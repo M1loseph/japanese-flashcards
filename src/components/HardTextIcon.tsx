@@ -1,7 +1,7 @@
 import { IconStar, IconStarFilled } from '@tabler/icons-react';
 import { type FC } from 'react';
-import { useHardText } from '../context/HardWordsContext';
 import type { TranslatedJapaneseText } from '../japanese';
+import { useHardText } from '../services/HardWordsContext';
 
 type HardWordIconSize = 'sm' | 'md';
 

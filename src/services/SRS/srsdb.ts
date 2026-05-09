@@ -2,7 +2,7 @@ import { Dexie, type EntityTable } from 'dexie';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 
 const db = new Dexie('JapaneseFlashcardsDB') as Dexie & {
-    wordProgress: EntityTable<WordLearningProgress>;
+    wordProgress: EntityTable<WordLearningProgress, 'wordId'>;
 };
 
 db.version(1).stores({

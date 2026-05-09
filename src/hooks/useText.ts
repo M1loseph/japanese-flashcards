@@ -1,5 +1,5 @@
-import { useGameContext } from '../context/GameContext';
 import type { TextWithPronunciation } from '../japanese/types';
+import { useGameContext } from '../services/GameContext';
 
 export const useMainText = (word: TextWithPronunciation): string => {
     const { gameState } = useGameContext();

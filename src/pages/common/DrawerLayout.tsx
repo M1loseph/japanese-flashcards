@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from '../../components/Sidebar';
-import { useDrawer } from '../../context/DrawerContext';
+import { useDrawer } from '../../services/DrawerContext';
 
 export const DrawerLayout: FC = () => {
     const { isDrawerOpen } = useDrawer();

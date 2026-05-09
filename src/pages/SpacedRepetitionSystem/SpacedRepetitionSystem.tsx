@@ -2,10 +2,16 @@ import { IconArrowRight, IconBolt, IconFlame, IconListDetails, IconPlus } from '
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
-import { useGameContext } from '../../context/GameContext';
-import { useGameSettingsContext } from '../../context/GameStateContext';
-import { SRS_STAGES, useSRSContext } from '../../context/SRSContext';
-import { useStreak } from '../../context/StreakContext';
+import { useGameContext } from '../../services/GameContext';
+import { useGameSettingsContext } from '../../services/GameStateContext';
+import {
+    generateStatistics,
+    listWordsToReview,
+    SRS_STAGES,
+    useAddNewRandomWords,
+    useSRSWords,
+} from '../../services/SRS';
+import { useStreak } from '../../services/StreakContext';
 import { ScrollablePage } from '../common/ScrollablePage';
 
 const WORD_COUNT_OPTIONS = [5, 10, 15] as const;
@@ -16,8 +22,10 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const navigate = useNavigate();
     const { createNewGame } = useGameContext();
     const { selectedLanguage } = useGameSettingsContext();
-    const { wordsToReview, addNewRandomWords, statistics } = useSRSContext();
-    const { data: wordsToReviewData } = wordsToReview;
+    const { data: srsWords } = useSRSWords();
+    const wordsToReview = listWordsToReview(srsWords);
+    const statistics = generateStatistics(srsWords);
+    const { mutate: addNewRandomWords } = useAddNewRandomWords();
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
     const { currentStreak } = useStreak();
 
@@ -33,12 +41,12 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleStartReview = () => {
-        if (!wordsToReview.data) {
+        if (!wordsToReview) {
             return;
         }
-        const title = `Review Session - ${wordsToReview.data.length} items`;
+        const title = `Review Session - ${wordsToReview.length} items`;
 
-        createNewGame(wordsToReview.data, selectedLanguage, title, 'srs');
+        createNewGame(wordsToReview, selectedLanguage, title, 'srs');
         navigate('/game/shuffle');
     };
 
@@ -50,7 +58,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleConfirmAdd = () => {
-        addNewRandomWords(selectedWordCount);
+        addNewRandomWords({ count: selectedWordCount });
     };
 
     const handleConfirmAddKeyDown = (e: React.KeyboardEvent) => {
@@ -60,12 +68,9 @@ export const SpacedRepetitionSystemPage: FC = () => {
         }
     };
 
-    const numberOfWordsToReview = wordsToReviewData ? wordsToReviewData.length : 0;
-    const totalWordsInSRS = statistics.data
-        ? Array.from(statistics.data.buckets.values()).reduce((sum, count) => sum + count, 0)
-        : 0;
-
-    const newWordsInStage0 = statistics.data?.buckets.get(0);
+    const numberOfWordsToReview = wordsToReview ? wordsToReview.length : 0;
+    const totalWordsInSRS = Array.from(statistics.buckets.values()).reduce((sum, count) => sum + count, 0);
+    const newWordsInStage0 = statistics.buckets.get(0);
     const disableAddButton = (newWordsInStage0 === undefined || newWordsInStage0 > 0) && numberOfWordsToReview > 0;
 
     return (
@@ -160,7 +165,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                             <span className="text-xs uppercase tracking-wide font-semibold text-base-content/70">
                                 {stage.label}
                             </span>
-                            <span className="text-3xl font-bold">{statistics.data?.buckets.get(index) ?? 0}</span>
+                            <span className="text-3xl font-bold">{statistics.buckets.get(index) ?? 0}</span>
                         </div>
                     ))}
                 </div>

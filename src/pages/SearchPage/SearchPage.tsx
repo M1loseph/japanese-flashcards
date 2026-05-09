@@ -1,10 +1,10 @@
 import { IconZoom } from '@tabler/icons-react';
 import { useMemo, type FC } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { useGameSettingsContext } from '../../context/GameStateContext';
 import { availableWordBags } from '../../japanese';
 import { textMatchesQuery } from '../../japanese/search';
 import type { TranslatedJapaneseText, WordBag } from '../../japanese/types';
+import { useGameSettingsContext } from '../../services/GameStateContext';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { Word } from '../BagPage/Word';
 import { ScrollablePage } from '../common/ScrollablePage';

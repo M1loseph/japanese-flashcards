@@ -1,7 +1,7 @@
 import { IconClockHour2, IconHome, IconSearch } from '@tabler/icons-react';
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { useDrawer } from '../context/DrawerContext';
+import { useDrawer } from '../services/DrawerContext';
 
 export const Sidebar: FC = () => {
     const { toggleDrawer } = useDrawer();

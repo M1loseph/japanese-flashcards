@@ -1,9 +1,9 @@
 import { IconZoom } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { useGameSettingsContext } from '../../context/GameStateContext';
 import { textMatchesQuery } from '../../japanese/search';
 import type { WordBag } from '../../japanese/types';
+import { useGameSettingsContext } from '../../services/GameStateContext';
 import { Word } from './Word';
 
 export const WordsTab: FC = () => {

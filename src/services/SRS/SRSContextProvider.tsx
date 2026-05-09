@@ -1,26 +1,29 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { type FC, type ReactNode } from 'react';
 import { availableWordBags } from '../../japanese';
+import { findWordById } from '../../japanese/search';
+import { queryClient } from '../../queryClient';
+import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { shuffleArray } from '../../utils';
-import { SRSContext } from './SRSContext';
 import { db } from './srsdb';
 import { SRS_STAGES } from './Stages';
-
-interface SRSContextProviderProps {
-    children: ReactNode;
-}
 
 const MINIMUM_LEVEL = 0;
 const MAXIMUM_LEVEL = SRS_STAGES.length - 1;
 
-const listWordsToReview = async () => {
+export const listWordsToReview = (words?: WordLearningProgress[]) => {
     const now = new Date();
-    const words = await db.wordProgress.where('nextReview').belowOrEqual(now).toArray();
-    return words.map((w) => w.wordId);
+    const wordsToReview = (words ?? []).filter((word) => word.nextReview <= now);
+    return wordsToReview.map((w) => w.wordId);
 };
 
-const generateStatistics = async () => {
-    const words = await db.wordProgress.toArray();
+interface SRSStatistics {
+    buckets: Map<number, number>;
+}
+
+export const generateStatistics = (words?: WordLearningProgress[]): SRSStatistics => {
+    if (!words) {
+        return { buckets: new Map() };
+    }
     const buckets = words.reduce((acc, word) => {
         const level = word.level;
         acc.set(level, (acc.get(level) || 0) + 1);
@@ -73,55 +76,36 @@ const markWordAsReviewedFunction = async (wordId: string, correct: boolean) => {
     });
 };
 
-export const SRSContextProvider: FC<SRSContextProviderProps> = ({ children }) => {
-    const wordsToReview = useQuery({
-        queryKey: ['wordsToReview'],
-        queryFn: listWordsToReview,
+export const useSRSWords = () => {
+    return useQuery({
+        queryKey: ['databaseWords'],
+        queryFn: async () => {
+            const words = await db.wordProgress.toArray();
+            const orphanIds = words.filter((word) => !findWordById(word.wordId)).map((word) => word.wordId);
+            await Promise.all(orphanIds.map((id) => db.wordProgress.delete(id)));
+            return words.filter((word) => !orphanIds.includes(word.wordId));
+        },
     });
+};
 
-    const statistics = useQuery({
-        queryKey: ['srsStatistics'],
-        queryFn: generateStatistics,
-    });
-
-    const addNewRandomWordsMutation = useMutation({
+export const useAddNewRandomWords = () => {
+    return useMutation({
         mutationKey: ['addNewRandomWords'],
         mutationFn: ({ count, preferredWordBags }: { count: number; preferredWordBags?: string[] }) =>
             addNewRandomWords(count, preferredWordBags),
         onSuccess: () => {
-            statistics.refetch();
-            wordsToReview.refetch();
+            queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
         },
     });
+};
 
-    const markWordAsReviewedMutation = useMutation({
+export const useMarkWordAsReviewed = () => {
+    return useMutation({
         mutationKey: ['markWordAsReviewed'],
         mutationFn: ({ wordId, correct }: { wordId: string; correct: boolean }) =>
             markWordAsReviewedFunction(wordId, correct),
         onSuccess: () => {
-            statistics.refetch();
-            wordsToReview.refetch();
+            queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
         },
     });
-
-    const addNewRandomWordsMutationWrapper = (count: number, preferredWordBags?: string[]) => {
-        addNewRandomWordsMutation.mutate({ count, preferredWordBags });
-    };
-
-    const markWordAsReviewedWrapper = (wordId: string, correct: boolean) => {
-        markWordAsReviewedMutation.mutate({ wordId, correct });
-    };
-
-    return (
-        <SRSContext.Provider
-            value={{
-                wordsToReview,
-                addNewRandomWords: addNewRandomWordsMutationWrapper,
-                statistics,
-                markWordAsReviewed: markWordAsReviewedWrapper,
-            }}
-        >
-            {children}
-        </SRSContext.Provider>
-    );
 };

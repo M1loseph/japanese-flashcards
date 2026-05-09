@@ -1,7 +1,7 @@
 import { IconRestore } from '@tabler/icons-react';
 import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useGameContext } from '../context/GameContext';
+import { useGameContext } from '../services/GameContext';
 
 export const ExistingGameAlert: FC = () => {
     const navigate = useNavigate();

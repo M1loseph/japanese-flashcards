@@ -1,4 +1,5 @@
 import { useEffect, useState, type FC, type ReactNode } from 'react';
+import { findWordById } from '../../japanese/search';
 import { GameStateSchema, type GameState, type GameType } from '../../types/GameState';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { shuffleArray } from '../../utils';
@@ -11,7 +12,14 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         try {
             const saved = localStorage.getItem(RANDOM_SHUFFLE_GAME_STATE_KEY);
             if (!saved) return undefined;
-            return GameStateSchema.parse(JSON.parse(saved));
+            const game = GameStateSchema.parse(JSON.parse(saved));
+            const finalCards = game.flashcards.filter((card) => {
+                return findWordById(card.wordId) !== undefined;
+            });
+            if (finalCards.length === 0) {
+                return undefined;
+            }
+            return { ...game, flashcards: finalCards };
         } catch (e) {
             localStorage.removeItem(RANDOM_SHUFFLE_GAME_STATE_KEY);
             console.error('Failed to parse saved game state:', e);

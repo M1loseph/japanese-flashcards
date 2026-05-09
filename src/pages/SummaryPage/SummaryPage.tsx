@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { useMemo, useState, type FC } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { PaperPlaneIcon } from '../../assets/PaperPlaneIcon';
-import { useGameContext } from '../../context/GameContext';
+import { useGameContext } from '../../services/GameContext';
 import { FixedSizePage } from '../common/FixedSizePage';
 import { Confetti } from './Confetti';
 import { useCountUp } from './useCountUp';
