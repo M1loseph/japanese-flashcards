@@ -25,7 +25,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const { data: srsWords } = useSRSWords();
     const wordsToReview = listWordsToReview(srsWords);
     const statistics = generateStatistics(srsWords);
-    const { mutate: addNewRandomWords } = useAddNewRandomWords();
+    const { mutateAsync: addNewRandomWords } = useAddNewRandomWords();
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
     const { currentStreak } = useStreak();
 
@@ -54,8 +54,8 @@ export const SpacedRepetitionSystemPage: FC = () => {
         }
     };
 
-    const handleConfirmAdd = () => {
-        addNewRandomWords({ count: selectedWordCount });
+    const handleConfirmAdd = async () => {
+        await addNewRandomWords({ count: selectedWordCount });
     };
 
     const handleConfirmAddKeyDown = (e: React.KeyboardEvent) => {

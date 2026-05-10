@@ -2,35 +2,12 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { availableWordBags } from '../../japanese';
 import { findWordById } from '../../japanese/search';
 import { queryClient } from '../../queryClient';
-import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { shuffleArray } from '../../utils';
 import { db } from './srsdb';
 import { SRS_STAGES } from './Stages';
 
 const MINIMUM_LEVEL = 0;
 const MAXIMUM_LEVEL = SRS_STAGES.length - 1;
-
-export const listWordsToReview = (words?: WordLearningProgress[]) => {
-    const now = new Date();
-    const wordsToReview = (words ?? []).filter((word) => word.nextReview <= now);
-    return wordsToReview.map((w) => w.wordId);
-};
-
-interface SRSStatistics {
-    buckets: Map<number, number>;
-}
-
-export const generateStatistics = (words?: WordLearningProgress[]): SRSStatistics => {
-    if (!words) {
-        return { buckets: new Map() };
-    }
-    const buckets = words.reduce((acc, word) => {
-        const level = word.level;
-        acc.set(level, (acc.get(level) || 0) + 1);
-        return acc;
-    }, new Map<number, number>());
-    return { buckets };
-};
 
 const addNewRandomWords = async (count: number, preferredWordBags?: string[]) => {
     const wordsInProgress = (await db.wordProgress.toArray()).map((w) => w.wordId);
@@ -52,7 +29,7 @@ const addNewRandomWords = async (count: number, preferredWordBags?: string[]) =>
     await db.wordProgress.bulkAdd(newProgressEntries);
 };
 
-const markWordAsReviewedFunction = async (wordId: string, correct: boolean) => {
+const markWordAsReviewed = async (wordId: string, correct: boolean) => {
     const word = await db.wordProgress.get({ wordId });
     if (!word) return;
 
@@ -102,8 +79,7 @@ export const useAddNewRandomWords = () => {
 export const useMarkWordAsReviewed = () => {
     return useMutation({
         mutationKey: ['markWordAsReviewed'],
-        mutationFn: ({ wordId, correct }: { wordId: string; correct: boolean }) =>
-            markWordAsReviewedFunction(wordId, correct),
+        mutationFn: ({ wordId, correct }: { wordId: string; correct: boolean }) => markWordAsReviewed(wordId, correct),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
         },
