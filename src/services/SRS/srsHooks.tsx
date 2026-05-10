@@ -9,7 +9,7 @@ import { MINIMUM_LEVEL } from './Stages';
 const addNewRandomWords = async (count: number, preferredWordBags?: string[]) => {
     const wordsInProgress = (await db.wordProgress.toArray()).map((w) => w.wordId);
     const allWords = availableWordBags
-        .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.name))
+        .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.id))
         .flatMap((bag) => bag.words)
         .map((w) => w.id);
 
@@ -48,31 +48,3 @@ export const useAddNewRandomWords = () => {
         },
     });
 };
-
-// export const useMarkWordAsReviewed = () => {
-//     return useMutation({
-//         mutationKey: ['markWordAsReviewed'],
-//         mutationFn: ({ wordId, correct }: { wordId: string; correct: boolean }) => markWordAsReviewed(wordId, correct),
-//         onSuccess: () => {
-//             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
-//         },
-//     });
-// };
-
-// const markWordsAsReviewedBatch = (reviews: { wordId: string; correct: boolean }[]) => {
-//     return db.transaction('rw', db.wordProgress, async () => {
-//         for (const { wordId, correct } of reviews) {
-//             await markWordAsReviewed(wordId, correct);
-//         }
-//     });
-// };
-
-// export const useMarkWordsAsReviewedBatch = () => {
-//     return useMutation({
-//         mutationKey: ['markWordsAsReviewedBatch'],
-//         mutationFn: (reviews: { wordId: string; correct: boolean }[]) => markWordsAsReviewedBatch(reviews),
-//         onSuccess: () => {
-//             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
-//         },
-//     });
-// };
