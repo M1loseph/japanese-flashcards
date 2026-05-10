@@ -1,6 +1,7 @@
 import { IconArrowRight, IconBolt, IconFlame, IconListDetails, IconPlus } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Select, { type MultiValue } from 'react-select';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
 import { availableWordBags } from '../../japanese';
 import { useGameContext } from '../../services/GameContext';
@@ -29,7 +30,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const { mutateAsync: addNewRandomWords } = useAddNewRandomWords();
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
     const { currentStreak } = useStreak();
-    const [selectedWordBag, setSelectedWordBag] = useState<string | undefined>();
+    const [selectedWordBags, setSelectedWordBags] = useState<string[]>([]);
 
     const handleWordCountSelect = (count: WordCountOption) => {
         setSelectedWordCount(count);
@@ -57,7 +58,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleConfirmAdd = async () => {
-        const wordBags = selectedWordBag ? [selectedWordBag] : undefined;
+        const wordBags = selectedWordBags.length > 0 ? selectedWordBags : undefined;
         await addNewRandomWords({ count: selectedWordCount, preferredWordBags: wordBags });
     };
 
@@ -68,8 +69,8 @@ export const SpacedRepetitionSystemPage: FC = () => {
         }
     };
 
-    const handleWordBagSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedWordBag(e.currentTarget.value);
+    const handleWordBagSelect = (selectedOptions: MultiValue<{ value: string; label: string }>) => {
+        setSelectedWordBags(selectedOptions.map((option) => option.value));
     };
 
     const numberOfWordsToReview = wordsToReview ? wordsToReview.length : 0;
@@ -155,6 +156,54 @@ export const SpacedRepetitionSystemPage: FC = () => {
                 </div>
             </section>
 
+            <section aria-label="Expand vocabulary" className="mb-8 border border-base-300 rounded-lg shadow-lg p-4">
+                <div className="card bg-base-200">
+                    <div className="card-body p-6 gap-4">
+                        <div>
+                            <h2 className="text-xl font-bold">Expand Vocabulary</h2>
+                            <p className="text-base-content/70 mt-1">
+                                {disableAddButton
+                                    ? 'You have new words waiting in first stage. Review them before adding more to keep your learning focused.'
+                                    : 'Ready for a challenge? Add new vocabulary items to your SRS queue.'}
+                            </p>
+                        </div>
+                        <div className="flex flex-col lg:flex-row justify-between w-full gap-4">
+                            <div className="flex items-center gap-2">
+                                {WORD_COUNT_OPTIONS.map((count) => (
+                                    <button
+                                        key={count}
+                                        disabled={disableAddButton}
+                                        className={`btn ${selectedWordCount === count ? 'btn-primary' : ''}`}
+                                        onClick={() => handleWordCountSelect(count)}
+                                        onKeyDown={(e) => handleWordCountKeyDown(e, count)}
+                                        aria-pressed={selectedWordCount === count}
+                                        aria-label={`Select ${count} words`}
+                                    >
+                                        {count} Words
+                                    </button>
+                                ))}
+                            </div>
+                            <Select
+                                className="flex-1"
+                                isMulti={true}
+                                onChange={handleWordBagSelect}
+                                options={availableWordBags.map((bag) => ({ value: bag.id, label: bag.name }))}
+                            />
+                        </div>
+                        <button
+                            className="btn btn-primary mt-6 lg:max-w-md lg:self-end"
+                            onClick={handleConfirmAdd}
+                            onKeyDown={handleConfirmAddKeyDown}
+                            disabled={disableAddButton}
+                            aria-label={`Confirm and add ${selectedWordCount} words to SRS queue`}
+                        >
+                            <IconPlus size={16} aria-hidden="true" />
+                            Confirm &amp; Add
+                        </button>
+                    </div>
+                </div>
+            </section>
+
             <section
                 aria-label="SRS stages distribution"
                 className="mb-8 border border-base-300 rounded-lg shadow-lg p-4"
@@ -172,61 +221,6 @@ export const SpacedRepetitionSystemPage: FC = () => {
                             <span className="text-3xl font-bold">{statistics.buckets.get(index) ?? 0}</span>
                         </div>
                     ))}
-                </div>
-            </section>
-
-            <section aria-label="Expand vocabulary" className="mb-8 border border-base-300 rounded-lg shadow-lg p-4">
-                <div className="card bg-base-200">
-                    <div className="card-body p-6 gap-4">
-                        <div>
-                            <h2 className="text-xl font-bold">Expand Vocabulary</h2>
-                            <p className="text-base-content/70 mt-1">
-                                {disableAddButton
-                                    ? 'You have new words waiting in first stage. Review them before adding more to keep your learning focused.'
-                                    : 'Ready for a challenge? Add new vocabulary items to your SRS queue.'}
-                            </p>
-                        </div>
-                        <div className="flex flex-col md:flex-row justify-between w-full">
-                            <div className="flex items-center gap-2">
-                                {WORD_COUNT_OPTIONS.map((count) => (
-                                    <button
-                                        key={count}
-                                        disabled={disableAddButton}
-                                        className={`btn ${selectedWordCount === count ? 'btn-primary' : ''}`}
-                                        onClick={() => handleWordCountSelect(count)}
-                                        onKeyDown={(e) => handleWordCountKeyDown(e, count)}
-                                        aria-pressed={selectedWordCount === count}
-                                        aria-label={`Select ${count} words`}
-                                    >
-                                        {count} Words
-                                    </button>
-                                ))}
-                                <select value={selectedWordBag} onChange={handleWordBagSelect} className="select">
-                                    <option disabled selected>
-                                        Select word bag
-                                    </option>
-                                    <option disabled selected>
-                                        Choose word bags
-                                    </option>
-                                    {availableWordBags.map((bag) => (
-                                        <option key={bag.id} value={bag.id}>
-                                            {bag.name}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                            <button
-                                className="btn btn-primary mt-6 md:mt-0"
-                                onClick={handleConfirmAdd}
-                                onKeyDown={handleConfirmAddKeyDown}
-                                disabled={disableAddButton}
-                                aria-label={`Confirm and add ${selectedWordCount} words to SRS queue`}
-                            >
-                                <IconPlus size={16} aria-hidden="true" />
-                                Confirm &amp; Add
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </section>
         </ScrollablePage>
