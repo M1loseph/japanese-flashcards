@@ -16,6 +16,7 @@ const RandomShuffleGamePage: FC = () => {
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
+    const [disableButtons, setDisableButtons] = useState(false);
     const navigate = useNavigate();
     const { recordActivity } = useStreak();
 
@@ -67,11 +68,12 @@ const RandomShuffleGamePage: FC = () => {
 
     const handleAnswer = (correct: boolean) => {
         flashcardRef.current?.playAnimation(correct);
-        const handle = setTimeout(() => {
+        setDisableButtons(true);
+        timerRef.current = setTimeout(() => {
             markCurrentFlashcard(correct);
             setShowAnswer(false);
+            setDisableButtons(false);
         }, 600);
-        timerRef.current = handle;
     };
 
     const handleOpenSettings = () => {
@@ -114,7 +116,7 @@ const RandomShuffleGamePage: FC = () => {
                     toggleAnswer={handleToggleAnswer}
                     correctPressed={() => handleAnswer(true)}
                     mistakePressed={() => handleAnswer(false)}
-                    disableButtons={timerRef.current !== undefined}
+                    disableButtons={disableButtons}
                 />
                 <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
                     <div className="modal-box">
