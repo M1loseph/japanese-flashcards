@@ -41,9 +41,6 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleStartReview = () => {
-        if (!wordsToReview) {
-            return;
-        }
         const title = `Review Session - ${wordsToReview.length} items`;
 
         createNewGame(wordsToReview, selectedLanguage, title, 'srs');
@@ -71,7 +68,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const numberOfWordsToReview = wordsToReview ? wordsToReview.length : 0;
     const totalWordsInSRS = Array.from(statistics.buckets.values()).reduce((sum, count) => sum + count, 0);
     const newWordsInStage0 = statistics.buckets.get(0);
-    const disableAddButton = (newWordsInStage0 === undefined || newWordsInStage0 > 0) && numberOfWordsToReview > 0;
+    const disableAddButton = (newWordsInStage0 ?? 0) > 0 && numberOfWordsToReview > 0;
 
     return (
         <ScrollablePage>
@@ -160,7 +157,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                     {SRS_STAGES.map((stage, index) => (
                         <div key={stage.label} className="card bg-base-200 p-4 text-center items-center gap-2">
                             <span className="text-primary" aria-hidden="true">
-                                {<stage.icon size={24} />}
+                                <stage.icon size={24} />
                             </span>
                             <span className="text-xs uppercase tracking-wide font-semibold text-base-content/70">
                                 {stage.label}

@@ -30,7 +30,7 @@ export const SRS_STAGES: SRSStage[] = [
         waitDuration: dayjs.duration({ hours: 8 }),
     },
     {
-        label: 'Practictioner',
+        label: 'Practitioner',
         icon: IconTool,
         waitDuration: dayjs.duration({ days: 1 }),
     },

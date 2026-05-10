@@ -11,7 +11,7 @@ export const ExistingGameAlert: FC = () => {
         return null;
     }
 
-    const handleResumeSave = () => {
+    const handleResumeGame = () => {
         navigate('/game/shuffle');
     };
 
@@ -29,7 +29,7 @@ export const ExistingGameAlert: FC = () => {
                     </span>
                 </div>
 
-                <button onClick={handleResumeSave} className="btn btn-warning">
+                <button onClick={handleResumeGame} className="btn btn-warning">
                     Resume
                 </button>
             </div>

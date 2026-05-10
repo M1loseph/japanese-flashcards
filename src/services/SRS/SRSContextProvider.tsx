@@ -61,7 +61,7 @@ const markWordAsReviewedFunction = async (wordId: string, correct: boolean) => {
     if (correct) {
         level = Math.min(level + 1, MAXIMUM_LEVEL);
     } else {
-        level = Math.max(level - 1, MINIMUM_LEVEL);
+        level = Math.max(level - 2, MINIMUM_LEVEL);
     }
 
     const now = new Date();
