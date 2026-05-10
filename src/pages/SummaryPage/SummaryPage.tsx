@@ -1,9 +1,9 @@
 import { IconHome, IconRepeat } from '@tabler/icons-react';
 import { motion } from 'motion/react';
-import { useMemo, useState, type FC } from 'react';
+import { useEffect, useMemo, useState, type FC } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { PaperPlaneIcon } from '../../assets/PaperPlaneIcon';
-import { useGameContext } from '../../context/GameContext';
+import { useGameContext } from '../../services/GameContext';
 import { FixedSizePage } from '../common/FixedSizePage';
 import { Confetti } from './Confetti';
 import { useCountUp } from './useCountUp';
@@ -64,9 +64,18 @@ const SummaryPage: FC = () => {
 
     const hasMistakes = wrongAnswers.length > 0;
     const [planeFloating, setPlaneFloating] = useState(false);
+    const [cleanupGame, setCleanupGame] = useState(false);
 
     const animatedCards = useCountUp(stats.totalCards, 800, 1000);
     const animatedAccuracy = useCountUp(stats.accuracy, 1200, 1200);
+
+    useEffect(() => {
+        return () => {
+            if (cleanupGame) {
+                clearGame();
+            }
+        };
+    }, [cleanupGame, clearGame]);
 
     if (!gameState) {
         return <Navigate to="/" replace />;
@@ -82,8 +91,18 @@ const SummaryPage: FC = () => {
     };
 
     const handleFinish = () => {
-        clearGame();
-        navigate('/');
+        setCleanupGame(true);
+        const gameType = gameState.gameType;
+        if (gameType === 'practice') {
+            navigate('/');
+            return;
+        }
+        if (gameType === 'srs') {
+            navigate('/srs');
+            return;
+        }
+        const _exhaustiveCheck: never = gameType;
+        return _exhaustiveCheck;
     };
 
     const handleHomeNavigation = () => {

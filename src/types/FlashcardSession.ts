@@ -1,9 +1,7 @@
 import * as z from 'zod';
-import { TranslatedJapaneseTextSchema } from '../japanese/types';
 
 export const FlashcardSessionSchema = z.object({
-    word: TranslatedJapaneseTextSchema,
-    wordBag: z.string(),
+    wordId: z.string(),
     answered: z.boolean(),
     correct: z.boolean(),
 });

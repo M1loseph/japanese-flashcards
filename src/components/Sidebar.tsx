@@ -1,7 +1,7 @@
-import { IconHome, IconSearch } from '@tabler/icons-react';
+import { IconClockHour2, IconHome, IconSearch } from '@tabler/icons-react';
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { useDrawer } from '../context/DrawerContext';
+import { useDrawer } from '../services/DrawerContext';
 
 export const Sidebar: FC = () => {
     const { toggleDrawer } = useDrawer();
@@ -22,6 +22,18 @@ export const Sidebar: FC = () => {
                     <Link to="/" aria-label="Home" tabIndex={0} className="text-base" onClick={handleLinkClick}>
                         <IconHome size={20} />
                         Home
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        to="/srs"
+                        aria-label="Spaced Repetition System"
+                        tabIndex={0}
+                        className="text-base"
+                        onClick={handleLinkClick}
+                    >
+                        <IconClockHour2 size={20} />
+                        Spaced Repetition System
                     </Link>
                 </li>
                 <li>

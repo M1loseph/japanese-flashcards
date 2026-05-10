@@ -1,17 +1,21 @@
+import { QueryClientProvider } from '@tanstack/react-query';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import { DrawerProvider } from './context/DrawerContext';
-import { GameContextProvider } from './context/GameContext';
-import { GameSettingsProvider } from './context/GameStateContext';
-import { HardTextProvider } from './context/HardWordsContext';
 import './index.css';
 import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
+import { DrawerLayout } from './pages/common/DrawerLayout';
 import MainPage from './pages/MainPage';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
 import SearchPage from './pages/SearchPage';
+import { SpacedRepetitionSystemPage } from './pages/SpacedRepetitionSystem';
 import SummaryPage from './pages/SummaryPage';
-import { DrawerLayout } from './pages/common/DrawerLayout';
+import { queryClient } from './queryClient';
+import { DrawerProvider } from './services/DrawerContext';
+import { GameContextProvider } from './services/GameContext';
+import { GameSettingsProvider } from './services/GameStateContext';
+import { HardTextProvider } from './services/HardWordsContext';
+import { StreakContextProvider } from './services/StreakContext';
 
 const router = createBrowserRouter([
     {
@@ -55,6 +59,10 @@ const router = createBrowserRouter([
                 ],
             },
             {
+                path: '/srs',
+                Component: SpacedRepetitionSystemPage,
+            },
+            {
                 path: '*',
                 element: <Navigate to="/" replace />,
             },
@@ -70,14 +78,18 @@ if (!root) {
 
 createRoot(root).render(
     <StrictMode>
-        <DrawerProvider>
-            <HardTextProvider>
-                <GameSettingsProvider>
-                    <GameContextProvider>
-                        <RouterProvider router={router} />
-                    </GameContextProvider>
-                </GameSettingsProvider>
-            </HardTextProvider>
-        </DrawerProvider>
+        <QueryClientProvider client={queryClient}>
+            <DrawerProvider>
+                <HardTextProvider>
+                    <StreakContextProvider>
+                        <GameSettingsProvider>
+                            <GameContextProvider>
+                                <RouterProvider router={router} />
+                            </GameContextProvider>
+                        </GameSettingsProvider>
+                    </StreakContextProvider>
+                </HardTextProvider>
+            </DrawerProvider>
+        </QueryClientProvider>
     </StrictMode>,
 );

@@ -2,21 +2,24 @@ import * as z from 'zod';
 import { FlashcardSessionSchema } from './FlashcardSession';
 import { TranslationLanguagesSchema } from './TranslationLanguage';
 
-export const CommonGameStateSchema = z.object({
+const GameTypeSchema = z.union([z.literal('practice'), z.literal('srs')]);
+
+const CommonGameStateSchema = z.object({
     version: z.literal(1),
-    initialWordBags: z.array(z.string()),
+    title: z.string(),
+    gameType: GameTypeSchema,
     flashcards: z.array(FlashcardSessionSchema),
     gameStartTimeMs: z.number(),
     simplifiedMode: z.boolean(),
     selectedLanguage: TranslationLanguagesSchema,
 });
 
-export const GameInProgressStateSchema = CommonGameStateSchema.extend({
+const GameInProgressStateSchema = CommonGameStateSchema.extend({
     type: z.literal('in-progress'),
     currentFlashcardIndex: z.number(),
 });
 
-export const GameFinishedStateSchema = CommonGameStateSchema.extend({
+const GameFinishedStateSchema = CommonGameStateSchema.extend({
     type: z.literal('finished'),
     gameEndTimeMs: z.number(),
 });
@@ -24,3 +27,5 @@ export const GameFinishedStateSchema = CommonGameStateSchema.extend({
 export const GameStateSchema = z.discriminatedUnion('type', [GameInProgressStateSchema, GameFinishedStateSchema]);
 
 export type GameState = z.infer<typeof GameStateSchema>;
+
+export type GameType = z.infer<typeof GameTypeSchema>;

@@ -1,18 +1,18 @@
-import { IconRestore } from '@tabler/icons-react';
 import { type FC, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ExistingGameAlert } from '../../components/ExistingGameAlert';
 import { LanguageSelector } from '../../components/LanguageSelector';
-import { useGameContext } from '../../context/GameContext';
-import { useGameSettingsContext } from '../../context/GameStateContext';
 import { findBagById } from '../../japanese';
 import { type WordBag } from '../../japanese/types';
+import { useGameContext } from '../../services/GameContext';
+import { useGameSettingsContext } from '../../services/GameStateContext';
 import { ScrollablePage } from '../common/ScrollablePage';
 import { CategorySection } from './CategorySection';
 import { groupedBags } from './groupedBags';
 
 const MainPage: FC = () => {
     const navigate = useNavigate();
-    const { createNewGame, gameState } = useGameContext();
+    const { createNewGame } = useGameContext();
     const {
         selectedLanguage,
         setSelectedLanguage,
@@ -42,46 +42,19 @@ const MainPage: FC = () => {
             .filter((bag: WordBag | undefined) => bag !== undefined);
 
         const selectedJapaneseWord = bags.flatMap((bag) => {
-            return bag.words.map((japaneseVocabulary) => {
-                return {
-                    word: japaneseVocabulary,
-                    wordBag: bag.name,
-                };
-            });
+            return bag.words.map((japaneseVocabulary) => japaneseVocabulary.id);
         });
+        const title = bags.map((bag) => bag.name).join(', ');
 
-        createNewGame(selectedJapaneseWord, selectedLanguage);
-        navigate('/game/shuffle');
-    };
-
-    const handleResumeSave = () => {
+        createNewGame(selectedJapaneseWord, selectedLanguage, title, 'practice');
         navigate('/game/shuffle');
     };
 
     return (
         <ScrollablePage>
             <main className="pb-24 grow">
-                {gameState && (
-                    <section>
-                        <div role="alert" className="alert bg-warning/5 border-warning mb-10">
-                            <div className="p-2 bg-warning/40 rounded-md">
-                                <IconRestore color="orange" />
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="font-semibold text-warning">GAME IN PROGRESS</span>
-                                <span className="text-lg font-medium">
-                                    {gameState?.initialWordBags.join(', ')} (
-                                    {gameState.flashcards.filter((card) => card.answered).length}/
-                                    {gameState.flashcards.length})
-                                </span>
-                            </div>
+                <ExistingGameAlert />
 
-                            <button onClick={handleResumeSave} className="btn btn-warning">
-                                Resume
-                            </button>
-                        </div>
-                    </section>
-                )}
                 <section className="mb-6">
                     <h2 className="text-2xl font-bold mb-6 text-center">1. Choose Your Language</h2>
                     <LanguageSelector selectedLanguage={selectedLanguage} onSelect={setSelectedLanguage} />

@@ -1,8 +1,10 @@
 import { IconSettings } from '@tabler/icons-react';
 import { type FC, useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
-import { useGameContext } from '../../context/GameContext';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
+import { findWordById } from '../../japanese/search';
+import { useGameContext } from '../../services/GameContext';
+import { useStreak } from '../../services/StreakContext';
 import { FixedSizePage } from '../common/FixedSizePage';
 import Flashcard, { type FlashcardHandle } from './flashcard/Flashcard';
 import { FlashcardButtons } from './flashcard/FlashcardButtons';
@@ -14,10 +16,12 @@ const RandomShuffleGamePage: FC = () => {
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
+    const [disableButtons, setDisableButtons] = useState(false);
     const navigate = useNavigate();
+    const { recordActivity } = useStreak();
 
     const flashcardRef = useRef<FlashcardHandle>(null);
-    const [lastFlashcardAnswer, setLastFlashcardAnswer] = useState<boolean | undefined>(undefined);
+    const timerRef = useRef<number | undefined>(undefined);
 
     useEffect(() => {
         if (!gameState) return;
@@ -28,30 +32,25 @@ const RandomShuffleGamePage: FC = () => {
         return () => clearInterval(interval);
     }, [gameState]);
 
-    useEffect(() => {
-        if (lastFlashcardAnswer === undefined) return;
-        const result = lastFlashcardAnswer;
-        const handle = setTimeout(() => {
-            setLastFlashcardAnswer(undefined);
-            if (result) {
-                markCurrentFlashcard(true);
-            } else {
-                markCurrentFlashcard(false);
-            }
-            setShowAnswer(false);
-        }, 600);
-        return () => clearTimeout(handle);
-    }, [lastFlashcardAnswer, markCurrentFlashcard]);
-
     const gameFinished = gameState?.type === 'finished';
 
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
     useEffect(() => {
-        if (gameFinished) {
-            navigate('/game/summary');
+        if (timerRef.current) {
+            return () => {
+                clearTimeout(timerRef.current);
+            };
         }
-    }, [gameFinished, navigate]);
+    }, [timerRef]);
+
+    useEffect(() => {
+        if (!gameFinished) {
+            return;
+        }
+        recordActivity();
+        navigate('/game/summary');
+    }, [gameFinished, recordActivity, navigate]);
 
     if (!gameState) {
         return <Navigate to="/" replace />;
@@ -63,18 +62,20 @@ const RandomShuffleGamePage: FC = () => {
 
     const card = gameState.flashcards[gameState.currentFlashcardIndex];
 
+    console.log(gameFinished, gameState.currentFlashcardIndex);
+
     const handleToggleAnswer = () => {
         setShowAnswer(!showAnswer);
     };
 
-    const handleCorrectPressed = () => {
-        flashcardRef.current?.playAnimation(true);
-        setLastFlashcardAnswer(true);
-    };
-
-    const handleMistakePressed = () => {
-        flashcardRef.current?.playAnimation(false);
-        setLastFlashcardAnswer(false);
+    const handleAnswer = (correct: boolean) => {
+        flashcardRef.current?.playAnimation(correct);
+        setDisableButtons(true);
+        timerRef.current = setTimeout(() => {
+            markCurrentFlashcard(correct);
+            setShowAnswer(false);
+            setDisableButtons(false);
+        }, 600);
     };
 
     const handleOpenSettings = () => {
@@ -89,27 +90,35 @@ const RandomShuffleGamePage: FC = () => {
         </div>
     );
 
+    const word = findWordById(card.wordId);
+
+    if (!word) {
+        throw new Error(
+            `Word with id ${card.wordId} not found. This should have been handled when fetching words or deserializing the game.`,
+        );
+    }
+
     return (
         <FixedSizePage additionalHeaderComponents={headerSettings}>
             <div className="h-full flex flex-col items-stretch space-y-6">
                 <ProgressBar
-                    wordBags={gameState.initialWordBags}
+                    title={gameState.title}
                     currentIndex={gameState.currentFlashcardIndex}
                     total={gameState.flashcards.length}
                     timeInSeconds={sessionTime}
                 />
                 <Flashcard
                     ref={flashcardRef}
-                    card={card.word}
+                    card={word}
                     selectedLanguage={gameState.selectedLanguage}
                     showAnswer={showAnswer}
                 />
                 <FlashcardButtons
                     showAnswer={showAnswer}
                     toggleAnswer={handleToggleAnswer}
-                    correctPressed={handleCorrectPressed}
-                    mistakePressed={handleMistakePressed}
-                    disableButtons={lastFlashcardAnswer !== undefined}
+                    correctPressed={() => handleAnswer(true)}
+                    mistakePressed={() => handleAnswer(false)}
+                    disableButtons={disableButtons}
                 />
                 <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
                     <div className="modal-box">

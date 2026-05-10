@@ -1,19 +1,18 @@
 import { createContext, useContext } from 'react';
-import type { TranslatedJapaneseText } from '../../japanese/types';
-import type { GameState } from '../../types/GameState';
+import type { GameState, GameType } from '../../types/GameState';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
-
-export interface SelectedTranslatedJapaneseText {
-    word: TranslatedJapaneseText;
-    wordBag: string;
-}
 
 interface GameContextType {
     gameState: GameState | undefined;
     clearGame: () => void;
-    markCurrentFlashcard: (correct: boolean) => void;
+    markCurrentFlashcard: (correct: boolean) => Promise<void>;
     createNewGameFromWrongAnswers: () => void;
-    createNewGame: (flashcards: SelectedTranslatedJapaneseText[], selectedLanguage: TranslationLanguage) => void;
+    createNewGame: (
+        wordIds: string[],
+        selectedLanguage: TranslationLanguage,
+        title: string,
+        gameType: GameType,
+    ) => void;
     updateLanguage: (language: TranslationLanguage) => void;
     updateSimplifiedMode: (enabled: boolean) => void;
 }
