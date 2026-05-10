@@ -77,8 +77,9 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
     };
 
     const markCurrentFlashcard = async (correct: boolean) => {
-        if (!gameState || gameState.type !== 'in-progress')
+        if (!gameState || gameState.type !== 'in-progress') {
             throw new Error('Can only mark flashcards if the game is in progress');
+        }
 
         const currentCard = gameState.flashcards[gameState.currentFlashcardIndex];
         const updatedCard = { ...currentCard, answered: true, correct };
@@ -105,6 +106,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
                 simplifiedMode,
                 gameEndTimeMs: Date.now(),
             });
+            return;
         }
 
         setGameState({
