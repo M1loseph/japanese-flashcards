@@ -88,7 +88,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
 
         if (gameState.currentFlashcardIndex === gameState.flashcards.length - 1) {
             if (gameState.gameType === 'srs') {
-                const reviews = gameState.flashcards.map((card) => ({
+                const reviews = updatedFlashcards.map((card) => ({
                     wordId: card.wordId,
                     correct: card.correct,
                 }));

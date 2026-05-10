@@ -37,12 +37,8 @@ const RandomShuffleGamePage: FC = () => {
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
     useEffect(() => {
-        if (timerRef.current) {
-            return () => {
-                clearTimeout(timerRef.current);
-            };
-        }
-    }, [timerRef]);
+        return () => clearTimeout(timerRef.current);
+    }, []);
 
     useEffect(() => {
         if (!gameFinished) {
