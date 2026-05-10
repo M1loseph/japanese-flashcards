@@ -9,7 +9,7 @@ import { MINIMUM_LEVEL } from './Stages';
 const addNewRandomWords = async (count: number, preferredWordBags?: string[]) => {
     const wordsInProgress = (await db.wordProgress.toArray()).map((w) => w.wordId);
     const allWords = availableWordBags
-        .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.name))
+        .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.id))
         .flatMap((bag) => bag.words)
         .map((w) => w.id);
 

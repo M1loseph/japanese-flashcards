@@ -2,6 +2,7 @@ import { IconArrowRight, IconBolt, IconFlame, IconListDetails, IconPlus } from '
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
+import { availableWordBags } from '../../japanese';
 import { useGameContext } from '../../services/GameContext';
 import { useGameSettingsContext } from '../../services/GameStateContext';
 import {
@@ -28,6 +29,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const { mutateAsync: addNewRandomWords } = useAddNewRandomWords();
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
     const { currentStreak } = useStreak();
+    const [selectedWordBag, setSelectedWordBag] = useState<string | undefined>();
 
     const handleWordCountSelect = (count: WordCountOption) => {
         setSelectedWordCount(count);
@@ -55,7 +57,8 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleConfirmAdd = async () => {
-        await addNewRandomWords({ count: selectedWordCount });
+        const wordBags = selectedWordBag ? [selectedWordBag] : undefined;
+        await addNewRandomWords({ count: selectedWordCount, preferredWordBags: wordBags });
     };
 
     const handleConfirmAddKeyDown = (e: React.KeyboardEvent) => {
@@ -63,6 +66,10 @@ export const SpacedRepetitionSystemPage: FC = () => {
             e.preventDefault();
             handleConfirmAdd();
         }
+    };
+
+    const handleWordBagSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedWordBag(e.currentTarget.value);
     };
 
     const numberOfWordsToReview = wordsToReview ? wordsToReview.length : 0;
@@ -194,6 +201,19 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                         {count} Words
                                     </button>
                                 ))}
+                                <select value={selectedWordBag} onChange={handleWordBagSelect} className="select">
+                                    <option disabled selected>
+                                        Select word bag
+                                    </option>
+                                    <option disabled selected>
+                                        Choose word bags
+                                    </option>
+                                    {availableWordBags.map((bag) => (
+                                        <option key={bag.id} value={bag.id}>
+                                            {bag.name}
+                                        </option>
+                                    ))}
+                                </select>
                             </div>
                             <button
                                 className="btn btn-primary mt-6 md:mt-0"
