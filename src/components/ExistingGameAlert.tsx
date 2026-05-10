@@ -15,6 +15,13 @@ export const ExistingGameAlert: FC = () => {
         navigate('/game/shuffle');
     };
 
+    const handleKeyDownReumeGame = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navigate('/game/shuffle');
+        }
+    };
+
     return (
         <section>
             <div role="alert" className="alert bg-warning/5 border-warning mb-10">
@@ -29,7 +36,12 @@ export const ExistingGameAlert: FC = () => {
                     </span>
                 </div>
 
-                <button onClick={handleResumeGame} className="btn btn-warning">
+                <button
+                    onClick={handleResumeGame}
+                    onKeyDown={handleKeyDownReumeGame}
+                    aria-label="Resume currnt game"
+                    className="btn btn-warning"
+                >
                     Resume
                 </button>
             </div>

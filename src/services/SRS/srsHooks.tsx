@@ -4,10 +4,7 @@ import { findWordById } from '../../japanese/search';
 import { queryClient } from '../../queryClient';
 import { shuffleArray } from '../../utils';
 import { db } from './srsdb';
-import { SRS_STAGES } from './Stages';
-
-const MINIMUM_LEVEL = 0;
-const MAXIMUM_LEVEL = SRS_STAGES.length - 1;
+import { MINIMUM_LEVEL } from './Stages';
 
 const addNewRandomWords = async (count: number, preferredWordBags?: string[]) => {
     const wordsInProgress = (await db.wordProgress.toArray()).map((w) => w.wordId);
@@ -27,30 +24,6 @@ const addNewRandomWords = async (count: number, preferredWordBags?: string[]) =>
         level: MINIMUM_LEVEL,
     }));
     await db.wordProgress.bulkAdd(newProgressEntries);
-};
-
-const markWordAsReviewed = async (wordId: string, correct: boolean) => {
-    const word = await db.wordProgress.get({ wordId });
-    if (!word) return;
-
-    let level = word.level;
-
-    if (correct) {
-        level = Math.min(level + 1, MAXIMUM_LEVEL);
-    } else {
-        level = Math.max(level - 2, MINIMUM_LEVEL);
-    }
-
-    const now = new Date();
-    const timeToNextReview = SRS_STAGES[level].waitDuration.asMilliseconds();
-    const nextReview = new Date(now.getTime() + timeToNextReview);
-
-    await db.wordProgress.put({
-        wordId: word.wordId,
-        lastReviewed: now,
-        nextReview,
-        level,
-    });
 };
 
 export const useSRSWords = () => {
@@ -76,12 +49,30 @@ export const useAddNewRandomWords = () => {
     });
 };
 
-export const useMarkWordAsReviewed = () => {
-    return useMutation({
-        mutationKey: ['markWordAsReviewed'],
-        mutationFn: ({ wordId, correct }: { wordId: string; correct: boolean }) => markWordAsReviewed(wordId, correct),
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
-        },
-    });
-};
+// export const useMarkWordAsReviewed = () => {
+//     return useMutation({
+//         mutationKey: ['markWordAsReviewed'],
+//         mutationFn: ({ wordId, correct }: { wordId: string; correct: boolean }) => markWordAsReviewed(wordId, correct),
+//         onSuccess: () => {
+//             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+//         },
+//     });
+// };
+
+// const markWordsAsReviewedBatch = (reviews: { wordId: string; correct: boolean }[]) => {
+//     return db.transaction('rw', db.wordProgress, async () => {
+//         for (const { wordId, correct } of reviews) {
+//             await markWordAsReviewed(wordId, correct);
+//         }
+//     });
+// };
+
+// export const useMarkWordsAsReviewedBatch = () => {
+//     return useMutation({
+//         mutationKey: ['markWordsAsReviewedBatch'],
+//         mutationFn: (reviews: { wordId: string; correct: boolean }[]) => markWordsAsReviewedBatch(reviews),
+//         onSuccess: () => {
+//             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+//         },
+//     });
+// };

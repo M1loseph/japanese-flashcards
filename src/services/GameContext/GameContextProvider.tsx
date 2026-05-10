@@ -3,6 +3,7 @@ import { findWordById } from '../../japanese/search';
 import { GameStateSchema, type GameState, type GameType } from '../../types/GameState';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { shuffleArray } from '../../utils';
+import { markWordsAsReviewedBatch } from '../SRS';
 import { GameContext } from './GameContext';
 
 const RANDOM_SHUFFLE_GAME_STATE_KEY = 'randomShuffleGameState';
@@ -75,36 +76,41 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         });
     };
 
-    const markCurrentFlashcard = (correct: boolean) => {
-        setGameState((prev) => {
-            if (!prev || prev.type !== 'in-progress')
-                throw new Error('Can only mark flashcards if the game is in progress');
+    const markCurrentFlashcard = async (correct: boolean) => {
+        if (!gameState || gameState.type !== 'in-progress')
+            throw new Error('Can only mark flashcards if the game is in progress');
 
-            const currentCard = prev.flashcards[prev.currentFlashcardIndex];
-            const updatedCard = { ...currentCard, answered: true, correct };
-            const updatedFlashcards = [...prev.flashcards];
-            updatedFlashcards[prev.currentFlashcardIndex] = updatedCard;
+        const currentCard = gameState.flashcards[gameState.currentFlashcardIndex];
+        const updatedCard = { ...currentCard, answered: true, correct };
+        const updatedFlashcards = [...gameState.flashcards];
+        updatedFlashcards[gameState.currentFlashcardIndex] = updatedCard;
 
-            if (prev.currentFlashcardIndex === prev.flashcards.length - 1) {
-                const { version, title, gameType, selectedLanguage, gameStartTimeMs, simplifiedMode } = prev;
-                return {
-                    version,
-                    type: 'finished',
-                    gameType,
-                    gameStartTimeMs,
-                    title,
-                    selectedLanguage,
-                    flashcards: updatedFlashcards,
-                    simplifiedMode,
-                    gameEndTimeMs: Date.now(),
-                };
+        if (gameState.currentFlashcardIndex === gameState.flashcards.length - 1) {
+            if (gameState.gameType === 'srs') {
+                const reviews = gameState.flashcards.map((card) => ({
+                    wordId: card.wordId,
+                    correct: card.correct,
+                }));
+                await markWordsAsReviewedBatch(reviews);
             }
-
-            return {
-                ...prev,
+            const { version, title, gameType, selectedLanguage, gameStartTimeMs, simplifiedMode } = gameState;
+            setGameState({
+                version,
+                type: 'finished',
+                gameType,
+                gameStartTimeMs,
+                title,
+                selectedLanguage,
                 flashcards: updatedFlashcards,
-                currentFlashcardIndex: prev.currentFlashcardIndex + 1,
-            };
+                simplifiedMode,
+                gameEndTimeMs: Date.now(),
+            });
+        }
+
+        setGameState({
+            ...gameState,
+            flashcards: updatedFlashcards,
+            currentFlashcardIndex: gameState.currentFlashcardIndex + 1,
         });
     };
 

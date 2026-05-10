@@ -65,3 +65,6 @@ export const SRS_STAGES: SRSStage[] = [
         waitDuration: dayjs.duration({ months: 4 }),
     },
 ];
+
+export const MINIMUM_LEVEL = 0;
+export const MAXIMUM_LEVEL = SRS_STAGES.length - 1;

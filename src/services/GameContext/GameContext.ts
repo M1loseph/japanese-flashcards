@@ -5,7 +5,7 @@ import type { TranslationLanguage } from '../../types/TranslationLanguage';
 interface GameContextType {
     gameState: GameState | undefined;
     clearGame: () => void;
-    markCurrentFlashcard: (correct: boolean) => void;
+    markCurrentFlashcard: (correct: boolean) => Promise<void>;
     createNewGameFromWrongAnswers: () => void;
     createNewGame: (
         wordIds: string[],

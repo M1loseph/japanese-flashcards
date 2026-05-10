@@ -4,7 +4,6 @@ import { Navigate, useNavigate } from 'react-router';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
 import { findWordById } from '../../japanese/search';
 import { useGameContext } from '../../services/GameContext';
-import { useMarkWordAsReviewed } from '../../services/SRS';
 import { useStreak } from '../../services/StreakContext';
 import { FixedSizePage } from '../common/FixedSizePage';
 import Flashcard, { type FlashcardHandle } from './flashcard/Flashcard';
@@ -14,7 +13,6 @@ import { GameSettingsModal } from './GameSettingsModal';
 
 const RandomShuffleGamePage: FC = () => {
     const { gameState, updateLanguage, markCurrentFlashcard, updateSimplifiedMode } = useGameContext();
-    const { mutate: markWordAsReviewed } = useMarkWordAsReviewed();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -22,7 +20,7 @@ const RandomShuffleGamePage: FC = () => {
     const { recordActivity } = useStreak();
 
     const flashcardRef = useRef<FlashcardHandle>(null);
-    const [lastFlashcardAnswer, setLastFlashcardAnswer] = useState<boolean | undefined>(undefined);
+    const timerRef = useRef<number | undefined>(undefined);
 
     useEffect(() => {
         if (!gameState) return;
@@ -33,36 +31,25 @@ const RandomShuffleGamePage: FC = () => {
         return () => clearInterval(interval);
     }, [gameState]);
 
-    useEffect(() => {
-        if (lastFlashcardAnswer === undefined) return;
-        const result = lastFlashcardAnswer;
-        const handle = setTimeout(() => {
-            setLastFlashcardAnswer(undefined);
-            if (result) {
-                markCurrentFlashcard(true);
-            } else {
-                markCurrentFlashcard(false);
-            }
-            setShowAnswer(false);
-        }, 600);
-        return () => clearTimeout(handle);
-    }, [lastFlashcardAnswer, markCurrentFlashcard]);
-
     const gameFinished = gameState?.type === 'finished';
 
     const { showPrompt, confirmLeave, cancelLeave } = usePreventAccidentalLeave(!gameFinished);
 
     useEffect(() => {
-        if (gameFinished) {
-            if (gameState.gameType === 'srs') {
-                gameState.flashcards.forEach((card) => {
-                    markWordAsReviewed({ wordId: card.wordId, correct: card.correct });
-                });
-            }
-            recordActivity();
-            navigate('/game/summary');
+        if (timerRef.current) {
+            return () => {
+                clearTimeout(timerRef.current);
+            };
         }
-    }, [gameFinished, gameState, navigate, recordActivity, markWordAsReviewed]);
+    }, [timerRef]);
+
+    useEffect(() => {
+        if (!gameFinished) {
+            return;
+        }
+        recordActivity();
+        navigate('/game/summary');
+    }, [gameFinished, recordActivity, navigate]);
 
     if (!gameState) {
         return <Navigate to="/" replace />;
@@ -78,14 +65,13 @@ const RandomShuffleGamePage: FC = () => {
         setShowAnswer(!showAnswer);
     };
 
-    const handleCorrectPressed = () => {
-        flashcardRef.current?.playAnimation(true);
-        setLastFlashcardAnswer(true);
-    };
-
-    const handleMistakePressed = () => {
-        flashcardRef.current?.playAnimation(false);
-        setLastFlashcardAnswer(false);
+    const handleAnswer = (correct: boolean) => {
+        flashcardRef.current?.playAnimation(correct);
+        const handle = setTimeout(() => {
+            markCurrentFlashcard(correct);
+            setShowAnswer(false);
+        }, 600);
+        timerRef.current = handle;
     };
 
     const handleOpenSettings = () => {
@@ -126,9 +112,9 @@ const RandomShuffleGamePage: FC = () => {
                 <FlashcardButtons
                     showAnswer={showAnswer}
                     toggleAnswer={handleToggleAnswer}
-                    correctPressed={handleCorrectPressed}
-                    mistakePressed={handleMistakePressed}
-                    disableButtons={lastFlashcardAnswer !== undefined}
+                    correctPressed={() => handleAnswer(true)}
+                    mistakePressed={() => handleAnswer(false)}
+                    disableButtons={timerRef.current !== undefined}
                 />
                 <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
                     <div className="modal-box">

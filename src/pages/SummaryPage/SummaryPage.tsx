@@ -1,6 +1,6 @@
 import { IconHome, IconRepeat } from '@tabler/icons-react';
 import { motion } from 'motion/react';
-import { useMemo, useState, type FC } from 'react';
+import { useEffect, useMemo, useState, type FC } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { PaperPlaneIcon } from '../../assets/PaperPlaneIcon';
 import { useGameContext } from '../../services/GameContext';
@@ -64,14 +64,18 @@ const SummaryPage: FC = () => {
 
     const hasMistakes = wrongAnswers.length > 0;
     const [planeFloating, setPlaneFloating] = useState(false);
-    const [isLeaving, setIsLeaving] = useState(false);
+    const [cleanupGame, setCleanupGame] = useState(false);
 
     const animatedCards = useCountUp(stats.totalCards, 800, 1000);
     const animatedAccuracy = useCountUp(stats.accuracy, 1200, 1200);
 
-    if (isLeaving) {
-        return null;
-    }
+    useEffect(() => {
+        return () => {
+            if (cleanupGame) {
+                clearGame();
+            }
+        };
+    }, [cleanupGame, clearGame]);
 
     if (!gameState) {
         return <Navigate to="/" replace />;
@@ -87,9 +91,8 @@ const SummaryPage: FC = () => {
     };
 
     const handleFinish = () => {
+        setCleanupGame(true);
         const gameType = gameState.gameType;
-        setIsLeaving(true);
-        clearGame();
         if (gameType === 'practice') {
             navigate('/');
             return;
