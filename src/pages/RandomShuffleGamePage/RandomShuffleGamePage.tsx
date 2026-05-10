@@ -62,8 +62,6 @@ const RandomShuffleGamePage: FC = () => {
 
     const card = gameState.flashcards[gameState.currentFlashcardIndex];
 
-    console.log(gameFinished, gameState.currentFlashcardIndex);
-
     const handleToggleAnswer = () => {
         setShowAnswer(!showAnswer);
     };
