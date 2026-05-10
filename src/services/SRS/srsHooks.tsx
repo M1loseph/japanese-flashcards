@@ -48,31 +48,3 @@ export const useAddNewRandomWords = () => {
         },
     });
 };
-
-// export const useMarkWordAsReviewed = () => {
-//     return useMutation({
-//         mutationKey: ['markWordAsReviewed'],
-//         mutationFn: ({ wordId, correct }: { wordId: string; correct: boolean }) => markWordAsReviewed(wordId, correct),
-//         onSuccess: () => {
-//             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
-//         },
-//     });
-// };
-
-// const markWordsAsReviewedBatch = (reviews: { wordId: string; correct: boolean }[]) => {
-//     return db.transaction('rw', db.wordProgress, async () => {
-//         for (const { wordId, correct } of reviews) {
-//             await markWordAsReviewed(wordId, correct);
-//         }
-//     });
-// };
-
-// export const useMarkWordsAsReviewedBatch = () => {
-//     return useMutation({
-//         mutationKey: ['markWordsAsReviewedBatch'],
-//         mutationFn: (reviews: { wordId: string; correct: boolean }[]) => markWordsAsReviewedBatch(reviews),
-//         onSuccess: () => {
-//             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
-//         },
-//     });
-// };
