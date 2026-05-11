@@ -15,6 +15,8 @@ interface GameContextType {
     ) => void;
     updateLanguage: (language: TranslationLanguage) => void;
     updateSimplifiedMode: (enabled: boolean) => void;
+    skipRemainingFlashcards: () => Promise<void>;
+    undoLastAction: () => void;
 }
 
 export const GameContext = createContext<GameContextType | undefined>(undefined);
