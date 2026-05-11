@@ -10,14 +10,6 @@ const duolingo_5: TranslatedJapaneseText[] = [
         description: "Used as a subtle way to say you don't like something.",
     },
     {
-        id: '0ac84521-24d8-4ef2-b260-479293d0724f',
-        type: 'adjective',
-        adjective_type: 'i-adjective',
-        en: 'New',
-        pl: 'Nowy',
-        jp: { text: '新しい', pronunciation: 'あたらしい' },
-    },
-    {
         id: '4d730be7-4f0c-4553-bef5-54c27d31d03d',
         type: 'noun',
         en: 'Skirt',
