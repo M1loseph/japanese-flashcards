@@ -1,5 +1,6 @@
 import { useEffect, useState, type FC, type ReactNode } from 'react';
 import { findWordById } from '../../japanese/search';
+import type { FlashcardSession } from '../../types/FlashcardSession';
 import { GameStateSchema, type GameState, type GameType } from '../../types/GameState';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { shuffleArray } from '../../utils';
@@ -76,6 +77,16 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         });
     };
 
+    const saveProgressForSRSGame = async (gameType: GameType, updatedFlashcards: FlashcardSession[]) => {
+        if (gameType === 'srs') {
+            const reviews = updatedFlashcards.map((card) => ({
+                wordId: card.wordId,
+                correct: card.correct,
+            }));
+            await markWordsAsReviewedBatch(reviews);
+        }
+    };
+
     const markCurrentFlashcard = async (correct: boolean) => {
         if (!gameState || gameState.type !== 'in-progress') {
             throw new Error('Can only mark flashcards if the game is in progress');
@@ -87,13 +98,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         updatedFlashcards[gameState.currentFlashcardIndex] = updatedCard;
 
         if (gameState.currentFlashcardIndex === gameState.flashcards.length - 1) {
-            if (gameState.gameType === 'srs') {
-                const reviews = updatedFlashcards.map((card) => ({
-                    wordId: card.wordId,
-                    correct: card.correct,
-                }));
-                await markWordsAsReviewedBatch(reviews);
-            }
+            await saveProgressForSRSGame(gameState.gameType, updatedFlashcards);
             const { version, title, gameType, selectedLanguage, gameStartTimeMs, simplifiedMode } = gameState;
             setGameState({
                 version,
@@ -154,6 +159,49 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         });
     };
 
+    const skipRemainingFlashcards = async () => {
+        if (!gameState || gameState.type !== 'in-progress') {
+            throw new Error('Can only skip flashcards if the game is in progress');
+        }
+        const { version, title, gameType, selectedLanguage, simplifiedMode, gameStartTimeMs } = gameState;
+        const answeredFlashcards = gameState.flashcards.filter((card) => card.answered);
+        await saveProgressForSRSGame(gameType, answeredFlashcards);
+        setGameState({
+            version,
+            type: 'finished',
+            gameType,
+            gameStartTimeMs,
+            title,
+            selectedLanguage,
+            flashcards: answeredFlashcards,
+            simplifiedMode,
+            gameEndTimeMs: Date.now(),
+        });
+    };
+
+    const undoLastAction = () => {
+        setGameState((prev) => {
+            if (!prev || prev.type !== 'in-progress') {
+                throw new Error('Can only undo last action if the game is in progress');
+            }
+            if (prev.currentFlashcardIndex === 0) {
+                return prev;
+            }
+            const previousIndex = prev.currentFlashcardIndex - 1;
+            const updatedFlashcards = [...prev.flashcards];
+            updatedFlashcards[previousIndex] = {
+                wordId: updatedFlashcards[previousIndex].wordId,
+                correct: false,
+                answered: false,
+            };
+            return {
+                ...prev,
+                flashcards: updatedFlashcards,
+                currentFlashcardIndex: previousIndex,
+            };
+        });
+    };
+
     return (
         <GameContext.Provider
             value={{
@@ -164,6 +212,8 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
                 createNewGame,
                 updateLanguage,
                 updateSimplifiedMode,
+                skipRemainingFlashcards,
+                undoLastAction,
             }}
         >
             {children}

@@ -12,7 +12,14 @@ import ProgressBar from './flashcard/ProgressBar';
 import { GameSettingsModal } from './GameSettingsModal';
 
 const RandomShuffleGamePage: FC = () => {
-    const { gameState, updateLanguage, markCurrentFlashcard, updateSimplifiedMode } = useGameContext();
+    const {
+        gameState,
+        updateLanguage,
+        markCurrentFlashcard,
+        updateSimplifiedMode,
+        skipRemainingFlashcards,
+        undoLastAction,
+    } = useGameContext();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -65,8 +72,8 @@ const RandomShuffleGamePage: FC = () => {
     const handleAnswer = (correct: boolean) => {
         flashcardRef.current?.playAnimation(correct);
         setDisableButtons(true);
-        timerRef.current = setTimeout(() => {
-            markCurrentFlashcard(correct);
+        timerRef.current = setTimeout(async () => {
+            await markCurrentFlashcard(correct);
             setShowAnswer(false);
             setDisableButtons(false);
         }, 600);
@@ -92,6 +99,11 @@ const RandomShuffleGamePage: FC = () => {
         );
     }
 
+    const handleUndoLastAction = () => {
+        setShowAnswer(false);
+        undoLastAction();
+    };
+
     return (
         <FixedSizePage additionalHeaderComponents={headerSettings}>
             <div className="h-full flex flex-col items-stretch space-y-6">
@@ -106,6 +118,8 @@ const RandomShuffleGamePage: FC = () => {
                     card={word}
                     selectedLanguage={gameState.selectedLanguage}
                     showAnswer={showAnswer}
+                    undoLastAction={handleUndoLastAction}
+                    disableGoBack={gameState.currentFlashcardIndex === 0}
                 />
                 <FlashcardButtons
                     showAnswer={showAnswer}
@@ -113,6 +127,7 @@ const RandomShuffleGamePage: FC = () => {
                     correctPressed={() => handleAnswer(true)}
                     mistakePressed={() => handleAnswer(false)}
                     disableButtons={disableButtons}
+                    skipRemainingFlashcards={skipRemainingFlashcards}
                 />
                 <dialog className={`modal ${showPrompt ? 'modal-open' : ''}`}>
                     <div className="modal-box">
