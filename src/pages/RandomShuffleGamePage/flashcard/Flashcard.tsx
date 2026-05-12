@@ -52,10 +52,10 @@ const JapaneseFlashcard = forwardRef<FlashcardHandle, FlashcardProps>(
                 transition={{ duration: 0.3, repeat: animationPlaying ? 1 : 0, repeatType: 'reverse' }}
                 onAnimationComplete={handleAnimationComplete}
             >
-                <div className="flex-1 flex flex-col p-5">
-                    <div className="flex items-center justify-between">
+                <div className="flex-1 flex flex-col p-3">
+                    <div className="flex justify-between">
                         <Badges card={card} showAnswer={showAnswer} />
-                        <div>
+                        <div className="flex items-start gap-2">
                             <button
                                 className="btn btn-ghost btn-circle z-10"
                                 onClick={undoLastAction}
