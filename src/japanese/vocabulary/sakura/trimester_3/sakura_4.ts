@@ -67,15 +67,15 @@ const sakura_3_4: TranslatedJapaneseText[] = [
     {
         id: '24489048-01b4-4dab-8ff2-13b594f7001d',
         type: 'noun',
-        en: 'Kitchen',
-        pl: 'Kuchnia',
+        en: 'Kitchen (native Japanese word)',
+        pl: 'Kuchnia (rodzime japońskie słowo)',
         jp: { text: '台所', pronunciation: 'だいどころ' },
     },
     {
         id: 'afa91105-b268-424a-a98e-4d5f08dc3fc0',
         type: 'noun',
-        en: 'Building entrance / Japanese home entrance',
-        pl: 'Wejście do budynku / Japońskie wejście do domu',
+        en: 'Building entrance / Entry hall / Japanese home entrance',
+        pl: 'Wejście do budynku / Przedpokój / Japońskie wejście do domu',
         jp: { text: '玄関', pronunciation: 'げんかん' },
     },
     {
