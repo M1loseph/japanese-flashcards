@@ -131,8 +131,8 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: '5ff030a7-e069-4f8f-9014-f50d0373e5fb',
         type: 'noun',
-        en: 'Building entrance / Japanese home entrance',
-        pl: 'Wejście do budynku / Japońskie wejście do domu',
+        en: 'Building entrance / Entry hall / Japanese home entrance',
+        pl: 'Wejście do budynku / Przedpokój / Japońskie wejście do domu',
         jp: { text: '玄関', pronunciation: 'げんかん' },
     },
     {

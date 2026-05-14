@@ -269,8 +269,8 @@ const duolingo_7: TranslatedJapaneseText[] = [
     {
         id: '289367f1-d0b5-454a-ba51-fe17881d2f11',
         type: 'noun',
-        en: 'Kitchen',
-        pl: 'Kuchnia',
+        en: 'Kitchen (loan word)',
+        pl: 'Kuchnia (zapożyczone słowo)',
         jp: { text: 'キッチン' },
     },
     {

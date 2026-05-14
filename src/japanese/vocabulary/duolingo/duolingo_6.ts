@@ -234,8 +234,8 @@ const duolingo_6: TranslatedJapaneseText[] = [
     {
         id: 'eb0852f7-e4dd-4b1a-b9aa-c9e7297cc586',
         type: 'noun',
-        en: 'Cafe',
-        pl: 'Kawiarnia',
+        en: 'Cafe (loan word)',
+        pl: 'Kawiarnia (zapożyczone słowo)',
         jp: { text: 'カフェ' },
     },
     {
