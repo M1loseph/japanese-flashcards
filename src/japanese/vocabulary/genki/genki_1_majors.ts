@@ -20,7 +20,7 @@ const genki_1_majors: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Engineering (major)',
         pl: 'Inżynieria (kierunek)',
-        jp: { text: '工学 ', pronunciation: 'こうがく' },
+        jp: { text: '工学', pronunciation: 'こうがく' },
     },
     {
         id: '1a1e5e1d-2b37-4a06-87d7-4bb4ecc365a2',
