@@ -105,7 +105,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const numberOfWordsToReview = wordsToReview ? wordsToReview.length : 0;
     const totalWordsInSRS = Array.from(statistics.buckets.values()).reduce((sum, count) => sum + count, 0);
     const newWordsInStage0 = statistics.buckets.get(0);
-    const disableAddButton = (newWordsInStage0 ?? 0) > 0 && numberOfWordsToReview > 0;
+    const disableAddFunctionality = (newWordsInStage0 ?? 0) > 0 && numberOfWordsToReview > 0;
 
     return (
         <ScrollablePage>
@@ -193,8 +193,8 @@ export const SpacedRepetitionSystemPage: FC = () => {
                         <div>
                             <h2 className="text-xl font-bold">Expand Vocabulary</h2>
                             <p className="text-base-content/70 mt-1">
-                                {disableAddButton
-                                    ? 'You have new words waiting in first stage. Review them before adding more to keep your learning focused.'
+                                {disableAddFunctionality
+                                    ? 'You have new words waiting in the first stage. Review them before adding more to keep your learning focused.'
                                     : 'Ready for a challenge? Add new vocabulary items to your SRS queue.'}
                             </p>
                         </div>
@@ -203,7 +203,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 {WORD_COUNT_OPTIONS.map((count) => (
                                     <button
                                         key={count}
-                                        disabled={disableAddButton}
+                                        disabled={disableAddFunctionality}
                                         className={`btn ${selectedWordCount === count ? 'btn-primary' : ''}`}
                                         onClick={() => handleWordCountSelect(count)}
                                         onKeyDown={(e) => handleWordCountKeyDown(e, count)}
@@ -216,6 +216,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                             </div>
                             <select
                                 value={selectedWordBag}
+                                disabled={disableAddFunctionality}
                                 className="select w-full lg:flex-1"
                                 onChange={handleWordBagSelect}
                             >
@@ -231,7 +232,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                             className="btn btn-primary mt-6 lg:max-w-md lg:self-end"
                             onClick={handleConfirmAdd}
                             onKeyDown={handleConfirmAddKeyDown}
-                            disabled={disableAddButton}
+                            disabled={disableAddFunctionality}
                             aria-label={`Confirm and add ${selectedWordCount} words to SRS queue`}
                         >
                             <IconPlus size={16} aria-hidden="true" />
