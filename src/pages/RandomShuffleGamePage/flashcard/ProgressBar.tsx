@@ -13,7 +13,7 @@ const Metadata: FC<MetadataProps> = ({ total, currentIndex, timeString, classNam
         <div className={`flex items-center text-sm text-base-600 ${className}`}>
             <div className="flex flex-row items-center">
                 <IconStack3 size={14} />
-                <span className="ml-2">Cards left: {total - currentIndex - 1}</span>
+                <span className="ml-2">Cards left: {total - currentIndex}</span>
             </div>
             <div className="flex flex-row items-center">
                 <IconClock size={14} className="ml-2" />

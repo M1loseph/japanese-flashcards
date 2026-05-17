@@ -11,8 +11,8 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: '8f5a5935-aba7-4e51-960d-34605af95ce6',
         type: 'noun',
-        en: 'Mood',
-        pl: 'Nastrój',
+        en: 'Mood (loan word)',
+        pl: 'Nastrój (zapożyczone słowo)',
         jp: { text: 'ムード' },
     },
     {

@@ -1,8 +1,8 @@
 import { IconArrowRight, IconBolt, IconFlame, IconListDetails, IconPlus } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Select, { type MultiValue } from 'react-select';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
+import { Toast } from '../../components/Toast';
 import { availableWordBags } from '../../japanese';
 import { useGameContext } from '../../services/GameContext';
 import { useGameSettingsContext } from '../../services/GameStateContext';
@@ -30,7 +30,17 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const { mutateAsync: addNewRandomWords } = useAddNewRandomWords();
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
     const { currentStreak } = useStreak();
-    const [selectedWordBags, setSelectedWordBags] = useState<string[]>([]);
+    const [selectedWordBag, setSelectedWordBag] = useState<string | undefined>();
+
+    const [showToast, setShowToast] = useState(false);
+    const [toastMessage, setToastMessage] = useState('');
+    const [toastType, setToastType] = useState<'success' | 'warning'>('success');
+
+    const wordBagsWithNewWords = availableWordBags.filter((bag) => {
+        const bagWordIds = bag.words.map((w) => w.id);
+        const wordsInProgressIds = srsWords ? srsWords.map((w) => w.wordId) : [];
+        return bagWordIds.some((id) => !wordsInProgressIds.includes(id));
+    });
 
     const handleWordCountSelect = (count: WordCountOption) => {
         setSelectedWordCount(count);
@@ -58,19 +68,38 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleConfirmAdd = async () => {
-        const wordBags = selectedWordBags.length > 0 ? selectedWordBags : undefined;
-        await addNewRandomWords({ count: selectedWordCount, preferredWordBags: wordBags });
-    };
-
-    const handleConfirmAddKeyDown = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            handleConfirmAdd();
+        const preferredWordBags = selectedWordBag ? [selectedWordBag] : undefined;
+        const numberOfAddedWords = await addNewRandomWords({ count: selectedWordCount, preferredWordBags });
+        if (numberOfAddedWords > 0) {
+            if (selectedWordBag) {
+                const bagName = availableWordBags.find((bag) => bag.id === selectedWordBag)?.name || 'Unknown Bag';
+                setToastMessage(`${numberOfAddedWords} new words from "${bagName}" added successfully!`);
+            } else {
+                setToastMessage(`${numberOfAddedWords} new words added successfully!`);
+            }
+            setToastType('success');
+            setShowToast(true);
+        } else {
+            setToastMessage('No new words were added.');
+            setToastType('warning');
+            setShowToast(true);
         }
     };
 
-    const handleWordBagSelect = (selectedOptions: MultiValue<{ value: string; label: string }>) => {
-        setSelectedWordBags(selectedOptions.map((option) => option.value));
+    const handleConfirmAddKeyDown = async (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            await handleConfirmAdd();
+        }
+    };
+
+    const handleWordBagSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const selected = e.target.value;
+        if (selected === '') {
+            setSelectedWordBag(undefined);
+            return;
+        }
+        setSelectedWordBag(selected);
     };
 
     const numberOfWordsToReview = wordsToReview ? wordsToReview.length : 0;
@@ -81,6 +110,8 @@ export const SpacedRepetitionSystemPage: FC = () => {
     return (
         <ScrollablePage>
             <ExistingGameAlert />
+
+            <Toast message={toastMessage} type={toastType} open={showToast} handleClose={() => setShowToast(false)} />
 
             <p className="text-base-content/70 mb-6">Optimize your memory retention through precision-timed reviews.</p>
 
@@ -183,12 +214,18 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                     </button>
                                 ))}
                             </div>
-                            <Select
-                                className="flex-1"
-                                isMulti={true}
+                            <select
+                                value={selectedWordBag}
+                                className="select w-full lg:flex-1"
                                 onChange={handleWordBagSelect}
-                                options={availableWordBags.map((bag) => ({ value: bag.id, label: bag.name }))}
-                            />
+                            >
+                                <option selected />
+                                {wordBagsWithNewWords.map((bag) => (
+                                    <option key={bag.id} value={bag.id}>
+                                        {bag.name}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                         <button
                             className="btn btn-primary mt-6 lg:max-w-md lg:self-end"
