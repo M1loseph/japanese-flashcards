@@ -6,7 +6,7 @@ import { shuffleArray } from '../../utils';
 import { db } from './srsdb';
 import { MINIMUM_LEVEL } from './Stages';
 
-const addNewRandomWords = async (count: number, preferredWordBags?: string[]) => {
+const addNewRandomWords = async (count: number, preferredWordBags?: string[]): Promise<number> => {
     const wordsInProgress = (await db.wordProgress.toArray()).map((w) => w.wordId);
     const allWords = availableWordBags
         .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.id))
@@ -24,6 +24,7 @@ const addNewRandomWords = async (count: number, preferredWordBags?: string[]) =>
         level: MINIMUM_LEVEL,
     }));
     await db.wordProgress.bulkAdd(newProgressEntries);
+    return wordsToAdd.length;
 };
 
 export const useSRSWords = () => {
