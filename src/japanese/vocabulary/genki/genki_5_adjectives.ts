@@ -120,6 +120,27 @@ const genki_5_adjectives: TranslatedJapaneseText[] = [
         pl: 'Nie było cicho.',
         jp: { text: '静かじゃなかったです。', pronunciation: 'しずかじゃなかったです。' },
     },
+    {
+        id: '691d0d6f-784e-42c1-a64e-e1ea6fa9c25a',
+        type: 'phrase',
+        en: 'This is my favorite restaurant.',
+        pl: 'To jest moja ulubiona restauracja.',
+        jp: { text: 'これは私の好きなレストランです。', pronunciation: 'これはわたしのすきなレストランです。' },
+    },
+    {
+        id: '518bdb01-2623-4cf7-8df0-d742d9b0a4db',
+        type: 'phrase',
+        en: 'This is my least favorite shop.',
+        pl: 'To jest mój najmniej lubiony sklep.',
+        jp: { text: 'これは私の嫌いな店です。', pronunciation: 'これはわたしのきらいなみせです。' },
+    },
+    {
+        id: 'bee09201-dbef-4a20-a079-95f2af83b6f3',
+        type: 'phrase',
+        en: 'I went out with my friends.',
+        pl: 'Wyszedłem z przyjaciółmi.',
+        jp: { text: '友達と出かけました。', pronunciation: 'ともだちとでかけました。' },
+    },
 ];
 
 export const genki5AdjectivesBag: WordBag = {

@@ -406,6 +406,13 @@ const genki_5: TranslatedJapaneseText[] = [
         pl: 'Jaki rodzaj',
         jp: { text: 'どんな' },
     },
+    {
+        id: 'bee09201-dbef-4a20-a079-95f2af83b6f3',
+        type: 'phrase',
+        en: 'I went out with my friends.',
+        pl: 'Wyszedłem z przyjaciółmi.',
+        jp: { text: '友達と出かけました。', pronunciation: 'ともだちとでかけました。' },
+    },
 ];
 
 export const genki5Bag: WordBag = {
