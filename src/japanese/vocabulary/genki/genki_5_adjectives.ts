@@ -134,13 +134,6 @@ const genki_5_adjectives: TranslatedJapaneseText[] = [
         pl: 'To jest mój najmniej lubiony sklep.',
         jp: { text: 'これは私の嫌いな店です。', pronunciation: 'これはわたしのきらいなみせです。' },
     },
-    {
-        id: 'bee09201-dbef-4a20-a079-95f2af83b6f3',
-        type: 'phrase',
-        en: 'I went out with my friends.',
-        pl: 'Wyszedłem z przyjaciółmi.',
-        jp: { text: '友達と出かけました。', pronunciation: 'ともだちとでかけました。' },
-    },
 ];
 
 export const genki5AdjectivesBag: WordBag = {
