@@ -139,7 +139,7 @@ const sakura_3_4: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'The ball is on the side of the box.',
         pl: 'Piłka jest obok pudełka.',
-        jp: { text: 'ボールは箱の横にあります。', pronunciation: 'ボールははこのよこにあります。' },
+        jp: { text: 'ボールは箱の横です。', pronunciation: 'ボールははこのよこです。' },
     },
     {
         id: 'd1e73282-de0e-4ed7-a495-dc96ae2aaa51',
