@@ -3,6 +3,7 @@ export { countingFloorsBag } from './vocabulary/counting/countingFloors';
 export { countingLongCylindricalThingsBag } from './vocabulary/counting/countingLongCylindricalThings';
 export { countingPeopleBag } from './vocabulary/counting/countingPeople';
 export { countingPeoplePoliteBag } from './vocabulary/counting/countingPeoplePolite';
+export { countingRepetitiveActionsBag } from './vocabulary/counting/countingRepetitiveActions';
 export { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals';
 export { countingThingsBag } from './vocabulary/counting/countingThings';
 export { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects';

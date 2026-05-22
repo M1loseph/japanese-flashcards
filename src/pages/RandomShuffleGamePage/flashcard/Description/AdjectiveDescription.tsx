@@ -23,10 +23,18 @@ export const AdjectiveDescription: FC<AdjectiveDescriptionProps> = ({ adjective 
         if (adjective.adjective_type !== 'i-adjective-irregular') {
             const type = adjective.adjective_type;
             const text = adjective.jp.text;
-            const pronunciation = adjective.jp.pronunciation;
+            const pronunciation = (() => {
+                if (!adjective.jp.pronunciation) {
+                    return undefined;
+                } else if (typeof adjective.jp.pronunciation === 'string') {
+                    return generateNegativeForm(type, adjective.jp.pronunciation);
+                } else {
+                    return adjective.jp.pronunciation.map((p) => generateNegativeForm(type, p)).join(' / ');
+                }
+            })();
             return {
                 text: generateNegativeForm(type, text),
-                pronunciation: pronunciation ? generateNegativeForm(type, pronunciation) : undefined,
+                pronunciation,
             };
         }
         return adjective.negative;
