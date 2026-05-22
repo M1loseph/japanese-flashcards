@@ -6,6 +6,7 @@ import { countingFloorsBag } from './vocabulary/counting/countingFloors';
 import { countingLongCylindricalThingsBag } from './vocabulary/counting/countingLongCylindricalThings';
 import { countingPeopleBag } from './vocabulary/counting/countingPeople';
 import { countingPeoplePoliteBag } from './vocabulary/counting/countingPeoplePolite';
+import { countingRepetitiveActionsBag } from './vocabulary/counting/countingRepetitiveActions';
 import { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals';
 import { countingThingsBag } from './vocabulary/counting/countingThings';
 import { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects';
@@ -93,6 +94,7 @@ export const availableWordBags: WordBag[] = [
     countingPeoplePoliteBag,
     countingLongCylindricalThingsBag,
     countingThinObjectsBag,
+    countingRepetitiveActionsBag,
     ordinalNumbersBag,
     weekBag,
     hoursBag,
@@ -167,9 +169,6 @@ export const availableWordBags: WordBag[] = [
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {
     const wordBagsById: Map<string, WordBag> = availableWordBags.reduce((acc, bag) => {
-        if (acc.has(bag.id)) {
-            throw new Error(`Duplicate bag id: ${bag.id}`);
-        }
         acc.set(bag.id, bag);
         return acc;
     }, new Map<string, WordBag>());
@@ -182,8 +181,16 @@ export const textMatchesQuery = (
     selectedLanguage: TranslationLanguage,
 ): boolean => {
     if (query === '') return true;
-    const wordRomaji = toRomaji(text.jp.pronunciation || text.jp.text);
-    if (wordRomaji.includes(query)) return true;
+    if (!text.jp.pronunciation) {
+        const wordRomaji = toRomaji(text.jp.text);
+        if (wordRomaji.includes(query)) return true;
+    } else if (typeof text.jp.pronunciation === 'string') {
+        const wordRomaji = toRomaji(text.jp.pronunciation);
+        if (wordRomaji.includes(query)) return true;
+    } else {
+        const pronunciationsRomaji = text.jp.pronunciation.map((p) => toRomaji(p));
+        if (pronunciationsRomaji.some((p) => p.includes(query))) return true;
+    }
     if (text[selectedLanguage].toLocaleLowerCase().includes(query)) return true;
     return false;
 };

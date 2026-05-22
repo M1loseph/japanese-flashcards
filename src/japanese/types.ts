@@ -3,7 +3,7 @@ import * as z from 'zod';
 
 const TextWithPronunciationSchema = z.object({
     text: z.string(),
-    pronunciation: z.string().optional(),
+    pronunciation: z.string().or(z.string().array()).optional(),
 });
 
 export type TextWithPronunciation = z.infer<typeof TextWithPronunciationSchema>;

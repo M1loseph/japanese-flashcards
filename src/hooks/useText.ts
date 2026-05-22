@@ -8,7 +8,13 @@ export const useMainText = (word: TextWithPronunciation): string => {
     }
     const { simplifiedMode } = gameState;
     if (simplifiedMode) {
-        return word.pronunciation || word.text;
+        if (!word.pronunciation) {
+            return word.text;
+        } else if (typeof word.pronunciation === 'string') {
+            return word.pronunciation;
+        } else {
+            return word.pronunciation.join(' / ');
+        }
     }
     return word.text;
 };
@@ -23,7 +29,11 @@ export const useSecondaryText = (word: TextWithPronunciation): string | undefine
         return undefined;
     }
     if (word.pronunciation) {
-        return word.pronunciation;
+        if (typeof word.pronunciation === 'string') {
+            return word.pronunciation;
+        } else {
+            return word.pronunciation.join(' / ');
+        }
     }
     return undefined;
 };

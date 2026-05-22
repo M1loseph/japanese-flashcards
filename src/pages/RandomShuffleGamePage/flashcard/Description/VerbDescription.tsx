@@ -70,9 +70,15 @@ const generatePresentFormFromDictionaryForm = (
     }
     const suffix = form === 'affirmative' ? MASU_SUFFIX : MASEN_SUFFIX;
     const text = applyMasuStem(verb.jp.text, verb.verb_type, suffix);
-    const pronunciation = verb.jp.pronunciation
-        ? applyMasuStem(verb.jp.pronunciation, verb.verb_type, suffix)
-        : undefined;
+    const pronunciation = (() => {
+        if (!verb.jp.pronunciation) {
+            return undefined;
+        } else if (typeof verb.jp.pronunciation === 'string') {
+            return applyMasuStem(verb.jp.pronunciation, verb.verb_type, suffix);
+        } else {
+            return verb.jp.pronunciation.map((p) => applyMasuStem(p, verb.verb_type, suffix)).join(' / ');
+        }
+    })();
     return { text, pronunciation };
 };
 
