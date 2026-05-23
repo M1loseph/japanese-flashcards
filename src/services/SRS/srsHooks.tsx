@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { dayjs } from '../../dayjs';
+import dayjs from '../../dayjs';
 import { availableWordBags } from '../../japanese';
 import { findWordById } from '../../japanese/search';
 import { queryClient } from '../../queryClient';
