@@ -371,9 +371,9 @@ const genki_3: TranslatedJapaneseText[] = [
     {
         id: '94ec7e38-d362-4461-a635-314e76bbcfc3',
         type: 'phrase',
-        en: 'How about ...?',
-        pl: 'A co z ...?',
-        jp: { text: '・・・はどうですか' },
+        en: 'How about a fish?',
+        pl: 'Co powiesz na rybę?',
+        jp: { text: '魚はどうですか。', pronunciation: 'さかなはどうですか。' },
     },
     {
         id: '878eeb94-da79-40a8-a31a-331b7c5767e2',

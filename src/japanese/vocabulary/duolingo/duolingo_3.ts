@@ -71,9 +71,9 @@ const duolingo_3: TranslatedJapaneseText[] = [
     {
         id: '88e59e4b-1ae6-409c-8d97-fb4248f1991e',
         type: 'phrase',
-        en: 'How is...',
-        pl: 'Jakie jest...',
-        jp: { text: 'どうですか' },
+        en: 'How is in Tokyo?',
+        pl: 'Jakie jest w Tokio?',
+        jp: { text: '東京はどうですか。', pronunciation: 'とうきょうはどうですか。' },
     },
     {
         id: '945f8954-e2e2-40cf-b7a8-f27c52499374',

@@ -60,8 +60,8 @@ const sakura_1_6: TranslatedJapaneseText[] = [
     {
         id: '43bc15cc-fb43-4477-99e1-0b2b0e69252e',
         type: 'phrase',
-        en: "It's a secret",
-        pl: 'To tajemnica',
+        en: "It's a secret.",
+        pl: 'To tajemnica.',
         jp: { text: 'ひみつです。' },
     },
     {
@@ -118,7 +118,7 @@ const sakura_1_6: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Who is this boy?',
         pl: 'Kto to jest ten chłopiec?',
-        jp: { text: 'このおとこのこはだれですか' },
+        jp: { text: 'このおとこのこはだれですか。' },
     },
 ];
 

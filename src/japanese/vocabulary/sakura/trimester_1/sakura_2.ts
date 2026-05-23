@@ -364,10 +364,10 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     },
     {
         id: 'b2e4706e-172b-4de0-a374-ca7de099cbb8',
-        type: 'phrase',
+        type: 'adverb',
         en: 'Not enough',
         pl: 'Niewystarczająco',
-        jp: { text: 'まだまだです。' },
+        jp: { text: 'まだまだ' },
     },
     {
         id: 'd289659e-6766-463d-ab78-dd990cca86ed',

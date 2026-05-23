@@ -317,7 +317,7 @@ const duolingo_15: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Welcome!',
         pl: 'Witamy!',
-        jp: { text: 'いらっしゃいませ' },
+        jp: { text: 'いらっしゃいませ！' },
     },
     {
         id: '213202dc-0a51-4ed0-81a4-044680724bc1',
