@@ -581,6 +581,13 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         pl: 'Kakałko',
         jp: { text: 'ココア' },
     },
+    {
+        id: 'b59e00ae-e1cc-4bb7-b2d5-3380db519a67',
+        type: 'phrase',
+        en: 'How is the weather today?',
+        pl: 'Jaka jest dzisiaj pogoda?',
+        jp: { text: '今日の天気はどうですか。', pronunciation: 'きょうのてんきはどうですか。' },
+    },
 ];
 
 export const sakura2_11Bag: WordBag = {

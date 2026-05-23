@@ -76,7 +76,7 @@ const countingThings: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'How many ramen do you want?',
         pl: 'Ile ramenów chciałbyś?',
-        jp: { text: 'ラーメンがいくつ欲しいですか', pronunciation: 'ラーメンがいくつほしいですか' },
+        jp: { text: 'ラーメンがいくつ欲しいですか。', pronunciation: 'ラーメンがいくつほしいですか。' },
     },
     {
         id: 'f9fc4523-e6b4-4df1-ac64-a05a94bac9e2',

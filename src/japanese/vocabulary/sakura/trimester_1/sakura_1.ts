@@ -249,14 +249,14 @@ const sakura_1_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Good job!',
         pl: 'Dobra robota!',
-        jp: { text: 'じょうずです' },
+        jp: { text: 'じょうずです！' },
     },
     {
         id: '22e69d56-ac4d-4a18-9146-290560680baa',
         type: 'phrase',
-        en: "It's homework",
-        pl: 'To jest praca domowa',
-        jp: { text: 'しゅくだいです' },
+        en: "It's homework.",
+        pl: 'To jest praca domowa.',
+        jp: { text: 'しゅくだいです。' },
     },
     {
         id: '688d0539-9809-4012-8b88-020b42f5f6c4',

@@ -144,9 +144,9 @@ const duolingo_5: TranslatedJapaneseText[] = [
     },
     {
         id: '188830db-4502-4575-8403-58f89006b3ce',
-        type: 'phrase',
-        en: "..., isn't it?",
-        pl: '..., prawda?',
+        type: 'particle',
+        en: "Isn't it? / Right?",
+        pl: 'Co nie? / Prawda?',
         jp: { text: 'ね' },
     },
     {
@@ -193,10 +193,10 @@ const duolingo_5: TranslatedJapaneseText[] = [
     },
     {
         id: '426dbecf-37c4-4a3a-9733-836011bf5366',
-        type: 'phrase',
-        en: 'Well then...',
-        pl: 'Cóż, w takim razie ...',
-        jp: { text: 'じゃあ…' },
+        type: 'conjunction',
+        en: 'Well then',
+        pl: 'Cóż, w takim razie',
+        jp: { text: 'じゃあ' },
     },
     {
         id: '8f2b41e1-c7d8-4d9d-a34c-2aff77974287',

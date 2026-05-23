@@ -169,7 +169,7 @@ const genki_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Um...',
         pl: 'Yyy...',
-        jp: { text: 'あのう' },
+        jp: { text: 'あのう…' },
     },
     {
         id: '6eb79fa1-c2b2-4475-9e45-c69a1ea0b822',

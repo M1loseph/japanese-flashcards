@@ -70,8 +70,8 @@ const duolingo_9: TranslatedJapaneseText[] = [
     {
         id: 'e813a491-0cdc-4610-b1cd-5467dee460ff',
         type: 'phrase',
-        en: 'Feel bad',
-        pl: 'Czuć się źle',
+        en: 'I feel bad.',
+        pl: 'Czuję się źle.',
         jp: { text: 'ぐあいがわるいです。' },
     },
     {

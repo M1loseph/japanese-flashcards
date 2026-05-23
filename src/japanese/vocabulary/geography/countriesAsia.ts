@@ -64,6 +64,13 @@ const countriesAsia: TranslatedJapaneseText[] = [
         pl: 'Tajlandia',
         jp: { text: 'タイ' },
     },
+    {
+        id: '2f92a4d2-84c4-451c-a0d4-0272015dd469',
+        type: 'noun',
+        en: 'Indonesia',
+        pl: 'Indonezja',
+        jp: { text: 'インドネシア' },
+    },
 ];
 
 export const countriesAsiaBag: WordBag = {

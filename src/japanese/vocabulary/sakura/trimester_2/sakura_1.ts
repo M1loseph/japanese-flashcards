@@ -6,14 +6,14 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Happy New Year!',
         pl: 'Szczęśliwego Nowego Roku!',
-        jp: { text: 'あけましておめでとう' },
+        jp: { text: 'あけましておめでとう！' },
     },
     {
         id: 'd1ec2da8-fe76-4e6c-8609-0403c00605a8',
         type: 'phrase',
         en: 'Please treat me well this year too.',
         pl: 'Proszę, traktuj mnie też dobrze w tym roku.',
-        jp: { text: 'ことしもよろしく' },
+        jp: { text: 'ことしもよろしく。' },
     },
     {
         id: '5f7debdb-a1ef-42b6-b2b3-02ad42c4d1a2',
