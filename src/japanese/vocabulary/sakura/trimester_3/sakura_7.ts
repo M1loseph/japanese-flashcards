@@ -63,7 +63,7 @@ const sakura_3_7: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'What kind of place is Sakura school?',
         pl: 'Jakim miejscem jest szkoła Sakura?',
-        jp: { text: 'さくら学校はどんなところですか。', pronunciation: 'さくらがっこうはどんなところですか。' },
+        jp: { text: 'さくら学校はどんな場所ですか。', pronunciation: 'さくらがっこうはどんなばしょですか。' },
     },
     {
         id: 'e30b281d-f053-4dca-ba0b-a4a5a73e5ac7',
