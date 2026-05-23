@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
+import dayjs from '../../dayjs';
 import { availableWordBags } from '../../japanese';
 import { findWordById } from '../../japanese/search';
 import { queryClient } from '../../queryClient';
@@ -30,6 +31,7 @@ const addNewRandomWords = async (count: number, preferredWordBags?: string[]): P
 export const useSRSWords = () => {
     return useQuery({
         queryKey: ['databaseWords'],
+        staleTime: dayjs.duration(5, 'minutes').asMilliseconds(),
         queryFn: async () => {
             const words = await db.wordProgress.toArray();
             const orphanIds = words.filter((word) => !findWordById(word.wordId)).map((word) => word.wordId);
