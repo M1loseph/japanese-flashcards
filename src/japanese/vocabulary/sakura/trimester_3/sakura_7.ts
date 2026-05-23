@@ -79,6 +79,13 @@ const sakura_3_7: TranslatedJapaneseText[] = [
         pl: 'Marka',
         jp: { text: 'ブランド' },
     },
+    {
+        id: '7e6e44cf-8ae0-48cd-94b2-e4025b466e93',
+        type: 'noun',
+        en: 'Glasses',
+        pl: 'Okulary',
+        jp: { text: 'めがね' },
+    },
 ];
 
 export const sakura3_7Bag: WordBag = {
