@@ -9,7 +9,7 @@
 	},
 	"Vocabulary boilerplate": {
 		"scope": "typescript",
-		"prefix": "vo",
+		"prefix": "vocabulary",
 		"body": [
 			"{",
 			"	id: '$UUID',",
