@@ -11,8 +11,8 @@ const sakura_3_7: TranslatedJapaneseText[] = [
     {
         id: 'e9be9cba-be47-4b22-b669-4ca459c2a07c',
         type: 'noun',
-        en: 'Motorcycle',
-        pl: 'Motocykl',
+        en: 'Motorcycle (formal)',
+        pl: 'Motocykl (formalnie)',
         jp: { text: 'オートバイ' },
     },
     {
