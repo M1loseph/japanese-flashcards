@@ -162,7 +162,7 @@ const sakura_3_8: TranslatedJapaneseText[] = [
     {
         id: '8eb99f12-f3cb-4394-aa6a-562f7f47a3aa',
         type: 'noun',
-        en: 'Chorus',
+        en: 'Chorus (music group)',
         pl: 'Chór',
         jp: { text: 'コーラス' },
     },
