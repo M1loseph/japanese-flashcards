@@ -145,6 +145,34 @@ const sakura_3_8: TranslatedJapaneseText[] = [
         },
         description: 'Pay attention to は particle used after に.',
     },
+    {
+        id: '0edd7787-61a7-4f60-9673-25c785a06268',
+        type: 'noun',
+        en: 'Ham',
+        pl: 'Szynka',
+        jp: { text: 'ハム' },
+    },
+    {
+        id: '1593d57a-c02a-4f67-a1bb-98eb7a08a480',
+        type: 'noun',
+        en: 'Tape',
+        pl: 'Taśma',
+        jp: { text: 'テープ' },
+    },
+    {
+        id: '8eb99f12-f3cb-4394-aa6a-562f7f47a3aa',
+        type: 'noun',
+        en: 'Chorus (music group)',
+        pl: 'Chór',
+        jp: { text: 'コーラス' },
+    },
+    {
+        id: '461a94ce-61d5-4ed2-a48a-1e199f026169',
+        type: 'noun',
+        en: 'Sweater',
+        pl: 'Sweter',
+        jp: { text: 'セーター' },
+    },
 ];
 
 export const sakura3_8Bag: WordBag = {
