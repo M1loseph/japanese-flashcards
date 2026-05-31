@@ -236,7 +236,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 className="select w-full lg:flex-1"
                                 onChange={handleWordBagSelect}
                             >
-                                <option selected />
+                                <option value={undefined} />
                                 {wordBagsWithNewWords.map((bag) => (
                                     <option key={bag.id} value={bag.id}>
                                         {bag.name}
