@@ -1,7 +1,9 @@
 import { IconArrowRight, IconBolt, IconFlame, IconListDetails, IconPlus } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Card } from '../../components/Card';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
+import { PageTitle } from '../../components/PageTitle';
 import { Toast } from '../../components/Toast';
 import { availableWordBags } from '../../japanese';
 import { useGameContext } from '../../services/GameContext';
@@ -110,13 +112,10 @@ export const SpacedRepetitionSystemPage: FC = () => {
     return (
         <ScrollablePage>
             <ExistingGameAlert />
-
-            <Toast message={toastMessage} type={toastType} open={showToast} handleClose={() => setShowToast(false)} />
-
+            <PageTitle title="Spaced Repetition System" />
             <p className="text-base-content/70 mb-6">Optimize your memory retention through precision-timed reviews.</p>
-
             <section aria-label="Review and statistics" className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
-                <div className="card bg-base-200 lg:col-span-2 border border-base-300 rounded-lg shadow-lg p-4">
+                <Card className="lg:col-span-2">
                     <div className="card-body gap-4">
                         {numberOfWordsToReview > 0 && (
                             <div>
@@ -145,10 +144,10 @@ export const SpacedRepetitionSystemPage: FC = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </Card>
 
-                <div className="flex flex-col gap-4 border border-base-300 rounded-lg shadow-lg p-4">
-                    <div className="card bg-base-200 flex-1">
+                <div className="flex flex-col gap-4">
+                    <Card className="flex-1">
                         <div className="card-body p-4 gap-2">
                             <div className="flex justify-between items-center">
                                 <span className="font-semibold text-sm">Day Streak</span>
@@ -165,9 +164,9 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 aria-label={`Day streak: ${currentStreak} days`}
                             />
                         </div>
-                    </div>
+                    </Card>
 
-                    <div className="card bg-base-200 flex-1">
+                    <Card className="flex-1">
                         <div className="card-body p-4 gap-2">
                             <div className="flex justify-between items-center">
                                 <span className="font-semibold text-sm">Words in SRS</span>
@@ -183,12 +182,29 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 <span className="w-3 h-3 rounded-full bg-primary" aria-hidden="true" />
                             </div>
                         </div>
-                    </div>
+                    </Card>
                 </div>
             </section>
 
-            <section aria-label="Expand vocabulary" className="mb-8 border border-base-300 rounded-lg shadow-lg p-4">
-                <div className="card bg-base-200">
+            <section aria-label="SRS stages distribution" className="mb-8">
+                <h2 className="text-xl font-bold mb-4">SRS Stages Distribution</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                    {SRS_STAGES.map((stage, index) => (
+                        <Card key={stage.label} className="text-center items-center gap-2">
+                            <span className="text-primary" aria-hidden="true">
+                                <stage.icon size={24} />
+                            </span>
+                            <span className="text-xs uppercase tracking-wide font-semibold text-base-content/70">
+                                {stage.label}
+                            </span>
+                            <span className="text-3xl font-bold">{statistics.buckets.get(index) ?? 0}</span>
+                        </Card>
+                    ))}
+                </div>
+            </section>
+
+            <section aria-label="Expand vocabulary" className="mb-8">
+                <Card>
                     <div className="card-body p-6 gap-4">
                         <div>
                             <h2 className="text-xl font-bold">Expand Vocabulary</h2>
@@ -239,28 +255,9 @@ export const SpacedRepetitionSystemPage: FC = () => {
                             Confirm &amp; Add
                         </button>
                     </div>
-                </div>
+                </Card>
             </section>
-
-            <section
-                aria-label="SRS stages distribution"
-                className="mb-8 border border-base-300 rounded-lg shadow-lg p-4"
-            >
-                <h2 className="text-xl font-bold mb-4">SRS Stages Distribution</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                    {SRS_STAGES.map((stage, index) => (
-                        <div key={stage.label} className="card bg-base-200 p-4 text-center items-center gap-2">
-                            <span className="text-primary" aria-hidden="true">
-                                <stage.icon size={24} />
-                            </span>
-                            <span className="text-xs uppercase tracking-wide font-semibold text-base-content/70">
-                                {stage.label}
-                            </span>
-                            <span className="text-3xl font-bold">{statistics.buckets.get(index) ?? 0}</span>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <Toast message={toastMessage} type={toastType} open={showToast} handleClose={() => setShowToast(false)} />
         </ScrollablePage>
     );
 };

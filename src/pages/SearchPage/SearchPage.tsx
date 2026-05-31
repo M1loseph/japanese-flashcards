@@ -1,6 +1,7 @@
 import { IconZoom } from '@tabler/icons-react';
 import { useMemo, type FC } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { PageTitle } from '../../components/PageTitle';
 import { availableWordBags } from '../../japanese';
 import { textMatchesQuery } from '../../japanese/search';
 import type { TranslatedJapaneseText, WordBag } from '../../japanese/types';
@@ -63,7 +64,7 @@ export const SearchPage: FC = () => {
     return (
         <ScrollablePage>
             <div className="flex flex-col gap-6">
-                <h1 className="text-2xl font-bold">Search Words</h1>
+                <PageTitle title="Search Words" />
                 <label className="input input-bordered flex items-center gap-2 w-full">
                     <IconZoom size={16} className="opacity-50" />
                     <input
