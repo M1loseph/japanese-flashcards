@@ -5,6 +5,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import './index.css';
 import BagPage, { CultureNotesTab, WordsTab } from './pages/BagPage';
 import { DrawerLayout } from './pages/common/DrawerLayout';
+import DataManagementPage from './pages/DataManagementPage';
 import MainPage from './pages/MainPage';
 import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
 import SearchPage from './pages/SearchPage';
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
             {
                 path: '/srs',
                 Component: SpacedRepetitionSystemPage,
+            },
+            {
+                path: '/data-management',
+                Component: DataManagementPage,
             },
             {
                 path: '*',
