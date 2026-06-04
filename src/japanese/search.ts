@@ -79,6 +79,7 @@ import { sakura3_5Bag } from './vocabulary/sakura/trimester_3/sakura_5';
 import { sakura3_6Bag } from './vocabulary/sakura/trimester_3/sakura_6';
 import { sakura3_7Bag } from './vocabulary/sakura/trimester_3/sakura_7';
 import { sakura3_8Bag } from './vocabulary/sakura/trimester_3/sakura_8';
+import { sakura3_9Bag } from './vocabulary/sakura/trimester_3/sakura_9';
 import { daysOfMonthBag } from './vocabulary/time/daysOfMonth';
 import { hoursBag } from './vocabulary/time/hours';
 import { minutesBag } from './vocabulary/time/minutes';
@@ -171,6 +172,7 @@ export const availableWordBags: WordBag[] = [
     sakura3_6Bag,
     sakura3_7Bag,
     sakura3_8Bag,
+    sakura3_9Bag,
 ];
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {

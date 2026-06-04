@@ -355,7 +355,7 @@ const duolingo_16: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         en: 'Walk',
-        pl: 'Chodzić',
+        pl: 'Iść pieszo',
         jp: { text: '歩く', pronunciation: 'あるく' },
     },
     {
