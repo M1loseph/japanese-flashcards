@@ -91,14 +91,14 @@ const sakura_3_9: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Bus terminal / Bus station',
         pl: 'Pętla autobusowa / Dworzec autobusowy',
-        jp: { text: ' バス乗り場', pronunciation: 'バスのりば' },
+        jp: { text: 'バス乗り場', pronunciation: 'バスのりば' },
     },
     {
         id: '115cb25b-f49d-4bb3-936a-7121cf3f6826',
         type: 'noun',
         en: 'Taxi stand',
         pl: 'Postój taksówek',
-        jp: { text: ' タクシー乗り場', pronunciation: 'タクシーのりば' },
+        jp: { text: 'タクシー乗り場', pronunciation: 'タクシーのりば' },
     },
     {
         id: '75399f69-0875-4511-856a-513e1bf94197',
@@ -113,6 +113,13 @@ const sakura_3_9: TranslatedJapaneseText[] = [
         en: 'How do you get to the station?',
         pl: 'Jak dostajesz się na stację?',
         jp: { text: 'どうやって駅に行きますか。', pronunciation: 'どうやってえきにいきますか。' },
+    },
+    {
+        id: 'eb04c59e-af6e-45c0-82f8-0ee972101869',
+        type: 'noun',
+        en: 'Killometer',
+        pl: 'Kilometr',
+        jp: { text: 'キロメートル' },
     },
 ];
 
