@@ -79,6 +79,13 @@ const directions: TranslatedJapaneseText[] = [
         jp: { text: '間', pronunciation: 'あいだ' },
     },
     {
+        id: 'd853a86a-4e4c-4a7f-8c6d-4e82eccc6d10',
+        type: 'noun',
+        en: 'Around / Surrounding',
+        pl: 'Wokół / Otoczenie',
+        jp: { text: '周り', pronunciation: 'まわり' },
+    },
+    {
         id: '74f25db6-d8e0-469f-89ca-58e509c19400',
         type: 'phrase',
         en: "It's between the bank and the post office.",

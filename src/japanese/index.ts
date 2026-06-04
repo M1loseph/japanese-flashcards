@@ -76,6 +76,7 @@ export { sakura3_5Bag } from './vocabulary/sakura/trimester_3/sakura_5';
 export { sakura3_6Bag } from './vocabulary/sakura/trimester_3/sakura_6';
 export { sakura3_7Bag } from './vocabulary/sakura/trimester_3/sakura_7';
 export { sakura3_8Bag } from './vocabulary/sakura/trimester_3/sakura_8';
+export { sakura3_9Bag } from './vocabulary/sakura/trimester_3/sakura_9';
 export { daysOfMonthBag } from './vocabulary/time/daysOfMonth';
 export { hoursBag } from './vocabulary/time/hours';
 export { minutesBag } from './vocabulary/time/minutes';

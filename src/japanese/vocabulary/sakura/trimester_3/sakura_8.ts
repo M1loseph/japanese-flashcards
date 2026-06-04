@@ -173,6 +173,21 @@ const sakura_3_8: TranslatedJapaneseText[] = [
         pl: 'Sweter',
         jp: { text: 'セーター' },
     },
+    {
+        id: '6aca5a0d-ef51-45b8-a910-6a5bdb1c29a6',
+        type: 'verb',
+        verb_type: 'godan',
+        en: 'Walk',
+        pl: 'Chodzić',
+        jp: { text: '歩く', pronunciation: 'あるく' },
+    },
+    {
+        id: 'b154ee5f-cd3b-40fe-b29e-6485b789f4ef',
+        type: 'phrase',
+        en: 'I walk to school every day.',
+        pl: 'Chodzę do szkoły codziennie.',
+        jp: { text: '毎日学校に歩いて行きます。', pronunciation: 'まいにちがっこうにあるいていきます。' },
+    },
 ];
 
 export const sakura3_8Bag: WordBag = {
