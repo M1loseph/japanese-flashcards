@@ -117,7 +117,7 @@ const sakura_3_9: TranslatedJapaneseText[] = [
     {
         id: 'eb04c59e-af6e-45c0-82f8-0ee972101869',
         type: 'noun',
-        en: 'Killometer',
+        en: 'Kilometer',
         pl: 'Kilometr',
         jp: { text: 'キロメートル' },
     },
