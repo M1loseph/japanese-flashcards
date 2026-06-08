@@ -41,7 +41,7 @@ const sakura_3_9: TranslatedJapaneseText[] = [
         id: 'c9f941df-598a-4e65-8630-50550502f197',
         type: 'noun',
         en: 'Locker',
-        pl: 'Szafka',
+        pl: 'Szafka (w szkole, na siłowni itp.)',
         jp: { text: 'ロッカー' },
     },
     {
@@ -120,6 +120,29 @@ const sakura_3_9: TranslatedJapaneseText[] = [
         en: 'Kilometer',
         pl: 'Kilometr',
         jp: { text: 'キロメートル' },
+    },
+    {
+        id: 'd4fb3857-a406-4e9a-bcab-4b7c5b81e60b',
+        type: 'adjective',
+        adjective_type: 'na-adjective',
+        en: 'Comfortable / Easy / Simple',
+        pl: 'Wygodny / Swobodny / Prosty',
+        jp: { text: '楽', pronunciation: 'らく' },
+    },
+    {
+        id: '5adb4ac5-b156-4e85-a87f-30d0a7878ffe',
+        type: 'verb',
+        verb_type: 'ichidan',
+        en: 'Get tired / Become exhausted',
+        pl: 'Zmęczyć się / Stać się wyczerpanym',
+        jp: { text: '疲れる', pronunciation: 'つかれる' },
+    },
+    {
+        id: 'aeae7704-30e8-4481-9a7c-97d618eb21eb',
+        type: 'noun',
+        en: 'Camera',
+        pl: 'Aparat fotograficzny',
+        jp: { text: 'カメラ' },
     },
 ];
 
