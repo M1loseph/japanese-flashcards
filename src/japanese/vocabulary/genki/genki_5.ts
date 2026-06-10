@@ -344,7 +344,7 @@ const genki_5: TranslatedJapaneseText[] = [
         id: 'cea7dc18-d265-4cdd-9a6f-de366560c191',
         type: 'verb',
         verb_type: 'godan',
-        en: 'To do / Perform',
+        en: 'Do / Perform',
         pl: 'Robić / Wykonywać',
         jp: { text: 'やる' },
     },
@@ -359,8 +359,8 @@ const genki_5: TranslatedJapaneseText[] = [
         id: 'c5af3824-0e59-4288-b0bd-5f2948d45cf9',
         type: 'verb',
         verb_type: 'ichidan',
-        en: 'Go out / Exit',
-        pl: 'Wyjść',
+        en: 'Go out (with a purpose)',
+        pl: 'Wyjść (z jakimś celem)',
         jp: { text: '出かける', pronunciation: 'でかける' },
     },
     {
@@ -373,7 +373,7 @@ const genki_5: TranslatedJapaneseText[] = [
     {
         id: '1e540b33-d10f-4f3b-838d-1331542c126a',
         type: 'phrase',
-        en: 'To go together',
+        en: 'Go together',
         pl: 'Iść razem',
         jp: { text: '一緒に行く', pronunciation: 'いっしょにいく' },
     },

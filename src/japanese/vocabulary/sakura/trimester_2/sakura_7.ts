@@ -324,7 +324,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         id: 'c42cff98-9369-4557-bc05-d5cb5d7b3330',
         type: 'verb',
         verb_type: 'godan',
-        en: 'To pass through',
+        en: 'Pass through',
         pl: 'Przechodzić przez',
         jp: { text: '通る', pronunciation: 'とおる' },
     },
