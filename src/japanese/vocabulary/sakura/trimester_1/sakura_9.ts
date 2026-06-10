@@ -142,7 +142,7 @@ const sakura_1_9: TranslatedJapaneseText[] = [
         id: '988f31cb-b343-4430-92a5-e366d1bfec0d',
         type: 'verb',
         verb_type: 'ichidan',
-        en: 'To watch',
+        en: 'Watch',
         pl: 'Oglądać',
         jp: { text: 'みる' },
     },

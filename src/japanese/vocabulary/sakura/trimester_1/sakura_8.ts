@@ -61,7 +61,7 @@ const sakura_1_8: TranslatedJapaneseText[] = [
     {
         id: 'c461203f-eee8-4e9c-915b-8b13283f2552',
         type: 'phrase',
-        en: 'To like',
+        en: 'Like',
         pl: 'Lubić',
         jp: { text: 'すきです' },
     },

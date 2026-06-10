@@ -106,8 +106,8 @@ const duolingo_7: TranslatedJapaneseText[] = [
         id: '5f925cf7-9e0d-4d3b-a2a0-dc0fca33ab40',
         type: 'verb',
         verb_type: 'ichidan',
-        en: 'Go out',
-        pl: 'Wyjść',
+        en: 'Go out (with a purpose)',
+        pl: 'Wyjść (z jakimś celem)',
         jp: { text: '出かける', pronunciation: 'でかける' },
     },
     {
