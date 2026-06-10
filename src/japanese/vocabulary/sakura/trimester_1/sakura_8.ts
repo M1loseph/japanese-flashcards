@@ -149,6 +149,20 @@ const sakura_1_8: TranslatedJapaneseText[] = [
         pl: 'Restauracja',
         jp: { text: 'レストラン' },
     },
+    {
+        id: '2cb410bd-29aa-4cbc-88eb-38e4e153d716',
+        type: 'phrase',
+        en: 'What animals do you like?',
+        pl: 'Jakie zwierzęta lubisz?',
+        jp: { text: '動物は何が好きですか。', pronunciation: 'どうぶつはなにがすきですか。' },
+    },
+    {
+        id: '6d47f886-2f02-4a98-b8d0-0c4b15c69e20',
+        type: 'phrase',
+        en: 'What food do you like?',
+        pl: 'Jakie jedzenie lubisz?',
+        jp: { text: '食べ物は何が好きですか。', pronunciation: 'たべものはなにがすきですか。' },
+    },
 ];
 
 export const sakura1_8Bag: WordBag = {
