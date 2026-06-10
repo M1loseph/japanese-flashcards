@@ -116,9 +116,9 @@ const months: TranslatedJapaneseText[] = [
     {
         id: '95b3ff51-f67e-43d8-8dc9-87fca6bb62eb',
         type: 'noun',
-        en: 'Two months ago',
-        pl: 'Dwa miesiące temu',
-        jp: { text: '二か月前', pronunciation: 'にかげつまえ' },
+        en: 'The month before last',
+        pl: 'Miesiąc przed poprzednim',
+        jp: { text: '先々月', pronunciation: 'せんせんげつ' },
     },
     {
         id: '0360fa4a-7ae6-433a-8165-f45c9cf61965',
