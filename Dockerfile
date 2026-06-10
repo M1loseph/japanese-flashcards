@@ -1,6 +1,11 @@
 FROM node:26.3.0-alpine AS build
 
 WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm ci
+
 COPY . .
 
 RUN npm install
