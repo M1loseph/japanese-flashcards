@@ -11,11 +11,39 @@ import type { FC } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Card } from '../../components/Card';
 import { PageTitle } from '../../components/PageTitle';
+import { useSRSWords } from '../../services/SRS';
+import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { ScrollablePage } from '../common/ScrollablePage';
+
+interface ExportedData {
+    srsWords: WordLearningProgress[];
+}
 
 const DataManagementPage: FC = () => {
     // TODO: implement file import here files: File[]
     const onDrop = () => {};
+
+    const { data: srsWords, isSuccess } = useSRSWords();
+
+    const onExportToZip = async () => {
+        if (!srsWords) return;
+        const exportedData: ExportedData = {
+            srsWords,
+        };
+        const jsonString = JSON.stringify(exportedData, null, 2);
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        const compressionStream = blob.stream().pipeThrough(new CompressionStream('gzip'));
+        const data = await new Response(compressionStream).arrayBuffer();
+
+        const url = URL.createObjectURL(new Blob([data], { type: 'application/gzip' }));
+
+        const link = document.createElement('a');
+        link.download = `japanese_flashcards_state_${new Date().toISOString()}.json.zip`;
+        link.href = url;
+        link.click();
+
+        URL.revokeObjectURL(url);
+    };
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
@@ -55,7 +83,7 @@ const DataManagementPage: FC = () => {
                                 <span className="font-label-md text-label-md">Audio &amp; Image Resources</span>
                             </li>
                         </ul>
-                        <button className="btn btn-primary btn-lg w-full">
+                        <button disabled={!isSuccess} className="btn btn-primary btn-lg w-full" onClick={onExportToZip}>
                             <IconArchive size={20} />
                             Export to ZIP
                         </button>
