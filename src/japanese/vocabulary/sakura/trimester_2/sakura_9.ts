@@ -27,7 +27,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
         id: '2b45378f-79d1-43d1-b98d-928b38d83638',
         type: 'verb',
         verb_type: 'ichidan',
-        en: 'To come out',
+        en: 'Leave / Exit',
         pl: 'Wychodzić',
         jp: { text: '出る', pronunciation: 'でる' },
     },

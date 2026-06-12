@@ -20,6 +20,7 @@ const renderWithContext = (ui: React.ReactNode, contextValue: HardTextContextTyp
 const createMockContext = (isHard: boolean): HardTextContextType => ({
     isHardText: vi.fn(() => isHard),
     toggleHardText: vi.fn(),
+    getHardTextList: vi.fn(() => [mockWord.id]),
 });
 
 describe('HardTextIcon', () => {
