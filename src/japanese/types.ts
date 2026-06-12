@@ -50,9 +50,16 @@ const SuruVerbSchema = TranslationSchema.extend({
     verb_type: z.literal('suru'),
 });
 
+const KuruVerbSchema = TranslationSchema.extend({
+    type: z.literal('verb'),
+    verb_type: z.literal('kuru'),
+    te_form: TextWithPronunciationSchema,
+});
+
 const VerbSchema = z.discriminatedUnion('verb_type', [
     AuxiliaryVerbSchema,
     SuruVerbSchema,
+    KuruVerbSchema,
     GodanVerbSchema,
     IchidanVerbSchema,
     IrregularVerbSchema,
@@ -65,6 +72,8 @@ export type GodanVerb = z.infer<typeof GodanVerbSchema>;
 export type IchidanVerb = z.infer<typeof IchidanVerbSchema>;
 
 export type IrregularVerb = z.infer<typeof IrregularVerbSchema>;
+
+export type KuruVerb = z.infer<typeof KuruVerbSchema>;
 
 export type Verb = z.infer<typeof VerbSchema>;
 
