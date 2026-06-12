@@ -11,12 +11,14 @@ import type { FC } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Card } from '../../components/Card';
 import { PageTitle } from '../../components/PageTitle';
+import { useHardText } from '../../services/HardWordsContext';
 import { useSRSWords } from '../../services/SRS';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { ScrollablePage } from '../common/ScrollablePage';
 
 interface ExportedData {
     srsWords: WordLearningProgress[];
+    hardText: string[];
 }
 
 const DataManagementPage: FC = () => {
@@ -24,11 +26,13 @@ const DataManagementPage: FC = () => {
     const onDrop = () => {};
 
     const { data: srsWords, isSuccess } = useSRSWords();
+    const { getHardTextList } = useHardText();
 
     const onExportToZip = async () => {
         if (!srsWords) return;
         const exportedData: ExportedData = {
             srsWords,
+            hardText: getHardTextList(),
         };
         const jsonString = JSON.stringify(exportedData, null, 2);
         const blob = new Blob([jsonString], { type: 'application/json' });

@@ -4,6 +4,7 @@ import type { TranslatedJapaneseText } from '../../japanese';
 export interface HardTextContextType {
     isHardText: (text: TranslatedJapaneseText) => boolean;
     toggleHardText: (text: TranslatedJapaneseText) => void;
+    getHardTextList: () => string[];
 }
 
 export const HardTextContext = createContext<HardTextContextType | undefined>(undefined);
