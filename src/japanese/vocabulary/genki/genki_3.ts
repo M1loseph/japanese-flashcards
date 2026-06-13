@@ -281,8 +281,8 @@ const genki_3: TranslatedJapaneseText[] = [
         jp: { text: '来る', pronunciation: 'くる' },
         present: {
             masu: {
-                affirmative: { text: '来ます' },
-                negative: { text: '来ません' },
+                affirmative: { text: '来ます', pronunciation: 'きます' },
+                negative: { text: '来ません', pronunciation: 'きません' },
             },
         },
         te_form: { text: '来て', pronunciation: 'きて' },
