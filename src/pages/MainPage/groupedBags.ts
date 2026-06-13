@@ -43,6 +43,7 @@ import {
     hoursBag,
     minutesBag,
     monthsBag,
+    numberOfDaysBag,
     numbersBag,
     ordinalNumbersBag,
     planetsBag,
@@ -89,7 +90,7 @@ import {
 } from '../../japanese';
 
 export const groupedBags: Record<string, WordBag[]> = {
-    'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, daysOfMonthBag, yearsBag],
+    'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, numberOfDaysBag, daysOfMonthBag, yearsBag],
     'Counting 🔢': [
         countingAgeBag,
         countingThinObjectsBag,

@@ -62,6 +62,15 @@ const irregularVerb: TranslatedJapaneseText = {
     te_form: { text: 'して' },
 };
 
+const kuruVerb: TranslatedJapaneseText = {
+    id: '4e07006f-6f50-4d76-9bca-06c8b7185cb7',
+    type: 'verb',
+    verb_type: 'kuru',
+    en: 'Bring (a thing)',
+    pl: 'Przynieść (rzecz)',
+    jp: { text: '持ってくる', pronunciation: 'もってくる' },
+};
+
 const suruVerb: TranslatedJapaneseText = {
     id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
@@ -187,6 +196,11 @@ describe('Badges', () => {
         it('renders suru badge for suru verbs', () => {
             render(<Badges card={suruVerb} />);
             expect(screen.getByText('suru')).toBeInTheDocument();
+        });
+
+        it('renders kuru badge for kuru verbs', () => {
+            render(<Badges card={kuruVerb} />);
+            expect(screen.getByText('kuru')).toBeInTheDocument();
         });
 
         it('hides verb type badge when showAnswer is false', () => {

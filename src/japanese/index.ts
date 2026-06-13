@@ -82,6 +82,7 @@ export { daysOfMonthBag } from './vocabulary/time/daysOfMonth';
 export { hoursBag } from './vocabulary/time/hours';
 export { minutesBag } from './vocabulary/time/minutes';
 export { monthsBag } from './vocabulary/time/months';
+export { numberOfDaysBag } from './vocabulary/time/numberOfDays';
 export { weekBag } from './vocabulary/time/week';
 export { yearsBag } from './vocabulary/time/years';
 
