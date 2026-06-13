@@ -144,7 +144,7 @@ const numberOfDays: TranslatedJapaneseText[] = [
     {
         id: 'f31ae1c8-f88c-44b0-ab9b-eb167976d5bf',
         type: 'noun',
-        en: 'Forty nine days',
+        en: 'Forty-nine days',
         pl: 'Czterdzieści dziewięć dni',
         jp: { text: '四十九日', pronunciation: ['しじゅうくにち', 'よんじゅうくにち'] },
         description:
