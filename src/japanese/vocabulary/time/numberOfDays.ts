@@ -171,6 +171,13 @@ const numberOfDays: TranslatedJapaneseText[] = [
         pl: 'Dziesięć tysięcy dni',
         jp: { text: '一万日', pronunciation: 'いちまんにち' },
     },
+    {
+        id: 'dbac5ecb-dc27-421e-a3a0-68b26b9448de',
+        type: 'noun',
+        en: 'How many days',
+        pl: 'Ile dni',
+        jp: { text: '何日', pronunciation: 'なんにち' },
+    },
 ];
 
 export const numberOfDaysBag: WordBag = {
