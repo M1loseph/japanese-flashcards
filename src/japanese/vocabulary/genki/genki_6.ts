@@ -310,7 +310,6 @@ const genki_6: TranslatedJapaneseText[] = [
         en: 'Bring (a person)',
         pl: 'Przyprowadzić (osobę)',
         jp: { text: '連れてくる', pronunciation: 'つれてくる' },
-        te_form: { text: '連れてきて', pronunciation: 'つれてきて' },
     },
     {
         id: '4e07006f-6f50-4d76-9bca-06c8b7185cb7',
@@ -319,7 +318,6 @@ const genki_6: TranslatedJapaneseText[] = [
         en: 'Bring (a thing)',
         pl: 'Przynieść (rzecz)',
         jp: { text: '持ってくる', pronunciation: 'もってくる' },
-        te_form: { text: '持ってきて', pronunciation: 'もってきて' },
     },
     {
         id: '22f631c7-85cc-4e46-9efc-22ac0e050f44',

@@ -53,7 +53,6 @@ const SuruVerbSchema = TranslationSchema.extend({
 const KuruVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     verb_type: z.literal('kuru'),
-    te_form: TextWithPronunciationSchema,
 });
 
 const VerbSchema = z.discriminatedUnion('verb_type', [
