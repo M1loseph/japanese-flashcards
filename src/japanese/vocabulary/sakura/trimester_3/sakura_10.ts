@@ -68,6 +68,13 @@ const sakura_3_10: TranslatedJapaneseText[] = [
         pl: 'Odpowiadać',
         jp: { text: '答える', pronunciation: 'こたえる' },
     },
+    {
+        id: 'b1dd784f-ba95-4661-8817-e8cbc4fd09a6',
+        type: 'noun',
+        en: 'App',
+        pl: 'Aplikacja',
+        jp: { text: 'アプリ' },
+    },
 ];
 
 export const sakura3_10Bag: WordBag = {
