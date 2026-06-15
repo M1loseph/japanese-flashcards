@@ -75,6 +75,20 @@ const sakura_3_10: TranslatedJapaneseText[] = [
         pl: 'Aplikacja',
         jp: { text: 'アプリ' },
     },
+    {
+        id: 'c766ab6e-b39c-4ea2-983d-17869dedabfb',
+        type: 'noun',
+        en: 'Karaoke',
+        pl: 'Karaoke',
+        jp: { text: 'カラオケ' },
+    },
+    {
+        id: 'c2e47898-693d-4750-8209-ae18285a717c',
+        type: 'noun',
+        en: 'Mannequin',
+        pl: 'Manekin',
+        jp: { text: 'マネキン' },
+    },
 ];
 
 export const sakura3_10Bag: WordBag = {
