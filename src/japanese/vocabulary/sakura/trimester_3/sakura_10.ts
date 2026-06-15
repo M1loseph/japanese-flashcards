@@ -60,6 +60,35 @@ const sakura_3_10: TranslatedJapaneseText[] = [
         pl: 'Hawaje',
         jp: { text: 'ハワイ' },
     },
+    {
+        id: '511ff878-65f1-46ef-ac5b-b4b28722ccc8',
+        type: 'verb',
+        verb_type: 'godan',
+        en: 'Answer / Reply',
+        pl: 'Odpowiadać',
+        jp: { text: '答える', pronunciation: 'こたえる' },
+    },
+    {
+        id: 'b1dd784f-ba95-4661-8817-e8cbc4fd09a6',
+        type: 'noun',
+        en: 'App',
+        pl: 'Aplikacja',
+        jp: { text: 'アプリ' },
+    },
+    {
+        id: 'c766ab6e-b39c-4ea2-983d-17869dedabfb',
+        type: 'noun',
+        en: 'Karaoke',
+        pl: 'Karaoke',
+        jp: { text: 'カラオケ' },
+    },
+    {
+        id: 'c2e47898-693d-4750-8209-ae18285a717c',
+        type: 'noun',
+        en: 'Mannequin',
+        pl: 'Manekin',
+        jp: { text: 'マネキン' },
+    },
 ];
 
 export const sakura3_10Bag: WordBag = {

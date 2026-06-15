@@ -400,7 +400,7 @@ const genki_3: TranslatedJapaneseText[] = [
         id: '5196606f-ba0e-40ae-81c4-c9d7c925b8d7',
         type: 'phrase',
         en: 'Would you like to see a movie?',
-        pl: 'Czy chciałbyś pójść do kina?',
+        pl: 'Czy chciałbyś zobaczyć film?',
         jp: { text: 'えいがを見ませんか。', pronunciation: 'えいがをみませんか。' },
     },
     {
