@@ -63,7 +63,7 @@ const sakura_3_10: TranslatedJapaneseText[] = [
     {
         id: '511ff878-65f1-46ef-ac5b-b4b28722ccc8',
         type: 'verb',
-        verb_type: 'godan',
+        verb_type: 'ichidan',
         en: 'Answer / Reply',
         pl: 'Odpowiadać',
         jp: { text: '答える', pronunciation: 'こたえる' },

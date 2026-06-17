@@ -71,6 +71,7 @@ export { sakura2_8Bag } from './vocabulary/sakura/trimester_2/sakura_8';
 export { sakura2_9Bag } from './vocabulary/sakura/trimester_2/sakura_9';
 export { sakura3_1Bag } from './vocabulary/sakura/trimester_3/sakura_1';
 export { sakura3_10Bag } from './vocabulary/sakura/trimester_3/sakura_10';
+export { sakura3_11Bag } from './vocabulary/sakura/trimester_3/sakura_11';
 export { sakura3_2Bag } from './vocabulary/sakura/trimester_3/sakura_2';
 export { sakura3_3Bag } from './vocabulary/sakura/trimester_3/sakura_3';
 export { sakura3_4Bag } from './vocabulary/sakura/trimester_3/sakura_4';

@@ -131,8 +131,8 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
         id: '25eb19e3-03e8-4abf-bd29-cb2e4db58cae',
         type: 'phrase',
         en: 'I will bring my grandmother to the party.',
-        pl: 'Zabiorę moją babcię na przyjęcie.',
-        jp: { text: 'パーティーに祖母を連れて行きます。', pronunciation: 'パーティーにそぼをつれていきます。' },
+        pl: 'Przyprowadzę moją babcię na przyjęcie.',
+        jp: { text: 'パーティーに祖母を連れてきます。', pronunciation: 'パーティーにそぼをつれてきます。' },
     },
 ];
 
