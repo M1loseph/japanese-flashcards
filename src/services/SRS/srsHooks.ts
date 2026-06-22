@@ -3,6 +3,7 @@ import dayjs from '../../dayjs';
 import { availableWordBags } from '../../japanese';
 import { findWordById } from '../../japanese/search';
 import { queryClient } from '../../queryClient';
+import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { shuffleArray } from '../../utils';
 import { db } from './srsdb';
 import { MINIMUM_LEVEL } from './Stages';
@@ -49,5 +50,12 @@ export const useAddNewRandomWords = () => {
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
         },
+    });
+};
+
+export const useSRSWord = (wordId: string) => {
+    return useQuery<WordLearningProgress | undefined>({
+        queryKey: ['srsWord', wordId],
+        queryFn: async () => db.wordProgress.get({ wordId }),
     });
 };

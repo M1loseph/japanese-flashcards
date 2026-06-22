@@ -56,4 +56,5 @@ export const markWordsAsReviewedBatch = async (reviews: { wordId: string; correc
         }
     });
     queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+    queryClient.invalidateQueries({ queryKey: ['srsWord'] });
 };
