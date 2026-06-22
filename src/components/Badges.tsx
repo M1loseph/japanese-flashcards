@@ -6,6 +6,7 @@ import {
     type TranslatedJapaneseTextType,
     type Verb,
 } from '../japanese/types';
+import { useSRSWord } from '../services/SRS/srsHooks';
 
 type BadgeMetadata = {
     color: string;
@@ -165,6 +166,14 @@ const createHasKanjiBadge: () => BadgeMetadata = () => {
     };
 };
 
+const createSRSLevelBadge = (level: number, show: boolean) => {
+    return {
+        color: 'bg-orange-300/75',
+        text: `level ${level + 1}`,
+        show,
+    };
+};
+
 interface BadgesProps {
     card: TranslatedJapaneseText;
     size?: 'sm' | 'md' | 'lg';
@@ -172,6 +181,7 @@ interface BadgesProps {
 }
 
 export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }) => {
+    const srsWord = useSRSWord(card.id);
     const badges: BadgeMetadata[] = [];
     const typeBadge = createTypeBadge(card.type);
     if (typeBadge) {
@@ -186,6 +196,9 @@ export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }
     }
     if (card.type === 'adjective') {
         badges.push(createAdjectiveTypeBadge(card.adjective_type, showAnswer));
+    }
+    if (srsWord.data) {
+        badges.push(createSRSLevelBadge(srsWord.data.level, showAnswer));
     }
     const sizeClass = size === 'sm' ? 'badge-sm' : size === 'lg' ? 'badge-lg' : '';
     return (

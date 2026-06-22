@@ -1,6 +1,8 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import type { TranslatedJapaneseText } from '../japanese/types';
+import { addWordsToSRS } from '../services/SRS';
 import { Badges } from './Badges';
 
 const noun: TranslatedJapaneseText = {
@@ -116,25 +118,33 @@ const phrase: TranslatedJapaneseText = {
     jp: { text: 'おはようございます', pronunciation: 'おはようございます' },
 };
 
+const renderCard = (card: TranslatedJapaneseText, showAnswer?: boolean, size?: 'sm' | 'md') => {
+    render(
+        <QueryClientProvider client={new QueryClient()}>
+            <Badges card={card} showAnswer={showAnswer} size={size} />
+        </QueryClientProvider>,
+    );
+};
+
 describe('Badges', () => {
     describe('type badges', () => {
         it('renders a noun badge', () => {
-            render(<Badges card={noun} />);
+            renderCard(noun);
             expect(screen.getByText('noun')).toBeInTheDocument();
         });
 
         it('renders a verb badge', () => {
-            render(<Badges card={verb} />);
+            renderCard(verb);
             expect(screen.getByText('verb')).toBeInTheDocument();
         });
 
         it('renders an adjective badge', () => {
-            render(<Badges card={iAdjective} />);
+            renderCard(iAdjective);
             expect(screen.getByText('adjective')).toBeInTheDocument();
         });
 
         it('renders a phrase badge', () => {
-            render(<Badges card={phrase} />);
+            renderCard(phrase);
             expect(screen.getByText('phrase')).toBeInTheDocument();
         });
 
@@ -155,62 +165,62 @@ describe('Badges', () => {
                 pl: 'test',
                 jp: { text: 'テスト', pronunciation: 'テスト' },
             };
-            render(<Badges card={card} />);
+            renderCard(card);
             expect(screen.getByText(expectedText)).toBeInTheDocument();
         });
     });
 
     describe('kanji badge', () => {
         it('renders a kanji badge when text contains kanji', () => {
-            render(<Badges card={nounWithKanji} />);
+            renderCard(nounWithKanji);
             expect(screen.getByText('kanji')).toBeInTheDocument();
         });
 
         it('does not render a kanji badge when text has no kanji', () => {
-            render(<Badges card={noun} />);
+            renderCard(noun);
             expect(screen.queryByText('kanji')).not.toBeInTheDocument();
         });
     });
 
     describe('verb type badges', () => {
         it('renders ichidan (ru) badge for ichidan verbs', () => {
-            render(<Badges card={verb} />);
+            renderCard(verb);
             expect(screen.getByText('ichidan (ru)')).toBeInTheDocument();
         });
 
         it('renders godan (u) badge for godan verbs', () => {
-            render(<Badges card={godanVerb} />);
+            renderCard(godanVerb);
             expect(screen.getByText('godan (u)')).toBeInTheDocument();
         });
 
         it('renders irregular badge for irregular verbs', () => {
-            render(<Badges card={irregularVerb} />);
+            renderCard(irregularVerb);
             expect(screen.getByText('irregular')).toBeInTheDocument();
         });
 
         it('renders auxiliary badge for auxiliary verbs', () => {
-            render(<Badges card={auxiliaryVerb} />);
+            renderCard(auxiliaryVerb);
             expect(screen.getByText('auxiliary')).toBeInTheDocument();
         });
 
         it('renders suru badge for suru verbs', () => {
-            render(<Badges card={suruVerb} />);
+            renderCard(suruVerb);
             expect(screen.getByText('suru')).toBeInTheDocument();
         });
 
         it('renders kuru badge for kuru verbs', () => {
-            render(<Badges card={kuruVerb} />);
+            renderCard(kuruVerb);
             expect(screen.getByText('kuru')).toBeInTheDocument();
         });
 
         it('hides verb type badge when showAnswer is false', () => {
-            render(<Badges card={verb} showAnswer={false} />);
+            renderCard(verb, false);
             const verbTypeBadge = screen.getByText('ichidan (ru)');
             expect(verbTypeBadge).toHaveClass('opacity-0');
         });
 
         it('shows verb type badge when showAnswer is true', () => {
-            render(<Badges card={verb} showAnswer={true} />);
+            renderCard(verb, true);
             const verbTypeBadge = screen.getByText('ichidan (ru)');
             expect(verbTypeBadge).toBeVisible();
         });
@@ -218,28 +228,28 @@ describe('Badges', () => {
 
     describe('adjective type badges', () => {
         it('renders i adjective badge', () => {
-            render(<Badges card={iAdjective} />);
+            renderCard(iAdjective);
             expect(screen.getByText('i adjective')).toBeInTheDocument();
         });
 
         it('renders na adjective badge', () => {
-            render(<Badges card={naAdjective} />);
+            renderCard(naAdjective);
             expect(screen.getByText('na adjective')).toBeInTheDocument();
         });
 
         it('renders irregular i adjective badge', () => {
-            render(<Badges card={iAdjectiveIrregular} />);
+            renderCard(iAdjectiveIrregular);
             expect(screen.getByText('i adjective (irregular)')).toBeInTheDocument();
         });
 
         it('hides adjective type badge when showAnswer is false', () => {
-            render(<Badges card={iAdjective} showAnswer={false} />);
+            renderCard(iAdjective, false);
             const adjTypeBadge = screen.getByText('i adjective');
             expect(adjTypeBadge).toHaveClass('opacity-0');
         });
 
         it('shows adjective type badge when showAnswer is true', () => {
-            render(<Badges card={naAdjective} showAnswer={true} />);
+            renderCard(naAdjective, true);
             const adjTypeBadge = screen.getByText('na adjective');
             expect(adjTypeBadge).toBeVisible();
         });
@@ -247,19 +257,19 @@ describe('Badges', () => {
 
     describe('size prop', () => {
         it('applies badge-lg class by default', () => {
-            render(<Badges card={noun} />);
+            renderCard(noun);
             const badge = screen.getByText('noun');
             expect(badge).toHaveClass('badge-lg');
         });
 
         it('applies badge-sm class when size is sm', () => {
-            render(<Badges card={noun} size="sm" />);
+            renderCard(noun, true, 'sm');
             const badge = screen.getByText('noun');
             expect(badge).toHaveClass('badge-sm');
         });
 
         it('does not apply badge-sm or badge-lg when size is md', () => {
-            render(<Badges card={noun} size="md" />);
+            renderCard(noun, true, 'md');
             const badge = screen.getByText('noun');
             expect(badge).not.toHaveClass('badge-sm');
             expect(badge).not.toHaveClass('badge-lg');
@@ -268,23 +278,32 @@ describe('Badges', () => {
 
     describe('multiple badges', () => {
         it('renders both type and kanji badges for a noun with kanji', () => {
-            render(<Badges card={nounWithKanji} />);
+            renderCard(nounWithKanji);
             expect(screen.getByText('noun')).toBeInTheDocument();
             expect(screen.getByText('kanji')).toBeInTheDocument();
         });
 
         it('renders type, kanji, and verb type badges for a verb with kanji', () => {
-            render(<Badges card={verb} />);
+            renderCard(verb);
             expect(screen.getByText('verb')).toBeInTheDocument();
             expect(screen.getByText('kanji')).toBeInTheDocument();
             expect(screen.getByText('ichidan (ru)')).toBeInTheDocument();
         });
 
         it('renders type, kanji, and adjective type badges for an adjective with kanji', () => {
-            render(<Badges card={iAdjective} />);
+            renderCard(iAdjective);
             expect(screen.getByText('adjective')).toBeInTheDocument();
             expect(screen.getByText('kanji')).toBeInTheDocument();
             expect(screen.getByText('i adjective')).toBeInTheDocument();
+        });
+    });
+
+    describe('SRS', () => {
+        it('renders SRS level badge by default', async () => {
+            await addWordsToSRS([noun.id]);
+            renderCard(noun);
+            const srsBadge = await screen.findByText('level 1');
+            expect(srsBadge).toBeInTheDocument();
         });
     });
 });

@@ -1,8 +1,8 @@
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
 import dayjs from '../../dayjs';
 import { availableWordBags } from '../../japanese';
 import { findWordById } from '../../japanese/search';
-import { queryClient } from '../../queryClient';
+import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { shuffleArray } from '../../utils';
 import { db } from './srsdb';
 import { MINIMUM_LEVEL } from './Stages';
@@ -16,16 +16,19 @@ const addNewRandomWords = async (count: number, preferredWordBags?: string[]): P
 
     const newWords = allWords.filter((id) => !wordsInProgress.includes(id));
     const wordsToAdd = shuffleArray(newWords).slice(0, count);
+    return addWordsToSRS(wordsToAdd);
+};
 
+export const addWordsToSRS = async (wordIds: string[]) => {
     const now = new Date();
-    const newProgressEntries = wordsToAdd.map((wordId) => ({
+    const newProgressEntries = wordIds.map((wordId) => ({
         wordId,
         lastReviewed: undefined,
         nextReview: now,
         level: MINIMUM_LEVEL,
     }));
     await db.wordProgress.bulkAdd(newProgressEntries);
-    return wordsToAdd.length;
+    return wordIds.length;
 };
 
 export const useSRSWords = () => {
@@ -41,13 +44,23 @@ export const useSRSWords = () => {
     });
 };
 
-export const useAddNewRandomWords = () => {
+export const useAddNewRandomWords = (queryClient: QueryClient) => {
     return useMutation({
         mutationKey: ['addNewRandomWords'],
         mutationFn: ({ count, preferredWordBags }: { count: number; preferredWordBags?: string[] }) =>
             addNewRandomWords(count, preferredWordBags),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+        },
+    });
+};
+
+export const useSRSWord = (wordId: string) => {
+    return useQuery<WordLearningProgress | null>({
+        queryKey: ['srsWord', wordId],
+        queryFn: async () => {
+            const result = await db.wordProgress.get({ wordId });
+            return result || null;
         },
     });
 };
