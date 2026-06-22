@@ -54,6 +54,13 @@ const sakura_3_11: TranslatedJapaneseText[] = [
             pronunciation: 'がっこうからいえまでどうやっていきますか。',
         },
     },
+    {
+        id: '80c5e36e-d6f0-4db9-a71a-e76dcf2b2ac1',
+        type: 'noun',
+        en: 'Water (loan word)',
+        pl: 'Woda (zapożyczone słowo)',
+        jp: { text: 'ウォーター' },
+    },
 ];
 
 export const sakura3_11Bag: WordBag = {
