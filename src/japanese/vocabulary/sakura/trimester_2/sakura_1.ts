@@ -106,7 +106,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'On evenings I go for a walk.',
         pl: 'Wieczorami chodzę na spacer.',
-        jp: { text: '夕方散歩をします。', pronunciation: 'ゆうがたさんぽをします' },
+        jp: { text: '夕方散歩をします。', pronunciation: 'ゆうがたさんぽをします。' },
         description:
             'Note there is no particle "に" after "ゆうがた". The same applies to other time expressions like "あさ" (morning) or "ばん" (night).',
     },
@@ -115,7 +115,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'I go to the art museum on Friday.',
         pl: 'W piątek idę do muzeum sztuki.',
-        jp: { text: '金曜日に美術館に行きます。', pronunciation: 'きんようびにびじゅつかんにいきます' },
+        jp: { text: '金曜日に美術館に行きます。', pronunciation: 'きんようびにびじゅつかんにいきます。' },
         description: 'The particle "に" is used after "きんようび" (Friday), just like with other days of the week.',
     },
     {
@@ -123,7 +123,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'On Friday evening I watch TV.',
         pl: 'W piątkowy wieczór oglądam telewizję.',
-        jp: { text: '金曜日の夕方テレビを見ます。', pronunciation: 'きんようびのゆうがたテレビをみます' },
+        jp: { text: '金曜日の夕方テレビを見ます。', pronunciation: 'きんようびのゆうがたテレビをみます。' },
         description:
             'The particle "の" is used to connect "きんようび" (Friday) and "ゆうがた" (evening) to form "Friday evening". There is no particle "に" after "ゆうがた" (evening).',
     },
@@ -132,7 +132,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: "Yesterday at 9 o'clock I ate sushi.",
         pl: 'Wczoraj o dziewiątej jadłem sushi.',
-        jp: { text: '昨日の九時に寿司を食べました。', pronunciation: 'きのうのくじにすしをたべました' },
+        jp: { text: '昨日の九時に寿司を食べました。', pronunciation: 'きのうのくじにすしをたべました。' },
         description: 'The particle "に" is used after "くじ", even though before it there is "きのう" (yesterday).',
     },
     {
@@ -142,7 +142,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         pl: 'Dziś będę wykonywać obowiązki domowe. Jutro też będę wykonywać obowiązki domowe.',
         jp: {
             text: '今日家事をします。明日も家事をします。',
-            pronunciation: 'きょうかじをします。あしたもかじをします',
+            pronunciation: 'きょうかじをします。あしたもかじをします。',
         },
     },
     {
@@ -150,21 +150,29 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: "Next week I won't meet my mom.",
         pl: 'W przyszłym tygodniu nie spotkam się z mamą.',
-        jp: { text: '来週母と会いません。', pronunciation: 'らいしゅうははとあいません' },
+        jp: { text: '来週母と会いません。', pronunciation: 'らいしゅうははとあいません。' },
     },
     {
         id: '42f425fc-9259-4111-8c89-53268a0d42ee',
         type: 'phrase',
         en: 'Did you read a book yesterday?',
         pl: 'Czy czytałeś książkę wczoraj?',
-        jp: { text: '昨日本を読みましたか。', pronunciation: 'きのうほんをよみましたか' },
+        jp: { text: '昨日本を読みましたか。', pronunciation: 'きのうほんをよみましたか。' },
     },
     {
         id: '97061083-e408-44ed-a4ad-045cd7c244b0',
         type: 'phrase',
         en: "I didn't wear a jacket yesterday.",
-        pl: 'Wczoraj nie założyłem kurtki.',
-        jp: { text: '昨日ジャケットは着ませんでした。', pronunciation: 'きのうジャケットはきませんでした' },
+        pl: 'Wczoraj nie nosiłem kurtki.',
+        jp: { text: '昨日ジャケットは着ませんでした。', pronunciation: 'きのうジャケットはきませんでした。' },
+    },
+    {
+        id: '103c495c-a1c1-4384-adfd-225e6a0dc7ba',
+        type: 'verb',
+        verb_type: 'ichidan',
+        en: 'Wear / Put on',
+        pl: 'Nosić / Zakładać',
+        jp: { text: '着る', pronunciation: 'きる' },
     },
 ];
 

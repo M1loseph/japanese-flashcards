@@ -42,11 +42,12 @@ Check if each `jp.text`, `en`, and `pl` field is present and correctly translate
 
 ### Common rules
 
-- Check if the `type` field is appropriate for each word. Available types are in the file `src/japanese/types.ts`. If the word is of a type that is not in the `types.ts` file, report it as an error.
-- The `jp.text` field can't contain an expression written in hiragana or katakana that is commonly written using kanji. For example if `jp.text` contains `じょうず`, it wrong, because it should have been written using `上手`.
-- The `jp.pronunciation` field must be present only in two cases (otherwise it must be omitted):
-    1. If the `jp.text` entry contains kanji.
-    2. If the `jp.text` entry contains a Latin letter that should be read in Japanese in a specific way (e.g., `'Lサイズ'` -> `'エルサイズ'`).
+- Check if the `type` field is appropriate for each word. Available types are in the file `src/japanese/types.ts`. If the word is of a type that is not present in `types.ts` file, report it as an error.
+- The `jp.text` field must not contain an expression written in hiragana or katakana if it is commonly written using kanji. For example, if `jp.text` contains `じょうず`, it is incorrect because it should be written as `上手`.
+- The `jp.pronunciation` field contains the pronunciation of the text in the `jp.text` field. It must use hiragana to show the reading of any kanji used in the text. Any katakana characters must not be converted to hiragana; they must remain as katakana.
+- The `jp.pronunciation` field must be present **only** in the following two cases (otherwise, it must be omitted):
+    1. If the `jp.text` entry contains kanji (e.g., `消しゴム` becomes `けしゴム`).
+    2. If the `jp.text` entry contains a Latin letter that should be read in Japanese in a s
 
 ### Verb Rules
 
@@ -73,7 +74,7 @@ Your output must be structured precisely as follows:
 
 | File                                       | Severity | Issue Type                | Description                                                                                                                           |
 | :----------------------------------------- | :------- | :------------------------ | :------------------------------------------------------------------------------------------------------------------------------------ |
-| `src/japanese/vocabulary/genki/genki_5.ts` | Error    | Incorrect Pronunciation   | The `jp_pronunciation` field should be omitted for the word "やさしい" as it does not contain kanji.                                  |
+| `src/japanese/vocabulary/genki/genki_5.ts` | Error    | Incorrect Pronunciation   | The `jp.pronunciation` field should be omitted for the word "やさしい" as it does not contain kanji.                                  |
 | `src/japanese/vocabulary/genki/genki_5.ts` | Warning  | Better Polish Translation | The Polish translation "Łatwy (problem) / Miły (osoba)" could be improved to "Łatwy (problem) / Uprzejmy (osoba)" for better clarity. |
 
 Include in the table:
