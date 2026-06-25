@@ -75,6 +75,7 @@ import { sakura2_9Bag } from './vocabulary/sakura/trimester_2/sakura_9';
 import { sakura3_1Bag } from './vocabulary/sakura/trimester_3/sakura_1';
 import { sakura3_10Bag } from './vocabulary/sakura/trimester_3/sakura_10';
 import { sakura3_11Bag } from './vocabulary/sakura/trimester_3/sakura_11';
+import { sakura3_12Bag } from './vocabulary/sakura/trimester_3/sakura_12';
 import { sakura3_2Bag } from './vocabulary/sakura/trimester_3/sakura_2';
 import { sakura3_3Bag } from './vocabulary/sakura/trimester_3/sakura_3';
 import { sakura3_4Bag } from './vocabulary/sakura/trimester_3/sakura_4';
@@ -88,6 +89,7 @@ import { hoursBag } from './vocabulary/time/hours';
 import { minutesBag } from './vocabulary/time/minutes';
 import { monthsBag } from './vocabulary/time/months';
 import { numberOfDaysBag } from './vocabulary/time/numberOfDays';
+import { secondsBag } from './vocabulary/time/seconds';
 import { weekBag } from './vocabulary/time/week';
 import { yearsBag } from './vocabulary/time/years';
 
@@ -108,6 +110,7 @@ export const availableWordBags: WordBag[] = [
     weekBag,
     hoursBag,
     minutesBag,
+    secondsBag,
     monthsBag,
     daysOfMonthBag,
     numberOfDaysBag,
@@ -181,6 +184,7 @@ export const availableWordBags: WordBag[] = [
     sakura3_9Bag,
     sakura3_10Bag,
     sakura3_11Bag,
+    sakura3_12Bag,
 ];
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {

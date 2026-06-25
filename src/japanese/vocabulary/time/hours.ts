@@ -92,6 +92,13 @@ const hours: TranslatedJapaneseText[] = [
         pl: 'Godzina',
         jp: { text: '時', pronunciation: 'じ' },
     },
+    {
+        id: '0d702bab-0e1f-43a1-8678-01f68680acd0',
+        type: 'noun',
+        en: 'Which hour',
+        pl: 'Która godzina',
+        jp: { text: '何時', pronunciation: 'なんじ' },
+    },
 ];
 
 export const hoursBag: WordBag = {

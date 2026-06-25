@@ -106,6 +106,13 @@ const minutes: TranslatedJapaneseText[] = [
         pl: 'Minuta',
         jp: { text: '分', pronunciation: 'ふん' },
     },
+    {
+        id: 'bbf3e7a8-f8e3-4ae4-84b4-bffe3ae3425b',
+        type: 'noun',
+        en: 'How many minutes',
+        pl: 'Ile minut',
+        jp: { text: '何分', pronunciation: 'なんぷん' },
+    },
 ];
 
 export const minutesBag: WordBag = {
