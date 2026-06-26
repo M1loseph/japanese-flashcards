@@ -6,7 +6,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Ken, hurry up please!',
         pl: 'Ken, pośpiesz się proszę!',
-        jp: { text: 'ケンさん、急いでください！', pronunciation: 'けんさん、いそいでください！' },
+        jp: { text: 'ケンさん、急いでください！', pronunciation: 'ケンさん、いそいでください！' },
     },
     {
         id: '6f31d370-9979-4cac-8ecf-93ded95d3f5d',
@@ -27,7 +27,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Sit down on the chair, please.',
         pl: 'Usiądź na krześle, proszę.',
-        jp: { text: 'いすに座ってください。', pronunciation: 'いすにすわってください。' },
+        jp: { text: '椅子に座ってください。', pronunciation: 'いすにすわってください。' },
     },
     {
         id: '01bee4f9-6a98-4fc8-b668-679724748848',
@@ -55,7 +55,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Shall I hold the bag for you?',
         pl: 'Potrzymać ci torbę?',
-        jp: { text: 'かばんを持ちましょうか。', pronunciation: 'かばんをもちましょうか。' },
+        jp: { text: '鞄を持ちましょうか。', pronunciation: 'かばんをもちましょうか。' },
     },
     {
         id: 'a7f6f021-0702-4264-9517-f7f81bba0eeb',
@@ -83,7 +83,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'I closed the door.',
         pl: 'Zamknąłem drzwi.',
-        jp: { text: 'ドアを閉めました。', pronunciation: 'どあをしめました。' },
+        jp: { text: 'ドアを閉めました。', pronunciation: 'ドアをしめました。' },
     },
     {
         id: 'a9e2a4fc-59b6-43af-a5e8-b8fde98f9d5c',
