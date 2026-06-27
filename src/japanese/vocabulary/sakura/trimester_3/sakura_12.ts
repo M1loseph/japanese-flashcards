@@ -91,6 +91,13 @@ const sakura_3_12: TranslatedJapaneseText[] = [
         pl: 'Wysiądę z pociągu na następnej stacji.',
         jp: { text: '次の駅で電車を降ります。', pronunciation: 'つぎのえきででんしゃをおります。' },
     },
+    {
+        id: '39fcc219-1b95-4653-aa17-e6b273c9fbdf',
+        type: 'noun',
+        en: 'Young bird / Chick',
+        pl: 'Pisklę / Kurczaczek',
+        jp: { text: 'ひよこ' },
+    },
 ];
 
 export const sakura3_12Bag: WordBag = {
