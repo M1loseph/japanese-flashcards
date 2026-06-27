@@ -48,6 +48,7 @@ Check if each `jp.text`, `en`, and `pl` field is present and correctly translate
 - The `jp.pronunciation` field must be present **only** in the following two cases (otherwise, it must be omitted):
     1. If the `jp.text` entry contains kanji (e.g., `消しゴム` becomes `けしゴム`).
     2. If the `jp.text` entry contains a Latin letter that should be read in Japanese in a s
+- Don't use digits exclusively to write numbers. Instead, prefer kanji equivalents (like 一, 二, 三).
 
 ### Verb Rules
 
