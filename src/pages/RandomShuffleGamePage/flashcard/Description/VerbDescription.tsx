@@ -127,7 +127,6 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
 
     return (
         <>
-            <div className="text-center text-base-content/60">Masu form</div>
             <DescriptionElement mainText={masuText} secondaryText={masuPronunciation} label="Present" />
             <DescriptionElement mainText={masenText} secondaryText={masenPronunciation} label="Negative" />
             <DescriptionElement mainText={teText} secondaryText={tePronunciation} label="Te form" />

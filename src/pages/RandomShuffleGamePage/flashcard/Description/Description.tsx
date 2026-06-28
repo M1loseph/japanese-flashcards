@@ -10,7 +10,7 @@ interface DescriptionProps {
 
 export const Description: FC<DescriptionProps> = ({ showAnswer, card }) => {
     return (
-        <div className={`flex mt-2 flex-col items-center ${showAnswer ? '' : 'invisible'}`}>
+        <div className={`flex mt-2 flex-col items-center overflow-auto ${showAnswer ? '' : 'invisible'}`}>
             {card.type === 'verb' &&
                 card.verb_type !== 'auxiliary' &&
                 card.verb_type !== 'suru' &&

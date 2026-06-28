@@ -52,7 +52,7 @@ const JapaneseFlashcard = forwardRef<FlashcardHandle, FlashcardProps>(
                 transition={{ duration: 0.3, repeat: animationPlaying ? 1 : 0, repeatType: 'reverse' }}
                 onAnimationComplete={handleAnimationComplete}
             >
-                <div className="flex-1 flex flex-col p-3">
+                <div className="min-h-0 flex-1 flex flex-col p-3">
                     <div className="flex justify-between">
                         <Badges card={card} showAnswer={showAnswer} />
                         <div className="flex items-start gap-2">
@@ -66,7 +66,7 @@ const JapaneseFlashcard = forwardRef<FlashcardHandle, FlashcardProps>(
                             <HardTextIcon word={card} />
                         </div>
                     </div>
-                    <div className="grow flex flex-col justify-center items-stretch">
+                    <div className="min-h-0 grow flex flex-col justify-center items-stretch">
                         <FlashcardMainText question={question} answer={card.jp} showAnswer={showAnswer} />
                         <Description showAnswer={showAnswer} card={card} />
                     </div>
