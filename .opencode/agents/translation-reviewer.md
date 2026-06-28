@@ -12,9 +12,9 @@ tools:
   bash: true
 permission:
   bash:
+    "*": "ask"
     "git diff": "allow"
     "git status": "allow"
-    "*": "ask"
 configuration:
   default_mode: "uncommitted_changes"
 ---
