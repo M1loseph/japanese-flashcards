@@ -7,32 +7,52 @@ import {
     IconDownload,
     IconFileUpload,
 } from '@tabler/icons-react';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Card } from '../../components/Card';
 import { PageTitle } from '../../components/PageTitle';
+import { Toast } from '../../components/Toast';
 import { useHardText } from '../../services/HardWordsContext';
 import { useSRSWords } from '../../services/SRS';
-import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
+import { ExportedDataSchema, type ExportedData } from '../../types/ExportedData';
 import { ScrollablePage } from '../common/ScrollablePage';
-
-interface ExportedData {
-    srsWords: WordLearningProgress[];
-    hardText: string[];
-}
+import { DataImportDialog } from './DataImportDialog';
 
 const DataManagementPage: FC = () => {
-    // TODO: implement file import here files: File[]
-    const onDrop = () => {};
+    const [importedApplicationState, setImportedApplicationState] = useState<ExportedData>();
+    const [showErrorToast, setShowErrorToast] = useState(false);
 
     const { data: srsWords, isSuccess } = useSRSWords();
     const { getHardTextList } = useHardText();
+    const hardText = getHardTextList();
 
-    const onExportToZip = async () => {
+    const onDrop = async (files: File[]) => {
+        if (files.length === 0) return;
+        const file = files[0];
+        try {
+            const mimeType = file.type;
+            const decompressedData = await (async () => {
+                if (mimeType === 'application/gzip') {
+                    return new Response(file.stream().pipeThrough(new DecompressionStream('gzip'))).text();
+                } else {
+                    return file.text();
+                }
+            })();
+            const parsedData = JSON.parse(decompressedData);
+            const applicationState = ExportedDataSchema.parse(parsedData);
+            setImportedApplicationState(applicationState);
+        } catch (error) {
+            console.error('Failed to import data:', error);
+            setShowErrorToast(true);
+        }
+    };
+
+    const onExportToGZip = async () => {
         if (!srsWords) return;
         const exportedData: ExportedData = {
+            version: 1,
             srsWords,
-            hardText: getHardTextList(),
+            hardText,
         };
         const jsonString = JSON.stringify(exportedData, null, 2);
         const blob = new Blob([jsonString], { type: 'application/json' });
@@ -42,14 +62,33 @@ const DataManagementPage: FC = () => {
         const url = URL.createObjectURL(new Blob([data], { type: 'application/gzip' }));
 
         const link = document.createElement('a');
-        link.download = `japanese_flashcards_state_${new Date().toISOString()}.json.zip`;
+        link.download = `japanese_flashcards_state_${new Date().toISOString()}.json.gz`;
         link.href = url;
         link.click();
 
         URL.revokeObjectURL(url);
     };
 
-    const { getRootProps, getInputProps } = useDropzone({ onDrop });
+    const { getRootProps, getInputProps } = useDropzone({
+        onDrop,
+        accept: {
+            'application/gzip': ['.json.gz'],
+            'application/json': ['.json'],
+        },
+        maxFiles: 1,
+    });
+
+    const handleCloseDialog = () => {
+        setImportedApplicationState(undefined);
+    };
+
+    const handleCloseErrorToast = () => {
+        setShowErrorToast(false);
+    };
+
+    const handleShowErrorToast = () => {
+        setShowErrorToast(true);
+    };
 
     return (
         <ScrollablePage>
@@ -68,7 +107,7 @@ const DataManagementPage: FC = () => {
                             </div>
                             <h2 className="text-2xl font-bold">Export Data</h2>
                             <p className="text-lg">
-                                Download a complete archive of your SRS journey. Your ZIP file includes all hard words
+                                Download a complete archive of your SRS journey. Your GZIP file includes all hard words
                                 and phrases, vocabulary progress in spaced repetition system and the current game in a
                                 portable JSON format.
                             </p>
@@ -87,9 +126,13 @@ const DataManagementPage: FC = () => {
                                 <span className="font-label-md text-label-md">Audio &amp; Image Resources</span>
                             </li>
                         </ul>
-                        <button disabled={!isSuccess} className="btn btn-primary btn-lg w-full" onClick={onExportToZip}>
+                        <button
+                            disabled={!isSuccess}
+                            className="btn btn-primary btn-lg w-full"
+                            onClick={onExportToGZip}
+                        >
                             <IconArchive size={20} />
-                            Export to ZIP
+                            Export to GZIP
                         </button>
                     </div>
                     <div className="absolute -right-10 -bottom-10 opacity-5 transition-transform group-hover:scale-110 duration-700">
@@ -109,14 +152,14 @@ const DataManagementPage: FC = () => {
                             <p className="text-lg text-center">Drag and drop your backup file here.</p>
                             <div
                                 {...getRootProps()}
-                                className="p-6 border border-2 border-primary rounded-lg w-100 flex justify-center items-center gap-3 cursor-pointer bg-primary/5 text-primary"
+                                className="p-6 border border-2 border-primary rounded-lg w-full flex justify-center items-center gap-3 cursor-pointer bg-primary/5 text-primary"
                             >
                                 <input {...getInputProps()} />
                                 <IconFileUpload size={24} />
-                                Upload ZIP or JSON File
+                                Upload GZIP or JSON File
                             </div>
                             <p className="font-label-sm text-label-sm text-on-surface-variant/50 italic">
-                                Supported format: .zip, .json
+                                Supported format: .json.gz, .json
                             </p>
                         </div>
                     </Card>
@@ -136,6 +179,21 @@ const DataManagementPage: FC = () => {
                     </Card>
                 </section>
             </div>
+            {importedApplicationState && srsWords !== undefined && (
+                <DataImportDialog
+                    hardText={hardText}
+                    importedApplicationState={importedApplicationState}
+                    srsWords={srsWords}
+                    handleCloseDialog={handleCloseDialog}
+                    handleShowErrorToast={handleShowErrorToast}
+                />
+            )}
+            <Toast
+                open={showErrorToast}
+                handleClose={handleCloseErrorToast}
+                type="error"
+                message="Failed to import data. Please check the file format."
+            />
         </ScrollablePage>
     );
 };

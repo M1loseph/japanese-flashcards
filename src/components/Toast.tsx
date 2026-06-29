@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
+import { type FC, useEffect } from 'react';
 
 interface ToastProps {
     message: string;
     type: 'success' | 'error' | 'warning';
     open: boolean;
-    autoDimissTime?: number;
+    autoDismissTime?: number;
     handleClose?: () => void;
 }
 
-export const Toast: React.FC<ToastProps> = ({ message, type, open, autoDimissTime = 3000, handleClose }) => {
+export const Toast: FC<ToastProps> = ({ message, type, open, autoDismissTime = 3000, handleClose }) => {
     const getAlertClass = (): string => {
         switch (type) {
             case 'success':
@@ -24,10 +24,10 @@ export const Toast: React.FC<ToastProps> = ({ message, type, open, autoDimissTim
         if (open && handleClose) {
             const timer = setTimeout(() => {
                 handleClose();
-            }, autoDimissTime);
+            }, autoDismissTime);
             return () => clearTimeout(timer);
         }
-    }, [open, autoDimissTime, handleClose]);
+    }, [open, autoDismissTime, handleClose]);
 
     if (!open) {
         return null;

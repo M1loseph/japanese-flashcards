@@ -30,7 +30,7 @@ describe('Toast', () => {
                 message={message}
                 type={type}
                 open={true}
-                autoDimissTime={autoDismissTime}
+                autoDismissTime={autoDismissTime}
                 handleClose={handleClose}
             />,
         );
