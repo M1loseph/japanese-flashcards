@@ -90,8 +90,12 @@ export const HardTextProvider: FC<HardTextProviderProps> = ({ children }) => {
         return Array.from(hardTexts);
     };
 
+    const overrideHardTextList = (hardTextList: string[]) => {
+        setHardText(new Set(hardTextList));
+    };
+
     return (
-        <HardTextContext.Provider value={{ isHardText, toggleHardText, getHardTextList }}>
+        <HardTextContext.Provider value={{ isHardText, toggleHardText, getHardTextList, overrideHardTextList }}>
             {children}
         </HardTextContext.Provider>
     );

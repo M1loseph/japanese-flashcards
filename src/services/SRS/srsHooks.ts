@@ -55,6 +55,21 @@ export const useAddNewRandomWords = (queryClient: QueryClient) => {
     });
 };
 
+export const useReplaceSRSWords = (queryClient: QueryClient) => {
+    return useMutation({
+        mutationKey: ['replaceSRSWords'],
+        mutationFn: async (newWords: WordLearningProgress[]) => {
+            await db.transaction('rw', db.wordProgress, async () => {
+                await db.wordProgress.clear();
+                await db.wordProgress.bulkAdd(newWords);
+            });
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+        },
+    });
+};
+
 export const useSRSWord = (wordId: string) => {
     return useQuery<WordLearningProgress | null>({
         queryKey: ['srsWord', wordId],
