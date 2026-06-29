@@ -21,6 +21,7 @@ const createMockContext = (isHard: boolean): HardTextContextType => ({
     isHardText: vi.fn(() => isHard),
     toggleHardText: vi.fn(),
     getHardTextList: vi.fn(() => [mockWord.id]),
+    overrideHardTextList: vi.fn(),
 });
 
 describe('HardTextIcon', () => {
