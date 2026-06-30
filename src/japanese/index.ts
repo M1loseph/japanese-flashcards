@@ -37,6 +37,7 @@ export { genki5Bag } from './vocabulary/genki/genki_5';
 export { genki5AdjectivesBag } from './vocabulary/genki/genki_5_adjectives';
 export { genki6Bag } from './vocabulary/genki/genki_6';
 export { genki6PhrasesBag } from './vocabulary/genki/genki_6_phrases';
+export { genki7Bag } from './vocabulary/genki/genki_7';
 export { cardinalDirectionsBag } from './vocabulary/geography/cardinalDirections';
 export { countriesAsiaBag } from './vocabulary/geography/countriesAsia';
 export { countriesEuropeBag } from './vocabulary/geography/countriesEurope';
