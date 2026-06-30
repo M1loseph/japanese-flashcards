@@ -10,7 +10,7 @@ const sakura_2_2: TranslatedJapaneseText[] = [
     },
     {
         id: 'b89c424e-a7d8-40e9-b35d-cfbf2509a2d2',
-        type: 'noun',
+        type: 'phrase',
         en: 'Nothing',
         pl: 'Nic',
         jp: { text: '何も', pronunciation: 'なにも' },

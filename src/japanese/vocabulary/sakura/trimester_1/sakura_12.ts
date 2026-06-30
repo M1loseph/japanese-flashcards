@@ -177,8 +177,8 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         id: '438b0076-de9a-4ce2-8c47-a7faae340280',
         type: 'verb',
         verb_type: 'ichidan',
-        en: 'Put on (clothes)',
-        pl: 'Zakładać (ubrania)',
+        en: 'Put on (clothes above your waist)',
+        pl: 'Zakładać (ubrania powyżej pasa)',
         jp: { text: '着る', pronunciation: 'きる' },
     },
     {
