@@ -134,14 +134,14 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: '4f97ab35-6df5-4cea-9f0d-614a5a95f5e6',
         type: 'noun',
-        en: 'Onigiri',
+        en: 'Onigiri (rice balls)',
         pl: 'Onigiri (kulki ryżowe)',
         jp: { text: 'おにぎり' },
     },
     {
         id: '8a5eccae-1533-4d88-b5ce-16a591c184c4',
         type: 'noun',
-        en: 'Baby',
+        en: 'Baby / Infant',
         pl: 'Niemowlę',
         jp: { text: '赤ちゃん', pronunciation: 'あかちゃん' },
     },
