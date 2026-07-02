@@ -1,6 +1,6 @@
 import type { TranslatedJapaneseText, WordBag } from '../../../types';
 import iGoToSchool from './sakura5Assets/1.jpg';
-import friendAreCommingToMyHouse from './sakura5Assets/2.jpg';
+import friendAreComingToMyHouse from './sakura5Assets/2.jpg';
 import wentToCompanyInTheMorning from './sakura5Assets/3.jpg';
 
 const sakura_2_5: TranslatedJapaneseText[] = [
@@ -55,7 +55,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'I will go to school.',
         pl: 'Pójdę do szkoły.',
-        jp: { text: 'がっこうに行きます。', pronunciation: 'がっこうにいきます。' },
+        jp: { text: '学校に行きます。', pronunciation: 'がっこうにいきます。' },
         image_url: iGoToSchool,
     },
     {
@@ -63,15 +63,15 @@ const sakura_2_5: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Friends are coming to my house.',
         pl: 'Przyjaciele przychodzą do mojego domu.',
-        jp: { text: 'ともだちがわたしのうちに来ます。', pronunciation: 'ともだちがわたしのうちにきます。' },
-        image_url: friendAreCommingToMyHouse,
+        jp: { text: '友達が私の家に来ます。', pronunciation: 'ともだちがわたしのうちにきます。' },
+        image_url: friendAreComingToMyHouse,
     },
     {
         id: 'fb5f5e8f-f9bf-46bb-885a-68f29b3b660b',
         type: 'phrase',
         en: 'I came to the company in the morning.',
         pl: 'Przyszedłem do firmy rano.',
-        jp: { text: 'あさかいしゃに来ました。', pronunciation: 'あさかいしゃにきました。' },
+        jp: { text: '朝会社に来ました。', pronunciation: 'あさかいしゃにきました。' },
         image_url: wentToCompanyInTheMorning,
     },
 ];
