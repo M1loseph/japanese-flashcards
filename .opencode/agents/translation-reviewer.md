@@ -63,7 +63,10 @@ Check if each `jp.text`, `en`, and `pl` field is present and correctly translate
 - The `adjective_type` field should be set to `i-adjective` if the `jp.text` field contains an i-adjective.
 - The `adjective_type` field should be set to `na-adjective` if the `jp.text` field contains a na-adjective.
 
+### Phrase Rules
+
 - Phrases (type: `'phrase'`) should end with a Japanese period `。` if the `en` or `pl` translation ends with a period, question mark, or exclamation mark. If such a phrase does not end with `。`, report it as an error.
+- The only exception when `jp.text` and `jp.pronunciation` should end with ？ is when phrase does not end with か but is a question.
 
 ---
 
