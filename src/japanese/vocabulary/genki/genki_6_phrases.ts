@@ -134,6 +134,37 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
         pl: 'Przyprowadzę moją babcię na przyjęcie.',
         jp: { text: 'パーティーに祖母を連れてきます。', pronunciation: 'パーティーにそぼをつれてきます。' },
     },
+    {
+        id: '4fcfdf78-ea01-4776-b1c2-64920c93b6cd',
+        type: 'phrase',
+        en: 'Yesterday I woke up and drank coffee.',
+        pl: 'Wczoraj obudziłem się i wypiłem kawę.',
+        jp: { text: '昨日起きてコーヒーを飲みました。', pronunciation: 'きのうおきてコーヒーをのみました。' },
+    },
+    {
+        id: 'ef1b1db9-2be7-4b54-a1b2-ea4e1e3ab358',
+        type: 'phrase',
+        en: 'I will go to the library and return the book.',
+        pl: 'Pójdę do biblioteki i oddam książkę.',
+        jp: { text: '図書館に行って本を返します。', pronunciation: 'としょかんにいってほんをかえします。' },
+    },
+    {
+        id: 'eb121d20-fa89-4714-b452-d2ee9408090a',
+        type: 'phrase',
+        en: 'In the morning I watch TV and go to school.',
+        pl: 'Rano oglądam telewizję i idę do szkoły.',
+        jp: { text: '朝テレビを見て学校に行きます。', pronunciation: 'あさテレビをみてがっこうにいきます。' },
+    },
+    {
+        id: 'e75a729e-0b25-4bb5-b423-36e626f18abb',
+        type: 'phrase',
+        en: "Let's go to the cafeteria and have lunch.",
+        pl: 'Chodźmy do stołówki i zjedzmy lunch.',
+        jp: {
+            text: '食堂に行って昼ご飯を食べましょう。',
+            pronunciation: 'しょくどうにいってひるごはんをたべましょう。',
+        },
+    },
 ];
 
 export const genki6PhrasesBag: WordBag = {

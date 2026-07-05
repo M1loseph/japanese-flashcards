@@ -354,6 +354,14 @@ const genki_6: TranslatedJapaneseText[] = [
         pl: 'Naprawdę? / Czy tak jest?',
         jp: { text: '本当ですか。', pronunciation: 'ほんとうですか。' },
     },
+    // extra vocabulary found in the book but missing in the vocabulary list
+    {
+        id: '349df564-8116-4dfc-93bf-0c609ca74e4c',
+        type: 'noun',
+        en: 'Dining room / Cafeteria',
+        pl: 'Jadalnia / Stołówka',
+        jp: { text: '食堂', pronunciation: 'しょくどう' },
+    },
 ];
 
 export const genki6Bag: WordBag = {
