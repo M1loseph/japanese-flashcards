@@ -6,7 +6,7 @@ import { Card } from '../../components/Card';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
 import { PageTitle } from '../../components/PageTitle';
 import { Toast } from '../../components/Toast';
-import { availableWordBags } from '../../japanese';
+import { availableWordBags, type WordBag } from '../../japanese';
 import { useGameContext } from '../../services/GameContext';
 import { useGameSettingsContext } from '../../services/GameStateContext';
 import {
@@ -22,6 +22,11 @@ import { ScrollablePage } from '../common/ScrollablePage';
 const WORD_COUNT_OPTIONS = [5, 10, 15] as const;
 
 type WordCountOption = (typeof WORD_COUNT_OPTIONS)[number];
+
+interface WordBagWithNewWords {
+    bag: WordBag;
+    newWordsCount: number;
+}
 
 export const SpacedRepetitionSystemPage: FC = () => {
     const navigate = useNavigate();
@@ -40,11 +45,14 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const [toastMessage, setToastMessage] = useState('');
     const [toastType, setToastType] = useState<'success' | 'warning'>('success');
 
-    const wordBagsWithNewWords = availableWordBags.filter((bag) => {
-        const bagWordIds = bag.words.map((w) => w.id);
-        const wordsInProgressIds = srsWords ? srsWords.map((w) => w.wordId) : [];
-        return bagWordIds.some((id) => !wordsInProgressIds.includes(id));
-    });
+    const wordBagsWithNewWords: WordBagWithNewWords[] = availableWordBags
+        .map((bag) => {
+            const bagWordIds = bag.words.map((w) => w.id);
+            const wordsInProgressIds = srsWords ? srsWords.map((w) => w.wordId) : [];
+            const newWordsCount = bagWordIds.filter((id) => !wordsInProgressIds.includes(id)).length;
+            return { bag, newWordsCount };
+        })
+        .filter((bagWithNewWords) => bagWithNewWords.newWordsCount > 0);
 
     const handleWordCountSelect = (count: WordCountOption) => {
         setSelectedWordCount(count);
@@ -239,9 +247,9 @@ export const SpacedRepetitionSystemPage: FC = () => {
                                 onChange={handleWordBagSelect}
                             >
                                 <option value={undefined} />
-                                {wordBagsWithNewWords.map((bag) => (
+                                {wordBagsWithNewWords.map(({ bag, newWordsCount }) => (
                                     <option key={bag.id} value={bag.id}>
-                                        {bag.name}
+                                        {bag.name} ({newWordsCount})
                                     </option>
                                 ))}
                             </select>
