@@ -10,11 +10,15 @@ tools:
   websearch: true
   todowrite: true
   bash: true
+  skill: true
 permission:
   bash:
     "*": "ask"
     "git diff": "allow"
+    "git diff *": "allow"
     "git status": "allow"
+    "git status *": "allow"
+    "./.opencode/skills/dictionary/scripts/search_word.sh *": "allow"
 configuration:
   default_mode: "uncommitted_changes"
 ---
