@@ -55,7 +55,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Shall I hold the bag for you?',
         pl: 'Potrzymać ci torbę?',
-        jp: { text: '鞄を持ちましょうか。', pronunciation: 'かばんをもちましょうか。' },
+        jp: { text: 'かばんを持ちましょうか。', pronunciation: 'かばんをもちましょうか。' },
     },
     {
         id: 'a7f6f021-0702-4264-9517-f7f81bba0eeb',
@@ -159,11 +159,46 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
         id: 'e75a729e-0b25-4bb5-b423-36e626f18abb',
         type: 'phrase',
         en: "Let's go to the cafeteria and have lunch.",
-        pl: 'Chodźmy do stołówki i zjedzmy lunch.',
+        pl: 'Chodźmy do stołówki i zjedzmy obiad.',
         jp: {
             text: '食堂に行って昼ご飯を食べましょう。',
             pronunciation: 'しょくどうにいってひるごはんをたべましょう。',
         },
+    },
+    {
+        id: '189a5669-870a-4603-8af7-5ca6dd89f1b1',
+        type: 'phrase',
+        en: 'You may take a photo.',
+        pl: 'Możesz zrobić zdjęcie.',
+        jp: { text: '写真を撮ってもいいです。', pronunciation: 'しゃしんをとってもいいです。' },
+    },
+    {
+        id: 'cdabf7e6-347c-4409-a593-e9c69c2ee437',
+        type: 'phrase',
+        en: 'May I read this book?',
+        pl: 'Czy mogę przeczytać tę książkę?',
+        jp: { text: 'この本を読んでもいいですか。', pronunciation: 'このほんをよんでもいいですか。' },
+    },
+    {
+        id: '7b9df7b7-61de-4723-9692-294782d1c402',
+        type: 'phrase',
+        en: 'May I turn on the air conditioner?',
+        pl: 'Czy mogę włączyć klimatyzację?',
+        jp: { text: 'エアコンをつけてもいいですか。', pronunciation: 'エアコンをつけてもいいですか。' },
+    },
+    {
+        id: '7791e03c-3e94-4a00-8005-51d3a59050b2',
+        type: 'phrase',
+        en: 'You may not enter this room.',
+        pl: 'Nie możesz wejść do tego pokoju.',
+        jp: { text: 'この部屋に入ってはいけません。', pronunciation: 'このへやにはいってはいけません。' },
+    },
+    {
+        id: 'de82eb6e-ba4f-4954-82fa-ec5189f34f54',
+        type: 'phrase',
+        en: 'You may not smoke here.',
+        pl: 'Nie możesz tu palić.',
+        jp: { text: 'ここでたばこを吸ってはいけません。', pronunciation: 'ここでたばこをすってはいけません。' },
     },
 ];
 
