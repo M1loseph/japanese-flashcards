@@ -362,6 +362,13 @@ const genki_6: TranslatedJapaneseText[] = [
         pl: 'Jadalnia / Stołówka',
         jp: { text: '食堂', pronunciation: 'しょくどう' },
     },
+    {
+        id: '370cbb3a-cf9f-4c06-9ff0-011c0d3c3608',
+        type: 'noun',
+        en: 'Album',
+        pl: 'Album',
+        jp: { text: 'アルバム' },
+    },
 ];
 
 export const genki6Bag: WordBag = {
