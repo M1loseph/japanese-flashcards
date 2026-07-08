@@ -160,5 +160,6 @@ const countingRepetitiveActions: TranslatedJapaneseText[] = [
 export const countingRepetitiveActionsBag: WordBag = {
     id: 'fed3c8e6-be7a-49ec-9f61-ff4efde37988',
     name: 'Counting Repetitive Actions',
+    category: 'counting',
     words: countingRepetitiveActions,
 };

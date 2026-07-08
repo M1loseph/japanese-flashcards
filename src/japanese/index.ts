@@ -85,6 +85,7 @@ export { sakura3_9Bag } from './vocabulary/sakura/trimester_3/sakura_9';
 export { daysOfMonthBag } from './vocabulary/time/daysOfMonth';
 export { hoursBag } from './vocabulary/time/hours';
 export { minutesBag } from './vocabulary/time/minutes';
+export { secondsBag } from './vocabulary/time/seconds';
 export { monthsBag } from './vocabulary/time/months';
 export { numberOfDaysBag } from './vocabulary/time/numberOfDays';
 export { weekBag } from './vocabulary/time/week';

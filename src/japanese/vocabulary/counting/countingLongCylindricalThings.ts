@@ -146,5 +146,6 @@ const countingLongCylindricalThings: TranslatedJapaneseText[] = [
 export const countingLongCylindricalThingsBag: WordBag = {
     id: '18a934d5-156a-4300-a2ca-f09ed5886797',
     name: 'Counting Long Cylindrical Things',
+    category: 'counting',
     words: countingLongCylindricalThings,
 };

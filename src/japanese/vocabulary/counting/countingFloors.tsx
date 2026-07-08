@@ -153,6 +153,7 @@ const countingFloors: TranslatedJapaneseText[] = [
 export const countingFloorsBag: WordBag = {
     id: 'ea053297-9592-45fc-be6e-6a48da0980d1',
     name: 'Counting Floors',
+    category: 'counting',
     words: countingFloors,
     cultureNotes: (
         <>

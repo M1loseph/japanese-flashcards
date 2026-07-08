@@ -76,5 +76,6 @@ const countingLoavesOfBread: TranslatedJapaneseText[] = [
 export const countingLoavesOfBreadBag: WordBag = {
     id: 'b82cc85c-d865-47ab-8edc-0567cabe5108',
     name: 'Counting Loaves of Bread',
+    category: 'counting',
     words: countingLoavesOfBread,
 };

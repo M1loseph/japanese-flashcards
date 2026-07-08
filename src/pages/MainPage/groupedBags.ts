@@ -78,6 +78,7 @@ import {
     sakura2_9Bag,
     sakura3_10Bag,
     sakura3_11Bag,
+    sakura3_12Bag,
     sakura3_1Bag,
     sakura3_2Bag,
     sakura3_3Bag,
@@ -89,24 +90,13 @@ import {
     sakura3_9Bag,
     weekBag,
     yearsBag,
+    secondsBag,
     type WordBag,
 } from '../../japanese';
 
 export const groupedBags: Record<string, WordBag[]> = {
-    'Time ⏰': [weekBag, hoursBag, minutesBag, monthsBag, numberOfDaysBag, daysOfMonthBag, yearsBag],
-    'Counting 🔢': [
-        countingAgeBag,
-        countingThinObjectsBag,
-        countingLongCylindricalThingsBag,
-        countingThingsBag,
-        countingFloorsBag,
-        countingSmallAndMediumAnimalsBag,
-        countingPeopleBag,
-        countingPeoplePoliteBag,
-        countingRepetitiveActionsBag,
-        countingLoavesOfBreadBag,
-        ordinalNumbersBag,
-    ],
+    'Time ⏰': [weekBag, hoursBag, minutesBag, secondsBag, monthsBag, numberOfDaysBag, daysOfMonthBag, yearsBag],
+    'Counting 🔢': [],
     'Essentials 📌': [familyBag, numbersBag, directionsBag],
     'Genki books 📚': [
         genki0Bag,
@@ -160,6 +150,7 @@ export const groupedBags: Record<string, WordBag[]> = {
         sakura3_9Bag,
         sakura3_10Bag,
         sakura3_11Bag,
+        sakura3_12Bag,
     ],
     'Apps 📱': [
         duolingo1Bag,
