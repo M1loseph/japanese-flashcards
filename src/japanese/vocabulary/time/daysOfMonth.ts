@@ -223,5 +223,6 @@ const daysOfMonth: TranslatedJapaneseText[] = [
 export const daysOfMonthBag: WordBag = {
     id: '61da60a2-4e5f-4dd2-b419-0c9557593e9c',
     name: 'Days of Month',
+    category: 'time',
     words: daysOfMonth,
 };

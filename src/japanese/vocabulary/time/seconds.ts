@@ -90,5 +90,6 @@ const seconds: TranslatedJapaneseText[] = [
 export const secondsBag: WordBag = {
     id: 'b55ba7e6-37f8-4d10-b0c9-c149339c2f2c',
     name: 'Seconds',
+    category: 'time',
     words: seconds,
 };

@@ -48,5 +48,6 @@ const years: TranslatedJapaneseText[] = [
 export const yearsBag: WordBag = {
     id: '79c50834-d434-40e7-8cf1-042d7af3fe8b',
     name: 'Years',
+    category: 'time',
     words: years,
 };

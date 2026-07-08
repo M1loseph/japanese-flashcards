@@ -183,5 +183,6 @@ const numberOfDays: TranslatedJapaneseText[] = [
 export const numberOfDaysBag: WordBag = {
     id: 'c66a78ea-9449-43f7-8efb-9c4a1023e83f',
     name: 'Number of Days',
+    category: 'time',
     words: numberOfDays,
 };
