@@ -451,5 +451,6 @@ const duolingo_15: TranslatedJapaneseText[] = [
 export const duolingo15Bag: WordBag = {
     id: '42bab80c-fbce-481a-8eb9-e4184d3db13c',
     name: 'Duolingo #15',
+    category: 'duolingo',
     words: duolingo_15,
 };

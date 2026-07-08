@@ -343,5 +343,6 @@ const duolingo_8: TranslatedJapaneseText[] = [
 export const duolingo8Bag: WordBag = {
     id: '0decb5a3-ae11-4104-ae84-7124432b3a5d',
     name: 'Duolingo #8',
+    category: 'duolingo',
     words: duolingo_8,
 };
