@@ -139,5 +139,6 @@ const genki_5_adjectives: TranslatedJapaneseText[] = [
 export const genki5AdjectivesBag: WordBag = {
     id: 'e13c568d-1c22-441d-a426-cfd6775959dc',
     name: 'Genki #5 Adjectives',
+    category: 'genki',
     words: genki_5_adjectives,
 };
