@@ -1,4 +1,4 @@
-import type { TranslatedJapaneseText, WordBag } from '../types';
+import type { TranslatedJapaneseText, WordBag } from '../../types';
 
 const numbers: TranslatedJapaneseText[] = [
     {
@@ -356,5 +356,6 @@ const numbers: TranslatedJapaneseText[] = [
 export const numbersBag: WordBag = {
     id: '05253d28-8ebf-4793-bcb2-11b117a36f86',
     name: 'Numbers',
+    category: 'counting',
     words: numbers,
 };

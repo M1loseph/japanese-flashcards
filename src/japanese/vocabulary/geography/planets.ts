@@ -62,5 +62,6 @@ const planets: TranslatedJapaneseText[] = [
 export const planetsBag: WordBag = {
     id: '0ea2670a-adb1-4969-a5f4-af47ee1045c2',
     name: 'Planets',
+    category: 'geography',
     words: planets,
 };

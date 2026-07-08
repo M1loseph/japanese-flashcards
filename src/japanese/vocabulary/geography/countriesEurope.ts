@@ -321,5 +321,6 @@ const countriesEurope: TranslatedJapaneseText[] = [
 export const countriesEuropeBag: WordBag = {
     id: 'efcf6fe8-9b79-436f-8c4d-0987393fb4c6',
     name: 'Countries Europe',
+    category: 'geography',
     words: countriesEurope,
 };
