@@ -1,14 +1,13 @@
-import { type FC, useMemo } from 'react';
+import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
 import { LanguageSelector } from '../../components/LanguageSelector';
-import { findBagById } from '../../japanese';
-import { type WordBag } from '../../japanese/types';
+import { availableWordBags, findBagById } from '../../japanese';
+import { type WordBag, type WordBagCategory } from '../../japanese/types';
 import { useGameContext } from '../../services/GameContext';
 import { useGameSettingsContext } from '../../services/GameStateContext';
 import { ScrollablePage } from '../common/ScrollablePage';
 import { CategorySection } from './CategorySection';
-import { groupedBags } from './groupedBags';
 
 const MainPage: FC = () => {
     const navigate = useNavigate();
@@ -22,6 +21,28 @@ const MainPage: FC = () => {
         deselectBags,
     } = useGameSettingsContext();
 
+    const groupedBags = availableWordBags.reduce(
+        (acc, bag) => {
+            const group = bag.category;
+            if (!acc[group]) {
+                acc[group] = [];
+            }
+            acc[group].push(bag);
+            return acc;
+        },
+        {} as Record<WordBagCategory, WordBag[]>,
+    );
+
+    const groupedBagsWithLabels = {
+        'Time ⏰': groupedBags.time,
+        'Counting 🔢': groupedBags.counting,
+        'Essentials 📌': groupedBags.essentials,
+        'Genki books 📚': groupedBags.genki,
+        'Sakura Classes 🎓': groupedBags.sakura,
+        'Duolingo 📱': groupedBags.duolingo,
+        'Geography 🌍 🌎 🌏': groupedBags.geography,
+    };
+
     const handleSelectAll = (bags: WordBag[]) => {
         selectBags(bags.map((bag) => bag.id));
     };
@@ -30,11 +51,9 @@ const MainPage: FC = () => {
         deselectBags(bags.map((bag) => bag.id));
     };
 
-    const selectedWordsCount = useMemo(() => {
-        return Array.from(selectedWordBags)
-            .map((id) => findBagById(id)?.words.length ?? 0)
-            .reduce((a, b) => a + b, 0);
-    }, [selectedWordBags]);
+    const selectedWordsCount = Array.from(selectedWordBags)
+        .map((id) => findBagById(id)?.words.length ?? 0)
+        .reduce((a, b) => a + b, 0);
 
     const handleStartGame = () => {
         const bags = Array.from(selectedWordBags)
@@ -63,7 +82,7 @@ const MainPage: FC = () => {
                 <section>
                     <h2 className="text-2xl font-bold mb-6 text-center">2. Select Content</h2>
                     <div className="space-y-2">
-                        {Object.entries(groupedBags).map(
+                        {Object.entries(groupedBagsWithLabels).map(
                             ([category, bags]) =>
                                 bags.length > 0 && (
                                     <CategorySection

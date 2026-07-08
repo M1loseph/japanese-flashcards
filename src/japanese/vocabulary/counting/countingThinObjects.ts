@@ -146,5 +146,6 @@ const countingThinObjects: TranslatedJapaneseText[] = [
 export const countingThinObjectsBag: WordBag = {
     id: '03f1b394-7ca4-4f53-aff3-f94dfa1f5737',
     name: 'Counting Thin Objects',
+    category: 'counting',
     words: countingThinObjects,
 };

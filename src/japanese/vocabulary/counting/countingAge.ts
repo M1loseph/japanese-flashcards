@@ -138,6 +138,7 @@ const countingAge: TranslatedJapaneseText[] = [
 
 export const countingAgeBag: WordBag = {
     id: '29b48948-426e-4054-87e1-15b03cfdf017',
+    category: 'counting',
     name: 'Counting Age',
     words: countingAge,
 };

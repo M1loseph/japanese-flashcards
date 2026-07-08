@@ -118,5 +118,6 @@ const minutes: TranslatedJapaneseText[] = [
 export const minutesBag: WordBag = {
     id: '46288155-b71e-4303-b665-3cc5c82ed1e9',
     name: 'Minutes',
+    category: 'time',
     words: minutes,
 };

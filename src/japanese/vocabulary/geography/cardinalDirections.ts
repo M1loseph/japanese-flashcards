@@ -34,5 +34,6 @@ const cardinalDirections: TranslatedJapaneseText[] = [
 export const cardinalDirectionsBag: WordBag = {
     id: 'bd663caa-8d68-4296-9bad-d97a86602add',
     name: 'Cardinal Directions',
+    category: 'geography',
     words: cardinalDirections,
 };

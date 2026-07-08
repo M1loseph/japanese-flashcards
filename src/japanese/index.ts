@@ -8,6 +8,7 @@ export { countingRepetitiveActionsBag } from './vocabulary/counting/countingRepe
 export { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals';
 export { countingThingsBag } from './vocabulary/counting/countingThings';
 export { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects';
+export { numbersBag } from './vocabulary/counting/numbers';
 export { ordinalNumbersBag } from './vocabulary/counting/ordinalNumbers';
 export { directionsBag } from './vocabulary/directions';
 export { duolingo1Bag } from './vocabulary/duolingo/duolingo_1';
@@ -42,7 +43,6 @@ export { cardinalDirectionsBag } from './vocabulary/geography/cardinalDirections
 export { countriesAsiaBag } from './vocabulary/geography/countriesAsia';
 export { countriesEuropeBag } from './vocabulary/geography/countriesEurope';
 export { planetsBag } from './vocabulary/geography/planets';
-export { numbersBag } from './vocabulary/numbers';
 export { sakura1_1Bag } from './vocabulary/sakura/trimester_1/sakura_1';
 export { sakura1_10Bag } from './vocabulary/sakura/trimester_1/sakura_10';
 export { sakura1_11Bag } from './vocabulary/sakura/trimester_1/sakura_11';
@@ -87,6 +87,7 @@ export { hoursBag } from './vocabulary/time/hours';
 export { minutesBag } from './vocabulary/time/minutes';
 export { monthsBag } from './vocabulary/time/months';
 export { numberOfDaysBag } from './vocabulary/time/numberOfDays';
+export { secondsBag } from './vocabulary/time/seconds';
 export { weekBag } from './vocabulary/time/week';
 export { yearsBag } from './vocabulary/time/years';
 

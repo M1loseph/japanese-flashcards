@@ -76,5 +76,6 @@ const ordinalNumbers: TranslatedJapaneseText[] = [
 export const ordinalNumbersBag: WordBag = {
     id: '3c8e3c11-2d6c-4364-92d6-dfeb1b80663d',
     name: 'Ordinal Numbers',
+    category: 'counting',
     words: ordinalNumbers,
 };

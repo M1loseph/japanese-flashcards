@@ -125,5 +125,6 @@ const directions: TranslatedJapaneseText[] = [
 export const directionsBag: WordBag = {
     id: '3a3f535c-4618-47bc-9f4c-d519964637fb',
     name: 'Directions',
+    category: 'essentials',
     words: directions,
 };

@@ -370,5 +370,6 @@ const family: TranslatedJapaneseText[] = [
 export const familyBag: WordBag = {
     id: '83be35f1-ba1d-4a71-86df-1a52fc4b51ce',
     name: 'Family',
+    category: 'essentials',
     words: family,
 };

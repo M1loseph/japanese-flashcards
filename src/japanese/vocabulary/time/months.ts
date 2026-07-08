@@ -132,5 +132,6 @@ const months: TranslatedJapaneseText[] = [
 export const monthsBag: WordBag = {
     id: 'eb5ee3eb-8d1f-4046-9634-8e0915a836c3',
     name: 'Months',
+    category: 'time',
     words: months,
 };

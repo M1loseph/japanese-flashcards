@@ -76,5 +76,6 @@ const countriesAsia: TranslatedJapaneseText[] = [
 export const countriesAsiaBag: WordBag = {
     id: '9889adb4-0777-4983-8a12-d580accb3ce4',
     name: 'Countries Asia',
+    category: 'geography',
     words: countriesAsia,
 };

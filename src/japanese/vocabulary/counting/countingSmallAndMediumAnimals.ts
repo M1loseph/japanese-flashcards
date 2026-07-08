@@ -146,5 +146,6 @@ const countingSmallAndMediumAnimals: TranslatedJapaneseText[] = [
 export const countingSmallAndMediumAnimalsBag: WordBag = {
     id: '8b15f7be-7a2d-468b-a3ba-2f1c72497a66',
     name: 'Counting Small and Medium Animals',
+    category: 'counting',
     words: countingSmallAndMediumAnimals,
 };

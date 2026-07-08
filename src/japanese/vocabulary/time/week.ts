@@ -160,5 +160,6 @@ const week: TranslatedJapaneseText[] = [
 export const weekBag: WordBag = {
     id: 'a6d25f35-b38e-4598-9c52-c27f8827f5d5',
     name: 'Week',
+    category: 'time',
     words: week,
 };

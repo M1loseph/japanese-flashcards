@@ -11,6 +11,7 @@ import { countingRepetitiveActionsBag } from './vocabulary/counting/countingRepe
 import { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals';
 import { countingThingsBag } from './vocabulary/counting/countingThings';
 import { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects';
+import { numbersBag } from './vocabulary/counting/numbers';
 import { ordinalNumbersBag } from './vocabulary/counting/ordinalNumbers';
 import { directionsBag } from './vocabulary/directions';
 import { duolingo1Bag } from './vocabulary/duolingo/duolingo_1';
@@ -45,7 +46,6 @@ import { cardinalDirectionsBag } from './vocabulary/geography/cardinalDirections
 import { countriesAsiaBag } from './vocabulary/geography/countriesAsia';
 import { countriesEuropeBag } from './vocabulary/geography/countriesEurope';
 import { planetsBag } from './vocabulary/geography/planets';
-import { numbersBag } from './vocabulary/numbers';
 import { sakura1_1Bag } from './vocabulary/sakura/trimester_1/sakura_1';
 import { sakura1_10Bag } from './vocabulary/sakura/trimester_1/sakura_10';
 import { sakura1_11Bag } from './vocabulary/sakura/trimester_1/sakura_11';

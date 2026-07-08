@@ -307,5 +307,6 @@ const genki_7: TranslatedJapaneseText[] = [
 export const genki7Bag: WordBag = {
     id: 'a5ff9208-3cdc-4d53-bb5b-50b697126fdd',
     name: 'Genki #7',
+    category: 'genki',
     words: genki_7,
 };
