@@ -286,5 +286,6 @@ const sakura_1_8_animals: TranslatedJapaneseText[] = [
 export const sakura1_8AnimalsBag: WordBag = {
     id: 'c35ead83-d288-4681-b1f3-2c08fdafcc7f',
     name: 'Sakura #1.8 Animals',
+    category: 'sakura',
     words: sakura_1_8_animals,
 };

@@ -308,5 +308,6 @@ const sakura_1_8_fruitsAndVegetables: TranslatedJapaneseText[] = [
 export const sakura1_8FruitsAndVegetablesBag: WordBag = {
     id: 'b98c297c-307d-493f-80e8-f9ade70842e1',
     name: 'Sakura #1.8 Fruits and Vegetables',
+    category: 'sakura',
     words: sakura_1_8_fruitsAndVegetables,
 };
