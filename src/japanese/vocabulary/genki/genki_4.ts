@@ -183,7 +183,7 @@ const genki_4: TranslatedJapaneseText[] = [
         verb_type: 'godan',
         en: 'There is / There are (inanimate)',
         pl: 'Jest / Są (nieożywione)',
-        jp: { text: 'あります' },
+        jp: { text: 'ある' },
     },
     {
         id: 'e2abbf5c-ee01-47e7-9aa7-65a3cb72e78b',
