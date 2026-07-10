@@ -187,6 +187,7 @@ export const availableWordBags: WordBag[] = [
     sakura3_10Bag,
     sakura3_11Bag,
     sakura3_12Bag,
+    sakura1_4Bag,
 ];
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {

@@ -157,7 +157,7 @@ const genki_6: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         en: 'Turn off / Erase',
-        pl: 'Wyłączać / Wymazywać',
+        pl: 'Wyłączać / Kasować',
         jp: { text: '消す', pronunciation: 'けす' },
     },
     {
@@ -165,7 +165,7 @@ const genki_6: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         en: 'Die',
-        pl: 'Umrzeć',
+        pl: 'Umierać',
         jp: { text: '死ぬ', pronunciation: 'しぬ' },
     },
     {
@@ -173,7 +173,7 @@ const genki_6: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         en: 'Sit down',
-        pl: 'Usiąść',
+        pl: 'Siadać',
         jp: { text: '座る', pronunciation: 'すわる' },
     },
     {
@@ -181,7 +181,7 @@ const genki_6: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         en: 'Stand up',
-        pl: 'Wstać',
+        pl: 'Wstawać',
         jp: { text: '立つ', pronunciation: 'たつ' },
     },
     {

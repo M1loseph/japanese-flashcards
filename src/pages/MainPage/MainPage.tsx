@@ -21,26 +21,23 @@ const MainPage: FC = () => {
         deselectBags,
     } = useGameSettingsContext();
 
-    const groupedBags = availableWordBags.reduce(
-        (acc, bag) => {
-            const group = bag.category;
-            if (!acc[group]) {
-                acc[group] = [];
-            }
-            acc[group].push(bag);
-            return acc;
-        },
-        {} as Record<WordBagCategory, WordBag[]>,
-    );
+    const groupedBags = availableWordBags.reduce((acc, bag) => {
+        const group = bag.category;
+        if (!acc.has(group)) {
+            acc.set(group, []);
+        }
+        acc.get(group)!.push(bag);
+        return acc;
+    }, new Map<WordBagCategory, WordBag[]>());
 
     const groupedBagsWithLabels = {
-        'Time ⏰': groupedBags.time,
-        'Counting 🔢': groupedBags.counting,
-        'Essentials 📌': groupedBags.essentials,
-        'Genki books 📚': groupedBags.genki,
-        'Sakura Classes 🎓': groupedBags.sakura,
-        'Duolingo 📱': groupedBags.duolingo,
-        'Geography 🌍 🌎 🌏': groupedBags.geography,
+        'Time ⏰': groupedBags.get('time') ?? [],
+        'Counting 🔢': groupedBags.get('counting') ?? [],
+        'Essentials 📌': groupedBags.get('essentials') ?? [],
+        'Genki books 📚': groupedBags.get('genki') ?? [],
+        'Sakura Classes 🎓': groupedBags.get('sakura') ?? [],
+        'Duolingo 📱': groupedBags.get('duolingo') ?? [],
+        'Geography 🌍 🌎 🌏': groupedBags.get('geography') ?? [],
     };
 
     const handleSelectAll = (bags: WordBag[]) => {
