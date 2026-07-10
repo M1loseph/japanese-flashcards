@@ -23,10 +23,9 @@ const MainPage: FC = () => {
 
     const groupedBags = availableWordBags.reduce((acc, bag) => {
         const group = bag.category;
-        if (!acc.has(group)) {
-            acc.set(group, []);
-        }
-        acc.get(group)!.push(bag);
+        const existingBags = acc.get(group) || [];
+        const updatedBags = [...existingBags, bag];
+        acc.set(group, updatedBags);
         return acc;
     }, new Map<WordBagCategory, WordBag[]>());
 
