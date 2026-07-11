@@ -272,8 +272,8 @@ const genki_4: TranslatedJapaneseText[] = [
     {
         id: 'a51b561f-0573-4601-8878-97f46c0ccc6d',
         type: 'adverb',
-        en: 'Why / How',
-        pl: 'Dlaczego / Jak',
+        en: 'Why / For what reason',
+        pl: 'Dlaczego / Z jakiego powodu',
         jp: { text: 'どうして' },
     },
     {
