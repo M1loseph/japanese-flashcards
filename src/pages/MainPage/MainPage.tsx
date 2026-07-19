@@ -37,6 +37,7 @@ const MainPage: FC = () => {
         'Sakura Classes 🎓': groupedBags.get('sakura') ?? [],
         'Duolingo 📱': groupedBags.get('duolingo') ?? [],
         'Geography 🌍 🌎 🌏': groupedBags.get('geography') ?? [],
+        'JapanesePod101 🎧': groupedBags.get('japanesePod101') ?? [],
     };
 
     const handleSelectAll = (bags: WordBag[]) => {
