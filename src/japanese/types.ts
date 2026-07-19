@@ -159,7 +159,16 @@ export type TranslatedJapaneseText = z.infer<typeof TranslatedJapaneseTextSchema
 
 export type TranslatedJapaneseTextType = TranslatedJapaneseText['type'];
 
-const WordBagCategorySchema = z.enum(['time', 'counting', 'essentials', 'genki', 'sakura', 'duolingo', 'geography']);
+const WordBagCategorySchema = z.enum([
+    'time',
+    'counting',
+    'essentials',
+    'genki',
+    'sakura',
+    'duolingo',
+    'geography',
+    'japanesePod101',
+]);
 
 export type WordBagCategory = z.infer<typeof WordBagCategorySchema>;
 

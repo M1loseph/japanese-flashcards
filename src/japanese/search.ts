@@ -46,6 +46,7 @@ import { cardinalDirectionsBag } from './vocabulary/geography/cardinalDirections
 import { countriesAsiaBag } from './vocabulary/geography/countriesAsia';
 import { countriesEuropeBag } from './vocabulary/geography/countriesEurope';
 import { planetsBag } from './vocabulary/geography/planets';
+import { survivalPhrases_1Bag } from './vocabulary/japanesePod101/survivalPhrases_1';
 import { sakura1_1Bag } from './vocabulary/sakura/trimester_1/sakura_1';
 import { sakura1_10Bag } from './vocabulary/sakura/trimester_1/sakura_10';
 import { sakura1_11Bag } from './vocabulary/sakura/trimester_1/sakura_11';
@@ -189,6 +190,7 @@ export const availableWordBags: WordBag[] = [
     sakura3_11Bag,
     sakura3_12Bag,
     sakura4_1Bag,
+    survivalPhrases_1Bag,
 ];
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {
