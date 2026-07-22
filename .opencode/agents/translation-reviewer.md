@@ -49,6 +49,7 @@ Check if each `jp.text`, `en`, and `pl` field is present and correctly translate
 - Check if the `type` field is appropriate for each word. Available types are in the file `src/japanese/types.ts`. If the word is of a type that is not present in `types.ts` file, report it as an error.
 - The `jp.text` field must not contain an expression written in hiragana or katakana if it is commonly written using kanji. For example, if `jp.text` contains `じょうず`, it is incorrect because it should be written as `上手`.
 - The `jp.pronunciation` field contains the pronunciation of the text in the `jp.text` field. It must use hiragana to show the reading of any kanji used in the text. Any katakana characters must not be converted to hiragana; they must remain as katakana.
+- The `jp.pronunciation` must be a string if `jp.text` has only one reading. If there are mutiple possible readings that are common, `jp.pronunciation` should be an array of strings and each string contains one possible pronunciation.
 - The `jp.pronunciation` field must be present **only** in the following two cases (otherwise, it must be omitted):
     1. If the `jp.text` entry contains kanji (e.g., `消しゴム` becomes `けしゴム`).
     2. If the `jp.text` entry contains a Latin letter that should be read in Japanese in a s
