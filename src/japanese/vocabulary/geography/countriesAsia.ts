@@ -13,7 +13,7 @@ const countriesAsia: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Japan',
         pl: 'Japonia',
-        jp: { text: '日本', pronunciation: 'にほん / にっぽん' },
+        jp: { text: '日本', pronunciation: ['にほん', 'にっぽん'] },
     },
     {
         id: '565f5776-81bb-4117-b66f-4f37e3b8bd01',
