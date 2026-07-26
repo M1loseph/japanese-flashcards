@@ -233,7 +233,7 @@ const sakura_4_3: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'I like playing football.',
         pl: 'Lubię grać w piłkę nożną.',
-        jp: { text: 'サッカーをすることが好きです。', pronunciation: 'さっかーをすることがすきです。' },
+        jp: { text: 'サッカーをすることが好きです。', pronunciation: 'サッカーをすることがすきです。' },
     },
     {
         id: 'e871a1db-21ef-47ad-94b7-d58de7c7eb28',
