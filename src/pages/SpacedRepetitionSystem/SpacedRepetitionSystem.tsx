@@ -80,7 +80,10 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleConfirmAdd = async () => {
-        const preferredWordBags = selectedWordBag ? [selectedWordBag] : undefined;
+        if (!selectedWordBag) {
+            return;
+        }
+        const preferredWordBags = [selectedWordBag];
         const numberOfAddedWords = await addNewRandomWords({ count: selectedWordCount, preferredWordBags });
         if (numberOfAddedWords > 0) {
             if (selectedWordBag) {
@@ -258,7 +261,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                             className="btn btn-primary mt-6 lg:max-w-md lg:self-end"
                             onClick={handleConfirmAdd}
                             onKeyDown={handleConfirmAddKeyDown}
-                            disabled={disableAddFunctionality}
+                            disabled={disableAddFunctionality || selectedWordBag === undefined}
                             aria-label={`Confirm and add ${selectedWordCount} words to SRS queue`}
                         >
                             <IconPlus size={16} aria-hidden="true" />
