@@ -25,6 +25,11 @@ updates:
           - "*"
     cooldown:
       default-days: 7
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
   - package-ecosystem: "terraform"
     directory: "/terraform"
     schedule:
