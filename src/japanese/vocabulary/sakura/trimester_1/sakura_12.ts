@@ -57,8 +57,8 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         id: '8ea0455a-539f-4dd0-8113-7f925792d20a',
         type: 'verb',
         verb_type: 'godan',
-        en: 'Take (an object or picture)',
-        pl: 'Brać (przedmiot) lub robić (zdjęcie)',
+        en: 'Take (a picture)',
+        pl: 'Robić (zdjęcie)',
         jp: { text: '撮る', pronunciation: 'とる' },
     },
     {
@@ -86,8 +86,8 @@ const sakura_1_12: TranslatedJapaneseText[] = [
     {
         id: '5b2459f5-207b-49c0-8cbd-6613d85e685b',
         type: 'noun',
-        en: 'Package',
-        pl: 'Paczka',
+        en: 'Luggage / Package / Parcel',
+        pl: 'Bagaż / Paczka / Przesyłka',
         jp: { text: '荷物', pronunciation: 'にもつ' },
     },
     {
@@ -178,7 +178,7 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'ichidan',
         en: 'Put on (clothes above your waist)',
-        pl: 'Zakładać (ubrania powyżej pasa)',
+        pl: 'Zakładać (odzież powyżej pasa)',
         jp: { text: '着る', pronunciation: 'きる' },
     },
     {
@@ -231,8 +231,6 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         en: 'Cook Japanese food',
         pl: 'Gotować japońskie jedzenie',
         jp: { text: '日本料理を作る', pronunciation: 'にほんりょうりをつくる' },
-        description:
-            'Technically, this should be "にほんのりょうりをつくる", but the particle "の" is often omitted in casual speech.',
     },
     {
         id: '01303ebd-938c-477b-91ce-5f20898fb01a',
