@@ -99,6 +99,7 @@ import { numberOfMonthsBag } from './vocabulary/time/numberOfMonths';
 import { secondsBag } from './vocabulary/time/seconds';
 import { weekBag } from './vocabulary/time/week';
 import { yearsBag } from './vocabulary/time/years';
+import { continentsBag } from './vocabulary/geography/continents';
 
 export const availableWordBags: WordBag[] = [
     familyBag,
@@ -142,6 +143,7 @@ export const availableWordBags: WordBag[] = [
     duolingo16Bag,
     countriesEuropeBag,
     countriesAsiaBag,
+    continentsBag,
     planetsBag,
     cardinalDirectionsBag,
     genki0Bag,
