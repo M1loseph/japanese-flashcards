@@ -43,6 +43,7 @@ import { genki6Bag } from './vocabulary/genki/genki_6';
 import { genki6PhrasesBag } from './vocabulary/genki/genki_6_phrases';
 import { genki7Bag } from './vocabulary/genki/genki_7';
 import { cardinalDirectionsBag } from './vocabulary/geography/cardinalDirections';
+import { continentsBag } from './vocabulary/geography/continents';
 import { countriesAsiaBag } from './vocabulary/geography/countriesAsia';
 import { countriesEuropeBag } from './vocabulary/geography/countriesEurope';
 import { planetsBag } from './vocabulary/geography/planets';
@@ -99,7 +100,6 @@ import { numberOfMonthsBag } from './vocabulary/time/numberOfMonths';
 import { secondsBag } from './vocabulary/time/seconds';
 import { weekBag } from './vocabulary/time/week';
 import { yearsBag } from './vocabulary/time/years';
-import { continentsBag } from './vocabulary/geography/continents';
 
 export const availableWordBags: WordBag[] = [
     familyBag,
