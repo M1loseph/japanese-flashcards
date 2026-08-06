@@ -119,7 +119,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Answer / Reply',
         pl: 'Odpowiedź',
-        jp: { text: 'へんじ' },
+        jp: { text: '返事', pronunciation: 'へんじ' },
     },
     {
         id: '2062c3df-b9d1-4b63-ad6f-bcec480809f6',
@@ -210,8 +210,8 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: 'ac269528-893a-4109-af9b-3982963c74ef',
         type: 'adverb',
-        en: 'So / So much',
-        pl: 'Tak / Tak bardzo',
+        en: 'That much / So much',
+        pl: 'Aż tak / Tak bardzo',
         jp: { text: 'そんなに' },
     },
     {
@@ -219,7 +219,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: "I didn't work that much yesterday.",
         pl: 'Nie pracowałem tak dużo wczoraj.',
-        jp: { text: 'きのうそんなにしごとしませんでした。' },
+        jp: { text: '昨日はそんなに仕事をしませんでした。', pronunciation: 'きのうはそんなにしごとをしませんでした。' },
     },
     {
         id: '05bf93bf-b887-49ad-be9f-f0ae67b1fb93',
@@ -318,7 +318,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Cheek (of the face)',
         pl: 'Policzek',
-        jp: { text: '頬', pronunciation: 'ほお' },
+        jp: { text: '頬', pronunciation: ['ほお', 'ほほ'] },
     },
     {
         id: 'c42cff98-9369-4557-bc05-d5cb5d7b3330',
@@ -354,7 +354,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         id: '897a1147-1ae1-499a-9649-42b13666f573',
         type: 'phrase',
         en: 'My least favorite food is pumpkin.',
-        pl: 'Moim najmniej ulubionym jedzeniem jest dynia.',
+        pl: 'Najmniej lubianym przeze mnie jedzeniem jest dynia.',
         jp: { text: '私の嫌いな食べ物はかぼちゃです。', pronunciation: 'わたしのきらいなたべものはかぼちゃです。' },
     },
 ];

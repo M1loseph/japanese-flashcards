@@ -13,7 +13,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Saturday is okay.',
         pl: 'Sobota może być. (Nie mam nic przeciwko sobocie.)',
-        jp: { text: '土曜日はだいじょうぶです。', pronunciation: 'どようびはだいじょうぶです。' },
+        jp: { text: '土曜日は大丈夫です。', pronunciation: 'どようびはだいじょうぶです。' },
     },
     {
         id: '1b27b97b-aa66-4602-ad33-389d36e7278a',
@@ -41,7 +41,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Circle / Correct',
         pl: 'Koło / Poprawne',
-        jp: { text: 'まる' },
+        jp: { text: '丸', pronunciation: 'まる' },
         description: 'Symbol indicating something is correct or good.',
     },
     {
@@ -63,7 +63,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
         id: 'e94c87c0-17bd-47c9-b832-1a58fb5e75a6',
         type: 'noun',
         en: 'Live / Concert',
-        pl: 'Koncert / Transmisja na żywo',
+        pl: 'Koncert / Występ na żywo',
         jp: { text: 'ライブ' },
     },
     {
@@ -84,7 +84,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: '059effee-ccef-4c2a-a384-384554537842',
         type: 'phrase',
-        en: 'What time is good for you?',
+        en: 'What time works for you?',
         pl: 'Która godzina ci pasuje?',
         jp: { text: '何時がいいですか。', pronunciation: 'なんじがいいですか。' },
     },
@@ -114,7 +114,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Overtime',
         pl: 'Nadgodziny',
-        jp: { text: 'ざんぎょう' },
+        jp: { text: '残業', pronunciation: 'ざんぎょう' },
     },
     {
         id: '53eba20a-a793-4634-96fb-448737cc3d97',
@@ -122,7 +122,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
         verb_type: 'suru',
         en: 'Work overtime',
         pl: 'Pracować po godzinach',
-        jp: { text: 'ざんぎょうをする' },
+        jp: { text: '残業をする', pronunciation: 'ざんぎょうをする' },
     },
 ];
 
