@@ -300,7 +300,7 @@ describe('Badges', () => {
 
     describe('SRS', () => {
         it('renders SRS level badge by default', async () => {
-            await addWordsToSRS([noun.id]);
+            await addWordsToSRS([noun.id], new Date());
             renderCard(noun);
             const srsBadge = await screen.findByText('level 1');
             expect(srsBadge).toBeInTheDocument();
