@@ -4,6 +4,7 @@ import { createElement, type ReactNode } from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { availableWordBags } from '../../japanese';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
+import { TimeContextProvider } from '../Time';
 import { MINIMUM_LEVEL } from './Stages';
 import { addWordsToSRS, useAddNewRandomWords, useReplaceSRSWords, useSRSWord, useSRSWords } from './srsHooks';
 import { db } from './srsdb';
@@ -18,7 +19,7 @@ const createQueryClient = () =>
 
 const createWrapper = (queryClient: QueryClient) => {
     return ({ children }: { children: ReactNode }) =>
-        createElement(QueryClientProvider, { client: queryClient }, children);
+        createElement(QueryClientProvider, { client: queryClient }, createElement(TimeContextProvider, null, children));
 };
 
 const createProgress = (wordId: string, overrides: Partial<WordLearningProgress> = {}): WordLearningProgress => ({
@@ -48,12 +49,11 @@ describe('SRS hooks', () => {
         it('creates minimum-level progress records and returns the number added', async () => {
             const wordBag = getWordBag(2);
             const wordIds = wordBag.words.slice(0, 2).map((word) => word.id);
-            const beforeAdd = new Date();
+            const now = new Date('2026-01-01T00:00:00.000Z');
 
-            await expect(addWordsToSRS(wordIds)).resolves.toBe(2);
+            await expect(addWordsToSRS(wordIds, now)).resolves.toBe(2);
 
             const records = await db.wordProgress.toArray();
-            const afterAdd = new Date();
 
             expect(records).toHaveLength(2);
             expect(records.map((record) => record.wordId)).toEqual(wordIds);
@@ -72,22 +72,20 @@ describe('SRS hooks', () => {
                 ]),
             );
             records.forEach((record) => {
-                expect(record.nextReview).toBeInstanceOf(Date);
-                expect(record.nextReview.getTime()).toBeGreaterThanOrEqual(beforeAdd.getTime());
-                expect(record.nextReview.getTime()).toBeLessThanOrEqual(afterAdd.getTime());
+                expect(record.nextReview).toStrictEqual(now);
             });
         });
 
         it('does nothing for an empty list', async () => {
-            await expect(addWordsToSRS([])).resolves.toBe(0);
+            await expect(addWordsToSRS([], new Date())).resolves.toBe(0);
             await expect(db.wordProgress.toArray()).resolves.toEqual([]);
         });
 
         it('propagates duplicate word ID failures', async () => {
             const wordId = getWordBag().words[0].id;
-            await addWordsToSRS([wordId]);
+            await addWordsToSRS([wordId], new Date());
 
-            await expect(addWordsToSRS([wordId])).rejects.toThrow();
+            await expect(addWordsToSRS([wordId], new Date())).rejects.toThrow();
         });
     });
 
@@ -103,9 +101,9 @@ describe('SRS hooks', () => {
             await waitFor(() => expect(result.current.isSuccess).toBe(true));
 
             expect(result.current.data).toEqual(records);
-            // expect(queryClient.getQueryCache().find({ queryKey: ['databaseWords'] })?.options.staleTime).toBe(
-            //     5 * 60 * 1000,
-            // );
+            expect(
+                queryClient.getQueryCache().find({ queryKey: ['databaseWords'] })?.observers[0]?.options.staleTime,
+            ).toBe(5 * 60 * 1000);
         });
 
         it('removes orphaned progress records before returning the result', async () => {
@@ -127,7 +125,7 @@ describe('SRS hooks', () => {
         it('adds only missing words from the preferred bags and invalidates the words query', async () => {
             const wordBag = getWordBag(3);
             const existingWordId = wordBag.words[0].id;
-            await addWordsToSRS([existingWordId]);
+            await addWordsToSRS([existingWordId], new Date());
             const queryClient = createQueryClient();
             const invalidateQueries = vi.spyOn(queryClient, 'invalidateQueries');
             const { result } = renderHook(() => useAddNewRandomWords(), {

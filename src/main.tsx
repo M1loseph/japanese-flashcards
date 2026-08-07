@@ -16,6 +16,7 @@ import { GameContextProvider } from './services/GameContext';
 import { GameSettingsProvider } from './services/GameStateContext';
 import { HardTextProvider } from './services/HardWordsContext';
 import { StreakContextProvider } from './services/StreakContext';
+import { TimeContextProvider } from './services/Time';
 
 const router = createBrowserRouter([
     {
@@ -91,17 +92,19 @@ const queryClient = new QueryClient({
 createRoot(root).render(
     <StrictMode>
         <QueryClientProvider client={queryClient}>
-            <DrawerProvider>
-                <HardTextProvider>
-                    <StreakContextProvider>
-                        <GameSettingsProvider>
-                            <GameContextProvider>
-                                <RouterProvider router={router} />
-                            </GameContextProvider>
-                        </GameSettingsProvider>
-                    </StreakContextProvider>
-                </HardTextProvider>
-            </DrawerProvider>
+            <TimeContextProvider>
+                <DrawerProvider>
+                    <HardTextProvider>
+                        <StreakContextProvider>
+                            <GameSettingsProvider>
+                                <GameContextProvider>
+                                    <RouterProvider router={router} />
+                                </GameContextProvider>
+                            </GameSettingsProvider>
+                        </StreakContextProvider>
+                    </HardTextProvider>
+                </DrawerProvider>
+            </TimeContextProvider>
         </QueryClientProvider>
     </StrictMode>,
 );

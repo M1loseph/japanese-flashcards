@@ -4,10 +4,11 @@ import { availableWordBags } from '../../japanese';
 import { findWordById } from '../../japanese/search';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { shuffleArray } from '../../utils';
+import { useTimeContext } from '../Time';
 import { db } from './srsdb';
 import { MAXIMUM_LEVEL, MINIMUM_LEVEL, SRS_STAGES } from './Stages';
 
-const addNewRandomWords = async (count: number, preferredWordBags?: string[]): Promise<number> => {
+const addNewRandomWords = async (count: number, now: Date, preferredWordBags?: string[]): Promise<number> => {
     const wordsInProgress = (await db.wordProgress.toArray()).map((w) => w.wordId);
     const allWords = availableWordBags
         .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.id))
@@ -16,11 +17,10 @@ const addNewRandomWords = async (count: number, preferredWordBags?: string[]): P
 
     const newWords = allWords.filter((id) => !wordsInProgress.includes(id));
     const wordsToAdd = shuffleArray(newWords).slice(0, count);
-    return addWordsToSRS(wordsToAdd);
+    return addWordsToSRS(wordsToAdd, now);
 };
 
-export const addWordsToSRS = async (wordIds: string[]) => {
-    const now = new Date();
+export const addWordsToSRS = async (wordIds: string[], now: Date) => {
     const newProgressEntries = wordIds.map((wordId) => ({
         wordId,
         lastReviewed: undefined,
@@ -46,10 +46,12 @@ export const useSRSWords = () => {
 
 export const useAddNewRandomWords = () => {
     const queryClient = useQueryClient();
+    const timeProvider = useTimeContext();
+
     return useMutation({
         mutationKey: ['addNewRandomWords'],
         mutationFn: ({ count, preferredWordBags }: { count: number; preferredWordBags?: string[] }) =>
-            addNewRandomWords(count, preferredWordBags),
+            addNewRandomWords(count, timeProvider.currentTime(), preferredWordBags),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
         },
@@ -82,7 +84,7 @@ export const useSRSWord = (wordId: string) => {
     });
 };
 
-const markWordAsReviewed = async (wordId: string, correct: boolean) => {
+const markWordAsReviewed = async (wordId: string, correct: boolean, now: Date) => {
     const word = await db.wordProgress.get({ wordId });
     if (!word) return;
 
@@ -94,7 +96,6 @@ const markWordAsReviewed = async (wordId: string, correct: boolean) => {
         level = Math.max(level - 2, MINIMUM_LEVEL);
     }
 
-    const now = new Date();
     const timeToNextReview = SRS_STAGES[level].waitDuration.asMilliseconds();
     const nextReview = new Date(now.getTime() + timeToNextReview);
 
@@ -108,13 +109,14 @@ const markWordAsReviewed = async (wordId: string, correct: boolean) => {
 
 export const useMarkWordsAsReviewedBatch = () => {
     const queryClient = useQueryClient();
+    const timeProvider = useTimeContext();
 
     return useMutation({
         mutationKey: ['markWordsAsReviewedBatch '],
         mutationFn: async (reviews: { wordId: string; correct: boolean }[]) => {
             await db.transaction('rw', db.wordProgress, async () => {
                 for (const { wordId, correct } of reviews) {
-                    await markWordAsReviewed(wordId, correct);
+                    await markWordAsReviewed(wordId, correct, timeProvider.currentTime());
                 }
             });
         },
