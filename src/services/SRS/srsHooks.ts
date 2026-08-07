@@ -20,7 +20,7 @@ const addNewRandomWords = async (count: number, now: Date, preferredWordBags?: s
     return addWordsToSRS(wordsToAdd, now);
 };
 
-export const addWordsToSRS = async (wordIds: string[], now: Date) => {
+export const addWordsToSRS = async (wordIds: string[], now: Date): Promise<number> => {
     const newProgressEntries = wordIds.map((wordId) => ({
         wordId,
         lastReviewed: undefined,
@@ -50,8 +50,9 @@ export const useAddNewRandomWords = () => {
 
     return useMutation({
         mutationKey: ['addNewRandomWords'],
-        mutationFn: ({ count, preferredWordBags }: { count: number; preferredWordBags?: string[] }) =>
-            addNewRandomWords(count, timeProvider.currentTime(), preferredWordBags),
+        mutationFn: async ({ count, preferredWordBags }: { count: number; preferredWordBags?: string[] }) => {
+            return await addNewRandomWords(count, timeProvider.currentTime(), preferredWordBags);
+        },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
         },
