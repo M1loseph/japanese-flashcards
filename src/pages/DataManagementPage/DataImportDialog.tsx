@@ -1,4 +1,3 @@
-import { useQueryClient } from '@tanstack/react-query';
 import { useState, type FC } from 'react';
 import { useHardText } from '../../services/HardWordsContext';
 import { useReplaceSRSWords } from '../../services/SRS/srsHooks';
@@ -21,9 +20,8 @@ export const DataImportDialog: FC<DataImportDialogProps> = ({
     handleShowErrorToast,
 }) => {
     const [disabledButtons, setDisabledButtons] = useState(false);
-    const queryClient = useQueryClient();
     const { overrideHardTextList } = useHardText();
-    const replaceSRSWords = useReplaceSRSWords(queryClient);
+    const replaceSRSWords = useReplaceSRSWords();
 
     const handleImportData = async () => {
         setDisabledButtons(true);

@@ -1,11 +1,11 @@
-import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import dayjs from '../../dayjs';
 import { availableWordBags } from '../../japanese';
 import { findWordById } from '../../japanese/search';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { shuffleArray } from '../../utils';
 import { db } from './srsdb';
-import { MINIMUM_LEVEL } from './Stages';
+import { MAXIMUM_LEVEL, MINIMUM_LEVEL, SRS_STAGES } from './Stages';
 
 const addNewRandomWords = async (count: number, preferredWordBags?: string[]): Promise<number> => {
     const wordsInProgress = (await db.wordProgress.toArray()).map((w) => w.wordId);
@@ -44,7 +44,8 @@ export const useSRSWords = () => {
     });
 };
 
-export const useAddNewRandomWords = (queryClient: QueryClient) => {
+export const useAddNewRandomWords = () => {
+    const queryClient = useQueryClient();
     return useMutation({
         mutationKey: ['addNewRandomWords'],
         mutationFn: ({ count, preferredWordBags }: { count: number; preferredWordBags?: string[] }) =>
@@ -55,7 +56,8 @@ export const useAddNewRandomWords = (queryClient: QueryClient) => {
     });
 };
 
-export const useReplaceSRSWords = (queryClient: QueryClient) => {
+export const useReplaceSRSWords = () => {
+    const queryClient = useQueryClient();
     return useMutation({
         mutationKey: ['replaceSRSWords'],
         mutationFn: async (newWords: WordLearningProgress[]) => {
@@ -76,6 +78,49 @@ export const useSRSWord = (wordId: string) => {
         queryFn: async () => {
             const result = await db.wordProgress.get({ wordId });
             return result || null;
+        },
+    });
+};
+
+const markWordAsReviewed = async (wordId: string, correct: boolean) => {
+    const word = await db.wordProgress.get({ wordId });
+    if (!word) return;
+
+    let level = word.level;
+
+    if (correct) {
+        level = Math.min(level + 1, MAXIMUM_LEVEL);
+    } else {
+        level = Math.max(level - 2, MINIMUM_LEVEL);
+    }
+
+    const now = new Date();
+    const timeToNextReview = SRS_STAGES[level].waitDuration.asMilliseconds();
+    const nextReview = new Date(now.getTime() + timeToNextReview);
+
+    await db.wordProgress.put({
+        wordId: word.wordId,
+        lastReviewed: now,
+        nextReview,
+        level,
+    });
+};
+
+export const useMarkWordsAsReviewedBatch = () => {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationKey: ['markWordsAsReviewedBatch '],
+        mutationFn: async (reviews: { wordId: string; correct: boolean }[]) => {
+            await db.transaction('rw', db.wordProgress, async () => {
+                for (const { wordId, correct } of reviews) {
+                    await markWordAsReviewed(wordId, correct);
+                }
+            });
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+            queryClient.invalidateQueries({ queryKey: ['srsWord'] });
         },
     });
 };

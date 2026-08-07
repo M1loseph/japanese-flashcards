@@ -1,5 +1,4 @@
 import { IconArrowRight, IconBolt, IconFlame, IconListDetails, IconPlus } from '@tabler/icons-react';
-import { useQueryClient } from '@tanstack/react-query';
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/Card';
@@ -35,8 +34,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const { data: srsWords } = useSRSWords();
     const wordsToReview = listWordsToReview(srsWords);
     const statistics = generateStatistics(srsWords);
-    const queryClient = useQueryClient();
-    const { mutateAsync: addNewRandomWords } = useAddNewRandomWords(queryClient);
+    const { mutateAsync: addNewRandomWords } = useAddNewRandomWords();
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
     const { currentStreak } = useStreak();
     const [selectedWordBag, setSelectedWordBag] = useState<string | undefined>();

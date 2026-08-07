@@ -4,12 +4,14 @@ import type { FlashcardSession } from '../../types/FlashcardSession';
 import { GameStateSchema, type GameState, type GameType } from '../../types/GameState';
 import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { shuffleArray } from '../../utils';
-import { markWordsAsReviewedBatch } from '../SRS';
+import { useMarkWordsAsReviewedBatch } from '../SRS';
 import { GameContext } from './GameContext';
 
 const RANDOM_SHUFFLE_GAME_STATE_KEY = 'randomShuffleGameState';
 
 export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
+    const markWordsAsReviewedBatch = useMarkWordsAsReviewedBatch();
+
     const [gameState, setGameState] = useState<GameState | undefined>(() => {
         try {
             const saved = localStorage.getItem(RANDOM_SHUFFLE_GAME_STATE_KEY);
@@ -83,7 +85,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
                 wordId: card.wordId,
                 correct: card.correct,
             }));
-            await markWordsAsReviewedBatch(reviews);
+            await markWordsAsReviewedBatch.mutateAsync(reviews);
         }
     };
 
