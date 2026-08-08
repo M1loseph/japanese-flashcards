@@ -1,7 +1,6 @@
-import { queryClient } from '../../queryClient';
+import { availableWordBags } from '../../japanese';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
-import { db } from './srsdb';
-import { MAXIMUM_LEVEL, MINIMUM_LEVEL, SRS_STAGES } from './Stages';
+import { shuffleArray } from '../../utils';
 
 export const listWordsToReview = (words?: WordLearningProgress[]) => {
     const now = new Date();
@@ -25,36 +24,18 @@ export const generateStatistics = (words?: WordLearningProgress[]): SRSStatistic
     return { buckets };
 };
 
-const markWordAsReviewed = async (wordId: string, correct: boolean) => {
-    const word = await db.wordProgress.get({ wordId });
-    if (!word) return;
+export const selectNewRandomWords = (
+    wordsInProgress: WordLearningProgress[],
+    count: number,
+    preferredWordBags?: string[],
+): string[] => {
+    const allWords = availableWordBags
+        .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.id))
+        .flatMap((bag) => bag.words)
+        .map((w) => w.id);
 
-    let level = word.level;
+    const wordsInProgressIds = new Set(wordsInProgress.map((w) => w.wordId));
 
-    if (correct) {
-        level = Math.min(level + 1, MAXIMUM_LEVEL);
-    } else {
-        level = Math.max(level - 2, MINIMUM_LEVEL);
-    }
-
-    const now = new Date();
-    const timeToNextReview = SRS_STAGES[level].waitDuration.asMilliseconds();
-    const nextReview = new Date(now.getTime() + timeToNextReview);
-
-    await db.wordProgress.put({
-        wordId: word.wordId,
-        lastReviewed: now,
-        nextReview,
-        level,
-    });
-};
-
-export const markWordsAsReviewedBatch = async (reviews: { wordId: string; correct: boolean }[]) => {
-    await db.transaction('rw', db.wordProgress, async () => {
-        for (const { wordId, correct } of reviews) {
-            await markWordAsReviewed(wordId, correct);
-        }
-    });
-    queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
-    queryClient.invalidateQueries({ queryKey: ['srsWord'] });
+    const newWords = allWords.filter((id) => !wordsInProgressIds.has(id));
+    return shuffleArray(newWords).slice(0, count);
 };

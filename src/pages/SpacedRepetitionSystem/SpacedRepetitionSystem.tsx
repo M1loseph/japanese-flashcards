@@ -1,5 +1,4 @@
 import { IconArrowRight, IconBolt, IconFlame, IconListDetails, IconPlus } from '@tabler/icons-react';
-import { useQueryClient } from '@tanstack/react-query';
 import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/Card';
@@ -12,8 +11,9 @@ import { useGameSettingsContext } from '../../services/GameStateContext';
 import {
     generateStatistics,
     listWordsToReview,
+    selectNewRandomWords,
     SRS_STAGES,
-    useAddNewRandomWords,
+    useAddNewWordsToSRS,
     useSRSWords,
 } from '../../services/SRS';
 import { useStreak } from '../../services/StreakContext';
@@ -35,8 +35,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const { data: srsWords } = useSRSWords();
     const wordsToReview = listWordsToReview(srsWords);
     const statistics = generateStatistics(srsWords);
-    const queryClient = useQueryClient();
-    const { mutateAsync: addNewRandomWords } = useAddNewRandomWords(queryClient);
+    const addNewWordsToSRS = useAddNewWordsToSRS();
     const [selectedWordCount, setSelectedWordCount] = useState<WordCountOption>(10);
     const { currentStreak } = useStreak();
     const [selectedWordBag, setSelectedWordBag] = useState<string | undefined>();
@@ -80,11 +79,14 @@ export const SpacedRepetitionSystemPage: FC = () => {
     };
 
     const handleConfirmAdd = async () => {
-        if (!selectedWordBag) {
+        if (!selectedWordBag || !srsWords) {
             return;
         }
         const preferredWordBags = [selectedWordBag];
-        const numberOfAddedWords = await addNewRandomWords({ count: selectedWordCount, preferredWordBags });
+        const newWords = selectNewRandomWords(srsWords, selectedWordCount, preferredWordBags);
+        const numberOfAddedWords = newWords.length;
+        await addNewWordsToSRS.mutateAsync(newWords);
+
         if (numberOfAddedWords > 0) {
             if (selectedWordBag) {
                 const bagName = availableWordBags.find((bag) => bag.id === selectedWordBag)?.name || 'Unknown Bag';
