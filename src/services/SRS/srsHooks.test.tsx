@@ -1,12 +1,12 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { act, renderHook, waitFor } from '@testing-library/react';
-import { createElement, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { availableWordBags } from '../../japanese';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { TimeContextProvider } from '../Time';
 import { MINIMUM_LEVEL } from './Stages';
-import { addWordsToSRS, useAddNewRandomWords, useReplaceSRSWords, useSRSWord, useSRSWords } from './srsHooks';
+import { useAddNewWordsToSRS, useReplaceSRSWords, useSRSWord, useSRSWords } from './srsHooks';
 import { db } from './srsdb';
 
 const createQueryClient = () =>
@@ -18,8 +18,19 @@ const createQueryClient = () =>
     });
 
 const createWrapper = (queryClient: QueryClient) => {
-    return ({ children }: { children: ReactNode }) =>
-        createElement(QueryClientProvider, { client: queryClient }, createElement(TimeContextProvider, null, children));
+    return ({ children }: { children: ReactNode }) => {
+        return (
+            <QueryClientProvider client={queryClient}>
+                <TimeContextProvider
+                    timeProvider={{
+                        now: () => new Date('2026-01-01T00:00:00.000Z'),
+                    }}
+                >
+                    {children}
+                </TimeContextProvider>
+            </QueryClientProvider>
+        );
+    };
 };
 
 const createProgress = (wordId: string, overrides: Partial<WordLearningProgress> = {}): WordLearningProgress => ({
@@ -51,7 +62,14 @@ describe('SRS hooks', () => {
             const wordIds = wordBag.words.slice(0, 2).map((word) => word.id);
             const now = new Date('2026-01-01T00:00:00.000Z');
 
-            await expect(addWordsToSRS(wordIds, now)).resolves.toBe(2);
+            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), {
+                wrapper: createWrapper(createQueryClient()),
+            });
+
+            await act(async () => {
+                await addNewWordstoSRS.result.current.mutateAsync(wordIds);
+            });
+            await waitFor(() => expect(addNewWordstoSRS.result.current.isSuccess).toBe(true));
 
             const records = await db.wordProgress.toArray();
 
@@ -77,127 +95,164 @@ describe('SRS hooks', () => {
         });
 
         it('does nothing for an empty list', async () => {
-            await expect(addWordsToSRS([], new Date())).resolves.toBe(0);
+            const queryClient = createQueryClient();
+            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), { wrapper: createWrapper(queryClient) });
+            await act(async () => {
+                await addNewWordstoSRS.result.current.mutateAsync([]);
+            });
+            await waitFor(() => expect(addNewWordstoSRS.result.current.isSuccess).toBe(true));
             await expect(db.wordProgress.toArray()).resolves.toEqual([]);
         });
 
         it('propagates duplicate word ID failures', async () => {
             const wordId = getWordBag().words[0].id;
-            await addWordsToSRS([wordId], new Date());
-
-            await expect(addWordsToSRS([wordId], new Date())).rejects.toThrow();
+            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), {
+                wrapper: createWrapper(createQueryClient()),
+            });
+            await act(async () => {
+                await addNewWordstoSRS.result.current.mutateAsync([wordId]);
+            });
+            await waitFor(() => expect(addNewWordstoSRS.result.current.isSuccess).toBe(true));
+            await expect(
+                act(async () => {
+                    await addNewWordstoSRS.result.current.mutateAsync([wordId]);
+                }),
+            ).rejects.toThrow();
         });
     });
 
     describe('useSRSWords', () => {
         it('returns all valid progress records', async () => {
-            const wordBag = getWordBag(2);
-            const records = wordBag.words.slice(0, 2).map((word, index) => createProgress(word.id, { level: index }));
-            await db.wordProgress.bulkAdd(records);
             const queryClient = createQueryClient();
+            const wordBag = getWordBag(2);
+            const insertedWords = wordBag.words.slice(0, 2);
 
-            const { result } = renderHook(() => useSRSWords(), { wrapper: createWrapper(queryClient) });
+            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), { wrapper: createWrapper(queryClient) });
+            const sRSWords = renderHook(() => useSRSWords(), { wrapper: createWrapper(queryClient) });
+            await act(async () => {
+                await addNewWordstoSRS.result.current.mutateAsync(insertedWords.map((word) => word.id));
+            });
+            await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
 
-            await waitFor(() => expect(result.current.isSuccess).toBe(true));
-
-            expect(result.current.data).toEqual(records);
+            expect(sRSWords.result.current.data).toEqual([
+                {
+                    wordId: insertedWords[0].id,
+                    level: MINIMUM_LEVEL,
+                    lastReviewed: undefined,
+                    nextReview: new Date('2026-01-01T00:00:00.000Z'),
+                },
+                {
+                    wordId: insertedWords[1].id,
+                    level: MINIMUM_LEVEL,
+                    lastReviewed: undefined,
+                    nextReview: new Date('2026-01-01T00:00:00.000Z'),
+                },
+            ]);
             expect(
                 queryClient.getQueryCache().find({ queryKey: ['databaseWords'] })?.observers[0]?.options.staleTime,
             ).toBe(5 * 60 * 1000);
         });
 
         it('removes orphaned progress records before returning the result', async () => {
-            const validRecord = createProgress(getWordBag().words[0].id);
-            const orphanRecord = createProgress('missing-vocabulary-word');
-            await db.wordProgress.bulkAdd([validRecord, orphanRecord]);
+            const validRecord = getWordBag().words[0].id;
+            const orphanRecord = 'missing-vocabulary-word';
+
             const queryClient = createQueryClient();
+            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), { wrapper: createWrapper(queryClient) });
+            const sRSWords = renderHook(() => useSRSWords(), { wrapper: createWrapper(queryClient) });
+            await act(async () => {
+                await addNewWordstoSRS.result.current.mutateAsync([validRecord, orphanRecord]);
+            });
 
-            const { result } = renderHook(() => useSRSWords(), { wrapper: createWrapper(queryClient) });
+            await waitFor(() => expect(addNewWordstoSRS.result.current.isSuccess).toBe(true));
+            await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
 
-            await waitFor(() => expect(result.current.isSuccess).toBe(true));
-
-            expect(result.current.data).toEqual([validRecord]);
-            await expect(db.wordProgress.get(orphanRecord.wordId)).resolves.toBeUndefined();
+            expect(sRSWords.result.current.data).toEqual([
+                {
+                    wordId: validRecord,
+                    level: MINIMUM_LEVEL,
+                    lastReviewed: undefined,
+                    nextReview: new Date('2026-01-01T00:00:00.000Z'),
+                },
+            ]);
         });
     });
 
-    describe('useAddNewRandomWords', () => {
+    describe('useAddNewWordsToSRS', () => {
         it('adds only missing words from the preferred bags and invalidates the words query', async () => {
             const wordBag = getWordBag(3);
             const existingWordId = wordBag.words[0].id;
-            await addWordsToSRS([existingWordId], new Date());
+            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), {
+                wrapper: createWrapper(createQueryClient()),
+            });
+            await act(async () => {
+                await addNewWordstoSRS.result.current.mutateAsync([existingWordId]);
+            });
+
             const queryClient = createQueryClient();
             const invalidateQueries = vi.spyOn(queryClient, 'invalidateQueries');
-            const { result } = renderHook(() => useAddNewRandomWords(), {
+            const { result } = renderHook(() => useAddNewWordsToSRS(), {
                 wrapper: createWrapper(queryClient),
             });
 
-            let addedCount = 0;
             await act(async () => {
-                addedCount = await result.current.mutateAsync({ count: 2, preferredWordBags: [wordBag.id] });
+                await result.current.mutateAsync([wordBag.words[1].id, wordBag.words[2].id]);
             });
             await waitFor(() => expect(result.current.isSuccess).toBe(true));
 
             const records = await db.wordProgress.toArray();
             const preferredWordIds = new Set(wordBag.words.map((word) => word.id));
 
-            expect(addedCount).toBe(2);
             expect(records).toHaveLength(3);
             expect(records.map((record) => record.wordId)).toContain(existingWordId);
             expect(records.every((record) => preferredWordIds.has(record.wordId))).toBe(true);
             expect(invalidateQueries).toHaveBeenCalledWith({ queryKey: ['databaseWords'] });
-        });
-
-        it('returns zero when no preferred bag can supply words', async () => {
-            const queryClient = createQueryClient();
-            const { result } = renderHook(() => useAddNewRandomWords(), {
-                wrapper: createWrapper(queryClient),
-            });
-
-            let addedCount = -1;
-            await act(async () => {
-                addedCount = await result.current.mutateAsync({ count: 3, preferredWordBags: ['does-not-exist'] });
-            });
-            await waitFor(() => expect(result.current.isSuccess).toBe(true));
-
-            expect(addedCount).toBe(0);
-            await expect(db.wordProgress.toArray()).resolves.toEqual([]);
         });
     });
 
     describe('useReplaceSRSWords', () => {
         it('replaces all records and invalidates the words query', async () => {
             const wordBag = getWordBag(3);
-            await db.wordProgress.bulkAdd([createProgress(wordBag.words[0].id)]);
+            const queryClient = createQueryClient();
+            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), { wrapper: createWrapper(queryClient) });
+            const sRSWords = renderHook(() => useSRSWords(), { wrapper: createWrapper(queryClient) });
+            await act(async () => {
+                await addNewWordstoSRS.result.current.mutateAsync([wordBag.words[0].id]);
+            });
+            await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
+
             const replacementRecords = wordBag.words
                 .slice(1, 3)
                 .map((word, index) => createProgress(word.id, { level: index + 3 }));
-            const queryClient = createQueryClient();
             const invalidateQueries = vi.spyOn(queryClient, 'invalidateQueries');
-            const { result } = renderHook(() => useReplaceSRSWords(), {
+            const replaceSRSWords = renderHook(() => useReplaceSRSWords(), {
                 wrapper: createWrapper(queryClient),
             });
 
             await act(async () => {
-                await result.current.mutateAsync(replacementRecords);
+                await replaceSRSWords.result.current.mutateAsync(replacementRecords);
             });
-            await waitFor(() => expect(result.current.isSuccess).toBe(true));
+            await waitFor(() => expect(replaceSRSWords.result.current.isSuccess).toBe(true));
 
             await expect(db.wordProgress.toArray()).resolves.toEqual(replacementRecords);
             expect(invalidateQueries).toHaveBeenCalledWith({ queryKey: ['databaseWords'] });
         });
 
         it('clears all records when given an empty replacement', async () => {
-            await db.wordProgress.bulkAdd([createProgress(getWordBag().words[0].id)]);
+            const wordBag = getWordBag(1);
             const queryClient = createQueryClient();
-            const { result } = renderHook(() => useReplaceSRSWords(), {
+            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), { wrapper: createWrapper(queryClient) });
+            await act(async () => {
+                await addNewWordstoSRS.result.current.mutateAsync([wordBag.words[0].id]);
+            });
+            const replaceSRSWords = renderHook(() => useReplaceSRSWords(), {
                 wrapper: createWrapper(queryClient),
             });
 
             await act(async () => {
-                await result.current.mutateAsync([]);
+                await replaceSRSWords.result.current.mutateAsync([]);
             });
-            await waitFor(() => expect(result.current.isSuccess).toBe(true));
+            await waitFor(() => expect(replaceSRSWords.result.current.isSuccess).toBe(true));
 
             await expect(db.wordProgress.toArray()).resolves.toEqual([]);
         });

@@ -1,26 +1,12 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import dayjs from '../../dayjs';
-import { availableWordBags } from '../../japanese';
 import { findWordById } from '../../japanese/search';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
-import { shuffleArray } from '../../utils';
 import { useTimeContext } from '../Time';
 import { db } from './srsdb';
 import { MAXIMUM_LEVEL, MINIMUM_LEVEL, SRS_STAGES } from './Stages';
 
-const addNewRandomWords = async (count: number, now: Date, preferredWordBags?: string[]): Promise<number> => {
-    const wordsInProgress = (await db.wordProgress.toArray()).map((w) => w.wordId);
-    const allWords = availableWordBags
-        .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.id))
-        .flatMap((bag) => bag.words)
-        .map((w) => w.id);
-
-    const newWords = allWords.filter((id) => !wordsInProgress.includes(id));
-    const wordsToAdd = shuffleArray(newWords).slice(0, count);
-    return addWordsToSRS(wordsToAdd, now);
-};
-
-export const addWordsToSRS = async (wordIds: string[], now: Date): Promise<number> => {
+const addWordsToSRS = async (wordIds: string[], now: Date) => {
     const newProgressEntries = wordIds.map((wordId) => ({
         wordId,
         lastReviewed: undefined,
@@ -28,7 +14,6 @@ export const addWordsToSRS = async (wordIds: string[], now: Date): Promise<numbe
         level: MINIMUM_LEVEL,
     }));
     await db.wordProgress.bulkAdd(newProgressEntries);
-    return wordIds.length;
 };
 
 export const useSRSWords = () => {
@@ -44,14 +29,15 @@ export const useSRSWords = () => {
     });
 };
 
-export const useAddNewRandomWords = () => {
+export const useAddNewWordsToSRS = () => {
     const queryClient = useQueryClient();
     const timeProvider = useTimeContext();
 
     return useMutation({
-        mutationKey: ['addNewRandomWords'],
-        mutationFn: async ({ count, preferredWordBags }: { count: number; preferredWordBags?: string[] }) => {
-            return await addNewRandomWords(count, timeProvider.currentTime(), preferredWordBags);
+        mutationKey: ['addNewWordsToSRS'],
+        mutationFn: async (wordIds: string[]) => {
+            const now = timeProvider.currentTime();
+            await addWordsToSRS(wordIds, now);
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });

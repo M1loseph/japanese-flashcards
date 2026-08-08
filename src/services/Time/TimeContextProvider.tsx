@@ -3,11 +3,20 @@ import { TimeContext, type TimeContextType } from './TimeContext';
 
 interface TimeContextProviderProps {
     children: ReactNode;
+    timeProvider?: TimeProvider;
 }
 
-export const TimeContextProvider: FC<TimeContextProviderProps> = ({ children }) => {
+interface TimeProvider {
+    now: () => Date;
+}
+
+const defaultTimeProvider: TimeProvider = {
+    now: () => new Date(),
+};
+
+export const TimeContextProvider: FC<TimeContextProviderProps> = ({ children, timeProvider = defaultTimeProvider }) => {
     const value: TimeContextType = {
-        currentTime: () => new Date(),
+        currentTime: () => timeProvider.now(),
     };
 
     return <TimeContext.Provider value={value}>{children}</TimeContext.Provider>;

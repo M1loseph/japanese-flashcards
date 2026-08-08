@@ -1,8 +1,10 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { render, screen } from '@testing-library/react';
+import { act, render, renderHook, screen } from '@testing-library/react';
+import type { FC, ReactNode } from 'react';
 import { describe, expect, it } from 'vitest';
 import type { TranslatedJapaneseText } from '../japanese/types';
-import { addWordsToSRS } from '../services/SRS';
+import { useAddNewWordsToSRS } from '../services/SRS';
+import { TimeContextProvider } from '../services/Time';
 import { Badges } from './Badges';
 
 const noun: TranslatedJapaneseText = {
@@ -118,11 +120,31 @@ const phrase: TranslatedJapaneseText = {
     jp: { text: 'おはようございます', pronunciation: 'おはようございます' },
 };
 
-const renderCard = (card: TranslatedJapaneseText, showAnswer?: boolean, size?: 'sm' | 'md') => {
+const wrapper = () => {
+    const queryClient = new QueryClient();
+    return ({ children }: { children: ReactNode }) => {
+        return (
+            <QueryClientProvider client={queryClient}>
+                <TimeContextProvider>{children}</TimeContextProvider>
+            </QueryClientProvider>
+        );
+    };
+};
+
+interface RenderCardOptions {
+    Wrapper?: FC<{ children: ReactNode }>;
+    showAnswer?: boolean;
+    size?: 'sm' | 'md';
+}
+
+const renderCard = (
+    card: TranslatedJapaneseText,
+    { Wrapper = wrapper(), showAnswer, size }: RenderCardOptions = {},
+) => {
     render(
-        <QueryClientProvider client={new QueryClient()}>
+        <Wrapper>
             <Badges card={card} showAnswer={showAnswer} size={size} />
-        </QueryClientProvider>,
+        </Wrapper>,
     );
 };
 
@@ -214,13 +236,13 @@ describe('Badges', () => {
         });
 
         it('hides verb type badge when showAnswer is false', () => {
-            renderCard(verb, false);
+            renderCard(verb, { showAnswer: false });
             const verbTypeBadge = screen.getByText('ichidan (ru)');
             expect(verbTypeBadge).toHaveClass('opacity-0');
         });
 
         it('shows verb type badge when showAnswer is true', () => {
-            renderCard(verb, true);
+            renderCard(verb, { showAnswer: true });
             const verbTypeBadge = screen.getByText('ichidan (ru)');
             expect(verbTypeBadge).toBeVisible();
         });
@@ -243,13 +265,13 @@ describe('Badges', () => {
         });
 
         it('hides adjective type badge when showAnswer is false', () => {
-            renderCard(iAdjective, false);
+            renderCard(iAdjective, { showAnswer: false });
             const adjTypeBadge = screen.getByText('i adjective');
             expect(adjTypeBadge).toHaveClass('opacity-0');
         });
 
         it('shows adjective type badge when showAnswer is true', () => {
-            renderCard(naAdjective, true);
+            renderCard(naAdjective, { showAnswer: true });
             const adjTypeBadge = screen.getByText('na adjective');
             expect(adjTypeBadge).toBeVisible();
         });
@@ -263,13 +285,13 @@ describe('Badges', () => {
         });
 
         it('applies badge-sm class when size is sm', () => {
-            renderCard(noun, true, 'sm');
+            renderCard(noun, { size: 'sm' });
             const badge = screen.getByText('noun');
             expect(badge).toHaveClass('badge-sm');
         });
 
         it('does not apply badge-sm or badge-lg when size is md', () => {
-            renderCard(noun, true, 'md');
+            renderCard(noun, { size: 'md' });
             const badge = screen.getByText('noun');
             expect(badge).not.toHaveClass('badge-sm');
             expect(badge).not.toHaveClass('badge-lg');
@@ -300,8 +322,14 @@ describe('Badges', () => {
 
     describe('SRS', () => {
         it('renders SRS level badge by default', async () => {
-            await addWordsToSRS([noun.id], new Date());
-            renderCard(noun);
+            const commonWrapper = wrapper();
+            const { result } = renderHook(() => useAddNewWordsToSRS(), {
+                wrapper: commonWrapper,
+            });
+            await act(async () => {
+                await result.current.mutateAsync([noun.id]);
+            });
+            renderCard(noun, { Wrapper: commonWrapper });
             const srsBadge = await screen.findByText('level 1');
             expect(srsBadge).toBeInTheDocument();
         });

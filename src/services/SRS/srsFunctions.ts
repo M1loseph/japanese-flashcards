@@ -1,4 +1,6 @@
+import { availableWordBags } from '../../japanese';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
+import { shuffleArray } from '../../utils';
 
 export const listWordsToReview = (words?: WordLearningProgress[]) => {
     const now = new Date();
@@ -20,4 +22,20 @@ export const generateStatistics = (words?: WordLearningProgress[]): SRSStatistic
         return acc;
     }, new Map<number, number>());
     return { buckets };
+};
+
+export const selectNewRandomWords = (
+    wordsInProgress: WordLearningProgress[],
+    count: number,
+    preferredWordBags?: string[],
+): string[] => {
+    const allWords = availableWordBags
+        .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.id))
+        .flatMap((bag) => bag.words)
+        .map((w) => w.id);
+
+    const wordsInProgressIds = new Set(wordsInProgress.map((w) => w.wordId));
+
+    const newWords = allWords.filter((id) => !wordsInProgressIds.has(id));
+    return shuffleArray(newWords).slice(0, count);
 };
