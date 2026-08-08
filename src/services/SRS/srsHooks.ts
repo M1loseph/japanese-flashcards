@@ -41,6 +41,7 @@ export const useAddNewWordsToSRS = () => {
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+            queryClient.invalidateQueries({ queryKey: ['srsWord'] });
         },
     });
 };
@@ -57,6 +58,7 @@ export const useReplaceSRSWords = () => {
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+            queryClient.invalidateQueries({ queryKey: ['srsWord'] });
         },
     });
 };
