@@ -2,6 +2,7 @@ import { type FC } from 'react';
 import { isKanji } from 'wanakana';
 import {
     type Adjective,
+    type Transitivity,
     type TranslatedJapaneseText,
     type TranslatedJapaneseTextType,
     type Verb,
@@ -174,6 +175,37 @@ const createSRSLevelBadge = (level: number, show: boolean) => {
     };
 };
 
+const createTransitivityBadge = (transitivity: Transitivity) => {
+    let color: string;
+    let text: string;
+    switch (transitivity) {
+        case 'transitive': {
+            color = `bg-blue-300/75`;
+            text = 'transitive';
+            break;
+        }
+        case 'intransitive': {
+            color = `bg-green-300/75`;
+            text = 'intransitive';
+            break;
+        }
+        case 'ambitransitive': {
+            color = `bg-yellow-300/75`;
+            text = 'ambitransitive';
+            break;
+        }
+        default: {
+            const _exhaustiveCheck: never = transitivity;
+            return _exhaustiveCheck;
+        }
+    }
+    return {
+        color,
+        text,
+        show: true,
+    };
+};
+
 interface BadgesProps {
     card: TranslatedJapaneseText;
     size?: 'sm' | 'md' | 'lg';
@@ -190,6 +222,9 @@ export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }
     const anyKanji = card.jp.text.split('').some(isKanji);
     if (anyKanji) {
         badges.push(createHasKanjiBadge());
+    }
+    if (card.type === 'verb' && card.transitivity) {
+        badges.push(createTransitivityBadge(card.transitivity));
     }
     if (card.type === 'verb') {
         badges.push(createVerbTypeBadge(card.verb_type, showAnswer));

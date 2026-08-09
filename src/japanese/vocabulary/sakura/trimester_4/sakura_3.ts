@@ -302,6 +302,13 @@ const sakura_4_3: TranslatedJapaneseText[] = [
         pl: 'Nie spieszyć się / Relaksować się',
         jp: { text: 'ゆっくりする' },
     },
+    {
+        id: '9dc96038-a66d-4046-a5b2-ac858912e1fe',
+        type: 'noun',
+        en: 'Triangle',
+        pl: 'Trójkąt',
+        jp: { text: '三角', pronunciation: 'さんかく' },
+    },
 ];
 
 export const sakura4_3Bag: WordBag = {

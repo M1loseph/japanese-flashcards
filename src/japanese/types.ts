@@ -21,25 +21,34 @@ const PresentFormSchema = z.object({
     masu: z.object({ affirmative: TextWithPronunciationSchema, negative: TextWithPronunciationSchema }),
 });
 
+// TODO: unify verb types so that there is no repetition of the same fields in each verb type
+const TransitivitySchema = z.enum(['transitive', 'intransitive', 'ambitransitive']);
+
+export type Transitivity = z.infer<typeof TransitivitySchema>;
+
 const AuxiliaryVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
+    transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('auxiliary'),
 });
 
 const GodanVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
+    transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('godan'),
     te_form: TextWithPronunciationSchema.optional(),
 });
 
 const IchidanVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
+    transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('ichidan'),
     te_form: TextWithPronunciationSchema.optional(),
 });
 
 const IrregularVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
+    transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('irregular'),
     present: PresentFormSchema,
     te_form: TextWithPronunciationSchema,
@@ -47,11 +56,13 @@ const IrregularVerbSchema = TranslationSchema.extend({
 
 const SuruVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
+    transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('suru'),
 });
 
 const KuruVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
+    transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('kuru'),
 });
 
