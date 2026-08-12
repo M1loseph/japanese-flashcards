@@ -8,7 +8,7 @@ const CommonGameStateSchema = z.object({
     version: z.literal(1),
     title: z.string(),
     gameType: GameTypeSchema,
-    flashcards: z.array(FlashcardSessionSchema),
+    flashcards: z.array(FlashcardSessionSchema).readonly(),
     gameStartTimeMs: z.number(),
     simplifiedMode: z.boolean(),
     selectedLanguage: TranslationLanguagesSchema,
@@ -17,12 +17,12 @@ const CommonGameStateSchema = z.object({
 const GameInProgressStateSchema = CommonGameStateSchema.extend({
     type: z.literal('in-progress'),
     currentFlashcardIndex: z.number(),
-});
+}).readonly();
 
 const GameFinishedStateSchema = CommonGameStateSchema.extend({
     type: z.literal('finished'),
     gameEndTimeMs: z.number(),
-});
+}).readonly();
 
 export const GameStateSchema = z.discriminatedUnion('type', [GameInProgressStateSchema, GameFinishedStateSchema]);
 

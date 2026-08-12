@@ -50,7 +50,7 @@ export const useReplaceSRSWords = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationKey: ['replaceSRSWords'],
-        mutationFn: async (newWords: WordLearningProgress[]) => {
+        mutationFn: async (newWords: readonly WordLearningProgress[]) => {
             await db.transaction('rw', db.wordProgress, async () => {
                 await db.wordProgress.clear();
                 await db.wordProgress.bulkAdd(newWords);

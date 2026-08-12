@@ -9,17 +9,21 @@ interface HardTextProviderProps {
     children: ReactNode;
 }
 
-const HardWordsV1Schema = z.object({
-    version: z.literal(1),
-    hardWords: z.array(z.string()),
-});
+const HardWordsV1Schema = z
+    .object({
+        version: z.literal(1),
+        hardWords: z.array(z.string()).readonly(),
+    })
+    .readonly();
 
 type HardWordsV1 = z.infer<typeof HardWordsV1Schema>;
 
-const HardWordsV2Schema = z.object({
-    version: z.literal(2),
-    hardWords: z.array(z.string()),
-});
+const HardWordsV2Schema = z
+    .object({
+        version: z.literal(2),
+        hardWords: z.array(z.string()).readonly(),
+    })
+    .readonly();
 
 type HardWordsV2 = z.infer<typeof HardWordsV2Schema>;
 
@@ -90,7 +94,7 @@ export const HardTextProvider: FC<HardTextProviderProps> = ({ children }) => {
         return Array.from(hardTexts);
     };
 
-    const overrideHardTextList = (hardTextList: string[]) => {
+    const overrideHardTextList = (hardTextList: readonly string[]) => {
         setHardText(new Set(hardTextList));
     };
 
