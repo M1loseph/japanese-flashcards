@@ -5,7 +5,7 @@ export interface HardTextContextType {
     isHardText: (text: TranslatedJapaneseText) => boolean;
     toggleHardText: (text: TranslatedJapaneseText) => void;
     getHardTextList: () => string[];
-    overrideHardTextList: (hardTextList: string[]) => void;
+    overrideHardTextList: (hardTextList: readonly string[]) => void;
 }
 
 export const HardTextContext = createContext<HardTextContextType | undefined>(undefined);

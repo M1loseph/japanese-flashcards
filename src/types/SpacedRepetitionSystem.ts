@@ -7,12 +7,14 @@ const stringToDateCodec = z.codec(z.iso.datetime(), z.date(), {
     encode: (date) => date.toISOString(),
 });
 
-export const WordLearningProgressSchema = z.object({
-    wordId: z.string(),
-    lastReviewed: stringToDateCodec.optional(),
-    nextReview: stringToDateCodec,
-    level: z.number(),
-});
+export const WordLearningProgressSchema = z
+    .object({
+        wordId: z.string(),
+        lastReviewed: stringToDateCodec.optional(),
+        nextReview: stringToDateCodec,
+        level: z.number(),
+    })
+    .readonly();
 
 export type WordLearningProgress = z.infer<typeof WordLearningProgressSchema>;
 

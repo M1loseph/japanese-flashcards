@@ -5,11 +5,13 @@ import { StreakContext } from './StreakContext';
 
 const STREAK_DATA_KEY = 'streakData';
 
-const StreakDataSchema = z.object({
-    version: z.literal(1),
-    lastActivityDate: z.iso.date(),
-    currentStreak: z.number(),
-});
+const StreakDataSchema = z
+    .object({
+        version: z.literal(1),
+        lastActivityDate: z.iso.date(),
+        currentStreak: z.number(),
+    })
+    .readonly();
 
 type StreakData = z.infer<typeof StreakDataSchema>;
 
