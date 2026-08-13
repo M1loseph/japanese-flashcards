@@ -22,7 +22,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         adjective_type: 'i-adjective',
         en: 'Tasty',
         pl: 'Smaczny',
-        jp: { text: '美味しい', pronunciation: 'おいしい' },
+        jp: { text: 'おいしい' },
     },
     {
         id: 'fe0f8f59-0506-47fd-8b65-57d9849615ef',
@@ -30,7 +30,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         adjective_type: 'i-adjective',
         en: 'Bad-tasting',
         pl: 'Niesmaczny',
-        jp: { text: '不味い', pronunciation: 'まずい' },
+        jp: { text: 'まずい' },
     },
     {
         id: '71b16953-b99b-4345-bc11-ecd049af1d5b',
@@ -85,7 +85,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Hot (weather / perceived)',
-        pl: 'Gorący (pogoda / odczuwalna temperatura)',
+        pl: 'Gorąca (pogoda / odczuwalna temperatura)',
         jp: { text: '暑い', pronunciation: 'あつい' },
     },
     {
@@ -93,7 +93,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Cold (weather / perceived)',
-        pl: 'Zimny (pogoda / odczuwalna temperatura)',
+        pl: 'Zimna (pogoda / odczuwalna temperatura)',
         jp: { text: '寒い', pronunciation: 'さむい' },
     },
     {
@@ -101,7 +101,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Hot (thing)',
-        pl: 'Gorący (rzecz)',
+        pl: 'Gorąca (rzecz)',
         jp: { text: '熱い', pronunciation: 'あつい' },
     },
     {
@@ -109,7 +109,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Cold (thing)',
-        pl: 'Zimny (rzecz)',
+        pl: 'Zimna (rzecz)',
         jp: { text: '冷たい', pronunciation: 'つめたい' },
     },
     {
@@ -174,7 +174,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Old (thing)',
-        pl: 'Stary (rzecz)',
+        pl: 'Stary (przedmiot)',
         jp: { text: '古い', pronunciation: 'ふるい' },
     },
     {
@@ -295,7 +295,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         adjective_type: 'i-adjective',
         en: 'Cute',
         pl: 'Uroczy',
-        jp: { text: '可愛い', pronunciation: 'かわいい' },
+        jp: { text: 'かわいい' },
     },
     {
         id: '08024086-31d6-4438-8edf-5175c57e6caa',
@@ -311,7 +311,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Nice / Kind (can be used for all people)',
-        pl: 'Miły / Uprzejmy (może być używane do wszystkich osób)',
+        pl: 'Miły / Uprzejmy (można używać tego określenia wobec wszystkich osób)',
         jp: { text: '優しい', pronunciation: 'やさしい' },
     },
     {
@@ -372,9 +372,11 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         id: 'e974c233-d3a1-4e20-a65b-38dddb255dc5',
         type: 'adjective',
         adjective_type: 'na-adjective',
-        en: 'Good at / Skilled (when referring to someone else)',
-        pl: 'Dobry w / Utalentowany (gdy mowa o kimś innym)',
+        en: 'Good at / Skilled (objective)',
+        pl: 'Dobry w / Biegły w (obiektywnie)',
         jp: { text: '上手', pronunciation: 'じょうず' },
+        description:
+            'It describes an objective skill, therefore using it to describe yourself sounds weird. Instead, you should use 得意.',
     },
     {
         id: '8ad522b6-c87a-43c4-a039-2215d676dd3d',
@@ -382,29 +384,33 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         en: 'She is good at cooking.',
         pl: 'Ona jest dobra w gotowaniu.',
         jp: { text: '料理が上手です。', pronunciation: 'りょうりがじょうずです。' },
+        description: 'You could also say 料理が得意です.',
     },
     {
         id: '947da212-6bcd-4f4b-b1db-f6b854639670',
         type: 'adjective',
         adjective_type: 'na-adjective',
-        en: 'Bad at / Unskilled (when referring to someone else)',
-        pl: 'Zły w / Słaby w (gdy mowa o kimś innym)',
+        en: 'Bad at / Unskilled (objective)',
+        pl: 'Nieumiejętny / Słaby w (obiektywnie)',
         jp: { text: '下手', pronunciation: 'へた' },
+        description:
+            'It describes an objective lack of skill, therefore using it to describe someone else is rude. Instead, you should use 苦手.',
     },
     {
         id: '70b29b0f-d244-482d-b8b4-6582da13241d',
         type: 'phrase',
         en: 'He is bad at sports.',
         pl: 'On jest słaby w sporcie.',
-        jp: { text: 'スポーツが下手です。', pronunciation: 'スポーツがへたです。' },
+        jp: { text: 'スポーツが苦手です。', pronunciation: 'スポーツがにがてです。' },
     },
     {
         id: '86aa0384-3006-4685-9c14-b25144313be1',
         type: 'adjective',
         adjective_type: 'na-adjective',
-        en: 'Good at / Skilled (when referring to oneself)',
-        pl: 'Dobry w / Utalentowany (gdy mowa o sobie)',
+        en: 'Good at / Skilled (subjective)',
+        pl: 'Dobry w / Biegły w (subiektywnie)',
         jp: { text: '得意', pronunciation: 'とくい' },
+        description: 'It is more subjective than 上手, therefore you can use it to describe yourself or someone else.',
     },
     {
         id: 'f480bc56-ee51-4850-bca8-9094f2b622ab',
@@ -417,16 +423,19 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         id: '01d3cd1b-4aae-43b9-8040-70c371acb641',
         type: 'adjective',
         adjective_type: 'na-adjective',
-        en: 'Bad at / Unskilled (when referring to oneself)',
-        pl: 'Zły w / Słaby w (gdy mowa o sobie)',
+        en: 'Bad at / Unskilled (subjective)',
+        pl: 'Nieumiejętny / Słaby w (subiektywnie)',
         jp: { text: '苦手', pronunciation: 'にがて' },
+        description:
+            "It's a subjective version of 下手, therefore you can use it to describe yourself or someone else.",
     },
     {
         id: '9da6b9de-2f4a-47e1-8554-0e0240b2ef09',
         type: 'phrase',
         en: 'I am bad at Japanese.',
         pl: 'Jestem słaby w japońskim.',
-        jp: { text: '日本語が苦手です。', pronunciation: 'にほんごがにがてです。' },
+        jp: { text: '日本語が下手です。', pronunciation: 'にほんごがへたです。' },
+        description: 'You could also say 日本語が苦手です.',
     },
     {
         id: '57b5aaae-adb2-4c16-85b0-4b1751092953',
@@ -450,7 +459,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         adjective_type: 'na-adjective',
         en: 'Beautiful / Clean',
         pl: 'Piękny / Czysty',
-        jp: { text: 'きれい' },
+        jp: { text: '綺麗', pronunciation: 'きれい' },
     },
     {
         id: '668cbf70-c884-461b-9f6a-f7b71acf2a52',
@@ -497,7 +506,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Free (not busy)',
-        pl: 'Wolny (nie zajęty)',
+        pl: 'Wolny (niezajęty)',
         jp: { text: '暇', pronunciation: 'ひま' },
     },
     {
@@ -556,7 +565,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: 'b5e8842f-d00f-4a6f-b4cd-10359e8ed003',
         type: 'noun',
-        en: 'Wear / Clothing',
+        en: 'Clothing / Apparel',
         pl: 'Ubranie',
         jp: { text: 'ウェア' },
     },
@@ -578,7 +587,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         id: '61f44219-1ea1-44a2-9c00-3e843e4ccf7b',
         type: 'noun',
         en: 'Cocoa / Hot cocoa',
-        pl: 'Kakałko',
+        pl: 'Kakao / Gorące kakao',
         jp: { text: 'ココア' },
     },
     {
