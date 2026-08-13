@@ -93,11 +93,25 @@ const week: TranslatedJapaneseText[] = [
         jp: { text: '先週', pronunciation: 'せんしゅう' },
     },
     {
+        id: '299af5bc-32c6-431a-9850-f885af93fc36',
+        type: 'noun',
+        en: 'Two weeks ago',
+        pl: 'Dwa tygodnie temu',
+        jp: { text: '二週間前', pronunciation: 'にしゅうかんまえ' },
+    },
+    {
         id: '01686837-1b62-4b55-9cfd-604ac9a98723',
         type: 'noun',
         en: 'Next week',
         pl: 'Przyszły tydzień',
         jp: { text: '来週', pronunciation: 'らいしゅう' },
+    },
+    {
+        id: '935c6842-ce29-4c49-af5a-310e5acee0d3',
+        type: 'noun',
+        en: 'The week after next',
+        pl: 'Za dwa tygodnie',
+        jp: { text: '再来週', pronunciation: 'さらいしゅう' },
     },
     {
         id: 'a13b817e-cf9b-4d93-8616-5fad431e334f',
@@ -112,6 +126,20 @@ const week: TranslatedJapaneseText[] = [
         en: 'Tomorrow',
         pl: 'Jutro',
         jp: { text: '明日', pronunciation: 'あした' },
+    },
+    {
+        id: '12ae1918-53a6-4f5d-b347-3dedf8635f07',
+        type: 'noun',
+        en: 'Day after tomorrow',
+        pl: 'Pojutrze',
+        jp: { text: '明後日', pronunciation: 'あさって' },
+    },
+    {
+        id: '44fb4087-0dae-408d-8275-8921b9106f75',
+        type: 'noun',
+        en: 'The day before yesterday',
+        pl: 'Przedwczoraj',
+        jp: { text: '一昨日', pronunciation: 'おととい' },
     },
     {
         id: 'd54f85ac-abb1-4703-932a-531db17a4b1f',
