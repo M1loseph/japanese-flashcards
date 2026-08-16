@@ -101,6 +101,7 @@ import { numberOfMonthsBag } from './vocabulary/time/numberOfMonths';
 import { secondsBag } from './vocabulary/time/seconds';
 import { weekBag } from './vocabulary/time/week';
 import { yearsBag } from './vocabulary/time/years';
+import { sakura4_6Bag } from './vocabulary/sakura/trimester_4/sakura_6';
 
 export const availableWordBags: WordBag[] = [
     familyBag,
@@ -202,6 +203,7 @@ export const availableWordBags: WordBag[] = [
     sakura4_3Bag,
     sakura4_4Bag,
     sakura4_5Bag,
+    sakura4_6Bag,
     survivalPhrases_1Bag,
 ];
 
