@@ -52,17 +52,12 @@ const auxiliaryVerb: TranslatedJapaneseText = {
 
 const irregularVerb: TranslatedJapaneseText = {
     id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
+    verb_type: 'irregular',
     type: 'verb',
     en: 'to do',
     pl: 'robić',
     jp: { text: 'する' },
-    verb_type: 'irregular',
-    present: {
-        masu: {
-            affirmative: { text: 'します' },
-            negative: { text: 'しません' },
-        },
-    },
+    stem_form: { text: 'し' },
     te_form: { text: 'して' },
 };
 

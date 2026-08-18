@@ -241,12 +241,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
         en: 'Come',
         pl: 'Przychodzić',
         jp: { text: '来る', pronunciation: 'くる' },
-        present: {
-            masu: {
-                affirmative: { text: '来ます', pronunciation: 'きます' },
-                negative: { text: '来ません', pronunciation: 'きません' },
-            },
-        },
+        stem_form: { text: '来', pronunciation: 'き' },
         te_form: { text: '来て', pronunciation: 'きて' },
     },
     {

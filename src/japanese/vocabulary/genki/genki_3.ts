@@ -264,12 +264,7 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Do',
         pl: 'Robić',
         jp: { text: 'する' },
-        present: {
-            masu: {
-                affirmative: { text: 'します' },
-                negative: { text: 'しません' },
-            },
-        },
+        stem_form: { text: 'し' },
         te_form: { text: 'して' },
     },
     {
@@ -279,12 +274,7 @@ const genki_3: TranslatedJapaneseText[] = [
         en: 'Come',
         pl: 'Przybywać',
         jp: { text: '来る', pronunciation: 'くる' },
-        present: {
-            masu: {
-                affirmative: { text: '来ます', pronunciation: 'きます' },
-                negative: { text: '来ません', pronunciation: 'きません' },
-            },
-        },
+        stem_form: { text: '来', pronunciation: 'き' },
         te_form: { text: '来て', pronunciation: 'きて' },
     },
     {
