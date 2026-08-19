@@ -34,54 +34,6 @@ const GODAN_TE_FORM_MAP: Record<string, string> = {
     む: 'んで',
 };
 
-const applyMasuStem = (
-    dictionaryForm: string,
-    verbType: 'godan' | 'ichidan',
-    suffix: typeof MASU_SUFFIX | typeof MASEN_SUFFIX,
-): string => {
-    const stem = dictionaryForm.slice(0, -1);
-    if (verbType === 'ichidan') {
-        if (!dictionaryForm.endsWith('る')) {
-            throw new Error(`Expected ichidan verb to end with 'る', but got '${dictionaryForm}'`);
-        }
-        return stem + suffix;
-    }
-    if (verbType === 'godan') {
-        const lastChar = dictionaryForm.slice(-1);
-        const replacement = GODAN_U_TO_I_MAP[lastChar];
-        if (!replacement) {
-            throw new Error(`Unexpected last character '${lastChar}' in godan verb '${dictionaryForm}'`);
-        }
-        return stem + replacement + suffix;
-    }
-    const _exhaustiveCheck: never = verbType;
-    return _exhaustiveCheck;
-};
-
-const generatePresentFormFromDictionaryForm = (
-    verb: GodanVerb | IchidanVerb | IrregularVerb,
-    form: 'affirmative' | 'negative',
-): TextWithPronunciation => {
-    if (verb.verb_type === 'irregular') {
-        if (form === 'affirmative') {
-            return verb.present.masu.affirmative;
-        }
-        return verb.present.masu.negative;
-    }
-    const suffix = form === 'affirmative' ? MASU_SUFFIX : MASEN_SUFFIX;
-    const text = applyMasuStem(verb.jp.text, verb.verb_type, suffix);
-    const pronunciation = (() => {
-        if (!verb.jp.pronunciation) {
-            return undefined;
-        } else if (typeof verb.jp.pronunciation === 'string') {
-            return applyMasuStem(verb.jp.pronunciation, verb.verb_type, suffix);
-        } else {
-            return verb.jp.pronunciation.map((p) => applyMasuStem(p, verb.verb_type, suffix)).join(' / ');
-        }
-    })();
-    return { text, pronunciation };
-};
-
 const generateTeFormFromDictionaryForm = (verb: GodanVerb | IchidanVerb | IrregularVerb): TextWithPronunciation => {
     if (verb.verb_type === 'irregular') {
         return verb.te_form;
@@ -111,10 +63,70 @@ const generateTeFormFromDictionaryForm = (verb: GodanVerb | IchidanVerb | Irregu
     return _exhaustiveCheck;
 };
 
+const generateStemFormFromDictionaryForm = (verb: GodanVerb | IchidanVerb | IrregularVerb): TextWithPronunciation => {
+    if (verb.verb_type === 'irregular') {
+        return verb.stem_form;
+    }
+
+    const generateStemForVerb = (dictionaryForm: string): string => {
+        const stem = dictionaryForm.slice(0, -1);
+        if (verb.verb_type === 'ichidan') {
+            if (!dictionaryForm.endsWith('る')) {
+                throw new Error(`Expected ichidan verb to end with 'る', but got '${dictionaryForm}'`);
+            }
+            return stem;
+        }
+        if (verb.verb_type === 'godan') {
+            const lastChar = dictionaryForm.slice(-1);
+            const replacement = GODAN_U_TO_I_MAP[lastChar];
+            if (!replacement) {
+                throw new Error(`Unexpected last character '${lastChar}' in godan verb '${dictionaryForm}'`);
+            }
+            return stem + replacement;
+        }
+        const _exhaustiveCheck: never = verb;
+        return _exhaustiveCheck;
+    };
+
+    const pronunciation = (() => {
+        if (!verb.jp.pronunciation) {
+            return undefined;
+        } else if (typeof verb.jp.pronunciation === 'string') {
+            return generateStemForVerb(verb.jp.pronunciation);
+        } else {
+            return verb.jp.pronunciation.map((p) => generateStemForVerb(p));
+        }
+    })();
+
+    return {
+        text: generateStemForVerb(verb.jp.text),
+        pronunciation,
+    };
+};
+
+const generatePresentFormFromDictionaryForm = (
+    verb: GodanVerb | IchidanVerb | IrregularVerb,
+    form: 'affirmative' | 'negative',
+): TextWithPronunciation => {
+    const suffix = form === 'affirmative' ? MASU_SUFFIX : MASEN_SUFFIX;
+    const stem = generateStemFormFromDictionaryForm(verb);
+    const pronunciation = (() => {
+        if (!stem.pronunciation) {
+            return undefined;
+        } else if (typeof stem.pronunciation === 'string') {
+            return stem.pronunciation + suffix;
+        } else {
+            return stem.pronunciation.map((p) => p + suffix);
+        }
+    })();
+    return { text: stem.text + suffix, pronunciation };
+};
+
 export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
     const masuForm = generatePresentFormFromDictionaryForm(verb, 'affirmative');
     const masenForm = generatePresentFormFromDictionaryForm(verb, 'negative');
     const teForm = generateTeFormFromDictionaryForm(verb);
+    const stemForm = generateStemFormFromDictionaryForm(verb);
 
     const masuText = useMainText(masuForm);
     const masuPronunciation = useSecondaryText(masuForm);
@@ -125,11 +137,15 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
     const teText = useMainText(teForm);
     const tePronunciation = useSecondaryText(teForm);
 
+    const stemFormText = useMainText(stemForm);
+    const stemFormPronunciation = useSecondaryText(stemForm);
+
     return (
         <>
             <DescriptionElement mainText={masuText} secondaryText={masuPronunciation} label="Present" />
             <DescriptionElement mainText={masenText} secondaryText={masenPronunciation} label="Negative" />
             <DescriptionElement mainText={teText} secondaryText={tePronunciation} label="Te form" />
+            <DescriptionElement mainText={stemFormText} secondaryText={stemFormPronunciation} label="Stem form" />
         </>
     );
 };

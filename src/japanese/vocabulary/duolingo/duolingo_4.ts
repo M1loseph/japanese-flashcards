@@ -23,12 +23,7 @@ const duolingo_4: TranslatedJapaneseText[] = [
         en: 'Do',
         pl: 'Robić',
         jp: { text: 'する' },
-        present: {
-            masu: {
-                affirmative: { text: 'します' },
-                negative: { text: 'しません' },
-            },
-        },
+        stem_form: { text: 'し' },
         te_form: { text: 'して' },
     },
     {

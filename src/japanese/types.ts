@@ -19,12 +19,6 @@ const TranslationSchema = z.object({
     image_url: z.string().optional(),
 });
 
-const PresentFormSchema = z
-    .object({
-        masu: z.object({ affirmative: TextWithPronunciationSchema, negative: TextWithPronunciationSchema }).readonly(),
-    })
-    .readonly();
-
 // TODO: unify verb types so that there is no repetition of the same fields in each verb type
 const TransitivitySchema = z.enum(['transitive', 'intransitive', 'ambitransitive']);
 
@@ -54,7 +48,7 @@ const IrregularVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('irregular'),
-    present: PresentFormSchema,
+    stem_form: TextWithPronunciationSchema,
     te_form: TextWithPronunciationSchema,
 }).readonly();
 
