@@ -27,8 +27,8 @@ const DataManagementPage: FC = () => {
     const hardText = getHardTextList();
 
     const onDrop = async (files: File[]) => {
-        if (files.length === 0) return;
         const file = files[0];
+        if (file === undefined) return;
         try {
             const mimeType = file.type;
             const decompressedData = await (async () => {

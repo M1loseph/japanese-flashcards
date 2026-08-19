@@ -21,12 +21,13 @@ export const Toast: FC<ToastProps> = ({ message, type, open, autoDismissTime = 3
     };
 
     useEffect(() => {
-        if (open && handleClose) {
-            const timer = setTimeout(() => {
-                handleClose();
-            }, autoDismissTime);
-            return () => clearTimeout(timer);
+        if (!open || !handleClose) {
+            return
         }
+        const timer = setTimeout(() => {
+            handleClose();
+        }, autoDismissTime);
+        return () => clearTimeout(timer);
     }, [open, autoDismissTime, handleClose]);
 
     if (!open) {

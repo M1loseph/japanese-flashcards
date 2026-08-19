@@ -64,7 +64,7 @@ export const SRS_STAGES: SRSStage[] = [
         icon: IconInfinity,
         waitDuration: dayjs.duration({ months: 4 }),
     },
-];
+] as const;
 
 export const MINIMUM_LEVEL = 0;
 export const MAXIMUM_LEVEL = SRS_STAGES.length - 1;
