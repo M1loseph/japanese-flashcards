@@ -24,6 +24,7 @@
 **/compose.y*ml
 **/Dockerfile*
 **/node_modules
+**/coverage
 **/npm-debug.log
 **/obj
 **/secrets.dev.yaml
