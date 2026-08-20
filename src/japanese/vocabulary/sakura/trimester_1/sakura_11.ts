@@ -25,8 +25,8 @@ const sakura_1_11: TranslatedJapaneseText[] = [
     {
         id: '1ef43304-4e0c-4a16-8cec-34b0ef27300c',
         type: 'noun',
-        en: 'New year',
-        pl: 'Nowy rok',
+        en: 'New year (first week of January)',
+        pl: 'Nowy rok (pierwszy tydzień stycznia)',
         jp: { text: 'お正月', pronunciation: 'おしょうがつ' },
     },
     {

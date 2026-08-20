@@ -160,8 +160,8 @@ const sakura_4_3: TranslatedJapaneseText[] = [
     {
         id: '5ffcafbd-ea91-4896-b201-1c83b95a10c3',
         type: 'noun',
-        en: 'Dance',
-        pl: 'Taniec',
+        en: 'Dance (loan word)',
+        pl: 'Taniec (zapożyczone słowo)',
         jp: { text: 'ダンス' },
     },
     {
