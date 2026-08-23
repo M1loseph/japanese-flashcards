@@ -1,36 +1,27 @@
 import { IconZoom } from '@tabler/icons-react';
-import { useMemo, type FC } from 'react';
+import { type FC } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { PageTitle } from '../../components/PageTitle';
-import { availableWordBags } from '../../japanese';
-import { textMatchesQuery } from '../../japanese/search';
+import { searchWordsMatchingQuery } from '../../japanese/search';
 import type { TranslatedJapaneseText, WordBag } from '../../japanese/types';
 import { useGameSettingsContext } from '../../services/GameStateContext';
-import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { Word } from '../BagPage/Word';
 import { ScrollablePage } from '../common/ScrollablePage';
 
-interface SearchResult {
-    bag: WordBag;
-    word: TranslatedJapaneseText;
-}
-
 const SEARCH_KEY = 'q';
-
-const searchWords = (query: string, selectedLanguage: TranslationLanguage): SearchResult[] => {
-    if (query.length < 2) return [];
-
-    return availableWordBags.flatMap((bag) =>
-        bag.words.filter((word) => textMatchesQuery(word, query, selectedLanguage)).map((word) => ({ bag, word })),
-    );
-};
+const LIMIT_OF_WORDS = 20;
 
 export const SearchPage: FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get(SEARCH_KEY) || '';
     const { selectedLanguage } = useGameSettingsContext();
 
-    const results = useMemo(() => searchWords(query, selectedLanguage), [query, selectedLanguage]);
+    const results = (() => {
+        if (query.length < 2) {
+            return undefined;
+        }
+        return searchWordsMatchingQuery(query, selectedLanguage, LIMIT_OF_WORDS);
+    })();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value.toLocaleLowerCase();
@@ -48,9 +39,12 @@ export const SearchPage: FC = () => {
         );
     };
 
-    const groupedResults = useMemo(() => {
+    const groupedResults = (() => {
         const groups = new Map<string, { bag: WordBag; words: TranslatedJapaneseText[] }>();
-        for (const { bag, word } of results) {
+        if (results === undefined) {
+            return [];
+        }
+        for (const { bag, word } of results.words) {
             const existing = groups.get(bag.id);
             if (existing) {
                 existing.words.push(word);
@@ -59,7 +53,7 @@ export const SearchPage: FC = () => {
             }
         }
         return Array.from(groups.values());
-    }, [results]);
+    })();
 
     return (
         <ScrollablePage>
@@ -77,18 +71,20 @@ export const SearchPage: FC = () => {
                         tabIndex={0}
                     />
                 </label>
+                {query.length < 2 && <p className="text-sm text-slate-500">Type at least 2 characters to search.</p>}
 
-                {query.length > 0 && query.length < 2 && (
-                    <p className="text-sm text-slate-500">Type at least 2 characters to search.</p>
-                )}
-
-                {query.length >= 2 && results.length === 0 && (
+                {query.length >= 2 && results?.words?.length === 0 && (
                     <p className="text-sm text-slate-500">No results found for "{query}".</p>
                 )}
 
-                {query.length >= 2 && results.length > 0 && (
+                {results !== undefined && results.words.length > 0 && (
                     <p className="text-sm text-slate-500">
-                        {results.length} result{results.length !== 1 ? 's' : ''} found.
+                        {results.hitLimit && <span>Hit limit of {LIMIT_OF_WORDS} search results.</span>}
+                        {!results.hitLimit && (
+                            <span>
+                                {results.words.length} result{results.words.length !== 1 ? 's' : ''} found.
+                            </span>
+                        )}
                     </p>
                 )}
 

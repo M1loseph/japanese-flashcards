@@ -205,7 +205,7 @@ export const availableWordBags: WordBag[] = [
     sakura4_5Bag,
     sakura4_6Bag,
     survivalPhrases_1Bag,
-];
+] as const;
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {
     const wordBagsById: Map<string, WordBag> = availableWordBags.reduce((acc, bag) => {
@@ -214,6 +214,45 @@ export const findBagById: (id: string) => WordBag | undefined = (() => {
     }, new Map<string, WordBag>());
     return (id: string): WordBag | undefined => wordBagsById.get(id);
 })();
+
+export interface SearchResult {
+    words: FoundWord[];
+    hitLimit: boolean;
+}
+
+export interface FoundWord {
+    bag: WordBag;
+    word: TranslatedJapaneseText;
+}
+
+export const searchWordsMatchingQuery = (
+    query: string,
+    selectedLanguage: TranslationLanguage,
+    limit: number,
+): SearchResult => {
+    const found = [];
+    for (const bag of availableWordBags) {
+        if (found.length >= limit) {
+            break;
+        }
+        for (const word of bag.words) {
+            if (!textMatchesQuery(word, query, selectedLanguage)) {
+                continue;
+            }
+            found.push({
+                bag,
+                word,
+            });
+            if (found.length >= limit) {
+                break;
+            }
+        }
+    }
+    return {
+        words: found,
+        hitLimit: found.length === limit,
+    };
+};
 
 export const textMatchesQuery = (
     text: TranslatedJapaneseText,
