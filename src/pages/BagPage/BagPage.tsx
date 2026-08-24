@@ -1,4 +1,4 @@
-import { useEffect, useMemo, type FC } from 'react';
+import { useEffect, type FC } from 'react';
 import { Navigate, Outlet, useMatches, useNavigate, useParams } from 'react-router-dom';
 import { z } from 'zod';
 import { findBagById } from '../../japanese';
@@ -14,11 +14,6 @@ const HandleSchema = z.object({
 
 const BagPage: FC = () => {
     const bagId = useParams().bagId;
-    const bag = useMemo(() => {
-        if (!bagId) return undefined;
-        return findBagById(bagId);
-    }, [bagId]);
-
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }, []);
@@ -28,7 +23,13 @@ const BagPage: FC = () => {
         .map((match) => HandleSchema.safeParse(match.handle))
         .find((result) => result.success)?.data.tab;
 
-    if (!bag || !activeTab) {
+    if (!bagId || !activeTab) {
+        return <Navigate to="/" replace />;
+    }
+
+    const bag = findBagById(bagId);
+
+    if (!bag) {
         return <Navigate to="/" replace />;
     }
 
