@@ -202,8 +202,8 @@ const duolingo_10: TranslatedJapaneseText[] = [
     {
         id: '006e6f33-66cb-4d50-bd23-dcd8d309ed37',
         type: 'noun',
-        en: 'Ticket (plane, concert, etc.)',
-        pl: 'Bilet (samolot, koncert, itp.)',
+        en: 'Ticket (for plane, concert, etc.)',
+        pl: 'Bilet (na samolot, koncert, itp.)',
         jp: { text: 'チケット' },
     },
     {
