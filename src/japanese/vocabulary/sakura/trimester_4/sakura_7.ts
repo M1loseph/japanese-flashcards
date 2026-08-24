@@ -265,6 +265,13 @@ const sakura_4_7: TranslatedJapaneseText[] = [
         pl: 'Pokaz sztucznych ogni',
         jp: { text: '花火大会', pronunciation: 'はなびたいかい' },
     },
+    {
+        id: '7933adc9-776b-476c-a107-98fe947f67a8',
+        type: 'noun',
+        en: 'Ticket (for plane, concert, etc.)',
+        pl: 'Bilet (na samolot, koncert, itp.)',
+        jp: { text: 'チケット' },
+    },
 ];
 
 export const sakura4_7Bag: WordBag = {
