@@ -112,6 +112,7 @@ const IIrregularAdjectiveSchema = TranslationSchema.extend({
     type: z.literal('adjective'),
     adjective_type: z.literal('i-adjective-irregular'),
     negative: TextWithPronunciationSchema,
+    te_form: TextWithPronunciationSchema,
 }).readonly();
 
 const NaAdjectiveSchema = TranslationSchema.extend({

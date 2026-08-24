@@ -152,6 +152,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         pl: 'Dobry',
         jp: { text: 'いい' },
         negative: { text: 'よくない' },
+        te_form: { text: 'よくて' },
     },
     {
         id: '3d421567-6614-4a9f-9b83-ab2489c5eb5f',
@@ -305,6 +306,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         pl: 'Przystojny / Fajny',
         jp: { text: 'かっこいい' },
         negative: { text: 'かっこよくない' },
+        te_form: { text: 'かっこよくて' },
     },
     {
         id: '075dc039-0e7e-42f8-8736-03fce869042e',
@@ -533,6 +535,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
         pl: 'Mądry / Inteligentny',
         jp: { text: '頭がいい', pronunciation: 'あたまがいい' },
         negative: { text: '頭がよくない', pronunciation: 'あたまがよくない' },
+        te_form: { text: '頭がよくて', pronunciation: 'あたまがよくて' },
     },
     {
         id: 'dbc23121-4211-4dfa-a8b5-ac8f6007b59d',

@@ -82,6 +82,7 @@ const duolingo_5: TranslatedJapaneseText[] = [
         pl: 'Dobry',
         jp: { text: 'いい' },
         negative: { text: 'よくない' },
+        te_form: { text: 'よくて' },
     },
     {
         id: '20240e3d-ff4e-4785-88a0-cd8a33b3b270',

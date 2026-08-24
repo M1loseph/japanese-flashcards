@@ -73,6 +73,7 @@ const duolingo_1: TranslatedJapaneseText[] = [
         pl: 'Fajny / Przystojny',
         jp: { text: 'かっこいい' },
         negative: { text: 'かっこよくない' },
+        te_form: { text: 'かっこよくて' },
     },
     {
         id: 'd1c725b2-59e9-4b4b-bb45-1ba613297c50',
