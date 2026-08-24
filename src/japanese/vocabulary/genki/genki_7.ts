@@ -134,6 +134,7 @@ const genki_7: TranslatedJapaneseText[] = [
         pl: 'Mądry / Sprytny',
         jp: { text: '頭がいい', pronunciation: 'あたまがいい' },
         negative: { text: '頭がよくない', pronunciation: 'あたまがよくない' },
+        te_form: { text: '頭がよくて', pronunciation: 'あたまがよくて' },
     },
     {
         id: '2c559d56-ad05-4a81-ba17-c06e887deb94',

@@ -293,6 +293,7 @@ const genki_3: TranslatedJapaneseText[] = [
         pl: 'Dobry',
         jp: { text: 'いい' },
         negative: { text: 'よくない' },
+        te_form: { text: 'よくて' },
     },
     {
         id: '2d24b2b5-af6c-40d2-8631-9f429dbea6d4',

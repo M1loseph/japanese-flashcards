@@ -217,6 +217,7 @@ const genki_5: TranslatedJapaneseText[] = [
         pl: 'Przystojny / Fajny / Stylowy',
         jp: { text: 'かっこいい' },
         negative: { text: 'かっこよくない' },
+        te_form: { text: 'かっこよくて' },
     },
     {
         id: 'ad2b0ef0-fa44-4ddc-a3a9-bfea288b3773',
