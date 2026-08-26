@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { useMainText, useSecondaryText } from '../../../../hooks/useText';
 import type { GodanVerb, IchidanVerb, IrregularVerb, TextWithPronunciation } from '../../../../japanese/types';
+import { mapPronunciation } from '../../../../utils';
 import { DescriptionElement } from './DescriptionElement';
 
 interface VerbDescriptionProps {
@@ -88,15 +89,7 @@ const generateStemFormFromDictionaryForm = (verb: GodanVerb | IchidanVerb | Irre
         return _exhaustiveCheck;
     };
 
-    const pronunciation = (() => {
-        if (!verb.jp.pronunciation) {
-            return undefined;
-        } else if (typeof verb.jp.pronunciation === 'string') {
-            return generateStemForVerb(verb.jp.pronunciation);
-        } else {
-            return verb.jp.pronunciation.map((p) => generateStemForVerb(p));
-        }
-    })();
+    const pronunciation = mapPronunciation(verb.jp.pronunciation, generateStemForVerb);
 
     return {
         text: generateStemForVerb(verb.jp.text),
@@ -110,15 +103,7 @@ const generatePresentFormFromDictionaryForm = (
 ): TextWithPronunciation => {
     const suffix = form === 'affirmative' ? MASU_SUFFIX : MASEN_SUFFIX;
     const stem = generateStemFormFromDictionaryForm(verb);
-    const pronunciation = (() => {
-        if (!stem.pronunciation) {
-            return undefined;
-        } else if (typeof stem.pronunciation === 'string') {
-            return stem.pronunciation + suffix;
-        } else {
-            return stem.pronunciation.map((p) => p + suffix);
-        }
-    })();
+    const pronunciation = mapPronunciation(stem.pronunciation, (p) => p + suffix);
     return { text: stem.text + suffix, pronunciation };
 };
 

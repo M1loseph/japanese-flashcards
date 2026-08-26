@@ -1,3 +1,5 @@
+import type { Pronunciation } from './japanese/types';
+
 export const shuffleArray = <T>(array: T[]): T[] => {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -7,4 +9,17 @@ export const shuffleArray = <T>(array: T[]): T[] => {
         newArray[j] = tmp;
     }
     return newArray;
+};
+
+export const mapPronunciation = (
+    pronunciation: Pronunciation | undefined,
+    mapFunction: (p: string) => string,
+): Pronunciation => {
+    if (pronunciation === undefined) {
+        return undefined;
+    }
+    if (typeof pronunciation === 'string') {
+        return mapFunction(pronunciation);
+    }
+    return pronunciation.map(mapFunction);
 };

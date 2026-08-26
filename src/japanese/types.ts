@@ -1,10 +1,14 @@
 import { type ReactNode } from 'react';
 import * as z from 'zod';
 
+const PronunciationSchema = z.string().or(z.string().array()).optional();
+
+export type Pronunciation = z.infer<typeof PronunciationSchema>;
+
 const TextWithPronunciationSchema = z
     .object({
         text: z.string(),
-        pronunciation: z.string().or(z.string().array()).optional(),
+        pronunciation: PronunciationSchema,
     })
     .readonly();
 
