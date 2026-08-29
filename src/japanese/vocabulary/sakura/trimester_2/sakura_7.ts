@@ -266,8 +266,8 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: '88a0b687-80be-4a2c-b9b4-cf7ee1ea3f70',
         type: 'noun',
-        en: 'Opposite side',
-        pl: 'Przeciwna strona',
+        en: 'Over there / Opposite side',
+        pl: 'Tam / Przeciwna strona',
         jp: { text: '向こう', pronunciation: 'むこう' },
     },
     {
