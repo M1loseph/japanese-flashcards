@@ -20,6 +20,6 @@ export type WordLearningProgress = z.infer<typeof WordLearningProgressSchema>;
 
 export interface SRSStage {
     label: string;
-    waitDuration: Duration;
+    waitDuration: () => Duration;
     icon: Icon;
 }
