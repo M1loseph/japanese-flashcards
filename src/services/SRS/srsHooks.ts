@@ -85,7 +85,7 @@ const markWordAsReviewed = async (wordId: string, correct: boolean, now: Date) =
         level = Math.max(level - 2, MINIMUM_LEVEL);
     }
 
-    const timeToNextReview = SRS_STAGES[level].waitDuration.asMilliseconds();
+    const timeToNextReview = SRS_STAGES[level].waitDuration().asMilliseconds();
     const nextReview = new Date(now.getTime() + timeToNextReview);
 
     await db.wordProgress.put({
