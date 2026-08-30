@@ -22,7 +22,3 @@ It uses the following technologies:
 - React
 - React router DOM
 - Tailwind and Daisy UI for styling
-
-## AI
-
-This is the first project I'm trying to vibe code a bit. I'm utilizing the Copilot Agent mode inside VS Code to implement certain features.
