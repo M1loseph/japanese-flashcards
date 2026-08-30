@@ -45,6 +45,13 @@ const sakura_4_6: TranslatedJapaneseText[] = [
         jp: { text: '七月一日に郵便局に行きます。', pronunciation: 'しちがつついたちにゆうびんきょくにいきます。' },
         description: 'The date is written in the order of month and day in Japanese.',
     },
+    {
+        id: 'edd60078-4b99-4048-859d-9a8dbdfc007f',
+        type: 'phrase',
+        en: 'When is Christmas?',
+        pl: 'Kiedy są Święta Bożego Narodzenia?',
+        jp: { text: 'クリスマスは何月何日ですか。', pronunciation: 'クリスマスはなんがつなんにちですか。' },
+    },
 ];
 
 export const sakura4_6Bag: WordBag = {
