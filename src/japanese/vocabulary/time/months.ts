@@ -135,6 +135,13 @@ const months: TranslatedJapaneseText[] = [
         pl: 'Miesiąc po następnym',
         jp: { text: '再来月', pronunciation: 'さらいげつ' },
     },
+    {
+        id: '376d3a78-d2a3-4937-a0d0-5367de6814a5',
+        type: 'noun',
+        en: 'Which month',
+        pl: 'Który miesiąc',
+        jp: { text: '何月', pronunciation: 'なんがつ' },
+    },
 ];
 
 export const monthsBag: WordBag = {
