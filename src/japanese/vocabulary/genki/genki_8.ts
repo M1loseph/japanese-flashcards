@@ -144,13 +144,13 @@ const genki_8: TranslatedJapaneseText[] = [
     {
         id: 'ba751d4d-4352-4af7-8e87-70ca22293b92',
         type: 'noun',
-        en: 'Bathroom',
-        pl: 'Łazienka',
+        en: 'Bath',
+        pl: 'Kąpiel',
         jp: { text: 'お風呂', pronunciation: 'おふろ' },
     },
     {
         id: '505c42da-a1a7-4034-9216-025640e1c991',
-        type: 'noun',
+        type: 'pronoun',
         en: 'Something',
         pl: 'Coś',
         jp: { text: '何か', pronunciation: ['なにか', 'なんか'] },
@@ -235,7 +235,7 @@ const genki_8: TranslatedJapaneseText[] = [
         id: '6e01ecd2-fda0-4d7c-a37d-2cdce3c247c6',
         type: 'verb',
         verb_type: 'godan',
-        transitivity: 'intransitive',
+        transitivity: 'transitive',
         en: 'Think',
         pl: 'Myśleć',
         jp: { text: '思う', pronunciation: 'おもう' },
@@ -354,7 +354,7 @@ const genki_8: TranslatedJapaneseText[] = [
         type: 'phrase',
         en: 'Cheers!',
         pl: 'Na zdrowie!',
-        jp: { text: '乾杯', pronunciation: 'かんぱい' },
+        jp: { text: '乾杯！', pronunciation: 'かんぱい！' },
     },
     {
         id: '6b57f877-ea95-437d-b8a4-44070970e267',
@@ -367,7 +367,7 @@ const genki_8: TranslatedJapaneseText[] = [
         id: '8f31cb58-57a6-4a6c-bb46-75b395800f42',
         type: 'noun',
         en: 'Degree (angle, temperature)',
-        pl: 'Stopień (kąt, temperatura)',
+        pl: 'Stopień (kąta, temperatury)',
         jp: { text: '度', pronunciation: 'ど' },
     },
     {
