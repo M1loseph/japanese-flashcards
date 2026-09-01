@@ -81,8 +81,8 @@ const sakura_3_4: TranslatedJapaneseText[] = [
     {
         id: '3ac24dae-d129-402c-9984-c430aeb68d86',
         type: 'noun',
-        en: 'Bathroom',
-        pl: 'Łazienka',
+        en: 'Bath',
+        pl: 'Kąpiel',
         jp: { text: 'お風呂', pronunciation: 'おふろ' },
     },
     {

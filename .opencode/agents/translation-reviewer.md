@@ -42,7 +42,7 @@ Use **uncommitted_changes** by default unless the user specifies a different opt
 
 ## Analysis Focus
 
-Check if each `jp.text`, `en`, and `pl` field is present and correctly translated. The `jp.text` object should be a valid translation of the `en` and `pl` fields.
+Check if each `jp.text`, `en`, and `pl` field is present and correctly translated. The `jp.text` object should be a valid translation of the `en` and `pl` fields. If any of the following rules is broken, it must be reported as error. Minor suggestions (things not covered by rules) are reported as warnings.
 
 ### Common rules
 
@@ -71,8 +71,9 @@ Check if each `jp.text`, `en`, and `pl` field is present and correctly translate
 
 ### Phrase Rules
 
-- Phrases (type: `'phrase'`) should end with a Japanese period `。` if the `en` or `pl` translation ends with a period, question mark, or exclamation mark. If such a phrase does not end with `。`, report it as an error.
-- The only exception when `jp.text` and `jp.pronunciation` should end with ？ is when phrase does not end with か but is a question.
+- Phrases (type: `'phrase'`) should end with a Japanese period `。` if the `en` or `pl` translation ends with a period or question mark.
+- Allowed exception is when `jp.text` and `jp.pronunciation` end with ？ is when phrase does not end with か but is a question.
+- Allowed exception is when `jp.text` and `jp.pronunciation` end with ！ is when phrase does not end with か but is a question.
 
 ---
 
