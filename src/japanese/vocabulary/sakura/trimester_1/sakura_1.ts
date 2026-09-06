@@ -259,6 +259,14 @@ const sakura_1_1: TranslatedJapaneseText[] = [
         jp: { text: '宿題です。', pronunciation: 'しゅくだいです。' },
     },
     {
+        id: '6890c0ec-8e6f-4174-a827-3cab510eda48',
+        type: 'adjective',
+        adjective_type: 'i-adjective',
+        en: 'Almost (but not quite) / Close (but no cigar)',
+        pl: 'Prawie (ale nie do końca)',
+        jp: { text: '惜しい', pronunciation: 'おしい' },
+    },
+    {
         id: '688d0539-9809-4012-8b88-020b42f5f6c4',
         type: 'phrase',
         en: 'Almost, but not correct',
