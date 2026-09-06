@@ -130,6 +130,13 @@ const sakura_4_9: TranslatedJapaneseText[] = [
         pl: 'Park (zapożyczone słowo)',
         jp: { text: 'パーク' },
     },
+    {
+        id: '6b12d380-af86-4f8e-bf73-e938b681173e',
+        type: 'noun',
+        en: 'Event',
+        pl: 'Wydarzenie',
+        jp: { text: 'イベント' },
+    },
 ];
 
 export const sakura4_9Bag: WordBag = {
