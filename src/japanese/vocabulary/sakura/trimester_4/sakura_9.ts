@@ -75,7 +75,7 @@ const sakura_4_9: TranslatedJapaneseText[] = [
         id: '89c28c3c-b744-4d36-98ad-97069a71e773',
         type: 'noun',
         en: 'Public square',
-        pl: 'Rynek / Plac miejski',
+        pl: 'Plac',
         jp: { text: '広場', pronunciation: 'ひろば' },
     },
     {
