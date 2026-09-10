@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
+import { z } from 'zod';
 import { availableWordBags } from './search';
 import type { TranslatedJapaneseText } from './types';
+
+const uuidSchema = z.uuidv4();
 
 describe('vocabulary', () => {
     it('all texts should not start or end with whitespace', () => {
@@ -21,12 +24,26 @@ describe('vocabulary', () => {
         });
     });
 
+    it('all word ids should be valid uuids', () => {
+        availableWordBags.forEach((bag) => {
+            bag.words.forEach((word) => {
+                expect(uuidSchema.safeParse(word.id).success).toBe(true);
+            });
+        });
+    });
+
     it('all word ids should be unique', () => {
         const allWords: TranslatedJapaneseText[] = availableWordBags.flatMap((bag) => bag.words);
         const ids = allWords.map((word) => word.id);
         const uniqueIds = new Set(ids);
 
         expect(uniqueIds.size).toBe(ids.length);
+    });
+
+    it('all bag ids should be valid uuids', () => {
+        availableWordBags.forEach((bag) => {
+            expect(uuidSchema.safeParse(bag.id).success).toBe(true);
+        });
     });
 
     it('all bag ids should be unique', () => {

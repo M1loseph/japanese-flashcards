@@ -10,6 +10,8 @@ tools:
   todowrite: true
   bash: true
   skill: true
+  websearch: false
+  webfetch: false
 permission:
   bash:
     "*": "deny"

@@ -207,7 +207,7 @@ const genki_5: TranslatedJapaneseText[] = [
         adjective_type: 'i-adjective',
         en: 'Kind / Gentle',
         pl: 'Uprzejmy / Łagodny',
-        jp: { text: '優しい' , pronunciation: 'やさしい' },
+        jp: { text: '優しい', pronunciation: 'やさしい' },
     },
     {
         id: '3bc33df6-2f29-437d-9dcc-0dbc67d8b206',

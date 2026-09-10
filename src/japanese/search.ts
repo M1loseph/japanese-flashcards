@@ -103,6 +103,7 @@ import { minutesBag } from './vocabulary/time/minutes';
 import { monthsBag } from './vocabulary/time/months';
 import { numberOfDaysBag } from './vocabulary/time/numberOfDays';
 import { numberOfMonthsBag } from './vocabulary/time/numberOfMonths';
+import { numberOfYearsBag } from './vocabulary/time/numberOfYears';
 import { secondsBag } from './vocabulary/time/seconds';
 import { weekBag } from './vocabulary/time/week';
 import { yearsBag } from './vocabulary/time/years';
@@ -130,6 +131,7 @@ export const availableWordBags: WordBag[] = [
     numberOfDaysBag,
     yearsBag,
     numberOfMonthsBag,
+    numberOfYearsBag,
     directionsBag,
     duolingo1Bag,
     duolingo2Bag,
