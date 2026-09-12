@@ -113,6 +113,11 @@ const createVerbTypeBadge: (verbType: Verb['verb_type'], show: boolean) => Badge
             text = 'kuru';
             break;
         }
+        case 'iku': {
+            color = `bg-red-300/75`;
+            text = 'iku';
+            break;
+        }
         default: {
             const _exhaustiveCheck: never = verbType;
             return _exhaustiveCheck;

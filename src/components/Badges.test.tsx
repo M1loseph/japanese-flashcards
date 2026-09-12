@@ -70,6 +70,15 @@ const kuruVerb: TranslatedJapaneseText = {
     jp: { text: '持ってくる', pronunciation: 'もってくる' },
 };
 
+const ikuVerb: TranslatedJapaneseText = {
+    id: '6c76c3f6-06a1-4d9e-bc7b-7c01407d94f5',
+    type: 'verb',
+    verb_type: 'iku',
+    en: 'Take (a thing) along',
+    pl: 'Brać (rzecz) ze sobą',
+    jp: { text: '持って行く', pronunciation: 'もっていく' },
+};
+
 const suruVerb: TranslatedJapaneseText = {
     id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
@@ -228,6 +237,11 @@ describe('Badges', () => {
         it('renders kuru badge for kuru verbs', () => {
             renderCard(kuruVerb);
             expect(screen.getByText('kuru')).toBeInTheDocument();
+        });
+
+        it('renders iku badge for iku verbs', () => {
+            renderCard(ikuVerb);
+            expect(screen.getByText('iku')).toBeInTheDocument();
         });
 
         it('hides verb type badge when showAnswer is false', () => {

@@ -14,7 +14,8 @@ export const Description: FC<DescriptionProps> = ({ showAnswer, card }) => {
             {card.type === 'verb' &&
                 card.verb_type !== 'auxiliary' &&
                 card.verb_type !== 'suru' &&
-                card.verb_type !== 'kuru' && <VerbDescription verb={card} />}
+                card.verb_type !== 'kuru' &&
+                card.verb_type !== 'iku' && <VerbDescription verb={card} />}
             {card.type === 'adjective' && <AdjectiveDescription adjective={card} />}
             {card.description && (
                 <div className="mt-2 p-2 bg-base-300/50 rounded-lg">
