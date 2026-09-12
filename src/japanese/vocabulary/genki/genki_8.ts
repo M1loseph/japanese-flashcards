@@ -276,10 +276,11 @@ const genki_8: TranslatedJapaneseText[] = [
     },
     {
         id: 'c37ee90c-77e9-4b08-9f33-2711cfcf6a60',
-        type: 'phrase',
+        type: 'verb',
+        verb_type: 'iku',
         en: 'Take something along',
         pl: 'Brać coś ze sobą',
-        jp: { text: '持っていく', pronunciation: 'もっていく' },
+        jp: { text: '持って行く', pronunciation: 'もっていく' },
     },
     {
         id: 'd2250787-a792-4ea1-ae01-4e3b0830510d',

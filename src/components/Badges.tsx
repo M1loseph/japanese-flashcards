@@ -20,51 +20,51 @@ const createTypeBadge: (type?: TranslatedJapaneseTextType) => BadgeMetadata | un
     let color: string;
     switch (type) {
         case 'verb': {
-            color = `bg-red-300/75`;
+            color = 'bg-red-300/75';
             break;
         }
         case 'noun': {
-            color = `bg-blue-300/75`;
+            color = 'bg-blue-300/75';
             break;
         }
         case 'adverb': {
-            color = `bg-gray-300/75`;
+            color = 'bg-gray-300/75';
             break;
         }
         case 'adjective': {
-            color = `bg-green-300/75`;
+            color = 'bg-green-300/75';
             break;
         }
         case 'phrase': {
-            color = `bg-yellow-300/75`;
+            color = 'bg-yellow-300/75';
             break;
         }
         case 'pronoun': {
-            color = `bg-purple-300/75`;
+            color = 'bg-purple-300/75';
             break;
         }
         case 'suffix': {
-            color = `bg-pink-300/75`;
+            color = 'bg-pink-300/75';
             break;
         }
         case 'numeral': {
-            color = `bg-indigo-300/75`;
+            color = 'bg-indigo-300/75';
             break;
         }
         case 'pre-noun-adjective': {
-            color = `bg-teal-300/75`;
+            color = 'bg-teal-300/75';
             break;
         }
         case 'particle': {
-            color = `bg-orange-300/75`;
+            color = 'bg-orange-300/75';
             break;
         }
         case 'conjunction': {
-            color = `bg-cyan-300/75`;
+            color = 'bg-cyan-300/75';
             break;
         }
         case 'prefix': {
-            color = `bg-lime-300/75`;
+            color = 'bg-lime-300/75';
             break;
         }
         default: {
@@ -84,33 +84,38 @@ const createVerbTypeBadge: (verbType: Verb['verb_type'], show: boolean) => Badge
     let text: string;
     switch (verbType) {
         case 'godan': {
-            color = `bg-blue-300/75`;
+            color = 'bg-blue-300/75';
             text = 'godan (u)';
             break;
         }
         case 'ichidan': {
-            color = `bg-green-300/75`;
+            color = 'bg-green-300/75';
             text = 'ichidan (ru)';
             break;
         }
         case 'irregular': {
-            color = `bg-yellow-300/75`;
+            color = 'bg-yellow-300/75';
             text = 'irregular';
             break;
         }
         case 'auxiliary': {
-            color = `bg-pink-300/75`;
+            color = 'bg-pink-300/75';
             text = 'auxiliary';
             break;
         }
         case 'suru': {
-            color = `bg-purple-300/75`;
+            color = 'bg-purple-300/75';
             text = 'suru';
             break;
         }
         case 'kuru': {
-            color = `bg-red-300/75`;
+            color = 'bg-red-300/75';
             text = 'kuru';
+            break;
+        }
+        case 'iku': {
+            color = 'bg-orange-300/75';
+            text = 'iku';
             break;
         }
         default: {
@@ -133,17 +138,17 @@ const createAdjectiveTypeBadge: (adjectiveType: Adjective['adjective_type'], sho
     let text: string;
     switch (adjectiveType) {
         case 'i-adjective': {
-            color = `bg-lime-300/75`;
+            color = 'bg-lime-300/75';
             text = 'i adjective';
             break;
         }
         case 'na-adjective': {
-            color = `bg-yellow-300/75`;
+            color = 'bg-yellow-300/75';
             text = 'na adjective';
             break;
         }
         case 'i-adjective-irregular': {
-            color = `bg-red-300/75`;
+            color = 'bg-red-300/75';
             text = 'i adjective (irregular)';
             break;
         }
@@ -180,17 +185,17 @@ const createTransitivityBadge = (transitivity: Transitivity) => {
     let text: string;
     switch (transitivity) {
         case 'transitive': {
-            color = `bg-blue-300/75`;
+            color = 'bg-blue-300/75';
             text = 'transitive';
             break;
         }
         case 'intransitive': {
-            color = `bg-green-300/75`;
+            color = 'bg-green-300/75';
             text = 'intransitive';
             break;
         }
         case 'ambitransitive': {
-            color = `bg-yellow-300/75`;
+            color = 'bg-yellow-300/75';
             text = 'ambitransitive';
             break;
         }
