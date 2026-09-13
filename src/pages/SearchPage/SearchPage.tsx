@@ -1,5 +1,5 @@
 import { IconZoom } from '@tabler/icons-react';
-import { type FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { PageTitle } from '../../components/PageTitle';
 import { searchWordsMatchingQuery } from '../../japanese/search';
@@ -13,8 +13,13 @@ const LIMIT_OF_WORDS = 20;
 
 export const SearchPage: FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
-    const query = searchParams.get(SEARCH_KEY) || '';
+    const urlQuery = searchParams.get(SEARCH_KEY) || '';
+    const [query, setQuery] = useState(urlQuery);
     const { selectedLanguage } = useGameSettingsContext();
+
+    useEffect(() => {
+        setQuery(urlQuery);
+    }, [urlQuery]);
 
     const results = (() => {
         if (query.length < 2) {
@@ -24,7 +29,8 @@ export const SearchPage: FC = () => {
     })();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value.toLocaleLowerCase();
+        const value = e.target.value;
+        setQuery(value);
         setSearchParams(
             (prev) => {
                 const newParams = new URLSearchParams(prev);
