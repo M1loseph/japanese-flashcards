@@ -237,18 +237,47 @@ export interface FoundWord {
     word: TranslatedJapaneseText;
 }
 
+const includesQuery = (text: string, query: string): boolean => {
+    return text.toLocaleLowerCase().includes(query);
+};
+
+const exactMatchQuery = (text: string, query: string): boolean => {
+    return text.toLocaleLowerCase() === query;
+};
+
+interface ParsedQuery {
+    searchedText: string;
+    comparisionFunction: (text: string, query: string) => boolean;
+}
+
+const parseQuery = (query: string): ParsedQuery => {
+    const startsWithQuote = query.startsWith('"');
+    if (startsWithQuote && query.endsWith('"')) {
+        return {
+            searchedText: query.slice(1, -1).toLocaleLowerCase(),
+            comparisionFunction: exactMatchQuery,
+        };
+    }
+    return {
+        searchedText: query.toLocaleLowerCase(),
+        comparisionFunction: includesQuery,
+    };
+};
+
 export const searchWordsMatchingQuery = (
     query: string,
     selectedLanguage: TranslationLanguage,
     limit: number,
+    searchAmongBags: WordBag[] = availableWordBags,
 ): SearchResult => {
+    const parsedQuery = parseQuery(query);
     const found = [];
-    for (const bag of availableWordBags) {
+    for (const bag of searchAmongBags) {
         if (found.length >= limit) {
             break;
         }
         for (const word of bag.words) {
-            if (!textMatchesQuery(word, query, selectedLanguage)) {
+            if (!textMatchesQuery(word, parsedQuery, selectedLanguage)) {
                 continue;
             }
             found.push({
@@ -266,23 +295,31 @@ export const searchWordsMatchingQuery = (
     };
 };
 
-export const textMatchesQuery = (
+const textMatchesQuery = (
     text: TranslatedJapaneseText,
-    query: string,
+    query: ParsedQuery,
     selectedLanguage: TranslationLanguage,
 ): boolean => {
-    if (query === '') return true;
+    const { searchedText, comparisionFunction } = query;
     if (!text.jp.pronunciation) {
         const wordRomaji = toRomaji(text.jp.text);
-        if (wordRomaji.includes(query)) return true;
+        if (comparisionFunction(wordRomaji, searchedText)) {
+            return true;
+        }
     } else if (typeof text.jp.pronunciation === 'string') {
         const wordRomaji = toRomaji(text.jp.pronunciation);
-        if (wordRomaji.includes(query)) return true;
+        if (comparisionFunction(wordRomaji, searchedText)) {
+            return true;
+        }
     } else {
         const pronunciationsRomaji = text.jp.pronunciation.map((p) => toRomaji(p));
-        if (pronunciationsRomaji.some((p) => p.includes(query))) return true;
+        if (pronunciationsRomaji.some((p) => comparisionFunction(p, searchedText))) {
+            return true;
+        }
     }
-    if (text[selectedLanguage].toLocaleLowerCase().includes(query)) return true;
+    if (comparisionFunction(text[selectedLanguage].toLocaleLowerCase(), searchedText)) {
+        return true;
+    }
     return false;
 };
 

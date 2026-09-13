@@ -1,7 +1,7 @@
 import { IconZoom } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { textMatchesQuery } from '../../japanese/search';
+import { searchWordsMatchingQuery } from '../../japanese/search';
 import type { WordBag } from '../../japanese/types';
 import { useGameSettingsContext } from '../../services/GameStateContext';
 import { Word } from './Word';
@@ -11,9 +11,14 @@ export const WordsTab: FC = () => {
     const { selectedLanguage } = useGameSettingsContext();
     const [searchText, setSearchText] = useState<string>('');
 
-    const words = bag.words.filter((word) => {
-        return textMatchesQuery(word, searchText.toLowerCase(), selectedLanguage);
-    });
+    const words = (() => {
+        if (searchText === '') {
+            return bag.words;
+        }
+        return searchWordsMatchingQuery(searchText, selectedLanguage, 100, [bag]).words.map(
+            (foundWord) => foundWord.word,
+        );
+    })();
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchText(e.target.value.toLowerCase());
