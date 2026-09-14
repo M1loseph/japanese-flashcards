@@ -300,7 +300,7 @@ const genki_7: TranslatedJapaneseText[] = [
         id: 'f253a0dc-e67c-4ef9-9661-0202fb916ace',
         type: 'phrase',
         en: "I'm not doing anything especially.",
-        pl: 'Nie robię nic szczególnego.',
+        pl: 'W tej chwili nie robię nic szczególnego.',
         jp: { text: '別に何もしていません。', pronunciation: 'べつになにもしていません。' },
     },
 ];
