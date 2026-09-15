@@ -5,7 +5,7 @@ const sakura_4_10: TranslatedJapaneseText[] = [
         id: '8d75d86a-52dd-4493-ad03-8ad2d221826f',
         type: 'phrase',
         en: 'What do you go to the temple to do?',
-        pl: 'Co idziesz robić w świątyni?',
+        pl: 'Po co idziesz do świątyni?',
         jp: { text: 'お寺に何をしに行きますか。', pronunciation: 'おてらになにをしにいきますか。' },
     },
     {
@@ -85,6 +85,14 @@ const sakura_4_10: TranslatedJapaneseText[] = [
         en: "Valentine's Day",
         pl: 'Walentynki',
         jp: { text: 'バレンタインデー' },
+    },
+    {
+        id: '8ca7270c-545a-4cfc-b8a4-d4a5656fd236',
+        type: 'adjective',
+        adjective_type: 'i-adjective',
+        en: 'Want',
+        pl: 'Chcieć',
+        jp: { text: '欲しい', pronunciation: 'ほしい' },
     },
 ];
 
