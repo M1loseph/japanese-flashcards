@@ -92,7 +92,7 @@ const sakura_4_10: TranslatedJapaneseText[] = [
         adjective_type: 'i-adjective',
         en: 'Want',
         pl: 'Chcieć',
-        jp: { text: '欲しい', pronunciation: 'ほしい' }
+        jp: { text: '欲しい', pronunciation: 'ほしい' },
     },
 ];
 
