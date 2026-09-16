@@ -48,7 +48,7 @@ const countingPeople: TranslatedJapaneseText[] = [
         type: 'numeral',
         en: 'Seven people',
         pl: 'Siedem osób',
-        jp: { text: '七人', pronunciation: 'ななにん' },
+        jp: { text: '七人', pronunciation: ['ななにん', 'しちにん'] },
     },
     {
         id: '866af7e9-f3b1-4de0-acce-0e2c3d09f04f',
