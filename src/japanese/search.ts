@@ -91,6 +91,7 @@ import { sakura3_8Bag } from './vocabulary/sakura/trimester_3/sakura_8';
 import { sakura3_9Bag } from './vocabulary/sakura/trimester_3/sakura_9';
 import { sakura4_1Bag } from './vocabulary/sakura/trimester_4/sakura_1';
 import { sakura4_10Bag } from './vocabulary/sakura/trimester_4/sakura_10';
+import { sakura4_11Bag } from './vocabulary/sakura/trimester_4/sakura_11';
 import { sakura4_2Bag } from './vocabulary/sakura/trimester_4/sakura_2';
 import { sakura4_3Bag } from './vocabulary/sakura/trimester_4/sakura_3';
 import { sakura4_4Bag } from './vocabulary/sakura/trimester_4/sakura_4';
@@ -218,6 +219,7 @@ export const availableWordBags: WordBag[] = [
     sakura4_8Bag,
     sakura4_9Bag,
     sakura4_10Bag,
+    sakura4_11Bag,
     survivalPhrases_1Bag,
 ] as const;
 
