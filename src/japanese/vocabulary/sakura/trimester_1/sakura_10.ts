@@ -117,6 +117,7 @@ const sakura_1_10: TranslatedJapaneseText[] = [
         en: 'Do / Play',
         pl: 'Robić / Grać',
         jp: { text: 'する' },
+        present_short_negative_form: { text: 'しない' },
         stem_form: { text: 'し' },
         te_form: { text: 'して' },
     },

@@ -38,6 +38,7 @@ const GodanVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('godan'),
+    present_short_negative_form: TextWithPronunciationSchema.optional(),
     te_form: TextWithPronunciationSchema.optional(),
 }).readonly();
 
@@ -45,6 +46,7 @@ const IchidanVerbSchema = TranslationSchema.extend({
     type: z.literal('verb'),
     transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('ichidan'),
+    present_short_negative_form: TextWithPronunciationSchema.optional(),
     te_form: TextWithPronunciationSchema.optional(),
 }).readonly();
 
@@ -53,6 +55,7 @@ const IrregularVerbSchema = TranslationSchema.extend({
     transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('irregular'),
     stem_form: TextWithPronunciationSchema,
+    present_short_negative_form: TextWithPronunciationSchema,
     te_form: TextWithPronunciationSchema,
 }).readonly();
 

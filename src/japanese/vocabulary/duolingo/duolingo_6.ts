@@ -151,6 +151,7 @@ const duolingo_6: TranslatedJapaneseText[] = [
         en: 'Have / Exist (inanimate)',
         pl: 'Mieć / Istnieć (nieożywione)',
         jp: { text: 'ある' },
+        present_short_negative_form: { text: 'ない' },
     },
     {
         id: 'b1d30408-8f30-4f68-acc5-c79aac738d4e',

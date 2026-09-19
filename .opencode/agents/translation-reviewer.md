@@ -61,6 +61,7 @@ Check if each `jp.text`, `en`, and `pl` field is present and correctly translate
 
 - `te_form` field must be present only for verbs which have an irregular te-form.
 - If the verb has a regular te-form, the `te_form` field must be omitted as it can be generated automatically from the `jp.text` field.
+- `present_short_negative_form` field must be present only for verbs which have an irregular present short negative form. Otherwise it must be ommited.
 - `stem_form` must be present if the verb is irregular.
 - The field `verb_type` must be set to `godan` if the verb is an u-verb.
 - The field `verb_type` must be set to `ichidan` if the verb is a ru-verb.

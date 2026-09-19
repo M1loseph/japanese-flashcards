@@ -8,6 +8,7 @@ const sakura_1_9: TranslatedJapaneseText[] = [
         en: 'Have / Exist / Be located (inanimate)',
         pl: 'Mieć / Istnieć / Znajdować się (nieożywione)',
         jp: { text: 'ある' },
+        present_short_negative_form: { text: 'ない' },
     },
     {
         id: 'f55ae66c-7deb-4ed5-888d-9ac1c0df94b7',
