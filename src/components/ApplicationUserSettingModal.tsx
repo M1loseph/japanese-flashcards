@@ -58,8 +58,7 @@ export const ApplicationUserSettingModal: FC<ApplicationUserSettingModalProps> =
                 </div>
             </div>
             <div className="modal-backdrop backdrop-blur-xs" onClick={onClose}></div>
-        </dialog>
-        ,
+        </dialog>,
         document.body,
     );
 };
