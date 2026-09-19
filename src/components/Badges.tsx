@@ -228,7 +228,7 @@ export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }
     if (anyKanji) {
         badges.push(createHasKanjiBadge());
     }
-    if (card.type === 'verb' && card.transitivity) {
+    if (card.type === 'verb' && card.verb_type !== 'auxiliary' && card.transitivity) {
         badges.push(createTransitivityBadge(card.transitivity));
     }
     if (card.type === 'verb') {

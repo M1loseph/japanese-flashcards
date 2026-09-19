@@ -23,57 +23,50 @@ const TranslationSchema = z.object({
     image_url: z.string().optional(),
 });
 
-// TODO: unify verb types so that there is no repetition of the same fields in each verb type
 const TransitivitySchema = z.enum(['transitive', 'intransitive', 'ambitransitive']);
 
 export type Transitivity = z.infer<typeof TransitivitySchema>;
 
-const AuxiliaryVerbSchema = TranslationSchema.extend({
+const VerbBaseSchema = TranslationSchema.extend({
     type: z.literal('verb'),
+});
+
+const TransitiveVerbBaseSchema = VerbBaseSchema.extend({
     transitivity: TransitivitySchema.optional(),
+});
+
+const AuxiliaryVerbSchema = VerbBaseSchema.extend({
     verb_type: z.literal('auxiliary'),
 }).readonly();
 
-const GodanVerbSchema = TranslationSchema.extend({
-    type: z.literal('verb'),
-    transitivity: TransitivitySchema.optional(),
+const GodanVerbSchema = TransitiveVerbBaseSchema.extend({
     verb_type: z.literal('godan'),
     present_short_negative_form: TextWithPronunciationSchema.optional(),
     te_form: TextWithPronunciationSchema.optional(),
 }).readonly();
 
-const IchidanVerbSchema = TranslationSchema.extend({
-    type: z.literal('verb'),
-    transitivity: TransitivitySchema.optional(),
+const IchidanVerbSchema = TransitiveVerbBaseSchema.extend({
     verb_type: z.literal('ichidan'),
     present_short_negative_form: TextWithPronunciationSchema.optional(),
     te_form: TextWithPronunciationSchema.optional(),
 }).readonly();
 
-const IrregularVerbSchema = TranslationSchema.extend({
-    type: z.literal('verb'),
-    transitivity: TransitivitySchema.optional(),
+const IrregularVerbSchema = TransitiveVerbBaseSchema.extend({
     verb_type: z.literal('irregular'),
     stem_form: TextWithPronunciationSchema,
     present_short_negative_form: TextWithPronunciationSchema,
     te_form: TextWithPronunciationSchema,
 }).readonly();
 
-const SuruVerbSchema = TranslationSchema.extend({
-    type: z.literal('verb'),
-    transitivity: TransitivitySchema.optional(),
+const SuruVerbSchema = TransitiveVerbBaseSchema.extend({
     verb_type: z.literal('suru'),
 }).readonly();
 
-const KuruVerbSchema = TranslationSchema.extend({
-    type: z.literal('verb'),
-    transitivity: TransitivitySchema.optional(),
+const KuruVerbSchema = TransitiveVerbBaseSchema.extend({
     verb_type: z.literal('kuru'),
 }).readonly();
 
-const IkuVerbSchema = TranslationSchema.extend({
-    type: z.literal('verb'),
-    transitivity: TransitivitySchema.optional(),
+const IkuVerbSchema = TransitiveVerbBaseSchema.extend({
     verb_type: z.literal('iku'),
 }).readonly();
 
