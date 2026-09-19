@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom/vitest';
 import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import type { ComponentProps, ReactNode } from 'react';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router';
-import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { GameContext } from '../../services/GameContext';
 import type { GameState } from '../../types/GameState';
@@ -118,9 +118,21 @@ describe('SummaryPage', () => {
     });
 
     it.each([
-        { correctAnswers: [true, true, true, true, true, true, true, true, true, false], label: 'High', color: 'text-success' },
-        { correctAnswers: [true, true, true, true, true, true, true, false, false, false], label: 'Medium', color: 'text-warning' },
-        { correctAnswers: [true, true, true, true, true, true, false, false, false, false], label: 'Low', color: 'text-error' },
+        {
+            correctAnswers: [true, true, true, true, true, true, true, true, true, false],
+            label: 'High',
+            color: 'text-success',
+        },
+        {
+            correctAnswers: [true, true, true, true, true, true, true, false, false, false],
+            label: 'Medium',
+            color: 'text-warning',
+        },
+        {
+            correctAnswers: [true, true, true, true, true, true, false, false, false, false],
+            label: 'Low',
+            color: 'text-error',
+        },
     ])('uses the $label accuracy label and color', ({ correctAnswers, label, color }) => {
         renderSummaryPage(createFinishedGameState(correctAnswers));
 
