@@ -23,6 +23,18 @@ const GODAN_U_TO_I_MAP: Record<string, string> = {
     る: 'り',
 };
 
+const GODAN_U_TO_A_MAP: Record<string, string> = {
+    う: 'わ',
+    く: 'か',
+    ぐ: 'が',
+    す: 'さ',
+    つ: 'た',
+    ぬ: 'な',
+    ぶ: 'ば',
+    む: 'ま',
+    る: 'ら',
+};
+
 const GODAN_TE_FORM_MAP: Record<string, string> = {
     う: 'って',
     つ: 'って',
@@ -107,11 +119,41 @@ const generatePresentFormFromDictionaryForm = (
     return { text: stem.text + suffix, pronunciation };
 };
 
+const generatePresentShortNegativeFormFromDictionaryForm = (
+    verb: GodanVerb | IchidanVerb | IrregularVerb,
+): TextWithPronunciation => {
+    if (verb.verb_type === 'irregular') {
+        return verb.present_short_negative_form;
+    }
+    const generatePresentShortNegativeForm = (text: string): string => {
+        if (verb.verb_type === 'ichidan') {
+            const stem = text.slice(0, -1);
+            return stem + 'ない';
+        }
+        if (verb.verb_type === 'godan') {
+            const lastChar = text.slice(-1);
+            const replacement = GODAN_U_TO_A_MAP[lastChar];
+            if (!replacement) {
+                throw new Error(`Unexpected last character '${lastChar}' in godan verb '${verb.jp.text}'`);
+            }
+            const stem = text.slice(0, -1);
+            return stem + replacement + 'ない';
+        }
+        const _exhaustiveCheck: never = verb;
+        return _exhaustiveCheck;
+    };
+    return {
+        text: generatePresentShortNegativeForm(verb.jp.text),
+        pronunciation: mapPronunciation(verb.jp.pronunciation, generatePresentShortNegativeForm),
+    };
+};
+
 export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
     const masuForm = generatePresentFormFromDictionaryForm(verb, 'affirmative');
     const masenForm = generatePresentFormFromDictionaryForm(verb, 'negative');
     const teForm = generateTeFormFromDictionaryForm(verb);
     const stemForm = generateStemFormFromDictionaryForm(verb);
+    const presentShortNegativeForm = generatePresentShortNegativeFormFromDictionaryForm(verb);
 
     const masuText = useMainText(masuForm);
     const masuPronunciation = useSecondaryText(masuForm);
@@ -125,10 +167,18 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
     const stemFormText = useMainText(stemForm);
     const stemFormPronunciation = useSecondaryText(stemForm);
 
+    const presentShortNegativeText = useMainText(presentShortNegativeForm);
+    const presentShortNegativePronunciation = useSecondaryText(presentShortNegativeForm);
+
     return (
         <>
-            <DescriptionElement mainText={masuText} secondaryText={masuPronunciation} label="Present" />
-            <DescriptionElement mainText={masenText} secondaryText={masenPronunciation} label="Negative" />
+            <DescriptionElement mainText={masuText} secondaryText={masuPronunciation} label="Masu" />
+            <DescriptionElement mainText={masenText} secondaryText={masenPronunciation} label="Masen" />
+            <DescriptionElement
+                mainText={presentShortNegativeText}
+                secondaryText={presentShortNegativePronunciation}
+                label="Present Short Negative"
+            />
             <DescriptionElement mainText={teText} secondaryText={tePronunciation} label="Te form" />
             <DescriptionElement mainText={stemFormText} secondaryText={stemFormPronunciation} label="Stem form" />
         </>

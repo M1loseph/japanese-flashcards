@@ -53,6 +53,7 @@ const IrregularVerbSchema = TranslationSchema.extend({
     transitivity: TransitivitySchema.optional(),
     verb_type: z.literal('irregular'),
     stem_form: TextWithPronunciationSchema,
+    present_short_negative_form: TextWithPronunciationSchema,
     te_form: TextWithPronunciationSchema,
 }).readonly();
 

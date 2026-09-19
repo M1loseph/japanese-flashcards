@@ -12,7 +12,7 @@ export const DescriptionElement: FC<DescriptionElementProps> = ({ mainText, seco
             <span>{mainText}</span>
             {secondaryText && <span className="text-base-content/60">{secondaryText}</span>}
         </div>
-        <div className="divider divider-horizontal" />
-        <span className="w-16 text-xs text-base-content/60">{label}</span>
+        <div className="divider divider-horizontal mx-1" />
+        <span className="w-20 text-xs text-base-content/60">{label}</span>
     </div>
 );
