@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "test": "vitest run --coverage",
+    "test": "NODE_OPTIONS=\"--localstorage-file=${TMPDIR:-/tmp}/jflashcards-vitest-localstorage\" vitest run --coverage",
     "lint": "eslint . --max-warnings 0",
     "lint-fix": "eslint . --fix",
     "format-check": "prettier --check '*.ts' 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
