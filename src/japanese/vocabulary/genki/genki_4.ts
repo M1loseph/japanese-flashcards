@@ -186,6 +186,7 @@ const genki_4: TranslatedJapaneseText[] = [
         en: 'There is / There are (inanimate)',
         pl: 'Jest / Są (nieożywione)',
         jp: { text: 'ある' },
+        present_short_negative_form: { text: 'ない' },
     },
     {
         id: 'e2abbf5c-ee01-47e7-9aa7-65a3cb72e78b',
