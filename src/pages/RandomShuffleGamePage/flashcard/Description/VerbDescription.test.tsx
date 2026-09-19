@@ -38,7 +38,7 @@ const renderVerbDescription = (verb: GodanVerb | IchidanVerb | IrregularVerb, si
     );
 };
 
-const createGodanVerb = (text: string, pronunciation: string): GodanVerb => ({
+const createGodanVerb = (text: string, pronunciation?: string): GodanVerb => ({
     id: '00000000-0000-4000-8000-000000000001',
     type: 'verb',
     verb_type: 'godan',
@@ -56,146 +56,145 @@ const getDescriptionRow = (label: string): HTMLElement => {
     return row;
 };
 
-const expectDescriptionRow = (label: string, text: string, pronunciation: string) => {
+const expectDescriptionRow = (label: string, text: string, pronunciation?: string) => {
     const row = within(getDescriptionRow(label));
-    const expectedTexts = text === pronunciation ? [text, pronunciation] : [text];
-    expect(row.getAllByText(text)).toHaveLength(expectedTexts.length);
-    if (text !== pronunciation) {
+    expect(row.getByText(text)).toBeInTheDocument();
+    if (pronunciation) {
         expect(row.getByText(pronunciation)).toBeInTheDocument();
     }
 };
 
 describe('VerbDescription', () => {
     it.each([
-        [
-            '買う',
-            'かう',
-            '買います',
-            'かいます',
-            '買いません',
-            'かいません',
-            '買わない',
-            'かわない',
-            '買って',
-            'かって',
-            '買い',
-            'かい',
-        ],
-        [
-            '書く',
-            'かく',
-            '書きます',
-            'かきます',
-            '書きません',
-            'かきません',
-            '書かない',
-            'かかない',
-            '書いて',
-            'かいて',
-            '書き',
-            'かき',
-        ],
-        [
-            '泳ぐ',
-            'およぐ',
-            '泳ぎます',
-            'およぎます',
-            '泳ぎません',
-            'およぎません',
-            '泳がない',
-            'およがない',
-            '泳いで',
-            'およいで',
-            '泳ぎ',
-            'およぎ',
-        ],
-        [
-            '話す',
-            'はなす',
-            '話します',
-            'はなします',
-            '話しません',
-            'はなしません',
-            '話さない',
-            'はなさない',
-            '話して',
-            'はなして',
-            '話し',
-            'はなし',
-        ],
-        [
-            '待つ',
-            'まつ',
-            '待ちます',
-            'まちます',
-            '待ちません',
-            'まちません',
-            '待たない',
-            'またない',
-            '待って',
-            'まって',
-            '待ち',
-            'まち',
-        ],
-        [
-            '死ぬ',
-            'しぬ',
-            '死にます',
-            'しにます',
-            '死にません',
-            'しにません',
-            '死なない',
-            'しなない',
-            '死んで',
-            'しんで',
-            '死に',
-            'しに',
-        ],
-        [
-            '遊ぶ',
-            'あそぶ',
-            '遊びます',
-            'あそびます',
-            '遊びません',
-            'あそびません',
-            '遊ばない',
-            'あそばない',
-            '遊んで',
-            'あそんで',
-            '遊び',
-            'あそび',
-        ],
-        [
-            '飲む',
-            'のむ',
-            '飲みます',
-            'のみます',
-            '飲みません',
-            'のみません',
-            '飲まない',
-            'のまない',
-            '飲んで',
-            'のんで',
-            '飲み',
-            'のみ',
-        ],
-        [
-            '帰る',
-            'かえる',
-            '帰ります',
-            'かえります',
-            '帰りません',
-            'かえりません',
-            '帰らない',
-            'かえらない',
-            '帰って',
-            'かえって',
-            '帰り',
-            'かえり',
-        ],
+        {
+            dictionaryForm: '買う',
+            dictionaryPronunciation: 'かう',
+            masu: '買います',
+            masuPronunciation: 'かいます',
+            masen: '買いません',
+            masenPronunciation: 'かいません',
+            shortNegative: '買わない',
+            shortNegativePronunciation: 'かわない',
+            teForm: '買って',
+            teFormPronunciation: 'かって',
+            stem: '買い',
+            stemPronunciation: 'かい',
+        },
+        {
+            dictionaryForm: '書く',
+            dictionaryPronunciation: 'かく',
+            masu: '書きます',
+            masuPronunciation: 'かきます',
+            masen: '書きません',
+            masenPronunciation: 'かきません',
+            shortNegative: '書かない',
+            shortNegativePronunciation: 'かかない',
+            teForm: '書いて',
+            teFormPronunciation: 'かいて',
+            stem: '書き',
+            stemPronunciation: 'かき',
+        },
+        {
+            dictionaryForm: '泳ぐ',
+            dictionaryPronunciation: 'およぐ',
+            masu: '泳ぎます',
+            masuPronunciation: 'およぎます',
+            masen: '泳ぎません',
+            masenPronunciation: 'およぎません',
+            shortNegative: '泳がない',
+            shortNegativePronunciation: 'およがない',
+            teForm: '泳いで',
+            teFormPronunciation: 'およいで',
+            stem: '泳ぎ',
+            stemPronunciation: 'およぎ',
+        },
+        {
+            dictionaryForm: '話す',
+            dictionaryPronunciation: 'はなす',
+            masu: '話します',
+            masuPronunciation: 'はなします',
+            masen: '話しません',
+            masenPronunciation: 'はなしません',
+            shortNegative: '話さない',
+            shortNegativePronunciation: 'はなさない',
+            teForm: '話して',
+            teFormPronunciation: 'はなして',
+            stem: '話し',
+            stemPronunciation: 'はなし',
+        },
+        {
+            dictionaryForm: '待つ',
+            dictionaryPronunciation: 'まつ',
+            masu: '待ちます',
+            masuPronunciation: 'まちます',
+            masen: '待ちません',
+            masenPronunciation: 'まちません',
+            shortNegative: '待たない',
+            shortNegativePronunciation: 'またない',
+            teForm: '待って',
+            teFormPronunciation: 'まって',
+            stem: '待ち',
+            stemPronunciation: 'まち',
+        },
+        {
+            dictionaryForm: '死ぬ',
+            dictionaryPronunciation: 'しぬ',
+            masu: '死にます',
+            masuPronunciation: 'しにます',
+            masen: '死にません',
+            masenPronunciation: 'しにません',
+            shortNegative: '死なない',
+            shortNegativePronunciation: 'しなない',
+            teForm: '死んで',
+            teFormPronunciation: 'しんで',
+            stem: '死に',
+            stemPronunciation: 'しに',
+        },
+        {
+            dictionaryForm: '遊ぶ',
+            dictionaryPronunciation: 'あそぶ',
+            masu: '遊びます',
+            masuPronunciation: 'あそびます',
+            masen: '遊びません',
+            masenPronunciation: 'あそびません',
+            shortNegative: '遊ばない',
+            shortNegativePronunciation: 'あそばない',
+            teForm: '遊んで',
+            teFormPronunciation: 'あそんで',
+            stem: '遊び',
+            stemPronunciation: 'あそび',
+        },
+        {
+            dictionaryForm: '飲む',
+            dictionaryPronunciation: 'のむ',
+            masu: '飲みます',
+            masuPronunciation: 'のみます',
+            masen: '飲みません',
+            masenPronunciation: 'のみません',
+            shortNegative: '飲まない',
+            shortNegativePronunciation: 'のまない',
+            teForm: '飲んで',
+            teFormPronunciation: 'のんで',
+            stem: '飲み',
+            stemPronunciation: 'のみ',
+        },
+        {
+            dictionaryForm: '帰る',
+            dictionaryPronunciation: 'かえる',
+            masu: '帰ります',
+            masuPronunciation: 'かえります',
+            masen: '帰りません',
+            masenPronunciation: 'かえりません',
+            shortNegative: '帰らない',
+            shortNegativePronunciation: 'かえらない',
+            teForm: '帰って',
+            teFormPronunciation: 'かえって',
+            stem: '帰り',
+            stemPronunciation: 'かえり',
+        },
     ])(
-        'renders derived godan forms for %s',
-        (
+        'renders derived godan forms for $dictionaryForm',
+        ({
             dictionaryForm,
             dictionaryPronunciation,
             masu,
@@ -208,7 +207,7 @@ describe('VerbDescription', () => {
             teFormPronunciation,
             stem,
             stemPronunciation,
-        ) => {
+        }) => {
             renderVerbDescription(createGodanVerb(dictionaryForm, dictionaryPronunciation));
 
             expectDescriptionRow('Masu', masu, masuPronunciation);
@@ -237,23 +236,23 @@ describe('VerbDescription', () => {
     it('uses the supplied short-negative form for non irregular verbs', () => {
         renderVerbDescription({
             ...createGodanVerb('ある', 'ある'),
-            present_short_negative_form: { text: 'ない', pronunciation: 'ない' },
+            present_short_negative_form: { text: 'ない' },
         });
 
-        expectDescriptionRow('Present Short Negative', 'ない', 'ない');
+        expectDescriptionRow('Present Short Negative', 'ない');
     });
 
     it.each([
         [
             {
-                ...createGodanVerb('する', 'する'),
+                ...createGodanVerb('する'),
                 verb_type: 'irregular',
-                stem_form: { text: 'し', pronunciation: 'し' },
-                present_short_negative_form: { text: 'しない', pronunciation: 'しない' },
-                te_form: { text: 'して', pronunciation: 'して' },
+                stem_form: { text: 'し' },
+                present_short_negative_form: { text: 'しない' },
+                te_form: { text: 'して' },
             },
             ['します', 'しません', 'しない', 'して', 'し'],
-            ['します', 'しません', 'しない', 'して', 'し'],
+            [undefined, undefined, undefined, undefined, undefined],
         ],
         [
             {
