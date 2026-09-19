@@ -4,7 +4,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { PageTitle } from '../../components/PageTitle';
 import { searchWordsMatchingQuery } from '../../japanese/search';
 import type { TranslatedJapaneseText, WordBag } from '../../japanese/types';
-import { useGameSettingsContext } from '../../services/GameStateContext';
+import { useApplicationUserSetting } from '../../services/ApplicationUserSetting';
 import { Word } from '../BagPage/Word';
 import { ScrollablePage } from '../common/ScrollablePage';
 
@@ -15,7 +15,7 @@ export const SearchPage: FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const urlQuery = searchParams.get(SEARCH_KEY) || '';
     const [query, setQuery] = useState(urlQuery);
-    const { selectedLanguage } = useGameSettingsContext();
+    const { selectedLanguage } = useApplicationUserSetting();
 
     const results = (() => {
         if (query.length < 2) {

@@ -3,12 +3,12 @@ import { useState, type FC } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { searchWordsMatchingQuery } from '../../japanese/search';
 import type { WordBag } from '../../japanese/types';
-import { useGameSettingsContext } from '../../services/GameStateContext';
+import { useApplicationUserSetting } from '../../services/ApplicationUserSetting';
 import { Word } from './Word';
 
 export const WordsTab: FC = () => {
     const bag = useOutletContext<WordBag>();
-    const { selectedLanguage } = useGameSettingsContext();
+    const { selectedLanguage } = useApplicationUserSetting();
     const [searchText, setSearchText] = useState<string>('');
 
     const words = (() => {

@@ -1,6 +1,5 @@
 import * as z from 'zod';
 import { FlashcardSessionSchema } from './FlashcardSession';
-import { TranslationLanguagesSchema } from './TranslationLanguage';
 
 const GameTypeSchema = z.union([z.literal('practice'), z.literal('srs')]);
 
@@ -10,8 +9,6 @@ const CommonGameStateSchema = z.object({
     gameType: GameTypeSchema,
     flashcards: z.array(FlashcardSessionSchema).readonly(),
     gameStartTimeMs: z.number(),
-    simplifiedMode: z.boolean(),
-    selectedLanguage: TranslationLanguagesSchema,
 });
 
 const GameInProgressStateSchema = CommonGameStateSchema.extend({

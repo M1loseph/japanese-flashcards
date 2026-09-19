@@ -11,6 +11,7 @@ import RandomShuffleGamePage from './pages/RandomShuffleGamePage';
 import SearchPage from './pages/SearchPage';
 import { SpacedRepetitionSystemPage } from './pages/SpacedRepetitionSystem';
 import SummaryPage from './pages/SummaryPage';
+import { ApplicationUserSettingProvider } from './services/ApplicationUserSetting';
 import { DrawerProvider } from './services/DrawerContext';
 import { GameContextProvider } from './services/GameContext';
 import { GameSettingsProvider } from './services/GameStateContext';
@@ -96,11 +97,13 @@ createRoot(root).render(
                 <DrawerProvider>
                     <HardTextProvider>
                         <StreakContextProvider>
-                            <GameSettingsProvider>
-                                <GameContextProvider>
-                                    <RouterProvider router={router} />
-                                </GameContextProvider>
-                            </GameSettingsProvider>
+                            <ApplicationUserSettingProvider>
+                                <GameSettingsProvider>
+                                    <GameContextProvider>
+                                        <RouterProvider router={router} />
+                                    </GameContextProvider>
+                                </GameSettingsProvider>
+                            </ApplicationUserSettingProvider>
                         </StreakContextProvider>
                     </HardTextProvider>
                 </DrawerProvider>

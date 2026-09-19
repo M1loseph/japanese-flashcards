@@ -7,7 +7,6 @@ import { PageTitle } from '../../components/PageTitle';
 import { Toast } from '../../components/Toast';
 import { availableWordBags, type WordBag } from '../../japanese';
 import { useGameContext } from '../../services/GameContext';
-import { useGameSettingsContext } from '../../services/GameStateContext';
 import {
     generateStatistics,
     listWordsToReview,
@@ -31,7 +30,6 @@ interface WordBagWithNewWords {
 export const SpacedRepetitionSystemPage: FC = () => {
     const navigate = useNavigate();
     const { createNewGame } = useGameContext();
-    const { selectedLanguage } = useGameSettingsContext();
     const { data: srsWords } = useSRSWords();
     const wordsToReview = listWordsToReview(srsWords);
     const statistics = generateStatistics(srsWords);
@@ -67,7 +65,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
     const handleStartReview = () => {
         const title = `Review Session - ${wordsToReview.length} items`;
 
-        createNewGame(wordsToReview, selectedLanguage, title, 'srs');
+        createNewGame(wordsToReview, title, 'srs');
         navigate('/game/shuffle');
     };
 

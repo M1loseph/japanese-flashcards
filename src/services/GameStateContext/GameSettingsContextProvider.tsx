@@ -1,5 +1,4 @@
 import { useMemo, useState, type FC, type ReactNode } from 'react';
-import { TranslationLanguages, type TranslationLanguage } from '../../types/TranslationLanguage';
 import { GameSettingsContext, type GameSettingsContextType } from './GameSettingsContext';
 
 interface GameSettingsProviderProps {
@@ -7,7 +6,6 @@ interface GameSettingsProviderProps {
 }
 
 export const GameSettingsProvider: FC<GameSettingsProviderProps> = ({ children }) => {
-    const [selectedLanguage, setSelectedLanguage] = useState<TranslationLanguage>(TranslationLanguages.ENGLISH);
     const [selectedWordBags, setSelectedWordBags] = useState<Set<string>>(new Set());
 
     const value = useMemo<GameSettingsContextType>(() => {
@@ -40,14 +38,12 @@ export const GameSettingsProvider: FC<GameSettingsProviderProps> = ({ children }
         };
 
         return {
-            selectedLanguage,
-            setSelectedLanguage,
             selectedWordBags,
             toggleWordBag,
             selectBags,
             deselectBags,
         };
-    }, [selectedLanguage, selectedWordBags]);
+    }, [selectedWordBags]);
 
     return <GameSettingsContext.Provider value={value}>{children}</GameSettingsContext.Provider>;
 };

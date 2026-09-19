@@ -1,44 +1,32 @@
 import { type FC } from 'react';
-import { BigButton } from '../../components/BigButton';
-import { LanguageSelector } from '../../components/LanguageSelector';
-import type { TranslationLanguage } from '../../types/TranslationLanguage';
+import { createPortal } from 'react-dom';
+import { useApplicationUserSetting } from '../services/ApplicationUserSetting';
+import { BigButton } from './BigButton';
+import { LanguageSelector } from './LanguageSelector';
 
-interface GameSettingsModalProps {
+interface ApplicationUserSettingModalProps {
     open: boolean;
     onClose: () => void;
-    currentLanguage: TranslationLanguage;
-    updateLanguage: (language: TranslationLanguage) => void;
-    simplifiedMode: boolean;
-    updateSimplifiedMode: (enabled: boolean) => void;
 }
 
-export const GameSettingsModal: FC<GameSettingsModalProps> = ({
-    open,
-    onClose,
-    currentLanguage,
-    updateLanguage,
-    simplifiedMode,
-    updateSimplifiedMode,
-}) => {
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLDialogElement>) => {
-        if (e.key === 'Escape') {
+export const ApplicationUserSettingModal: FC<ApplicationUserSettingModalProps> = ({ open, onClose }) => {
+    const { selectedLanguage, setSelectedLanguage, simplifiedMode, setSimplifiedMode } = useApplicationUserSetting();
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLDialogElement>) => {
+        if (event.key === 'Escape') {
             onClose();
         }
     };
 
-    const handleSelectNormal = () => {
-        updateSimplifiedMode(false);
-    };
-
-    const handleSelectSimplified = () => {
-        updateSimplifiedMode(true);
-    };
-
-    return (
+    return createPortal(
         <dialog onKeyDown={handleKeyDown} className={`modal ${open ? 'modal-open' : ''}`}>
             <div className="modal-box">
-                <button onClick={onClose} className="btn btn-lg btn-circle btn-ghost absolute right-2 top-2">
-                    ✕
+                <button
+                    onClick={onClose}
+                    className="btn btn-lg btn-circle btn-ghost absolute right-2 top-2"
+                    aria-label="Close settings"
+                >
+                    x
                 </button>
                 <h2 className="text-xl font-bold text-center mb-4">Settings</h2>
 
@@ -46,14 +34,14 @@ export const GameSettingsModal: FC<GameSettingsModalProps> = ({
                 <div className="p-3">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mx-auto">
                         <BigButton
-                            onClick={handleSelectNormal}
+                            onClick={() => setSimplifiedMode(false)}
                             active={!simplifiedMode}
                             text="Normal"
                             description="Contains Kanji"
                             icon="📖"
                         />
                         <BigButton
-                            onClick={handleSelectSimplified}
+                            onClick={() => setSimplifiedMode(true)}
                             active={simplifiedMode}
                             text="Simplified"
                             description="Only Kana (Hiragana/Katakana)"
@@ -66,10 +54,11 @@ export const GameSettingsModal: FC<GameSettingsModalProps> = ({
 
                 <h3 className="text-base font-semibold text-slate-600 mb-2">GAME LANGUAGE</h3>
                 <div className="p-3">
-                    <LanguageSelector selectedLanguage={currentLanguage} onSelect={updateLanguage} />
+                    <LanguageSelector selectedLanguage={selectedLanguage} onSelect={setSelectedLanguage} />
                 </div>
             </div>
             <div className="modal-backdrop backdrop-blur-xs" onClick={onClose}></div>
-        </dialog>
+        </dialog>,
+        document.body,
     );
 };

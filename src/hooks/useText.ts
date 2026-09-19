@@ -1,12 +1,8 @@
 import type { TextWithPronunciation } from '../japanese/types';
-import { useGameContext } from '../services/GameContext';
+import { useApplicationUserSetting } from '../services/ApplicationUserSetting';
 
 export const useMainText = (word: TextWithPronunciation): string => {
-    const { gameState } = useGameContext();
-    if (!gameState) {
-        throw new Error('useMainText must be used within a GameProvider');
-    }
-    const { simplifiedMode } = gameState;
+    const { simplifiedMode } = useApplicationUserSetting();
     if (simplifiedMode) {
         if (!word.pronunciation) {
             return word.text;
@@ -20,11 +16,7 @@ export const useMainText = (word: TextWithPronunciation): string => {
 };
 
 export const useSecondaryText = (word: TextWithPronunciation): string | undefined => {
-    const { gameState } = useGameContext();
-    if (!gameState) {
-        throw new Error('useSecondaryText must be used within a GameProvider');
-    }
-    const { simplifiedMode } = gameState;
+    const { simplifiedMode } = useApplicationUserSetting();
     if (simplifiedMode) {
         return undefined;
     }

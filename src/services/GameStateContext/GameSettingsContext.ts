@@ -1,9 +1,6 @@
 import { createContext, useContext } from 'react';
-import { type TranslationLanguage } from '../../types/TranslationLanguage';
 
 export interface GameSettingsContextType {
-    selectedLanguage: TranslationLanguage;
-    setSelectedLanguage: (lang: TranslationLanguage) => void;
     selectedWordBags: Set<string>;
     toggleWordBag: (id: string) => void;
     selectBags: (ids: string[]) => void;

@@ -4,6 +4,7 @@ import { ExistingGameAlert } from '../../components/ExistingGameAlert';
 import { LanguageSelector } from '../../components/LanguageSelector';
 import { availableWordBags, findBagById } from '../../japanese';
 import { type WordBag, type WordBagCategory } from '../../japanese/types';
+import { useApplicationUserSetting } from '../../services/ApplicationUserSetting';
 import { useGameContext } from '../../services/GameContext';
 import { useGameSettingsContext } from '../../services/GameStateContext';
 import { ScrollablePage } from '../common/ScrollablePage';
@@ -12,14 +13,8 @@ import { CategorySection } from './CategorySection';
 const MainPage: FC = () => {
     const navigate = useNavigate();
     const { createNewGame } = useGameContext();
-    const {
-        selectedLanguage,
-        setSelectedLanguage,
-        selectedWordBags,
-        toggleWordBag: handleToggleWordBag,
-        selectBags,
-        deselectBags,
-    } = useGameSettingsContext();
+    const { selectedLanguage, setSelectedLanguage } = useApplicationUserSetting();
+    const { selectedWordBags, toggleWordBag: handleToggleWordBag, selectBags, deselectBags } = useGameSettingsContext();
 
     const groupedBags = availableWordBags.reduce((acc, bag) => {
         const group = bag.category;
@@ -62,7 +57,7 @@ const MainPage: FC = () => {
         });
         const title = bags.map((bag) => bag.name).join(', ');
 
-        createNewGame(selectedJapaneseWord, selectedLanguage, title, 'practice');
+        createNewGame(selectedJapaneseWord, title, 'practice');
         navigate('/game/shuffle');
     };
 
