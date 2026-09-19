@@ -1,20 +1,12 @@
 import { createContext, useContext } from 'react';
 import type { GameState, GameType } from '../../types/GameState';
-import type { TranslationLanguage } from '../../types/TranslationLanguage';
 
 interface GameContextType {
     gameState: GameState | undefined;
     clearGame: () => void;
     markCurrentFlashcard: (correct: boolean) => Promise<void>;
     createNewGameFromWrongAnswers: () => void;
-    createNewGame: (
-        wordIds: string[],
-        selectedLanguage: TranslationLanguage,
-        title: string,
-        gameType: GameType,
-    ) => void;
-    updateLanguage: (language: TranslationLanguage) => void;
-    updateSimplifiedMode: (enabled: boolean) => void;
+    createNewGame: (wordIds: string[], title: string, gameType: GameType) => void;
     skipRemainingFlashcards: () => Promise<void>;
     undoLastAction: () => void;
 }

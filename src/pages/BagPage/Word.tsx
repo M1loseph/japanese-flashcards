@@ -3,14 +3,14 @@ import { Badges } from '../../components/Badges';
 import { HardTextIcon } from '../../components/HardTextIcon';
 import { TextWithJishoLinks } from '../../components/TextWithJishoLinks';
 import type { TranslatedJapaneseText } from '../../japanese/types';
-import { useGameSettingsContext } from '../../services/GameStateContext';
+import { useApplicationUserSetting } from '../../services/ApplicationUserSetting';
 
 interface WordProps {
     word: TranslatedJapaneseText;
 }
 
 export const Word: FC<WordProps> = ({ word }) => {
-    const { selectedLanguage } = useGameSettingsContext();
+    const { selectedLanguage } = useApplicationUserSetting();
     const jp = word.jp;
 
     return (

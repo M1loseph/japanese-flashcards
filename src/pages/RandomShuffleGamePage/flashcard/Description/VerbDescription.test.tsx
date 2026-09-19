@@ -2,39 +2,24 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import type { GodanVerb, IchidanVerb, IrregularVerb } from '../../../../japanese/types';
-import { GameContext } from '../../../../services/GameContext/GameContext';
-import type { GameState } from '../../../../types/GameState';
+import {
+    ApplicationUserSettingContext,
+    type ApplicationUserSettingContextType,
+} from '../../../../services/ApplicationUserSetting';
 import { VerbDescription } from './VerbDescription';
 
-const createGameState = (simplifiedMode: boolean): GameState => ({
-    version: 1,
-    type: 'in-progress',
-    title: 'Test game',
-    gameType: 'practice',
-    flashcards: [],
-    gameStartTimeMs: 0,
-    currentFlashcardIndex: 0,
-    simplifiedMode,
-    selectedLanguage: 'en',
-});
-
 const renderVerbDescription = (verb: GodanVerb | IchidanVerb | IrregularVerb, simplifiedMode = false) => {
-    const providerValue = {
-        gameState: createGameState(simplifiedMode),
-        clearGame: () => {},
-        markCurrentFlashcard: async () => {},
-        createNewGameFromWrongAnswers: () => {},
-        createNewGame: () => {},
-        updateLanguage: () => {},
-        updateSimplifiedMode: () => {},
-        skipRemainingFlashcards: async () => {},
-        undoLastAction: () => {},
+    const applicationUserSetting: ApplicationUserSettingContextType = {
+        selectedLanguage: 'en',
+        setSelectedLanguage: () => {},
+        simplifiedMode,
+        setSimplifiedMode: () => {},
     };
 
     return render(
-        <GameContext.Provider value={providerValue}>
+        <ApplicationUserSettingContext.Provider value={applicationUserSetting}>
             <VerbDescription verb={verb} />
-        </GameContext.Provider>,
+        </ApplicationUserSettingContext.Provider>,
     );
 };
 

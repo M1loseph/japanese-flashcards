@@ -1,17 +1,17 @@
-import { IconMenu2 } from '@tabler/icons-react';
-import { type FC } from 'react';
+import { IconMenu2, IconSettings } from '@tabler/icons-react';
+import { useState, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDrawer } from '../services/DrawerContext';
+import { ApplicationUserSettingModal } from './ApplicationUserSettingModal';
 
 interface HeaderProps {
     preHomeNavigationHook?: () => void;
-    additionalComponents?: React.ReactNode;
 }
 
-export const Header: FC<HeaderProps> = ({ preHomeNavigationHook, additionalComponents }) => {
+export const Header: FC<HeaderProps> = ({ preHomeNavigationHook }) => {
     const navigate = useNavigate();
-
     const { toggleDrawer } = useDrawer();
+    const [showSettings, setShowSettings] = useState(false);
 
     const handleHomeClick = () => {
         if (preHomeNavigationHook) {
@@ -47,8 +47,17 @@ export const Header: FC<HeaderProps> = ({ preHomeNavigationHook, additionalCompo
                         <span className="text-xl font-bold text-slate-800 tracking-tight">Japanese Flashcards</span>
                     </h1>
                 </div>
-                <div className="grow">{additionalComponents}</div>
+                <div className="grow flex justify-end">
+                    <button
+                        className="btn btn-ghost btn-circle"
+                        aria-label="Open settings"
+                        onClick={() => setShowSettings(true)}
+                    >
+                        <IconSettings />
+                    </button>
+                </div>
             </div>
+            <ApplicationUserSettingModal open={showSettings} onClose={() => setShowSettings(false)} />
         </div>
     );
 };
