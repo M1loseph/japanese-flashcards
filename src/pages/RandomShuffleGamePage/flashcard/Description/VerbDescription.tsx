@@ -125,6 +125,9 @@ const generatePresentShortNegativeFormFromDictionaryForm = (
     if (verb.verb_type === 'irregular') {
         return verb.present_short_negative_form;
     }
+    if (verb.present_short_negative_form) {
+        return verb.present_short_negative_form;
+    }
     const generatePresentShortNegativeForm = (text: string): string => {
         if (verb.verb_type === 'ichidan') {
             const stem = text.slice(0, -1);

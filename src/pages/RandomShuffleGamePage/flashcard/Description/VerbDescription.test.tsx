@@ -234,6 +234,15 @@ describe('VerbDescription', () => {
         expectDescriptionRow('Stem form', '食べ', 'たべ');
     });
 
+    it('uses the supplied short-negative form for non irregular verbs', () => {
+        renderVerbDescription({
+            ...createGodanVerb('ある', 'ある'),
+            present_short_negative_form: { text: 'ない', pronunciation: 'ない' },
+        });
+
+        expectDescriptionRow('Present Short Negative', 'ない', 'ない');
+    });
+
     it.each([
         [
             {
