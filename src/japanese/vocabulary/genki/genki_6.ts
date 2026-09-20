@@ -369,6 +369,13 @@ const genki_6: TranslatedJapaneseText[] = [
         pl: 'Album',
         jp: { text: 'アルバム' },
     },
+    {
+        id: '91e1ef46-14cb-4e89-9024-cab7723d43a7',
+        type: 'noun',
+        en: 'Towel',
+        pl: 'Ręcznik',
+        jp: { text: 'タオル' },
+    },
 ];
 
 export const genki6Bag: WordBag = {
