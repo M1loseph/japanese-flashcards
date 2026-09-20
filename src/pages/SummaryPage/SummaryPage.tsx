@@ -1,9 +1,10 @@
 import { IconHome, IconRepeat } from '@tabler/icons-react';
 import { motion } from 'motion/react';
-import { useEffect, useMemo, useState, type FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { PaperPlaneIcon } from '../../assets/PaperPlaneIcon';
 import { useGameContext } from '../../services/GameContext';
+import type { GameState } from '../../types/GameState';
 import { FixedSizePage } from '../common/FixedSizePage';
 import { Confetti } from './Confetti';
 import { useCountUp } from './useCountUp';
@@ -16,51 +17,57 @@ interface SessionStats {
     elapsedTime: string;
 }
 
+const getWrongAnswers = (gameState: GameState | undefined) => {
+    if (!gameState) {
+        return [];
+    }
+    return gameState.flashcards.filter((card) => card.answered && !card.correct);
+};
+
+const getSessionStats = (gameState: GameState | undefined): SessionStats => {
+    if (!gameState || gameState.type !== 'finished') {
+        return {
+            totalCards: 0,
+            accuracy: 0,
+            accuracyLabel: 'High',
+            accuracyColor: 'text-success',
+            elapsedTime: '',
+        };
+    }
+
+    const totalCards = gameState.flashcards.length;
+    const correctCards = gameState.flashcards.filter((card) => card.answered && card.correct).length;
+    const accuracy = totalCards > 0 ? Math.round((correctCards / totalCards) * 100) : 0;
+
+    const accuracyLabel = accuracy >= 90 ? 'High' : accuracy >= 70 ? 'Medium' : 'Low';
+    const accuracyColor = (() => {
+        if (accuracyLabel === 'High') return 'text-success';
+        if (accuracyLabel === 'Medium') return 'text-warning';
+        return 'text-error';
+    })();
+
+    const elapsedMs = gameState.gameEndTimeMs - gameState.gameStartTimeMs;
+    const totalSeconds = Math.floor(elapsedMs / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    const elapsedTime = (() => {
+        if (hours > 0) {
+            return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+        return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    })();
+
+    return { totalCards, accuracy, accuracyLabel, accuracyColor, elapsedTime };
+};
+
 const SummaryPage: FC = () => {
     const navigate = useNavigate();
     const { gameState, clearGame, createNewGameFromWrongAnswers } = useGameContext();
 
-    const wrongAnswers = useMemo(() => {
-        if (!gameState) return [];
-        return gameState.flashcards.filter((card) => card.answered && !card.correct);
-    }, [gameState]);
+    const wrongAnswers = getWrongAnswers(gameState);
 
-    const stats: SessionStats = useMemo(() => {
-        if (!gameState || gameState.type !== 'finished') {
-            return {
-                totalCards: 0,
-                accuracy: 0,
-                accuracyLabel: 'High',
-                accuracyColor: 'text-success',
-                elapsedTime: '',
-            };
-        }
-
-        const totalCards = gameState.flashcards.length;
-        const correctCards = gameState.flashcards.filter((card) => card.answered && card.correct).length;
-        const accuracy = totalCards > 0 ? Math.round((correctCards / totalCards) * 100) : 0;
-
-        const accuracyLabel = accuracy >= 90 ? 'High' : accuracy >= 70 ? 'Medium' : 'Low';
-        const accuracyColor = (() => {
-            if (accuracyLabel === 'High') return 'text-success';
-            if (accuracyLabel === 'Medium') return 'text-warning';
-            return 'text-error';
-        })();
-
-        const elapsedMs = gameState.gameEndTimeMs - gameState.gameStartTimeMs;
-        const totalSeconds = Math.floor(elapsedMs / 1000);
-        const hours = Math.floor(totalSeconds / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
-        const elapsedTime = (() => {
-            if (hours > 0) {
-                return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-            }
-            return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        })();
-
-        return { totalCards, accuracy, accuracyLabel, accuracyColor, elapsedTime };
-    }, [gameState]);
+    const stats = getSessionStats(gameState);
 
     const hasMistakes = wrongAnswers.length > 0;
     const [planeFloating, setPlaneFloating] = useState(false);
