@@ -94,9 +94,7 @@ const DataManagementPage: FC = () => {
         <ScrollablePage>
             <PageTitle title="Data Management" />
             <p className="text-base-content/70 mb-6">
-                {' '}
-                Take full control of your learning journey. Securely export your progress or migrate data from another
-                device.
+                Back up and restore your SRS progress and entries marked as hard across devices.
             </p>
             <div className="grid grid-cols-12 gap-4 gap-lg">
                 <Card className="col-span-12 lg:col-span-5 group overflow-hidden">
@@ -107,23 +105,18 @@ const DataManagementPage: FC = () => {
                             </div>
                             <h2 className="text-2xl font-bold">Export Data</h2>
                             <p className="text-lg">
-                                Download a complete archive of your SRS journey. Your GZIP file includes all hard words
-                                and phrases, vocabulary progress in spaced repetition system and the current game in a
-                                portable JSON format.
+                                Download a compressed JSON backup containing your SRS progress and entries marked as
+                                hard.
                             </p>
                         </div>
                         <ul className="text-lg">
                             <li className="flex items-center gap-2 text-on-surface-variant">
                                 <IconCircleCheck size={20} />
-                                <span className="font-label-md text-label-md">SRS Scheduling Metadata</span>
+                                <span className="font-label-md text-label-md">SRS Progress and Scheduling</span>
                             </li>
                             <li className="flex items-center gap-2 text-on-surface-variant">
                                 <IconCircleCheck size={20} />
-                                <span className="font-label-md text-label-md">Custom Kanji Decks</span>
-                            </li>
-                            <li className="flex items-center gap-2 text-on-surface-variant">
-                                <IconCircleCheck size={20} />
-                                <span className="font-label-md text-label-md">Audio &amp; Image Resources</span>
+                                <span className="font-label-md text-label-md">Entries Marked as Hard</span>
                             </li>
                         </ul>
                         <button
@@ -171,8 +164,8 @@ const DataManagementPage: FC = () => {
                                 <p className="text-lg text-on-surface-variant/80">
                                     Importing a data file will{' '}
                                     <span className="text-error font-bold underline">permanently overwrite</span> your
-                                    local study progress and user settings. We recommend performing an export of your
-                                    current state before proceeding with an import to prevent accidental data loss.
+                                    SRS progress and entries marked as hard. We recommend exporting your current data
+                                    before importing to prevent accidental data loss.
                                 </p>
                             </div>
                         </div>
