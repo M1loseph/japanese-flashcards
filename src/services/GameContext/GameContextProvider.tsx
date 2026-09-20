@@ -2,7 +2,6 @@ import { useEffect, useState, type FC, type ReactNode } from 'react';
 import { findWordById } from '../../japanese/search';
 import type { FlashcardSession } from '../../types/FlashcardSession';
 import { GameStateSchema, type GameState, type GameType } from '../../types/GameState';
-import type { TranslationLanguage } from '../../types/TranslationLanguage';
 import { shuffleArray } from '../../utils';
 import { useMarkWordsAsReviewedBatch } from '../SRS';
 import { GameContext } from './GameContext';
@@ -24,9 +23,9 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
                 return undefined;
             }
             return { ...game, flashcards: finalCards };
-        } catch (e) {
+        } catch (error) {
             localStorage.removeItem(RANDOM_SHUFFLE_GAME_STATE_KEY);
-            console.error('Failed to parse saved game state:', e);
+            console.error('Failed to parse saved game state:', error);
             return undefined;
         }
     });
@@ -37,12 +36,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         }
     }, [gameState]);
 
-    const createNewGame = (
-        wordIds: string[],
-        selectedLanguage: TranslationLanguage,
-        title: string,
-        gameType: GameType,
-    ) => {
+    const createNewGame = (wordIds: string[], title: string, gameType: GameType) => {
         const flashcards = shuffleArray(wordIds).map((wordId) => ({
             wordId,
             answered: false,
@@ -56,8 +50,6 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             gameType,
             flashcards,
             currentFlashcardIndex: 0,
-            selectedLanguage,
-            simplifiedMode: false,
             gameStartTimeMs: Date.now(),
         };
 
@@ -67,16 +59,6 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
     const clearGame = () => {
         localStorage.removeItem(RANDOM_SHUFFLE_GAME_STATE_KEY);
         setGameState(undefined);
-    };
-
-    const updateLanguage = (language: TranslationLanguage) => {
-        setGameState((prev) => {
-            if (!prev) throw new Error('Can only update language if the game is in progress');
-            return {
-                ...prev,
-                selectedLanguage: language,
-            };
-        });
     };
 
     const saveProgressForSRSGame = async (gameType: GameType, updatedFlashcards: FlashcardSession[]) => {
@@ -101,16 +83,14 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
 
         if (gameState.currentFlashcardIndex === gameState.flashcards.length - 1) {
             await saveProgressForSRSGame(gameState.gameType, updatedFlashcards);
-            const { version, title, gameType, selectedLanguage, gameStartTimeMs, simplifiedMode } = gameState;
+            const { version, title, gameType, gameStartTimeMs } = gameState;
             setGameState({
                 version,
                 type: 'finished',
                 gameType,
                 gameStartTimeMs,
                 title,
-                selectedLanguage,
                 flashcards: updatedFlashcards,
-                simplifiedMode,
                 gameEndTimeMs: Date.now(),
             });
             return;
@@ -135,28 +115,16 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             }
 
             const newFlashcards = shuffleArray(wrongAnswers.map((card) => ({ ...card, answered: false })));
-            const { version, title, gameType, selectedLanguage, simplifiedMode } = prev;
+            const { version, title, gameType } = prev;
 
             return {
                 version,
                 type: 'in-progress',
                 gameType,
                 title,
-                selectedLanguage,
-                simplifiedMode,
                 currentFlashcardIndex: 0,
                 flashcards: newFlashcards,
                 gameStartTimeMs: Date.now(),
-            };
-        });
-    };
-
-    const updateSimplifiedMode = (enabled: boolean) => {
-        setGameState((prev) => {
-            if (!prev) throw new Error('Can only update simplified mode if the game is in progress');
-            return {
-                ...prev,
-                simplifiedMode: enabled,
             };
         });
     };
@@ -165,7 +133,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         if (!gameState || gameState.type !== 'in-progress') {
             throw new Error('Can only skip flashcards if the game is in progress');
         }
-        const { version, title, gameType, selectedLanguage, simplifiedMode, gameStartTimeMs } = gameState;
+        const { version, title, gameType, gameStartTimeMs } = gameState;
         const answeredFlashcards = gameState.flashcards.filter((card) => card.answered);
         await saveProgressForSRSGame(gameType, answeredFlashcards);
         setGameState({
@@ -174,9 +142,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
             gameType,
             gameStartTimeMs,
             title,
-            selectedLanguage,
             flashcards: answeredFlashcards,
-            simplifiedMode,
             gameEndTimeMs: Date.now(),
         });
     };
@@ -212,8 +178,6 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
                 markCurrentFlashcard,
                 createNewGameFromWrongAnswers,
                 createNewGame,
-                updateLanguage,
-                updateSimplifiedMode,
                 skipRemainingFlashcards,
                 undoLastAction,
             }}

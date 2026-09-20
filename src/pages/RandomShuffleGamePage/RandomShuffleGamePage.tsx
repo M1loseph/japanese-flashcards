@@ -1,28 +1,20 @@
-import { IconSettings } from '@tabler/icons-react';
 import { type FC, useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import { usePreventAccidentalLeave } from '../../hooks/usePreventAccidentalLeave';
 import { findWordById } from '../../japanese/search';
+import { useApplicationUserSetting } from '../../services/ApplicationUserSetting';
 import { useGameContext } from '../../services/GameContext';
 import { useStreak } from '../../services/StreakContext';
 import { FixedSizePage } from '../common/FixedSizePage';
 import Flashcard, { type FlashcardHandle } from './flashcard/Flashcard';
 import { FlashcardButtons } from './flashcard/FlashcardButtons';
 import ProgressBar from './flashcard/ProgressBar';
-import { GameSettingsModal } from './GameSettingsModal';
 
 const RandomShuffleGamePage: FC = () => {
-    const {
-        gameState,
-        updateLanguage,
-        markCurrentFlashcard,
-        updateSimplifiedMode,
-        skipRemainingFlashcards,
-        undoLastAction,
-    } = useGameContext();
+    const { gameState, markCurrentFlashcard, skipRemainingFlashcards, undoLastAction } = useGameContext();
+    const { selectedLanguage } = useApplicationUserSetting();
     const [sessionTime, setSessionTime] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
-    const [showSettings, setShowSettings] = useState(false);
     const [disableButtons, setDisableButtons] = useState(false);
     const navigate = useNavigate();
     const { recordActivity } = useStreak();
@@ -79,18 +71,6 @@ const RandomShuffleGamePage: FC = () => {
         }, 600);
     };
 
-    const handleOpenSettings = () => {
-        setShowSettings(true);
-    };
-
-    const headerSettings = (
-        <div className="flex justify-end items-center">
-            <button className="btn btn-ghost btn-circle" onClick={handleOpenSettings}>
-                <IconSettings />
-            </button>
-        </div>
-    );
-
     const word = findWordById(card.wordId);
 
     if (!word) {
@@ -105,7 +85,7 @@ const RandomShuffleGamePage: FC = () => {
     };
 
     return (
-        <FixedSizePage additionalHeaderComponents={headerSettings}>
+        <FixedSizePage>
             <div className="h-full flex flex-col items-stretch space-y-6">
                 <ProgressBar
                     title={gameState.title}
@@ -116,7 +96,7 @@ const RandomShuffleGamePage: FC = () => {
                 <Flashcard
                     ref={flashcardRef}
                     card={word}
-                    selectedLanguage={gameState.selectedLanguage}
+                    selectedLanguage={selectedLanguage}
                     showAnswer={showAnswer}
                     undoLastAction={handleUndoLastAction}
                     disableGoBack={gameState.currentFlashcardIndex === 0}
@@ -148,14 +128,6 @@ const RandomShuffleGamePage: FC = () => {
                     <div className="modal-backdrop" onClick={cancelLeave}></div>
                 </dialog>
             </div>
-            <GameSettingsModal
-                open={showSettings}
-                onClose={() => setShowSettings(false)}
-                currentLanguage={gameState.selectedLanguage}
-                updateLanguage={updateLanguage}
-                simplifiedMode={gameState.simplifiedMode}
-                updateSimplifiedMode={updateSimplifiedMode}
-            />
         </FixedSizePage>
     );
 };
