@@ -30,8 +30,9 @@ const MainPage: FC = () => {
         'Essentials 📌': groupedBags.get('essentials') ?? [],
         'Genki books 📚': groupedBags.get('genki') ?? [],
         'Sakura Classes 🎓': groupedBags.get('sakura') ?? [],
-        'Duolingo 📱': groupedBags.get('duolingo') ?? [],
+        'Dual School 🏫': groupedBags.get('dual') ?? [],
         'Geography 🌍 🌎 🌏': groupedBags.get('geography') ?? [],
+        'Duolingo 📱': groupedBags.get('duolingo') ?? [],
         'JapanesePod101 🎧': groupedBags.get('japanesePod101') ?? [],
     };
 

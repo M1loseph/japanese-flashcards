@@ -97,7 +97,7 @@ export const SearchPage: FC = () => {
                         </Link>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                             {words.map((word) => (
-                                <Word key={`${bag.id}-${word.jp.text}-${word.en}`} word={word} />
+                                <Word key={`${bag.id}-${word.id}`} word={word} />
                             ))}
                         </div>
                     </section>

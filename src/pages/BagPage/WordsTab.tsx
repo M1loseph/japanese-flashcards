@@ -40,7 +40,7 @@ export const WordsTab: FC = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 pb-12">
                 {words.map((word) => (
-                    <Word key={word.jp.text + word.en} word={word} />
+                    <Word key={word.id} word={word} />
                 ))}
             </div>
         </>

@@ -23,6 +23,10 @@ const TranslationSchema = z.object({
     image_url: z.string().optional(),
 });
 
+const FormalitySchema = z.enum(['formal', 'informal', 'does-not-apply']);
+
+export type Formality = z.infer<typeof FormalitySchema>;
+
 const TransitivitySchema = z.enum(['transitive', 'intransitive', 'ambitransitive']);
 
 export type Transitivity = z.infer<typeof TransitivitySchema>;
@@ -106,6 +110,7 @@ const AdverbSchema = TranslationSchema.extend({
 
 const PhraseSchema = TranslationSchema.extend({
     type: z.literal('phrase'),
+    formality: FormalitySchema.optional(),
 }).readonly();
 
 const PreNounAdjectiveSchema = TranslationSchema.extend({
@@ -189,6 +194,7 @@ const WordBagCategorySchema = z.enum([
     'duolingo',
     'geography',
     'japanesePod101',
+    'dual',
 ]);
 
 export type WordBagCategory = z.infer<typeof WordBagCategorySchema>;
