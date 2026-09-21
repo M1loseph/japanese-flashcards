@@ -1,10 +1,8 @@
 import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
-import { LanguageSelector } from '../../components/LanguageSelector';
 import { availableWordBags, findBagById } from '../../japanese';
 import { type WordBag, type WordBagCategory } from '../../japanese/types';
-import { useApplicationUserSetting } from '../../services/ApplicationUserSetting';
 import { useGameContext } from '../../services/GameContext';
 import { useGameSettingsContext } from '../../services/GameStateContext';
 import { ScrollablePage } from '../common/ScrollablePage';
@@ -13,7 +11,6 @@ import { CategorySection } from './CategorySection';
 const MainPage: FC = () => {
     const navigate = useNavigate();
     const { createNewGame } = useGameContext();
-    const { selectedLanguage, setSelectedLanguage } = useApplicationUserSetting();
     const { selectedWordBags, toggleWordBag: handleToggleWordBag, selectBags, deselectBags } = useGameSettingsContext();
 
     const groupedBags = availableWordBags.reduce((acc, bag) => {
@@ -66,31 +63,22 @@ const MainPage: FC = () => {
         <ScrollablePage>
             <main className="pb-24 grow">
                 <ExistingGameAlert />
-
-                <section className="mb-6">
-                    <h2 className="text-2xl font-bold mb-6 text-center">1. Choose Your Language</h2>
-                    <LanguageSelector selectedLanguage={selectedLanguage} onSelect={setSelectedLanguage} />
-                </section>
-
-                <section>
-                    <h2 className="text-2xl font-bold mb-6 text-center">2. Select Content</h2>
-                    <div className="space-y-2">
-                        {Object.entries(groupedBagsWithLabels).map(
-                            ([category, bags]) =>
-                                bags.length > 0 && (
-                                    <CategorySection
-                                        key={category}
-                                        title={category}
-                                        bags={bags}
-                                        selectedBagIds={selectedWordBags}
-                                        onToggleBag={handleToggleWordBag}
-                                        onSelectAll={() => handleSelectAll(bags)}
-                                        onDeselectAll={() => handleDeselectAll(bags)}
-                                    />
-                                ),
-                        )}
-                    </div>
-                </section>
+                <div className="space-y-2">
+                    {Object.entries(groupedBagsWithLabels).map(
+                        ([category, bags]) =>
+                            bags.length > 0 && (
+                                <CategorySection
+                                    key={category}
+                                    title={category}
+                                    bags={bags}
+                                    selectedBagIds={selectedWordBags}
+                                    onToggleBag={handleToggleWordBag}
+                                    onSelectAll={() => handleSelectAll(bags)}
+                                    onDeselectAll={() => handleDeselectAll(bags)}
+                                />
+                            ),
+                    )}
+                </div>
             </main>
 
             <div className="fixed bottom-0 left-0 right-0 p-4 bg-base-100 border-t border-slate-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
