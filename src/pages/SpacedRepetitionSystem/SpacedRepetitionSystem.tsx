@@ -17,6 +17,7 @@ import {
 } from '../../services/SRS';
 import { useStreak } from '../../services/StreakContext';
 import { ScrollablePage } from '../common/ScrollablePage';
+import { UpcomingReviewsChart } from './UpcomingReviewsChart';
 
 const WORD_COUNT_OPTIONS = [5, 10, 15] as const;
 
@@ -30,7 +31,7 @@ interface WordBagWithNewWords {
 export const SpacedRepetitionSystemPage: FC = () => {
     const navigate = useNavigate();
     const { createNewGame } = useGameContext();
-    const { data: srsWords } = useSRSWords();
+    const { data: srsWords, dataUpdatedAt: srsWordsUpdatedAt } = useSRSWords();
     const wordsToReview = listWordsToReview(srsWords);
     const statistics = generateStatistics(srsWords);
     const addNewWordsToSRS = useAddNewWordsToSRS();
@@ -198,6 +199,8 @@ export const SpacedRepetitionSystemPage: FC = () => {
                     </Card>
                 </div>
             </section>
+
+            <UpcomingReviewsChart srsWords={srsWords} chartStartDate={new Date(srsWordsUpdatedAt)} />
 
             <section aria-label="SRS stages distribution" className="mb-8">
                 <h2 className="text-xl font-bold mb-4">SRS Stages Distribution</h2>

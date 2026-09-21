@@ -12,6 +12,12 @@ interface SRSStatistics {
     buckets: Map<number, number>;
 }
 
+export interface UpcomingReviewDay {
+    date: Date;
+    reviewCount: number;
+    hourlyReviewCounts: number[];
+}
+
 export const generateStatistics = (words?: WordLearningProgress[]): SRSStatistics => {
     if (!words) {
         return { buckets: new Map() };
@@ -22,6 +28,34 @@ export const generateStatistics = (words?: WordLearningProgress[]): SRSStatistic
         return acc;
     }, new Map<number, number>());
     return { buckets };
+};
+
+export const generateUpcomingReviewSchedule = (
+    words: readonly WordLearningProgress[],
+    now: Date = new Date(),
+): UpcomingReviewDay[] => {
+    const days = Array.from({ length: 7 }, (_, dayOffset) => ({
+        date: new Date(now.getFullYear(), now.getMonth(), now.getDate() + dayOffset),
+        reviewCount: 0,
+        hourlyReviewCounts: Array.from({ length: 24 }, () => 0),
+    }));
+    const daysByDate = new Map(days.map((day) => [day.date.toDateString(), day]));
+
+    for (const word of words) {
+        if (word.nextReview <= now) {
+            continue;
+        }
+
+        const day = daysByDate.get(word.nextReview.toDateString());
+        if (!day) {
+            continue;
+        }
+
+        day.reviewCount += 1;
+        day.hourlyReviewCounts[word.nextReview.getHours()] += 1;
+    }
+
+    return days;
 };
 
 export const selectNewRandomWords = (
