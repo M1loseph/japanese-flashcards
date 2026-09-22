@@ -35,6 +35,7 @@ const verb: TranslatedJapaneseText = {
 const godanVerb: TranslatedJapaneseText = {
     id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
+    transitivity: 'transitive',
     en: 'to drink',
     pl: 'pić',
     jp: { text: '飲む', pronunciation: 'のむ' },
@@ -257,6 +258,21 @@ describe('Badges', () => {
         });
     });
 
+    describe('transitivity badges', () => {
+        it.each(['transitive', 'intransitive', 'ambitransitive'] as const)(
+            'renders a %s badge for a verb with that transitivity',
+            (transitivity) => {
+                renderCard({ ...godanVerb, transitivity });
+                expect(screen.getByText(transitivity)).toBeInTheDocument();
+            },
+        );
+
+        it('does not render a transitivity badge for an auxiliary verb', () => {
+            renderCard(auxiliaryVerb);
+            expect(screen.queryByText(/transitive$/)).not.toBeInTheDocument();
+        });
+    });
+
     describe('adjective type badges', () => {
         it('renders i adjective badge', () => {
             renderCard(iAdjective);
@@ -283,6 +299,24 @@ describe('Badges', () => {
             renderCard(naAdjective, { showAnswer: true });
             const adjTypeBadge = screen.getByText('na adjective');
             expect(adjTypeBadge).toBeVisible();
+        });
+    });
+
+    describe('formality badges', () => {
+        it.each([
+            ['formal', 'formal'],
+            ['informal', 'informal'],
+            ['does-not-apply', 'does not apply'],
+        ] as const)('renders a %s badge for a phrase', (formality, expectedText) => {
+            renderCard({ ...phrase, formality });
+            expect(screen.getByText(expectedText)).toBeInTheDocument();
+        });
+
+        it('does not render a formality badge when formality is absent', () => {
+            renderCard(phrase);
+            expect(screen.queryByText('formal')).not.toBeInTheDocument();
+            expect(screen.queryByText('informal')).not.toBeInTheDocument();
+            expect(screen.queryByText('does not apply')).not.toBeInTheDocument();
         });
     });
 

@@ -15,6 +15,7 @@ import { countingThinObjectsBag } from './vocabulary/counting/countingThinObject
 import { numbersBag } from './vocabulary/counting/numbers';
 import { ordinalNumbersBag } from './vocabulary/counting/ordinalNumbers';
 import { directionsBag } from './vocabulary/directions';
+import { dual2026Bag } from './vocabulary/dual/dual_2026';
 import { duolingo1Bag } from './vocabulary/duolingo/duolingo_1';
 import { duolingo10Bag } from './vocabulary/duolingo/duolingo_10';
 import { duolingo11Bag } from './vocabulary/duolingo/duolingo_11';
@@ -221,6 +222,7 @@ export const availableWordBags: WordBag[] = [
     sakura4_10Bag,
     sakura4_11Bag,
     survivalPhrases_1Bag,
+    dual2026Bag,
 ] as const;
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {

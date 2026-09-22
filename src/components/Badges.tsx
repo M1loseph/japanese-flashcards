@@ -2,6 +2,7 @@ import { type FC } from 'react';
 import { isKanji } from 'wanakana';
 import {
     type Adjective,
+    type Formality,
     type Transitivity,
     type TranslatedJapaneseText,
     type TranslatedJapaneseTextType,
@@ -211,6 +212,37 @@ const createTransitivityBadge = (transitivity: Transitivity) => {
     };
 };
 
+const createFormalityBadge = (formality: Formality): BadgeMetadata => {
+    let color: string;
+    let text: string;
+    switch (formality) {
+        case 'formal': {
+            color = 'bg-blue-300/75';
+            text = 'formal';
+            break;
+        }
+        case 'informal': {
+            color = 'bg-green-300/75';
+            text = 'informal';
+            break;
+        }
+        case 'does-not-apply': {
+            color = 'bg-gray-300/75';
+            text = 'does not apply';
+            break;
+        }
+        default: {
+            const _exhaustiveCheck: never = formality;
+            return _exhaustiveCheck;
+        }
+    }
+    return {
+        color,
+        text,
+        show: true,
+    };
+};
+
 interface BadgesProps {
     card: TranslatedJapaneseText;
     size?: 'sm' | 'md' | 'lg';
@@ -236,6 +268,9 @@ export const Badges: FC<BadgesProps> = ({ card, size = 'lg', showAnswer = true }
     }
     if (card.type === 'adjective') {
         badges.push(createAdjectiveTypeBadge(card.adjective_type, showAnswer));
+    }
+    if (card.type === 'phrase' && card.formality) {
+        badges.push(createFormalityBadge(card.formality));
     }
     if (srsWord.data) {
         badges.push(createSRSLevelBadge(srsWord.data.level, showAnswer));
