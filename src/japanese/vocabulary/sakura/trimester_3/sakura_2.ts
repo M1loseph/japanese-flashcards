@@ -117,6 +117,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: 'd29a4e81-70e4-4eef-8654-a0f223012bbb',
         type: 'phrase',
+        formality: 'formal',
         en: 'There is a desk in my room.',
         pl: 'W moim pokoju jest biurko.',
         jp: { text: '私の部屋に机があります。', pronunciation: 'わたしのへやにつくえがあります。' },
@@ -124,6 +125,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: 'f1cce192-286f-4de4-b636-90344d0b3df5',
         type: 'phrase',
+        formality: 'formal',
         en: 'There is a flower in the garden.',
         pl: 'W ogrodzie jest kwiat.',
         jp: { text: '庭に花があります。', pronunciation: 'にわにはながあります。' },
@@ -131,6 +133,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: '1f0573a5-2b91-40f8-b82a-47725188c505',
         type: 'phrase',
+        formality: 'formal',
         en: 'There is a cat in the café.',
         pl: 'W kawiarni jest kot.',
         jp: { text: '喫茶店に猫がいます。', pronunciation: 'きっさてんにねこがいます。' },
@@ -138,6 +141,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: '786ca707-3344-49be-8936-d37d31c94455',
         type: 'phrase',
+        formality: 'formal',
         en: 'There is a ghost in my house.',
         pl: 'W moim domu jest duch.',
         jp: { text: '私の家にゴーストがいます。', pronunciation: 'わたしのいえにゴーストがいます。' },
@@ -145,6 +149,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: '316c4c1c-6de7-4462-955c-d904bacd3c67',
         type: 'phrase',
+        formality: 'formal',
         en: 'Who is in the room?',
         pl: 'Kto jest w pokoju?',
         jp: { text: '部屋に誰がいますか。', pronunciation: 'へやにだれがいますか。' },
@@ -152,6 +157,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: 'aa544cd8-8feb-4222-aa41-cda0b7f21103',
         type: 'phrase',
+        formality: 'formal',
         en: 'Nobody is in the room.',
         pl: 'Nikt nie jest w pokoju.',
         jp: { text: '部屋に人はいません。', pronunciation: 'へやにひとはいません。' },
@@ -159,6 +165,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: 'ad21bda5-ce56-40ac-910f-66d8271e2ddc',
         type: 'phrase',
+        formality: 'formal',
         en: 'There is a cat in the library.',
         pl: 'W bibliotece jest kot.',
         jp: { text: '図書館に猫がいます。', pronunciation: 'としょかんにねこがいます。' },
@@ -166,6 +173,7 @@ const sakura_3_2: TranslatedJapaneseText[] = [
     {
         id: '0460a5ac-4320-4272-ad7b-907b1bedcd68',
         type: 'phrase',
+        formality: 'formal',
         en: 'The homework is fairly easy.',
         pl: 'Praca domowa jest w miarę łatwa.',
         jp: { text: '宿題はまあまあ簡単です。', pronunciation: 'しゅくだいはまあまあかんたんです。' },

@@ -26,6 +26,7 @@ const sakura_3_7: TranslatedJapaneseText[] = [
     {
         id: '82795e3e-968b-45d7-a524-23ee279f86e1',
         type: 'phrase',
+        formality: 'formal',
         en: 'Please go straight.',
         pl: 'Proszę idź prosto.',
         jp: { text: 'まっすぐ行ってください。', pronunciation: 'まっすぐいってください。' },
@@ -33,6 +34,7 @@ const sakura_3_7: TranslatedJapaneseText[] = [
     {
         id: '1988c20a-56b0-4bb9-8b41-0774b49df6e6',
         type: 'phrase',
+        formality: 'formal',
         en: 'Please go left.',
         pl: 'Proszę idź w lewo.',
         jp: { text: '左に行ってください。', pronunciation: 'ひだりにいってください。' },
@@ -54,6 +56,7 @@ const sakura_3_7: TranslatedJapaneseText[] = [
     {
         id: '7bbd237d-89d3-42db-954e-9a7609d79447',
         type: 'phrase',
+        formality: 'formal',
         en: 'What kind of car do you want?',
         pl: 'Jakiego samochodu chcesz?',
         jp: { text: 'どんな車が欲しいですか。', pronunciation: 'どんなくるまがほしいですか。' },
@@ -61,6 +64,7 @@ const sakura_3_7: TranslatedJapaneseText[] = [
     {
         id: '2dae182a-b781-465b-9d71-7d3b35dd9611',
         type: 'phrase',
+        formality: 'formal',
         en: 'What kind of place is Sakura school?',
         pl: 'Jakim miejscem jest szkoła Sakura?',
         jp: { text: 'さくら学校はどんな場所ですか。', pronunciation: 'さくらがっこうはどんなばしょですか。' },

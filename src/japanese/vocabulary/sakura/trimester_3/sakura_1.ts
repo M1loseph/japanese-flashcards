@@ -114,6 +114,7 @@ const sakura_3_1: TranslatedJapaneseText[] = [
     {
         id: '01800b5b-e845-4363-a519-561d8359058b',
         type: 'phrase',
+        formality: 'formal',
         en: "It's big and dirty.",
         pl: 'To jest duże i brudne.',
         jp: { text: '大きくて汚いです。', pronunciation: 'おおきくてきたないです。' },
@@ -121,6 +122,7 @@ const sakura_3_1: TranslatedJapaneseText[] = [
     {
         id: '3c6747b2-102c-4d7c-bbbb-fef6b512aa43',
         type: 'phrase',
+        formality: 'formal',
         en: "It's good and dark.",
         pl: 'To jest dobre i ciemne.',
         jp: { text: 'よくて暗いです。', pronunciation: 'よくてくらいです。' },
@@ -128,6 +130,7 @@ const sakura_3_1: TranslatedJapaneseText[] = [
     {
         id: '1a85c526-4a1b-4ca4-ab50-cdeff2e29232',
         type: 'phrase',
+        formality: 'formal',
         en: "He's skilled and kind.",
         pl: 'On jest zdolny i miły.',
         jp: { text: '上手で親切です。', pronunciation: 'じょうずでしんせつです。' },
@@ -135,6 +138,7 @@ const sakura_3_1: TranslatedJapaneseText[] = [
     {
         id: '6e49acb5-257c-4a63-8f7a-d825db792d66',
         type: 'phrase',
+        formality: 'formal',
         en: "It's tough and expensive.",
         pl: 'To jest ciężkie i drogie.',
         jp: { text: '大変で高いです。', pronunciation: 'たいへんでたかいです。' },
@@ -142,6 +146,7 @@ const sakura_3_1: TranslatedJapaneseText[] = [
     {
         id: 'da54df2d-d9b8-4ae2-8022-3da62ee2a53e',
         type: 'phrase',
+        formality: 'formal',
         en: "It's not big and it's weird.",
         pl: 'To nie jest duże i jest dziwne.',
         jp: { text: '大きくなくて変です。', pronunciation: 'おおきくなくてへんです。' },
@@ -149,6 +154,7 @@ const sakura_3_1: TranslatedJapaneseText[] = [
     {
         id: '9cddcc09-a966-4c91-acd5-7da759f1867e',
         type: 'phrase',
+        formality: 'formal',
         en: "I'm not skilled and I'm short.",
         pl: 'Nie jestem zdolny i jestem niski.',
         jp: { text: '得意じゃなくて背が低いです。', pronunciation: 'とくいじゃなくてせがひくいです。' },

@@ -12,6 +12,7 @@ const sakura_3_10: TranslatedJapaneseText[] = [
         id: '879622cb-8781-499d-acbb-5f39c8e70707',
         type: 'verb',
         verb_type: 'ichidan',
+        transitivity: 'intransitive',
         en: 'Be late / Fall behind schedule',
         pl: 'Spóźnić się / Opóźnić się',
         jp: { text: '遅れる', pronunciation: 'おくれる' },
@@ -19,6 +20,7 @@ const sakura_3_10: TranslatedJapaneseText[] = [
     {
         id: 'f5c8385a-4056-4df1-8e5e-8a67c763d254',
         type: 'phrase',
+        formality: 'formal',
         en: "I'm sorry for my lateness.",
         pl: 'Przepraszam za spóźnienie.',
         jp: { text: '遅れてすみません。', pronunciation: 'おくれてすみません。' },
@@ -33,6 +35,7 @@ const sakura_3_10: TranslatedJapaneseText[] = [
     {
         id: '2c0330c5-2da8-4bb1-8522-fc269c37c667',
         type: 'phrase',
+        formality: 'formal',
         en: 'A book is on the bookshelf.',
         pl: 'Książka jest na regale.',
         jp: { text: '本は棚の中にあります。', pronunciation: 'ほんはたなのなかにあります。' },
@@ -64,6 +67,7 @@ const sakura_3_10: TranslatedJapaneseText[] = [
         id: '511ff878-65f1-46ef-ac5b-b4b28722ccc8',
         type: 'verb',
         verb_type: 'ichidan',
+        transitivity: 'intransitive',
         en: 'Answer / Reply',
         pl: 'Odpowiadać',
         jp: { text: '答える', pronunciation: 'こたえる' },

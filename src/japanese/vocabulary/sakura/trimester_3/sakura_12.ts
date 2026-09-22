@@ -4,6 +4,7 @@ const sakura_3_12: TranslatedJapaneseText[] = [
     {
         id: 'c5992f38-45ee-4423-8f01-f03f3c9dc4f3',
         type: 'phrase',
+        formality: 'formal',
         en: 'I go to work by bicycle and train.',
         pl: 'Do pracy jadę rowerem i pociągiem.',
         jp: { text: '自転車と電車で会社に行きます。', pronunciation: 'じてんしゃとでんしゃでかいしゃにいきます。' },
@@ -33,13 +34,15 @@ const sakura_3_12: TranslatedJapaneseText[] = [
     {
         id: '7700ffdd-978d-4516-91e0-8bcb1e634e75',
         type: 'phrase',
-        en: 'On 15th of May, I will go to school.',
+        formality: 'formal',
+        en: 'On May 15th, I will go to school.',
         pl: '15 maja pójdę do szkoły.',
         jp: { text: '五月十五日に学校に行きます。', pronunciation: 'ごがつじゅうごにちにがっこうにいきます。' },
     },
     {
         id: 'cb930b24-ec59-4ce4-ae8d-d5760bfb6bb9',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'How long',
         pl: 'Jak długo',
         jp: { text: 'どのぐらい' },
@@ -48,6 +51,7 @@ const sakura_3_12: TranslatedJapaneseText[] = [
         id: 'd769fbaa-d466-4e42-b707-23bd38ccb2e2',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'intransitive',
         en: 'Take (time / resources)',
         pl: 'Zajmować (czas / zasoby)',
         jp: { text: 'かかる' },
@@ -55,6 +59,7 @@ const sakura_3_12: TranslatedJapaneseText[] = [
     {
         id: '5dddf4cc-106a-4711-9467-827b0049d772',
         type: 'phrase',
+        formality: 'formal',
         en: 'It takes 30 minutes to go from home to school.',
         pl: 'Z domu do szkoły idzie się 30 minut.',
         jp: {
@@ -65,6 +70,7 @@ const sakura_3_12: TranslatedJapaneseText[] = [
     {
         id: '48bb0bb3-24b2-4df5-a2bc-67a07ce4f0cf',
         type: 'phrase',
+        formality: 'formal',
         en: 'It takes 1 hour to go from home to school.',
         pl: 'Z domu do szkoły idzie się 1 godzinę.',
         jp: { text: '家から学校まで一時間かかります。', pronunciation: 'いえからがっこうまでいちじかんかかります。' },
@@ -80,6 +86,7 @@ const sakura_3_12: TranslatedJapaneseText[] = [
         id: 'fc530f0f-feb8-43b5-88a3-e2a6fa4a5f36',
         type: 'verb',
         verb_type: 'ichidan',
+        transitivity: 'intransitive',
         en: 'Get off / Disembark',
         pl: 'Wysiąść / Zsiąść',
         jp: { text: '降りる', pronunciation: 'おりる' },
@@ -87,6 +94,7 @@ const sakura_3_12: TranslatedJapaneseText[] = [
     {
         id: 'bc3056d7-6207-432f-ada0-6b612855d6fa',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will get off the train at the next station.',
         pl: 'Wysiądę z pociągu na następnej stacji.',
         jp: { text: '次の駅で電車を降ります。', pronunciation: 'つぎのえきででんしゃをおります。' },

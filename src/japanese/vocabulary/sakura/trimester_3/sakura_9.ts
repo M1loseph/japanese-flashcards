@@ -5,6 +5,7 @@ const sakura_3_9: TranslatedJapaneseText[] = [
         id: '0aa4f401-19a1-4653-8806-9afe1dff722e',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'intransitive',
         en: 'Ride / Board',
         pl: 'Jechać / Wsiadać',
         jp: { text: '乗る', pronunciation: 'のる' },
@@ -12,6 +13,7 @@ const sakura_3_9: TranslatedJapaneseText[] = [
     {
         id: '6d01421c-7459-4f7e-b05f-ee9d13e7f483',
         type: 'phrase',
+        formality: 'formal',
         en: 'I ride a bike every day.',
         pl: 'Jeżdżę na rowerze codziennie.',
         jp: { text: '毎日自転車に乗ります。', pronunciation: 'まいにちじてんしゃにのります。' },
@@ -103,6 +105,7 @@ const sakura_3_9: TranslatedJapaneseText[] = [
     {
         id: '75399f69-0875-4511-856a-513e1bf94197',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'How / In what way / By what means',
         pl: 'Jak / W jaki sposób / Jakim środkiem',
         jp: { text: 'どうやって' },
@@ -110,6 +113,7 @@ const sakura_3_9: TranslatedJapaneseText[] = [
     {
         id: '1b9e873c-639b-4387-9508-65d91e5f4aad',
         type: 'phrase',
+        formality: 'formal',
         en: 'How do you get to the station?',
         pl: 'Jak dostajesz się na stację?',
         jp: { text: 'どうやって駅に行きますか。', pronunciation: 'どうやってえきにいきますか。' },
@@ -133,6 +137,7 @@ const sakura_3_9: TranslatedJapaneseText[] = [
         id: '5adb4ac5-b156-4e85-a87f-30d0a7878ffe',
         type: 'verb',
         verb_type: 'ichidan',
+        transitivity: 'intransitive',
         en: 'Get tired / Become exhausted',
         pl: 'Zmęczyć się / Stać się wyczerpanym',
         jp: { text: '疲れる', pronunciation: 'つかれる' },

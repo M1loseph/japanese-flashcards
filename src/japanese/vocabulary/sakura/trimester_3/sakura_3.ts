@@ -74,6 +74,7 @@ const sakura_3_3: TranslatedJapaneseText[] = [
     {
         id: '3c59a9c2-7987-405b-99aa-ebe5cc75c3e1',
         type: 'phrase',
+        formality: 'formal',
         en: 'How many apples are in the room?',
         pl: 'Ile jabłek jest w pokoju?',
         jp: { text: '部屋にりんごがいくつありますか。', pronunciation: 'へやにりんごがいくつありますか。' },
@@ -95,6 +96,7 @@ const sakura_3_3: TranslatedJapaneseText[] = [
     {
         id: '4ac6f016-7772-4ba0-a4b2-c2cdd3d39b9f',
         type: 'phrase',
+        formality: 'formal',
         en: 'How many people are in the room?',
         pl: 'Ile osób jest w pokoju?',
         jp: { text: '部屋に人が何人いますか。', pronunciation: 'へやにひとがなんにんいますか。' },

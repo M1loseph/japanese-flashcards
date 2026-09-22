@@ -18,6 +18,7 @@ const sakura_3_11: TranslatedJapaneseText[] = [
     {
         id: '69ca731c-4b76-495b-86d7-e64cf3301aef',
         type: 'phrase',
+        formality: 'formal',
         en: 'What is "rule" in German?',
         pl: 'Jak jest "zasada" po niemiecku?',
         jp: { text: 'ドイツ語で「ルール」は何ですか。', pronunciation: 'ドイツごでルールはなんですか。' },
@@ -26,13 +27,14 @@ const sakura_3_11: TranslatedJapaneseText[] = [
         id: '176e7db8-08c8-4ef7-8183-415064ca2cdf',
         type: 'noun',
         en: 'Rail',
-        pl: 'Szyna / Tory',
+        pl: 'Szyna kolejowa',
         jp: { text: 'レール' },
     },
     {
         id: 'e651087d-f585-4702-99a9-9f2ed2477ce0',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'intransitive',
         en: 'Fly',
         pl: 'Latać',
         jp: { text: '飛ぶ', pronunciation: 'とぶ' },
@@ -40,6 +42,7 @@ const sakura_3_11: TranslatedJapaneseText[] = [
     {
         id: '7c90e40d-4408-4596-8431-2ce283c9d508',
         type: 'phrase',
+        formality: 'formal',
         en: 'I fly in the sky.',
         pl: 'Latam po niebie.',
         jp: { text: '空を飛びます。', pronunciation: 'そらをとびます。' },
@@ -47,6 +50,7 @@ const sakura_3_11: TranslatedJapaneseText[] = [
     {
         id: '9d85bbf4-68ea-46c8-b84f-639d301f58c6',
         type: 'phrase',
+        formality: 'formal',
         en: 'How do you go from school to home?',
         pl: 'Jak idziesz ze szkoły do domu?',
         jp: {

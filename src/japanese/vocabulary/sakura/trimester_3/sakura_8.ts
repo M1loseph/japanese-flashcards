@@ -11,6 +11,7 @@ const sakura_3_8: TranslatedJapaneseText[] = [
     {
         id: '503b6fe5-5e0a-4ceb-9e9f-67373e5a49b8',
         type: 'phrase',
+        formality: 'formal',
         en: "Please don't worry.",
         pl: 'Proszę się nie martwić.',
         jp: { text: '心配しないでください。', pronunciation: 'しんぱいしないでください。' },
@@ -116,6 +117,7 @@ const sakura_3_8: TranslatedJapaneseText[] = [
     {
         id: '9b25a6b5-c5da-4d03-aa45-83ea93417aae',
         type: 'phrase',
+        formality: 'formal',
         en: 'The painting is on the wall.',
         pl: 'Obraz jest na ścianie.',
         jp: { text: '壁に絵があります。', pronunciation: 'かべにえがあります。' },
@@ -137,6 +139,7 @@ const sakura_3_8: TranslatedJapaneseText[] = [
     {
         id: '195c87c0-5a18-4d45-b54c-4af314d8c587',
         type: 'phrase',
+        formality: 'formal',
         en: "Q: Are you at home? A: I'm not at home.",
         pl: 'P: Czy jesteś w domu? O: Nie jestem w domu.',
         jp: {
@@ -177,6 +180,7 @@ const sakura_3_8: TranslatedJapaneseText[] = [
         id: '6aca5a0d-ef51-45b8-a910-6a5bdb1c29a6',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'intransitive',
         en: 'Walk',
         pl: 'Iść pieszo',
         jp: { text: '歩く', pronunciation: 'あるく' },
@@ -184,6 +188,7 @@ const sakura_3_8: TranslatedJapaneseText[] = [
     {
         id: 'b154ee5f-cd3b-40fe-b29e-6485b789f4ef',
         type: 'phrase',
+        formality: 'formal',
         en: 'I walk to school every day.',
         pl: 'Chodzę do szkoły codziennie.',
         jp: { text: '毎日学校に歩いて行きます。', pronunciation: 'まいにちがっこうにあるいていきます。' },
