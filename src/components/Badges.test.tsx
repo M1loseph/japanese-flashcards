@@ -125,11 +125,6 @@ const phrase: TranslatedJapaneseText = {
     jp: { text: 'おはようございます', pronunciation: 'おはようございます' },
 };
 
-const formalPhrase: TranslatedJapaneseText = {
-    ...phrase,
-    formality: 'formal',
-};
-
 const wrapper = () => {
     const queryClient = new QueryClient();
     return ({ children }: { children: ReactNode }) => {
@@ -313,7 +308,7 @@ describe('Badges', () => {
             ['informal', 'informal'],
             ['does-not-apply', 'does not apply'],
         ] as const)('renders a %s badge for a phrase', (formality, expectedText) => {
-            renderCard({ ...formalPhrase, formality });
+            renderCard({ ...phrase, formality });
             expect(screen.getByText(expectedText)).toBeInTheDocument();
         });
 
