@@ -48,7 +48,7 @@ Check that each `jp.text`, `en`, and `pl` field is present and correctly transla
 - Phrases (`type: 'phrase'`) must end with a Japanese period (`。`) if the English or Polish translation ends with a period or question mark.
 - A question that does not end with か may end with `？` instead.
 - An exclamatory phrase may end with `！` instead.
-- The `formality` field should be set appropriately for phrases, indicating whether the phrase is formal, informal, or does not apply.
+- The `formality` field should be set appropriately for phrases, indicating whether the phrase is formal, informal, or does not apply. Formal phrases use masu-form verbs, while informal phrases use plain form verbs. If phrase is not a sentence, set it to "does-not-apply".
 
 ## Output Format
 

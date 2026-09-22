@@ -4,6 +4,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: '794979ca-b0e6-4acc-9b0a-9383c5e0bd1e',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Happy New Year!',
         pl: 'Szczęśliwego Nowego Roku!',
         jp: { text: 'あけましておめでとう。' },
@@ -11,6 +12,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: 'd1ec2da8-fe76-4e6c-8609-0403c00605a8',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Please treat me well this year too.',
         pl: 'W tym roku również proszę o życzliwość.',
         jp: { text: '今年もよろしく。', pronunciation: 'ことしもよろしく。' },
@@ -25,7 +27,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: '9e8e6800-ae5c-4c63-bd03-558e33bf2ad2',
         type: 'noun',
-        en: "Hairdresser's salon",
+        en: 'Hair salon',
         pl: 'Salon fryzjerski',
         jp: { text: '美容院', pronunciation: 'びよういん' },
     },
@@ -61,6 +63,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         id: '086e7bc1-04c2-4bde-94a2-d24445fcef46',
         type: 'verb',
         verb_type: 'suru',
+        transitivity: 'intransitive',
         en: 'Throw a party',
         pl: 'Urządzić imprezę',
         jp: { text: 'パーティーをする' },
@@ -69,6 +72,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         id: 'a9b8d80e-2c21-41a5-9d54-8f1f1d8326e4',
         type: 'verb',
         verb_type: 'suru',
+        transitivity: 'intransitive',
         en: 'Have a meal',
         pl: 'Zjeść posiłek',
         jp: { text: '食事をする', pronunciation: 'しょくじをする' },
@@ -83,6 +87,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: '8b9228e1-080e-44c4-9b47-1b7e846ab2fe',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Wednesday next week',
         pl: 'Środa w przyszłym tygodniu',
         jp: { text: '来週の水曜日', pronunciation: 'らいしゅうのすいようび' },
@@ -104,6 +109,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: 'b237c85f-f73e-4670-8551-a4753c3ae22b',
         type: 'phrase',
+        formality: 'formal',
         en: 'On evenings I go for a walk.',
         pl: 'Wieczorami chodzę na spacer.',
         jp: { text: '夕方散歩をします。', pronunciation: 'ゆうがたさんぽをします。' },
@@ -113,6 +119,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: 'fd82ba44-fb6c-4d5d-a265-a0349ea00bee',
         type: 'phrase',
+        formality: 'formal',
         en: 'I go to the art museum on Friday.',
         pl: 'W piątek idę do muzeum sztuki.',
         jp: { text: '金曜日に美術館に行きます。', pronunciation: 'きんようびにびじゅつかんにいきます。' },
@@ -121,6 +128,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: '45357a0a-11d9-44ba-ba3f-5c4549975df2',
         type: 'phrase',
+        formality: 'formal',
         en: 'On Friday evening I watch TV.',
         pl: 'W piątkowy wieczór oglądam telewizję.',
         jp: { text: '金曜日の夕方テレビを見ます。', pronunciation: 'きんようびのゆうがたテレビをみます。' },
@@ -130,6 +138,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: 'a0d89e9a-d132-4700-9b61-7f3ed0c4d31d',
         type: 'phrase',
+        formality: 'formal',
         en: "Yesterday at 9 o'clock I ate sushi.",
         pl: 'Wczoraj o dziewiątej jadłem sushi.',
         jp: { text: '昨日の九時に寿司を食べました。', pronunciation: 'きのうのくじにすしをたべました。' },
@@ -138,6 +147,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: 'adbe61fe-7d38-4d77-84d4-40ce7b618e42',
         type: 'phrase',
+        formality: 'formal',
         en: 'Today I will do chores. Tomorrow I will do chores too.',
         pl: 'Dziś będę wykonywać obowiązki domowe. Jutro też będę wykonywać obowiązki domowe.',
         jp: {
@@ -148,6 +158,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: '67a37c72-cbe1-4f63-aa14-31db09bddc78',
         type: 'phrase',
+        formality: 'formal',
         en: "Next week I won't meet my mom.",
         pl: 'W przyszłym tygodniu nie spotkam się z mamą.',
         jp: { text: '来週母と会いません。', pronunciation: 'らいしゅうははとあいません。' },
@@ -155,6 +166,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: '42f425fc-9259-4111-8c89-53268a0d42ee',
         type: 'phrase',
+        formality: 'formal',
         en: 'Did you read a book yesterday?',
         pl: 'Czy czytałeś książkę wczoraj?',
         jp: { text: '昨日本を読みましたか。', pronunciation: 'きのうほんをよみましたか。' },
@@ -162,6 +174,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: '97061083-e408-44ed-a4ad-045cd7c244b0',
         type: 'phrase',
+        formality: 'formal',
         en: "I didn't wear a jacket yesterday.",
         pl: 'Wczoraj nie nosiłem kurtki.',
         jp: { text: '昨日ジャケットは着ませんでした。', pronunciation: 'きのうジャケットはきませんでした。' },
@@ -170,6 +183,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         id: '103c495c-a1c1-4384-adfd-225e6a0dc7ba',
         type: 'verb',
         verb_type: 'ichidan',
+        transitivity: 'transitive',
         en: 'Wear / Put on (clothes above your waist)',
         pl: 'Nosić / Zakładać (ubrania powyżej pasa)',
         jp: { text: '着る', pronunciation: 'きる' },

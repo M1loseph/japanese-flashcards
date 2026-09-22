@@ -4,13 +4,15 @@ const sakura_2_2: TranslatedJapaneseText[] = [
     {
         id: '05938f01-5a80-4523-a080-53b8f926ab13',
         type: 'phrase',
-        en: 'Take care / Stay well',
+        formality: 'does-not-apply',
+        en: 'Take care / Get well soon',
         pl: 'Szybko wracaj do zdrowia / Trzymaj się',
         jp: { text: 'お大事に', pronunciation: 'おだいじに' },
     },
     {
         id: 'b89c424e-a7d8-40e9-b35d-cfbf2509a2d2',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Nothing',
         pl: 'Nic',
         jp: { text: '何も', pronunciation: 'なにも' },
@@ -19,19 +21,20 @@ const sakura_2_2: TranslatedJapaneseText[] = [
         id: '81aadb99-7d34-4098-b518-a7bff5eaaefe',
         type: 'particle',
         en: 'From (a time)',
-        pl: 'Od (czas)',
+        pl: 'Od (czasu)',
         jp: { text: 'から' },
     },
     {
         id: '309de1a4-b7d9-4818-bd68-7f39846af8b8',
         type: 'particle',
         en: 'Until (a time)',
-        pl: 'Do (czas)',
+        pl: 'Do (czasu)',
         jp: { text: 'まで' },
     },
     {
         id: '1e009f80-74c4-4d4b-93d8-aa143d0d4e36',
         type: 'phrase',
+        formality: 'formal',
         en: 'I work from 9AM to 5PM.',
         pl: 'Pracuję od 9 rano do 5 po południu.',
         jp: {
@@ -49,6 +52,7 @@ const sakura_2_2: TranslatedJapaneseText[] = [
     {
         id: '92485a43-219f-4992-b4b3-3a4c37cf1adc',
         type: 'phrase',
+        formality: 'formal',
         en: "It's open from 6AM to 10PM.",
         pl: 'Jest otwarte od 6 rano do 10 wieczorem.',
         jp: { text: '午前六時から午後十時までです。', pronunciation: 'ごぜんろくじからごごじゅうじまでです。' },
@@ -56,6 +60,7 @@ const sakura_2_2: TranslatedJapaneseText[] = [
     {
         id: '37c5f064-719c-494d-8fec-b826ae0c7880',
         type: 'phrase',
+        formality: 'formal',
         en: 'It does not have a day off.',
         pl: 'Nie ma dnia wolnego.',
         jp: { text: '休みはありません。', pronunciation: 'やすみはありません。' },
@@ -63,6 +68,7 @@ const sakura_2_2: TranslatedJapaneseText[] = [
     {
         id: 'f1236789-0410-4628-98a6-325ff859b255',
         type: 'phrase',
+        formality: 'formal',
         en: 'It depends on the day.',
         pl: 'To zależy od dnia.',
         jp: { text: '日によります。', pronunciation: 'ひによります。' },
@@ -71,6 +77,7 @@ const sakura_2_2: TranslatedJapaneseText[] = [
         id: 'ab29aa3e-084e-4d09-a594-b5aea4d15ab1',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'intransitive',
         en: 'To be caused by / To depend on',
         pl: 'Zależeć od',
         jp: { text: '依る', pronunciation: 'よる' },
@@ -106,8 +113,8 @@ const sakura_2_2: TranslatedJapaneseText[] = [
     {
         id: 'e874cb7e-4f88-4ccd-bb2a-d14fff3d9237',
         type: 'noun',
-        en: 'Quay / Wharf / Jetty​',
-        pl: 'Nabrzeże / Molo / Falochron',
+        en: 'Quay / Wharf',
+        pl: 'Nabrzeże / Molo',
         jp: { text: '岸壁', pronunciation: 'がんぺき' },
     },
 ];

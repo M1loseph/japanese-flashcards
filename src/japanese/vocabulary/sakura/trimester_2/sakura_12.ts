@@ -144,6 +144,7 @@ const sakura_2_12: TranslatedJapaneseText[] = [
     {
         id: '4afa55c6-3778-4444-88f7-5ad0c7d3a6ab',
         type: 'phrase',
+        formality: 'formal',
         en: 'I live in Tokyo.',
         pl: 'Mieszkam w Tokio.',
         jp: { text: '東京に住んでいます。', pronunciation: 'とうきょうにすんでいます。' },
@@ -151,6 +152,7 @@ const sakura_2_12: TranslatedJapaneseText[] = [
     {
         id: '5826657c-7f87-449e-aec5-8d24ddb0de61',
         type: 'phrase',
+        formality: 'formal',
         en: 'I live alone.',
         pl: 'Mieszkam sam.',
         jp: { text: '一人で住んでいます。', pronunciation: 'ひとりですんでいます。' },
