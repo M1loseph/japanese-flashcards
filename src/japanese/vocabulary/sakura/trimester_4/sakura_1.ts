@@ -11,6 +11,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: 'f0a3bcf8-9598-45ad-8db6-690c001ed313',
         type: 'phrase',
+        formality: 'formal',
         en: 'I eat ramen with chopsticks.',
         pl: 'Jem ramen pałeczkami.',
         jp: { text: '箸でラーメンを食べます。', pronunciation: 'はしでラーメンをたべます。' },
@@ -18,6 +19,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: '00efb39d-0783-47c5-aa50-f04bd8eca4d3',
         type: 'phrase',
+        formality: 'formal',
         en: 'I write a letter with a pen.',
         pl: 'Piszę list długopisem.',
         jp: { text: 'ペンで手紙を書きます。', pronunciation: 'ペンでてがみをかきます。' },
@@ -25,6 +27,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: 'd2baf039-e24e-4852-9eef-e489fffcd2d1',
         type: 'phrase',
+        formality: 'formal',
         en: 'What do you eat pizza with?',
         pl: 'Czym jesz pizzę?',
         jp: { text: '何でピザを食べますか。', pronunciation: 'なにでピザをたべますか。' },
@@ -46,6 +49,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: '056cfc52-fd38-4807-b6c9-915ec8c06a8c',
         type: 'phrase',
+        formality: 'formal',
         en: 'I watch news on TV.',
         pl: 'Oglądam wiadomości w telewizji.',
         jp: { text: 'テレビでニュースを見ます。', pronunciation: 'テレビでニュースをみます。' },
@@ -60,6 +64,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: '0941f2e8-97e8-4422-be62-faa8471d47dd',
         type: 'phrase',
+        formality: 'formal',
         en: 'What language do you speak at work?',
         pl: 'Jakim językiem mówisz w pracy?',
         jp: { text: '仕事で何語で話しますか。', pronunciation: 'しごとでなにごではなしますか。' },
@@ -67,6 +72,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: '5d5ef51f-b551-43c3-b7e2-e2f5d3c1f817',
         type: 'phrase',
+        formality: 'formal',
         en: 'I write my book in Japanese.',
         pl: 'Piszę moją książkę po japońsku.',
         jp: { text: '私は日本語で本を書きます。', pronunciation: 'わたしはにほんごでほんをかきます。' },
@@ -81,6 +87,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: '27488eb9-cd21-4d4b-aba4-19c9b7602ae1',
         type: 'phrase',
+        formality: 'formal',
         en: 'It is best to go to the airport by train.',
         pl: 'Najlepiej jechać na lotnisko pociągiem.',
         jp: { text: '空港は電車がいいですよ。', pronunciation: 'くうこうはでんしゃがいいですよ。' },
@@ -89,6 +96,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: '263c5f6d-d578-4266-83e7-5dd7414c0ff5',
         type: 'phrase',
+        formality: 'formal',
         en: "It's because it is fast.",
         pl: 'Ponieważ jest szybki.',
         jp: { text: '速いですから。', pronunciation: 'はやいですから。' },
@@ -118,6 +126,7 @@ const sakura_4_1: TranslatedJapaneseText[] = [
     {
         id: '4764ae4f-5621-421b-8689-b531dd9aee02',
         type: 'phrase',
+        formality: 'formal',
         en: 'Why?',
         pl: 'Dlaczego?',
         jp: { text: 'どうしてですか。' },

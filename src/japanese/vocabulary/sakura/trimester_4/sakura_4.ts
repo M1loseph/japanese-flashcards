@@ -19,6 +19,7 @@ const sakura_4_4: TranslatedJapaneseText[] = [
     {
         id: '2a32dbba-170c-4ca7-b0c2-fa0132a7a4c6',
         type: 'phrase',
+        formality: 'formal',
         en: 'I can drive a car.',
         pl: 'Umiem prowadzić samochód.',
         jp: { text: '私は車を運転することができます。', pronunciation: 'わたしはくるまをうんてんすることができます。' },
@@ -40,6 +41,7 @@ const sakura_4_4: TranslatedJapaneseText[] = [
     {
         id: '8be69e71-28b5-4932-b910-1b80490378e2',
         type: 'phrase',
+        formality: 'formal',
         en: 'What do you like to do?',
         pl: 'Co lubisz robić?',
         jp: { text: '何をすることが好きですか。', pronunciation: 'なにをすることがすきですか。' },
@@ -47,6 +49,7 @@ const sakura_4_4: TranslatedJapaneseText[] = [
     {
         id: '1e87a64a-ffa0-4b2f-99c5-6bdb85587113',
         type: 'phrase',
+        formality: 'formal',
         en: 'I can ride a bike.',
         pl: 'Umiem jeździć na rowerze.',
         jp: { text: '自転車に乗ることができます。', pronunciation: 'じてんしゃにのることができます。' },
@@ -54,6 +57,7 @@ const sakura_4_4: TranslatedJapaneseText[] = [
     {
         id: 'bc7feb67-9665-4659-8505-4647614e99c6',
         type: 'phrase',
+        formality: 'formal',
         en: 'I forgot to do my homework.',
         pl: 'Zapomniałem odrobić pracę domową.',
         jp: { text: '宿題をすることを忘れました。', pronunciation: 'しゅくだいをすることをわすれました。' },

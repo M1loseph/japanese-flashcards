@@ -18,6 +18,7 @@ const sakura_4_6: TranslatedJapaneseText[] = [
     {
         id: '2ef57e02-8314-4e6d-88ff-8ff034c022a6',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'To play the flute',
         pl: 'Grać na flecie',
         jp: { text: 'フルートを吹く', pronunciation: 'フルートをふく' },
@@ -26,6 +27,7 @@ const sakura_4_6: TranslatedJapaneseText[] = [
         id: 'aeab0021-7a24-4a5b-88bc-eb63be5a2eb8',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'ambitransitive',
         en: 'Blow / Play (a wind instrument)',
         pl: 'Wiać / Dmuchać / Grać (na instrumencie dętym)',
         jp: { text: '吹く', pronunciation: 'ふく' },
@@ -33,6 +35,7 @@ const sakura_4_6: TranslatedJapaneseText[] = [
     {
         id: '536a02da-409a-4623-81b6-9a0840235a7f',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will swim one hundred meters.',
         pl: 'Przepłynę sto metrów.',
         jp: { text: '百メートル泳ぎます。', pronunciation: 'ひゃくメートルおよぎます。' },
@@ -40,6 +43,7 @@ const sakura_4_6: TranslatedJapaneseText[] = [
     {
         id: 'ac487173-c23c-429c-a64e-c252e7445cb1',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will go to the post office on July 1st.',
         pl: 'Pójdę na pocztę 1 lipca.',
         jp: { text: '七月一日に郵便局に行きます。', pronunciation: 'しちがつついたちにゆうびんきょくにいきます。' },
@@ -48,6 +52,7 @@ const sakura_4_6: TranslatedJapaneseText[] = [
     {
         id: 'edd60078-4b99-4048-859d-9a8dbdfc007f',
         type: 'phrase',
+        formality: 'formal',
         en: 'When is Christmas?',
         pl: 'Kiedy są Święta Bożego Narodzenia?',
         jp: { text: 'クリスマスは何月何日ですか。', pronunciation: 'クリスマスはなんがつなんにちですか。' },

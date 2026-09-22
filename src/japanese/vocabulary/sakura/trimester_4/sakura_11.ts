@@ -53,6 +53,7 @@ const sakura_4_11: TranslatedJapaneseText[] = [
     {
         id: 'e1b4639d-7d96-4f90-a108-5357880b6ffd',
         type: 'phrase',
+        formality: 'formal',
         en: "I don't want a new car.",
         pl: 'Nie chcę nowego samochodu.',
         jp: { text: '新しい車は欲しくないです。', pronunciation: 'あたらしいくるまはほしくないです。' },
@@ -76,6 +77,7 @@ const sakura_4_11: TranslatedJapaneseText[] = [
     {
         id: 'f5a297cc-9b59-49bc-a1e2-2bdea74128a7',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will give my older sister a present.',
         pl: 'Dam mojej starszej siostrze prezent.',
         jp: { text: '姉にプレゼントをあげます。', pronunciation: 'あねにプレゼントをあげます。' },
