@@ -4,6 +4,7 @@ const sakura_4_10: TranslatedJapaneseText[] = [
     {
         id: '8d75d86a-52dd-4493-ad03-8ad2d221826f',
         type: 'phrase',
+        formality: 'formal',
         en: 'What do you go to the temple to do?',
         pl: 'Po co idziesz do świątyni?',
         jp: { text: 'お寺に何をしに行きますか。', pronunciation: 'おてらになにをしにいきますか。' },
@@ -75,6 +76,7 @@ const sakura_4_10: TranslatedJapaneseText[] = [
     {
         id: '1bc7faaa-2929-41ca-866a-4304315931ef',
         type: 'phrase',
+        formality: 'formal',
         en: 'What do you want for your birthday?',
         pl: 'Czego chcesz na urodziny?',
         jp: { text: '誕生日に何が欲しいですか。', pronunciation: 'たんじょうびになにがほしいですか。' },

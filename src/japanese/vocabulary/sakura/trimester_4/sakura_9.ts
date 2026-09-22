@@ -105,6 +105,7 @@ const sakura_4_9: TranslatedJapaneseText[] = [
     {
         id: '6d759aa4-3b60-4143-b460-f740770cb18e',
         type: 'phrase',
+        formality: 'formal',
         en: 'Would you like to go to the library to read a book?',
         pl: 'Czy chciałbyś iść do biblioteki, aby przeczytać książkę?',
         jp: { text: '図書館に本を読みに行きませんか。', pronunciation: 'としょかんにほんをよみにいきませんか。' },
@@ -112,6 +113,7 @@ const sakura_4_9: TranslatedJapaneseText[] = [
     {
         id: '93c0b091-a025-4ca2-8dec-534ceda5636a',
         type: 'phrase',
+        formality: 'formal',
         en: 'Do you want to go to the cinema to watch a movie?',
         pl: 'Czy chcesz iść do kina, aby obejrzeć film?',
         jp: { text: '映画館に映画を見に行きませんか。', pronunciation: 'えいがかんにえいがをみにいきませんか。' },
@@ -119,6 +121,7 @@ const sakura_4_9: TranslatedJapaneseText[] = [
     {
         id: 'f4f34f70-93b4-4df1-b586-ccb796040402',
         type: 'phrase',
+        formality: 'formal',
         en: "Yes, let's go!",
         pl: 'Tak, chodźmy!',
         jp: { text: 'はい、行きましょう！', pronunciation: 'はい、いきましょう！' },

@@ -5,6 +5,7 @@ const sakura_3_6: TranslatedJapaneseText[] = [
         id: '9076de2d-6c6b-42d3-8672-e3926b7d5201',
         type: 'verb',
         verb_type: 'suru',
+        transitivity: 'intransitive',
         en: 'Travel',
         pl: 'Podróżować',
         jp: { text: '旅行する', pronunciation: 'りょこうする' },

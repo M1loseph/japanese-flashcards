@@ -4,6 +4,7 @@ const sakura_2_8: TranslatedJapaneseText[] = [
     {
         id: '249dbf69-9fd3-45f7-ac4f-9ca26252d670',
         type: 'phrase',
+        formality: 'formal',
         en: 'I learn Japanese.',
         pl: 'Uczę się japońskiego.',
         jp: { text: '日本語を勉強します。', pronunciation: 'にほんごをべんきょうします。' },
@@ -11,6 +12,7 @@ const sakura_2_8: TranslatedJapaneseText[] = [
     {
         id: 'e4d264bd-b169-41fa-8c8c-a2d79cb5614a',
         type: 'phrase',
+        formality: 'formal',
         en: 'Long time no see.',
         pl: 'Dawno się nie widzieliśmy.',
         jp: { text: 'お久しぶりです。', pronunciation: 'おひさしぶりです。' },
@@ -60,6 +62,7 @@ const sakura_2_8: TranslatedJapaneseText[] = [
     {
         id: '684f5640-0193-4eae-be11-0ed5f153e52d',
         type: 'phrase',
+        formality: 'formal',
         en: 'What is your favorite season?',
         pl: 'Jaka jest twoja ulubiona pora roku?',
         jp: { text: '好きな季節はいつですか。', pronunciation: 'すきなきせつはいつですか。' },
@@ -69,6 +72,7 @@ const sakura_2_8: TranslatedJapaneseText[] = [
     {
         id: 'de7f795f-080b-4b0e-90c7-586961042975',
         type: 'phrase',
+        formality: 'formal',
         en: 'What is your favorite city?',
         pl: 'Jakie jest twoje ulubione miasto?',
         jp: { text: '好きな都市はどこですか。', pronunciation: 'すきなとしはどこですか。' },
@@ -78,6 +82,7 @@ const sakura_2_8: TranslatedJapaneseText[] = [
     {
         id: '73948124-151a-432d-93be-9827a244c60d',
         type: 'phrase',
+        formality: 'formal',
         en: 'What is your favorite park?',
         pl: 'Jaki jest twój ulubiony park?',
         jp: { text: '好きな公園はどこですか。', pronunciation: 'すきなこうえんはどこですか。' },
@@ -86,6 +91,7 @@ const sakura_2_8: TranslatedJapaneseText[] = [
     {
         id: '54b06f88-60b4-4f0c-b7cc-37423ff1cbf4',
         type: 'phrase',
+        formality: 'formal',
         en: 'What is your favorite cafe?',
         pl: 'Jaka jest twoja ulubiona kawiarnia?',
         jp: { text: '好きな喫茶店はどこですか。', pronunciation: 'すきなきっさてんはどこですか。' },
@@ -101,6 +107,7 @@ const sakura_2_8: TranslatedJapaneseText[] = [
     {
         id: 'e241e275-c05f-44ef-9b54-24cd7d1f9cfe',
         type: 'phrase',
+        formality: 'formal',
         en: 'Who is your favorite singer?',
         pl: 'Kto jest twoim ulubionym piosenkarzem?',
         jp: { text: '好きな歌手は誰ですか。', pronunciation: 'すきなかしゅはだれですか。' },

@@ -70,6 +70,7 @@ const sakura_2_6: TranslatedJapaneseText[] = [
     {
         id: '5796dea3-bb1a-47e6-b77a-6e21a18fab8c',
         type: 'phrase',
+        formality: 'formal',
         en: 'How much does it cost?',
         pl: 'Ile to kosztuje?',
         jp: { text: 'これはいくらですか。' },
@@ -77,6 +78,7 @@ const sakura_2_6: TranslatedJapaneseText[] = [
     {
         id: 'aa77b853-2a48-4497-bf4e-cffd25c6aae1',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Not here',
         pl: 'Nie tutaj',
         jp: { text: 'ここじゃない' },

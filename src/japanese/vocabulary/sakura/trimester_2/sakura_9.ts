@@ -11,6 +11,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: '62f0df02-cfca-435e-b6a4-31f8cb7e7771',
         type: 'phrase',
+        formality: 'formal',
         en: 'I have a fever.',
         pl: 'Mam gorączkę.',
         jp: { text: '熱があります。', pronunciation: 'ねつがあります。' },
@@ -27,6 +28,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
         id: '2b45378f-79d1-43d1-b98d-928b38d83638',
         type: 'verb',
         verb_type: 'ichidan',
+        transitivity: 'intransitive',
         en: 'Leave / Exit',
         pl: 'Wychodzić',
         jp: { text: '出る', pronunciation: 'でる' },
@@ -41,6 +43,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: '347efe0b-ff2c-4629-8064-0a7baba0beb7',
         type: 'phrase',
+        formality: 'formal',
         en: 'I have a cough.',
         pl: 'Mam kaszel.',
         jp: { text: '咳が出ます。', pronunciation: 'せきがでます。' },
@@ -56,6 +59,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: '650ed325-40d8-479b-92c8-7fc989a94f81',
         type: 'phrase',
+        formality: 'formal',
         en: 'I have a runny nose.',
         pl: 'Mam katar.',
         jp: { text: '鼻水が出ます。', pronunciation: 'はなみずがでます。' },
@@ -78,6 +82,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: '2ea53fe9-5a44-4e82-9652-7f43586a97fc',
         type: 'phrase',
+        formality: 'formal',
         en: 'My throat hurts.',
         pl: 'Boli mnie gardło.',
         jp: { text: 'のどが痛いです。', pronunciation: 'のどがいたいです。' },
@@ -92,6 +97,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: 'a638318b-e9df-4869-9247-f3febf88454f',
         type: 'phrase',
+        formality: 'formal',
         en: 'My head hurts.',
         pl: 'Boli mnie głowa.',
         jp: { text: '頭が痛いです。', pronunciation: 'あたまがいたいです。' },
@@ -106,6 +112,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: '6d9742f5-e398-4e01-9618-f6ecd7b97a57',
         type: 'phrase',
+        formality: 'formal',
         en: 'My belly hurts.',
         pl: 'Boli mnie brzuch.',
         jp: { text: 'お腹が痛いです。', pronunciation: 'おなかがいたいです。' },
@@ -113,6 +120,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: '6986ef9a-2da1-4d8c-8425-211a2a6e78c5',
         type: 'phrase',
+        formality: 'formal',
         en: "Please don't push yourself.",
         pl: 'Proszę, nie przemęczaj się.',
         jp: { text: '無理をしないでください。', pronunciation: 'むりをしないでください。' },
@@ -127,6 +135,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
     {
         id: '5b98829c-0cc1-478a-9678-f6b841ffd355',
         type: 'phrase',
+        formality: 'formal',
         en: 'Please take your time.',
         pl: 'Proszę, nie spiesz się.',
         jp: { text: 'ゆっくりしてください。' },

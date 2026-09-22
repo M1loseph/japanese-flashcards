@@ -27,6 +27,7 @@ const sakura_4_8: TranslatedJapaneseText[] = [
     {
         id: 'bdf2d0fd-efb3-4332-970c-30832a2b86dc',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will go watch the baseball game.',
         pl: 'Pójdę obejrzeć mecz baseballu.',
         jp: { text: '野球の試合を見に行きます。', pronunciation: 'やきゅうのしあいをみにいきます。' },
@@ -34,6 +35,7 @@ const sakura_4_8: TranslatedJapaneseText[] = [
     {
         id: '20a4bfd0-0db2-4bf1-a789-558db350c2bf',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will go to the cafe to drink a coffee.',
         pl: 'Pójdę do kawiarni, żeby napić się kawy.',
         jp: { text: '喫茶店にコーヒーを飲みに行きます。', pronunciation: 'きっさてんにコーヒーをのみにいきます。' },
@@ -41,6 +43,7 @@ const sakura_4_8: TranslatedJapaneseText[] = [
     {
         id: '5d091f4b-9fe7-4daf-a1d4-22d68fd420ad',
         type: 'phrase',
+        formality: 'formal',
         en: 'I went to the library to read a book.',
         pl: 'Poszedłem do biblioteki, żeby poczytać książkę.',
         jp: { text: '図書館に本を読みに行きました。', pronunciation: 'としょかんにほんをよみにいきました。' },

@@ -11,6 +11,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: '3c98fe15-2f02-494d-b094-ce420dbe108c',
         type: 'phrase',
+        formality: 'formal',
         en: 'Saturday is okay.',
         pl: 'Sobota może być. (Nie mam nic przeciwko sobocie.)',
         jp: { text: '土曜日は大丈夫です。', pronunciation: 'どようびはだいじょうぶです。' },
@@ -18,6 +19,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: '1b27b97b-aa66-4602-ad33-389d36e7278a',
         type: 'phrase',
+        formality: 'formal',
         en: 'Saturday works for me.',
         pl: 'Sobota mi pasuje.',
         jp: { text: '土曜日はいいです。', pronunciation: 'どようびはいいです。' },
@@ -25,6 +27,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: '0c899f39-3f27-4533-ae37-c75760910672',
         type: 'phrase',
+        formality: 'formal',
         en: 'Any time is fine.',
         pl: 'Obojętnie kiedy.',
         jp: { text: 'いつでもいいです。' },
@@ -32,6 +35,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: 'da4639a1-17ce-4175-bf4d-9f475ce02411',
         type: 'phrase',
+        formality: 'formal',
         en: 'Any hour works for me.',
         pl: 'Każda godzina mi pasuje.',
         jp: { text: '何時でもいいです。', pronunciation: 'なんじでもいいです。' },
@@ -55,6 +59,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: '9db615e0-6dd5-408f-8f3f-004a4f25a9e3',
         type: 'phrase',
+        formality: 'formal',
         en: "Does 7 o'clock work for you?",
         pl: 'Czy godzina 7 ci pasuje?',
         jp: { text: '七時はいいですか。', pronunciation: 'しちじはいいですか。' },
@@ -69,6 +74,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: '083a9a07-0237-4742-b1f2-927aed93be72',
         type: 'phrase',
+        formality: 'formal',
         en: "Thursday doesn't work for me.",
         pl: 'Czwartek mi nie pasuje.',
         jp: { text: '木曜日はだめです。', pronunciation: 'もくようびはだめです。' },
@@ -78,12 +84,13 @@ const sakura_2_4: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'na-adjective',
         en: 'Not good',
-        pl: 'Niedobry / Nie w porządku',
+        pl: 'Złe / Nie w porządku',
         jp: { text: 'だめ' },
     },
     {
         id: '059effee-ccef-4c2a-a384-384554537842',
         type: 'phrase',
+        formality: 'formal',
         en: 'What time works for you?',
         pl: 'Która godzina ci pasuje?',
         jp: { text: '何時がいいですか。', pronunciation: 'なんじがいいですか。' },
@@ -91,6 +98,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: 'f5f6fd29-4c75-4fd5-901c-dc098c7e111b',
         type: 'phrase',
+        formality: 'formal',
         en: 'When is good for you?',
         pl: 'Kiedy ci pasuje?',
         jp: { text: 'いつがいいですか。' },
@@ -98,6 +106,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
     {
         id: '4f6c8565-c862-4a43-b61a-7802c7755dd6',
         type: 'phrase',
+        formality: 'formal',
         en: "It's fine.",
         pl: 'W porządku.',
         jp: { text: 'いいですよ。' },
@@ -120,6 +129,7 @@ const sakura_2_4: TranslatedJapaneseText[] = [
         id: '53eba20a-a793-4634-96fb-448737cc3d97',
         type: 'verb',
         verb_type: 'suru',
+        transitivity: 'intransitive',
         en: 'Work overtime',
         pl: 'Pracować po godzinach',
         jp: { text: '残業をする', pronunciation: 'ざんぎょうをする' },

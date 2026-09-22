@@ -4,6 +4,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: 'a90ca64a-8f98-4bff-b873-0e81908258f5',
         type: 'phrase',
+        formality: 'formal',
         en: "I'm at home.",
         pl: 'Jestem w domu.',
         jp: { text: '私は家にいます。', pronunciation: 'わたしはうちにいます。' },
@@ -67,6 +68,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: 'd7fd248a-861e-4b39-9d98-3842b8b99bd3',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Welcome!',
         pl: 'Witamy!',
         jp: { text: 'いらっしゃいませ！' },
@@ -217,6 +219,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: 'acec8ac9-50fa-4f56-8b9b-cefe86153a5c',
         type: 'phrase',
+        formality: 'formal',
         en: "I didn't work that much yesterday.",
         pl: 'Nie pracowałem tak dużo wczoraj.',
         jp: { text: '昨日はそんなに仕事をしませんでした。', pronunciation: 'きのうはそんなにしごとをしませんでした。' },
@@ -324,6 +327,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         id: 'c42cff98-9369-4557-bc05-d5cb5d7b3330',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'intransitive',
         en: 'Pass through',
         pl: 'Przechodzić przez',
         jp: { text: '通る', pronunciation: 'とおる' },
@@ -339,6 +343,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
         id: 'f03539ae-204c-4cf0-95cb-df31905621eb',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'transitive',
         en: 'Cover',
         pl: 'Przykrywać / Zakrywać',
         jp: { text: '覆う', pronunciation: 'おおう' },
@@ -346,6 +351,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: 'cf8154c3-b8f9-4a34-bf7a-e9a3cee7c2a1',
         type: 'phrase',
+        formality: 'formal',
         en: 'My favorite animal is a cow.',
         pl: 'Moim ulubionym zwierzęciem jest krowa.',
         jp: { text: '私の好きな動物は牛です。', pronunciation: 'わたしのすきなどうぶつはうしです。' },
@@ -353,6 +359,7 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: '897a1147-1ae1-499a-9649-42b13666f573',
         type: 'phrase',
+        formality: 'formal',
         en: 'My least favorite food is pumpkin.',
         pl: 'Najmniej lubianym przeze mnie jedzeniem jest dynia.',
         jp: { text: '私の嫌いな食べ物はかぼちゃです。', pronunciation: 'わたしのきらいなたべものはかぼちゃです。' },

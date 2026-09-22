@@ -19,6 +19,7 @@ const sakura_2_3: TranslatedJapaneseText[] = [
         id: '97281f35-3eb8-48f5-a3e7-fe4ff3453885',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'transitive',
         en: 'Calm down / Chill / Refrigerate',
         pl: 'Ochłonąć / Schłodzić',
         jp: { text: '冷やす', pronunciation: 'ひやす' },
@@ -62,6 +63,7 @@ const sakura_2_3: TranslatedJapaneseText[] = [
     {
         id: 'e303878b-771a-48a3-9773-359a7438402b',
         type: 'phrase',
+        formality: 'formal',
         en: 'How many hours do you sleep?',
         pl: 'Ile godzin śpisz?',
         jp: { text: '何時間寝ますか。', pronunciation: 'なんじかんねますか。' },
@@ -69,6 +71,7 @@ const sakura_2_3: TranslatedJapaneseText[] = [
     {
         id: '3a98eccf-2b43-4259-9717-1fca22fcf48e',
         type: 'phrase',
+        formality: 'formal',
         en: 'I always sleep 7 hours.',
         pl: 'Zawsze śpię 7 godzin.',
         jp: { text: 'いつも七時間寝ます。', pronunciation: 'いつもしちじかんねます。' },
@@ -77,6 +80,7 @@ const sakura_2_3: TranslatedJapaneseText[] = [
     {
         id: 'f820edd0-d026-4eea-beff-b1be3c8d00ad',
         type: 'phrase',
+        formality: 'formal',
         en: 'I go to school for 30 minutes.',
         pl: 'Idę do szkoły przez 30 minut.',
         jp: { text: '三十分学校に行きます。', pronunciation: 'さんじゅっぷんがっこうにいきます。' },
@@ -85,6 +89,7 @@ const sakura_2_3: TranslatedJapaneseText[] = [
     {
         id: '41bbbf67-8aac-4436-813c-174a8db84ca9',
         type: 'phrase',
+        formality: 'formal',
         en: 'I work for around 8 hours every day.',
         pl: 'Pracuję około 8 godzin każdego dnia.',
         jp: { text: '毎日八時間ぐらい仕事をします。', pronunciation: 'まいにちはちじかんぐらいしごとをします。' },

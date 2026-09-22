@@ -15,6 +15,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
         id: '0ea03f22-2ee0-4d18-a9b6-f21b95215304',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'intransitive',
         en: "Go (away from speaker's perspective)",
         pl: 'Iść (w przeciwnym kierunku niż mówiący)',
         jp: { text: '行く', pronunciation: 'いく' },
@@ -24,6 +25,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
         id: '5166eedd-efa3-4878-9746-816ee2388d3a',
         type: 'verb',
         verb_type: 'irregular',
+        transitivity: 'intransitive',
         en: "Come (towards speaker's perspective)",
         pl: 'Przychodzić (w kierunku mówiącego)',
         jp: { text: '来る', pronunciation: 'くる' },
@@ -35,6 +37,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
         id: 'e66b1c81-a807-4545-8bd5-000c814035ab',
         type: 'verb',
         verb_type: 'godan',
+        transitivity: 'intransitive',
         en: 'Return / Come back',
         pl: 'Wracać',
         jp: { text: '帰る', pronunciation: 'かえる' },
@@ -49,6 +52,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
     {
         id: 'f296916f-03c5-436a-8b8d-7019fd8114c3',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will go to school.',
         pl: 'Pójdę do szkoły.',
         jp: { text: '学校に行きます。', pronunciation: 'がっこうにいきます。' },
@@ -57,6 +61,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
     {
         id: 'c6e8c218-0150-4fdc-881b-1536f8b078ff',
         type: 'phrase',
+        formality: 'formal',
         en: 'Friends are coming to my house.',
         pl: 'Przyjaciele przychodzą do mojego domu.',
         jp: { text: '友達が私の家に来ます。', pronunciation: 'ともだちがわたしのうちにきます。' },
@@ -65,6 +70,7 @@ const sakura_2_5: TranslatedJapaneseText[] = [
     {
         id: 'fb5f5e8f-f9bf-46bb-885a-68f29b3b660b',
         type: 'phrase',
+        formality: 'formal',
         en: 'I came to the company in the morning.',
         pl: 'Przyszedłem do firmy rano.',
         jp: { text: '朝会社に来ました。', pronunciation: 'あさかいしゃにきました。' },

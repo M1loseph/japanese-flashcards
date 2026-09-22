@@ -20,6 +20,7 @@ const sakura_4_7: TranslatedJapaneseText[] = [
     {
         id: '18c10256-6f3d-46f3-bba8-ca9f7b263b07',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'First Monday of January',
         pl: 'Pierwszy poniedziałek stycznia',
         jp: { text: '一月第一月曜日', pronunciation: 'いちがつだいいちげつようび' },
@@ -27,6 +28,7 @@ const sakura_4_7: TranslatedJapaneseText[] = [
     {
         id: '4509e140-ef12-4976-879c-3a4d6fc5800e',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Second Thursday of November',
         pl: 'Drugi czwartek listopada',
         jp: { text: '十一月第二木曜日', pronunciation: 'じゅういちがつだいにもくようび' },
@@ -34,6 +36,7 @@ const sakura_4_7: TranslatedJapaneseText[] = [
     {
         id: 'd577f530-c50a-47f8-a38e-b6eb443f28da',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Third Wednesday of April',
         pl: 'Trzecia środa kwietnia',
         jp: { text: '四月第三水曜日', pronunciation: 'しがつだいさんすいようび' },
@@ -216,6 +219,7 @@ const sakura_4_7: TranslatedJapaneseText[] = [
     {
         id: 'b6684ea6-1070-4e10-9e2d-6eeb9255b0f9',
         type: 'phrase',
+        formality: 'formal',
         en: 'There is a festival in the town next month.',
         pl: 'W przyszłym miesiącu w mieście odbędzie się festiwal.',
         jp: { text: '来月町で祭りがあります。', pronunciation: 'らいげつまちでまつりがあります。' },
@@ -223,6 +227,7 @@ const sakura_4_7: TranslatedJapaneseText[] = [
     {
         id: 'f3d1afa8-66af-4aa0-91da-d7efbad2442d',
         type: 'phrase',
+        formality: 'formal',
         en: 'On April 24th, there is a party at the school.',
         pl: '24 kwietnia w szkole odbędzie się impreza.',
         jp: {

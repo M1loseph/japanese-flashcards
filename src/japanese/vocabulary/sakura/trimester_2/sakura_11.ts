@@ -351,6 +351,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: '0fe06a4f-74ea-4dd6-b4b2-f1a81b561b80',
         type: 'phrase',
+        formality: 'formal',
         en: 'I like elephants.',
         pl: 'Lubię słonie.',
         jp: { text: '象が好きです。', pronunciation: 'ぞうがすきです。' },
@@ -366,6 +367,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: 'a846293f-23bd-440f-95c4-76628481cae5',
         type: 'phrase',
+        formality: 'formal',
         en: 'I dislike biology.',
         pl: 'Nie lubię biologii.',
         jp: { text: '生物学が嫌いです。', pronunciation: 'せいぶつがくがきらいです。' },
@@ -383,6 +385,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: '8ad522b6-c87a-43c4-a039-2215d676dd3d',
         type: 'phrase',
+        formality: 'formal',
         en: 'She is good at cooking.',
         pl: 'Ona jest dobra w gotowaniu.',
         jp: { text: '料理が上手です。', pronunciation: 'りょうりがじょうずです。' },
@@ -401,6 +404,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: '70b29b0f-d244-482d-b8b4-6582da13241d',
         type: 'phrase',
+        formality: 'formal',
         en: 'He is bad at sports.',
         pl: 'On jest słaby w sporcie.',
         jp: { text: 'スポーツが苦手です。', pronunciation: 'スポーツがにがてです。' },
@@ -417,6 +421,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: 'f480bc56-ee51-4850-bca8-9094f2b622ab',
         type: 'phrase',
+        formality: 'formal',
         en: 'I am good at math.',
         pl: 'Jestem dobry w matematyce.',
         jp: { text: '数学が得意です。', pronunciation: 'すうがくがとくいです。' },
@@ -434,6 +439,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: '9da6b9de-2f4a-47e1-8554-0e0240b2ef09',
         type: 'phrase',
+        formality: 'formal',
         en: 'I am bad at Japanese.',
         pl: 'Jestem słaby w japońskim.',
         jp: { text: '日本語が下手です。', pronunciation: 'にほんごがへたです。' },
@@ -554,6 +560,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: '93c65c9f-3c5c-4f2f-839e-154894967340',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Okay',
         pl: 'Okej',
         jp: { text: 'オーケー' },
@@ -596,6 +603,7 @@ const sakura_2_11: TranslatedJapaneseText[] = [
     {
         id: 'b59e00ae-e1cc-4bb7-b2d5-3380db519a67',
         type: 'phrase',
+        formality: 'formal',
         en: 'How is the weather today?',
         pl: 'Jaka jest dzisiaj pogoda?',
         jp: { text: '今日の天気はどうですか。', pronunciation: 'きょうのてんきはどうですか。' },
