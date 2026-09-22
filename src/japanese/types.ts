@@ -36,7 +36,7 @@ const VerbBaseSchema = TranslationSchema.extend({
 });
 
 const TransitiveVerbBaseSchema = VerbBaseSchema.extend({
-    transitivity: TransitivitySchema,
+    transitivity: TransitivitySchema.optional(),
 });
 
 const AuxiliaryVerbSchema = VerbBaseSchema.extend({
