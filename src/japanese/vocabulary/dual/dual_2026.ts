@@ -73,8 +73,8 @@ const dual_2026: TranslatedJapaneseText[] = [
         id: '71fec940-82e9-4a75-aabd-1b7def7c82b3',
         type: 'adjective',
         adjective_type: 'i-adjective',
-        en: 'Great / Excellent',
-        pl: 'Wspaniały / Doskonały',
+        en: 'Admirable / Distinguished',
+        pl: 'Godny podziwu / Wybitny',
         jp: { text: '偉い', pronunciation: 'えらい' },
     },
     {
@@ -88,7 +88,7 @@ const dual_2026: TranslatedJapaneseText[] = [
     {
         id: '73b558cd-42ae-4e80-9f2c-e673f1e74bed',
         type: 'noun',
-        en: 'Tower of Pisa',
+        en: 'Leaning Tower of Pisa',
         pl: 'Krzywa Wieża w Pizie',
         jp: { text: 'ピサの斜塔', pronunciation: 'ピサのしゃとう' },
     },
@@ -117,7 +117,7 @@ const dual_2026: TranslatedJapaneseText[] = [
     {
         id: '0e9d71bf-04ae-4d63-ba54-d9744885f3fc',
         type: 'noun',
-        en: 'Microwave',
+        en: 'Microwave oven',
         pl: 'Mikrofalówka',
         jp: { text: '電子レンジ', pronunciation: 'でんしレンジ' },
     },
@@ -186,13 +186,13 @@ const dual_2026: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Factory',
         pl: 'Fabryka',
-        jp: { text: '工場', pronunciation: 'こうじょう' },
+        jp: { text: '工場', pronunciation: ['こうじょう', 'こうば'] },
     },
     {
         id: '9333cf56-84c8-4cfe-a42e-00d286827fc7',
         type: 'noun',
         en: 'Inspection / Study by observation',
-        pl: 'Inspekcja / Wizyta studyjna',
+        pl: 'Zwiedzanie / Wizyta studyjna',
         jp: { text: '見学', pronunciation: 'けんがく' },
     },
     {
@@ -244,7 +244,7 @@ const dual_2026: TranslatedJapaneseText[] = [
         type: 'adjective',
         adjective_type: 'i-adjective',
         en: 'Few / Little',
-        pl: 'Mało',
+        pl: 'Mało / Niewielki',
         jp: { text: '少ない', pronunciation: 'すくない' },
     },
 ];
