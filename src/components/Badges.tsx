@@ -215,7 +215,6 @@ const createTransitivityBadge = (transitivity: Transitivity) => {
 const createFormalityBadge = (formality: Formality): BadgeMetadata => {
     let color: string;
     let text: string;
-    let show = true;
     switch (formality) {
         case 'formal': {
             color = 'bg-blue-300/75';
@@ -240,7 +239,7 @@ const createFormalityBadge = (formality: Formality): BadgeMetadata => {
     return {
         color,
         text,
-        show,
+        show: true,
     };
 };
 
