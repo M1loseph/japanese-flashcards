@@ -9,6 +9,6 @@ If tag includes "Usually written using kana alone" string, it means you should n
 
 Examples:
 ```bash
-./.opencode/skills/dictionary/scripts/search_word.sh arigatou
-./.opencode/skills/dictionary/scripts/search_word.sh ありがと
+./.agents/skills/dictionary/scripts/search_word.sh arigatou
+./.agents/skills/dictionary/scripts/search_word.sh ありがと
 ```
