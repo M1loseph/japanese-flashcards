@@ -102,6 +102,7 @@ const sakura_1_4: TranslatedJapaneseText[] = [
     {
         id: '1fc9ae5c-1b4a-47e3-8463-bebc80dcc824',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'TOYOTA employee',
         pl: 'Pracownik TOYOTY',
         jp: { text: 'トヨタの社員', pronunciation: 'トヨタのしゃいん' },
@@ -146,9 +147,10 @@ const sakura_1_4: TranslatedJapaneseText[] = [
     {
         id: '60f6cb34-67b7-46b2-af54-40c07aaaad0f',
         type: 'phrase',
-        en: 'Two plus two equals four.',
-        pl: 'Dwa plus dwa równa się cztery.',
-        jp: { text: '二足す二は四。', pronunciation: 'にたすにはよん。' },
+        formality: 'does-not-apply',
+        en: 'Two plus two equals four',
+        pl: 'Dwa plus dwa to cztery',
+        jp: { text: '二足す二は四', pronunciation: 'にたすにはよん' },
     },
     {
         id: 'cde25d08-a34f-4560-8001-7b1f0bdc64b5',

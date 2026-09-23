@@ -227,6 +227,7 @@ const genki_8: TranslatedJapaneseText[] = [
     {
         id: '02316e5a-4780-4d2f-a790-bd175a25ba6e',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Take a bath',
         pl: 'Brać kąpiel',
         jp: { text: 'お風呂に入る', pronunciation: 'おふろにはいる' },
@@ -270,9 +271,10 @@ const genki_8: TranslatedJapaneseText[] = [
     {
         id: '0c456271-8232-41a6-97b9-8003287b31d5',
         type: 'phrase',
-        en: "It's raining",
-        pl: 'Pada deszcz',
-        jp: { text: '雨が降っている', pronunciation: 'あめがふっている' },
+        formality: 'informal',
+        en: "It's raining.",
+        pl: 'Pada deszcz.',
+        jp: { text: '雨が降っている。', pronunciation: 'あめがふっている。' },
     },
     {
         id: 'c37ee90c-77e9-4b08-9f33-2711cfcf6a60',
@@ -353,6 +355,7 @@ const genki_8: TranslatedJapaneseText[] = [
     {
         id: 'f0053b2a-0492-4e52-95aa-e3c8e2a574f0',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Cheers!',
         pl: 'Na zdrowie!',
         jp: { text: '乾杯！', pronunciation: 'かんぱい！' },

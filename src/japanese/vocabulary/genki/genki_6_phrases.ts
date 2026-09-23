@@ -4,6 +4,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '61d32021-7f36-4d27-b314-10bf5a9b7826',
         type: 'phrase',
+        formality: 'formal',
         en: 'Ken, hurry up please!',
         pl: 'Ken, pośpiesz się proszę!',
         jp: { text: 'ケンさん、急いでください！', pronunciation: 'ケンさん、いそいでください！' },
@@ -11,6 +12,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '6f31d370-9979-4cac-8ecf-93ded95d3f5d',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will return books to the library.',
         pl: 'Oddam książki do biblioteki.',
         jp: { text: '図書館に本を返します。', pronunciation: 'としょかんにほんをかえします。' },
@@ -18,6 +20,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '80e7e551-d113-4e7f-808c-8e7e52756918',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will turn off the light.',
         pl: 'Wyłączę światło.',
         jp: { text: '電気を消します。', pronunciation: 'でんきをけします。' },
@@ -25,6 +28,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'd3575b5a-4ff5-494d-91a3-eee9607292d6',
         type: 'phrase',
+        formality: 'formal',
         en: 'Sit down on the chair, please.',
         pl: 'Usiądź na krześle, proszę.',
         jp: { text: '椅子に座ってください。', pronunciation: 'いすにすわってください。' },
@@ -32,6 +36,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '01bee4f9-6a98-4fc8-b668-679724748848',
         type: 'phrase',
+        formality: 'formal',
         en: 'I often use the dictionary.',
         pl: 'Często używam słownika.',
         jp: { text: 'よく辞書を使います。', pronunciation: 'よくじしょをつかいます。' },
@@ -39,6 +44,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'ddafc739-35ba-479f-afb5-a06829c5de2e',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will help my older sister with house chores.',
         pl: 'Pomogę starszej siostrze w obowiązkach domowych.',
         jp: { text: '姉の家事を手伝います。', pronunciation: 'あねのかじをてつだいます。' },
@@ -46,6 +52,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '424e5cf7-c020-4fd4-981b-b2940aba8d88',
         type: 'phrase',
+        formality: 'formal',
         en: 'I entered the room.',
         pl: 'Wszedłem do pokoju.',
         jp: { text: '部屋に入りました。', pronunciation: 'へやにはいりました。' },
@@ -53,6 +60,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '9cc92bf2-6bd3-4ef7-834e-b5a1003b0b1a',
         type: 'phrase',
+        formality: 'formal',
         en: 'Shall I hold the bag for you?',
         pl: 'Potrzymać ci torbę?',
         jp: { text: 'かばんを持ちましょうか。', pronunciation: 'かばんをもちましょうか。' },
@@ -60,6 +68,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'a7f6f021-0702-4264-9517-f7f81bba0eeb',
         type: 'phrase',
+        formality: 'formal',
         en: 'Yesterday I was absent from class.',
         pl: 'Wczoraj nie było mnie na lekcji.',
         jp: { text: '昨日授業を休みました。', pronunciation: 'きのうじゅぎょうをやすみました。' },
@@ -67,6 +76,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'a4320fec-2a5f-46bf-b402-5ef0e852e171',
         type: 'phrase',
+        formality: 'formal',
         en: 'Open the window, please.',
         pl: 'Otwórz okno, proszę.',
         jp: { text: '窓を開けてください。', pronunciation: 'まどをあけてください。' },
@@ -74,6 +84,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '5c52ddf7-445c-4979-b46a-3a63c104b49b',
         type: 'phrase',
+        formality: 'formal',
         en: 'I teach kanji to my wife.',
         pl: 'Uczę moją żonę kanji.',
         jp: { text: '妻に漢字を教えます。', pronunciation: 'つまにかんじをおしえます。' },
@@ -81,6 +92,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '414bf407-c4be-4394-beaa-295346805786',
         type: 'phrase',
+        formality: 'formal',
         en: 'I closed the door.',
         pl: 'Zamknąłem drzwi.',
         jp: { text: 'ドアを閉めました。', pronunciation: 'ドアをしめました。' },
@@ -88,6 +100,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'a9e2a4fc-59b6-43af-a5e8-b8fde98f9d5c',
         type: 'phrase',
+        formality: 'formal',
         en: 'I forgot the umbrella.',
         pl: 'Zapomniałem parasolki.',
         jp: { text: '傘を忘れました。', pronunciation: 'かさをわすれました。' },
@@ -95,6 +108,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'cb4c2b4d-992e-4935-a859-c7a6f8a9a146',
         type: 'phrase',
+        formality: 'formal',
         en: "Let's get off the train.",
         pl: 'Wysiądźmy z pociągu.',
         jp: { text: '電車を降りましょう。', pronunciation: 'でんしゃをおりましょう。' },
@@ -102,6 +116,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'bb86d25e-12a2-4bb3-a35b-f38dc3b07175',
         type: 'phrase',
+        formality: 'formal',
         en: 'I borrowed a book from Mark.',
         pl: 'Pożyczyłem książkę od Marka.',
         jp: { text: 'マークさんに本を借りました。', pronunciation: 'マークさんにほんをかりました。' },
@@ -109,6 +124,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '9ea9f234-4c0e-4dd1-b874-1018705cf791',
         type: 'phrase',
+        formality: 'formal',
         en: 'I turned on the electric kettle.',
         pl: 'Włączyłem czajnik elektryczny.',
         jp: { text: '電気ケトルをつけました。', pronunciation: 'でんきケトルをつけました。' },
@@ -116,6 +132,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '0b84bea5-264f-432e-b0eb-bb7fe3a2131c',
         type: 'phrase',
+        formality: 'formal',
         en: 'I called my cousin yesterday.',
         pl: 'Wczoraj zadzwoniłem do kuzyna.',
         jp: { text: '昨日いとこに電話しました。', pronunciation: 'きのういとこにでんわしました。' },
@@ -123,6 +140,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '5f144ff1-dedd-4255-a741-809495932a10',
         type: 'phrase',
+        formality: 'formal',
         en: 'I brought my camera on the trip.',
         pl: 'Zabrałem aparat na wycieczkę.',
         jp: { text: '旅行にカメラを持ってきました。', pronunciation: 'りょこうにカメラをもってきました。' },
@@ -130,6 +148,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '25eb19e3-03e8-4abf-bd29-cb2e4db58cae',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will bring my grandmother to the party.',
         pl: 'Przyprowadzę moją babcię na przyjęcie.',
         jp: { text: 'パーティーに祖母を連れてきます。', pronunciation: 'パーティーにそぼをつれてきます。' },
@@ -137,6 +156,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '4fcfdf78-ea01-4776-b1c2-64920c93b6cd',
         type: 'phrase',
+        formality: 'formal',
         en: 'Yesterday I woke up and drank coffee.',
         pl: 'Wczoraj obudziłem się i wypiłem kawę.',
         jp: { text: '昨日起きてコーヒーを飲みました。', pronunciation: 'きのうおきてコーヒーをのみました。' },
@@ -144,6 +164,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'ef1b1db9-2be7-4b54-a1b2-ea4e1e3ab358',
         type: 'phrase',
+        formality: 'formal',
         en: 'I will go to the library and return the book.',
         pl: 'Pójdę do biblioteki i oddam książkę.',
         jp: { text: '図書館に行って本を返します。', pronunciation: 'としょかんにいってほんをかえします。' },
@@ -151,6 +172,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'eb121d20-fa89-4714-b452-d2ee9408090a',
         type: 'phrase',
+        formality: 'formal',
         en: 'In the morning I watch TV and go to school.',
         pl: 'Rano oglądam telewizję i idę do szkoły.',
         jp: { text: '朝テレビを見て学校に行きます。', pronunciation: 'あさテレビをみてがっこうにいきます。' },
@@ -158,6 +180,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'e75a729e-0b25-4bb5-b423-36e626f18abb',
         type: 'phrase',
+        formality: 'formal',
         en: "Let's go to the cafeteria and have lunch.",
         pl: 'Chodźmy do stołówki i zjedzmy obiad.',
         jp: {
@@ -168,6 +191,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '189a5669-870a-4603-8af7-5ca6dd89f1b1',
         type: 'phrase',
+        formality: 'formal',
         en: 'You may take a photo.',
         pl: 'Możesz zrobić zdjęcie.',
         jp: { text: '写真を撮ってもいいです。', pronunciation: 'しゃしんをとってもいいです。' },
@@ -175,6 +199,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'cdabf7e6-347c-4409-a593-e9c69c2ee437',
         type: 'phrase',
+        formality: 'formal',
         en: 'May I read this book?',
         pl: 'Czy mogę przeczytać tę książkę?',
         jp: { text: 'この本を読んでもいいですか。', pronunciation: 'このほんをよんでもいいですか。' },
@@ -182,6 +207,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '7b9df7b7-61de-4723-9692-294782d1c402',
         type: 'phrase',
+        formality: 'formal',
         en: 'May I turn on the air conditioner?',
         pl: 'Czy mogę włączyć klimatyzację?',
         jp: { text: 'エアコンをつけてもいいですか。', pronunciation: 'エアコンをつけてもいいですか。' },
@@ -189,6 +215,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: '7791e03c-3e94-4a00-8005-51d3a59050b2',
         type: 'phrase',
+        formality: 'formal',
         en: 'You may not enter this room.',
         pl: 'Nie możesz wejść do tego pokoju.',
         jp: { text: 'この部屋に入ってはいけません。', pronunciation: 'このへやにはいってはいけません。' },
@@ -196,6 +223,7 @@ const genki_6_phrases: TranslatedJapaneseText[] = [
     {
         id: 'de82eb6e-ba4f-4954-82fa-ec5189f34f54',
         type: 'phrase',
+        formality: 'formal',
         en: 'You may not smoke here.',
         pl: 'Nie możesz tu palić.',
         jp: { text: 'ここでたばこを吸ってはいけません。', pronunciation: 'ここでたばこをすってはいけません。' },

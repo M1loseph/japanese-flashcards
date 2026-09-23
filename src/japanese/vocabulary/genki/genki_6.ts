@@ -291,6 +291,7 @@ const genki_6: TranslatedJapaneseText[] = [
     {
         id: '605bcd3e-9b9f-4f82-b332-bfe622c48b03',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Take a shower',
         pl: 'Brać prysznic',
         jp: { text: 'シャワーを浴びる', pronunciation: 'シャワーをあびる' },
@@ -343,6 +344,7 @@ const genki_6: TranslatedJapaneseText[] = [
     {
         id: '7ed9a75b-955c-4039-9015-0517482e124a',
         type: 'phrase',
+        formality: 'formal',
         en: 'No, thank you.',
         pl: 'Nie, dziękuję.',
         jp: { text: 'いいえ、結構です。', pronunciation: 'いいえ、けっこうです。' },
@@ -350,6 +352,7 @@ const genki_6: TranslatedJapaneseText[] = [
     {
         id: '476b2c81-e94b-42fb-865c-8e077ca35a37',
         type: 'phrase',
+        formality: 'formal',
         en: 'Really? / Is that so?',
         pl: 'Naprawdę? / Czy tak jest?',
         jp: { text: '本当ですか。', pronunciation: 'ほんとうですか。' },

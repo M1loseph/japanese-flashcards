@@ -13,6 +13,7 @@ const sakura_3_6: TranslatedJapaneseText[] = [
     {
         id: 'bdffd13d-336a-480f-b856-bae8baaf28ac',
         type: 'phrase',
+        formality: 'formal',
         en: 'I traveled around Europe.',
         pl: 'Podróżowałem po Europie.',
         jp: { text: 'ヨーロッパを旅行しました。', pronunciation: 'ヨーロッパをりょこうしました。' },

@@ -81,6 +81,7 @@ const sakura_1_3: TranslatedJapaneseText[] = [
     {
         id: '6fae18a8-5a20-4be3-a5a6-a08143a221b1',
         type: 'phrase',
+        formality: 'formal',
         en: "What's your job?",
         pl: 'Jaki jest twój zawód?',
         jp: { text: 'お仕事は？', pronunciation: 'おしごとは？' },
@@ -151,6 +152,7 @@ const sakura_1_3: TranslatedJapaneseText[] = [
     {
         id: '429ead2a-5bd2-4590-b69f-82dfa94dd07e',
         type: 'phrase',
+        formality: 'formal',
         en: 'What is this?',
         pl: 'Co to jest?',
         jp: { text: 'これは何ですか。', pronunciation: 'これはなんですか。' },
@@ -193,6 +195,7 @@ const sakura_1_3: TranslatedJapaneseText[] = [
     {
         id: '856d427f-0d51-4726-945e-f589bdd16b2e',
         type: 'phrase',
+        formality: 'formal',
         en: 'I know Japanese. I also know English.',
         pl: 'Znam japoński. Znam też angielski.',
         jp: {

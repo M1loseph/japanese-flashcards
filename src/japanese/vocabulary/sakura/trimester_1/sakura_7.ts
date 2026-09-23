@@ -68,6 +68,7 @@ const sakura_1_7: TranslatedJapaneseText[] = [
     {
         id: '09fd6e53-31a7-4327-8b11-7f89a33331e0',
         type: 'phrase',
+        formality: 'formal',
         en: 'Who is part of your family?',
         pl: 'Kto jest częścią twojej rodziny?',
         jp: { text: 'だれがいますか。' },
