@@ -124,7 +124,10 @@ const duolingo_10: TranslatedJapaneseText[] = [
         formality: 'formal',
         en: "I played games. Then I didn't do my homework.",
         pl: 'Grałem w gry. Potem nie zrobiłem pracy domowej.',
-        jp: { text: 'ゲームをしました。そして、宿題はしませんでした。', pronunciation: 'ゲームをしました。そして、しゅくだいはしませんでした。' },
+        jp: {
+            text: 'ゲームをしました。そして、宿題はしませんでした。',
+            pronunciation: 'ゲームをしました。そして、しゅくだいはしませんでした。',
+        },
     },
     {
         id: '41777389-6941-4df7-bd3b-b68eee3396f7',
