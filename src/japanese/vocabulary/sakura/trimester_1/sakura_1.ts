@@ -69,7 +69,7 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     {
         id: '47f59611-1276-43d1-8432-3e968f441589',
         type: 'phrase',
-        formality: 'does-not-apply',
+        formality: 'formal',
         en: 'No / No problem',
         pl: 'Nie / Nie ma problemu',
         jp: { text: 'いいえ' },
@@ -108,7 +108,7 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     {
         id: 'b5cfdafc-8a9e-46c8-8955-bcd436182096',
         type: 'phrase',
-        formality: 'does-not-apply',
+        formality: 'formal',
         en: 'Yes',
         pl: 'Tak',
         jp: { text: 'はい' },
