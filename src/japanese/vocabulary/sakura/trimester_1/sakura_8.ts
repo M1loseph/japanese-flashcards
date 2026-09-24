@@ -61,6 +61,7 @@ const sakura_1_8: TranslatedJapaneseText[] = [
     {
         id: 'c461203f-eee8-4e9c-915b-8b13283f2552',
         type: 'phrase',
+        formality: 'formal',
         en: 'I like tea.',
         pl: 'Lubię herbatę.',
         jp: { text: 'お茶が好きです。', pronunciation: 'おちゃがすきです。' },
@@ -68,6 +69,7 @@ const sakura_1_8: TranslatedJapaneseText[] = [
     {
         id: '31d4be2f-cfe7-41dd-93f7-fe4f5e4a9a2c',
         type: 'phrase',
+        formality: 'formal',
         en: "I don't like tea.",
         pl: 'Nie lubię herbaty.',
         jp: { text: 'お茶が好きじゃないです。', pronunciation: 'おちゃがすきじゃないです。' },
@@ -138,6 +140,7 @@ const sakura_1_8: TranslatedJapaneseText[] = [
     {
         id: 'b4f3f8fb-1f21-4094-b04b-d2936a8aab91',
         type: 'phrase',
+        formality: 'formal',
         en: 'No, thank you.',
         pl: 'Nie, dziękuję.',
         jp: { text: 'いいえ、結構です。', pronunciation: 'いいえ、けっこうです。' },
@@ -152,6 +155,7 @@ const sakura_1_8: TranslatedJapaneseText[] = [
     {
         id: '2cb410bd-29aa-4cbc-88eb-38e4e153d716',
         type: 'phrase',
+        formality: 'formal',
         en: 'What animals do you like?',
         pl: 'Jakie zwierzęta lubisz?',
         jp: { text: '動物は何が好きですか。', pronunciation: 'どうぶつはなにがすきですか。' },
@@ -159,6 +163,7 @@ const sakura_1_8: TranslatedJapaneseText[] = [
     {
         id: '6d47f886-2f02-4a98-b8d0-0c4b15c69e20',
         type: 'phrase',
+        formality: 'formal',
         en: 'What food do you like?',
         pl: 'Jakie jedzenie lubisz?',
         jp: { text: '食べ物は何が好きですか。', pronunciation: 'たべものはなにがすきですか。' },

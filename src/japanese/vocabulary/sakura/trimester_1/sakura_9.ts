@@ -37,6 +37,7 @@ const sakura_1_9: TranslatedJapaneseText[] = [
     {
         id: '6fd98cc4-0634-4737-8c84-1493af3523e5',
         type: 'phrase',
+        formality: 'formal',
         en: 'Tokyo is close to Kamakura.',
         pl: 'Tokio jest blisko Kamakury.',
         jp: { text: '東京は鎌倉に近いです。', pronunciation: 'とうきょうはかまくらにちかいです。' },
@@ -135,6 +136,7 @@ const sakura_1_9: TranslatedJapaneseText[] = [
     {
         id: 'd137b6ed-cd7d-4f34-a658-51b8c2c06ff9',
         type: 'phrase',
+        formality: 'formal',
         en: 'I rarely eat ramen.',
         pl: 'Rzadko jem ramen.',
         jp: { text: 'あまりラーメンは食べません。', pronunciation: 'あまりラーメンはたべません。' },
@@ -178,6 +180,7 @@ const sakura_1_9: TranslatedJapaneseText[] = [
     {
         id: '9f4fb6be-f35a-4784-9ed9-bafd6ed76ce3',
         type: 'phrase',
+        formality: 'formal',
         en: 'I often watch movies.',
         pl: 'Często oglądam filmy.',
         jp: { text: 'よく映画を見ます。', pronunciation: 'よくえいがをみます。' },
@@ -185,6 +188,7 @@ const sakura_1_9: TranslatedJapaneseText[] = [
     {
         id: '8c9132e5-08a3-4e21-a7e3-f66129eefd85',
         type: 'phrase',
+        formality: 'formal',
         en: 'I never watch TV.',
         pl: 'Nigdy nie oglądam telewizji.',
         jp: { text: '全然テレビは見ません。', pronunciation: 'ぜんぜんテレビはみません。' },
@@ -192,6 +196,7 @@ const sakura_1_9: TranslatedJapaneseText[] = [
     {
         id: '5caf697b-0a6c-4ac5-b226-46846f98baad',
         type: 'phrase',
+        formality: 'formal',
         en: 'What do you watch?',
         pl: 'Co oglądasz?',
         jp: { text: '何を見ますか。', pronunciation: 'なにをみますか。' },

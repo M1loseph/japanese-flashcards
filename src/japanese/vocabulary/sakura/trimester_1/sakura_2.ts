@@ -174,6 +174,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: '7f894dff-077b-4f14-a964-fe0640dbdc17',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'What is your country?',
         pl: 'Jaki jest twój kraj?',
         jp: { text: 'お国は？', pronunciation: 'おくには？' },
@@ -181,6 +182,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: '902a733c-c3f9-433a-b14a-99ac91c83898',
         type: 'phrase',
+        formality: 'formal',
         en: 'What languages do you speak?',
         pl: 'Jakimi językami potrafisz mówić?',
         jp: { text: '何語ができますか。', pronunciation: 'なにごができますか。' },
@@ -188,6 +190,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: '3000d888-e337-41be-8fb0-0f5c1c56b481',
         type: 'phrase',
+        formality: 'formal',
         en: 'What is your nationality?',
         pl: 'Jakiej jesteś narodowości?',
         jp: { text: '何人ですか。', pronunciation: 'なにじんですか。' },
@@ -195,6 +198,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: '8cf2e67d-1120-42a9-a3c3-26084d80d4ca',
         type: 'phrase',
+        formality: 'formal',
         en: 'I speak Japanese and English.',
         pl: 'Mówię po japońsku i angielsku.',
         jp: { text: '日本語と英語ができます。', pronunciation: 'にほんごとえいごができます。' },
@@ -202,6 +206,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: 'a18545d1-3234-4d87-9ddb-d8360b2ef844',
         type: 'phrase',
+        formality: 'formal',
         en: "I can't speak Chinese.",
         pl: 'Nie potrafię mówić po chińsku.',
         jp: { text: '中国語はできません。', pronunciation: 'ちゅうごくごはできません。' },
@@ -209,6 +214,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: 'eea4cf83-9cc8-4596-bd7f-2d6bca96681f',
         type: 'phrase',
+        formality: 'formal',
         en: 'Where are you from?',
         pl: 'Skąd jesteś?',
         jp: { text: 'どちらから来ましたか。', pronunciation: 'どちらからきましたか。' },
@@ -216,6 +222,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: '752d00f0-9e89-44b8-9ea1-80f93595ffd5',
         type: 'phrase',
+        formality: 'formal',
         en: 'I am from Poland.',
         pl: 'Jestem z Polski.',
         jp: { text: 'ポーランドから来ました。', pronunciation: 'ポーランドからきました。' },
@@ -223,6 +230,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: 'e5c97f0d-a6d6-49eb-ba04-ae23dc844376',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'While studying',
         pl: 'W trakcie nauki',
         jp: { text: '勉強中', pronunciation: 'べんきょうちゅう' },
@@ -230,6 +238,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: '67c111de-b978-4249-8096-1a956117e70a',
         type: 'phrase',
+        formality: 'formal',
         en: "I'm learning Japanese.",
         pl: 'Uczę się japońskiego.',
         jp: { text: '日本語を勉強中です。', pronunciation: 'にほんごをべんきょうちゅうです。' },

@@ -160,6 +160,7 @@ const sakura_2_12: TranslatedJapaneseText[] = [
     {
         id: 'a97ff856-d208-4456-972b-c4bc21daf3c6',
         type: 'phrase',
+        formality: 'formal',
         en: 'I live with my family.',
         pl: 'Mieszkam z rodziną.',
         jp: { text: '家族と住んでいます。', pronunciation: 'かぞくとすんでいます。' },
@@ -167,6 +168,7 @@ const sakura_2_12: TranslatedJapaneseText[] = [
     {
         id: '03083c24-fb3f-40ef-b63c-fe8fb2109ad2',
         type: 'phrase',
+        formality: 'formal',
         en: 'Two of us live together.',
         pl: 'Mieszkamy we dwoje.',
         jp: { text: '二人で住んでいます。', pronunciation: 'ふたりですんでいます。' },
@@ -174,6 +176,7 @@ const sakura_2_12: TranslatedJapaneseText[] = [
     {
         id: '79a7d6f2-8ec6-4f4c-839d-7534c6078cef',
         type: 'phrase',
+        formality: 'formal',
         en: 'My house is a single-family house.',
         pl: 'Mój dom to dom jednorodzinny.',
         jp: { text: '私の家は一戸建てです。', pronunciation: 'わたしのいえはいっこだてです。' },

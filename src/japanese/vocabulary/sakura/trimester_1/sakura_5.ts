@@ -11,6 +11,7 @@ const sakura_1_5: TranslatedJapaneseText[] = [
     {
         id: 'f6e0ff42-3883-46dd-906b-dec75aad0aa7',
         type: 'phrase',
+        formality: 'formal',
         en: 'Whose bike is this?',
         pl: 'Czyj to rower?',
         jp: { text: 'これは誰の自転車ですか。', pronunciation: 'これはだれのじてんしゃですか。' },
@@ -76,6 +77,7 @@ const sakura_1_5: TranslatedJapaneseText[] = [
     {
         id: 'e1cd08b2-5fe7-4310-b1e9-a415d31a6013',
         type: 'phrase',
+        formality: 'formal',
         en: "I don't have an older sister.",
         pl: 'Nie mam starszej siostry.',
         jp: { text: '姉はいません。', pronunciation: 'あねはいません。' },
@@ -90,6 +92,7 @@ const sakura_1_5: TranslatedJapaneseText[] = [
     {
         id: 'e03dad7c-72ba-4e0e-bb27-11d75edc263f',
         type: 'phrase',
+        formality: 'formal',
         en: 'How many people are in your family?',
         pl: 'Ile osób jest w twojej rodzinie?',
         jp: { text: '家族は何人ですか。', pronunciation: 'かぞくはなんにんですか。' },
@@ -97,6 +100,7 @@ const sakura_1_5: TranslatedJapaneseText[] = [
     {
         id: 'db1c9ed8-1470-41b5-a1d8-aa1e5dbc6f81',
         type: 'phrase',
+        formality: 'formal',
         en: 'My family has four people.',
         pl: 'Moja rodzina liczy cztery osoby.',
         jp: { text: '家族は四人です。', pronunciation: 'かぞくはよにんです。' },
@@ -104,6 +108,7 @@ const sakura_1_5: TranslatedJapaneseText[] = [
     {
         id: 'a401c8c7-de18-4278-9988-fbdc6f72f979',
         type: 'phrase',
+        formality: 'formal',
         en: 'I have two older sisters.',
         pl: 'Mam dwie starsze siostry.',
         jp: { text: '姉が二人います。', pronunciation: 'あねがふたりいます。' },
