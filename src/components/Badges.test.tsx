@@ -321,7 +321,8 @@ describe('Badges', () => {
         });
 
         it('does not render a formality badge when formality is absent', () => {
-            renderCard(phrase);
+            const phraseWithNoFormality = { ...phrase, formality: undefined };
+            renderCard(phraseWithNoFormality);
             expect(screen.queryByText('formal')).not.toBeInTheDocument();
             expect(screen.queryByText('informal')).not.toBeInTheDocument();
             expect(screen.queryByText('does not apply')).not.toBeInTheDocument();
