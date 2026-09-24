@@ -131,10 +131,10 @@ const sakura_1_1: TranslatedJapaneseText[] = [
     {
         id: '247503c7-32f8-439d-a55d-ce6aa6b4e2fa',
         type: 'phrase',
-        formality: 'does-not-apply',
-        en: 'Not yet',
-        pl: 'Jeszcze nie',
-        jp: { text: 'まだです' },
+        formality: 'formal',
+        en: 'Not yet.',
+        pl: 'Jeszcze nie.',
+        jp: { text: 'まだです。' },
     },
     {
         id: '895a3767-5a95-40aa-ba43-bf9a8b3c52b5',
