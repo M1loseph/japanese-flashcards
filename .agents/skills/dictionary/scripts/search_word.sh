@@ -9,5 +9,5 @@ fi
 
 WORD="$1"
 RESPONSE=$(curl -s -X GET --data-urlencode "keyword=$WORD" "https://jisho.org/api/v1/search/words" -H "accept: application/json")
-DATA=$(echo "$RESPONSE" | jq -r 'if .data == null then error("API error: " + (. // "empty response") | tostring) else .data[:5] | map({slug, senses: .senses | map({english_definitions, tags})}) end')
+DATA=$(echo "$RESPONSE" | jq -r 'if .data == null then error("API error: " + (. // "empty response") | tostring) else .data[:5] | map({slug, japanese, senses: .senses | map({english_definitions, parts_of_speech, tags})}) end')
 echo "$DATA" | jq -c -M

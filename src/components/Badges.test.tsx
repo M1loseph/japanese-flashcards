@@ -26,6 +26,7 @@ const nounWithKanji: TranslatedJapaneseText = {
 const verb: TranslatedJapaneseText = {
     id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
+    transitivity: 'transitive',
     en: 'to eat',
     pl: 'jeść',
     jp: { text: '食べる', pronunciation: 'たべる' },
@@ -55,10 +56,12 @@ const irregularVerb: TranslatedJapaneseText = {
     id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     verb_type: 'irregular',
     type: 'verb',
+    transitivity: 'transitive',
     en: 'to do',
     pl: 'robić',
     jp: { text: 'する' },
     stem_form: { text: 'し' },
+    present_short_negative_form: { text: 'しない' },
     te_form: { text: 'して' },
 };
 
@@ -66,6 +69,7 @@ const kuruVerb: TranslatedJapaneseText = {
     id: '4e07006f-6f50-4d76-9bca-06c8b7185cb7',
     type: 'verb',
     verb_type: 'kuru',
+    transitivity: 'transitive',
     en: 'Bring (a thing)',
     pl: 'Przynieść (rzecz)',
     jp: { text: '持ってくる', pronunciation: 'もってくる' },
@@ -75,6 +79,7 @@ const ikuVerb: TranslatedJapaneseText = {
     id: '6c76c3f6-06a1-4d9e-bc7b-7c01407d94f5',
     type: 'verb',
     verb_type: 'iku',
+    transitivity: 'transitive',
     en: 'Take (a thing) along',
     pl: 'Brać (rzecz) ze sobą',
     jp: { text: '持って行く', pronunciation: 'もっていく' },
@@ -83,6 +88,7 @@ const ikuVerb: TranslatedJapaneseText = {
 const suruVerb: TranslatedJapaneseText = {
     id: 'd1f8c8b2-3c4e-4b8a-9f8b-2d8c8b2c4e4f',
     type: 'verb',
+    transitivity: 'intransitive',
     en: 'to study',
     pl: 'uczyć się',
     jp: { text: '勉強する', pronunciation: 'べんきょうする' },
@@ -106,6 +112,7 @@ const iAdjectiveIrregular: TranslatedJapaneseText = {
     jp: { text: 'いい' },
     adjective_type: 'i-adjective-irregular',
     negative: { text: 'よくない' },
+    te_form: { text: 'よくて' },
 };
 
 const naAdjective: TranslatedJapaneseText = {
@@ -123,6 +130,7 @@ const phrase: TranslatedJapaneseText = {
     en: 'good morning',
     pl: 'dzień dobry',
     jp: { text: 'おはようございます', pronunciation: 'おはようございます' },
+    formality: 'formal',
 };
 
 const wrapper = () => {
@@ -259,7 +267,7 @@ describe('Badges', () => {
     });
 
     describe('transitivity badges', () => {
-        it.each(['transitive', 'intransitive', 'ambitransitive'] as const)(
+        it.each(['transitive', 'intransitive', 'ambitransitive', 'unspecified'] as const)(
             'renders a %s badge for a verb with that transitivity',
             (transitivity) => {
                 renderCard({ ...godanVerb, transitivity });

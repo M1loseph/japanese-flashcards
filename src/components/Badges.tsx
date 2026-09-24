@@ -200,6 +200,11 @@ const createTransitivityBadge = (transitivity: Transitivity) => {
             text = 'ambitransitive';
             break;
         }
+        case 'unspecified': {
+            color = 'bg-gray-300/75';
+            text = 'unspecified';
+            break;
+        }
         default: {
             const _exhaustiveCheck: never = transitivity;
             return _exhaustiveCheck;
