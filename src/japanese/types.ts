@@ -27,7 +27,7 @@ const FormalitySchema = z.enum(['formal', 'informal', 'does-not-apply']);
 
 export type Formality = z.infer<typeof FormalitySchema>;
 
-const TransitivitySchema = z.enum(['transitive', 'intransitive', 'ambitransitive']);
+const TransitivitySchema = z.enum(['transitive', 'intransitive', 'ambitransitive', 'unspecified']);
 
 export type Transitivity = z.infer<typeof TransitivitySchema>;
 
