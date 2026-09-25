@@ -72,20 +72,6 @@ const countingThings: TranslatedJapaneseText[] = [
         jp: { text: '十', pronunciation: 'とお' },
     },
     {
-        id: '24958697-c7a6-4f43-aec4-5dab9e115a06',
-        type: 'phrase',
-        en: 'How many ramen do you want?',
-        pl: 'Ile ramenów chciałbyś?',
-        jp: { text: 'ラーメンがいくつ欲しいですか。', pronunciation: 'ラーメンがいくつほしいですか。' },
-    },
-    {
-        id: 'f9fc4523-e6b4-4df1-ac64-a05a94bac9e2',
-        type: 'numeral',
-        en: 'How many things',
-        pl: 'Ile rzeczy',
-        jp: { text: 'いくつ' },
-    },
-    {
         id: '07af7cbe-b4e1-4faf-8e01-55d524497cc1',
         type: 'numeral',
         en: 'Eleven things',
@@ -154,6 +140,20 @@ const countingThings: TranslatedJapaneseText[] = [
         en: 'Twenty things',
         pl: 'Dwadzieścia rzeczy',
         jp: { text: '二十個', pronunciation: 'にじゅっこ' },
+    },
+    {
+        id: '24958697-c7a6-4f43-aec4-5dab9e115a06',
+        type: 'phrase',
+        en: 'How many ramen do you want?',
+        pl: 'Ile ramenów chciałbyś?',
+        jp: { text: 'ラーメンがいくつ欲しいですか。', pronunciation: 'ラーメンがいくつほしいですか。' },
+    },
+    {
+        id: 'f9fc4523-e6b4-4df1-ac64-a05a94bac9e2',
+        type: 'numeral',
+        en: 'How many things',
+        pl: 'Ile rzeczy',
+        jp: { text: 'いくつ' },
     },
 ];
 

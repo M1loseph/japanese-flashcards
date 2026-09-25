@@ -4,6 +4,7 @@ const survivalPhrases_1: TranslatedJapaneseText[] = [
     {
         id: '60570e88-d8c6-462a-a3c3-64388298335e',
         type: 'phrase',
+        formality: 'formal',
         en: 'Thank you for the meal.',
         pl: 'Dziękuję za posiłek.',
         jp: { text: 'ごちそうさまでした。' },
@@ -11,6 +12,7 @@ const survivalPhrases_1: TranslatedJapaneseText[] = [
     {
         id: 'e617cb92-32cc-42c1-9aa4-8215dfa21cab',
         type: 'phrase',
+        formality: 'formal',
         en: 'Check, please.',
         pl: 'Poproszę o rachunek.',
         jp: { text: 'お会計をお願いします。', pronunciation: 'おかいけいをおねがいします。' },
@@ -39,6 +41,7 @@ const survivalPhrases_1: TranslatedJapaneseText[] = [
     {
         id: '4cd9b035-dcde-437c-b2fd-d235244eb3d7',
         type: 'phrase',
+        formality: 'formal',
         en: 'Table for non-smokers or smokers?',
         pl: 'Stolik dla niepalących czy palących?',
         jp: { text: '禁煙喫煙、どちらにしますか。', pronunciation: 'きんえんきつえん、どちらにしますか。' },
@@ -46,6 +49,7 @@ const survivalPhrases_1: TranslatedJapaneseText[] = [
     {
         id: '1e341b55-34b7-439f-a881-fc7c46a771e9',
         type: 'phrase',
+        formality: 'formal',
         en: 'What do you recommend?',
         pl: 'Co polecasz?',
         jp: { text: '何がおすすめですか。', pronunciation: 'なにがおすすめですか。' },
@@ -53,6 +57,7 @@ const survivalPhrases_1: TranslatedJapaneseText[] = [
     {
         id: '49cd44c7-8d91-471f-a8c2-58a289dd4afb',
         type: 'phrase',
+        formality: 'formal',
         en: 'Please give me a discount.',
         pl: 'Proszę o niższą cenę.',
         jp: { text: '負けてください。', pronunciation: 'まけてください。' },

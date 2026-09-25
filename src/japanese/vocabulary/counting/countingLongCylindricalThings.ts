@@ -141,6 +141,13 @@ const countingLongCylindricalThings: TranslatedJapaneseText[] = [
         pl: 'Dwadzieścia długich cylindrycznych przedmiotów',
         jp: { text: '二十本', pronunciation: 'にじゅっぽん' },
     },
+    {
+        id: '617eefa6-bbd5-4fc9-97ef-43a7fdf59a4c',
+        type: 'numeral',
+        en: 'How many long cylindrical things',
+        pl: 'Ile długich cylindrycznych przedmiotów',
+        jp: { text: '何本', pronunciation: 'なんぼん' },
+    },
 ];
 
 export const countingLongCylindricalThingsBag: WordBag = {

@@ -71,6 +71,13 @@ const countingLoavesOfBread: TranslatedJapaneseText[] = [
         pl: 'Dziesięć bochenków chleba',
         jp: { text: '十斤', pronunciation: 'じゅっきん' },
     },
+    {
+        id: 'a4bc69f0-551a-4486-81ed-544ca1ce24a3',
+        type: 'numeral',
+        en: 'How many loaves of bread',
+        pl: 'Ile bochenków chleba',
+        jp: { text: '何斤', pronunciation: 'なんきん' },
+    },
 ];
 
 export const countingLoavesOfBreadBag: WordBag = {

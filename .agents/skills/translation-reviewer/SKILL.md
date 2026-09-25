@@ -18,13 +18,22 @@ For a pull request, run `gh pr diff` and review only changed vocabulary entries.
 
 For a specific vocabulary file, review every entry in that file. Stop and report a blocked prerequisite when the supplied path is outside `src/japanese/vocabulary` or cannot be read.
 
+## Command Restrictions
+
+Use only these commands during a review:
+
+- `gh pr diff ...` for pull-request reviews.
+- The dictionary skill's `search_word.sh` script for Jisho lookups.
+
+Do not run or recommend any other command. In particular, never run `npm`, `npx`, `git`, package-manager commands, tests, direct Jisho requests, or scraping commands.
+
 ## Evidence and Severity
 
 Treat `src/japanese/types.ts` as the authority for the allowed object structure and required fields.
 
-Use Jisho as the sole authority for verb transitivity. Query Jisho for each non-auxiliary verb being assessed, retain the `parts_of_speech` for every returned sense, and use the relevant sense to classify transitivity. Do not infer transitivity from an English or Polish translation. If a required Jisho request fails, stop and report the blocked prerequisite.
+Use LLM linguistic analysis and Jisho data as the evidence for translation accuracy. Use Jisho as the sole authority for verb transitivity. Query Jisho for each non-auxiliary verb being assessed, retain the `parts_of_speech` for every returned sense, and use the relevant sense to classify transitivity. Do not infer transitivity from an English or Polish translation. For non-transitivity questions, use Jisho only when the LLM analysis is uncertain; do not make unnecessary lookups. If a required transitivity lookup fails, stop and report the blocked prerequisite. If an optional lookup fails, continue and report the uncertainty rather than asserting an evidence-based accuracy error.
 
-Use Jisho evidence and reliable dictionary evidence for translation accuracy. Report an accuracy error only when the evidence demonstrates a mismatch. Report typos and grammatical mistakes as errors.
+Report an accuracy error only when the LLM analysis or required Jisho evidence demonstrates a mismatch. Report typos and grammatical mistakes as errors.
 
 Report nonessential wording improvements as warnings. Warn about an omitted alternative meaning only when it is a popular or common dictionary sense that materially changes a learner's understanding.
 
