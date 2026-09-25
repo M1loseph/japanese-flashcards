@@ -146,7 +146,7 @@ const countingSmallAndMediumAnimals: TranslatedJapaneseText[] = [
         type: 'numeral',
         en: 'How many animals',
         pl: 'Ile zwierząt',
-        jp: { text: '何匹', pronunciation: 'なんびき' }
+        jp: { text: '何匹', pronunciation: 'なんびき' },
     },
 ];
 
