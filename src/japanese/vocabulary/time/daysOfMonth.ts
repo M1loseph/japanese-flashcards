@@ -218,6 +218,13 @@ const daysOfMonth: TranslatedJapaneseText[] = [
         pl: 'Trzydziesty pierwszy dzień miesiąca',
         jp: { text: '三十一日', pronunciation: 'さんじゅういちにち' },
     },
+    {
+        id: '7beaff75-7b89-4822-bbc5-d15784a32b1d',
+        type: 'noun',
+        en: 'Which day of the month',
+        pl: 'Który dzień miesiąca',
+        jp: { text: '何日', pronunciation: 'なんにち' },
+    },
 ];
 
 export const daysOfMonthBag: WordBag = {

@@ -141,6 +141,13 @@ const numberOfMonths: TranslatedJapaneseText[] = [
         pl: 'Dwadzieścia miesięcy',
         jp: { text: '二十ヶ月', pronunciation: ['にじゅっかげつ', 'にじっかげつ'] },
     },
+    {
+        id: '57ce2656-55dc-4b56-b6b3-d0770017c46f',
+        type: 'noun',
+        en: 'How many months',
+        pl: 'Ile miesięcy',
+        jp: { text: '何ヶ月', pronunciation: 'なんかげつ' },
+    },
 ];
 
 export const numberOfMonthsBag: WordBag = {

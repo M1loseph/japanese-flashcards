@@ -141,6 +141,13 @@ const countingThinObjects: TranslatedJapaneseText[] = [
         pl: 'Dwadzieścia płaskich przedmiotów',
         jp: { text: '二十枚', pronunciation: 'にじゅうまい' },
     },
+    {
+        id: 'f8c577ed-d423-4a4c-9e14-3f09e1688539',
+        type: 'numeral',
+        en: 'How many thin objects',
+        pl: 'Ile płaskich przedmiotów',
+        jp: { text: '何枚', pronunciation: 'なんまい' },
+    },
 ];
 
 export const countingThinObjectsBag: WordBag = {

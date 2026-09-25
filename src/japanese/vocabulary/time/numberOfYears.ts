@@ -141,6 +141,13 @@ const numberOfYears: TranslatedJapaneseText[] = [
         pl: 'Dwadzieścia lat',
         jp: { text: '二十年', pronunciation: 'にじゅうねん' },
     },
+    {
+        id: '07c22074-bf33-4d9a-925c-24891ad464e0',
+        type: 'noun',
+        en: 'How many years',
+        pl: 'Ile lat',
+        jp: { text: '何年', pronunciation: 'なんねん' },
+    },
 ];
 
 export const numberOfYearsBag: WordBag = {

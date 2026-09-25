@@ -141,6 +141,13 @@ const countingSmallAndMediumAnimals: TranslatedJapaneseText[] = [
         pl: 'Dwadzieścia zwierząt',
         jp: { text: '二十匹', pronunciation: 'にじゅっぴき' },
     },
+    {
+        id: '9bed2998-b5aa-44b7-8faa-e5c4117a2bff',
+        type: 'numeral',
+        en: 'How many animals',
+        pl: 'Ile zwierząt',
+        jp: { text: '何匹', pronunciation: 'なんびき' }
+    },
 ];
 
 export const countingSmallAndMediumAnimalsBag: WordBag = {

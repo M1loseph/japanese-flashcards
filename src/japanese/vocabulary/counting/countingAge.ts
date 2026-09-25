@@ -114,6 +114,13 @@ const countingAge: TranslatedJapaneseText[] = [
         jp: { text: '三十歳', pronunciation: 'さんじゅっさい' },
     },
     {
+        id: '1432c96a-5e30-435d-a38c-3daa73acba94',
+        type: 'noun',
+        en: 'How many years old',
+        pl: 'Ile lat (wiek)',
+        jp: { text: '何歳', pronunciation: 'なんさい' },
+    },
+    {
         id: '07f1820b-31fc-4a05-a932-f6e0278a6046',
         type: 'phrase',
         en: 'How old are you? (informal)',

@@ -141,6 +141,13 @@ const countingBooks: TranslatedJapaneseText[] = [
         pl: 'Dwadzieścia książek',
         jp: { text: '二十冊', pronunciation: ['にじゅっさつ', 'にじっさつ'] },
     },
+    {
+        id: '241c0a0d-b462-4c9e-be03-bc27513e3bd6',
+        type: 'numeral',
+        en: 'How many books',
+        pl: 'Ile książek',
+        jp: { text: '何冊', pronunciation: 'なんさつ' },
+    },
 ];
 
 export const countingBooksBag: WordBag = {
