@@ -4,10 +4,10 @@ const sakura_2_1: TranslatedJapaneseText[] = [
     {
         id: '794979ca-b0e6-4acc-9b0a-9383c5e0bd1e',
         type: 'phrase',
-        formality: 'does-not-apply',
+        formality: 'informal',
         en: 'Happy New Year!',
         pl: 'Szczęśliwego Nowego Roku!',
-        jp: { text: 'あけましておめでとう。' },
+        jp: { text: 'あけましておめでとう！' },
     },
     {
         id: 'd1ec2da8-fe76-4e6c-8609-0403c00605a8',
@@ -63,7 +63,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         id: '086e7bc1-04c2-4bde-94a2-d24445fcef46',
         type: 'verb',
         verb_type: 'suru',
-        transitivity: 'intransitive',
+        transitivity: 'unspecified',
         en: 'Throw a party',
         pl: 'Urządzić imprezę',
         jp: { text: 'パーティーをする' },
@@ -110,7 +110,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         id: 'b237c85f-f73e-4670-8551-a4753c3ae22b',
         type: 'phrase',
         formality: 'formal',
-        en: 'On evenings I go for a walk.',
+        en: 'In the evenings, I go for a walk.',
         pl: 'Wieczorami chodzę na spacer.',
         jp: { text: '夕方散歩をします。', pronunciation: 'ゆうがたさんぽをします。' },
         description:
