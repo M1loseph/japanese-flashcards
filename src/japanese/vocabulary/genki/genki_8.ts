@@ -273,7 +273,7 @@ const genki_8: TranslatedJapaneseText[] = [
         type: 'phrase',
         formality: 'informal',
         en: "It's raining.",
-        pl: 'Pada deszcz.',
+        pl: 'Pada deszcz. (w tej chwili)',
         jp: { text: '雨が降っている。', pronunciation: 'あめがふっている。' },
     },
     {
