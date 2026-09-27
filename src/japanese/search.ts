@@ -44,6 +44,7 @@ import { genki5AdjectivesBag } from './vocabulary/genki/genki_5_adjectives';
 import { genki6Bag } from './vocabulary/genki/genki_6';
 import { genki6PhrasesBag } from './vocabulary/genki/genki_6_phrases';
 import { genki7Bag } from './vocabulary/genki/genki_7';
+import { genki7PhrasesBag } from './vocabulary/genki/genki_7_phrases';
 import { genki8Bag } from './vocabulary/genki/genki_8';
 import { cardinalDirectionsBag } from './vocabulary/geography/cardinalDirections';
 import { continentsBag } from './vocabulary/geography/continents';
@@ -170,6 +171,7 @@ export const availableWordBags: WordBag[] = [
     genki6Bag,
     genki6PhrasesBag,
     genki7Bag,
+    genki7PhrasesBag,
     genki8Bag,
     sakura1_1Bag,
     sakura1_2Bag,
