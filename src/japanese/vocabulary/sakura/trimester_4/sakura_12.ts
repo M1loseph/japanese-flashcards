@@ -130,6 +130,13 @@ const sakura_4_12: TranslatedJapaneseText[] = [
         pl: 'Zegarek na rękę',
         jp: { text: '腕時計', pronunciation: 'うでどけい' },
     },
+    {
+        id: '8718d003-717d-4549-a89f-4a029d67e1b8',
+        type: 'noun',
+        en: 'Christmas tree',
+        pl: 'Choinka',
+        jp: { text: 'クリスマスツリー' },
+    },
 ];
 
 export const sakura4_12Bag: WordBag = {
