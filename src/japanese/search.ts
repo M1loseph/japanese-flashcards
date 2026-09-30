@@ -2,6 +2,7 @@ import { toRomaji } from 'wanakana';
 import type { TranslationLanguage } from '../types/TranslationLanguage';
 import type { TranslatedJapaneseText, WordBag } from './types';
 import { countingAgeBag } from './vocabulary/counting/countingAge';
+import { countingBigThingsBag } from './vocabulary/counting/countingBigThings';
 import { countingBooksBag } from './vocabulary/counting/countingBooks';
 import { countingFloorsBag } from './vocabulary/counting/countingFloors';
 import { countingLoavesOfBreadBag } from './vocabulary/counting/countingLoavesOfBread';
@@ -10,7 +11,7 @@ import { countingPeopleBag } from './vocabulary/counting/countingPeople';
 import { countingPeoplePoliteBag } from './vocabulary/counting/countingPeoplePolite';
 import { countingRepetitiveActionsBag } from './vocabulary/counting/countingRepetitiveActions';
 import { countingSmallAndMediumAnimalsBag } from './vocabulary/counting/countingSmallAndMediumAnimals';
-import { countingThingsBag } from './vocabulary/counting/countingThings';
+import { countingSmallThingsBag } from './vocabulary/counting/countingSmallThings';
 import { countingThinObjectsBag } from './vocabulary/counting/countingThinObjects';
 import { numbersBag } from './vocabulary/counting/numbers';
 import { ordinalNumbersBag } from './vocabulary/counting/ordinalNumbers';
@@ -119,7 +120,8 @@ export const availableWordBags: WordBag[] = [
     numbersBag,
     countingAgeBag,
     countingBooksBag,
-    countingThingsBag,
+    countingBigThingsBag,
+    countingSmallThingsBag,
     countingFloorsBag,
     countingSmallAndMediumAnimalsBag,
     countingPeopleBag,
