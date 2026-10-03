@@ -104,6 +104,7 @@ import { sakura4_6Bag } from './vocabulary/sakura/trimester_4/sakura_6';
 import { sakura4_7Bag } from './vocabulary/sakura/trimester_4/sakura_7';
 import { sakura4_8Bag } from './vocabulary/sakura/trimester_4/sakura_8';
 import { sakura4_9Bag } from './vocabulary/sakura/trimester_4/sakura_9';
+import { sakura5_1Bag } from './vocabulary/sakura/trimester_5/sakura_1';
 import { daysOfMonthBag } from './vocabulary/time/daysOfMonth';
 import { hoursBag } from './vocabulary/time/hours';
 import { minutesBag } from './vocabulary/time/minutes';
@@ -227,6 +228,7 @@ export const availableWordBags: WordBag[] = [
     sakura4_10Bag,
     sakura4_11Bag,
     sakura4_12Bag,
+    sakura5_1Bag,
     survivalPhrases_1Bag,
     dual2026Bag,
 ] as const;
