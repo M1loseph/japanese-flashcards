@@ -318,6 +318,27 @@ const dual_2026: TranslatedJapaneseText[] = [
         pl: 'Kraj zagraniczny',
         jp: { text: '外国', pronunciation: 'がいこく' },
     },
+    {
+        id: 'b4d3b85e-66e0-4a0d-9c2d-995579bdab25',
+        type: 'noun',
+        en: 'Sink',
+        pl: 'Zlew',
+        jp: { text: 'シンク' },
+    },
+    {
+        id: '00beb847-72df-456e-b083-634e9fbc9ff8',
+        type: 'noun',
+        en: 'Dishwasher',
+        pl: 'Zmywarka',
+        jp: { text: '食器洗い機', pronunciation: 'しょっきあらいき' },
+    },
+    {
+        id: 'a9659568-203f-4e74-adf7-522e47b0cc22',
+        type: 'noun',
+        en: 'Rice cooker',
+        pl: 'Ryżowar',
+        jp: { text: '炊飯器', pronunciation: 'すいはんき' },
+    },
 ];
 
 export const dual2026Bag: WordBag = {
