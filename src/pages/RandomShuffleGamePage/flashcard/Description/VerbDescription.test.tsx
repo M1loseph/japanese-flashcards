@@ -302,7 +302,9 @@ describe('VerbDescription', () => {
             te_form: { text: '書きと' },
         };
 
-        expect(() => renderVerbDescription(verb)).toThrow("Expected te-form to end with 'て' or 'で', but got '書きと'");
+        expect(() => renderVerbDescription(verb)).toThrow(
+            "Expected te-form to end with 'て' or 'で', but got '書きと'",
+        );
     });
 
     it('renders pronunciation as the primary text in simplified mode', () => {
