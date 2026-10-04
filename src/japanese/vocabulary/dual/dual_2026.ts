@@ -339,6 +339,21 @@ const dual_2026: TranslatedJapaneseText[] = [
         pl: 'Ryżowar',
         jp: { text: '炊飯器', pronunciation: 'すいはんき' },
     },
+    {
+        id: 'a3e1c3f3-d7ed-4ac9-a8b8-358cd9b5d6b5',
+        type: 'noun',
+        en: 'Morning sickness',
+        pl: 'Poranne mdłości',
+        jp: { text: 'つわり' },
+    },
+    {
+        id: '41378f5e-c9ab-4111-9b12-36ec1f6a0c19',
+        type: 'phrase',
+        formality: 'informal',
+        en: 'My mom said she liked the house.',
+        pl: 'Moja mama powiedziała, że podoba jej się dom.',
+        jp: { text: '母はその家が好きだと言った。', pronunciation: 'はははそのいえがすきだといった。' },
+    },
 ];
 
 export const dual2026Bag: WordBag = {
