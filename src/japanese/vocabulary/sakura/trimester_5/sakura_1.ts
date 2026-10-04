@@ -67,6 +67,13 @@ const sakura_5_1: TranslatedJapaneseText[] = [
             pronunciation: 'ともだちがわたしのたんじょうびにぺンをくれます。',
         },
     },
+    {
+        id: 'eb3c4f07-de88-49a0-963f-b94e5cea2c2c',
+        type: 'noun',
+        en: 'Cookie',
+        pl: 'Ciastko',
+        jp: { text: 'クッキー' },
+    },
 ];
 
 export const sakura5_1Bag: WordBag = {
