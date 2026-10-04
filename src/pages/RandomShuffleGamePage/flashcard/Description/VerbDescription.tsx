@@ -76,6 +76,23 @@ const generateTeFormFromDictionaryForm = (verb: GodanVerb | IchidanVerb | Irregu
     return _exhaustiveCheck;
 };
 
+const generatePastShortFormFromTeForm = (teForm: TextWithPronunciation): TextWithPronunciation => {
+    const generatePastShortForm = (text: string): string => {
+        if (text.endsWith('て')) {
+            return text.slice(0, -1) + 'た';
+        }
+        if (text.endsWith('で')) {
+            return text.slice(0, -1) + 'だ';
+        }
+        throw new Error(`Expected te-form to end with 'て' or 'で', but got '${text}'`);
+    };
+
+    return {
+        text: generatePastShortForm(teForm.text),
+        pronunciation: mapPronunciation(teForm.pronunciation, generatePastShortForm),
+    };
+};
+
 const generateStemFormFromDictionaryForm = (verb: GodanVerb | IchidanVerb | IrregularVerb): TextWithPronunciation => {
     if (verb.verb_type === 'irregular') {
         return verb.stem_form;
@@ -155,6 +172,7 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
     const masuForm = generatePresentFormFromDictionaryForm(verb, 'affirmative');
     const masenForm = generatePresentFormFromDictionaryForm(verb, 'negative');
     const teForm = generateTeFormFromDictionaryForm(verb);
+    const pastShortForm = generatePastShortFormFromTeForm(teForm);
     const stemForm = generateStemFormFromDictionaryForm(verb);
     const presentShortNegativeForm = generatePresentShortNegativeFormFromDictionaryForm(verb);
 
@@ -163,6 +181,9 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
 
     const masenText = useMainText(masenForm);
     const masenPronunciation = useSecondaryText(masenForm);
+
+    const pastShortText = useMainText(pastShortForm);
+    const pastShortPronunciation = useSecondaryText(pastShortForm);
 
     const teText = useMainText(teForm);
     const tePronunciation = useSecondaryText(teForm);
@@ -177,6 +198,7 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
         <>
             <DescriptionElement mainText={masuText} secondaryText={masuPronunciation} label="Masu" />
             <DescriptionElement mainText={masenText} secondaryText={masenPronunciation} label="Masen" />
+            <DescriptionElement mainText={pastShortText} secondaryText={pastShortPronunciation} label="Past Short" />
             <DescriptionElement
                 mainText={presentShortNegativeText}
                 secondaryText={presentShortNegativePronunciation}
