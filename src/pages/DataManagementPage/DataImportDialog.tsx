@@ -1,12 +1,11 @@
 import { useState, type FC } from 'react';
 import { useHardText } from '../../services/HardWordsContext';
+import type { ImportedExportedData, SRSReviewReadModel } from '../../services/SRS';
 import { useReplaceSRSWords } from '../../services/SRS/srsHooks';
-import type { ExportedData } from '../../types/ExportedData';
-import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 
 interface DataImportDialogProps {
-    importedApplicationState: ExportedData;
-    srsWords: WordLearningProgress[];
+    importedApplicationState: ImportedExportedData;
+    srsWords: readonly SRSReviewReadModel[];
     hardText: string[];
     handleCloseDialog: () => void;
     handleShowErrorToast: () => void;
@@ -26,7 +25,9 @@ export const DataImportDialog: FC<DataImportDialogProps> = ({
     const handleImportData = async () => {
         setDisabledButtons(true);
         try {
-            await replaceSRSWords.mutateAsync(importedApplicationState.srsWords);
+            await replaceSRSWords.mutateAsync(
+                importedApplicationState.srsWords.map((word) => word.toSRSReviewReadModel()),
+            );
             overrideHardTextList(importedApplicationState.hardText);
             handleCloseDialog();
         } catch (error) {

@@ -13,13 +13,13 @@ import { Card } from '../../components/Card';
 import { PageTitle } from '../../components/PageTitle';
 import { Toast } from '../../components/Toast';
 import { useHardText } from '../../services/HardWordsContext';
-import { useSRSWords } from '../../services/SRS';
+import { ExportedSRSWordModel, useSRSWords, type ImportedExportedData } from '../../services/SRS';
 import { ExportedDataSchema, type ExportedData } from '../../types/ExportedData';
 import { ScrollablePage } from '../common/ScrollablePage';
 import { DataImportDialog } from './DataImportDialog';
 
 const DataManagementPage: FC = () => {
-    const [importedApplicationState, setImportedApplicationState] = useState<ExportedData>();
+    const [importedApplicationState, setImportedApplicationState] = useState<ImportedExportedData>();
     const [showErrorToast, setShowErrorToast] = useState(false);
 
     const { data: srsWords, isSuccess } = useSRSWords();
@@ -40,7 +40,10 @@ const DataManagementPage: FC = () => {
             })();
             const parsedData = JSON.parse(decompressedData);
             const applicationState = ExportedDataSchema.parse(parsedData);
-            setImportedApplicationState(applicationState);
+            setImportedApplicationState({
+                ...applicationState,
+                srsWords: applicationState.srsWords.map((word) => new ExportedSRSWordModel(word)),
+            });
         } catch (error) {
             console.error('Failed to import data:', error);
             setShowErrorToast(true);
@@ -51,7 +54,7 @@ const DataManagementPage: FC = () => {
         if (!srsWords) return;
         const exportedData: ExportedData = {
             version: 1,
-            srsWords,
+            srsWords: srsWords.map((word) => new ExportedSRSWordModel(word)),
             hardText,
         };
         const jsonString = JSON.stringify(exportedData, null, 2);

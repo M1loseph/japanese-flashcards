@@ -4,6 +4,7 @@ import { findWordById } from '../../japanese/search';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { useTimeContext } from '../Time';
 import { db } from './srsdb';
+import { SRSReviewReadModel } from './SRSReviewReadModel';
 import { MAXIMUM_LEVEL, MINIMUM_LEVEL, SRS_STAGES } from './Stages';
 
 const addWordsToSRS = async (wordIds: string[], now: Date) => {
@@ -24,7 +25,7 @@ export const useSRSWords = () => {
             const words = await db.wordProgress.toArray();
             const orphanIds = words.filter((word) => !findWordById(word.wordId)).map((word) => word.wordId);
             await Promise.all(orphanIds.map((id) => db.wordProgress.delete(id)));
-            return words.filter((word) => !orphanIds.includes(word.wordId));
+            return words.filter((word) => !orphanIds.includes(word.wordId)).map((word) => new SRSReviewReadModel(word));
         },
     });
 };
@@ -50,10 +51,11 @@ export const useReplaceSRSWords = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationKey: ['replaceSRSWords'],
-        mutationFn: async (newWords: readonly WordLearningProgress[]) => {
+        mutationFn: async (newWords: readonly (WordLearningProgress | SRSReviewReadModel)[]) => {
+            const entities = newWords.map((word) => (word instanceof SRSReviewReadModel ? word.toEntity() : word));
             await db.transaction('rw', db.wordProgress, async () => {
                 await db.wordProgress.clear();
-                await db.wordProgress.bulkAdd(newWords);
+                await db.wordProgress.bulkAdd(entities);
             });
         },
         onSuccess: () => {
@@ -64,11 +66,11 @@ export const useReplaceSRSWords = () => {
 };
 
 export const useSRSWord = (wordId: string) => {
-    return useQuery<WordLearningProgress | null>({
+    return useQuery<SRSReviewReadModel | null>({
         queryKey: ['srsWord', wordId],
         queryFn: async () => {
             const result = await db.wordProgress.get({ wordId });
-            return result || null;
+            return result ? new SRSReviewReadModel(result) : null;
         },
     });
 };

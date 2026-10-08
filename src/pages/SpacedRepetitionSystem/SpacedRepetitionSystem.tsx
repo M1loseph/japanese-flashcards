@@ -200,7 +200,7 @@ export const SpacedRepetitionSystemPage: FC = () => {
                 </div>
             </section>
 
-            <UpcomingReviewsChart srsWords={srsWords} chartStartDate={new Date(srsWordsUpdatedAt)} />
+            <UpcomingReviewsChart reviews={srsWords} chartStartDate={new Date(srsWordsUpdatedAt)} />
 
             <section aria-label="SRS stages distribution" className="mb-8">
                 <h2 className="text-xl font-bold mb-4">SRS Stages Distribution</h2>

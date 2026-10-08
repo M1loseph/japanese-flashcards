@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { availableWordBags } from '../../japanese';
 import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { TimeContextProvider } from '../Time';
+import { SRSReviewReadModel } from './SRSReviewReadModel';
 import { MINIMUM_LEVEL } from './Stages';
 import { useAddNewWordsToSRS, useReplaceSRSWords, useSRSWord, useSRSWords } from './srsHooks';
 import { db } from './srsdb';
@@ -80,23 +81,15 @@ describe('SRS hooks', () => {
             expect(records).toBeDefined();
             expect(records).toHaveLength(2);
             expect(records?.map((record) => record.wordId)).toEqual(wordIds);
-            expect(records).toEqual(
-                expect.arrayContaining([
-                    expect.objectContaining({
-                        wordId: wordIds[0],
-                        lastReviewed: undefined,
-                        level: MINIMUM_LEVEL,
-                    }),
-                    expect.objectContaining({
-                        wordId: wordIds[1],
-                        lastReviewed: undefined,
-                        level: MINIMUM_LEVEL,
-                    }),
-                ]),
+            expect(records?.every((record) => record instanceof SRSReviewReadModel)).toBe(true);
+            expect(records?.map((record) => record.toEntity())).toEqual(
+                wordIds.map((wordId) => ({
+                    wordId,
+                    lastReviewed: undefined,
+                    nextReview: now,
+                    level: MINIMUM_LEVEL,
+                })),
             );
-            records?.forEach((record) => {
-                expect(record.nextReview).toStrictEqual(now);
-            });
         });
 
         it('does nothing for an empty list', async () => {
@@ -142,7 +135,7 @@ describe('SRS hooks', () => {
             });
             await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
 
-            expect(sRSWords.result.current.data).toEqual([
+            expect(sRSWords.result.current.data?.map((record) => record.toEntity())).toEqual([
                 {
                     wordId: insertedWords[0].id,
                     level: MINIMUM_LEVEL,
@@ -175,7 +168,7 @@ describe('SRS hooks', () => {
             await waitFor(() => expect(addNewWordstoSRS.result.current.isSuccess).toBe(true));
             await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
 
-            expect(sRSWords.result.current.data).toEqual([
+            expect(sRSWords.result.current.data?.map((record) => record.toEntity())).toEqual([
                 {
                     wordId: validRecord,
                     level: MINIMUM_LEVEL,
@@ -244,7 +237,22 @@ describe('SRS hooks', () => {
             await waitFor(() => expect(replaceSRSWords.result.current.isSuccess).toBe(true));
             await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
 
-            expect(sRSWords.result.current.data).toEqual(replacementRecords);
+            expect(sRSWords.result.current.data?.map((record) => record.toEntity())).toEqual(replacementRecords);
+        });
+
+        it('stores the exact UTC review time from a read model', async () => {
+            const wordId = getWordBag().words[0].id;
+            const progress = createProgress(wordId, { nextReview: new Date('2026-01-02T10:31:45.678Z') });
+            const review = new SRSReviewReadModel(progress);
+            const replaceSRSWords = renderHook(() => useReplaceSRSWords(), {
+                wrapper: createWrapper(createQueryClient()),
+            });
+
+            await act(async () => {
+                await replaceSRSWords.result.current.mutateAsync([review]);
+            });
+
+            expect(await db.wordProgress.get({ wordId })).toEqual(progress);
         });
 
         it('clears all records when given an empty replacement', async () => {
@@ -282,8 +290,9 @@ describe('SRS hooks', () => {
 
             await waitFor(() => expect(sRSWord.result.current.isSuccess).toBe(true));
 
-            expect(sRSWord.result.current.data).toEqual({
-                wordId: wordId,
+            expect(sRSWord.result.current.data).toBeInstanceOf(SRSReviewReadModel);
+            expect(sRSWord.result.current.data?.toEntity()).toEqual({
+                wordId,
                 level: MINIMUM_LEVEL,
                 lastReviewed: undefined,
                 nextReview: new Date('2026-01-01T00:00:00.000Z'),

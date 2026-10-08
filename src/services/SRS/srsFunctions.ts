@@ -1,11 +1,10 @@
 import { availableWordBags } from '../../japanese';
-import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { shuffleArray } from '../../utils';
+import type { SRSReviewReadModel } from './SRSReviewReadModel';
 
-export const listWordsToReview = (words?: WordLearningProgress[]) => {
-    const now = new Date();
-    const wordsToReview = (words ?? []).filter((word) => word.nextReview <= now);
-    return wordsToReview.map((w) => w.wordId);
+export const listWordsToReview = (reviews?: readonly SRSReviewReadModel[], now: Date = new Date()) => {
+    const wordsToReview = (reviews ?? []).filter((review) => review.reviewAt <= now);
+    return wordsToReview.map((review) => review.wordId);
 };
 
 interface SRSStatistics {
@@ -18,7 +17,7 @@ export interface UpcomingReviewDay {
     hourlyReviewCounts: number[];
 }
 
-export const generateStatistics = (words?: WordLearningProgress[]): SRSStatistics => {
+export const generateStatistics = (words?: readonly Pick<SRSReviewReadModel, 'level'>[]): SRSStatistics => {
     if (!words) {
         return { buckets: new Map() };
     }
@@ -31,7 +30,7 @@ export const generateStatistics = (words?: WordLearningProgress[]): SRSStatistic
 };
 
 export const generateUpcomingReviewSchedule = (
-    words: readonly WordLearningProgress[],
+    reviews: readonly SRSReviewReadModel[],
     now: Date = new Date(),
 ): UpcomingReviewDay[] => {
     const days = Array.from({ length: 7 }, (_, dayOffset) => ({
@@ -41,25 +40,26 @@ export const generateUpcomingReviewSchedule = (
     }));
     const daysByDate = new Map(days.map((day) => [day.date.toDateString(), day]));
 
-    for (const word of words) {
-        if (word.nextReview <= now) {
+    for (const review of reviews) {
+        const reviewAt = review.reviewAt;
+        if (reviewAt <= now) {
             continue;
         }
 
-        const day = daysByDate.get(word.nextReview.toDateString());
+        const day = daysByDate.get(reviewAt.toDateString());
         if (!day) {
             continue;
         }
 
         day.reviewCount += 1;
-        day.hourlyReviewCounts[word.nextReview.getHours()] += 1;
+        day.hourlyReviewCounts[reviewAt.getHours()] += 1;
     }
 
     return days;
 };
 
 export const selectNewRandomWords = (
-    wordsInProgress: WordLearningProgress[],
+    wordsInProgress: readonly Pick<SRSReviewReadModel, 'wordId'>[],
     count: number,
     preferredWordBags?: string[],
 ): string[] => {
