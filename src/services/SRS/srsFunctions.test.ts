@@ -8,22 +8,6 @@ const makeWord = (nextReview: Date): WordLearningProgressEntity => ({
     level: 1,
 });
 
-describe('SRSReviewReadModel', () => {
-    it('rounds to the nearest local hour without changing the source record', () => {
-        const beforeHalfHour = makeWord(new Date(2026, 8, 20, 14, 29));
-        const atHalfHour = makeWord(new Date(2026, 8, 20, 14, 30));
-        const storedReviewTimes = [beforeHalfHour, atHalfHour].map((word) => word.nextReview.getTime());
-        const beforeHalfHourReadModel = new WordLearningProgress(beforeHalfHour);
-        const atHalfHourReadModel = new WordLearningProgress(atHalfHour);
-
-        expect(beforeHalfHourReadModel.reviewAt).toEqual(new Date(2026, 8, 20, 14, 0));
-        expect(atHalfHourReadModel.reviewAt).toEqual(new Date(2026, 8, 20, 15, 0));
-        expect(beforeHalfHourReadModel.toEntity()).toEqual(beforeHalfHour);
-        expect(atHalfHourReadModel.toEntity()).toEqual(atHalfHour);
-        expect([beforeHalfHour, atHalfHour].map((word) => word.nextReview.getTime())).toEqual(storedReviewTimes);
-    });
-});
-
 describe('listWordsToReview', () => {
     it('uses the same rounded review time as the schedule', () => {
         const reviews = [

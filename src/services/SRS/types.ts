@@ -25,6 +25,13 @@ export interface SRSStage {
     icon: Icon;
 }
 
+const cloneDate = (date: Date | undefined): Date | undefined => {
+    if (date === undefined) {
+        return undefined;
+    }
+    return new Date(date.getTime());
+};
+
 const roundToNearestLocalHour = (date: Date) => {
     const roundedDate = new Date(date);
     const minutes = roundedDate.getMinutes();
@@ -38,14 +45,18 @@ const roundToNearestLocalHour = (date: Date) => {
 export class WordLearningProgress {
     readonly wordId: string;
     readonly level: number;
-    readonly lastReviewed: Date | undefined;
+    readonly #lastReviewed: Date | undefined;
     readonly #nextReview: Date;
 
     constructor(entity: WordLearningProgressEntity | ExportedSRSWord) {
         this.wordId = entity.wordId;
         this.level = entity.level;
-        this.lastReviewed = entity.lastReviewed;
-        this.#nextReview = entity.nextReview;
+        this.#lastReviewed = cloneDate(entity.lastReviewed);
+        this.#nextReview = new Date(entity.nextReview.getTime());
+    }
+
+    get lastReviewed(): Date | undefined {
+        return cloneDate(this.#lastReviewed);
     }
 
     get reviewAt(): Date {
@@ -55,17 +66,18 @@ export class WordLearningProgress {
     toEntity(): WordLearningProgressEntity {
         return {
             wordId: this.wordId,
-            lastReviewed: this.lastReviewed,
-            nextReview: this.#nextReview,
+            lastReviewed: cloneDate(this.#lastReviewed),
+            nextReview: new Date(this.#nextReview.getTime()),
             level: this.level,
         };
     }
 
     toExportedSRSWordModel(): ExportedSRSWord {
+        const lastReviewed = cloneDate(this.#lastReviewed);
         return {
             wordId: this.wordId,
-            ...(this.lastReviewed === undefined ? {} : { lastReviewed: this.lastReviewed }),
-            nextReview: this.#nextReview,
+            ...(lastReviewed === undefined ? {} : { lastReviewed }),
+            nextReview: new Date(this.#nextReview.getTime()),
             level: this.level,
         };
     }
