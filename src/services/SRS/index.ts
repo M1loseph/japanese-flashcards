@@ -7,3 +7,4 @@ export {
 export type { UpcomingReviewDay } from './srsFunctions';
 export { useAddNewWordsToSRS, useMarkWordsAsReviewedBatch, useSRSWord, useSRSWords } from './srsHooks';
 export { SRS_STAGES } from './Stages';
+export { WordLearningProgress } from './types';

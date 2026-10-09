@@ -18,7 +18,7 @@ const createDay = (dayOffset: number, reviewCount: number, hourlyReviewCounts: n
 
 const createEmptyHourlyReviewCounts = () => Array<number>(24).fill(0);
 
-const renderChart = () => render(<UpcomingReviewsChart srsWords={[]} chartStartDate={new Date(2026, 8, 21, 12)} />);
+const renderChart = () => render(<UpcomingReviewsChart reviews={[]} chartStartDate={new Date(2026, 8, 21, 12)} />);
 
 describe('UpcomingReviewsChart', () => {
     beforeEach(() => {

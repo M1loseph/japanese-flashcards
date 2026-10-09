@@ -20,7 +20,7 @@ export const GameSettingsProvider: FC<GameSettingsProviderProps> = ({ children }
         });
     };
 
-    const selectBags = (ids: string[]) => {
+    const selectBags = (ids: readonly string[]) => {
         setSelectedWordBags((prev) => {
             const newSet = new Set(prev);
             ids.forEach((id) => newSet.add(id));
@@ -28,7 +28,7 @@ export const GameSettingsProvider: FC<GameSettingsProviderProps> = ({ children }
         });
     };
 
-    const deselectBags = (ids: string[]) => {
+    const deselectBags = (ids: readonly string[]) => {
         setSelectedWordBags((prev) => {
             const newSet = new Set(prev);
             ids.forEach((id) => newSet.delete(id));

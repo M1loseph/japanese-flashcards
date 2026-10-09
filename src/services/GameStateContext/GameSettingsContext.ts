@@ -3,8 +3,8 @@ import { createContext, useContext } from 'react';
 export interface GameSettingsContextType {
     selectedWordBags: Set<string>;
     toggleWordBag: (id: string) => void;
-    selectBags: (ids: string[]) => void;
-    deselectBags: (ids: string[]) => void;
+    selectBags: (ids: readonly string[]) => void;
+    deselectBags: (ids: readonly string[]) => void;
 }
 
 export const GameSettingsContext = createContext<GameSettingsContextType | undefined>(undefined);

@@ -36,7 +36,7 @@ export const GameContextProvider: FC<{ children: ReactNode }> = ({ children }) =
         }
     }, [gameState]);
 
-    const createNewGame = (wordIds: string[], title: string, gameType: GameType) => {
+    const createNewGame = (wordIds: readonly string[], title: string, gameType: GameType) => {
         const flashcards = shuffleArray(wordIds).map((wordId) => ({
             wordId,
             answered: false,

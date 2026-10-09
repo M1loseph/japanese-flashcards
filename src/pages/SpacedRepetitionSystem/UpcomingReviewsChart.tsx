@@ -1,11 +1,10 @@
 import { IconArrowLeft } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { Card } from '../../components/Card';
-import { generateUpcomingReviewSchedule } from '../../services/SRS';
-import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
+import { generateUpcomingReviewSchedule, type WordLearningProgress } from '../../services/SRS';
 
 interface UpcomingReviewsChartProps {
-    srsWords?: readonly WordLearningProgress[];
+    reviews?: readonly WordLearningProgress[];
     chartStartDate: Date;
 }
 
@@ -57,9 +56,9 @@ const ReviewBar: FC<ReviewBarProps> = ({ label, reviewCount, largestReviewCount,
 
 const getWeekdayLabel = (date: Date) => new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(date);
 
-export const UpcomingReviewsChart: FC<UpcomingReviewsChartProps> = ({ srsWords, chartStartDate }) => {
+export const UpcomingReviewsChart: FC<UpcomingReviewsChartProps> = ({ reviews, chartStartDate }) => {
     const [selectedDayIndex, setSelectedDayIndex] = useState<number>();
-    const schedule = srsWords ? generateUpcomingReviewSchedule(srsWords, chartStartDate) : undefined;
+    const schedule = reviews ? generateUpcomingReviewSchedule(reviews, chartStartDate) : undefined;
     const selectedDay = selectedDayIndex === undefined ? undefined : schedule?.[selectedDayIndex];
     const hourlyReviews =
         selectedDay?.hourlyReviewCounts.flatMap((reviewCount, hour) =>

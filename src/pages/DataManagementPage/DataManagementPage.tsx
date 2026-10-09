@@ -26,7 +26,7 @@ const DataManagementPage: FC = () => {
     const { getHardTextList } = useHardText();
     const hardText = getHardTextList();
 
-    const onDrop = async (files: File[]) => {
+    const onDrop = async (files: readonly File[]) => {
         const file = files[0];
         if (file === undefined) return;
         try {
@@ -51,7 +51,7 @@ const DataManagementPage: FC = () => {
         if (!srsWords) return;
         const exportedData: ExportedData = {
             version: 1,
-            srsWords,
+            srsWords: srsWords.map((word) => word.toExportedSRSWordModel()),
             hardText,
         };
         const jsonString = JSON.stringify(exportedData, null, 2);
