@@ -38,29 +38,25 @@ const roundToNearestLocalHour = (date: Date) => {
 export class WordLearningProgress {
     readonly wordId: string;
     readonly level: number;
-    readonly #lastReviewedTimestampUtc: number | undefined;
-    readonly #nextReviewTimestampUtc: number;
+    readonly lastReviewed: Date | undefined;
+    readonly #nextReview: Date;
 
     constructor(entity: WordLearningProgressEntity | ExportedSRSWord) {
         this.wordId = entity.wordId;
         this.level = entity.level;
-        this.#lastReviewedTimestampUtc = entity.lastReviewed?.getTime();
-        this.#nextReviewTimestampUtc = entity.nextReview.getTime();
-    }
-
-    get lastReviewed(): Date | undefined {
-        return this.#lastReviewedTimestampUtc === undefined ? undefined : new Date(this.#lastReviewedTimestampUtc);
+        this.lastReviewed = entity.lastReviewed;
+        this.#nextReview = entity.nextReview;
     }
 
     get reviewAt(): Date {
-        return roundToNearestLocalHour(new Date(this.#nextReviewTimestampUtc));
+        return roundToNearestLocalHour(this.#nextReview);
     }
 
     toEntity(): WordLearningProgressEntity {
         return {
             wordId: this.wordId,
             lastReviewed: this.lastReviewed,
-            nextReview: new Date(this.#nextReviewTimestampUtc),
+            nextReview: this.#nextReview,
             level: this.level,
         };
     }
@@ -69,7 +65,7 @@ export class WordLearningProgress {
         return {
             wordId: this.wordId,
             ...(this.lastReviewed === undefined ? {} : { lastReviewed: this.lastReviewed }),
-            nextReview: new Date(this.#nextReviewTimestampUtc),
+            nextReview: this.#nextReview,
             level: this.level,
         };
     }
