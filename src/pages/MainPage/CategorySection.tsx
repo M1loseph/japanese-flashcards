@@ -5,7 +5,7 @@ import { WordBagCard } from './WordBagCard';
 
 interface CategorySectionProps {
     title: string;
-    bags: WordBag[];
+    bags: readonly WordBag[];
     selectedBagIds: Set<string>;
     onToggleBag: (id: string) => void;
     onSelectAll: () => void;

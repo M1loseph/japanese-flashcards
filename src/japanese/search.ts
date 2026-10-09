@@ -116,7 +116,7 @@ import { secondsBag } from './vocabulary/time/seconds';
 import { weekBag } from './vocabulary/time/week';
 import { yearsBag } from './vocabulary/time/years';
 
-export const availableWordBags: WordBag[] = [
+export const availableWordBags: readonly WordBag[] = [
     familyBag,
     numbersBag,
     countingAgeBag,
@@ -242,7 +242,7 @@ export const findBagById: (id: string) => WordBag | undefined = (() => {
 })();
 
 export interface SearchResult {
-    words: FoundWord[];
+    words: readonly FoundWord[];
     hitLimit: boolean;
 }
 
@@ -282,7 +282,7 @@ export const searchWordsMatchingQuery = (
     query: string,
     selectedLanguage: TranslationLanguage,
     limit: number,
-    searchAmongBags: WordBag[] = availableWordBags,
+    searchAmongBags: readonly WordBag[] = availableWordBags,
 ): SearchResult => {
     const parsedQuery = parseQuery(query);
     const found = [];

@@ -6,7 +6,7 @@ interface GameContextType {
     clearGame: () => void;
     markCurrentFlashcard: (correct: boolean) => Promise<void>;
     createNewGameFromWrongAnswers: () => void;
-    createNewGame: (wordIds: string[], title: string, gameType: GameType) => void;
+    createNewGame: (wordIds: readonly string[], title: string, gameType: GameType) => void;
     skipRemainingFlashcards: () => Promise<void>;
     undoLastAction: () => void;
 }

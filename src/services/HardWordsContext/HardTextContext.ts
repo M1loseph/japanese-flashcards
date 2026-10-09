@@ -4,7 +4,7 @@ import type { TranslatedJapaneseText } from '../../japanese';
 export interface HardTextContextType {
     isHardText: (text: TranslatedJapaneseText) => boolean;
     toggleHardText: (text: TranslatedJapaneseText) => void;
-    getHardTextList: () => string[];
+    getHardTextList: () => readonly string[];
     overrideHardTextList: (hardTextList: readonly string[]) => void;
 }
 

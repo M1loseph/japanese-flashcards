@@ -6,7 +6,7 @@ import { db } from './srsdb';
 import { MAXIMUM_LEVEL, MINIMUM_LEVEL, SRS_STAGES } from './Stages';
 import { WordLearningProgress } from './types';
 
-const addWordsToSRS = async (wordIds: string[], now: Date) => {
+const addWordsToSRS = async (wordIds: readonly string[], now: Date) => {
     const newProgressEntries = wordIds.map((wordId) => ({
         wordId,
         lastReviewed: undefined,
@@ -37,7 +37,7 @@ export const useAddNewWordsToSRS = () => {
 
     return useMutation({
         mutationKey: ['addNewWordsToSRS'],
-        mutationFn: async (wordIds: string[]) => {
+        mutationFn: async (wordIds: readonly string[]) => {
             const now = timeProvider.currentTime();
             await addWordsToSRS(wordIds, now);
         },
