@@ -17,7 +17,7 @@ export interface UpcomingReviewDay {
     hourlyReviewCounts: number[];
 }
 
-export const generateStatistics = (words?: readonly Pick<WordLearningProgress, 'level'>[]): SRSStatistics => {
+export const generateStatistics = (words?: readonly WordLearningProgress[]): SRSStatistics => {
     if (!words) {
         return { buckets: new Map() };
     }
@@ -59,7 +59,7 @@ export const generateUpcomingReviewSchedule = (
 };
 
 export const selectNewRandomWords = (
-    wordsInProgress: readonly Pick<WordLearningProgress, 'wordId'>[],
+    wordsInProgress: readonly WordLearningProgress[],
     count: number,
     preferredWordBags?: string[],
 ): string[] => {
