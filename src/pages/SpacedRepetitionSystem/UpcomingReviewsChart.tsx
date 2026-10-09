@@ -1,10 +1,10 @@
 import { IconArrowLeft } from '@tabler/icons-react';
 import { useState, type FC } from 'react';
 import { Card } from '../../components/Card';
-import { generateUpcomingReviewSchedule, type SRSReviewReadModel } from '../../services/SRS';
+import { generateUpcomingReviewSchedule, type WordLearningProgress } from '../../services/SRS';
 
 interface UpcomingReviewsChartProps {
-    reviews?: readonly SRSReviewReadModel[];
+    reviews?: readonly WordLearningProgress[];
     chartStartDate: Date;
 }
 

@@ -1,11 +1,10 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import dayjs from '../../dayjs';
 import { findWordById } from '../../japanese/search';
-import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { useTimeContext } from '../Time';
 import { db } from './srsdb';
-import { SRSReviewReadModel } from './SRSReviewReadModel';
 import { MAXIMUM_LEVEL, MINIMUM_LEVEL, SRS_STAGES } from './Stages';
+import { WordLearningProgress } from './types';
 
 const addWordsToSRS = async (wordIds: string[], now: Date) => {
     const newProgressEntries = wordIds.map((wordId) => ({
@@ -25,7 +24,9 @@ export const useSRSWords = () => {
             const words = await db.wordProgress.toArray();
             const orphanIds = words.filter((word) => !findWordById(word.wordId)).map((word) => word.wordId);
             await Promise.all(orphanIds.map((id) => db.wordProgress.delete(id)));
-            return words.filter((word) => !orphanIds.includes(word.wordId)).map((word) => new SRSReviewReadModel(word));
+            return words
+                .filter((word) => !orphanIds.includes(word.wordId))
+                .map((word) => new WordLearningProgress(word));
         },
     });
 };
@@ -51,8 +52,8 @@ export const useReplaceSRSWords = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationKey: ['replaceSRSWords'],
-        mutationFn: async (newWords: readonly (WordLearningProgress | SRSReviewReadModel)[]) => {
-            const entities = newWords.map((word) => (word instanceof SRSReviewReadModel ? word.toEntity() : word));
+        mutationFn: async (newWords: readonly WordLearningProgress[]) => {
+            const entities = newWords.map((word) => word.toEntity());
             await db.transaction('rw', db.wordProgress, async () => {
                 await db.wordProgress.clear();
                 await db.wordProgress.bulkAdd(entities);
@@ -66,11 +67,11 @@ export const useReplaceSRSWords = () => {
 };
 
 export const useSRSWord = (wordId: string) => {
-    return useQuery<SRSReviewReadModel | null>({
+    return useQuery<WordLearningProgress | null>({
         queryKey: ['srsWord', wordId],
         queryFn: async () => {
             const result = await db.wordProgress.get({ wordId });
-            return result ? new SRSReviewReadModel(result) : null;
+            return result ? new WordLearningProgress(result) : null;
         },
     });
 };

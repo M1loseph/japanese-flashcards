@@ -3,12 +3,11 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { type ReactNode } from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { availableWordBags } from '../../japanese';
-import type { WordLearningProgress } from '../../types/SpacedRepetitionSystem';
 import { TimeContextProvider } from '../Time';
-import { SRSReviewReadModel } from './SRSReviewReadModel';
 import { MINIMUM_LEVEL } from './Stages';
 import { useAddNewWordsToSRS, useReplaceSRSWords, useSRSWord, useSRSWords } from './srsHooks';
 import { db } from './srsdb';
+import { WordLearningProgress, WordLearningProgressEntity } from './types';
 
 const createQueryClient = () =>
     new QueryClient({
@@ -34,7 +33,10 @@ const createWrapper = (queryClient: QueryClient) => {
     };
 };
 
-const createProgress = (wordId: string, overrides: Partial<WordLearningProgress> = {}): WordLearningProgress => ({
+const createProgress = (
+    wordId: string,
+    overrides: Partial<WordLearningProgressEntity> = {},
+): WordLearningProgressEntity => ({
     wordId,
     lastReviewed: new Date('2026-01-01T00:00:00.000Z'),
     nextReview: new Date('2026-01-02T00:00:00.000Z'),
@@ -81,7 +83,7 @@ describe('SRS hooks', () => {
             expect(records).toBeDefined();
             expect(records).toHaveLength(2);
             expect(records?.map((record) => record.wordId)).toEqual(wordIds);
-            expect(records?.every((record) => record instanceof SRSReviewReadModel)).toBe(true);
+            expect(records?.every((record) => record instanceof WordLearningProgress)).toBe(true);
             expect(records?.map((record) => record.toEntity())).toEqual(
                 wordIds.map((wordId) => ({
                     wordId,
@@ -226,7 +228,8 @@ describe('SRS hooks', () => {
 
             const replacementRecords = wordBag.words
                 .slice(1, 3)
-                .map((word, index) => createProgress(word.id, { level: index + 3 }));
+                .map((word, index) => createProgress(word.id, { level: index + 3 }))
+                .map((progress) => new WordLearningProgress(progress));
             const replaceSRSWords = renderHook(() => useReplaceSRSWords(), {
                 wrapper: createWrapper(queryClient),
             });
@@ -237,13 +240,13 @@ describe('SRS hooks', () => {
             await waitFor(() => expect(replaceSRSWords.result.current.isSuccess).toBe(true));
             await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
 
-            expect(sRSWords.result.current.data?.map((record) => record.toEntity())).toEqual(replacementRecords);
+            expect(sRSWords.result.current.data).toEqual(replacementRecords);
         });
 
         it('stores the exact UTC review time from a read model', async () => {
             const wordId = getWordBag().words[0].id;
             const progress = createProgress(wordId, { nextReview: new Date('2026-01-02T10:31:45.678Z') });
-            const review = new SRSReviewReadModel(progress);
+            const review = new WordLearningProgress(progress);
             const replaceSRSWords = renderHook(() => useReplaceSRSWords(), {
                 wrapper: createWrapper(createQueryClient()),
             });
@@ -290,7 +293,7 @@ describe('SRS hooks', () => {
 
             await waitFor(() => expect(sRSWord.result.current.isSuccess).toBe(true));
 
-            expect(sRSWord.result.current.data).toBeInstanceOf(SRSReviewReadModel);
+            expect(sRSWord.result.current.data).toBeInstanceOf(WordLearningProgress);
             expect(sRSWord.result.current.data?.toEntity()).toEqual({
                 wordId,
                 level: MINIMUM_LEVEL,

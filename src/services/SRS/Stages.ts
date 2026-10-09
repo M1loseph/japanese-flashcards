@@ -11,7 +11,7 @@ import {
     IconTool,
 } from '@tabler/icons-react';
 import dayjs from '../../dayjs';
-import type { SRSStage } from '../../types/SpacedRepetitionSystem';
+import type { SRSStage } from './types';
 
 export const createSRSStages = (randomGenerator: () => number = Math.random): readonly SRSStage[] => {
     return [

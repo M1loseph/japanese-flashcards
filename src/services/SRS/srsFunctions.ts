@@ -1,8 +1,8 @@
 import { availableWordBags } from '../../japanese';
 import { shuffleArray } from '../../utils';
-import type { SRSReviewReadModel } from './SRSReviewReadModel';
+import type { WordLearningProgress } from './types';
 
-export const listWordsToReview = (reviews?: readonly SRSReviewReadModel[], now: Date = new Date()) => {
+export const listWordsToReview = (reviews?: readonly WordLearningProgress[], now: Date = new Date()) => {
     const wordsToReview = (reviews ?? []).filter((review) => review.reviewAt <= now);
     return wordsToReview.map((review) => review.wordId);
 };
@@ -17,7 +17,7 @@ export interface UpcomingReviewDay {
     hourlyReviewCounts: number[];
 }
 
-export const generateStatistics = (words?: readonly Pick<SRSReviewReadModel, 'level'>[]): SRSStatistics => {
+export const generateStatistics = (words?: readonly Pick<WordLearningProgress, 'level'>[]): SRSStatistics => {
     if (!words) {
         return { buckets: new Map() };
     }
@@ -30,7 +30,7 @@ export const generateStatistics = (words?: readonly Pick<SRSReviewReadModel, 'le
 };
 
 export const generateUpcomingReviewSchedule = (
-    reviews: readonly SRSReviewReadModel[],
+    reviews: readonly WordLearningProgress[],
     now: Date = new Date(),
 ): UpcomingReviewDay[] => {
     const days = Array.from({ length: 7 }, (_, dayOffset) => ({
@@ -59,7 +59,7 @@ export const generateUpcomingReviewSchedule = (
 };
 
 export const selectNewRandomWords = (
-    wordsInProgress: readonly Pick<SRSReviewReadModel, 'wordId'>[],
+    wordsInProgress: readonly Pick<WordLearningProgress, 'wordId'>[],
     count: number,
     preferredWordBags?: string[],
 ): string[] => {
