@@ -61,8 +61,8 @@ export const generateUpcomingReviewSchedule = (
 export const selectNewRandomWords = (
     wordsInProgress: readonly WordLearningProgress[],
     count: number,
-    preferredWordBags?: string[],
-): string[] => {
+    preferredWordBags?: readonly string[],
+): readonly string[] => {
     const allWords = availableWordBags
         .filter((bag) => !preferredWordBags || preferredWordBags.includes(bag.id))
         .flatMap((bag) => bag.words)

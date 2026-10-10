@@ -111,8 +111,8 @@ const duolingo_13: TranslatedJapaneseText[] = [
         id: '3ea3c379-7a4d-40d0-bba0-b0ed34a11d78',
         type: 'verb',
         verb_type: 'godan',
-        en: 'Play (a musical instrument)',
-        pl: 'Grać (na instrumencie muzycznym)',
+        en: 'Play (a stringed / keyboard instrument)',
+        pl: 'Grać (na instrumencie strunowym / klawiszowym)',
         jp: { text: '弾く', pronunciation: 'ひく' },
     },
     {

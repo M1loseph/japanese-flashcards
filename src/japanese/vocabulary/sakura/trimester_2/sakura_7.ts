@@ -147,8 +147,8 @@ const sakura_2_7: TranslatedJapaneseText[] = [
     {
         id: '1a32d07d-909b-4de5-8656-737c0e1a7ae7',
         type: 'noun',
-        en: 'Next time',
-        pl: 'Następnym razem',
+        en: 'Next time / Near future',
+        pl: 'Następnym razem / W najbliższej przyszłości',
         jp: { text: '今度', pronunciation: 'こんど' },
     },
     {
