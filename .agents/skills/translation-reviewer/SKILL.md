@@ -66,6 +66,7 @@ Report nonessential wording improvements as warnings. Warn about an omitted alte
 ### Phrase Rules
 
 - Require `formality` for every phrase.
+- Set `formality` to `does-not-apply` for sentence fragments.
 - Set `formality` to `formal` for polite or masu-form sentences and polite expressions such as `はい` and `いいえ`.
 - Set `formality` to `informal` for plain or short-form sentences and casual expressions such as `うん` and `ううん`.
 - Use `does-not-apply` only when the expression has no applicable register distinction. Classify register; do not classify it from sentence shape.
@@ -91,3 +92,4 @@ Include in the table:
 - All schema and review-rule violations as errors.
 - All typos and grammatical mistakes as errors.
 - Nonessential wording improvements and qualifying omitted common meanings as warnings.
+- In the `File` column, link every finding to its source line using Markdown, for example `[src/japanese/vocabulary/genki/genki_5.ts](src/japanese/vocabulary/genki/genki_5.ts#L42)`.
