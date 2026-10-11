@@ -5,7 +5,13 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { availableWordBags } from '../../japanese';
 import { TimeContextProvider } from '../Time';
 import { MINIMUM_LEVEL } from './Stages';
-import { useAddNewWordsToSRS, useReplaceSRSWords, useSRSWord, useSRSWords } from './srsHooks';
+import {
+    useAddNewWordsToSRS,
+    useMarkWordsAsReviewedBatch,
+    useReplaceSRSWords,
+    useSRSWord,
+    useSRSWords,
+} from './srsHooks';
 import { db } from './srsdb';
 import { WordLearningProgress, WordLearningProgressEntity } from './types';
 
@@ -310,6 +316,66 @@ describe('SRS hooks', () => {
             await waitFor(() => expect(sRSWord.result.current.isSuccess).toBe(true));
 
             expect(sRSWord.result.current.data).toBeNull();
+        });
+    });
+
+    describe('useMarkWordsAsReviewedBatch', () => {
+        it('uses level one delay after a correct level-zero review', async () => {
+            const wordId = getWordBag().words[0].id;
+            const queryClient = createQueryClient();
+            const replaceSRSWords = renderHook(() => useReplaceSRSWords(), { wrapper: createWrapper(queryClient) });
+            const sRSWord = renderHook(() => useSRSWord(wordId), { wrapper: createWrapper(queryClient) });
+            const markWordsAsReviewed = renderHook(() => useMarkWordsAsReviewedBatch(), {
+                wrapper: createWrapper(queryClient),
+            });
+
+            await act(async () => {
+                await replaceSRSWords.result.current.mutateAsync([
+                    new WordLearningProgress(createProgress(wordId, { level: MINIMUM_LEVEL })),
+                ]);
+            });
+            await waitFor(() => expect(sRSWord.result.current.data).not.toBeNull());
+
+            await act(async () => {
+                await markWordsAsReviewed.result.current.mutateAsync([{ wordId, correct: true }]);
+            });
+
+            await waitFor(() =>
+                expect(sRSWord.result.current.data?.toEntity()).toEqual({
+                    wordId,
+                    level: 1,
+                    lastReviewed: new Date('2026-01-01T00:00:00.000Z'),
+                    nextReview: new Date('2026-01-01T04:00:00.000Z'),
+                }),
+            );
+        });
+
+        it('makes a word immediately available after an incorrect level-one review', async () => {
+            const wordId = getWordBag().words[0].id;
+            const queryClient = createQueryClient();
+            const replaceSRSWords = renderHook(() => useReplaceSRSWords(), { wrapper: createWrapper(queryClient) });
+            const sRSWord = renderHook(() => useSRSWord(wordId), { wrapper: createWrapper(queryClient) });
+            const markWordsAsReviewed = renderHook(() => useMarkWordsAsReviewedBatch(), {
+                wrapper: createWrapper(queryClient),
+            });
+
+            await act(async () => {
+                await replaceSRSWords.result.current.mutateAsync([new WordLearningProgress(createProgress(wordId, { level: 1 }))]);
+            });
+            await waitFor(() => expect(sRSWord.result.current.data).not.toBeNull());
+
+            await act(async () => {
+                await markWordsAsReviewed.result.current.mutateAsync([{ wordId, correct: false }]);
+            });
+
+            await waitFor(() =>
+                expect(sRSWord.result.current.data?.toEntity()).toEqual({
+                    wordId,
+                    level: MINIMUM_LEVEL,
+                    lastReviewed: new Date('2026-01-01T00:00:00.000Z'),
+                    nextReview: new Date('2026-01-01T00:00:00.000Z'),
+                }),
+            );
         });
     });
 });

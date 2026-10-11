@@ -2,13 +2,20 @@ import { describe, expect, it } from 'vitest';
 import { generateUpcomingReviewSchedule, listWordsToReview } from './srsFunctions';
 import { WordLearningProgress, WordLearningProgressEntity } from './types';
 
-const makeWord = (nextReview: Date): WordLearningProgressEntity => ({
+const makeWord = (nextReview: Date, level = 1): WordLearningProgressEntity => ({
     wordId: nextReview.toISOString(),
     nextReview,
-    level: 1,
+    level,
 });
 
 describe('listWordsToReview', () => {
+    it('includes a level-zero word immediately after it is added', () => {
+        const addedAt = new Date(2026, 8, 20, 14, 45);
+        const review = new WordLearningProgress(makeWord(addedAt, 0));
+
+        expect(listWordsToReview([review], addedAt)).toEqual([review.wordId]);
+    });
+
     it('uses the same rounded review time as the schedule', () => {
         const reviews = [
             new Date(2026, 8, 20, 14, 29),

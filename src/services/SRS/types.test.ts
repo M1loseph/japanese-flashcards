@@ -1,13 +1,19 @@
 import { describe, expect, it } from 'vitest';
 import { WordLearningProgress, WordLearningProgressEntity } from './types';
 
-const makeWord = (nextReview: Date): WordLearningProgressEntity => ({
+const makeWord = (nextReview: Date, level = 1): WordLearningProgressEntity => ({
     wordId: nextReview.toISOString(),
     nextReview,
-    level: 1,
+    level,
 });
 
 describe('WordLearningProgress', () => {
+    it('rounds level-zero reviews down to the local hour', () => {
+        const review = new WordLearningProgress(makeWord(new Date(2026, 8, 20, 14, 45), 0));
+
+        expect(review.reviewAt).toEqual(new Date(2026, 8, 20, 14, 0));
+    });
+
     it('rounds to the nearest local hour without changing the source record', () => {
         const beforeHalfHour = makeWord(new Date(2026, 8, 20, 14, 29));
         const atHalfHour = makeWord(new Date(2026, 8, 20, 14, 30));
