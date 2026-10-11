@@ -18,7 +18,7 @@ export const createSRSStages = (randomGenerator: () => number = Math.random): re
         {
             label: 'Novice',
             icon: IconBabyCarriage,
-            waitDuration: () => dayjs.duration({ hours: 4 }),
+            waitDuration: () => dayjs.duration({ milliseconds: 0 }),
         },
         {
             label: 'Beginner',

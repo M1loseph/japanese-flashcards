@@ -357,8 +357,8 @@ const dual_2026: TranslatedJapaneseText[] = [
     {
         id: '9ec8edaa-c8d2-47ce-b2d4-1b7534300a62',
         type: 'noun',
-        en: 'Meeting',
-        pl: 'Spotkanie',
+        en: 'Conference / Meeting',
+        pl: 'Konferencja / Spotkanie',
         jp: { text: '会議', pronunciation: 'かいぎ' },
     },
     {

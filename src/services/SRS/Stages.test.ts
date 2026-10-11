@@ -4,7 +4,7 @@ import { createSRSStages } from './Stages';
 
 describe('SRS stages', () => {
     it.each([
-        [0, dayjs.duration({ hours: 4 })],
+        [0, dayjs.duration({ milliseconds: 0 })],
         [1, dayjs.duration({ hours: 4 })],
         [2, dayjs.duration({ hours: 8 })],
         [3, dayjs.duration({ days: 1 })],

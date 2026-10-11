@@ -2,6 +2,7 @@ import type { Icon } from '@tabler/icons-react';
 import type { Duration } from 'dayjs/plugin/duration';
 import { z } from 'zod';
 import type { ExportedSRSWord } from '../../types/ExportedData';
+import { MINIMUM_LEVEL } from './Stages';
 
 const stringToDateCodec = z.codec(z.iso.datetime(), z.date(), {
     decode: (isoString) => new Date(isoString),
@@ -60,6 +61,11 @@ export class WordLearningProgress {
     }
 
     get reviewAt(): Date {
+        if (this.level === MINIMUM_LEVEL) {
+            const roundedDate = new Date(this.#nextReview);
+            roundedDate.setMinutes(0, 0, 0);
+            return roundedDate;
+        }
         return roundToNearestLocalHour(this.#nextReview);
     }
 
