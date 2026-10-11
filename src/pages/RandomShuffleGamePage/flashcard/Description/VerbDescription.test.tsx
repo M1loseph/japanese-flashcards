@@ -62,6 +62,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'かわない',
             pastShort: '買った',
             pastShortPronunciation: 'かった',
+            pastShortNegative: '買わなかった',
+            pastShortNegativePronunciation: 'かわなかった',
             teForm: '買って',
             teFormPronunciation: 'かって',
             stem: '買い',
@@ -78,6 +80,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'かかない',
             pastShort: '書いた',
             pastShortPronunciation: 'かいた',
+            pastShortNegative: '書かなかった',
+            pastShortNegativePronunciation: 'かかなかった',
             teForm: '書いて',
             teFormPronunciation: 'かいて',
             stem: '書き',
@@ -94,6 +98,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'およがない',
             pastShort: '泳いだ',
             pastShortPronunciation: 'およいだ',
+            pastShortNegative: '泳がなかった',
+            pastShortNegativePronunciation: 'およがなかった',
             teForm: '泳いで',
             teFormPronunciation: 'およいで',
             stem: '泳ぎ',
@@ -110,6 +116,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'はなさない',
             pastShort: '話した',
             pastShortPronunciation: 'はなした',
+            pastShortNegative: '話さなかった',
+            pastShortNegativePronunciation: 'はなさなかった',
             teForm: '話して',
             teFormPronunciation: 'はなして',
             stem: '話し',
@@ -126,6 +134,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'またない',
             pastShort: '待った',
             pastShortPronunciation: 'まった',
+            pastShortNegative: '待たなかった',
+            pastShortNegativePronunciation: 'またなかった',
             teForm: '待って',
             teFormPronunciation: 'まって',
             stem: '待ち',
@@ -142,6 +152,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'しなない',
             pastShort: '死んだ',
             pastShortPronunciation: 'しんだ',
+            pastShortNegative: '死ななかった',
+            pastShortNegativePronunciation: 'しななかった',
             teForm: '死んで',
             teFormPronunciation: 'しんで',
             stem: '死に',
@@ -158,6 +170,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'あそばない',
             pastShort: '遊んだ',
             pastShortPronunciation: 'あそんだ',
+            pastShortNegative: '遊ばなかった',
+            pastShortNegativePronunciation: 'あそばなかった',
             teForm: '遊んで',
             teFormPronunciation: 'あそんで',
             stem: '遊び',
@@ -174,6 +188,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'のまない',
             pastShort: '飲んだ',
             pastShortPronunciation: 'のんだ',
+            pastShortNegative: '飲まなかった',
+            pastShortNegativePronunciation: 'のまなかった',
             teForm: '飲んで',
             teFormPronunciation: 'のんで',
             stem: '飲み',
@@ -190,6 +206,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation: 'かえらない',
             pastShort: '帰った',
             pastShortPronunciation: 'かえった',
+            pastShortNegative: '帰らなかった',
+            pastShortNegativePronunciation: 'かえらなかった',
             teForm: '帰って',
             teFormPronunciation: 'かえって',
             stem: '帰り',
@@ -208,6 +226,8 @@ describe('VerbDescription', () => {
             shortNegativePronunciation,
             pastShort,
             pastShortPronunciation,
+            pastShortNegative,
+            pastShortNegativePronunciation,
             teForm,
             teFormPronunciation,
             stem,
@@ -219,6 +239,7 @@ describe('VerbDescription', () => {
             expectDescriptionRow('Masen', masen, masenPronunciation);
             expectDescriptionRow('Present Short Negative', shortNegative, shortNegativePronunciation);
             expectDescriptionRow('Past Short', pastShort, pastShortPronunciation);
+            expectDescriptionRow('Past Short Negative', pastShortNegative, pastShortNegativePronunciation);
             expectDescriptionRow('Te form', teForm, teFormPronunciation);
             expectDescriptionRow('Stem form', stem, stemPronunciation);
         },
@@ -236,6 +257,7 @@ describe('VerbDescription', () => {
         expectDescriptionRow('Masen', '食べません', 'たべません');
         expectDescriptionRow('Present Short Negative', '食べない', 'たべない');
         expectDescriptionRow('Past Short', '食べた', 'たべた');
+        expectDescriptionRow('Past Short Negative', '食べなかった', 'たべなかった');
         expectDescriptionRow('Te form', '食べて', 'たべて');
         expectDescriptionRow('Stem form', '食べ', 'たべ');
     });
@@ -247,6 +269,7 @@ describe('VerbDescription', () => {
         });
 
         expectDescriptionRow('Present Short Negative', 'ない');
+        expectDescriptionRow('Past Short Negative', 'なかった');
     });
 
     it.each([
@@ -258,8 +281,8 @@ describe('VerbDescription', () => {
                 present_short_negative_form: { text: 'しない' },
                 te_form: { text: 'して' },
             },
-            ['します', 'しません', 'しない', 'した', 'して', 'し'],
-            [undefined, undefined, undefined, undefined, undefined, undefined],
+            ['します', 'しません', 'しない', 'した', 'しなかった', 'して', 'し'],
+            [undefined, undefined, undefined, undefined, undefined, undefined, undefined],
         ],
         [
             {
@@ -269,8 +292,8 @@ describe('VerbDescription', () => {
                 present_short_negative_form: { text: '来ない', pronunciation: 'こない' },
                 te_form: { text: '来て', pronunciation: 'きて' },
             },
-            ['来ます', '来ません', '来ない', '来た', '来て', '来'],
-            ['きます', 'きません', 'こない', 'きた', 'きて', 'き'],
+            ['来ます', '来ません', '来ない', '来た', '来なかった', '来て', '来'],
+            ['きます', 'きません', 'こない', 'きた', 'こなかった', 'きて', 'き'],
         ],
     ] as const)('renders supplied irregular forms for %s', (verb, text, pronunciation) => {
         renderVerbDescription(verb as IrregularVerb);
@@ -279,8 +302,20 @@ describe('VerbDescription', () => {
         expectDescriptionRow('Masen', text[1], pronunciation[1]);
         expectDescriptionRow('Present Short Negative', text[2], pronunciation[2]);
         expectDescriptionRow('Past Short', text[3], pronunciation[3]);
-        expectDescriptionRow('Te form', text[4], pronunciation[4]);
-        expectDescriptionRow('Stem form', text[5], pronunciation[5]);
+        expectDescriptionRow('Past Short Negative', text[4], pronunciation[4]);
+        expectDescriptionRow('Te form', text[5], pronunciation[5]);
+        expectDescriptionRow('Stem form', text[6], pronunciation[6]);
+    });
+
+    it('throws if the short-negative form does not end with い', () => {
+        const verb: GodanVerb = {
+            ...createGodanVerb('ある'),
+            present_short_negative_form: { text: 'なし' },
+        };
+
+        expect(() => renderVerbDescription(verb)).toThrow(
+            "Expected present short negative form to end with 'い', but got 'なし'",
+        );
     });
 
     it('uses an explicit godan te-form override', () => {

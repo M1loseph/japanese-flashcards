@@ -168,6 +168,20 @@ const generatePresentShortNegativeFormFromDictionaryForm = (
     };
 };
 
+const generatePastShortNegativeForm = (presentShortNegativeForm: TextWithPronunciation): TextWithPronunciation => {
+    const generatePastShortNegative = (text: string): string => {
+        if (!text.endsWith('い')) {
+            throw new Error(`Expected present short negative form to end with 'い', but got '${text}'`);
+        }
+        return text.slice(0, -1) + 'かった';
+    };
+
+    return {
+        text: generatePastShortNegative(presentShortNegativeForm.text),
+        pronunciation: mapPronunciation(presentShortNegativeForm.pronunciation, generatePastShortNegative),
+    };
+};
+
 export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
     const masuForm = generatePresentFormFromDictionaryForm(verb, 'affirmative');
     const masenForm = generatePresentFormFromDictionaryForm(verb, 'negative');
@@ -175,6 +189,7 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
     const pastShortForm = generatePastShortFormFromTeForm(teForm);
     const stemForm = generateStemFormFromDictionaryForm(verb);
     const presentShortNegativeForm = generatePresentShortNegativeFormFromDictionaryForm(verb);
+    const pastShortNegativeForm = generatePastShortNegativeForm(presentShortNegativeForm);
 
     const masuText = useMainText(masuForm);
     const masuPronunciation = useSecondaryText(masuForm);
@@ -194,6 +209,9 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
     const presentShortNegativeText = useMainText(presentShortNegativeForm);
     const presentShortNegativePronunciation = useSecondaryText(presentShortNegativeForm);
 
+    const pastShortNegativeText = useMainText(pastShortNegativeForm);
+    const pastShortNegativePronunciation = useSecondaryText(pastShortNegativeForm);
+
     return (
         <>
             <DescriptionElement mainText={masuText} secondaryText={masuPronunciation} label="Masu" />
@@ -204,6 +222,11 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
                 label="Present Short Negative"
             />
             <DescriptionElement mainText={pastShortText} secondaryText={pastShortPronunciation} label="Past Short" />
+            <DescriptionElement
+                mainText={pastShortNegativeText}
+                secondaryText={pastShortNegativePronunciation}
+                label="Past Short Negative"
+            />
             <DescriptionElement mainText={teText} secondaryText={tePronunciation} label="Te form" />
             <DescriptionElement mainText={stemFormText} secondaryText={stemFormPronunciation} label="Stem form" />
         </>
