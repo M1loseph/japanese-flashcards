@@ -360,7 +360,9 @@ describe('SRS hooks', () => {
             });
 
             await act(async () => {
-                await replaceSRSWords.result.current.mutateAsync([new WordLearningProgress(createProgress(wordId, { level: 1 }))]);
+                await replaceSRSWords.result.current.mutateAsync([
+                    new WordLearningProgress(createProgress(wordId, { level: 1 })),
+                ]);
             });
             await waitFor(() => expect(sRSWord.result.current.data).not.toBeNull());
 
