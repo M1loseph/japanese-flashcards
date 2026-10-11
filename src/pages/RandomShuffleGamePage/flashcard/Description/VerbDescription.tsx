@@ -198,12 +198,12 @@ export const VerbDescription: FC<VerbDescriptionProps> = ({ verb }) => {
         <>
             <DescriptionElement mainText={masuText} secondaryText={masuPronunciation} label="Masu" />
             <DescriptionElement mainText={masenText} secondaryText={masenPronunciation} label="Masen" />
-            <DescriptionElement mainText={pastShortText} secondaryText={pastShortPronunciation} label="Past Short" />
             <DescriptionElement
                 mainText={presentShortNegativeText}
                 secondaryText={presentShortNegativePronunciation}
                 label="Present Short Negative"
             />
+            <DescriptionElement mainText={pastShortText} secondaryText={pastShortPronunciation} label="Past Short" />
             <DescriptionElement mainText={teText} secondaryText={tePronunciation} label="Te form" />
             <DescriptionElement mainText={stemFormText} secondaryText={stemFormPronunciation} label="Stem form" />
         </>

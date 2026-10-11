@@ -58,10 +58,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'かいます',
             masen: '買いません',
             masenPronunciation: 'かいません',
-            pastShort: '買った',
-            pastShortPronunciation: 'かった',
             shortNegative: '買わない',
             shortNegativePronunciation: 'かわない',
+            pastShort: '買った',
+            pastShortPronunciation: 'かった',
             teForm: '買って',
             teFormPronunciation: 'かって',
             stem: '買い',
@@ -74,10 +74,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'かきます',
             masen: '書きません',
             masenPronunciation: 'かきません',
-            pastShort: '書いた',
-            pastShortPronunciation: 'かいた',
             shortNegative: '書かない',
             shortNegativePronunciation: 'かかない',
+            pastShort: '書いた',
+            pastShortPronunciation: 'かいた',
             teForm: '書いて',
             teFormPronunciation: 'かいて',
             stem: '書き',
@@ -90,10 +90,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'およぎます',
             masen: '泳ぎません',
             masenPronunciation: 'およぎません',
-            pastShort: '泳いだ',
-            pastShortPronunciation: 'およいだ',
             shortNegative: '泳がない',
             shortNegativePronunciation: 'およがない',
+            pastShort: '泳いだ',
+            pastShortPronunciation: 'およいだ',
             teForm: '泳いで',
             teFormPronunciation: 'およいで',
             stem: '泳ぎ',
@@ -106,10 +106,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'はなします',
             masen: '話しません',
             masenPronunciation: 'はなしません',
-            pastShort: '話した',
-            pastShortPronunciation: 'はなした',
             shortNegative: '話さない',
             shortNegativePronunciation: 'はなさない',
+            pastShort: '話した',
+            pastShortPronunciation: 'はなした',
             teForm: '話して',
             teFormPronunciation: 'はなして',
             stem: '話し',
@@ -122,10 +122,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'まちます',
             masen: '待ちません',
             masenPronunciation: 'まちません',
-            pastShort: '待った',
-            pastShortPronunciation: 'まった',
             shortNegative: '待たない',
             shortNegativePronunciation: 'またない',
+            pastShort: '待った',
+            pastShortPronunciation: 'まった',
             teForm: '待って',
             teFormPronunciation: 'まって',
             stem: '待ち',
@@ -138,10 +138,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'しにます',
             masen: '死にません',
             masenPronunciation: 'しにません',
-            pastShort: '死んだ',
-            pastShortPronunciation: 'しんだ',
             shortNegative: '死なない',
             shortNegativePronunciation: 'しなない',
+            pastShort: '死んだ',
+            pastShortPronunciation: 'しんだ',
             teForm: '死んで',
             teFormPronunciation: 'しんで',
             stem: '死に',
@@ -154,10 +154,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'あそびます',
             masen: '遊びません',
             masenPronunciation: 'あそびません',
-            pastShort: '遊んだ',
-            pastShortPronunciation: 'あそんだ',
             shortNegative: '遊ばない',
             shortNegativePronunciation: 'あそばない',
+            pastShort: '遊んだ',
+            pastShortPronunciation: 'あそんだ',
             teForm: '遊んで',
             teFormPronunciation: 'あそんで',
             stem: '遊び',
@@ -170,10 +170,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'のみます',
             masen: '飲みません',
             masenPronunciation: 'のみません',
-            pastShort: '飲んだ',
-            pastShortPronunciation: 'のんだ',
             shortNegative: '飲まない',
             shortNegativePronunciation: 'のまない',
+            pastShort: '飲んだ',
+            pastShortPronunciation: 'のんだ',
             teForm: '飲んで',
             teFormPronunciation: 'のんで',
             stem: '飲み',
@@ -186,10 +186,10 @@ describe('VerbDescription', () => {
             masuPronunciation: 'かえります',
             masen: '帰りません',
             masenPronunciation: 'かえりません',
-            pastShort: '帰った',
-            pastShortPronunciation: 'かえった',
             shortNegative: '帰らない',
             shortNegativePronunciation: 'かえらない',
+            pastShort: '帰った',
+            pastShortPronunciation: 'かえった',
             teForm: '帰って',
             teFormPronunciation: 'かえって',
             stem: '帰り',
@@ -204,10 +204,10 @@ describe('VerbDescription', () => {
             masuPronunciation,
             masen,
             masenPronunciation,
-            pastShort,
-            pastShortPronunciation,
             shortNegative,
             shortNegativePronunciation,
+            pastShort,
+            pastShortPronunciation,
             teForm,
             teFormPronunciation,
             stem,
@@ -217,8 +217,8 @@ describe('VerbDescription', () => {
 
             expectDescriptionRow('Masu', masu, masuPronunciation);
             expectDescriptionRow('Masen', masen, masenPronunciation);
-            expectDescriptionRow('Past Short', pastShort, pastShortPronunciation);
             expectDescriptionRow('Present Short Negative', shortNegative, shortNegativePronunciation);
+            expectDescriptionRow('Past Short', pastShort, pastShortPronunciation);
             expectDescriptionRow('Te form', teForm, teFormPronunciation);
             expectDescriptionRow('Stem form', stem, stemPronunciation);
         },
@@ -234,8 +234,8 @@ describe('VerbDescription', () => {
 
         expectDescriptionRow('Masu', '食べます', 'たべます');
         expectDescriptionRow('Masen', '食べません', 'たべません');
-        expectDescriptionRow('Past Short', '食べた', 'たべた');
         expectDescriptionRow('Present Short Negative', '食べない', 'たべない');
+        expectDescriptionRow('Past Short', '食べた', 'たべた');
         expectDescriptionRow('Te form', '食べて', 'たべて');
         expectDescriptionRow('Stem form', '食べ', 'たべ');
     });
@@ -258,7 +258,7 @@ describe('VerbDescription', () => {
                 present_short_negative_form: { text: 'しない' },
                 te_form: { text: 'して' },
             },
-            ['します', 'しません', 'した', 'しない', 'して', 'し'],
+            ['します', 'しません', 'しない', 'した', 'して', 'し'],
             [undefined, undefined, undefined, undefined, undefined, undefined],
         ],
         [
@@ -269,16 +269,16 @@ describe('VerbDescription', () => {
                 present_short_negative_form: { text: '来ない', pronunciation: 'こない' },
                 te_form: { text: '来て', pronunciation: 'きて' },
             },
-            ['来ます', '来ません', '来た', '来ない', '来て', '来'],
-            ['きます', 'きません', 'きた', 'こない', 'きて', 'き'],
+            ['来ます', '来ません', '来ない', '来た', '来て', '来'],
+            ['きます', 'きません', 'こない', 'きた', 'きて', 'き'],
         ],
     ] as const)('renders supplied irregular forms for %s', (verb, text, pronunciation) => {
         renderVerbDescription(verb as IrregularVerb);
 
         expectDescriptionRow('Masu', text[0], pronunciation[0]);
         expectDescriptionRow('Masen', text[1], pronunciation[1]);
-        expectDescriptionRow('Past Short', text[2], pronunciation[2]);
-        expectDescriptionRow('Present Short Negative', text[3], pronunciation[3]);
+        expectDescriptionRow('Present Short Negative', text[2], pronunciation[2]);
+        expectDescriptionRow('Past Short', text[3], pronunciation[3]);
         expectDescriptionRow('Te form', text[4], pronunciation[4]);
         expectDescriptionRow('Stem form', text[5], pronunciation[5]);
     });

@@ -261,6 +261,8 @@ describe('SRS hooks', () => {
                 await replaceSRSWords.result.current.mutateAsync([review]);
             });
 
+            await waitFor(() => expect(replaceSRSWords.result.current.isSuccess).toBe(true));
+
             expect(await db.wordProgress.get({ wordId })).toEqual(progress);
         });
 
