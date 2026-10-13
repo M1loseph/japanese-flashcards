@@ -72,7 +72,7 @@ const sakura_1_8: TranslatedJapaneseText[] = [
         formality: 'formal',
         en: "I don't like tea.",
         pl: 'Nie lubię herbaty.',
-        jp: { text: 'お茶が好きじゃないです。', pronunciation: 'おちゃがすきじゃないです。' },
+        jp: { text: 'お茶は好きじゃないです。', pronunciation: 'おちゃはすきじゃないです。' },
     },
     {
         id: '24449c9b-4587-4953-b787-c848f3228918',
