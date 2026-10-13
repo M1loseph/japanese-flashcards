@@ -220,6 +220,13 @@ const sakura_5_2: TranslatedJapaneseText[] = [
         pl: 'Pierścionek (na palec)',
         jp: { text: '指輪', pronunciation: 'ゆびわ' },
     },
+    {
+        id: '19549ac4-7b62-4374-9c2d-3da3fdaed0ec',
+        type: 'noun',
+        en: 'Scarf (light)',
+        pl: 'Apaszka / Lekki szalik',
+        jp: { text: 'スカーフ' },
+    },
 ];
 
 export const sakura5_2Bag: WordBag = {

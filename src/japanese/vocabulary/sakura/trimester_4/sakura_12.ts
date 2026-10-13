@@ -112,8 +112,8 @@ const sakura_4_12: TranslatedJapaneseText[] = [
     {
         id: '52fd2943-c9ed-48af-b9cb-67d3f3fcb1fa',
         type: 'noun',
-        en: 'Scarf',
-        pl: 'Szalik',
+        en: 'Scarf (thick, warm)',
+        pl: 'Szalik (gruby, ciepły)',
         jp: { text: 'マフラー' },
     },
     {
