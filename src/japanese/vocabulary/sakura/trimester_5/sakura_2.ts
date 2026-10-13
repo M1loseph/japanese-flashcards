@@ -213,6 +213,13 @@ const sakura_5_2: TranslatedJapaneseText[] = [
         pl: 'Podkreślenie',
         jp: { text: '下線', pronunciation: 'かせん' },
     },
+    {
+        id: '5d332398-1f3d-455b-97ce-26a414ce497e',
+        type: 'noun',
+        en: 'Ring (finger)',
+        pl: 'Pierścionek (na palec)',
+        jp: { text: '指輪', pronunciation: 'ゆびわ' },
+    },
 ];
 
 export const sakura5_2Bag: WordBag = {
