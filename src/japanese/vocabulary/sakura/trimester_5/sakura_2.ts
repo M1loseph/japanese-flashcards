@@ -227,6 +227,13 @@ const sakura_5_2: TranslatedJapaneseText[] = [
         pl: 'Apaszka / Lekki szalik',
         jp: { text: 'スカーフ' },
     },
+    {
+        id: 'f3329dc4-d63a-4147-9e27-88542c609590',
+        type: 'noun',
+        en: 'Shop assistant / Shop employee',
+        pl: 'Sprzedawca / Pracownik sklepu',
+        jp: { text: '店員', pronunciation: 'てんいん' },
+    },
 ];
 
 export const sakura5_2Bag: WordBag = {
