@@ -206,6 +206,13 @@ const sakura_5_2: TranslatedJapaneseText[] = [
         pl: 'Nosić (okulary)',
         jp: { text: 'かける' },
     },
+    {
+        id: 'c837beed-82c5-4972-92f5-d6d369a654e5',
+        type: 'noun',
+        en: 'Underline',
+        pl: 'Podkreślenie',
+        jp: { text: '下線', pronunciation: 'かせん' },
+    },
 ];
 
 export const sakura5_2Bag: WordBag = {
