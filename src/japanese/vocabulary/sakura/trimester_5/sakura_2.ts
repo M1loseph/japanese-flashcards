@@ -234,6 +234,13 @@ const sakura_5_2: TranslatedJapaneseText[] = [
         pl: 'Sprzedawca / Pracownik sklepu',
         jp: { text: '店員', pronunciation: 'てんいん' },
     },
+    {
+        id: 'c8c0430d-ab36-4a3d-b3ad-c64ac701771f',
+        type: 'pronoun',
+        en: 'Which one (of three or more)',
+        pl: 'Który (z trzech lub więcej)',
+        jp: { text: 'どれ' },
+    },
 ];
 
 export const sakura5_2Bag: WordBag = {
