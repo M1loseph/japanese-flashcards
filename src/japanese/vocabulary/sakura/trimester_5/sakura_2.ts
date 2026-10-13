@@ -213,6 +213,34 @@ const sakura_5_2: TranslatedJapaneseText[] = [
         pl: 'Podkreślenie',
         jp: { text: '下線', pronunciation: 'かせん' },
     },
+    {
+        id: '5d332398-1f3d-455b-97ce-26a414ce497e',
+        type: 'noun',
+        en: 'Ring (finger)',
+        pl: 'Pierścionek (na palec)',
+        jp: { text: '指輪', pronunciation: 'ゆびわ' },
+    },
+    {
+        id: '19549ac4-7b62-4374-9c2d-3da3fdaed0ec',
+        type: 'noun',
+        en: 'Scarf (light)',
+        pl: 'Apaszka / Lekki szalik',
+        jp: { text: 'スカーフ' },
+    },
+    {
+        id: 'f3329dc4-d63a-4147-9e27-88542c609590',
+        type: 'noun',
+        en: 'Shop assistant / Shop employee',
+        pl: 'Sprzedawca / Pracownik sklepu',
+        jp: { text: '店員', pronunciation: 'てんいん' },
+    },
+    {
+        id: 'c8c0430d-ab36-4a3d-b3ad-c64ac701771f',
+        type: 'pronoun',
+        en: 'Which one (of three or more)',
+        pl: 'Który (z trzech lub więcej)',
+        jp: { text: 'どれ' },
+    },
 ];
 
 export const sakura5_2Bag: WordBag = {
