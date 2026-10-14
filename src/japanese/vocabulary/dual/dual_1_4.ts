@@ -1,6 +1,6 @@
 import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-const dual_2026: TranslatedJapaneseText[] = [
+const dual_1_4: TranslatedJapaneseText[] = [
     {
         id: 'dc336152-3dcb-4a4f-9c0f-6da83b83377f',
         type: 'noun',
@@ -404,8 +404,8 @@ const dual_2026: TranslatedJapaneseText[] = [
     {
         id: '11a01e9e-3daf-416d-8c75-2d667bc65b12',
         type: 'adverb',
-        en: 'Nowhere',
-        pl: 'Nigdzie',
+        en: 'Anywhere',
+        pl: 'Gdziekolwiek',
         jp: { text: 'どこにも' },
     },
     {
@@ -423,11 +423,108 @@ const dual_2026: TranslatedJapaneseText[] = [
         pl: 'Lunch (w stylu zachodnim)',
         jp: { text: 'ランチ' },
     },
+    {
+        id: 'fb8fffa9-7729-425c-a0a6-67e496605ca3',
+        type: 'phrase',
+        formality: 'informal',
+        en: "Naomi's hair is long.",
+        pl: 'Włosy Naomi są długie.',
+        jp: { text: 'ナオミは髪が長い。', pronunciation: 'ナオミはかみがながい。' },
+    },
+    {
+        id: '95d48775-a41d-4175-850d-84ea93a07215',
+        type: 'phrase',
+        formality: 'formal',
+        en: 'This is a watch which I got from my father.',
+        pl: 'To jest zegarek, który dostałem od mojego ojca.',
+        jp: { text: 'これは父にもらった時計です。', pronunciation: 'これはちちにもらったとけいです。' },
+    },
+    {
+        id: 'f5b1fb34-4246-48f1-ace4-ce54e1046754',
+        type: 'phrase',
+        formality: 'formal',
+        en: 'What should we do?',
+        pl: 'Co powinniśmy zrobić?',
+        jp: { text: 'どうしますか。' },
+    },
+    {
+        id: '2ed4e168-5b7f-4e8d-93b7-d5272a5732c5',
+        type: 'noun',
+        en: 'Height / Stature',
+        pl: 'Wzrost',
+        jp: { text: '背', pronunciation: 'せ' },
+    },
+    {
+        id: '191d60b5-bdd8-43b9-9d56-e999bfce5c85',
+        type: 'verb',
+        verb_type: 'godan',
+        transitivity: 'transitive',
+        en: 'Learn / Take lessons',
+        pl: 'Uczyć się / Brać lekcje',
+        jp: { text: '習う', pronunciation: 'ならう' },
+    },
+    {
+        id: '3e64d59c-2c80-49f3-8526-655409fb48fa',
+        type: 'phrase',
+        formality: 'informal',
+        en: "I studied, but I didn't understand.",
+        pl: 'Uczyłem się, ale nie zrozumiałem.',
+        jp: { text: '勉強したけど、分からなかった。', pronunciation: 'べんきょうしたけど、わからなかった。' },
+        description:
+            "Instead of けど, you can also use けれど or が. You can't use for example でも, because there is a comma in the sentence, and でも starts a new sentence.",
+    },
+    {
+        id: 'f23ee303-1e4d-41cc-8bdc-b62f8d8e0ce7',
+        type: 'phrase',
+        formality: 'informal',
+        en: "I started. But I didn't finish.",
+        pl: 'Zacząłem. Ale nie skończyłem.',
+        jp: { text: '始めた。でも終わらなかった。', pronunciation: 'はじめた。でもおわらなかった。' },
+        description: 'You may also use けれども, でも and しかし.',
+    },
+    {
+        id: '3948ff60-2211-440f-af3b-c0106093adae',
+        type: 'noun',
+        en: 'Heater',
+        pl: 'Grzejnik',
+        jp: { text: 'ヒーター' },
+    },
+    {
+        id: 'd6b44749-05da-449e-8431-499c7bb46427',
+        type: 'noun',
+        en: 'Text / Sentence',
+        pl: 'Tekst / Zdanie',
+        jp: { text: '文章', pronunciation: 'ぶんしょう' },
+    },
+    {
+        id: 'ed6f154e-1f35-4296-a984-fea89deb88c7',
+        type: 'verb',
+        verb_type: 'ichidan',
+        transitivity: 'transitive',
+        en: 'Think (about)',
+        pl: 'Myśleć (o)',
+        jp: { text: '考える', pronunciation: 'かんがえる' },
+    },
+    {
+        id: 'bc2005fd-6864-474b-81a1-ba17812044bf',
+        type: 'phrase',
+        formality: 'informal',
+        en: 'Except for pizza, they eat everything.',
+        pl: 'Poza pizzą, jedzą wszystko.',
+        jp: { text: 'ピザ以外は何でも食べる。', pronunciation: 'ピザいがいはなんでもたべる。' },
+    },
+    {
+        id: '75fef46c-d4a7-4186-9108-26e4a74efa8b',
+        type: 'pronoun',
+        en: 'Anybody',
+        pl: 'Ktokolwiek',
+        jp: { text: '誰でも', pronunciation: 'だれでも' },
+    },
 ];
 
-export const dual2026Bag: WordBag = {
+export const dual1_4Bag: WordBag = {
     id: 'a7333f6a-3dec-4b51-a59d-5f27866c1fe0',
-    name: 'Dual 2026',
+    name: 'Dual 1-4',
     category: 'dual',
-    words: dual_2026,
+    words: dual_1_4,
 };
