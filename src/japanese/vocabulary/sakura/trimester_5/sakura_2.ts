@@ -51,8 +51,8 @@ const sakura_5_2: TranslatedJapaneseText[] = [
     {
         id: '866c3b47-757e-4a93-8411-7cafc4ac2a29',
         type: 'noun',
-        en: 'Dress',
-        pl: 'Sukienka',
+        en: 'Dress (casual)',
+        pl: 'Sukienka (codzienna)',
         jp: { text: 'ワンピース' },
     },
     {
