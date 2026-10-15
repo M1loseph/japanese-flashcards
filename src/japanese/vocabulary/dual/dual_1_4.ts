@@ -520,6 +520,22 @@ const dual_1_4: TranslatedJapaneseText[] = [
         pl: 'Ktokolwiek',
         jp: { text: '誰でも', pronunciation: 'だれでも' },
     },
+    {
+        id: 'b951f860-d52c-46a2-ab07-59e094d4099e',
+        type: 'phrase',
+        formality: 'does-not-apply',
+        en: 'Anything / Everything',
+        pl: 'Cokolwiek / Wszystko',
+        jp: { text: '何でも', pronunciation: 'なんでも' },
+    },
+    {
+        id: 'dc58c254-5780-4264-b80c-96692209038c',
+        type: 'phrase',
+        formality: 'does-not-apply',
+        en: 'Anywhere',
+        pl: 'Gdziekolwiek',
+        jp: { text: 'どこでも' },
+    },
 ];
 
 export const dual1_4Bag: WordBag = {

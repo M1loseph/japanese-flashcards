@@ -1,0 +1,97 @@
+import type { TranslatedJapaneseText, WordBag } from '../../../types';
+
+const sakura_5_3: TranslatedJapaneseText[] = [
+    {
+        id: 'a20ad98f-4728-43c9-952a-426517d75768',
+        type: 'noun',
+        en: 'Condition / State / State (of health)',
+        pl: 'Stan (zdrowia)',
+        jp: { text: '具合', pronunciation: 'ぐあい' },
+    },
+    {
+        id: 'cc895ba2-3bc2-4023-8655-18bf0c0fe510',
+        type: 'phrase',
+        formality: 'formal',
+        en: 'I feel bad.',
+        pl: 'Czuję się źle.',
+        jp: { text: '具合が悪いです。', pronunciation: 'ぐあいがわるいです。' },
+    },
+    {
+        id: '68fb5fc5-a5cb-4ed4-9639-27dc40ea609a',
+        type: 'phrase',
+        formality: 'formal',
+        en: 'Which dress do you want?',
+        pl: 'Którą sukienkę chcesz?',
+        jp: { text: 'どのドレスが欲しいですか。', pronunciation: 'どのどれすがほしいですか。' },
+    },
+    {
+        id: '6bd79f74-9758-4414-bf3e-2435d3bf5ea8',
+        type: 'pronoun',
+        en: 'Which (of two)',
+        pl: 'Który (z dwóch)',
+        jp: { text: 'どちら' },
+    },
+    {
+        id: 'b2ad7013-e794-48d2-a534-3542c8af3f48',
+        type: 'noun',
+        en: 'Customer',
+        pl: 'Klient',
+        jp: { text: 'お客さん', pronunciation: 'おきゃくさん' },
+    },
+    {
+        id: 'b598b973-1bdf-4b0e-b3ec-a411a0262bcc',
+        type: 'noun',
+        en: 'Dress (formal)',
+        pl: 'Sukienka (formalna)',
+        jp: { text: 'ドレス' },
+    },
+    {
+        id: '56348544-50b3-4a71-8cf5-1d154a8570b1',
+        type: 'noun',
+        en: 'Green',
+        pl: 'Zielony',
+        jp: { text: '緑', pronunciation: 'みどり' },
+    },
+    {
+        id: '23c5d573-f334-4dce-97c8-02bb175ffa84',
+        type: 'noun',
+        en: 'Violet',
+        pl: 'Fioletowy',
+        jp: { text: '紫', pronunciation: 'むらさき' },
+    },
+    {
+        id: '019531c5-e344-4a20-afbd-347f0f8a6383',
+        type: 'noun',
+        en: 'Pink',
+        pl: 'Różowy',
+        jp: { text: 'ピンク' },
+    },
+    {
+        id: 'b384366d-f4ca-4b6e-a884-e09b856a038f',
+        type: 'noun',
+        en: 'Grey',
+        pl: 'Szary',
+        jp: { text: '灰色', pronunciation: 'はいいろ' },
+    },
+    {
+        id: '0f9b2f4d-90b5-484a-abd3-16736976eeb5',
+        type: 'noun',
+        en: 'Grey (loan word)',
+        pl: 'Szary (zapożyczone słowo)',
+        jp: { text: 'グレー' },
+    },
+    {
+        id: 'b48497a3-c7d1-4b03-84b0-99d26108ca38',
+        type: 'noun',
+        en: 'Orange (color)',
+        pl: 'Pomarańczowy',
+        jp: { text: 'オレンジ' },
+    },
+];
+
+export const sakura5_3Bag: WordBag = {
+    id: '8516c8cd-c7d3-4574-b6ab-8bc81244e08e',
+    name: 'Sakura #5.3',
+    category: 'sakura',
+    words: sakura_5_3,
+};
