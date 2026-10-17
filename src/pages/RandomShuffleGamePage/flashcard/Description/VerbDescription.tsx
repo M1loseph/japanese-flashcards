@@ -54,26 +54,28 @@ const generateTeFormFromDictionaryForm = (verb: GodanVerb | IchidanVerb | Irregu
     if (verb.te_form) {
         return verb.te_form;
     }
-    if (verb.verb_type === 'ichidan') {
-        if (!verb.jp.text.endsWith('る')) {
-            throw new Error(`Expected ichidan verb to end with 'る', but got '${verb.jp.text}'`);
+    const generateTeForm = (dictionaryForm: string): string => {
+        if (verb.verb_type === 'ichidan') {
+            if (!dictionaryForm.endsWith('る')) {
+                throw new Error(`Expected ichidan verb to end with 'る', but got '${verb.jp.text}'`);
+            }
+            return dictionaryForm.slice(0, -1) + 'て';
         }
-        const text = verb.jp.text.slice(0, -1) + 'て';
-        const pronunciation = verb.jp.pronunciation ? verb.jp.pronunciation.slice(0, -1) + 'て' : undefined;
-        return { text, pronunciation };
-    }
-    if (verb.verb_type === 'godan') {
-        const lastChar = verb.jp.text.slice(-1);
-        const teFormEnding = GODAN_TE_FORM_MAP[lastChar];
-        if (!teFormEnding) {
-            throw new Error(`Unexpected last character '${lastChar}' in godan verb '${verb.jp.text}'`);
+        if (verb.verb_type === 'godan') {
+            const lastChar = dictionaryForm.slice(-1);
+            const teFormEnding = GODAN_TE_FORM_MAP[lastChar];
+            if (!teFormEnding) {
+                throw new Error(`Unexpected last character '${lastChar}' in godan verb '${verb.jp.text}'`);
+            }
+            return dictionaryForm.slice(0, -1) + teFormEnding;
         }
-        const text = verb.jp.text.slice(0, -1) + teFormEnding;
-        const pronunciation = verb.jp.pronunciation ? verb.jp.pronunciation.slice(0, -1) + teFormEnding : undefined;
-        return { text, pronunciation };
-    }
-    const _exhaustiveCheck: never = verb;
-    return _exhaustiveCheck;
+        const _exhaustiveCheck: never = verb;
+        return _exhaustiveCheck;
+    };
+    return {
+        text: generateTeForm(verb.jp.text),
+        pronunciation: mapPronunciation(verb.jp.pronunciation, generateTeForm),
+    };
 };
 
 const generatePastShortFormFromTeForm = (teForm: TextWithPronunciation): TextWithPronunciation => {

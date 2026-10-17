@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/vitest';
 import { render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import type { GodanVerb, IchidanVerb, IrregularVerb } from '../../../../japanese/types';
+import type { GodanVerb, IchidanVerb, IrregularVerb, Pronunciation } from '../../../../japanese/types';
 import {
     ApplicationUserSettingContext,
     type ApplicationUserSettingContextType,
@@ -23,7 +23,7 @@ const renderVerbDescription = (verb: GodanVerb | IchidanVerb | IrregularVerb, si
     );
 };
 
-const createGodanVerb = (text: string, pronunciation?: string): GodanVerb => ({
+const createGodanVerb = (text: string, pronunciation?: Pronunciation): GodanVerb => ({
     id: '00000000-0000-4000-8000-000000000001',
     type: 'verb',
     verb_type: 'godan',
@@ -260,6 +260,38 @@ describe('VerbDescription', () => {
         expectDescriptionRow('Past Short Negative', '食べなかった', 'たべなかった');
         expectDescriptionRow('Te form', '食べて', 'たべて');
         expectDescriptionRow('Stem form', '食べ', 'たべ');
+    });
+
+    it('renders all derived forms with array pronunciations in normal mode', () => {
+        renderVerbDescription(createGodanVerb('書く', ['かく', 'さく']));
+
+        expectDescriptionRow('Masu', '書きます', 'かきます / さきます');
+        expectDescriptionRow('Masen', '書きません', 'かきません / さきません');
+        expectDescriptionRow('Present Short Negative', '書かない', 'かかない / さかない');
+        expectDescriptionRow('Past Short', '書いた', 'かいた / さいた');
+        expectDescriptionRow('Past Short Negative', '書かなかった', 'かかなかった / さかなかった');
+        expectDescriptionRow('Te form', '書いて', 'かいて / さいて');
+        expectDescriptionRow('Stem form', '書き', 'かき / さき');
+    });
+
+    it('renders all derived forms with array pronunciations in simplified mode', () => {
+        renderVerbDescription(createGodanVerb('書く', ['かく', 'さく']), true);
+
+        const expectedForms = [
+            ['Masu', '書きます', 'かきます / さきます'],
+            ['Masen', '書きません', 'かきません / さきません'],
+            ['Present Short Negative', '書かない', 'かかない / さかない'],
+            ['Past Short', '書いた', 'かいた / さいた'],
+            ['Past Short Negative', '書かなかった', 'かかなかった / さかなかった'],
+            ['Te form', '書いて', 'かいて / さいて'],
+            ['Stem form', '書き', 'かき / さき'],
+        ];
+
+        for (const [label, text, pronunciation] of expectedForms) {
+            const row = within(getDescriptionRow(label));
+            expect(row.getByText(pronunciation)).toBeInTheDocument();
+            expect(row.queryByText(text)).not.toBeInTheDocument();
+        }
     });
 
     it('uses the supplied short-negative form for non irregular verbs', () => {
