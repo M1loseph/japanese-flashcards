@@ -87,6 +87,29 @@ const sakura_5_3: TranslatedJapaneseText[] = [
         pl: 'Pomarańczowy',
         jp: { text: 'オレンジ' },
     },
+    {
+        id: '017b8b51-74b0-4596-b80d-9964e477e1ae',
+        type: 'noun',
+        en: 'Wedding',
+        pl: 'Ślub',
+        jp: { text: '結婚式', pronunciation: 'けっこんしき' },
+    },
+    {
+        id: '2441c34c-997c-4d66-bc4e-eab9c9eee3b2',
+        type: 'noun',
+        en: 'Funeral',
+        pl: 'Pogrzeb',
+        jp: { text: '葬式', pronunciation: 'そうしき' },
+    },
+    {
+        id: '1669b192-135d-4b00-be56-fea9aae5320a',
+        type: 'verb',
+        verb_type: 'godan',
+        transitivity: 'intransitive',
+        en: 'Die',
+        pl: 'Umrzeć',
+        jp: { text: '死ぬ', pronunciation: 'しぬ' },
+    },
 ];
 
 export const sakura5_3Bag: WordBag = {
