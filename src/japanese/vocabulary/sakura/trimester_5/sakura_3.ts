@@ -22,7 +22,7 @@ const sakura_5_3: TranslatedJapaneseText[] = [
         formality: 'formal',
         en: 'Which dress do you want?',
         pl: 'Którą sukienkę chcesz?',
-        jp: { text: 'どのドレスが欲しいですか。', pronunciation: 'どのどれすがほしいですか。' },
+        jp: { text: 'どのドレスが欲しいですか。', pronunciation: 'どのドレスがほしいですか。' },
     },
     {
         id: '6bd79f74-9758-4414-bf3e-2435d3bf5ea8',
