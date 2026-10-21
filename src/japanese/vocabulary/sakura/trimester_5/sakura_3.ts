@@ -110,6 +110,13 @@ const sakura_5_3: TranslatedJapaneseText[] = [
         pl: 'Umrzeć',
         jp: { text: '死ぬ', pronunciation: 'しぬ' },
     },
+    {
+        id: '430fc79c-1de7-4f8c-9f4c-0bb91063d973',
+        type: 'noun',
+        en: 'Ash',
+        pl: 'Popiół',
+        jp: { text: '灰', pronunciation: 'はい' },
+    },
 ];
 
 export const sakura5_3Bag: WordBag = {
