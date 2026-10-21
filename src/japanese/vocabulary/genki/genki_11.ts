@@ -351,8 +351,8 @@ const genki_11: TranslatedJapaneseText[] = [
         id: 'd8e8fb31-f62a-454e-9631-b8b3434874c1',
         type: 'phrase',
         formality: 'does-not-apply',
-        en: 'Long time no see.',
-        pl: 'Dawno się nie widzieliśmy.',
+        en: 'Long time no see',
+        pl: 'Dawno się nie widzieliśmy',
         jp: { text: '久しぶり', pronunciation: 'ひさしぶり' },
     },
     {
