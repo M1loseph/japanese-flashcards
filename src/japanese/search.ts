@@ -38,6 +38,7 @@ import { familyBag } from './vocabulary/family';
 import { genki0Bag } from './vocabulary/genki/genki_0';
 import { genki1Bag } from './vocabulary/genki/genki_1';
 import { genki10Bag } from './vocabulary/genki/genki_10';
+import { genki11Bag } from './vocabulary/genki/genki_11';
 import { genki1MajorsBag } from './vocabulary/genki/genki_1_majors';
 import { genki2Bag } from './vocabulary/genki/genki_2';
 import { genki3Bag } from './vocabulary/genki/genki_3';
@@ -184,6 +185,7 @@ export const availableWordBags: readonly WordBag[] = [
     genki8Bag,
     genki9Bag,
     genki10Bag,
+    genki11Bag,
     sakura1_1Bag,
     sakura1_2Bag,
     sakura1_3Bag,
