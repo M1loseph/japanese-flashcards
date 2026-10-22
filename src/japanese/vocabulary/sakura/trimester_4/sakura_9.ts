@@ -33,7 +33,7 @@ const sakura_4_9: TranslatedJapaneseText[] = [
         id: '9c42de4e-5e4e-4bf1-98cc-ce6260d21909',
         type: 'noun',
         en: 'Handkerchief',
-        pl: 'Chusteczka (materiałowa)',
+        pl: 'Chusteczka do rąk (materiałowa)',
         jp: { text: 'ハンカチ' },
     },
     {
