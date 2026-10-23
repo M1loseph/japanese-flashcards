@@ -280,7 +280,7 @@ const genki_7: TranslatedJapaneseText[] = [
     {
         id: '4a62a4a8-4e99-4ca4-be9a-dd0378ab41d4',
         type: 'phrase',
-        en: 'Nothing',
+        en: 'Nothing / (Not) Anything',
         pl: 'Nic',
         jp: { text: '何も', pronunciation: 'なにも' },
     },

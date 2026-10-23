@@ -404,8 +404,8 @@ const dual_1_4: TranslatedJapaneseText[] = [
     {
         id: '11a01e9e-3daf-416d-8c75-2d667bc65b12',
         type: 'adverb',
-        en: 'Anywhere / Nowhere',
-        pl: 'Gdziekolwiek / Nigdzie',
+        en: '(Not) Anywhere / Nowhere',
+        pl: '(Nie) Gdziekolwiek / Nigdzie',
         jp: { text: 'どこにも' },
     },
     {
