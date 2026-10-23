@@ -13,7 +13,7 @@ const sakura_2_2: TranslatedJapaneseText[] = [
         id: 'b89c424e-a7d8-40e9-b35d-cfbf2509a2d2',
         type: 'phrase',
         formality: 'does-not-apply',
-        en: 'Nothing',
+        en: 'Nothing / (Not) Anything',
         pl: 'Nic',
         jp: { text: '何も', pronunciation: 'なにも' },
     },
