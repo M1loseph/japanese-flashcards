@@ -1,5 +1,16 @@
 import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+    IconAbacus,
+    IconAlarm,
+    IconBook,
+    IconDeviceMobile,
+    IconFlower,
+    IconHeadphones,
+    IconSchool,
+    IconStar,
+    IconWorld,
+} from '@tabler/icons-react';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
 import { availableWordBags, findBagById } from '../../japanese';
 import { type WordBag, type WordBagCategory } from '../../japanese/types';
@@ -21,17 +32,53 @@ const MainPage: FC = () => {
         return acc;
     }, new Map<WordBagCategory, WordBag[]>());
 
-    const groupedBagsWithLabels = {
-        'Time ⏰': groupedBags.get('time') ?? [],
-        'Counting 🔢': groupedBags.get('counting') ?? [],
-        'Essentials 📌': groupedBags.get('essentials') ?? [],
-        'Genki books 📚': groupedBags.get('genki') ?? [],
-        'Sakura Classes 🎓': groupedBags.get('sakura') ?? [],
-        'Dual School 🏫': groupedBags.get('dual') ?? [],
-        'Geography 🌍 🌎 🌏': groupedBags.get('geography') ?? [],
-        'Duolingo 📱': groupedBags.get('duolingo') ?? [],
-        'JapanesePod101 🎧': groupedBags.get('japanesePod101') ?? [],
-    };
+    const groupedBagsWithLabels = [
+        {
+            name: 'Time',
+            bags: groupedBags.get('time') ?? [],
+            icon: IconAlarm,
+        },
+        {
+            name: 'Counting',
+            bags: groupedBags.get('counting') ?? [],
+            icon: IconAbacus,
+        },
+        {
+            name: 'Essentials',
+            bags: groupedBags.get('essentials') ?? [],
+            icon: IconStar,
+        },
+        {
+            name: 'Genki books',
+            bags: groupedBags.get('genki') ?? [],
+            icon: IconBook,
+        },
+        {
+            name: 'Sakura Classes',
+            bags: groupedBags.get('sakura') ?? [],
+            icon: IconFlower,
+        },
+        {
+            name: 'Dual School',
+            bags: groupedBags.get('dual') ?? [],
+            icon: IconSchool,
+        },
+        {
+            name: 'Geography',
+            bags: groupedBags.get('geography') ?? [],
+            icon: IconWorld,
+        },
+        {
+            name: 'Duolingo',
+            bags: groupedBags.get('duolingo') ?? [],
+            icon: IconDeviceMobile,
+        },
+        {
+            name: 'JapanesePod101',
+            bags: groupedBags.get('japanesePod101') ?? [],
+            icon: IconHeadphones,
+        },
+    ];
 
     const handleSelectAll = (bags: WordBag[]) => {
         selectBags(bags.map((bag) => bag.id));
@@ -64,12 +111,13 @@ const MainPage: FC = () => {
             <main className="pb-24 grow">
                 <ExistingGameAlert />
                 <div className="space-y-2">
-                    {Object.entries(groupedBagsWithLabels).map(
-                        ([category, bags]) =>
+                    {groupedBagsWithLabels.map(
+                        ({ name, bags, icon }) =>
                             bags.length > 0 && (
                                 <CategorySection
-                                    key={category}
-                                    title={category}
+                                    key={name}
+                                    title={name}
+                                    categoryIcon={icon}
                                     bags={bags}
                                     selectedBagIds={selectedWordBags}
                                     onToggleBag={handleToggleWordBag}

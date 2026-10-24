@@ -1,10 +1,11 @@
-import { IconChevronDown } from '@tabler/icons-react';
+import { IconChevronDown, type Icon } from '@tabler/icons-react';
 import { type FC, useState } from 'react';
 import { type WordBag } from '../../japanese/types';
 import { WordBagCard } from './WordBagCard';
 
 interface CategorySectionProps {
     title: string;
+    categoryIcon: Icon,
     bags: readonly WordBag[];
     selectedBagIds: Set<string>;
     onToggleBag: (id: string) => void;
@@ -14,6 +15,7 @@ interface CategorySectionProps {
 
 export const CategorySection: FC<CategorySectionProps> = ({
     title,
+    categoryIcon: CategoryIcon,
     bags,
     selectedBagIds,
     onToggleBag,
@@ -59,6 +61,7 @@ export const CategorySection: FC<CategorySectionProps> = ({
                 <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
                     <span className="w-1 h-6 bg-secondary rounded-full"></span>
                     {title}
+                    <CategoryIcon className="w-5 h-5" />
                     {selectedCount > 0 && (
                         <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
                             {selectedCount}/{bags.length}
