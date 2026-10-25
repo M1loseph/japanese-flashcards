@@ -1,3 +1,4 @@
+import { FlagGB, FlagPL } from '@tabler/flags-react';
 import { type FC } from 'react';
 import { type TranslationLanguage, TranslationLanguages } from '../types/TranslationLanguage';
 import { BigButton } from './BigButton';
@@ -21,13 +22,19 @@ export const LanguageSelector: FC<LanguageSelectorProps> = ({ selectedLanguage, 
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mx-auto">
-            <BigButton iconDirection="row" onClick={handleSelectPolish} active={polishActive} text="Polish" icon="🇵🇱" />
+            <BigButton
+                iconDirection="row"
+                onClick={handleSelectPolish}
+                active={polishActive}
+                text="Polish"
+                icon={<FlagPL aria-hidden="true" />}
+            />
             <BigButton
                 iconDirection="row"
                 onClick={handleSelectEnglish}
                 active={englishActive}
                 text="English"
-                icon="🇬🇧"
+                icon={<FlagGB aria-hidden="true" />}
             />
         </div>
     );

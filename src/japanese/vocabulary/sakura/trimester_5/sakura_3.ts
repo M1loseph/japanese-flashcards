@@ -22,7 +22,7 @@ const sakura_5_3: TranslatedJapaneseText[] = [
         formality: 'formal',
         en: 'Which dress do you want?',
         pl: 'Którą sukienkę chcesz?',
-        jp: { text: 'どのドレスが欲しいですか。', pronunciation: 'どのどれすがほしいですか。' },
+        jp: { text: 'どのドレスが欲しいですか。', pronunciation: 'どのドレスがほしいですか。' },
     },
     {
         id: '6bd79f74-9758-4414-bf3e-2435d3bf5ea8',
@@ -109,6 +109,13 @@ const sakura_5_3: TranslatedJapaneseText[] = [
         en: 'Die',
         pl: 'Umrzeć',
         jp: { text: '死ぬ', pronunciation: 'しぬ' },
+    },
+    {
+        id: '430fc79c-1de7-4f8c-9f4c-0bb91063d973',
+        type: 'noun',
+        en: 'Ash',
+        pl: 'Popiół',
+        jp: { text: '灰', pronunciation: 'はい' },
     },
 ];
 
