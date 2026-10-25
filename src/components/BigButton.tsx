@@ -1,10 +1,10 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 type IconDirection = 'row' | 'col';
 
 interface BigButtonProps {
     onClick: () => void;
-    icon: string;
+    icon: ReactNode;
     active: boolean;
     text: string;
     description?: string;
