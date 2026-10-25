@@ -1,11 +1,11 @@
 import { IconChevronDown, type Icon } from '@tabler/icons-react';
-import { type FC, useState } from 'react';
+import { useState, type FC } from 'react';
 import { type WordBag } from '../../japanese/types';
 import { WordBagCard } from './WordBagCard';
 
 interface CategorySectionProps {
     title: string;
-    categoryIcon: Icon,
+    categoryIcon: Icon;
     bags: readonly WordBag[];
     selectedBagIds: Set<string>;
     onToggleBag: (id: string) => void;

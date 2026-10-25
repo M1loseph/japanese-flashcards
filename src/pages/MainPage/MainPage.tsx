@@ -1,5 +1,3 @@
-import { type FC } from 'react';
-import { useNavigate } from 'react-router-dom';
 import {
     IconAbacus,
     IconAlarm,
@@ -11,6 +9,8 @@ import {
     IconStar,
     IconWorld,
 } from '@tabler/icons-react';
+import { type FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ExistingGameAlert } from '../../components/ExistingGameAlert';
 import { availableWordBags, findBagById } from '../../japanese';
 import { type WordBag, type WordBagCategory } from '../../japanese/types';
