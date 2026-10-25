@@ -1,3 +1,4 @@
+import { IconBook, IconHorseToy } from '@tabler/icons-react';
 import { type FC } from 'react';
 import { createPortal } from 'react-dom';
 import { useApplicationUserSetting } from '../services/ApplicationUserSetting';
@@ -38,14 +39,14 @@ export const ApplicationUserSettingModal: FC<ApplicationUserSettingModalProps> =
                             active={!simplifiedMode}
                             text="Normal"
                             description="Contains Kanji"
-                            icon="📖"
+                            icon={<IconBook />}
                         />
                         <BigButton
                             onClick={() => setSimplifiedMode(true)}
                             active={simplifiedMode}
                             text="Simplified"
                             description="Only Kana (Hiragana/Katakana)"
-                            icon="⚡"
+                            icon={<IconHorseToy />}
                         />
                     </div>
                 </div>
