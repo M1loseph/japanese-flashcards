@@ -370,6 +370,13 @@ const genki_12: TranslatedJapaneseText[] = [
         pl: 'To samo',
         jp: { text: '同じ', pronunciation: 'おなじ' },
     },
+    {
+        id: '4a42aac8-b63b-42de-8e47-782a991d5179',
+        type: 'conjunction',
+        en: 'Moreover / Besides',
+        pl: 'Ponadto',
+        jp: { text: 'それに' },
+    },
 ];
 
 export const genki12Bag: WordBag = {
