@@ -6,12 +6,13 @@ export default mergeConfig(
     defineConfig({
         test: {
             globals: true,
+            pool: 'threads',
             environment: 'jsdom',
             setupFiles: ['./src/test/setup.ts'],
             coverage: {
                 provider: 'v8',
                 include: ['src/**/*.{ts,tsx}'],
-                exclude: ['src/japanese/vocabulary'],
+                exclude: ['src/japanese/vocabulary/**'],
             },
         },
     }),
