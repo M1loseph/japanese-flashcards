@@ -38,7 +38,10 @@ import { familyBag } from './vocabulary/family';
 import { genki0Bag } from './vocabulary/genki/genki_0';
 import { genki1Bag } from './vocabulary/genki/genki_1';
 import { genki10Bag } from './vocabulary/genki/genki_10';
+import { genki10PhrasesBag } from './vocabulary/genki/genki_10_phrases';
 import { genki11Bag } from './vocabulary/genki/genki_11';
+import { genki12Bag } from './vocabulary/genki/genki_12';
+import { genki12PhrasesBag } from './vocabulary/genki/genki_12_phrases';
 import { genki1MajorsBag } from './vocabulary/genki/genki_1_majors';
 import { genki2Bag } from './vocabulary/genki/genki_2';
 import { genki3Bag } from './vocabulary/genki/genki_3';
@@ -50,6 +53,7 @@ import { genki6PhrasesBag } from './vocabulary/genki/genki_6_phrases';
 import { genki7Bag } from './vocabulary/genki/genki_7';
 import { genki7PhrasesBag } from './vocabulary/genki/genki_7_phrases';
 import { genki8Bag } from './vocabulary/genki/genki_8';
+import { genki8PhrasesBag } from './vocabulary/genki/genki_8_phrases';
 import { genki9Bag } from './vocabulary/genki/genki_9';
 import { cardinalDirectionsBag } from './vocabulary/geography/cardinalDirections';
 import { continentsBag } from './vocabulary/geography/continents';
@@ -184,9 +188,13 @@ export const availableWordBags: readonly WordBag[] = [
     genki7Bag,
     genki7PhrasesBag,
     genki8Bag,
+    genki8PhrasesBag,
     genki9Bag,
     genki10Bag,
+    genki10PhrasesBag,
     genki11Bag,
+    genki12Bag,
+    genki12PhrasesBag,
     sakura1_1Bag,
     sakura1_2Bag,
     sakura1_3Bag,
