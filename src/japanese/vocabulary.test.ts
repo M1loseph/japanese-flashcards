@@ -59,6 +59,7 @@ describe('vocabulary', () => {
             '07f1820b-31fc-4a05-a932-f6e0278a6046',
             '67b581ee-e495-4fa7-8021-f7f2c038166b',
             '274f644a-d4cc-4575-b213-d8ac8761eb44',
+            'ba4a046b-20e6-4388-b82c-284c0fb19849',
         ];
 
         const allowedPunctuationInPl = ['.', '!', '?'];

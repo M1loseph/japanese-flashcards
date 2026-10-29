@@ -174,9 +174,9 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: '7f894dff-077b-4f14-a964-fe0640dbdc17',
         type: 'phrase',
-        formality: 'does-not-apply',
+        formality: 'formal',
         en: 'What is your country?',
-        pl: 'Jaki jest twój kraj?',
+        pl: 'Z jakiego kraju jesteś?',
         jp: { text: 'お国は？', pronunciation: 'おくには？' },
     },
     {
@@ -247,6 +247,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
         id: '7f9cd90b-bb54-433f-b8de-57ec25c8c81d',
         type: 'verb',
         verb_type: 'irregular',
+        transitivity: 'intransitive',
         en: 'Come',
         pl: 'Przychodzić',
         jp: { text: '来る', pronunciation: 'くる' },
@@ -257,8 +258,8 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: '925ac03f-1788-4852-a218-d0c0b1e3c3d8',
         type: 'suffix',
-        en: 'Citizen',
-        pl: 'Obywatel',
+        en: 'Citizen / Nationality',
+        pl: 'Obywatel / Narodowość',
         jp: { text: '人', pronunciation: 'じん' },
     },
     {
@@ -355,6 +356,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
     {
         id: 'ec13d53d-740c-4f5d-a355-768e5412f4d4',
         type: 'verb',
+        transitivity: 'intransitive',
         verb_type: 'ichidan',
         en: 'Can',
         pl: 'Potrafić',
@@ -371,7 +373,7 @@ const sakura_1_2: TranslatedJapaneseText[] = [
         id: 'b2e4706e-172b-4de0-a374-ca7de099cbb8',
         type: 'adverb',
         en: 'Not there yet / Still a long way to go',
-        pl: 'Jeszcze daleko / Nadal',
+        pl: 'Jeszcze daleko / Jeszcze dużo brakuje',
         jp: { text: 'まだまだ' },
     },
     {
