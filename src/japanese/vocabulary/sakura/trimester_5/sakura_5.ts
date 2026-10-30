@@ -1,0 +1,100 @@
+import type { TranslatedJapaneseText, WordBag } from '../../../types';
+
+const sakura_5_5: TranslatedJapaneseText[] = [
+    {
+        id: '20dd8e25-b539-47b5-9f40-4c863de9ba14',
+        type: 'noun',
+        en: 'Way (of going) / Route',
+        pl: 'Droga / Trasa',
+        jp: { text: '行き方', pronunciation: 'いきかた' },
+    },
+    {
+        id: 'c34b758d-460a-4945-82e6-79b14fec4da0',
+        type: 'phrase',
+        formality: 'formal',
+        en: 'Please tell me how to get to the station.',
+        pl: 'Proszę powiedz mi, jak dostać się na stację.',
+        jp: { text: '駅の行き方を教えてください。', pronunciation: 'えきのいきかたをおしえてください。' },
+    },
+    {
+        id: 'b779f391-eff3-4f4d-a48a-e3f70693102b',
+        type: 'noun',
+        en: 'Line (of text)',
+        pl: 'Linia (tekstu)',
+        jp: { text: '行', pronunciation: 'ぎょう' },
+    },
+    {
+        id: '16f935fa-98d2-4eed-8e1e-c9c33790458a',
+        type: 'numeral',
+        en: 'First line of text',
+        pl: 'Pierwsza linia (tekstu)',
+        jp: { text: '一行目', pronunciation: 'いちぎょうめ' },
+    },
+    {
+        id: 'da66f1fd-dc19-4299-b146-8aa92f923339',
+        type: 'numeral',
+        en: 'Second line of text',
+        pl: 'Druga linia (tekstu)',
+        jp: { text: '二行目', pronunciation: 'にぎょうめ' },
+    },
+    {
+        id: 'dc12eab5-0f6c-4914-8ce4-ef7c04e50842',
+        type: 'numeral',
+        en: 'Third line of text',
+        pl: 'Trzecia linia (tekstu)',
+        jp: { text: '三行目', pronunciation: 'さんぎょうめ' },
+    },
+    {
+        id: 'a7eb8e24-653a-45c3-afc2-27d2d665821e',
+        type: 'verb',
+        verb_type: 'suru',
+        en: 'To eat out',
+        pl: 'Jeść na mieście',
+        jp: { text: '外食をする', pronunciation: 'がいしょくをする' },
+    },
+    {
+        id: '82012ee8-9e5b-4e65-b5ed-750b4a558563',
+        type: 'noun',
+        en: 'Grocery store',
+        pl: 'Sklep spożywczy',
+        jp: { text: '食料品店', pronunciation: 'しょくりょうひんてん' },
+    },
+    {
+        id: '8c694f0a-be8f-4a6f-b7b1-dc417e1d8af2',
+        type: 'phrase',
+        formality: 'formal',
+        en: 'Please take a picture of me.',
+        pl: 'Proszę zrób mi zdjęcie.',
+        jp: { text: '私の写真を撮ってください。', pronunciation: 'わたしのしゃしんをとってください。' },
+    },
+    {
+        id: '4de6980e-bc6e-41d4-b1c0-8f422b62ec4c',
+        type: 'verb',
+        verb_type: 'godan',
+        transitivity: 'transitive',
+        en: 'To carry / To transport',
+        pl: 'Nieść / Transportować',
+        jp: { text: '運ぶ', pronunciation: 'はこぶ' },
+    },
+    {
+        id: '966939fa-8a38-40e5-9c2c-8fcd011aee0e',
+        type: 'noun',
+        en: 'Strength training',
+        pl: 'Trening siłowy',
+        jp: { text: '筋トレ', pronunciation: 'きんトレ' },
+    },
+    {
+        id: '9d8cf9c1-cd39-451a-a17a-306b1d32ad8d',
+        type: 'noun',
+        en: 'Column',
+        pl: 'Kolumna',
+        jp: { text: '列', pronunciation: 'れつ' },
+    },
+];
+
+export const sakura5_5Bag: WordBag = {
+    id: 'ce1de685-080b-40fa-94fc-480019331e13',
+    name: 'Sakura #5.5',
+    category: 'sakura',
+    words: sakura_5_5,
+};
