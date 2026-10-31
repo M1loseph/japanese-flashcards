@@ -83,6 +83,7 @@ const sakura_2_1: TranslatedJapaneseText[] = [
         en: 'Meal',
         pl: 'Posiłek',
         jp: { text: '食事', pronunciation: 'しょくじ' },
+        description: "It's more formal and polite than just saying 'ごはん'.",
     },
     {
         id: '8b9228e1-080e-44c4-9b47-1b7e846ab2fe',
