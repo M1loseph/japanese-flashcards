@@ -25,8 +25,8 @@ const genki_4: TranslatedJapaneseText[] = [
     {
         id: '30bc4fc1-f170-4ea5-9837-7adb58bbb71d',
         type: 'noun',
-        en: 'Class',
-        pl: 'Klasa',
+        en: 'Class (group of students) / Classroom',
+        pl: 'Klasa (grupa uczniów) / Sala lekcyjna',
         jp: { text: 'クラス' },
     },
     {

@@ -126,6 +126,14 @@ const sakura_2_9: TranslatedJapaneseText[] = [
         jp: { text: '無理をしないでください。', pronunciation: 'むりをしないでください。' },
     },
     {
+        id: '61e3aa35-ed57-4f52-94c5-6acb13e36bdd',
+        type: 'verb',
+        verb_type: 'suru',
+        en: 'To work too hard / To try too hard',
+        pl: 'Pracować zbyt ciężko / Próbować zbyt mocno',
+        jp: { text: '無理をする', pronunciation: 'むりをする' },
+    },
+    {
         id: '6918f4d4-b6db-4964-ba7e-a3729bf2db4e',
         type: 'adverb',
         en: 'Slowly',
