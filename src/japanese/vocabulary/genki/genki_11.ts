@@ -173,8 +173,8 @@ const genki_11: TranslatedJapaneseText[] = [
     {
         id: 'e9e61b1c-d519-4c1c-a6d3-07512397ff5c',
         type: 'noun',
-        en: 'Class',
-        pl: 'Zajęcia',
+        en: 'Class / Lesson',
+        pl: 'Lekcja / Zajęcia',
         jp: { text: '授業', pronunciation: 'じゅぎょう' },
     },
     {
