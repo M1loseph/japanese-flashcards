@@ -7,6 +7,7 @@ import { TimeContextProvider } from '../Time';
 import { MINIMUM_LEVEL } from './Stages';
 import {
     useAddNewWordsToSRS,
+    useAllSRSWords,
     useMarkWordsAsReviewedBatch,
     useReplaceSRSWords,
     useSRSWord,
@@ -158,32 +159,43 @@ describe('SRS hooks', () => {
                 },
             ]);
             expect(
-                queryClient.getQueryCache().find({ queryKey: ['databaseWords'] })?.observers[0]?.options.staleTime,
+                queryClient.getQueryCache().find({ queryKey: ['databaseWords', 'filtered'] })?.observers[0]?.options.staleTime,
             ).toBe(5 * 60 * 1000);
         });
 
-        it('removes orphaned progress records before returning the result', async () => {
-            const validRecord = getWordBag().words[0].id;
-            const orphanRecord = 'missing-vocabulary-word';
+        it('filters out unavailable progress records without deleting or changing them', async () => {
+            const validWordId = getWordBag().words[0].id;
+            const unavailableRecord = createProgress('missing-vocabulary-word');
+            const validRecord = createProgress(validWordId);
+            await db.wordProgress.bulkAdd([validRecord, unavailableRecord]);
 
-            const queryClient = createQueryClient();
-            const addNewWordstoSRS = renderHook(() => useAddNewWordsToSRS(), { wrapper: createWrapper(queryClient) });
-            const sRSWords = renderHook(() => useSRSWords(), { wrapper: createWrapper(queryClient) });
-            await act(async () => {
-                await addNewWordstoSRS.result.current.mutateAsync([validRecord, orphanRecord]);
-            });
+            const srsWords = renderHook(() => useSRSWords(), { wrapper: createWrapper(createQueryClient()) });
 
-            await waitFor(() => expect(addNewWordstoSRS.result.current.isSuccess).toBe(true));
-            await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
+            await waitFor(() => expect(srsWords.result.current.isSuccess).toBe(true));
 
-            expect(sRSWords.result.current.data?.map((record) => record.toEntity())).toEqual([
-                {
-                    wordId: validRecord,
-                    level: MINIMUM_LEVEL,
-                    lastReviewed: undefined,
-                    nextReview: new Date('2026-01-01T00:00:00.000Z'),
-                },
-            ]);
+            expect(srsWords.result.current.data?.map((record) => record.wordId)).toEqual([validWordId]);
+            expect(await db.wordProgress.get({ wordId: unavailableRecord.wordId })).toEqual(unavailableRecord);
+            expect(await db.wordProgress.count()).toBe(2);
+        });
+    });
+
+    describe('useAllSRSWords', () => {
+        it('returns all stored progress records, including unavailable words', async () => {
+            const validRecord = createProgress(getWordBag().words[0].id);
+            const unavailableRecord = createProgress('missing-vocabulary-word');
+            await db.wordProgress.bulkAdd([validRecord, unavailableRecord]);
+
+            const allSrsWords = renderHook(() => useAllSRSWords(), { wrapper: createWrapper(createQueryClient()) });
+
+            await waitFor(() => expect(allSrsWords.result.current.isSuccess).toBe(true));
+
+            expect(allSrsWords.result.current.data).toHaveLength(2);
+            expect(allSrsWords.result.current.data?.map((record) => record.toEntity())).toEqual(
+                expect.arrayContaining([
+                    expect.objectContaining(validRecord),
+                    expect.objectContaining(unavailableRecord),
+                ]),
+            );
         });
     });
 
@@ -318,6 +330,20 @@ describe('SRS hooks', () => {
             await waitFor(() => expect(sRSWord.result.current.isSuccess).toBe(true));
 
             expect(sRSWord.result.current.data).toBeNull();
+        });
+
+        it('returns null for an unavailable word without deleting its stored progress', async () => {
+            const unavailableRecord = createProgress('missing-vocabulary-word');
+            await db.wordProgress.add(unavailableRecord);
+
+            const srsWord = renderHook(() => useSRSWord(unavailableRecord.wordId), {
+                wrapper: createWrapper(createQueryClient()),
+            });
+
+            await waitFor(() => expect(srsWord.result.current.isSuccess).toBe(true));
+
+            expect(srsWord.result.current.data).toBeNull();
+            expect(await db.wordProgress.get({ wordId: unavailableRecord.wordId })).toEqual(unavailableRecord);
         });
     });
 
