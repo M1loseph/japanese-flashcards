@@ -159,7 +159,8 @@ describe('SRS hooks', () => {
                 },
             ]);
             expect(
-                queryClient.getQueryCache().find({ queryKey: ['databaseWords', 'filtered'] })?.observers[0]?.options.staleTime,
+                queryClient.getQueryCache().find({ queryKey: ['databaseWords', 'filtered'] })?.observers[0]?.options
+                    .staleTime,
             ).toBe(5 * 60 * 1000);
         });
 
