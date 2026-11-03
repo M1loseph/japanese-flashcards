@@ -18,15 +18,24 @@ const addWordsToSRS = async (wordIds: readonly string[], now: Date) => {
 
 export const useSRSWords = () => {
     return useQuery({
-        queryKey: ['databaseWords'],
+        queryKey: ['databaseWords', 'filtered'],
         staleTime: dayjs.duration(5, 'minutes').asMilliseconds(),
         queryFn: async () => {
             const words = await db.wordProgress.toArray();
-            const orphanIds = words.filter((word) => !findWordById(word.wordId)).map((word) => word.wordId);
-            await Promise.all(orphanIds.map((id) => db.wordProgress.delete(id)));
             return words
-                .filter((word) => !orphanIds.includes(word.wordId))
+                .filter((word) => findWordById(word.wordId) !== undefined)
                 .map((word) => new WordLearningProgress(word));
+        },
+    });
+};
+
+export const useAllSRSWords = () => {
+    return useQuery({
+        queryKey: ['databaseWords', 'all'],
+        staleTime: dayjs.duration(5, 'minutes').asMilliseconds(),
+        queryFn: async () => {
+            const words = await db.wordProgress.toArray();
+            return words.map((word) => new WordLearningProgress(word));
         },
     });
 };
@@ -71,7 +80,9 @@ export const useSRSWord = (wordId: string) => {
         queryKey: ['srsWord', wordId],
         queryFn: async () => {
             const result = await db.wordProgress.get({ wordId });
-            return result ? new WordLearningProgress(result) : null;
+            if (!result || !findWordById(wordId)) return null;
+
+            return new WordLearningProgress(result);
         },
     });
 };

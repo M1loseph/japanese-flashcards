@@ -365,6 +365,20 @@ const family: TranslatedJapaneseText[] = [
         pl: 'Dziadkowie (forma honoryfikatywna)',
         jp: { text: 'お祖父さんとお祖母さん', pronunciation: 'おじいさんとおばあさん' },
     },
+    {
+        id: 'f73f749b-7e76-4a1a-95b1-b7778ba75308',
+        type: 'noun',
+        en: 'Grandchild (humble)',
+        pl: 'Wnuk / Wnuczka (forma skromna)',
+        jp: { text: '孫', pronunciation: 'まご' },
+    },
+    {
+        id: '973c59de-8fbd-4063-b1e5-aab0c63ab9fe',
+        type: 'noun',
+        en: 'Grandchild (honorific)',
+        pl: 'Wnuk / Wnuczka (forma honoryfikatywna)',
+        jp: { text: 'お孫さん', pronunciation: 'おまごさん' },
+    },
 ];
 
 export const familyBag: WordBag = {
