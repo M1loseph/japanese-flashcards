@@ -13,7 +13,7 @@ import { Card } from '../../components/Card';
 import { PageTitle } from '../../components/PageTitle';
 import { Toast } from '../../components/Toast';
 import { useHardText } from '../../services/HardWordsContext';
-import { useSRSWords } from '../../services/SRS';
+import { useAllSRSWords } from '../../services/SRS';
 import { ExportedDataSchema, type ExportedData } from '../../types/ExportedData';
 import { ScrollablePage } from '../common/ScrollablePage';
 import { DataImportDialog } from './DataImportDialog';
@@ -22,7 +22,7 @@ const DataManagementPage: FC = () => {
     const [importedApplicationState, setImportedApplicationState] = useState<ExportedData>();
     const [showErrorToast, setShowErrorToast] = useState(false);
 
-    const { data: srsWords, isSuccess } = useSRSWords();
+    const { data: storedSrsWords, isSuccess } = useAllSRSWords();
     const { getHardTextList } = useHardText();
     const hardText = getHardTextList();
 
@@ -48,10 +48,10 @@ const DataManagementPage: FC = () => {
     };
 
     const onExportToGZip = async () => {
-        if (!srsWords) return;
+        if (!storedSrsWords) return;
         const exportedData: ExportedData = {
             version: 1,
-            srsWords: srsWords.map((word) => word.toExportedSRSWordModel()),
+            srsWords: storedSrsWords.map((word) => word.toExportedSRSWordModel()),
             hardText,
         };
         const jsonString = JSON.stringify(exportedData, null, 2);
@@ -172,11 +172,11 @@ const DataManagementPage: FC = () => {
                     </Card>
                 </section>
             </div>
-            {importedApplicationState && srsWords !== undefined && (
+            {importedApplicationState && storedSrsWords !== undefined && (
                 <DataImportDialog
                     hardText={hardText}
                     importedApplicationState={importedApplicationState}
-                    srsWords={srsWords}
+                    srsWordCount={storedSrsWords.length}
                     handleCloseDialog={handleCloseDialog}
                     handleShowErrorToast={handleShowErrorToast}
                 />

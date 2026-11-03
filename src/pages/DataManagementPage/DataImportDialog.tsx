@@ -6,7 +6,7 @@ import type { ExportedData } from '../../types/ExportedData';
 
 interface DataImportDialogProps {
     importedApplicationState: ExportedData;
-    srsWords: readonly WordLearningProgress[];
+    srsWordCount: number;
     hardText: readonly string[];
     handleCloseDialog: () => void;
     handleShowErrorToast: () => void;
@@ -14,7 +14,7 @@ interface DataImportDialogProps {
 
 export const DataImportDialog: FC<DataImportDialogProps> = ({
     importedApplicationState,
-    srsWords,
+    srsWordCount,
     hardText,
     handleCloseDialog,
     handleShowErrorToast,
@@ -48,7 +48,7 @@ export const DataImportDialog: FC<DataImportDialogProps> = ({
                     be permanently overwritten.
                 </p>
                 <p>
-                    You will lose <b>{srsWords.length}</b> SRS entries and{' '}
+                    You will lose <b>{srsWordCount}</b> SRS entries and{' '}
                     <b>{importedApplicationState.srsWords.length}</b> entries will be imported.
                 </p>
                 <p>
