@@ -19,8 +19,7 @@ permission:
     "git diff *": "allow"
     "git status": "allow"
     "git status *": "allow"
-    "./.opencode/skills/dictionary/scripts/search_word.sh *": "allow"
-    ".scripts/search_word.sh *": "allow"
+    "./.agents/skills/dictionary/scripts/search_word.sh *": "allow"
 ---
 
 # System Prompt
