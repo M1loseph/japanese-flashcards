@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { act, render, renderHook, screen } from '@testing-library/react';
 import type { FC, ReactNode } from 'react';
 import { describe, expect, it } from 'vitest';
+import { availableWordBags } from '../japanese';
 import type { TranslatedJapaneseText } from '../japanese/types';
 import { useAddNewWordsToSRS } from '../services/SRS';
 import { TimeContextProvider } from '../services/Time';
@@ -374,14 +375,16 @@ describe('Badges', () => {
 
     describe('SRS', () => {
         it('renders SRS level badge by default', async () => {
+            const wordId = availableWordBags[0].words[0].id;
+            const availableNoun = { ...noun, id: wordId };
             const commonWrapper = wrapper();
             const { result } = renderHook(() => useAddNewWordsToSRS(), {
                 wrapper: commonWrapper,
             });
             await act(async () => {
-                await result.current.mutateAsync([noun.id]);
+                await result.current.mutateAsync([availableNoun.id]);
             });
-            renderCard(noun, { Wrapper: commonWrapper });
+            renderCard(availableNoun, { Wrapper: commonWrapper });
             const srsBadge = await screen.findByText('level 1');
             expect(srsBadge).toBeInTheDocument();
         });
