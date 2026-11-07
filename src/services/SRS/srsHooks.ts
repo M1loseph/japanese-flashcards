@@ -3,6 +3,7 @@ import dayjs from '../../dayjs';
 import { findWordById } from '../../japanese/search';
 import { useTimeContext } from '../Time';
 import { db } from './srsdb';
+import { planSRSImportMerge } from './srsImport';
 import { MAXIMUM_LEVEL, MINIMUM_LEVEL, SRS_STAGES } from './Stages';
 import { WordLearningProgress } from './types';
 
@@ -66,6 +67,29 @@ export const useReplaceSRSWords = () => {
             await db.transaction('rw', db.wordProgress, async () => {
                 await db.wordProgress.clear();
                 await db.wordProgress.bulkAdd(entities);
+            });
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['databaseWords'] });
+            queryClient.invalidateQueries({ queryKey: ['srsWord'] });
+        },
+    });
+};
+
+export const useMergeSRSWords = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationKey: ['mergeSRSWords'],
+        mutationFn: async (importedWords: readonly WordLearningProgress[]) => {
+            const importedEntities = importedWords.map((word) => word.toEntity());
+
+            await db.transaction('rw', db.wordProgress, async () => {
+                const existingWords = await db.wordProgress.toArray();
+                const mergePlan = planSRSImportMerge(existingWords, importedEntities);
+                const wordsToSave = [...mergePlan.mergedWords, ...mergePlan.addedWords];
+
+                if (wordsToSave.length === 0) return;
+                await db.wordProgress.bulkPut(wordsToSave);
             });
         },
         onSuccess: () => {
