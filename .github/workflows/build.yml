@@ -34,7 +34,7 @@ jobs:
         run: npm run test
 
       - name: Build
-        run: npm run build
+        run: VITE_APP_VERSION="1.0" npm run build
 
       - name: Verify build directory
         run: test -d dist && echo "dist directory exists." || (echo "dist directory missing" && exit 1)
