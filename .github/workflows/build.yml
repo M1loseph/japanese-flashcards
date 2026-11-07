@@ -125,6 +125,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.IMAGE_NAME }}
+          build-args: |
+            VITE_APP_VERSION=${{ needs.create_tag.outputs.JAPANESE_FLASHCARDS_VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

@@ -8,6 +8,8 @@ RUN npm ci
 
 COPY . .
 
+ARG VITE_APP_VERSION
+
 RUN npm run build
 
 FROM nginxinc/nginx-unprivileged:1.31.7-alpine-slim AS production
@@ -18,4 +20,3 @@ COPY --chown=nginx:nginx nginx.conf.template /etc/nginx/templates/default.conf.t
 ENV PORT=8080
 
 CMD ["nginx", "-g", "daemon off;"]
-
