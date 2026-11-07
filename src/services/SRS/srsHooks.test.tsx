@@ -326,6 +326,8 @@ describe('SRS hooks', () => {
                 await mergeSRSWords.result.current.mutateAsync(importedWords);
             });
 
+            await waitFor(() => expect(mergeSRSWords.result.current.isSuccess).toBe(true));
+
             expect(await db.wordProgress.count()).toBe(5);
             expect(await db.wordProgress.toArray()).toEqual(
                 expect.arrayContaining([
