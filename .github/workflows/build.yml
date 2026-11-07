@@ -34,7 +34,7 @@ jobs:
         run: npm run test
 
       - name: Build
-        run: npm run build
+        run: VITE_APP_VERSION="1.0" npm run build
 
       - name: Verify build directory
         run: test -d dist && echo "dist directory exists." || (echo "dist directory missing" && exit 1)
@@ -125,6 +125,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.IMAGE_NAME }}
+          build-args: |
+            VITE_APP_VERSION=${{ needs.create_tag.outputs.JAPANESE_FLASHCARDS_VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
