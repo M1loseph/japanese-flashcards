@@ -9,6 +9,7 @@ import {
     useAddNewWordsToSRS,
     useAllSRSWords,
     useMarkWordsAsReviewedBatch,
+    useMergeSRSWords,
     useReplaceSRSWords,
     useSRSWord,
     useSRSWords,
@@ -298,6 +299,43 @@ describe('SRS hooks', () => {
             await waitFor(() => expect(sRSWords.result.current.isSuccess).toBe(true));
 
             expect(sRSWords.result.current.data).toEqual([]);
+        });
+    });
+
+    describe('useMergeSRSWords', () => {
+        it('keeps unchanged entries, upgrades higher imported levels, and adds missing entries', async () => {
+            const existingRecords = [
+                createProgress('not-in-backup', { level: 2 }),
+                createProgress('same-level', { level: 3 }),
+                createProgress('higher-current-level', { level: 4 }),
+                createProgress('upgraded', { level: 1 }),
+            ];
+            await db.wordProgress.bulkAdd(existingRecords);
+
+            const importedWords = [
+                new WordLearningProgress(createProgress('same-level', { level: 3 })),
+                new WordLearningProgress(createProgress('higher-current-level', { level: 2 })),
+                new WordLearningProgress(createProgress('upgraded', { level: 5 })),
+                new WordLearningProgress(createProgress('new', { level: 0 })),
+            ];
+            const mergeSRSWords = renderHook(() => useMergeSRSWords(), {
+                wrapper: createWrapper(createQueryClient()),
+            });
+
+            await act(async () => {
+                await mergeSRSWords.result.current.mutateAsync(importedWords);
+            });
+
+            expect(await db.wordProgress.count()).toBe(5);
+            expect(await db.wordProgress.toArray()).toEqual(
+                expect.arrayContaining([
+                    existingRecords[0],
+                    existingRecords[1],
+                    existingRecords[2],
+                    createProgress('upgraded', { level: 5 }),
+                    createProgress('new', { level: 0 }),
+                ]),
+            );
         });
     });
 

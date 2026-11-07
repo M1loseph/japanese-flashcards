@@ -20,13 +20,17 @@ import { DataImportDialog } from './DataImportDialog';
 
 const DataManagementPage: FC = () => {
     const [importedApplicationState, setImportedApplicationState] = useState<ExportedData>();
-    const [showErrorToast, setShowErrorToast] = useState(false);
+    const [errorToastMessage, setErrorToastMessage] = useState<string>();
 
     const { data: storedSrsWords, isSuccess } = useAllSRSWords();
     const { getHardTextList } = useHardText();
     const hardText = getHardTextList();
 
-    const onDrop = async (files: readonly File[]) => {
+    const handleShowErrorToast = (message: string) => {
+        setErrorToastMessage(message);
+    };
+
+    const handleDrop = async (files: readonly File[]) => {
         const file = files[0];
         if (file === undefined) return;
         try {
@@ -40,14 +44,21 @@ const DataManagementPage: FC = () => {
             })();
             const parsedData = JSON.parse(decompressedData);
             const applicationState = ExportedDataSchema.parse(parsedData);
+
+            const srsWordIds = applicationState.srsWords.map((word) => word.wordId);
+            if (new Set(srsWordIds).size !== srsWordIds.length) {
+                handleShowErrorToast('Failed to import data: the backup contains duplicate SRS word IDs.');
+                return;
+            }
+
             setImportedApplicationState(applicationState);
         } catch (error) {
             console.error('Failed to import data:', error);
-            setShowErrorToast(true);
+            handleShowErrorToast('Failed to import data. Please check the file format.');
         }
     };
 
-    const onExportToGZip = async () => {
+    const handleExportToGZip = async () => {
         if (!storedSrsWords) return;
         const exportedData: ExportedData = {
             version: 1,
@@ -70,7 +81,7 @@ const DataManagementPage: FC = () => {
     };
 
     const { getRootProps, getInputProps } = useDropzone({
-        onDrop,
+        onDrop: handleDrop,
         accept: {
             'application/gzip': ['.json.gz'],
             'application/json': ['.json'],
@@ -83,11 +94,7 @@ const DataManagementPage: FC = () => {
     };
 
     const handleCloseErrorToast = () => {
-        setShowErrorToast(false);
-    };
-
-    const handleShowErrorToast = () => {
-        setShowErrorToast(true);
+        setErrorToastMessage(undefined);
     };
 
     return (
@@ -122,7 +129,7 @@ const DataManagementPage: FC = () => {
                         <button
                             disabled={!isSuccess}
                             className="btn btn-primary btn-lg w-full"
-                            onClick={onExportToGZip}
+                            onClick={handleExportToGZip}
                         >
                             <IconArchive size={20} />
                             Export to GZIP
@@ -162,10 +169,11 @@ const DataManagementPage: FC = () => {
                             <div>
                                 <h3 className="text-lg text-error font-bold uppercase">Danger Zone</h3>
                                 <p className="text-lg text-on-surface-variant/80">
-                                    Importing a data file will{' '}
+                                    With merging disabled, importing a data file will{' '}
                                     <span className="text-error font-bold underline">permanently overwrite</span> your
                                     SRS progress and entries marked as hard. We recommend exporting your current data
-                                    before importing to prevent accidental data loss.
+                                    before importing, or leaving the merge option checked in the confirmation popup to
+                                    keep existing entries unless an uploaded SRS level is higher.
                                 </p>
                             </div>
                         </div>
@@ -176,16 +184,16 @@ const DataManagementPage: FC = () => {
                 <DataImportDialog
                     hardText={hardText}
                     importedApplicationState={importedApplicationState}
-                    srsWordCount={storedSrsWords.length}
+                    currentSrsWords={storedSrsWords}
                     handleCloseDialog={handleCloseDialog}
                     handleShowErrorToast={handleShowErrorToast}
                 />
             )}
             <Toast
-                open={showErrorToast}
+                open={errorToastMessage !== undefined}
                 handleClose={handleCloseErrorToast}
                 type="error"
-                message="Failed to import data. Please check the file format."
+                message={errorToastMessage ?? ''}
             />
         </ScrollablePage>
     );
