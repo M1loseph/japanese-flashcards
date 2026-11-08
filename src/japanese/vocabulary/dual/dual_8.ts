@@ -26,13 +26,13 @@ const dual_8: TranslatedJapaneseText[] = [
         id: '13186dbc-8cd3-40ca-8e97-df82a0f2bad7',
         type: 'noun',
         en: 'Drinking glass',
-        pl: 'Szklanka do picia',
+        pl: 'Szklanka',
         jp: { text: 'コップ' },
     },
     {
         id: 'ac34ace2-75aa-4779-a6c1-69a68ce02680',
         type: 'noun',
-        en: 'Courtain',
+        en: 'Curtain',
         pl: 'Zasłona',
         jp: { text: 'カーテン' },
     },
@@ -104,8 +104,8 @@ const dual_8: TranslatedJapaneseText[] = [
         en: 'When my wife has a meeting, I go to a different room.',
         pl: 'Kiedy moja żona ma spotkanie, idę do innego pokoju.',
         jp: {
-            text: '妻がミーティングがあるとき、私は違う部屋に行く。',
-            pronunciation: 'つまがミーティングがあるとき、わたしはちがうへやにいく。',
+            text: '妻はミーティングがあるとき、私は違う部屋に行く。',
+            pronunciation: 'つまはミーティングがあるとき、わたしはちがうへやにいく。',
         },
     },
     {
@@ -154,8 +154,8 @@ const dual_8: TranslatedJapaneseText[] = [
     {
         id: 'fb451676-c99c-4e57-888f-5b865d8b2ae4',
         type: 'noun',
-        en: 'Traditional Japanese wedding ceremony',
-        pl: 'Tradycyjna japońska ceremonia ślubna',
+        en: 'Shinto wedding ceremony',
+        pl: 'Ceremonia ślubna w shintō',
         jp: { text: '神前式', pronunciation: 'しんぜんしき' },
     },
     {
@@ -169,15 +169,15 @@ const dual_8: TranslatedJapaneseText[] = [
     {
         id: '1a09ad5e-d1a4-4c91-9fba-b5a6baba15ae',
         type: 'noun',
-        en: 'Formal Japanese wedding attire for men',
-        pl: 'Formalny japoński strój ślubny dla mężczyzn',
+        en: 'Formal Japanese kimono and hakama',
+        pl: 'Formalne japońskie kimono i hakama',
         jp: { text: '紋付袴', pronunciation: 'もんつきはかま' },
     },
     {
         id: 'd3e1ec7c-7fcc-4226-ae59-059440a0307a',
         type: 'noun',
-        en: 'Traditional Japanese wedding attire for women',
-        pl: 'Tradycyjny japoński strój ślubny dla kobiet',
+        en: 'White bridal kimono',
+        pl: 'Białe japońskie kimono ślubne',
         jp: { text: '白無垢', pronunciation: 'しろむく' },
     },
     {
@@ -191,6 +191,7 @@ const dual_8: TranslatedJapaneseText[] = [
         id: 'e96e147e-51a9-4220-b058-963d502b8261',
         type: 'verb',
         verb_type: 'suru',
+        transitivity: 'transitive',
         en: 'To report / To inform',
         pl: 'Zgłaszać / Informować',
         jp: { text: '報告する', pronunciation: 'ほうこくする' },
@@ -199,8 +200,8 @@ const dual_8: TranslatedJapaneseText[] = [
         id: '53c4ac26-f24b-4f90-9faa-3cb8e8a92875',
         type: 'phrase',
         formality: 'does-not-apply',
-        en: 'For / For the sake of',
-        pl: 'Dla / Na rzecz',
+        en: 'For / For the sake of / In order to',
+        pl: 'Dla / Na rzecz / W celu',
         jp: { text: 'ために' },
     },
 ];
