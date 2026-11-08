@@ -24,6 +24,30 @@ data "google_project" "jflashcards-project" {
   project_id = var.project_id
 }
 
+resource "google_artifact_registry_repository" "dockerhub-remote" {
+  project       = var.project_id
+  location      = var.region
+  repository_id = "dockerhub-remote"
+  description   = "Remote repository for public Docker Hub images"
+  format        = "DOCKER"
+  mode          = "REMOTE_REPOSITORY"
+
+  remote_repository_config {
+    description = "Docker Hub"
+    docker_repository {
+      public_repository = "DOCKER_HUB"
+    }
+  }
+}
+
+resource "google_artifact_registry_repository_iam_member" "cloud_run_service_agent_reader" {
+  project    = var.project_id
+  location   = google_artifact_registry_repository.dockerhub-remote.location
+  repository = google_artifact_registry_repository.dockerhub-remote.name
+  role       = "roles/artifactregistry.reader"
+  member     = "serviceAccount:service-${data.google_project.jflashcards-project.number}@serverless-robot-prod.iam.gserviceaccount.com"
+}
+
 resource "google_cloud_run_v2_service" "jflashcards-v2" {
   name                 = "jflashcards-v2"
   location             = var.region
@@ -31,6 +55,10 @@ resource "google_cloud_run_v2_service" "jflashcards-v2" {
   ingress              = "INGRESS_TRAFFIC_ALL"
   invoker_iam_disabled = true
   launch_stage         = "GA"
+
+  depends_on = [
+    google_artifact_registry_repository_iam_member.cloud_run_service_agent_reader,
+  ]
 
   scaling {
     max_instance_count = 2
@@ -43,7 +71,7 @@ resource "google_cloud_run_v2_service" "jflashcards-v2" {
     timeout                          = "30s"
 
     containers {
-      image = "docker.io/${var.jflashcards_image}"
+      image = "${var.region}-docker.pkg.dev/${var.project_id}/${google_artifact_registry_repository.dockerhub-remote.repository_id}/${var.jflashcards_image}"
 
       resources {
         limits = {
