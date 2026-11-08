@@ -10,7 +10,7 @@ variable "region" {
 }
 
 variable "jflashcards_image" {
-  description = "The full name with a tag of the jflashcards Docker image to deploy."
+  description = "The Docker Hub image path and tag to deploy, for example m1loseph/jflashcards:0.371."
   type        = string
 }
 
