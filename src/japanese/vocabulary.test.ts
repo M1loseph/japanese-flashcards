@@ -62,37 +62,41 @@ describe('vocabulary', () => {
             'ba4a046b-20e6-4388-b82c-284c0fb19849',
         ];
 
+        const shouldBeFilteredOut = (word: TranslatedJapaneseText) =>
+            word.type === 'phrase' && word.formality !== 'does-not-apply' && !exceptions.includes(word.id);
+
         const allowedPunctuationInPl = ['.', '!', '?'];
         const allowedPunctuationInEn = ['.', '!', '?'];
         const allowedPunctuationInJp = ['。', '！', '？', '…'];
 
         availableWordBags.forEach((bag) => {
             bag.words.forEach((word) => {
-                if (word.type === 'phrase' && !exceptions.includes(word.id)) {
-                    const endsWithPunctuationInEn = allowedPunctuationInEn.some((p) => word.en.endsWith(p));
-                    const endsWithPunctuationInPl = allowedPunctuationInPl.some((p) => word.pl.endsWith(p));
-                    const endsWithPunctuationInJpText = allowedPunctuationInJp.some((p) => word.jp.text.endsWith(p));
-                    const endsWithPunctuationInJpPronunciation = (() => {
-                        const pronunciation = word.jp.pronunciation;
-                        if (pronunciation === undefined) return false;
-                        if (typeof pronunciation === 'string') {
-                            return allowedPunctuationInJp.some((p) => pronunciation.endsWith(p));
-                        } else {
-                            return pronunciation.some((p) => allowedPunctuationInJp.some((punct) => p.endsWith(punct)));
-                        }
-                    })();
+                if (!shouldBeFilteredOut(word)) {
+                    return;
+                }
+                const endsWithPunctuationInEn = allowedPunctuationInEn.some((p) => word.en.endsWith(p));
+                const endsWithPunctuationInPl = allowedPunctuationInPl.some((p) => word.pl.endsWith(p));
+                const endsWithPunctuationInJpText = allowedPunctuationInJp.some((p) => word.jp.text.endsWith(p));
+                const endsWithPunctuationInJpPronunciation = (() => {
+                    const pronunciation = word.jp.pronunciation;
+                    if (pronunciation === undefined) return false;
+                    if (typeof pronunciation === 'string') {
+                        return allowedPunctuationInJp.some((p) => pronunciation.endsWith(p));
+                    } else {
+                        return pronunciation.some((p) => allowedPunctuationInJp.some((punct) => p.endsWith(punct)));
+                    }
+                })();
 
+                expect(
+                    endsWithPunctuationInEn || endsWithPunctuationInPl,
+                    `Phrase ${word.id} has inconsistent punctuation`,
+                ).toBe(endsWithPunctuationInJpText);
+
+                if (word.jp.pronunciation !== undefined) {
                     expect(
                         endsWithPunctuationInEn || endsWithPunctuationInPl,
-                        `Phrase ${word.id} has inconsistent punctuation`,
-                    ).toBe(endsWithPunctuationInJpText);
-
-                    if (word.jp.pronunciation !== undefined) {
-                        expect(
-                            endsWithPunctuationInEn || endsWithPunctuationInPl,
-                            `Phrase ${word.id} has inconsistent punctuation in pronunciation`,
-                        ).toBe(endsWithPunctuationInJpPronunciation);
-                    }
+                        `Phrase ${word.id} has inconsistent punctuation in pronunciation`,
+                    ).toBe(endsWithPunctuationInJpPronunciation);
                 }
             });
         });

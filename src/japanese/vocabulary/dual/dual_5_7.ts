@@ -1,6 +1,6 @@
 import type { TranslatedJapaneseText, WordBag } from '../../types';
 
-const dual_5_8: TranslatedJapaneseText[] = [
+const dual_5_7: TranslatedJapaneseText[] = [
     {
         id: '29bcea4a-5a65-4ab0-b075-ceea47cffda7',
         type: 'adjective',
@@ -465,9 +465,9 @@ const dual_5_8: TranslatedJapaneseText[] = [
     },
 ];
 
-export const dual5_8Bag: WordBag = {
+export const dual5_7Bag: WordBag = {
     id: '2c7e22f7-20f1-4285-81e4-059f53350898',
-    name: 'Dual 5-8',
+    name: 'Dual 5-7',
     category: 'dual',
-    words: dual_5_8,
+    words: dual_5_7,
 };
