@@ -119,6 +119,7 @@ import { sakura5_3Bag } from './vocabulary/sakura/trimester_5/sakura_3';
 import { sakura5_4Bag } from './vocabulary/sakura/trimester_5/sakura_4';
 import { sakura5_5Bag } from './vocabulary/sakura/trimester_5/sakura_5';
 import { sakura5_6Bag } from './vocabulary/sakura/trimester_5/sakura_6';
+import { sakura5_7Bag } from './vocabulary/sakura/trimester_5/sakura_7';
 import { daysOfMonthBag } from './vocabulary/time/daysOfMonth';
 import { hoursBag } from './vocabulary/time/hours';
 import { minutesBag } from './vocabulary/time/minutes';
@@ -127,6 +128,7 @@ import { numberOfDaysBag } from './vocabulary/time/numberOfDays';
 import { numberOfMonthsBag } from './vocabulary/time/numberOfMonths';
 import { numberOfYearsBag } from './vocabulary/time/numberOfYears';
 import { secondsBag } from './vocabulary/time/seconds';
+import { sequenceOfDaysBag } from './vocabulary/time/sequenceOfDays';
 import { weekBag } from './vocabulary/time/week';
 import { yearsBag } from './vocabulary/time/years';
 
@@ -156,6 +158,7 @@ export const availableWordBags: readonly WordBag[] = [
     yearsBag,
     numberOfMonthsBag,
     numberOfYearsBag,
+    sequenceOfDaysBag,
     directionsBag,
     duolingo1Bag,
     duolingo2Bag,
@@ -255,6 +258,7 @@ export const availableWordBags: readonly WordBag[] = [
     sakura5_4Bag,
     sakura5_5Bag,
     sakura5_6Bag,
+    sakura5_7Bag,
     survivalPhrases_1Bag,
     dual1_4Bag,
     dual5_7Bag,
