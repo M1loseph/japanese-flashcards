@@ -28,7 +28,7 @@ const sakura_3_7: TranslatedJapaneseText[] = [
         type: 'phrase',
         formality: 'formal',
         en: 'Please go straight.',
-        pl: 'Proszę idź prosto.',
+        pl: 'Proszę, idź prosto.',
         jp: { text: 'まっすぐ行ってください。', pronunciation: 'まっすぐいってください。' },
     },
     {
@@ -36,14 +36,14 @@ const sakura_3_7: TranslatedJapaneseText[] = [
         type: 'phrase',
         formality: 'formal',
         en: 'Please go left.',
-        pl: 'Proszę idź w lewo.',
+        pl: 'Proszę, idź w lewo.',
         jp: { text: '左に行ってください。', pronunciation: 'ひだりにいってください。' },
     },
     {
         id: 'f6b5b955-4f93-4b13-88e6-2e693c1ad1e4',
         type: 'conjunction',
-        en: 'And then',
-        pl: 'Potem / Następnie',
+        en: 'And then / And also',
+        pl: 'Potem / Następnie / A także',
         jp: { text: 'そして' },
     },
     {
@@ -88,7 +88,7 @@ const sakura_3_7: TranslatedJapaneseText[] = [
         type: 'noun',
         en: 'Glasses',
         pl: 'Okulary',
-        jp: { text: 'めがね' },
+        jp: { text: '眼鏡', pronunciation: 'めがね' },
     },
 ];
 
