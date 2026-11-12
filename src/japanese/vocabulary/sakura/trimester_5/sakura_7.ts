@@ -2,6 +2,13 @@ import type { TranslatedJapaneseText, WordBag } from '../../../types';
 
 const sakura_5_7: TranslatedJapaneseText[] = [
     {
+        id: 'af6f474a-e68d-44b0-9362-b175daba9dd3',
+        type: 'noun',
+        en: 'Business trip',
+        pl: 'Podróż służbowa',
+        jp: { text: '出張', pronunciation: 'しゅっちょう' },
+    },
+    {
         id: '549fb372-059a-4d3c-b813-e18e0207581c',
         type: 'phrase',
         formality: 'formal',
@@ -35,8 +42,8 @@ const sakura_5_7: TranslatedJapaneseText[] = [
     {
         id: '98459d7f-099a-47ae-8e03-810d84e90abd',
         type: 'noun',
-        en: 'Run by the government',
-        pl: 'Prowadzony przez rząd',
+        en: 'State-run',
+        pl: 'Państwowy / Publiczny',
         jp: { text: '国立', pronunciation: 'こくりつ' },
     },
     {
