@@ -164,7 +164,7 @@ const genki_7: TranslatedJapaneseText[] = [
         id: '6cc1b1b0-2d9f-4dcb-bca2-f970f6af8cfe',
         type: 'verb',
         verb_type: 'godan',
-        transitivity: 'transitive',
+        transitivity: 'ambitransitive',
         en: 'To sing',
         pl: 'Śpiewać',
         jp: { text: '歌う', pronunciation: 'うたう' },
@@ -172,6 +172,7 @@ const genki_7: TranslatedJapaneseText[] = [
     {
         id: '7b19bb92-fec4-49d8-bb70-1782c8fa6c0b',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'To sing a song',
         pl: 'Śpiewać piosenkę',
         jp: { text: '歌を歌う', pronunciation: 'うたをうたう' },
@@ -188,6 +189,7 @@ const genki_7: TranslatedJapaneseText[] = [
     {
         id: 'b65889b1-3ee2-4533-a71c-d20a734a4cc1',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'To put on a hat',
         pl: 'Zakładać kapelusz',
         jp: { text: '帽子をかぶる', pronunciation: 'ぼうしをかぶる' },
@@ -197,13 +199,14 @@ const genki_7: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'transitive',
-        en: 'To put on (item below your waist)',
-        pl: 'Zakładać (ubranie poniżej pasa)',
-        jp: { text: 'はく' },
+        en: 'To put on (item below your waist or footwear)',
+        pl: 'Zakładać (ubranie poniżej pasa lub obuwie)',
+        jp: { text: '履く', pronunciation: 'はく' },
     },
     {
         id: 'ddc79caf-50bb-46de-a92d-a08cf941d19c',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'To put on shoes',
         pl: 'Zakładać buty',
         jp: { text: '靴をはく', pronunciation: 'くつをはく' },
@@ -256,6 +259,7 @@ const genki_7: TranslatedJapaneseText[] = [
     {
         id: '4fd69195-399f-4b0d-9748-988842d64bc5',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'To put on glasses',
         pl: 'Zakładać okulary',
         jp: { text: '眼鏡をかける', pronunciation: 'めがねをかける' },
@@ -273,6 +277,7 @@ const genki_7: TranslatedJapaneseText[] = [
         id: '9e65a898-0707-450c-bcf0-4585aa628f3b',
         type: 'verb',
         verb_type: 'suru',
+        transitivity: 'intransitive',
         en: 'To get married',
         pl: 'Wziąć ślub',
         jp: { text: '結婚する', pronunciation: 'けっこんする' },
@@ -280,6 +285,7 @@ const genki_7: TranslatedJapaneseText[] = [
     {
         id: '4a62a4a8-4e99-4ca4-be9a-dd0378ab41d4',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Nothing / (Not) Anything',
         pl: 'Nic',
         jp: { text: '何も', pronunciation: 'なにも' },
@@ -301,6 +307,7 @@ const genki_7: TranslatedJapaneseText[] = [
     {
         id: '4dbcb577-1225-4da2-affd-d9d7860afdb0',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'If you like / If you want',
         pl: 'Jeśli chcesz / Jeśli masz ochotę',
         jp: { text: 'よかったら' },
@@ -308,6 +315,7 @@ const genki_7: TranslatedJapaneseText[] = [
     {
         id: 'f253a0dc-e67c-4ef9-9661-0202fb916ace',
         type: 'phrase',
+        formality: 'formal',
         en: "I'm not doing anything in particular.",
         pl: 'W tej chwili nie robię nic szczególnego.',
         jp: { text: '別に何もしていません。', pronunciation: 'べつになにもしていません。' },
