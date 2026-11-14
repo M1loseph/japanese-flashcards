@@ -25,8 +25,8 @@ const genki_5: TranslatedJapaneseText[] = [
     {
         id: '04eee17b-ed49-4877-a5b7-5121e300e33e',
         type: 'noun',
-        en: 'Holiday / Day off / Absence',
-        pl: 'Święto / Dzień wolny / Nieobecność',
+        en: 'Holiday / Day off / Absence / Rest',
+        pl: 'Święto / Dzień wolny / Nieobecność / Odpoczynek',
         jp: { text: '休み', pronunciation: 'やすみ' },
     },
     {
@@ -289,7 +289,7 @@ const genki_5: TranslatedJapaneseText[] = [
         adjective_type: 'na-adjective',
         en: 'Beautiful / Clean',
         pl: 'Piękny / Czysty',
-        jp: { text: 'きれい' },
+        jp: { text: '綺麗', pronunciation: 'きれい' },
     },
     {
         id: '924386b8-f57d-4dac-9ada-7d414dbd67b8',
@@ -337,8 +337,8 @@ const genki_5: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'transitive',
-        en: 'To listen / To ask',
-        pl: 'Słuchać / Pytać',
+        en: 'To listen / To hear / To ask',
+        pl: 'Słuchać / Słyszeć / Pytać',
         jp: { text: '聞く', pronunciation: 'きく' },
         description:
             'When using this verb in the meaning of "ask", the noun is usually followed by に (e.g. 先生に聞きます - I ask the teacher). In the meaning of "listen", the noun is usually followed by を (e.g. 音楽を聞きます - I listen to music).',
@@ -364,6 +364,7 @@ const genki_5: TranslatedJapaneseText[] = [
     {
         id: '274f644a-d4cc-4575-b213-d8ac8761eb44',
         type: 'phrase',
+        formality: 'formal',
         en: "I'm going to do my homework. (determined)",
         pl: 'Odrobię pracę domową. (zdeterminowany)',
         jp: { text: '宿題をやります。', pronunciation: 'しゅくだいをやります。' },
@@ -387,6 +388,7 @@ const genki_5: TranslatedJapaneseText[] = [
     {
         id: '1e540b33-d10f-4f3b-838d-1331542c126a',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Go together',
         pl: 'Iść razem',
         jp: { text: '一緒に行く', pronunciation: 'いっしょにいく' },
@@ -423,6 +425,7 @@ const genki_5: TranslatedJapaneseText[] = [
     {
         id: 'bee09201-dbef-4a20-a079-95f2af83b6f3',
         type: 'phrase',
+        formality: 'formal',
         en: 'I went out with my friends.',
         pl: 'Wyszedłem z przyjaciółmi.',
         jp: { text: '友達と出かけました。', pronunciation: 'ともだちとでかけました。' },
