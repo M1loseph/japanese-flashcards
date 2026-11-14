@@ -362,7 +362,7 @@ const genki_8: TranslatedJapaneseText[] = [
     },
     {
         id: '6b57f877-ea95-437d-b8a4-44070970e267',
-        type: 'noun',
+        type: 'pronoun',
         en: 'Everybody',
         pl: 'Wszyscy',
         jp: { text: 'みんな' },
