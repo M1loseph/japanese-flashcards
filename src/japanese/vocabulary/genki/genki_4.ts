@@ -25,8 +25,8 @@ const genki_4: TranslatedJapaneseText[] = [
     {
         id: '30bc4fc1-f170-4ea5-9837-7adb58bbb71d',
         type: 'noun',
-        en: 'Class (group of students) / Classroom',
-        pl: 'Klasa (grupa uczniów) / Sala lekcyjna',
+        en: 'Class (group of students)',
+        pl: 'Klasa (grupa uczniów)',
         jp: { text: 'クラス' },
     },
     {
@@ -53,8 +53,8 @@ const genki_4: TranslatedJapaneseText[] = [
     {
         id: '456108bb-567e-49c7-8c77-367f09dc9ea8',
         type: 'pronoun',
-        en: 'You (polite)',
-        pl: 'Ty (grzecznie)',
+        en: 'You',
+        pl: 'Ty',
         jp: { text: 'あなた' },
     },
     {
@@ -231,7 +231,7 @@ const genki_4: TranslatedJapaneseText[] = [
         transitivity: 'intransitive',
         en: 'Understand',
         pl: 'Rozumieć',
-        jp: { text: '分かる', pronunciation: 'わかる' },
+        jp: { text: 'わかる' },
     },
     {
         id: '46a4c816-ba47-4024-bb21-3ae79373db55',
@@ -245,20 +245,22 @@ const genki_4: TranslatedJapaneseText[] = [
     {
         id: 'c86fec03-0fa7-48e7-b030-7ad71cddcedc',
         type: 'suffix',
-        en: 'Around / About (time period)',
-        pl: 'Około (okres czasu)',
+        en: 'Around (time period) / About',
+        pl: 'Około (okres czasu) / Mniej więcej',
         jp: { text: 'ぐらい' },
     },
     {
         id: '460ccb57-1f82-4fbf-84bc-c68dc63cb847',
         type: 'phrase',
-        en: "I'm sorry (informal)",
-        pl: 'Przepraszam (nieformalnie)',
+        formality: 'informal',
+        en: "I'm sorry",
+        pl: 'Przepraszam',
         jp: { text: 'ごめんなさい' },
     },
     {
         id: '8c7dbda7-1acd-4532-9406-ec2a324a2de0',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'And then / After that',
         pl: 'A potem / Po tym',
         jp: { text: 'それから' },
@@ -266,6 +268,7 @@ const genki_4: TranslatedJapaneseText[] = [
     {
         id: '03effd48-2421-4ddf-81a9-aab16f1dd082',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'So / Therefore',
         pl: 'Więc / Dlatego',
         jp: { text: 'だから' },
@@ -287,6 +290,7 @@ const genki_4: TranslatedJapaneseText[] = [
     {
         id: '479b976a-c934-45c7-86ca-ba43f3bd5ed5',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Alone',
         pl: 'Samemu',
         jp: { text: '一人で', pronunciation: 'ひとりで' },
@@ -294,6 +298,7 @@ const genki_4: TranslatedJapaneseText[] = [
     {
         id: 'd265e89a-78e1-4ff8-90f0-1d4232e2a630',
         type: 'phrase',
+        formality: 'does-not-apply',
         en: 'Hello (on the phone)',
         pl: 'Halo',
         jp: { text: 'もしもし' },
