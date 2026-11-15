@@ -106,7 +106,7 @@ const sakura_5_3: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'intransitive',
-        en: 'Die',
+        en: 'To die',
         pl: 'Umrzeć',
         jp: { text: '死ぬ', pronunciation: 'しぬ' },
     },

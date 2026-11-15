@@ -36,7 +36,7 @@ const sakura_5_1: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'ichidan',
         transitivity: 'transitive',
-        en: 'Give (the receiver is the speaker or someone close to the speaker)',
+        en: 'To give (the receiver is the speaker or someone close to the speaker)',
         pl: 'Dawać (odbiorca to mówiący lub ktoś bliski mówiącemu)',
         jp: { text: 'くれる' },
     },
