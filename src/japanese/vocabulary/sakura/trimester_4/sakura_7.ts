@@ -13,7 +13,7 @@ const sakura_4_7: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'ambitransitive',
-        en: 'End / Finish / Complete',
+        en: 'To end / To finish / To complete',
         pl: 'Skończyć / Zakończyć',
         jp: { text: '終わる', pronunciation: 'おわる' },
     },

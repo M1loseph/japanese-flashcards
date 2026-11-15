@@ -97,7 +97,7 @@ const sakura_4_12: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'transitive',
-        en: 'Receive',
+        en: 'To receive',
         pl: 'Otrzymać',
         jp: { text: 'もらう' },
     },

@@ -83,7 +83,7 @@ const sakura_4_9: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'ichidan',
         transitivity: 'transitive',
-        en: 'Borrow',
+        en: 'To borrow',
         pl: 'Pożyczać',
         jp: { text: '借りる', pronunciation: 'かりる' },
     },

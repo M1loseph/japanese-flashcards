@@ -70,7 +70,7 @@ const sakura_4_11: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'ichidan',
         transitivity: 'transitive',
-        en: 'Give',
+        en: 'To give',
         pl: 'Dać',
         jp: { text: 'あげる' },
     },

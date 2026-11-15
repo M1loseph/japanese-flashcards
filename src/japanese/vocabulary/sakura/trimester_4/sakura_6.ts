@@ -28,7 +28,7 @@ const sakura_4_6: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'ambitransitive',
-        en: 'Blow / Play (a wind instrument)',
+        en: 'To blow / To play (a wind instrument)',
         pl: 'Wiać / Dmuchać / Grać (na instrumencie dętym)',
         jp: { text: '吹く', pronunciation: 'ふく' },
     },
