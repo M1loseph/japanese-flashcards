@@ -35,7 +35,7 @@ const sakura_3_11: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'intransitive',
-        en: 'Fly',
+        en: 'To fly',
         pl: 'Latać',
         jp: { text: '飛ぶ', pronunciation: 'とぶ' },
     },
