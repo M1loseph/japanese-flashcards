@@ -52,8 +52,8 @@ const sakura_3_12: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'intransitive',
-        en: 'To take (time, resources)',
-        pl: 'Zajmować (czas, zasoby)',
+        en: 'To take (time or resources)',
+        pl: 'Zajmować (czas lub zasoby)',
         jp: { text: 'かかる' },
     },
     {

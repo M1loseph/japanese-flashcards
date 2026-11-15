@@ -129,8 +129,8 @@ const sakura_1_12: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'transitive',
-        en: 'To play (a stringed, keyboard instrument)',
-        pl: 'Grać (na instrumencie strunowym, klawiszowym)',
+        en: 'To play (a stringed or keyboard instrument)',
+        pl: 'Grać (na instrumencie strunowym lub klawiszowym)',
         jp: { text: '弾く', pronunciation: 'ひく' },
     },
     {
