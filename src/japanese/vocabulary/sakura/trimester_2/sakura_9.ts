@@ -29,7 +29,7 @@ const sakura_2_9: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'ichidan',
         transitivity: 'intransitive',
-        en: 'Leave / Exit',
+        en: 'To leave / To exit',
         pl: 'Wychodzić',
         jp: { text: '出る', pronunciation: 'でる' },
     },

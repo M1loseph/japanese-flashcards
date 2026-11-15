@@ -54,16 +54,16 @@ describe('vocabulary', () => {
 
     it('all phrases that end with period in English or Polish should also end with period in Japanese', () => {
         // TODO: Remove the exception after fixing the inconsistent punctuation in this phrase
-        const exceptions = [
+        const exceptions = new Set([
             '87cc4b6a-27a0-4c38-847e-32d3581088c0',
             '07f1820b-31fc-4a05-a932-f6e0278a6046',
             '67b581ee-e495-4fa7-8021-f7f2c038166b',
             '274f644a-d4cc-4575-b213-d8ac8761eb44',
             'ba4a046b-20e6-4388-b82c-284c0fb19849',
-        ];
+        ]);
 
         const shouldBeFilteredOut = (word: TranslatedJapaneseText) =>
-            word.type === 'phrase' && word.formality !== 'does-not-apply' && !exceptions.includes(word.id);
+            word.type === 'phrase' && word.formality !== 'does-not-apply' && !exceptions.has(word.id);
 
         const allowedPunctuationInPl = ['.', '!', '?'];
         const allowedPunctuationInEn = ['.', '!', '?'];
@@ -98,6 +98,26 @@ describe('vocabulary', () => {
                         `Phrase ${word.id} has inconsistent punctuation in pronunciation`,
                     ).toBe(endsWithPunctuationInJpPronunciation);
                 }
+            });
+        });
+    });
+
+    it('all verbs in English should start with "To "', () => {
+        const exceptions = new Set(['ec13d53d-740c-4f5d-a355-768e5412f4d4', '14193bce-f6e9-4f1d-8349-6ec9a819f378']);
+        availableWordBags.forEach((bag) => {
+            // TODO: enable this test for other categories besides 'sakura'
+            if (bag.category !== 'sakura') return;
+            bag.words.forEach((word) => {
+                if (word.type !== 'verb' || exceptions.has(word.id)) {
+                    return;
+                }
+                const translations = word.en.split('/');
+                translations.forEach((translation) => {
+                    expect(
+                        translation.trim().startsWith('To '),
+                        `Verb ${word.id} translation "${translation.trim()}" should start with "To "`,
+                    ).toBe(true);
+                });
             });
         });
     });

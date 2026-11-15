@@ -35,7 +35,7 @@ const sakura_4_5: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'intransitive',
-        en: 'Begin / Start',
+        en: 'To begin / To start',
         pl: 'Zaczynać się / Rozpoczynać się',
         jp: { text: '始まる', pronunciation: 'はじまる' },
     },

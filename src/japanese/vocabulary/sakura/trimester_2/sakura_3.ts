@@ -20,7 +20,7 @@ const sakura_2_3: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'transitive',
-        en: 'Calm down / Chill / Refrigerate',
+        en: 'To calm down / To chill / To refrigerate',
         pl: 'Ochłonąć / Schłodzić',
         jp: { text: '冷やす', pronunciation: 'ひやす' },
     },
