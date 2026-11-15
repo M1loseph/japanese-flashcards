@@ -259,7 +259,7 @@ const genki_10: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'godan',
         transitivity: 'intransitive',
-        en: 'To take (amount of time / money)',
+        en: 'To take (amount of time or money)',
         pl: 'Zajmować (czas) / Wymagać (pieniędzy)',
         jp: { text: 'かかる' },
     },

@@ -105,8 +105,10 @@ describe('vocabulary', () => {
     it('all verbs in English should start with "To "', () => {
         const exceptions = new Set(['ec13d53d-740c-4f5d-a355-768e5412f4d4', '14193bce-f6e9-4f1d-8349-6ec9a819f378']);
         availableWordBags.forEach((bag) => {
-            // TODO: enable this test for other categories besides 'sakura'
-            if (bag.category !== 'sakura') return;
+            // TODO: enable this test for duolingo
+            if (bag.category === 'duolingo') {
+                return;
+            }
             bag.words.forEach((word) => {
                 if (word.type !== 'verb' || exceptions.has(word.id)) {
                     return;
