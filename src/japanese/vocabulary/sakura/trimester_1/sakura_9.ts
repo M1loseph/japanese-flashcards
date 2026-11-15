@@ -129,8 +129,8 @@ const sakura_1_9: TranslatedJapaneseText[] = [
     {
         id: '9d3b687b-ae70-4d38-94b4-31566b43d26c',
         type: 'adverb',
-        en: 'Not at all / Completely (with negative verb)',
-        pl: 'Wcale / Całkowicie (z czasownikiem w formie przeczącej)',
+        en: 'Not at all (with negative verb) / Completely',
+        pl: 'Wcale (z czasownikiem w formie przeczącej) / Całkowicie',
         jp: { text: '全然', pronunciation: 'ぜんぜん' },
     },
     {
