@@ -105,7 +105,7 @@ const sakura_1_11: TranslatedJapaneseText[] = [
         type: 'verb',
         verb_type: 'suru',
         transitivity: 'intransitive',
-        en: 'To Work',
+        en: 'To work',
         pl: 'Pracować',
         jp: { text: '仕事をする', pronunciation: 'しごとをする' },
     },
