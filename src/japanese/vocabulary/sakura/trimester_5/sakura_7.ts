@@ -120,6 +120,13 @@ const sakura_5_7: TranslatedJapaneseText[] = [
         pl: 'Być zatłoczonym',
         jp: { text: '混む', pronunciation: 'こむ' },
     },
+    {
+        id: 'c58b4902-8e8e-499f-9d52-8a79abf8e45c',
+        type: 'noun',
+        en: 'Draft',
+        pl: 'Szkic',
+        jp: { text: '下書き', pronunciation: 'したがき' },
+    },
 ];
 
 export const sakura5_7Bag: WordBag = {

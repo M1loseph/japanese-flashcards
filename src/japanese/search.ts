@@ -19,6 +19,7 @@ import { directionsBag } from './vocabulary/directions';
 import { dual1_4Bag } from './vocabulary/dual/dual_1_4';
 import { dual5_7Bag } from './vocabulary/dual/dual_5_7';
 import { dual8Bag } from './vocabulary/dual/dual_8';
+import { dual9Bag } from './vocabulary/dual/dual_9';
 import { duolingo1Bag } from './vocabulary/duolingo/duolingo_1';
 import { duolingo10Bag } from './vocabulary/duolingo/duolingo_10';
 import { duolingo11Bag } from './vocabulary/duolingo/duolingo_11';
@@ -263,6 +264,7 @@ export const availableWordBags: readonly WordBag[] = [
     dual1_4Bag,
     dual5_7Bag,
     dual8Bag,
+    dual9Bag,
 ] as const;
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {
