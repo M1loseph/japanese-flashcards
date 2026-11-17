@@ -170,6 +170,31 @@ const dual_9: TranslatedJapaneseText[] = [
         pl: 'Chcę spróbować pójść do parku rozrywki.',
         jp: { text: '遊園地に行ってみたい。', pronunciation: 'ゆうえんちにいってみたい。' },
     },
+    {
+        id: '9dd21275-7ccf-4860-9593-b9b74a9d1bd6',
+        type: 'phrase',
+        formality: 'formal',
+        en: 'What do you say after eating?',
+        pl: 'Co mówisz po jedzeniu?',
+        jp: { text: '食べた後は何と言いますか。', pronunciation: 'たべたあとはなんといいますか。' },
+    },
+    {
+        id: '58adcf61-5c6f-42a4-9cd3-80ed96d06de9',
+        type: 'verb',
+        verb_type: 'ichidan',
+        transitivity: 'intransitive',
+        en: 'To be able to do / To be built / To come into existence',
+        pl: 'Móc coś zrobić / Być zbudowanym / Powstać',
+        jp: { text: 'できる' },
+    },
+    {
+        id: '7250305b-cf48-4013-a19f-d78456e5d226',
+        type: 'phrase',
+        formality: 'informal',
+        en: 'The library was built last year.',
+        pl: 'Biblioteka została zbudowana w zeszłym roku.',
+        jp: { text: '図書館は去年できた。', pronunciation: 'としょかんはきょねんできた。' },
+    },
 ];
 
 export const dual9Bag: WordBag = {
