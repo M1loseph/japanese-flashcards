@@ -27,7 +27,7 @@ const dual_10: TranslatedJapaneseText[] = [
     {
         id: '720c5a5d-1db2-40e5-b661-4041b7b6bd6f',
         type: 'phrase',
-        formality: 'informal',
+        formality: 'formal',
         en: 'This hotel has a lot of rooms.',
         pl: 'Ten hotel ma wiele pokoi.',
         jp: { text: 'このホテルは部屋が多いです。', pronunciation: 'このホテルはへやがおおいです。' },
