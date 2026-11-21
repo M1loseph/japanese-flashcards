@@ -1,0 +1,111 @@
+import type { TranslatedJapaneseText, WordBag } from '../../types';
+
+const dual_10: TranslatedJapaneseText[] = [
+    {
+        id: 'e5f178ed-1906-43e8-af29-aa55ebe9a284',
+        type: 'noun',
+        en: 'Corner / Edge',
+        pl: 'Róg / Narożnik',
+        jp: { text: '角', pronunciation: 'かど' },
+    },
+    {
+        id: '00a54ee4-fc00-44b4-b0fe-1d86701cb162',
+        type: 'phrase',
+        formality: 'informal',
+        en: 'See you next week.',
+        pl: 'Do zobaczenia w przyszłym tygodniu.',
+        jp: { text: 'また来週。', pronunciation: 'またらいしゅう。' },
+    },
+    {
+        id: 'dd8dd558-09df-41e1-9535-6af5cbc14c63',
+        type: 'phrase',
+        formality: 'formal',
+        en: 'Please wash hands before eating.',
+        pl: 'Proszę umyć ręce przed jedzeniem.',
+        jp: { text: '食べる前に手を洗ってください。', pronunciation: 'たべるまえにてをあらってください。' },
+    },
+    {
+        id: '720c5a5d-1db2-40e5-b661-4041b7b6bd6f',
+        type: 'phrase',
+        formality: 'informal',
+        en: 'This hotel has a lot of rooms.',
+        pl: 'Ten hotel ma wiele pokoi.',
+        jp: { text: 'このホテルは部屋が多いです。', pronunciation: 'このホテルはへやがおおいです。' },
+    },
+    {
+        id: '02f5741c-4dfd-4815-b0a3-401d1d01fb58',
+        type: 'noun',
+        en: 'Embassy',
+        pl: 'Ambasada',
+        jp: { text: '大使館', pronunciation: 'たいしかん' },
+    },
+    {
+        id: '5f3114e7-285c-468f-bef0-c0de442bf50e',
+        type: 'noun',
+        en: 'Building',
+        pl: 'Budynek',
+        jp: { text: '建物', pronunciation: 'たてもの' },
+    },
+    {
+        id: 'ab738f1b-a8bb-477a-b73f-123abe8aa595',
+        type: 'verb',
+        verb_type: 'ichidan',
+        transitivity: 'intransitive',
+        en: 'To be born',
+        pl: 'Urodzić się',
+        jp: { text: '生まれる', pronunciation: 'うまれる' },
+    },
+    {
+        id: '884f712e-29ca-4a5e-b955-b0accdbe2753',
+        type: 'noun',
+        en: 'Colleague',
+        pl: 'Kolega z pracy',
+        jp: { text: '仕事仲間', pronunciation: 'しごとなかま' },
+    },
+    {
+        id: '746d320c-681f-4501-98c3-1a343707f723',
+        type: 'noun',
+        en: 'Surprise',
+        pl: 'Niespodzianka',
+        jp: { text: 'びっくり' },
+    },
+    {
+        id: '8242c6af-3304-4a32-a803-ec2aefbd3d16',
+        type: 'verb',
+        verb_type: 'suru',
+        transitivity: 'intransitive',
+        en: 'To be surprised',
+        pl: 'Być zaskoczonym',
+        jp: { text: 'びっくりする' },
+    },
+    {
+        id: '451c568a-d80d-4e86-952b-b7401cfdcd14',
+        type: 'noun',
+        en: 'Adventure',
+        pl: 'Przygoda',
+        jp: { text: '冒険', pronunciation: 'ぼうけん' },
+    },
+    {
+        id: '4c19d7ab-9122-49e9-a8f5-277d0a2ae859',
+        type: 'noun',
+        en: 'Ultrasound scan',
+        pl: 'USG',
+        jp: { text: 'エコー' },
+    },
+    {
+        id: 'c758cc4c-ecdb-411b-8da8-7f46c763080a',
+        type: 'verb',
+        verb_type: 'godan',
+        transitivity: 'intransitive',
+        en: 'To stop',
+        pl: 'Zatrzymać się',
+        jp: { text: '止まる', pronunciation: 'とまる' }
+    },
+];
+
+export const dual10Bag: WordBag = {
+    id: '48f11898-92a4-4de6-8f02-0144737020cb',
+    name: 'Dual 10',
+    category: 'dual',
+    words: dual_10,
+};
