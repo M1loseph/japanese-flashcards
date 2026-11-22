@@ -16,6 +16,7 @@ import { countingThinObjectsBag } from './vocabulary/counting/countingThinObject
 import { numbersBag } from './vocabulary/counting/numbers';
 import { ordinalNumbersBag } from './vocabulary/counting/ordinalNumbers';
 import { directionsBag } from './vocabulary/directions';
+import { dual10Bag } from './vocabulary/dual/dual_10';
 import { dual1_4Bag } from './vocabulary/dual/dual_1_4';
 import { dual5_7Bag } from './vocabulary/dual/dual_5_7';
 import { dual8Bag } from './vocabulary/dual/dual_8';
@@ -265,6 +266,7 @@ export const availableWordBags: readonly WordBag[] = [
     dual5_7Bag,
     dual8Bag,
     dual9Bag,
+    dual10Bag,
 ] as const;
 
 export const findBagById: (id: string) => WordBag | undefined = (() => {
