@@ -99,7 +99,7 @@ const dual_10: TranslatedJapaneseText[] = [
         transitivity: 'intransitive',
         en: 'To stop',
         pl: 'Zatrzymać się',
-        jp: { text: '止まる', pronunciation: 'とまる' }
+        jp: { text: '止まる', pronunciation: 'とまる' },
     },
 ];
 
