@@ -176,7 +176,7 @@ const dual_9: TranslatedJapaneseText[] = [
         formality: 'formal',
         en: 'What do you say after eating?',
         pl: 'Co mówisz po jedzeniu?',
-        jp: { text: '食べた後は何と言いますか。', pronunciation: 'たべたあとはなんといいますか。' },
+        jp: { text: '食べた後はどう言いますか。', pronunciation: 'たべたあとはどういいますか。' },
     },
     {
         id: '58adcf61-5c6f-42a4-9cd3-80ed96d06de9',
