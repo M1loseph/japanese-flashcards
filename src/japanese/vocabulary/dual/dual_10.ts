@@ -168,6 +168,15 @@ const dual_10: TranslatedJapaneseText[] = [
         pl: 'Dźwięk',
         jp: { text: '音', pronunciation: 'おと' },
     },
+    {
+        id: '232620f5-e4fc-4178-a4a1-aaeef4a52d8f',
+        type: 'verb',
+        verb_type: 'godan',
+        transitivity: 'transitive',
+        en: 'To brush (teeth)',
+        pl: 'Myć (zęby)',
+        jp: { text: '磨く', pronunciation: 'みがく' },
+    },
 ];
 
 export const dual10Bag: WordBag = {
