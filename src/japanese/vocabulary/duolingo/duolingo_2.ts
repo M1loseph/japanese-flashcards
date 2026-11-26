@@ -203,14 +203,6 @@ const duolingo_2: TranslatedJapaneseText[] = [
         jp: { text: 'じゃないです' },
     },
     {
-        id: '2451c459-6758-433a-9ce8-d21c8cc0bff4',
-        type: 'verb',
-        verb_type: 'auxiliary',
-        en: 'Is',
-        pl: 'Jest',
-        jp: { text: 'です' },
-    },
-    {
         id: '1871899a-c6b1-4889-9d6e-852ebf2df63a',
         type: 'noun',
         en: 'Passport',

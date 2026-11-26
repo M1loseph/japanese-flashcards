@@ -55,7 +55,7 @@ const duolingo_9: TranslatedJapaneseText[] = [
         id: '10fe0b2e-a89f-4ed8-9bda-01d846af1ded',
         type: 'verb',
         verb_type: 'godan',
-        en: 'Sit',
+        en: 'To sit',
         pl: 'Siedzieć',
         jp: { text: 'すわる' },
     },
