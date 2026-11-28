@@ -155,28 +155,60 @@ export const countingFloorsBag: WordBag = {
     name: 'Counting Floors',
     category: 'counting',
     words: countingFloors,
-    cultureNotes: (
-        <>
-            <h3>Floor numbering in Japan</h3>
-            <p>
-                In Japan, floors are counted starting from <strong>1階 (いっかい)</strong> at street level. This is the
-                same system used in the United States, where the ground level is called the "first floor."
-            </p>
-            <p>
-                This differs from countries like the UK, Germany, or Poland, where the street-level floor is the "ground
-                floor" (0) and the "first floor" is one level up.
-            </p>
-            <p>
-                So if someone in Japan says <strong>三階 (さんがい)</strong>, they mean the third level from the ground
-                — not two levels up like it would be in British English.
-            </p>
-            <h3>Irregular readings</h3>
-            <p>
-                Pay attention to the irregular readings: <strong>三階 (さんがい)</strong> uses <em>gai</em> instead of{' '}
-                <em>kai</em>, and <strong>何階 (なんがい)</strong> also uses <em>gai</em>. Meanwhile, floors like{' '}
-                <strong>一階 (いっかい)</strong>, <strong>六階 (ろっかい)</strong>, <strong>八階 (はっかい)</strong>,
-                and <strong>十階 (じゅっかい)</strong> feature a double consonant (促音) before <em>kai</em>.
-            </p>
-        </>
-    ),
+    cultureNotes: [
+        {
+            type: 'h3',
+            text: 'Floor numbering in Japan',
+        },
+        {
+            type: 'p',
+            text: [
+                'In Japan, floors are counted starting from ',
+                { type: 'strong', text: '1階 (いっかい)' },
+                ' at street level. This is the same system used in the United States, where the ground level is called the "first floor."',
+            ],
+        },
+        {
+            type: 'p',
+            text: 'This differs from countries like the UK, Germany, or Poland, where the street-level floor is the "ground floor" (0) and the "first floor" is one level up.',
+        },
+        {
+            type: 'p',
+            text: [
+                'So if someone in Japan says ',
+                { type: 'strong', text: '三階 (さんがい)' },
+                ', they mean the third level from the ground — not two levels up like it would be in British English.',
+            ],
+        },
+        {
+            type: 'h3',
+            text: 'Irregular readings',
+        },
+        {
+            type: 'p',
+            text: [
+                'Pay attention to the irregular readings: ',
+                { type: 'strong', text: '三階 (さんがい)' },
+                ' uses ',
+                { type: 'em', text: 'gai' },
+                ' instead of ',
+                { type: 'em', text: 'kai' },
+                ', and ',
+                { type: 'strong', text: '何階 (なんがい)' },
+                ' also uses ',
+                { type: 'em', text: 'gai' },
+                '. Meanwhile, floors like ',
+                { type: 'strong', text: '一階 (いっかい)' },
+                ', ',
+                { type: 'strong', text: '六階 (ろっかい)' },
+                ', ',
+                { type: 'strong', text: '八階 (はっかい)' },
+                ', and ',
+                { type: 'strong', text: '十階 (じゅっかい)' },
+                ' feature a double consonant (促音) before ',
+                { type: 'em', text: 'kai' },
+                '.',
+            ],
+        },
+    ],
 };

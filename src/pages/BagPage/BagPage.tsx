@@ -33,7 +33,7 @@ const BagPage: FC = () => {
         return <Navigate to="/" replace />;
     }
 
-    const hasCultureNotes = !!bag.cultureNotes;
+    const hasCultureNotes = !!bag.cultureNotes?.length;
 
     const handleTabClick = (tab: Tab) => () => {
         navigate(`/bags/${bagId}/${tab}`);

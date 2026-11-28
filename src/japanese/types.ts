@@ -1,4 +1,3 @@
-import { type ReactNode } from 'react';
 import * as z from 'zod';
 
 const PronunciationSchema = z.string().or(z.string().array()).optional();
@@ -199,13 +198,53 @@ const WordBagCategorySchema = z.enum([
 
 export type WordBagCategory = z.infer<typeof WordBagCategorySchema>;
 
+const StrongSchema = z
+    .object({
+        type: z.literal('strong'),
+        text: z.string(),
+    })
+    .readonly();
+
+export type Strong = z.infer<typeof StrongSchema>;
+
+const H3Schema = z
+    .object({
+        type: z.literal('h3'),
+        text: z.string(),
+    })
+    .readonly();
+
+export type H3 = z.infer<typeof H3Schema>;
+
+const EmSchema = z
+    .object({
+        type: z.literal('em'),
+        text: z.string(),
+    })
+    .readonly();
+
+export type Em = z.infer<typeof EmSchema>;
+
+const ParagraphSchema = z
+    .object({
+        type: z.literal('p'),
+        text: z.string().or(z.array(z.union([z.string(), StrongSchema, EmSchema]))),
+    })
+    .readonly();
+
+export type Paragraph = z.infer<typeof ParagraphSchema>;
+
+const CultureNotesSchema = z.array(z.union([ParagraphSchema, H3Schema])).readonly();
+
+export type CultureNotes = z.infer<typeof CultureNotesSchema>;
+
 export const WordBagSchema = z
     .object({
         id: z.uuidv4(),
         name: z.string(),
         category: WordBagCategorySchema,
         words: z.array(TranslatedJapaneseTextSchema).readonly(),
-        cultureNotes: z.custom<ReactNode>().optional(),
+        cultureNotes: CultureNotesSchema.optional(),
     })
     .readonly();
 
