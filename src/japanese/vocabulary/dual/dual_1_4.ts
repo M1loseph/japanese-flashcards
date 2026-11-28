@@ -391,7 +391,7 @@ const dual_1_4: TranslatedJapaneseText[] = [
         formality: 'informal',
         en: "I don't want to eat sushi.",
         pl: 'Nie chcę jeść sushi.',
-        jp: { text: '私は寿司を食べたくない。', pronunciation: 'わたしはすしをたべたくない。' },
+        jp: { text: '私は寿司は食べたくない。', pronunciation: 'わたしはすしはたべたくない。' },
     },
     {
         id: 'aa67a57b-fafc-4a1c-a8ee-1ec844873b49',
